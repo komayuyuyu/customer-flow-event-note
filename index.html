@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#24372d">
+  <meta name="description" content="注目イベントによる客足への影響を確認し、勤務後の実感を記録します。">
+  <title>客足イベントノート</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">CUSTOMER FLOW NOTE</p>
+      <h1>客足イベントノート</h1>
+      <p>注目イベントの予測と、実際の客足をひとつの画面で記録します。</p>
+    </header>
+
+    <section class="date-row" aria-label="記録日">
+      <label for="record-date">記録日</label>
+      <input id="record-date" type="date">
+      <p id="day-label" class="day-label"></p>
+    </section>
+
+    <section class="panel event-panel" aria-labelledby="event-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">TODAY'S SIGNAL</p>
+          <h2 id="event-title">今日の注目イベント</h2>
+        </div>
+        <span id="event-count" class="count-pill">確認中</span>
+      </div>
+      <div id="events" class="event-list" aria-live="polite"></div>
+    </section>
+
+    <section class="panel week-panel" aria-labelledby="week-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">NEXT 7 DAYS</p>
+          <h2 id="week-title">1週間のイベント予定</h2>
+        </div>
+        <span id="week-count" class="count-pill">確認中</span>
+      </div>
+      <div id="week-schedule" class="week-list" aria-live="polite"></div>
+    </section>
+
+    <form id="record-form" class="panel record-panel">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">AFTER WORK</p>
+          <h2>勤務後の客足記録</h2>
+        </div>
+        <span class="required-note">約1分</span>
+      </div>
+
+      <div id="auth-panel" class="auth-panel" hidden>
+        <div>
+          <strong id="auth-title">記録するにはGoogleログインが必要です</strong>
+          <p id="auth-message">イベント予定はログインなしで確認できます。</p>
+        </div>
+        <div class="auth-actions">
+          <button id="login-button" class="auth-button" type="button">Googleでログイン</button>
+          <button id="logout-button" class="auth-button secondary" type="button" hidden>ログアウト</button>
+        </div>
+      </div>
+
+      <div id="record-context" class="record-context" role="status" aria-live="polite"></div>
+
+      <fieldset>
+        <legend>今日の客足 <span>必須</span></legend>
+        <div class="choice-grid three">
+          <label class="choice"><input type="radio" name="traffic" value="暇" required><span>暇</span></label>
+          <label class="choice"><input type="radio" name="traffic" value="通常"><span>通常</span></label>
+          <label class="choice"><input type="radio" name="traffic" value="混雑"><span>混雑</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>天気</legend>
+        <div class="choice-grid weather">
+          <label class="choice"><input type="radio" name="weather" value="晴れ"><span>晴れ</span></label>
+          <label class="choice"><input type="radio" name="weather" value="曇り"><span>曇り</span></label>
+          <label class="choice"><input type="radio" name="weather" value="雨"><span>雨</span></label>
+          <label class="choice"><input type="radio" name="weather" value="荒天"><span>荒天</span></label>
+          <label class="choice"><input type="radio" name="weather" value="不明"><span>不明</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>特に暇だった時間</legend>
+        <div class="choice-grid periods">
+          <label class="choice"><input type="checkbox" name="period" value="午前"><span>午前</span></label>
+          <label class="choice"><input type="checkbox" name="period" value="昼"><span>昼</span></label>
+          <label class="choice"><input type="checkbox" name="period" value="夕方"><span>夕方</span></label>
+          <label class="choice"><input type="checkbox" name="period" value="終日"><span>終日</span></label>
+          <label class="choice"><input type="checkbox" name="period" value="特になし"><span>特になし</span></label>
+        </div>
+      </fieldset>
+
+      <div class="time-grid">
+        <label>影響を感じた開始時刻<input id="impact-start" type="time"></label>
+        <label>落ち着いた時刻<input id="impact-end" type="time"></label>
+      </div>
+
+      <fieldset id="accuracy-fieldset">
+        <legend>事前予測はどうだった？</legend>
+        <div class="choice-grid accuracy">
+          <label class="choice"><input type="radio" name="accuracy" value="予測どおり"><span>予測どおり</span></label>
+          <label class="choice"><input type="radio" name="accuracy" value="一部当たった"><span>一部当たった</span></label>
+          <label class="choice"><input type="radio" name="accuracy" value="外れた"><span>外れた</span></label>
+          <label class="choice"><input type="radio" name="accuracy" value="未判断"><span>未判断</span></label>
+        </div>
+      </fieldset>
+
+      <label class="note-label" for="note">短いメモ <span id="note-count">0 / 300</span></label>
+      <textarea id="note" maxlength="300" rows="3" placeholder="例：18時頃から急に人が引いた。館全体も静かだった。"></textarea>
+
+      <button id="save-button" class="save-button" type="submit">今日の記録を保存</button>
+      <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+  <script src="./firebase-config.js"></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>

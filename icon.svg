@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="客足イベントノート">
+  <rect width="512" height="512" rx="112" fill="#f3f0e8"/>
+  <path d="M112 128h288v256H112z" fill="#fffdf8" stroke="#284c39" stroke-width="24"/>
+  <path d="M160 204h192M160 264h136M160 324h96" fill="none" stroke="#284c39" stroke-linecap="round" stroke-width="24"/>
+  <circle cx="352" cy="324" r="48" fill="#d46d3d"/>
+</svg>

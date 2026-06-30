@@ -1,0 +1,232 @@
+[
+  {
+    "title": "サッカーW杯 ラウンド32 ブラジル対日本",
+    "startAt": "2026-06-30T02:00:00+09:00",
+    "endAt": "2026-06-30T04:30:00+09:00",
+    "broadcast": "フジテレビ系列・NHK BS・DAZN（生中継）",
+    "liveReason": "負けたら終了となる決勝トーナメントの日本代表戦。深夜開催でもリアルタイム視聴の動機が非常に強く、試合後も敗退結果が主要ニュースと公開SNSで大きく報じられた",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA公式 日本対ブラジル 試合結果",
+        "url": "https://www.jfa.jp/"
+      },
+      {
+        "title": "フジテレビ FIFAワールドカップ2026 放送情報",
+        "url": "https://www.fujitv.co.jp/sports/soccer/FIFAworldcup/"
+      },
+      {
+        "title": "日刊スポーツ 文化放送のブラジル戦実況生中継",
+        "url": "https://www.nikkansports.com/m/entertainment/news/amp/202606290000774.html"
+      },
+      {
+        "title": "スポーティングニュース 日本対ブラジル試合結果",
+        "url": "https://www.sportingnews.com/jp/soccer/news/20260630-fifaworldcup2026-japan-brazil-result/0b7f1aba4ed18078892ddf0e"
+      }
+    ],
+    "id": "01ff982ad78a9a40",
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "視聴準備・早めの帰宅",
+        "date": "2026-06-30",
+        "start": "01:00",
+        "end": "02:00",
+        "reason": "食事や飲み物の購入、帰宅、視聴準備で街から人が引く可能性"
+      },
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-06-30",
+        "start": "02:00",
+        "end": "04:30",
+        "reason": "生中継・ライブ配信をその時間に見る人が増える可能性"
+      },
+      {
+        "label": "深夜視聴の翌日",
+        "date": "2026-06-30",
+        "start": "10:00",
+        "end": "14:00",
+        "reason": "睡眠不足や外出開始の遅れで午前から昼の客足が落ちる可能性"
+      }
+    ]
+  },
+  {
+    "title": "VNL女子 日本対ブラジル",
+    "startAt": "2026-07-08T19:20:00+09:00",
+    "endAt": "2026-07-08T21:30:00+09:00",
+    "broadcast": "TBS系列・U-NEXT",
+    "liveReason": "日本開催の女子日本代表戦で地上波生中継。強豪ブラジル戦のためリアルタイム視聴の動機が強い",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "TBS VNL2026 女子第3週 放送情報",
+        "url": "https://www.tbs.co.jp/volley-nationsleague/schedule/w3.html"
+      },
+      {
+        "title": "Volleyball World 日本対ブラジル公式日程",
+        "url": "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/26626/"
+      }
+    ],
+    "id": "31796af64270d087",
+    "impactScore": 17,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "視聴準備・早めの帰宅",
+        "date": "2026-07-08",
+        "start": "17:20",
+        "end": "19:20",
+        "reason": "食事や飲み物の購入、帰宅、視聴準備で街から人が引く可能性"
+      },
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-07-08",
+        "start": "19:20",
+        "end": "21:30",
+        "reason": "生中継・ライブ配信をその時間に見る人が増える可能性"
+      }
+    ]
+  },
+  {
+    "title": "VNL女子 日本対タイ",
+    "startAt": "2026-07-09T19:20:00+09:00",
+    "endAt": "2026-07-09T21:30:00+09:00",
+    "broadcast": "TBS系列・U-NEXT",
+    "liveReason": "日本開催の女子日本代表戦で地上波生中継。アジア勢同士の対戦として注目されやすい",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 1,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "TBS VNL2026 女子第3週 放送情報",
+        "url": "https://www.tbs.co.jp/volley-nationsleague/schedule/w3.html"
+      },
+      {
+        "title": "Volleyball World 大阪ラウンド公式案内",
+        "url": "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/news/osaka-host-vnl-2026-matches"
+      }
+    ],
+    "id": "4f66f542a9beca6b",
+    "impactScore": 15,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "視聴準備・早めの帰宅",
+        "date": "2026-07-09",
+        "start": "17:20",
+        "end": "19:20",
+        "reason": "食事や飲み物の購入、帰宅、視聴準備で街から人が引く可能性"
+      },
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-07-09",
+        "start": "19:20",
+        "end": "21:30",
+        "reason": "生中継・ライブ配信をその時間に見る人が増える可能性"
+      }
+    ]
+  },
+  {
+    "title": "VNL女子 日本対トルコ",
+    "startAt": "2026-07-11T19:20:00+09:00",
+    "endAt": "2026-07-11T21:30:00+09:00",
+    "broadcast": "TBS系列・U-NEXT",
+    "liveReason": "土曜夜の日本開催・女子日本代表戦で地上波生中継。強豪国との対戦で注目が高まりやすい",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "TBS VNL2026 女子第3週 放送情報",
+        "url": "https://www.tbs.co.jp/volley-nationsleague/schedule/w3.html"
+      },
+      {
+        "title": "Volleyball World 大阪ラウンド公式案内",
+        "url": "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/news/osaka-host-vnl-2026-matches"
+      }
+    ],
+    "id": "8ba417eadd565074",
+    "impactScore": 17,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "視聴準備・早めの帰宅",
+        "date": "2026-07-11",
+        "start": "17:20",
+        "end": "19:20",
+        "reason": "食事や飲み物の購入、帰宅、視聴準備で街から人が引く可能性"
+      },
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-07-11",
+        "start": "19:20",
+        "end": "21:30",
+        "reason": "生中継・ライブ配信をその時間に見る人が増える可能性"
+      }
+    ]
+  },
+  {
+    "title": "VNL女子 日本対ポーランド",
+    "startAt": "2026-07-12T19:20:00+09:00",
+    "endAt": "2026-07-12T21:30:00+09:00",
+    "broadcast": "TBS系列・U-NEXT",
+    "liveReason": "日曜夜の日本開催・女子日本代表戦で地上波生中継。予選最終戦のためリアルタイム視聴の動機が強い",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "TBS VNL2026 女子第3週 放送情報",
+        "url": "https://www.tbs.co.jp/volley-nationsleague/schedule/w3.html"
+      },
+      {
+        "title": "Volleyball World 大阪ラウンド公式案内",
+        "url": "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/news/osaka-host-vnl-2026-matches"
+      }
+    ],
+    "id": "379edf4091ebb797",
+    "impactScore": 17,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "視聴準備・早めの帰宅",
+        "date": "2026-07-12",
+        "start": "17:20",
+        "end": "19:20",
+        "reason": "食事や飲み物の購入、帰宅、視聴準備で街から人が引く可能性"
+      },
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-07-12",
+        "start": "19:20",
+        "end": "21:30",
+        "reason": "生中継・ライブ配信をその時間に見る人が増える可能性"
+      }
+    ]
+  }
+]
