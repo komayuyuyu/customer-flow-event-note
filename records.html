@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#24372d">
+  <title>記録一覧｜客足イベントノート</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a href="./">ホーム</a><a class="is-current" href="./records.html">記録一覧</a><a href="./#record-form">新規記録</a><button id="nav-auth-button" type="button">ログイン</button>
+    </nav>
+    <header class="hero"><p class="eyebrow">RECORDS</p><h1>記録一覧</h1><p>保存した客足記録を日付順に確認できます。</p></header>
+    <section class="panel">
+      <div id="records-auth" class="auth-panel"><div><strong>Googleログインが必要です</strong><p>記録は本人だけが閲覧できます。</p></div><div class="auth-actions"><button id="login-button" class="auth-button" type="button">Googleでログイン</button></div></div>
+      <div id="records-list" class="records-list"><p class="empty-state">確認しています…</p></div>
+    </section>
+  </main>
+  <script src="./firebase-config.js"></script><script src="./records-backend.js"></script><script src="./records.js" defer></script>
+</body>
+</html>

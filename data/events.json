@@ -1,59 +1,44 @@
 [
   {
-    "title": "サッカーW杯 ラウンド32 ブラジル対日本",
-    "startAt": "2026-06-30T02:00:00+09:00",
-    "endAt": "2026-06-30T04:30:00+09:00",
-    "broadcast": "フジテレビ系列・NHK BS・DAZN（生中継）",
-    "liveReason": "負けたら終了となる決勝トーナメントの日本代表戦。深夜開催でもリアルタイム視聴の動機が非常に強く、試合後も敗退結果が主要ニュースと公開SNSで大きく報じられた",
+    "title": "2026 FNS歌謡祭 夏",
+    "startAt": "2026-07-01T18:30:00+09:00",
+    "endAt": "2026-07-01T21:54:00+09:00",
+    "broadcast": "フジテレビ系列（生放送）",
+    "liveReason": "全国ネットで約3時間半生放送される大型音楽特番。多数の人気アーティストとテレビ初披露企画があり、当日視聴の動機はあるが、代表戦や決勝ほどの一回性はない",
     "nationalReach": 3,
-    "liveUrgency": 3,
+    "liveUrgency": 2,
     "accessibility": 3,
-    "buzz": 3,
-    "significance": 3,
+    "buzz": 2,
+    "significance": 1,
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "JFA公式 日本対ブラジル 試合結果",
-        "url": "https://www.jfa.jp/"
+        "title": "フジテレビ 2026 FNS歌謡祭 夏 放送決定",
+        "url": "https://www.fujitv.co.jp/fujitv/news/20260548.html"
       },
       {
-        "title": "フジテレビ FIFAワールドカップ2026 放送情報",
-        "url": "https://www.fujitv.co.jp/sports/soccer/FIFAworldcup/"
-      },
-      {
-        "title": "日刊スポーツ 文化放送のブラジル戦実況生中継",
-        "url": "https://www.nikkansports.com/m/entertainment/news/amp/202606290000774.html"
-      },
-      {
-        "title": "スポーティングニュース 日本対ブラジル試合結果",
-        "url": "https://www.sportingnews.com/jp/soccer/news/20260630-fifaworldcup2026-japan-brazil-result/0b7f1aba4ed18078892ddf0e"
+        "title": "THE FIRST TIMES タイムテーブル・出演者まとめ",
+        "url": "https://www.thefirsttimes.jp/news/0000359118/"
       }
     ],
-    "id": "01ff982ad78a9a40",
-    "impactScore": 24,
-    "impactLevel": "大",
+    "id": "5c167adba163f5dc",
+    "impactScore": 17,
+    "impactLevel": "中",
     "confidence": "高",
     "predictedWindows": [
       {
         "label": "視聴準備・早めの帰宅",
-        "date": "2026-06-30",
-        "start": "01:00",
-        "end": "02:00",
+        "date": "2026-07-01",
+        "start": "16:30",
+        "end": "18:30",
         "reason": "食事や飲み物の購入、帰宅、視聴準備で街から人が引く可能性"
       },
       {
         "label": "リアルタイム視聴",
-        "date": "2026-06-30",
-        "start": "02:00",
-        "end": "04:30",
+        "date": "2026-07-01",
+        "start": "18:30",
+        "end": "21:54",
         "reason": "生中継・ライブ配信をその時間に見る人が増える可能性"
-      },
-      {
-        "label": "深夜視聴の翌日",
-        "date": "2026-06-30",
-        "start": "10:00",
-        "end": "14:00",
-        "reason": "睡眠不足や外出開始の遅れで午前から昼の客足が落ちる可能性"
       }
     ]
   },
