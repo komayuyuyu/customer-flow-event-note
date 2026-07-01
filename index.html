@@ -13,6 +13,12 @@
 </head>
 <body>
   <main class="shell">
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a class="is-current" href="./">ホーム</a>
+      <a href="./records.html">記録一覧</a>
+      <a href="#record-form">新規記録</a>
+      <button id="nav-auth-button" type="button">ログイン</button>
+    </nav>
     <header class="hero">
       <p class="eyebrow">CUSTOMER FLOW NOTE</p>
       <h1>客足イベントノート</h1>
@@ -22,7 +28,7 @@
     <section class="date-row" aria-label="記録日">
       <label for="record-date">記録日</label>
       <input id="record-date" type="date">
-      <p id="day-label" class="day-label"></p>
+      <button id="today-button" class="today-button" type="button">今日</button>
     </section>
 
     <section class="panel event-panel" aria-labelledby="event-title">
@@ -69,6 +75,8 @@
 
       <div id="record-context" class="record-context" role="status" aria-live="polite"></div>
 
+      <div id="related-events" class="related-events" hidden></div>
+
       <fieldset>
         <legend>今日の客足 <span>必須</span></legend>
         <div class="choice-grid three">
@@ -105,6 +113,15 @@
         <label>落ち着いた時刻<input id="impact-end" type="time"></label>
       </div>
 
+      <fieldset id="event-impact-fieldset" hidden>
+        <legend>イベントによる客足への影響</legend>
+        <div class="choice-grid three">
+          <label class="choice"><input type="radio" name="eventImpact" value="感じた"><span>感じた</span></label>
+          <label class="choice"><input type="radio" name="eventImpact" value="感じなかった"><span>感じなかった</span></label>
+          <label class="choice"><input type="radio" name="eventImpact" value="わからない"><span>わからない</span></label>
+        </div>
+      </fieldset>
+
       <fieldset id="accuracy-fieldset">
         <legend>事前予測はどうだった？</legend>
         <div class="choice-grid accuracy">
@@ -118,8 +135,15 @@
       <label class="note-label" for="note">短いメモ <span id="note-count">0 / 300</span></label>
       <textarea id="note" maxlength="300" rows="3" placeholder="例：18時頃から急に人が引いた。館全体も静かだった。"></textarea>
 
+      <label class="note-label" for="customer-topics">お客様から出た話題・反応 <span id="customer-topics-count">0 / 300</span></label>
+      <textarea id="customer-topics" maxlength="300" rows="3" placeholder="例：試合や出演者について話すお客様が多かった。"></textarea>
+
       <button id="save-button" class="save-button" type="submit">今日の記録を保存</button>
       <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+      <div id="save-actions" class="save-actions" hidden>
+        <a id="detail-link" class="action-link primary" href="./record.html">保存した記録の詳細を見る</a>
+        <button id="continue-button" class="action-link" type="button">続けて別の日を記録する</button>
+      </div>
     </form>
   </main>
   <script src="./firebase-config.js"></script>

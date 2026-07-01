@@ -2,7 +2,7 @@ const FIREBASE_SDK_VERSION = '12.15.0';
 const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
 
 const dateInput = document.querySelector('#record-date');
-const dayLabel = document.querySelector('#day-label');
+const todayButton = document.querySelector('#today-button');
 const eventsRoot = document.querySelector('#events');
 const eventCount = document.querySelector('#event-count');
 const weekRoot = document.querySelector('#week-schedule');
@@ -19,14 +19,39 @@ const authTitle = document.querySelector('#auth-title');
 const authMessage = document.querySelector('#auth-message');
 const loginButton = document.querySelector('#login-button');
 const logoutButton = document.querySelector('#logout-button');
+const navAuthButton = document.querySelector('#nav-auth-button');
+const relatedEventsRoot = document.querySelector('#related-events');
+const eventImpactFieldset = document.querySelector('#event-impact-fieldset');
+const customerTopics = document.querySelector('#customer-topics');
+const customerTopicsCount = document.querySelector('#customer-topics-count');
+const saveActions = document.querySelector('#save-actions');
+const detailLink = document.querySelector('#detail-link');
+const continueButton = document.querySelector('#continue-button');
 
 let backend;
 let currentEvents = [];
 let currentUser = null;
 let initialized = false;
+let calendarContext;
 
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'long' });
-const fullDate = new Intl.DateTimeFormat('ja-JP', { month: 'long', day: 'numeric' });
+async function loadCalendarContext() {
+  if (!calendarContext) {
+    calendarContext = fetch('./data/calendar-context.json', { cache: 'no-store' })
+      .then(response => response.ok ? response.json() : { holidays: {}, periods: [] });
+  }
+  return calendarContext;
+}
+
+async function contextForDate(dateText) {
+  const context = await loadCalendarContext();
+  const items = [];
+  if (context.holidays?.[dateText]) items.push({ type: '祝日', label: context.holidays[dateText] });
+  for (const period of context.periods || []) {
+    if (period.start <= dateText && dateText <= period.end) items.push({ type: '大型連休', label: period.label });
+  }
+  return items;
+}
 
 function localToday() {
   const now = new Date();
@@ -98,6 +123,11 @@ function createLocalBackend() {
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || '保存できませんでした');
       return result;
+    },
+    async listObservations() {
+      const response = await fetch('./api/observations');
+      if (!response.ok) throw new Error('記録一覧を読み込めませんでした');
+      return response.json();
     },
   };
 }
@@ -196,6 +226,12 @@ async function createCloudBackend() {
       await firestoreSdk.setDoc(reference, observation, { merge: true });
       return { ok: true, observation };
     },
+    async listObservations() {
+      if (!currentUser) return [];
+      const collection = firestoreSdk.collection(db, 'users', currentUser.uid, 'observations');
+      const snapshot = await firestoreSdk.getDocs(collection);
+      return snapshot.docs.map(item => item.data()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    },
   };
 }
 
@@ -214,17 +250,19 @@ function setRecordAccess(user, errorMessage = '') {
   const cloudMode = backend?.mode === 'cloud';
   authPanel.hidden = !cloudMode;
   if (!cloudMode) {
+    navAuthButton.hidden = true;
     form.classList.remove('is-locked');
     return;
   }
 
   const unlocked = Boolean(user);
   form.classList.toggle('is-locked', !unlocked);
-  form.querySelectorAll('fieldset input, .time-grid input, textarea, button[type="submit"]').forEach(control => {
+  form.querySelectorAll('fieldset input, .time-grid input, textarea, select, button[type="submit"]').forEach(control => {
     control.disabled = !unlocked;
   });
   loginButton.hidden = unlocked;
   logoutButton.hidden = !unlocked;
+  navAuthButton.textContent = unlocked ? 'ログアウト' : 'ログイン';
 
   if (unlocked) {
     authTitle.textContent = 'Googleログイン済み';
@@ -244,6 +282,9 @@ function renderWeek(days) {
     const dayImpactMarkup = day.events.length
       ? `<span class="week-day-impact ${dayImpact === '大' ? 'high' : ''}">影響 ${escapeHtml(dayImpact)}</span>`
       : '';
+    const contextMarkup = day.context.length
+      ? day.context.map(item => `<span class="calendar-badge">${escapeHtml(item.type)}：${escapeHtml(item.label)}</span>`).join('')
+      : '';
     const eventMarkup = day.events.length
       ? day.events.map(event => `<div class="week-event">
           <div class="week-event-head">
@@ -256,7 +297,7 @@ function renderWeek(days) {
     return `<div class="week-row ${day.events.length ? 'has-events' : 'is-empty'}">
       <div class="week-date"><strong>${escapeHtml(label.date)}</strong><span>（${escapeHtml(label.weekday)}）</span></div>
       ${dayImpactMarkup}
-      <div class="week-events">${eventMarkup}</div>
+      <div class="week-events">${contextMarkup}${eventMarkup}</div>
     </div>`;
   }).join('');
 }
@@ -267,22 +308,26 @@ async function loadWeek() {
   try {
     const dates = Array.from({ length: 7 }, (_, index) => addDays(dateInput.value, index));
     const payloads = await Promise.all(dates.map(value => backend.getDay(value)));
-    renderWeek(payloads.map((payload, index) => ({ date: dates[index], events: payload.events || [] })));
+    const contexts = await Promise.all(dates.map(contextForDate));
+    renderWeek(payloads.map((payload, index) => ({ date: dates[index], events: payload.events || [], context: contexts[index] })));
   } catch (error) {
     weekCount.textContent = '取得失敗';
     weekRoot.innerHTML = '<p class="empty-state">1週間の予定を読み込めませんでした。</p>';
   }
 }
 
-function renderEvents(events) {
+function renderEvents(events, contextItems = []) {
   currentEvents = events;
   updateRecordMode(events);
   eventCount.textContent = events.length ? `${events.length}件` : '大きな影響なし';
+  const contextMarkup = contextItems.length
+    ? `<div class="calendar-context-row">${contextItems.map(item => `<span class="calendar-badge">${escapeHtml(item.type)}：${escapeHtml(item.label)}</span>`).join('')}</div>`
+    : '<div class="calendar-context-row"><span class="calendar-badge muted">通常日</span></div>';
   if (!events.length) {
-    eventsRoot.innerHTML = '<p class="empty-state">現在、登録されている大きな影響イベントはありません。</p>';
+    eventsRoot.innerHTML = `${contextMarkup}<p class="empty-state">現在、登録されている大きな影響イベントはありません。</p>`;
     return;
   }
-  eventsRoot.innerHTML = events.map(event => {
+  eventsRoot.innerHTML = contextMarkup + events.map(event => {
     const windows = (event.predictedWindows || [])
       .filter(window => window.date === dateInput.value)
       .map(window => `<p>${escapeHtml(formatWindow(window))}<br>${escapeHtml(window.reason || '')}</p>`)
@@ -305,14 +350,26 @@ function updateRecordMode(events) {
     recordContext.classList.add('event-linked');
     recordContext.innerHTML = `<strong>今日の注目イベントと紐づけて保存します</strong>${escapeHtml(events.length)}件のイベントについて、事前予測と実際の客足を比較できます。`;
     accuracyFieldset.hidden = false;
+    eventImpactFieldset.hidden = false;
+    renderRelatedEvents(events);
     saveButton.textContent = 'イベントの影響記録を保存';
     return;
   }
   recordContext.classList.remove('event-linked');
   recordContext.innerHTML = '<strong>通常日の比較データとして保存します</strong>注目イベントがない日の客足も、イベント日の影響を比べる基準になります。';
   accuracyFieldset.hidden = true;
+  eventImpactFieldset.hidden = true;
+  relatedEventsRoot.hidden = true;
   setChecked('accuracy', '未判断');
   saveButton.textContent = '通常日の客足を保存';
+}
+
+function renderRelatedEvents(events, savedStatuses = {}) {
+  relatedEventsRoot.hidden = false;
+  relatedEventsRoot.innerHTML = `<strong>関連イベント</strong>${events.map(event => {
+    const status = savedStatuses[event.id] || event.status || (new Date(event.endAt || event.startAt) < new Date() ? '実施済み' : '実施予定');
+    return `<label class="related-event-row"><span>${escapeHtml(event.title || '名称未設定')}</span><select name="eventStatus" data-event-id="${escapeHtml(event.id)}"><option${status === '実施予定' ? ' selected' : ''}>実施予定</option><option${status === '実施済み' ? ' selected' : ''}>実施済み</option><option${status === '中止' ? ' selected' : ''}>中止</option><option${status === '延期' ? ' selected' : ''}>延期</option></select></label>`;
+  }).join('')}`;
 }
 
 function clearForm() {
@@ -321,6 +378,9 @@ function clearForm() {
   document.querySelector('#impact-end').value = '';
   note.value = '';
   noteCount.textContent = '0 / 300';
+  customerTopics.value = '';
+  customerTopicsCount.textContent = '0 / 300';
+  saveActions.hidden = true;
 }
 
 function fillObservation(observation) {
@@ -333,35 +393,57 @@ function fillObservation(observation) {
   setChecked('traffic', observation.trafficLevel);
   setChecked('weather', observation.weather);
   setChecked('accuracy', observation.accuracy);
+  setChecked('eventImpact', observation.eventImpact);
   for (const period of observation.quietPeriods || []) setChecked('period', period);
   document.querySelector('#impact-start').value = observation.actualImpactStart || '';
   document.querySelector('#impact-end').value = observation.actualImpactEnd || '';
   note.value = observation.note || '';
   noteCount.textContent = `${note.value.length} / 300`;
+  customerTopics.value = observation.customerTopics || '';
+  customerTopicsCount.textContent = `${customerTopics.value.length} / 300`;
+  const statuses = Object.fromEntries((observation.relatedEvents || []).map(item => [item.id, item.status]));
+  if (currentEvents.length) renderRelatedEvents(currentEvents, statuses);
 }
 
 async function loadDay() {
   saveStatus.textContent = '';
-  const selected = new Date(`${dateInput.value}T12:00:00`);
-  dayLabel.textContent = `${fullDate.format(selected)}（${weekday.format(selected)}）`;
+  saveStatus.classList.remove('error');
+  saveActions.hidden = true;
   eventCount.textContent = '確認中';
   eventsRoot.innerHTML = '<p class="empty-state">読み込んでいます…</p>';
   try {
     const data = await backend.getDay(dateInput.value);
-    renderEvents(data.events || []);
+    const dateContext = await contextForDate(dateInput.value);
+    renderEvents(data.events || [], dateContext);
     fillObservation(data.observation);
     setRecordAccess(currentUser);
+    if (checkedValue('eventImpact') === '感じなかった') {
+      document.querySelector('#impact-start').disabled = true;
+      document.querySelector('#impact-end').disabled = true;
+    }
     await loadWeek();
   } catch (error) {
     eventCount.textContent = '取得失敗';
     eventsRoot.innerHTML = '<p class="empty-state">イベント情報を読み込めませんでした。</p>';
     saveStatus.classList.add('error');
-    saveStatus.textContent = error.message || 'データを読み込めませんでした。';
+    saveStatus.textContent = readableDataError(error, 'データを読み込めませんでした。');
   }
 }
 
 dateInput.addEventListener('change', loadDay);
+todayButton.addEventListener('click', () => { dateInput.value = localToday(); loadDay(); });
 note.addEventListener('input', () => { noteCount.textContent = `${note.value.length} / 300`; });
+customerTopics.addEventListener('input', () => { customerTopicsCount.textContent = `${customerTopics.value.length} / 300`; });
+form.addEventListener('change', event => {
+  if (event.target.name !== 'eventImpact') return;
+  const noImpact = event.target.value === '感じなかった';
+  document.querySelector('#impact-start').disabled = noImpact;
+  document.querySelector('#impact-end').disabled = noImpact;
+  if (noImpact) {
+    document.querySelector('#impact-start').value = '';
+    document.querySelector('#impact-end').value = '';
+  }
+});
 
 loginButton.addEventListener('click', async () => {
   loginButton.disabled = true;
@@ -380,6 +462,11 @@ logoutButton.addEventListener('click', async () => {
   logoutButton.disabled = false;
 });
 
+navAuthButton.addEventListener('click', async () => {
+  if (currentUser) return logoutButton.click();
+  return loginButton.click();
+});
+
 form.addEventListener('submit', async event => {
   event.preventDefault();
   saveStatus.classList.remove('error');
@@ -387,27 +474,43 @@ form.addEventListener('submit', async event => {
   const payload = {
     date: dateInput.value,
     eventIds: currentEvents.map(item => item.id),
+    relatedEvents: currentEvents.map(item => {
+      const select = form.querySelector(`[data-event-id="${CSS.escape(item.id)}"]`);
+      return { id: item.id, title: item.title, status: select?.value || '実施予定' };
+    }),
     weather: checkedValue('weather', '不明'),
     trafficLevel: checkedValue('traffic'),
     quietPeriods: [...form.querySelectorAll('[name="period"]:checked')].map(input => input.value),
     actualImpactStart: document.querySelector('#impact-start').value,
     actualImpactEnd: document.querySelector('#impact-end').value,
     accuracy: checkedValue('accuracy', '未判断'),
+    eventImpact: checkedValue('eventImpact', currentEvents.length ? 'わからない' : '対象外'),
     note: note.value,
+    customerTopics: customerTopics.value,
+    calendarContext: await contextForDate(dateInput.value),
   };
   try {
     await backend.saveObservation(payload);
     saveStatus.textContent = '保存しました。今日もお疲れさまでした。';
+    detailLink.href = `./record.html?date=${encodeURIComponent(payload.date)}`;
+    saveActions.hidden = false;
   } catch (error) {
     saveStatus.classList.add('error');
-    saveStatus.textContent = error.message || '保存できませんでした。';
+    saveStatus.textContent = readableDataError(error, '保存できませんでした。');
   } finally {
     saveButton.disabled = false;
   }
 });
 
+continueButton.addEventListener('click', async () => {
+  dateInput.value = addDays(dateInput.value, 1);
+  await loadDay();
+  document.querySelector('#record-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
 async function initialize() {
-  dateInput.value = localToday();
+  const requestedDate = new URLSearchParams(location.search).get('date');
+  dateInput.value = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate || '') ? requestedDate : localToday();
   backend = isCloudConfigured() ? await createCloudBackend() : createLocalBackend();
   await backend.initialize(async (user, errorMessage) => {
     currentUser = user;
@@ -426,3 +529,10 @@ initialize().catch(error => {
   saveStatus.classList.add('error');
   saveStatus.textContent = error.message || 'アプリを起動できませんでした。';
 });
+
+function readableDataError(error, fallback) {
+  const message = String(error?.message || '');
+  if (message.includes('Missing or insufficient permissions')) return '記録の読み込み権限を確認できませんでした。いったんログアウトして、もう一度ログインしてください。';
+  if (message.includes('network') || message.includes('offline')) return '通信できませんでした。接続を確認して、もう一度お試しください。';
+  return message || fallback;
+}
