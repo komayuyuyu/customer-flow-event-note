@@ -167,6 +167,7 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
 }
 
 @media (max-width: 620px) {
+  #record-form { scroll-margin-top: 84px; }
   .shell { width: min(calc(100% - 30px), 760px); padding-top: 28px; }
   .app-header { position: sticky; top: 0; z-index: 80; margin: -28px -15px 0; padding: 12px 15px; align-items: center; background: rgba(243, 240, 232, .96); box-shadow: 0 8px 20px rgba(33,49,41,.08); backdrop-filter: blur(10px); }
   .app-header .eyebrow { display: none; }
