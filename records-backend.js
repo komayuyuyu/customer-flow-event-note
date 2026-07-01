@@ -43,8 +43,6 @@
     if (!config.enabled) return user;
     const provider = new authSdk.GoogleAuthProvider();
     provider.setCustomParameters({ prompt: 'select_account' });
-    const mobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-    if (mobile) return authSdk.signInWithRedirect(auth, provider);
     return authSdk.signInWithPopup(auth, provider);
   }
 
