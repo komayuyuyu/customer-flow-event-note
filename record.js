@@ -26,9 +26,17 @@ function renderEdit() {
 }
 async function enrichLegacyRecord(item) {
   if (!item) return item;
-  if (!(item.relatedEvents || []).length && (item.eventIds || []).length) {
+  const relatedIds = (item.relatedEvents || []).map(event => event.id).filter(Boolean);
+  const eventIds = [...new Set([...(item.eventIds || []), ...relatedIds])];
+  if (eventIds.length) {
     const events = await fetch('./data/events.json', { cache: 'no-store' }).then(response => response.json()).catch(() => []);
-    item.relatedEvents = events.filter(event => item.eventIds.includes(event.id)).map(event => ({ id: event.id, title: event.title, status: '実施済み' }));
+    const eventMap = new Map(events.map(event => [event.id, event]));
+    const storedMap = new Map((item.relatedEvents || []).map(event => [event.id, event]));
+    item.relatedEvents = eventIds.map(id => {
+      const stored = storedMap.get(id) || {};
+      const current = eventMap.get(id);
+      return { id, title: current?.title || stored.title || '関連イベント', status: stored.status || '実施済み' };
+    });
   }
   if (!(item.calendarContext || []).length) {
     const context = await fetch('./data/calendar-context.json', { cache: 'no-store' }).then(response => response.json()).catch(() => ({ holidays: {}, periods: [] }));
