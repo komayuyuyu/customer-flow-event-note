@@ -7,7 +7,7 @@ let eventMap = new Map();
 
 function escapeHtml(value) { return String(value ?? '').replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c])); }
 function dateLabel(value) { const date = new Date(`${value}T12:00:00`); return `${value.replaceAll('-', '/')}（${weekday.format(date)}）`; }
-function eventNames(item) { return (item.relatedEvents || []).map(event => `${event.title}${event.status && event.status !== '実施済み' ? `［${event.status}］` : ''}`).join('／') || (item.eventIds || []).map(id => eventMap.get(id)?.title).filter(Boolean).join('／') || (item.eventIds?.length ? '関連イベントあり' : '通常日の記録'); }
+function eventNames(item) { return (item.relatedEvents || []).map(event => `${eventMap.get(event.id)?.title || event.title}${event.status && event.status !== '実施済み' ? `［${event.status}］` : ''}`).join('／') || (item.eventIds || []).map(id => eventMap.get(id)?.title).filter(Boolean).join('／') || (item.eventIds?.length ? '関連イベントあり' : '通常日の記録'); }
 
 async function render(user) {
   authPanel.hidden = Boolean(user);
