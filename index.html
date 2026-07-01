@@ -9,7 +9,7 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260702-1">
+  <link rel="stylesheet" href="./styles.css?v=20260702-3">
 </head>
 <body>
   <main class="shell">
@@ -141,14 +141,20 @@
 
       <button id="save-button" class="save-button" type="submit">今日の記録を保存</button>
       <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
-      <div id="save-actions" class="save-actions" hidden>
-        <a id="detail-link" class="action-link primary" href="./record.html">保存した記録の詳細を見る</a>
-        <button id="continue-button" class="action-link" type="button">続けて別の日を記録する</button>
-      </div>
     </form>
   </main>
-  <script src="./menu.js?v=20260702-1" defer></script>
+  <div id="save-actions" class="save-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="save-modal-title" hidden>
+    <div class="save-modal">
+      <h2 id="save-modal-title">保存しました</h2>
+      <p>保存した記録の詳細を確認しますか？</p>
+      <div class="save-modal-actions">
+        <a id="detail-link" class="action-link primary" href="./record.html">詳細を見る</a>
+        <button id="continue-button" class="action-link" type="button">続けて別の日を記録する</button>
+      </div>
+    </div>
+  </div>
+  <script src="./menu.js?v=20260702-3" defer></script>
   <script src="./firebase-config.js"></script>
-  <script src="./app.js?v=20260702-2" defer></script>
+  <script src="./app.js?v=20260702-3" defer></script>
 </body>
 </html>

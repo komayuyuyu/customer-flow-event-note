@@ -132,7 +132,11 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
 .save-button:disabled { opacity: .55; cursor: wait; }
 .save-status { min-height: 1.6em; margin: 10px 0 0; color: var(--green); text-align: center; font-weight: 700; }
 .save-status.error { color: #a33d2d; }
-.save-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.save-modal-overlay { position: fixed; z-index: 1200; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(25, 38, 31, .52); }
+.save-modal { width: min(100%, 440px); border-radius: 22px; padding: 28px 24px 24px; background: var(--paper); box-shadow: 0 24px 70px rgba(25, 38, 31, .3); text-align: center; }
+.save-modal h2 { margin: 0 0 10px; font-size: 1.35rem; }
+.save-modal p { margin: 0 0 22px; color: var(--muted); }
+.save-modal-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .action-link { display: flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 12px; padding: 11px 12px; background: white; color: var(--green); font-weight: 800; text-decoration: none; text-align: center; cursor: pointer; }
 .action-link.primary { border-color: var(--green); background: var(--green); color: white; }
 
@@ -198,7 +202,8 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   .week-row.has-events .week-event-head .week-impact { display: none; }
   .auth-panel { align-items: stretch; flex-direction: column; gap: 10px; }
   .auth-actions, .auth-button { width: 100%; }
-  .save-actions { grid-template-columns: 1fr; }
+  .save-modal { padding: 24px 18px 20px; }
+  .save-modal-actions { grid-template-columns: 1fr; }
   .related-event-row { grid-template-columns: 1fr; gap: 6px; }
 }
 

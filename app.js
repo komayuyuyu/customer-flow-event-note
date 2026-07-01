@@ -486,7 +486,7 @@ form.addEventListener('submit', async event => {
   };
   try {
     await backend.saveObservation(payload);
-    saveStatus.textContent = '保存しました。今日もお疲れさまでした。';
+    saveStatus.textContent = '';
     detailLink.href = `./record.html?date=${encodeURIComponent(payload.date)}`;
     saveActions.hidden = false;
   } catch (error) {
@@ -498,6 +498,7 @@ form.addEventListener('submit', async event => {
 });
 
 continueButton.addEventListener('click', async () => {
+  saveActions.hidden = true;
   dateInput.value = addDays(dateInput.value, 1);
   await loadDay();
   document.querySelector('#record-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -515,7 +516,7 @@ async function initialize() {
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260702-2', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260702-3', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
