@@ -21,7 +21,7 @@
     ]);
     authSdk = loadedAuth;
     firestoreSdk = loadedFirestore;
-    const app = initializeApp(config.firebase, `records-${Math.random().toString(36).slice(2)}`);
+    const app = initializeApp(config.firebase);
     auth = authSdk.getAuth(app);
     db = firestoreSdk.getFirestore(app);
     await authSdk.setPersistence(auth, authSdk.browserLocalPersistence);
