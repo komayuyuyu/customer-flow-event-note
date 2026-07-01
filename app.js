@@ -317,7 +317,7 @@ function renderEvents(events, contextItems = []) {
     ? `<div class="calendar-context-row">${contextItems.map(item => `<span class="calendar-badge">${escapeHtml(item.type)}：${escapeHtml(item.label)}</span>`).join('')}</div>`
     : '<div class="calendar-context-row"><span class="calendar-badge muted">通常日</span></div>';
   if (!events.length) {
-    eventsRoot.innerHTML = `${contextMarkup}<p class="empty-state">現在、登録されている大きな影響イベントはありません。</p>`;
+    eventsRoot.innerHTML = `${contextMarkup}<p class="empty-state">大きな影響イベントはありません</p>`;
     return;
   }
   eventsRoot.innerHTML = contextMarkup + events.map(event => {
@@ -515,7 +515,7 @@ async function initialize() {
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260702-1', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260702-2', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
