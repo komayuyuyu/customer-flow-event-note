@@ -240,14 +240,15 @@ function isCloudConfigured() {
 
 function setRecordAccess(user, errorMessage = '') {
   const cloudMode = backend?.mode === 'cloud';
-  authPanel.hidden = !cloudMode;
   if (!cloudMode) {
+    authPanel.hidden = true;
     navAuthButton.hidden = true;
     form.classList.remove('is-locked');
     return;
   }
 
   const unlocked = Boolean(user);
+  authPanel.hidden = unlocked;
   form.classList.toggle('is-locked', !unlocked);
   form.querySelectorAll('fieldset input, .time-grid input, textarea, select, button[type="submit"]').forEach(control => {
     control.disabled = !unlocked;
@@ -267,7 +268,7 @@ function setRecordAccess(user, errorMessage = '') {
 
 function renderWeek(days) {
   const total = days.reduce((sum, day) => sum + day.events.length, 0);
-  weekCount.textContent = total ? `${total}件` : '大きな影響なし';
+  weekCount.textContent = `${total}件`;
   weekRoot.innerHTML = days.map(day => {
     const label = shortDate(day.date);
     const dayImpact = day.events.some(event => event.impactLevel === '大') ? '大' : '中';
@@ -311,7 +312,7 @@ async function loadWeek() {
 function renderEvents(events, contextItems = []) {
   currentEvents = events;
   updateRecordMode(events);
-  eventCount.textContent = events.length ? `${events.length}件` : '大きな影響なし';
+  eventCount.textContent = `${events.length}件`;
   const contextMarkup = contextItems.length
     ? `<div class="calendar-context-row">${contextItems.map(item => `<span class="calendar-badge">${escapeHtml(item.type)}：${escapeHtml(item.label)}</span>`).join('')}</div>`
     : '<div class="calendar-context-row"><span class="calendar-badge muted">通常日</span></div>';
@@ -340,20 +341,20 @@ function renderEvents(events, contextItems = []) {
 function updateRecordMode(events) {
   if (events.length) {
     recordContext.classList.add('event-linked');
-    recordContext.innerHTML = `<strong>今日の注目イベントと紐づけて保存します</strong>${escapeHtml(events.length)}件のイベントについて、事前予測と実際の客足を比較できます。`;
+    recordContext.innerHTML = '<strong>今日の注目イベントと紐づけて保存します</strong>';
     accuracyFieldset.hidden = false;
     eventImpactFieldset.hidden = false;
     renderRelatedEvents(events);
-    saveButton.textContent = 'イベントの影響記録を保存';
+    saveButton.textContent = 'イベント日の集客記録を保存';
     return;
   }
   recordContext.classList.remove('event-linked');
-  recordContext.innerHTML = '<strong>通常日の比較データとして保存します</strong>注目イベントがない日の客足も、イベント日の影響を比べる基準になります。';
+  recordContext.innerHTML = '<strong>通常日の比較データとして保存します</strong>';
   accuracyFieldset.hidden = true;
   eventImpactFieldset.hidden = true;
   relatedEventsRoot.hidden = true;
   setChecked('accuracy', '未判断');
-  saveButton.textContent = '通常日の客足を保存';
+  saveButton.textContent = '通常日の集客記録を保存';
 }
 
 function renderRelatedEvents(events, savedStatuses = {}) {
