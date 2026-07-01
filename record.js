@@ -39,5 +39,5 @@ async function enrichLegacyRecord(item) {
   return item;
 }
 async function load(user) { navAuthButton.textContent = user ? 'ログアウト' : 'ログイン'; if (!user) { root.innerHTML = '<p class="empty-state">記録を見るにはGoogleログインが必要です。</p>'; return; } if (!date) { root.innerHTML = '<p class="empty-state">記録日が指定されていません。</p>'; return; } record = await enrichLegacyRecord(await RecordsBackend.get(date)); root.innerHTML = record ? '' : '<p class="empty-state">記録が見つかりません。</p>'; if (record) renderView(); }
-navAuthButton.addEventListener('click', () => RecordsBackend.currentUser() ? RecordsBackend.logout() : RecordsBackend.login());
+navAuthButton.addEventListener('click', async () => { try { if (RecordsBackend.currentUser()) await RecordsBackend.logout(); else await RecordsBackend.login(); } catch (error) { root.innerHTML = `<p class="empty-state">${esc(error?.code === 'auth/popup-blocked' ? 'ポップアップを許可して、もう一度ログインしてください。' : 'Googleログインを完了できませんでした。')}</p>`; } });
 RecordsBackend.initialize(load).catch(error => { root.innerHTML = `<p class="empty-state">${esc(error.message)}</p>`; });

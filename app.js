@@ -191,16 +191,7 @@ async function createCloudBackend() {
       onUserChange(currentUser, authError);
     },
     async login() {
-      const mobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-      if (mobile) return authSdk.signInWithRedirect(auth, provider);
-      try {
-        return await authSdk.signInWithPopup(auth, provider);
-      } catch (error) {
-        if (['auth/popup-blocked', 'auth/operation-not-supported-in-this-environment'].includes(error.code)) {
-          return authSdk.signInWithRedirect(auth, provider);
-        }
-        throw error;
-      }
+      return authSdk.signInWithPopup(auth, provider);
     },
     async logout() {
       await authSdk.signOut(auth);
@@ -237,6 +228,7 @@ async function createCloudBackend() {
 
 function readableAuthError(error) {
   if (error?.code === 'auth/popup-closed-by-user') return 'ログイン画面が閉じられました。';
+  if (error?.code === 'auth/popup-blocked') return 'ログイン画面を開けませんでした。ブラウザでポップアップを許可して、もう一度お試しください。';
   if (error?.code === 'auth/unauthorized-domain') return 'このURLはGoogleログインの許可対象になっていません。';
   return 'Googleログインを完了できませんでした。';
 }
@@ -445,16 +437,18 @@ form.addEventListener('change', event => {
   }
 });
 
-loginButton.addEventListener('click', async () => {
-  loginButton.disabled = true;
+async function requestLogin(triggerButton) {
+  triggerButton.disabled = true;
   try {
     await backend.login();
   } catch (error) {
     setRecordAccess(null, readableAuthError(error));
   } finally {
-    loginButton.disabled = false;
+    triggerButton.disabled = false;
   }
-});
+}
+
+loginButton.addEventListener('click', () => requestLogin(loginButton));
 
 logoutButton.addEventListener('click', async () => {
   logoutButton.disabled = true;
@@ -464,7 +458,7 @@ logoutButton.addEventListener('click', async () => {
 
 navAuthButton.addEventListener('click', async () => {
   if (currentUser) return logoutButton.click();
-  return loginButton.click();
+  return requestLogin(navAuthButton);
 });
 
 form.addEventListener('submit', async event => {

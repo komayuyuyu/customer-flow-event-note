@@ -23,6 +23,13 @@ async function render(user) {
   } catch (error) { listRoot.innerHTML = `<p class="empty-state">${escapeHtml(error.message)}</p>`; }
 }
 
-loginButton.addEventListener('click', () => RecordsBackend.login());
-navAuthButton.addEventListener('click', () => RecordsBackend.currentUser() ? RecordsBackend.logout() : RecordsBackend.login());
+async function handleAuth() {
+  try {
+    if (RecordsBackend.currentUser()) await RecordsBackend.logout(); else await RecordsBackend.login();
+  } catch (error) {
+    listRoot.innerHTML = `<p class="empty-state">${escapeHtml(error?.code === 'auth/popup-blocked' ? 'ポップアップを許可して、もう一度ログインしてください。' : 'Googleログインを完了できませんでした。')}</p>`;
+  }
+}
+loginButton.addEventListener('click', handleAuth);
+navAuthButton.addEventListener('click', handleAuth);
 RecordsBackend.initialize(render).catch(error => { listRoot.innerHTML = `<p class="empty-state">${escapeHtml(error.message)}</p>`; });
