@@ -10,7 +10,9 @@
 </head>
 <body>
   <main class="shell">
+    <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button><div class="menu-overlay" hidden></div>
     <nav class="site-nav" aria-label="メインメニュー">
+      <button class="menu-close" type="button" aria-label="メニューを閉じる">×</button>
       <a href="./">ホーム</a><a class="is-current" href="./records.html">記録一覧</a><a href="./#record-form">新規記録</a><button id="nav-auth-button" type="button">ログイン</button>
     </nav>
     <header class="hero"><p class="eyebrow">RECORDS</p><h1>記録一覧</h1><p>保存した客足記録を日付順に確認できます。</p></header>
@@ -19,6 +21,6 @@
       <div id="records-list" class="records-list"><p class="empty-state">確認しています…</p></div>
     </section>
   </main>
-  <script src="./firebase-config.js"></script><script src="./records-backend.js"></script><script src="./records.js" defer></script>
+  <script src="./menu.js" defer></script><script src="./firebase-config.js"></script><script src="./records-backend.js"></script><script src="./records.js" defer></script>
 </body>
 </html>

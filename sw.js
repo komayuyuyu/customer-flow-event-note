@@ -1,5 +1,5 @@
-const CACHE = 'customer-flow-note-v3';
-const ASSETS = ['./', './records.html', './record.html', './styles.css', './app.js', './records.js', './record.js', './records-backend.js', './firebase-config.js', './manifest.webmanifest', './icon.svg', './data/events.json', './data/calendar-context.json'];
+const CACHE = 'customer-flow-note-v4';
+const ASSETS = ['./', './records.html', './record.html', './styles.css', './app.js', './records.js', './record.js', './records-backend.js', './menu.js', './firebase-config.js', './manifest.webmanifest', './icon.svg', './data/events.json', './data/calendar-context.json'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));

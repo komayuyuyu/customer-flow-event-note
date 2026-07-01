@@ -13,7 +13,10 @@
 </head>
 <body>
   <main class="shell">
+    <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="menu-overlay" hidden></div>
     <nav class="site-nav" aria-label="メインメニュー">
+      <button class="menu-close" type="button" aria-label="メニューを閉じる">×</button>
       <a class="is-current" href="./">ホーム</a>
       <a href="./records.html">記録一覧</a>
       <a href="#record-form">新規記録</a>
@@ -146,6 +149,7 @@
       </div>
     </form>
   </main>
+  <script src="./menu.js" defer></script>
   <script src="./firebase-config.js"></script>
   <script src="./app.js" defer></script>
 </body>
