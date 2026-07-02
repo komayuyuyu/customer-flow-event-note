@@ -9,27 +9,33 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260703-1">
+  <link rel="stylesheet" href="./styles.css?v=20260703-2">
 </head>
 <body>
   <main class="shell">
     <div class="menu-overlay" hidden></div>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <button class="menu-close" type="button" aria-label="メニューを閉じる">×</button>
+      <a class="is-current" href="./">ホーム</a>
+      <a href="./records.html">記録一覧</a>
+      <a href="#record-form">新規記録</a>
+      <button id="nav-auth-button" type="button">ログイン</button>
+    </nav>
     <header class="hero app-header">
-      <div class="brand-title"><p class="eyebrow">CUSTOMER FLOW NOTE</p><h1>イベント情報・集客記録</h1></div>
-      <nav class="site-nav" aria-label="メインメニュー">
-        <button class="menu-close" type="button" aria-label="メニューを閉じる">×</button>
-        <a class="is-current" href="./">ホーム</a>
-        <a href="./records.html">記録一覧</a>
-        <a href="#record-form">新規記録</a>
-        <button id="nav-auth-button" type="button">ログイン</button>
-      </nav>
+      <a class="brand-link" href="./" aria-label="ホームへ戻る"><div class="brand-title"><p class="eyebrow">CUSTOMER FLOW NOTE</p><h1>イベント情報・集客記録</h1></div></a>
       <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
     </header>
 
     <section class="date-row" aria-label="記録日">
       <label for="record-date">記録日</label>
       <input id="record-date" type="date">
+      <button id="date-picker-button" class="date-picker-button" type="button" aria-haspopup="dialog" aria-expanded="false"></button>
       <button id="today-button" class="today-button" type="button">今日</button>
+      <div id="calendar-popover" class="calendar-popover" role="dialog" aria-label="記録日を選択" hidden>
+        <div class="calendar-header"><button id="calendar-prev" type="button" aria-label="前の月">←</button><strong id="calendar-month"></strong><button id="calendar-next" type="button" aria-label="次の月">→</button></div>
+        <div class="calendar-weekdays" aria-hidden="true"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
+        <div id="calendar-days" class="calendar-days"></div>
+      </div>
     </section>
 
     <section class="panel event-panel" aria-labelledby="event-title">
@@ -145,13 +151,13 @@
       <p>保存した記録の詳細を確認しますか？</p>
       <div class="save-modal-actions">
         <a id="detail-link" class="action-link primary" href="./record.html">詳細を見る</a>
-        <button id="continue-button" class="action-link" type="button">続けて別の日を記録する</button>
+        <button id="continue-button" class="action-link" type="button">記録を続ける</button>
       </div>
     </div>
   </div>
-  <script src="./menu.js?v=20260703-1" defer></script>
+  <script src="./menu.js?v=20260703-2" defer></script>
   <script src="./firebase-config.js"></script>
-  <script src="./ui-utils.js?v=20260703-1"></script>
-  <script src="./app.js?v=20260703-1" defer></script>
+  <script src="./ui-utils.js?v=20260703-2"></script>
+  <script src="./app.js?v=20260703-2" defer></script>
 </body>
 </html>
