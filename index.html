@@ -9,7 +9,7 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260702-5">
+  <link rel="stylesheet" href="./styles.css?v=20260702-6">
 </head>
 <body>
   <main class="shell">
@@ -22,10 +22,9 @@
       <button id="nav-auth-button" type="button">ログイン</button>
     </nav>
     <header class="hero app-header">
-      <div class="brand-title"><p class="eyebrow">CUSTOMER FLOW NOTE</p><h1>イベント情報・集客記録</h1></div>
+      <div class="brand-title"><p class="eyebrow">CUSTOMER FLOW NOTE</p><h1>イベント情報・集客記録</h1><p class="hero-description">イベント情報と集客記録をひとつの画面で管理できます。</p></div>
       <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
     </header>
-    <p class="hero-description">イベント情報と集客記録をひとつの画面で管理できます。</p>
 
     <section class="date-row" aria-label="記録日">
       <label for="record-date">記録日</label>
@@ -133,11 +132,8 @@
         </div>
       </fieldset>
 
-      <label class="note-label" for="note">短いメモ <span id="note-count">0 / 300</span></label>
-      <textarea id="note" maxlength="300" rows="3" placeholder="例：18時頃から急に人が引いた。館全体も静かだった。"></textarea>
-
-      <label class="note-label" for="customer-topics">お客様から出た話題・反応 <span id="customer-topics-count">0 / 300</span></label>
-      <textarea id="customer-topics" maxlength="300" rows="3" placeholder="例：試合や出演者について話すお客様が多かった。"></textarea>
+      <label class="note-label" for="note">メモ <span id="note-count">0 / 600</span></label>
+      <textarea id="note" maxlength="600" rows="4" placeholder="例：17時以降、店内・館内ともに閑散としていた。お客様の話題にも上がらなかった。"></textarea>
 
       <button id="save-button" class="save-button" type="submit">今日の記録を保存</button>
       <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
@@ -153,8 +149,8 @@
       </div>
     </div>
   </div>
-  <script src="./menu.js?v=20260702-5" defer></script>
+  <script src="./menu.js?v=20260702-6" defer></script>
   <script src="./firebase-config.js"></script>
-  <script src="./app.js?v=20260702-5" defer></script>
+  <script src="./app.js?v=20260702-6" defer></script>
 </body>
 </html>

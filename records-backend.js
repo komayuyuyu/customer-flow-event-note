@@ -92,5 +92,16 @@
     }, { merge: true });
   }
 
-  window.RecordsBackend = { initialize, login, logout, list, get, save, currentUser: () => user };
+  async function remove(date) {
+    if (!config.enabled) {
+      const response = await fetch(`./api/observations?date=${encodeURIComponent(date)}`, { method: 'DELETE' });
+      if (!response.ok) throw new Error('記録を削除できませんでした。');
+      return;
+    }
+    const current = requireUser();
+    const reference = firestoreSdk.doc(db, 'users', current.uid, 'observations', date);
+    await firestoreSdk.deleteDoc(reference);
+  }
+
+  window.RecordsBackend = { initialize, login, logout, list, get, save, remove, currentUser: () => user };
 }());
