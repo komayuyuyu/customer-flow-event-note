@@ -2,14 +2,17 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#24372d">
-  <title>記録詳細｜客足イベントノート</title><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css?v=20260702-10">
+  <title>記録詳細｜客足イベントノート</title><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css?v=20260703-1">
 </head>
 <body>
   <main class="shell">
     <div class="menu-overlay" hidden></div>
-    <nav class="site-nav" aria-label="メインメニュー"><button class="menu-close" type="button" aria-label="メニューを閉じる">×</button><a href="./">ホーム</a><a href="./records.html">記録一覧</a><a href="./#record-form">新規記録</a><button id="nav-auth-button" type="button">ログイン</button></nav>
-    <header class="hero app-header"><div class="brand-title"><p class="eyebrow">RECORD DETAIL</p><h1>記録詳細</h1></div><button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button></header>
-    <p class="hero-description"><a href="./records.html">記録一覧へ戻る</a></p>
+    <header class="hero app-header">
+      <div class="brand-title"><p class="eyebrow">CUSTOMER FLOW NOTE</p><h1>イベント情報・集客記録</h1></div>
+      <nav class="site-nav" aria-label="メインメニュー"><button class="menu-close" type="button" aria-label="メニューを閉じる">×</button><a href="./">ホーム</a><a href="./records.html">記録一覧</a><a href="./#record-form">新規記録</a><button id="nav-auth-button" type="button">ログイン</button></nav>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    </header>
+    <div class="page-intro"><p class="eyebrow">RECORD DETAIL</p><h2>記録詳細</h2><p class="hero-description"><a href="./records.html">記録一覧へ戻る</a></p></div>
     <section class="panel"><div id="record-detail"><p class="empty-state">確認しています…</p></div></section>
   </main>
   <div id="delete-modal" class="save-modal-overlay delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title" hidden>
@@ -22,6 +25,6 @@
       </div>
     </div>
   </div>
-  <script src="./menu.js?v=20260702-10" defer></script><script src="./firebase-config.js?v=20260702-10"></script><script src="./ui-utils.js?v=20260702-10"></script><script src="./records-backend.js?v=20260702-10"></script><script src="./record.js?v=20260702-10" defer></script>
+  <script src="./menu.js?v=20260703-1" defer></script><script src="./firebase-config.js?v=20260703-1"></script><script src="./ui-utils.js?v=20260703-1"></script><script src="./records-backend.js?v=20260703-1"></script><script src="./record.js?v=20260703-1" defer></script>
 </body>
 </html>
