@@ -1,5 +1,6 @@
 const FIREBASE_SDK_VERSION = '12.15.0';
 const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
+const { escapeHtml, readableAuthError } = window.UiUtils;
 
 const dateInput = document.querySelector('#record-date');
 const todayButton = document.querySelector('#today-button');
@@ -89,10 +90,6 @@ function eventTime(event) {
   const start = event.startAt ? new Date(event.startAt) : null;
   if (!start || Number.isNaN(start.getTime())) return '時刻未定';
   return new Intl.DateTimeFormat('ja-JP', { hour: '2-digit', minute: '2-digit', hour12: false }).format(start);
-}
-
-function escapeHtml(value) {
-  return String(value).replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
 }
 
 function eventsForDay(events, targetDate) {
@@ -222,13 +219,6 @@ async function createCloudBackend() {
       return snapshot.docs.map(item => item.data()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
     },
   };
-}
-
-function readableAuthError(error) {
-  if (error?.code === 'auth/popup-closed-by-user') return 'ログイン画面が閉じられました。';
-  if (error?.code === 'auth/popup-blocked') return 'ログイン画面を開けませんでした。ブラウザでポップアップを許可して、もう一度お試しください。';
-  if (error?.code === 'auth/unauthorized-domain') return 'このURLはGoogleログインの許可対象になっていません。';
-  return 'Googleログインを完了できませんでした。';
 }
 
 function isCloudConfigured() {
@@ -509,7 +499,7 @@ async function initialize() {
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260702-9', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260702-10', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
