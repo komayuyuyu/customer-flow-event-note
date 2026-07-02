@@ -9,7 +9,7 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260703-2">
+  <link rel="stylesheet" href="./styles.css?v=20260703-3">
 </head>
 <body>
   <main class="shell">
@@ -25,18 +25,6 @@
       <a class="brand-link" href="./" aria-label="ホームへ戻る"><div class="brand-title"><p class="eyebrow">CUSTOMER FLOW NOTE</p><h1>イベント情報・集客記録</h1></div></a>
       <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
     </header>
-
-    <section class="date-row" aria-label="記録日">
-      <label for="record-date">記録日</label>
-      <input id="record-date" type="date">
-      <button id="date-picker-button" class="date-picker-button" type="button" aria-haspopup="dialog" aria-expanded="false"></button>
-      <button id="today-button" class="today-button" type="button">今日</button>
-      <div id="calendar-popover" class="calendar-popover" role="dialog" aria-label="記録日を選択" hidden>
-        <div class="calendar-header"><button id="calendar-prev" type="button" aria-label="前の月">←</button><strong id="calendar-month"></strong><button id="calendar-next" type="button" aria-label="次の月">→</button></div>
-        <div class="calendar-weekdays" aria-hidden="true"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
-        <div id="calendar-days" class="calendar-days"></div>
-      </div>
-    </section>
 
     <section class="panel event-panel" aria-labelledby="event-title">
       <div class="section-heading">
@@ -83,8 +71,20 @@
 
       <div id="related-events" class="related-events" hidden></div>
 
+      <section class="date-row" aria-label="記録日">
+        <label for="record-date">記録日</label>
+        <input id="record-date" type="date">
+        <button id="date-picker-button" class="date-picker-button" type="button" aria-haspopup="dialog" aria-expanded="false"></button>
+        <button id="today-button" class="today-button" type="button">今日</button>
+        <div id="calendar-popover" class="calendar-popover" role="dialog" aria-label="記録日を選択" hidden>
+          <div class="calendar-header"><button id="calendar-prev" type="button" aria-label="前の月">←</button><strong id="calendar-month"></strong><button id="calendar-next" type="button" aria-label="次の月">→</button></div>
+          <div class="calendar-weekdays" aria-hidden="true"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
+          <div id="calendar-days" class="calendar-days"></div>
+        </div>
+      </section>
+
       <fieldset>
-        <legend>今日の客足 <span>必須</span></legend>
+        <legend>集客状況 <span>必須</span></legend>
         <div class="choice-grid three">
           <label class="choice"><input type="radio" name="traffic" value="暇" required><span>暇</span></label>
           <label class="choice"><input type="radio" name="traffic" value="通常"><span>通常</span></label>
@@ -104,7 +104,7 @@
       </fieldset>
 
       <fieldset>
-        <legend>特に暇だった時間</legend>
+        <legend>特に暇もしくは混雑した時間</legend>
         <div class="choice-grid periods">
           <label class="choice"><input type="checkbox" name="period" value="午前"><span>午前</span></label>
           <label class="choice"><input type="checkbox" name="period" value="昼"><span>昼</span></label>
@@ -155,9 +155,9 @@
       </div>
     </div>
   </div>
-  <script src="./menu.js?v=20260703-2" defer></script>
+  <script src="./menu.js?v=20260703-3" defer></script>
   <script src="./firebase-config.js"></script>
-  <script src="./ui-utils.js?v=20260703-2"></script>
-  <script src="./app.js?v=20260703-2" defer></script>
+  <script src="./ui-utils.js?v=20260703-3"></script>
+  <script src="./app.js?v=20260703-3" defer></script>
 </body>
 </html>
