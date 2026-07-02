@@ -3,6 +3,12 @@ const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
 const { escapeHtml, readableAuthError } = window.UiUtils;
 
 const dateInput = document.querySelector('#record-date');
+const datePickerButton = document.querySelector('#date-picker-button');
+const calendarPopover = document.querySelector('#calendar-popover');
+const calendarMonth = document.querySelector('#calendar-month');
+const calendarDays = document.querySelector('#calendar-days');
+const calendarPrev = document.querySelector('#calendar-prev');
+const calendarNext = document.querySelector('#calendar-next');
 const todayButton = document.querySelector('#today-button');
 const eventsRoot = document.querySelector('#events');
 const eventCount = document.querySelector('#event-count');
@@ -32,6 +38,7 @@ let currentEvents = [];
 let currentUser = null;
 let initialized = false;
 let calendarContext;
+let calendarCursor;
 
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'long' });
 async function loadCalendarContext() {
@@ -76,6 +83,48 @@ function addDays(dateText, amount) {
   base.setDate(base.getDate() + amount);
   const offset = base.getTimezoneOffset();
   return new Date(base.getTime() - offset * 60_000).toISOString().slice(0, 10);
+}
+
+function dateParts(dateText) {
+  const [year, month, day] = dateText.split('-').map(Number);
+  return { year, month, day };
+}
+
+function updateDatePickerButton() {
+  const { year, month, day } = dateParts(dateInput.value);
+  datePickerButton.textContent = `${year}年${month}月${day}日`;
+}
+
+function renderCalendar() {
+  const year = calendarCursor.getFullYear();
+  const month = calendarCursor.getMonth();
+  const firstWeekday = new Date(year, month, 1).getDay();
+  const lastDay = new Date(year, month + 1, 0).getDate();
+  const blanks = Array.from({ length: firstWeekday }, () => '<span class="calendar-blank"></span>');
+  const days = Array.from({ length: lastDay }, (_, index) => {
+    const day = index + 1;
+    const value = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const selected = value === dateInput.value ? ' class="is-selected"' : '';
+    return `<button type="button" data-date="${value}"${selected}>${day}</button>`;
+  });
+  calendarMonth.textContent = `${year}年${month + 1}月`;
+  calendarDays.innerHTML = [...blanks, ...days].join('');
+}
+
+function setCalendarOpen(open) {
+  calendarPopover.hidden = !open;
+  datePickerButton.setAttribute('aria-expanded', String(open));
+  if (!open) return;
+  const { year, month } = dateParts(dateInput.value);
+  calendarCursor = new Date(year, month - 1, 1);
+  renderCalendar();
+}
+
+async function selectDate(value) {
+  dateInput.value = value;
+  updateDatePickerButton();
+  setCalendarOpen(false);
+  await loadDay();
 }
 
 function shortDate(dateText) {
@@ -392,7 +441,7 @@ async function loadDay() {
     const data = await backend.getDay(dateInput.value);
     const dateContext = await contextForDate(dateInput.value);
     renderEvents(data.events || [], dateContext);
-    fillObservation(data.observation);
+    fillObservation(null);
     setRecordAccess(currentUser);
     if (checkedValue('eventImpact') === '感じなかった') {
       document.querySelector('#impact-start').disabled = true;
@@ -407,8 +456,30 @@ async function loadDay() {
   }
 }
 
-dateInput.addEventListener('change', loadDay);
-todayButton.addEventListener('click', () => { dateInput.value = localToday(); loadDay(); });
+dateInput.addEventListener('change', () => {
+  updateDatePickerButton();
+  loadDay();
+});
+todayButton.addEventListener('click', () => selectDate(localToday()));
+datePickerButton.addEventListener('click', () => setCalendarOpen(calendarPopover.hidden));
+calendarPrev.addEventListener('click', () => {
+  calendarCursor.setMonth(calendarCursor.getMonth() - 1);
+  renderCalendar();
+});
+calendarNext.addEventListener('click', () => {
+  calendarCursor.setMonth(calendarCursor.getMonth() + 1);
+  renderCalendar();
+});
+calendarDays.addEventListener('click', event => {
+  const button = event.target.closest('[data-date]');
+  if (button) selectDate(button.dataset.date);
+});
+document.addEventListener('click', event => {
+  if (!calendarPopover.hidden && !event.target.closest('.date-row')) setCalendarOpen(false);
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !calendarPopover.hidden) setCalendarOpen(false);
+});
 note.addEventListener('input', () => { noteCount.textContent = `${note.value.length} / 600`; });
 form.addEventListener('change', event => {
   if (event.target.name !== 'eventImpact') return;
@@ -471,6 +542,8 @@ form.addEventListener('submit', async event => {
     await backend.saveObservation(payload);
     saveStatus.textContent = '';
     detailLink.href = `./record.html?date=${encodeURIComponent(payload.date)}`;
+    fillObservation(null);
+    updateRecordMode(currentEvents);
     saveActions.hidden = false;
   } catch (error) {
     saveStatus.classList.add('error');
@@ -482,14 +555,14 @@ form.addEventListener('submit', async event => {
 
 continueButton.addEventListener('click', async () => {
   saveActions.hidden = true;
-  dateInput.value = addDays(dateInput.value, 1);
-  await loadDay();
+  await selectDate(addDays(dateInput.value, -1));
   document.querySelector('#record-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 async function initialize() {
   const requestedDate = new URLSearchParams(location.search).get('date');
   dateInput.value = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate || '') ? requestedDate : localToday();
+  updateDatePickerButton();
   backend = isCloudConfigured() ? await createCloudBackend() : createLocalBackend();
   await backend.initialize(async (user, errorMessage) => {
     currentUser = user;
@@ -499,7 +572,7 @@ async function initialize() {
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-1', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-2', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
