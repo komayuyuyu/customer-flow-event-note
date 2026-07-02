@@ -10,7 +10,7 @@ const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'short' });
 let eventMap = new Map();
 let activeUser = null;
 let pendingDeleteDate = '';
-const trashIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></svg>';
+const trashIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M7 7l.8 11.5A1.6 1.6 0 0 0 9.4 20h5.2a1.6 1.6 0 0 0 1.6-1.5L17 7M10 11v5M14 11v5"/></svg>';
 
 function escapeHtml(value) { return String(value ?? '').replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c])); }
 function dateLabel(value) { const date = new Date(`${value}T12:00:00`); return `${value.replaceAll('-', '/')}（${weekday.format(date)}）`; }

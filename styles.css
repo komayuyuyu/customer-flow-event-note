@@ -36,7 +36,6 @@ select { font: inherit; }
 .hero { margin-bottom: 8px; }
 .app-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
 .brand-title { min-width: 0; }
-.app-header .hero-description { margin: 2px 0 0; }
 .eyebrow, .section-kicker { margin: 0; color: var(--orange); font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
 .hero h1 { margin: 5px 0 3px; font-size: clamp(2rem, 7vw, 3.5rem); line-height: 1.18; font-weight: 600; letter-spacing: -.03em; }
 .hero-description { margin: 8px 0 28px; color: var(--muted); }
@@ -147,7 +146,7 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
 .record-list-item { position: relative; padding-right: 58px; }
 .delete-icon-button { display: inline-flex; flex: none; width: 40px; height: 40px; align-items: center; justify-content: center; border: 1px solid #ead4cd; border-radius: 11px; background: #fff8f5; color: #9a422d; cursor: pointer; }
 .record-list-item > .delete-icon-button { position: absolute; top: 12px; right: 12px; }
-.delete-icon-button svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.delete-icon-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.35; stroke-linecap: round; stroke-linejoin: round; }
 .detail-actions { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 10px; margin-top: 18px; }
 .detail-actions .save-button { margin-top: 0; }
 .delete-modal .danger { border-color: #9a422d; background: #9a422d; color: white; }
@@ -181,9 +180,11 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   .app-header { position: sticky; top: 0; z-index: 80; margin: -28px -15px 0; padding: 12px 15px; align-items: center; background: rgba(243, 240, 232, .96); box-shadow: 0 8px 20px rgba(33,49,41,.08); backdrop-filter: blur(10px); }
   .app-header .brand-title { width: 100%; }
   .app-header .eyebrow { display: none; }
-  .app-header h1 { margin: 0; white-space: nowrap; font-size: clamp(18px, 5.6vw, 22px); line-height: 1.18; letter-spacing: -.02em; }
+  .app-header h1 { margin: 0; white-space: nowrap; font-size: clamp(1.18rem, 6vw, 1.45rem); letter-spacing: -.02em; }
   .hero-description { margin-top: 18px; font-size: 11px; }
-  .app-header .hero-description { margin: 4px 0 0; white-space: nowrap; font-size: 10px; line-height: 1.2; }
+  .time-grid { display: flex; width: 100%; gap: 10px; }
+  .time-grid label { flex: 1 1 0; width: 0; min-width: 0; }
+  .time-grid input[type="time"] { box-sizing: border-box; width: 100% !important; min-width: 0; max-width: 100%; inline-size: 100%; -webkit-appearance: none; appearance: none; font-size: 16px; }
   .menu-toggle { -webkit-appearance: none; appearance: none; display: flex; flex: 0 0 44px; width: 44px; height: 44px; margin: 0; border: 1px solid var(--line); border-radius: 12px; padding: 11px 10px; background: var(--card); flex-direction: column; justify-content: space-between; cursor: pointer; }
   .menu-toggle span { display: block; flex: 0 0 2px; width: 100%; height: 2px; border-radius: 999px; background: #284c39 !important; }
   .menu-overlay { display: block; position: fixed; inset: 0; z-index: 90; background: rgba(20, 31, 25, .38); opacity: 1; }
@@ -219,5 +220,5 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
 }
 
 @media (max-width: 380px) {
-  .choice-grid.three, .time-grid { grid-template-columns: 1fr; }
+  .choice-grid.three { grid-template-columns: 1fr; }
 }
