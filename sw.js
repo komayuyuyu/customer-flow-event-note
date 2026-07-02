@@ -1,6 +1,6 @@
-const CACHE = 'customer-flow-note-v14';
-const VERSION = '20260702-9';
-const ASSETS = ['./', './records.html', './record.html', `./styles.css?v=${VERSION}`, `./app.js?v=${VERSION}`, `./records.js?v=${VERSION}`, `./record.js?v=${VERSION}`, `./records-backend.js?v=${VERSION}`, `./menu.js?v=${VERSION}`, `./firebase-config.js?v=${VERSION}`, './manifest.webmanifest', './icon.svg', './data/events.json', './data/calendar-context.json'];
+const CACHE = 'customer-flow-note-v15';
+const VERSION = '20260702-10';
+const ASSETS = ['./', './records.html', './record.html', `./styles.css?v=${VERSION}`, `./app.js?v=${VERSION}`, `./records.js?v=${VERSION}`, `./record.js?v=${VERSION}`, `./records-backend.js?v=${VERSION}`, `./ui-utils.js?v=${VERSION}`, `./menu.js?v=${VERSION}`, `./firebase-config.js?v=${VERSION}`, './manifest.webmanifest', './icon.svg', './data/events.json', './data/calendar-context.json'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
