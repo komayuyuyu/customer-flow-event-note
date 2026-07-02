@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#24372d">
-  <title>記録詳細｜客足イベントノート</title><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css?v=20260702-5">
+  <title>記録詳細｜客足イベントノート</title><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css?v=20260702-6">
 </head>
 <body>
   <main class="shell">
@@ -12,6 +12,16 @@
     <p class="hero-description"><a href="./records.html">記録一覧へ戻る</a></p>
     <section class="panel"><div id="record-detail"><p class="empty-state">確認しています…</p></div></section>
   </main>
-  <script src="./menu.js?v=20260702-5" defer></script><script src="./firebase-config.js?v=20260702-5"></script><script src="./records-backend.js?v=20260702-5"></script><script src="./record.js?v=20260702-5" defer></script>
+  <div id="delete-modal" class="save-modal-overlay delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title" hidden>
+    <div class="save-modal">
+      <h2 id="delete-modal-title">記録を削除しますか？</h2>
+      <p><span id="delete-target-date"></span> の記録を削除します。この操作は取り消せません。</p>
+      <div class="save-modal-actions">
+        <button id="cancel-delete-button" class="action-link" type="button">キャンセル</button>
+        <button id="confirm-delete-button" class="action-link danger" type="button">削除する</button>
+      </div>
+    </div>
+  </div>
+  <script src="./menu.js?v=20260702-6" defer></script><script src="./firebase-config.js?v=20260702-6"></script><script src="./records-backend.js?v=20260702-6"></script><script src="./record.js?v=20260702-6" defer></script>
 </body>
 </html>

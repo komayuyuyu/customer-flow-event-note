@@ -22,8 +22,6 @@ const logoutButton = document.querySelector('#logout-button');
 const navAuthButton = document.querySelector('#nav-auth-button');
 const relatedEventsRoot = document.querySelector('#related-events');
 const eventImpactFieldset = document.querySelector('#event-impact-fieldset');
-const customerTopics = document.querySelector('#customer-topics');
-const customerTopicsCount = document.querySelector('#customer-topics-count');
 const saveActions = document.querySelector('#save-actions');
 const detailLink = document.querySelector('#detail-link');
 const continueButton = document.querySelector('#continue-button');
@@ -370,9 +368,7 @@ function clearForm() {
   document.querySelector('#impact-start').value = '';
   document.querySelector('#impact-end').value = '';
   note.value = '';
-  noteCount.textContent = '0 / 300';
-  customerTopics.value = '';
-  customerTopicsCount.textContent = '0 / 300';
+  noteCount.textContent = '0 / 600';
   saveActions.hidden = true;
 }
 
@@ -390,10 +386,8 @@ function fillObservation(observation) {
   for (const period of observation.quietPeriods || []) setChecked('period', period);
   document.querySelector('#impact-start').value = observation.actualImpactStart || '';
   document.querySelector('#impact-end').value = observation.actualImpactEnd || '';
-  note.value = observation.note || '';
-  noteCount.textContent = `${note.value.length} / 300`;
-  customerTopics.value = observation.customerTopics || '';
-  customerTopicsCount.textContent = `${customerTopics.value.length} / 300`;
+  note.value = [observation.note, observation.customerTopics].filter(Boolean).join('\n');
+  noteCount.textContent = `${note.value.length} / 600`;
   const statuses = Object.fromEntries((observation.relatedEvents || []).map(item => [item.id, item.status]));
   if (currentEvents.length) renderRelatedEvents(currentEvents, statuses);
 }
@@ -425,8 +419,7 @@ async function loadDay() {
 
 dateInput.addEventListener('change', loadDay);
 todayButton.addEventListener('click', () => { dateInput.value = localToday(); loadDay(); });
-note.addEventListener('input', () => { noteCount.textContent = `${note.value.length} / 300`; });
-customerTopics.addEventListener('input', () => { customerTopicsCount.textContent = `${customerTopics.value.length} / 300`; });
+note.addEventListener('input', () => { noteCount.textContent = `${note.value.length} / 600`; });
 form.addEventListener('change', event => {
   if (event.target.name !== 'eventImpact') return;
   const noImpact = event.target.value === '感じなかった';
@@ -481,7 +474,7 @@ form.addEventListener('submit', async event => {
     accuracy: checkedValue('accuracy', '未判断'),
     eventImpact: checkedValue('eventImpact', currentEvents.length ? 'わからない' : '対象外'),
     note: note.value,
-    customerTopics: customerTopics.value,
+    customerTopics: '',
     calendarContext: await contextForDate(dateInput.value),
   };
   try {
@@ -516,7 +509,7 @@ async function initialize() {
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260702-5', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260702-6', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
