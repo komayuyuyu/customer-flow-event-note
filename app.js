@@ -99,13 +99,42 @@ function renderCalendar() {
   calendarDays.innerHTML = [...blanks, ...days].join('');
 }
 
-function setCalendarOpen(open) {
-  calendarPopover.hidden = !open;
+function resetCalendarPosition() {
+  calendarPopover.classList.remove('is-floating');
+  calendarPopover.style.removeProperty('top');
+  calendarPopover.style.removeProperty('left');
+}
+
+function positionCalendarAt(anchor) {
+  calendarPopover.classList.add('is-floating');
+  calendarPopover.hidden = false;
+  const rect = anchor.getBoundingClientRect();
+  const margin = 12;
+  const gap = 8;
+  const width = calendarPopover.offsetWidth || 320;
+  const height = calendarPopover.offsetHeight || 340;
+  const maxLeft = Math.max(margin, window.innerWidth - width - margin);
+  const left = Math.min(Math.max(rect.left, margin), maxLeft);
+  const below = rect.bottom + gap;
+  const above = rect.top - height - gap;
+  const top = below + height <= window.innerHeight - margin ? below : Math.max(margin, above);
+  calendarPopover.style.left = `${left}px`;
+  calendarPopover.style.top = `${top}px`;
+}
+
+function setCalendarOpen(open, anchor = null) {
   datePickerButton.setAttribute('aria-expanded', String(open));
-  if (!open) return;
+  if (!open) {
+    calendarPopover.hidden = true;
+    resetCalendarPosition();
+    return;
+  }
   const { year, month } = dateParts(dateInput.value);
   calendarCursor = new Date(year, month - 1, 1);
   renderCalendar();
+  calendarPopover.hidden = false;
+  if (anchor) positionCalendarAt(anchor);
+  else resetCalendarPosition();
 }
 
 async function selectDate(value) {
@@ -124,12 +153,22 @@ function shortDate(dateText) {
   };
 }
 
-function eventHeadingLabel(dateText) {
-  const label = shortDate(dateText);
-  return `${label.date.replace('/', '／')}（${label.weekday}）`;
+function dottedDate(dateText) {
+  const { year, month, day } = dateParts(dateText);
+  return `${year}.${month}.${day}`;
 }
 
-function openRecordDatePicker() {
+function eventHeadingLabel(dateText) {
+  const { month, day } = dateParts(dateText);
+  const label = shortDate(dateText);
+  return `${month}月${day}日（${label.weekday}）`;
+}
+
+function openRecordDatePicker(anchor = null) {
+  if (anchor) {
+    setCalendarOpen(true, anchor);
+    return;
+  }
   const datePickerVisible = datePickerButton && getComputedStyle(datePickerButton).display !== 'none';
   if (datePickerVisible) {
     setCalendarOpen(true);
@@ -150,7 +189,7 @@ function updateEventHeading(dateText) {
   eventTitleHeading.querySelector('.event-title-date-button')?.addEventListener('click', event => {
     event.preventDefault();
     event.stopPropagation();
-    openRecordDatePicker();
+    openRecordDatePicker(event.currentTarget);
   });
 }
 
@@ -354,10 +393,9 @@ function calendarBadge(item) {
 }
 
 function renderWeekDay(day) {
-  const label = shortDate(day.date);
   const rowClass = day.events.length ? 'has-events' : 'is-empty';
   return `<div class="week-row ${rowClass}">
-    <div class="week-date"><strong>${escapeHtml(label.date)}</strong><span>（${escapeHtml(label.weekday)}）</span></div>
+    <div class="week-date"><strong>${escapeHtml(dottedDate(day.date))}</strong></div>
     <div class="week-events">${weekDayImpactBadge(day.events)}${renderWeekContext(day.context)}${renderWeekEvents(day.events)}</div>
   </div>`;
 }
@@ -612,7 +650,8 @@ calendarDays.addEventListener('click', event => {
   if (button) selectDate(button.dataset.date);
 });
 document.addEventListener('click', event => {
-  if (!calendarPopover.hidden && !event.target.closest('.date-row')) setCalendarOpen(false);
+  const calendarTarget = event.target.closest('.date-row, .calendar-popover, .event-title-date-button');
+  if (!calendarPopover.hidden && !calendarTarget) setCalendarOpen(false);
 });
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !calendarPopover.hidden) setCalendarOpen(false);
@@ -714,7 +753,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-26', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-27', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
