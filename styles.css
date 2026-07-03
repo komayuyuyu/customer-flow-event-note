@@ -117,7 +117,6 @@ select { font: inherit; }
 .week-date strong { width: 96px; padding-right: 16px; color: var(--ink); font-size: .92rem; font-weight: 600; text-align: right; }
 .week-events { display: grid; gap: 8px; }
 .week-event { display: grid; gap: 3px; }
-.week-event.calendar-week-event { border-left: 3px solid var(--green-soft); padding-left: 8px; }
 .week-event-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 .week-event-name { color: var(--ink); font-size: .92rem; font-weight: 700; }
 .week-event-time { color: var(--muted); font-size: .78rem; }

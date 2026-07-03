@@ -391,7 +391,7 @@ function setRecordAccess(user, errorMessage = '') {
 }
 
 function renderWeek(days) {
-  const total = days.reduce((sum, day) => sum + day.events.length, 0);
+  const total = days.reduce((sum, day) => sum + day.events.length + (day.context || []).length, 0);
   weekCount.textContent = `${total}件`;
   weekRoot.innerHTML = days.map(renderWeekDay).join('');
 }
@@ -421,7 +421,7 @@ function weekDayImpactBadge(events) {
 
 function renderWeekContextEvents(contextItems = []) {
   return contextItems.map(item => `<div class="week-event calendar-week-event">
-    <div class="week-event-head"><span class="week-event-name">${escapeHtml(compactCalendarLabel(item))}</span></div>
+    <div class="week-event-head"><span class="week-event-name">${escapeHtml(calendarContextTitle(item))}</span></div>
     <span class="week-event-time">終日・${escapeHtml(item.type || 'カレンダー')}</span>
   </div>`).join('');
 }
@@ -460,6 +460,26 @@ function compactCalendarLabel(item) {
   return CALENDAR_LABEL_ALIASES[normalized] || (label.length > 7 ? `${label.slice(0, 6)}…` : label);
 }
 
+function calendarContextTitle(item) {
+  return compactCalendarLabel(item);
+}
+
+function calendarContextEvent(item, dateText) {
+  const title = calendarContextTitle(item);
+  return {
+    id: `calendar-${dateText}-${item.type || 'context'}-${title}`,
+    title,
+    status: '実施予定',
+    startAt: `${dateText}T00:00:00+09:00`,
+    endAt: `${dateText}T23:59:00+09:00`,
+    category: item.type || 'カレンダー',
+    area: '全国',
+    confidence: '高',
+    impactLevel: '中',
+    calendarContextEvent: true,
+  };
+}
+
 function primaryCalendarContext(contextItems = []) {
   return contextItems.find(item => item.type === '大型連休') || contextItems[0] || null;
 }
@@ -487,25 +507,25 @@ async function loadWeek() {
 }
 
 function renderEvents(events, contextItems = []) {
-  currentEvents = events;
-  updateRecordMode(events);
-  const contextCards = contextItems.map(renderCalendarEventCard);
-  eventCount.textContent = `${events.length + contextCards.length}件`;
-  if (!events.length && !contextCards.length) {
+  const calendarEvents = contextItems.map(item => calendarContextEvent(item, dateInput.value));
+  currentEvents = [...calendarEvents, ...events];
+  updateRecordMode(currentEvents);
+  eventCount.textContent = `${currentEvents.length}件`;
+  if (!currentEvents.length) {
     eventsRoot.innerHTML = renderEmptyTodayEvent();
     return;
   }
-  eventsRoot.innerHTML = [...contextCards, ...events.map(renderTodayEventCard)].join('');
+  eventsRoot.innerHTML = [...calendarEvents.map(renderCalendarEventCard), ...events.map(renderTodayEventCard)].join('');
 }
 
 function renderEmptyTodayEvent() {
   return `<div class="empty-state event-empty-state"><div class="event-title-row event-empty-title"><span>${EMPTY_EVENT_TEXT}</span></div></div>`;
 }
 
-function renderCalendarEventCard(item) {
+function renderCalendarEventCard(event) {
   return `<article class="event-card calendar-event-card">
-    <div class="event-title-row"><h3>${escapeHtml(compactCalendarLabel(item))}</h3></div>
-    <div class="event-meta"><span class="tag">${escapeHtml(item.type || 'カレンダー')}</span><span class="tag">終日</span></div>
+    <div class="event-title-row"><h3>${escapeHtml(event.title || DEFAULT_EVENT_TITLE)}</h3></div>
+    <div class="event-meta"><span class="tag">${escapeHtml(event.category || 'カレンダー')}</span><span class="tag">終日</span></div>
   </article>`;
 }
 
@@ -557,7 +577,7 @@ function renderPredictedWindows(event) {
 function updateRecordMode(events) {
   if (events.length) {
     recordContext.classList.add('event-linked');
-    recordContext.innerHTML = '<strong>今日の注目イベントと紐づけて保存します</strong>';
+    recordContext.innerHTML = '<strong>イベントと紐づけて保存します</strong>';
     accuracyFieldset.hidden = false;
     eventImpactFieldset.hidden = false;
     renderRelatedEvents(events);
@@ -778,7 +798,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-30', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-31', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
