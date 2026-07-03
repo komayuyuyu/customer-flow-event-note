@@ -217,7 +217,7 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   .app-header { width: auto; min-height: 68px; margin: 0 -15px; padding: 12px 15px; gap: 16px; }
   .app-header .brand-title { width: 100%; }
   .app-header .eyebrow { display: block; font-size: 8px; line-height: 1; letter-spacing: .12em; }
-  .app-header h1 { margin: 4px 0 0; white-space: nowrap; font-size: clamp(1.12rem, 5.7vw, 1.35rem); line-height: 1.15; letter-spacing: -.02em; }
+  .app-header h1 { margin: 6px 0 0; white-space: nowrap; font-size: clamp(1.12rem, 5.7vw, 1.35rem); line-height: 1.15; letter-spacing: -.02em; }
   .page-intro { margin-top: 28px; }
   .page-intro h2, .detail-shell .page-intro h2 { font-size: 1.5rem; }
   .hero-description { margin-top: 18px; font-size: 11px; }
