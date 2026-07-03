@@ -409,6 +409,12 @@ function renderRelatedEvents(events, savedStatuses = {}) {
   }).join('')}`;
 }
 
+function syncTimePlaceholders() {
+  document.querySelectorAll('.time-input-wrap input[type="time"]').forEach(input => {
+    input.closest('.time-input-wrap').classList.toggle('is-empty', !input.value);
+  });
+}
+
 function clearForm() {
   const selectedDate = dateInput.value;
   form.reset();
@@ -416,6 +422,7 @@ function clearForm() {
   updateDatePickerButton();
   document.querySelector('#impact-start').value = '';
   document.querySelector('#impact-end').value = '';
+  syncTimePlaceholders();
   note.value = '';
   noteCount.textContent = '0 / 600';
   saveActions.hidden = true;
@@ -435,6 +442,7 @@ function fillObservation(observation) {
   for (const period of observation.quietPeriods || []) setChecked('period', period);
   document.querySelector('#impact-start').value = observation.actualImpactStart || '';
   document.querySelector('#impact-end').value = observation.actualImpactEnd || '';
+  syncTimePlaceholders();
   note.value = [observation.note, observation.customerTopics].filter(Boolean).join('\n');
   noteCount.textContent = `${note.value.length} / 600`;
   const statuses = Object.fromEntries((observation.relatedEvents || []).map(item => [item.id, item.status]));
@@ -491,6 +499,10 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !calendarPopover.hidden) setCalendarOpen(false);
 });
 note.addEventListener('input', () => { noteCount.textContent = `${note.value.length} / 600`; });
+document.querySelectorAll('.time-input-wrap input[type="time"]').forEach(input => {
+  input.addEventListener('input', syncTimePlaceholders);
+  input.addEventListener('change', syncTimePlaceholders);
+});
 form.addEventListener('change', event => {
   if (event.target.name !== 'eventImpact') return;
   const noImpact = event.target.value === '感じなかった';
@@ -499,6 +511,7 @@ form.addEventListener('change', event => {
   if (noImpact) {
     document.querySelector('#impact-start').value = '';
     document.querySelector('#impact-end').value = '';
+    syncTimePlaceholders();
   }
 });
 
@@ -573,6 +586,7 @@ async function initialize() {
   const requestedDate = new URLSearchParams(location.search).get('date');
   dateInput.value = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate || '') ? requestedDate : localToday();
   updateDatePickerButton();
+  syncTimePlaceholders();
   backend = isCloudConfigured() ? await createCloudBackend() : createLocalBackend();
   await backend.initialize(async (user, errorMessage) => {
     currentUser = user;
@@ -582,7 +596,7 @@ async function initialize() {
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-6', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-7', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
