@@ -339,7 +339,10 @@ function renderWeekDay(day) {
 
 function weekDayImpactBadge(events) {
   if (!events.length) return '';
-  const dayImpact = events.some(event => event.impactLevel === '大') ? '大' : '中';
+  const order = { '大': 3, '中': 2, '小': 1 };
+  const dayImpact = events
+    .map(event => event.impactLevel || '小')
+    .sort((a, b) => (order[b] || 0) - (order[a] || 0))[0] || '小';
   return `<span class="week-day-impact ${dayImpact === '大' ? 'high' : ''}">影響 ${escapeHtml(dayImpact)}</span>`;
 }
 
@@ -686,7 +689,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-24', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-25', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

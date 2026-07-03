@@ -280,9 +280,10 @@
     "category": "花火",
     "area": "東京",
     "inPersonEvent": true,
+    "impactLevelOverride": "中",
     "broadcast": "テレビ東京系列",
-    "liveReason": "東京の夏を代表する大規模花火大会。会場周辺へ大きな人流が発生し、テレビ中継でも話題化しやすい",
-    "trafficReason": "浅草・隅田川周辺へ観覧客が集中し、夕方から夜にかけて交通規制、駅混雑、帰宅混雑の影響が出やすい",
+    "liveReason": "東京の夏を代表する大規模花火大会。神戸の勤務先への直接影響は小さいが、テレビ放送やニュースで話題に上がる可能性がある",
+    "trafficReason": "現地の人流影響は東京中心。神戸ではテレビ放送やSNSで話題になる場合のみ、客足への間接影響を確認する",
     "nationalReach": 3,
     "liveUrgency": 2,
     "accessibility": 3,
@@ -300,13 +301,13 @@
       }
     ],
     "impactScore": 22,
-    "impactLevel": "大",
+    "impactLevel": "中",
     "confidence": "高",
     "predictedWindows": [
       {
         "label": "来場・交通混雑",
         "date": "2026-07-25",
-        "start": "15:00",
+        "start": "16:00",
         "end": "19:00",
         "reason": "会場周辺への移動、駅や道路の混雑、待ち合わせで広域の人流が変わる可能性"
       },
@@ -334,9 +335,10 @@
     "category": "花火",
     "area": "東京",
     "inPersonEvent": true,
+    "impactLevelOverride": "小",
     "broadcast": "現地イベント",
-    "liveReason": "神宮外苑で開催される都心型の大規模花火大会。ライブと花火が組み合わさり、会場周辺の滞在時間が長くなりやすい",
-    "trafficReason": "神宮球場・秩父宮ラグビー場周辺へ夕方から来場者が集中し、青山・外苑前・信濃町周辺の移動と帰宅混雑が強まりやすい",
+    "liveReason": "神宮外苑で開催される都心型の大規模花火大会。神戸の勤務先への直接影響は基本的にほぼないため、話題確認用として扱う",
+    "trafficReason": "現地の交通・人流影響は東京中心。神戸では通常、客足への影響は小さい",
     "nationalReach": 2,
     "liveUrgency": 2,
     "accessibility": 2,
@@ -354,13 +356,13 @@
       }
     ],
     "impactScore": 19,
-    "impactLevel": "大",
+    "impactLevel": "小",
     "confidence": "高",
     "predictedWindows": [
       {
         "label": "来場・交通混雑",
         "date": "2026-08-08",
-        "start": "15:30",
+        "start": "16:30",
         "end": "19:30",
         "reason": "会場周辺への移動、駅や道路の混雑、待ち合わせで広域の人流が変わる可能性"
       },

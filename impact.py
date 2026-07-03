@@ -30,6 +30,8 @@ def calculate_impact(candidate: dict[str, Any]) -> dict[str, Any]:
         level = "中"
     else:
         level = "小"
+    if candidate.get("impactLevelOverride") in {"大", "中", "小"}:
+        level = candidate["impactLevelOverride"]
 
     source_count = len(candidate.get("sources") or [])
     if candidate.get("officialConfirmed") and source_count >= 2:

@@ -52,6 +52,14 @@ class ImpactTest(unittest.TestCase):
         self.assertEqual(labels, ["来場・交通混雑", "イベント開催中", "終了後の帰宅混雑"])
         self.assertEqual(result["predictedWindows"][0]["start"], "15:00")
 
+    def test_impact_level_override_adjusts_shop_relevance(self):
+        candidate = high_event("2026-08-08T19:30:00+09:00", "2026-08-08T20:30:00+09:00")
+        candidate["category"] = "花火"
+        candidate["area"] = "東京"
+        candidate["impactLevelOverride"] = "小"
+        result = calculate_impact(candidate)
+        self.assertEqual(result["impactLevel"], "小")
+
 
 if __name__ == "__main__":
     unittest.main()
