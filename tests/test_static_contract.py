@@ -54,6 +54,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("function renderTodayEventCard", app)
         self.assertIn("function renderWeekEvent", app)
         self.assertIn("window.AppData", (ROOT / "app-data.js").read_text(encoding="utf-8"))
+        self.assertNotIn("await loadEventData()", app)
         self.assertIn("'ゴールデンウィーク': 'G.W'", app)
         self.assertIn('class="empty-state event-empty-state"', app)
         self.assertIn("const recordsPerPage = 10", (ROOT / "records.js").read_text(encoding="utf-8"))

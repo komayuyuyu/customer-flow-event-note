@@ -214,7 +214,7 @@ async function createCloudBackend() {
       return { date, events, observation };
     },
     async getEvents(date) {
-      return eventsForDay(await loadEventData(), date);
+      return eventsForDate(date);
     },
     async saveObservation(payload) {
       if (!currentUser) throw new Error('記録するにはGoogleログインが必要です。');
