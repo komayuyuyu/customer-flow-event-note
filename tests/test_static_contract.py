@@ -32,11 +32,13 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("ui-utils.js?v=20260703-19", html)
-            self.assertIn("app-data.js?v=20260703-19", html)
+            self.assertIn("styles.css?v=20260703-20", html)
+            self.assertIn("ui-utils.js?v=20260703-20", html)
+            self.assertIn("app-data.js?v=20260703-20", html)
+            self.assertIn("IVENT INFO＆CUSTOMER NOTE", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260703-19';", service_worker)
+        self.assertIn("const VERSION = '20260703-20';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
 
@@ -60,7 +62,10 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("const recordsPerPage = 10", (ROOT / "records.js").read_text(encoding="utf-8"))
         self.assertIn(".calendar-badge.title-badge", styles)
         self.assertIn("--record-side-size: 40px;", styles)
-        self.assertIn(".count-pill { display: inline-flex; width: var(--record-side-size);", styles)
+        self.assertIn("--status-pill-size: 58px;", styles)
+        self.assertIn(".detail-shell .page-intro h2, .records-shell .page-intro h2 { font-size: 24px; }", styles)
+        self.assertIn(".count-pill { display: inline-flex; min-width: var(--status-pill-size);", styles)
+        self.assertIn(".record-list-head .count-pill { width: var(--record-side-size);", styles)
         self.assertIn(".record-list-item > .delete-icon-button { position: absolute; right: 15px; bottom: 15px; width: var(--record-side-size); height: var(--record-side-size);", styles)
 
 
