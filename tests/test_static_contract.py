@@ -31,10 +31,10 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("ui-utils.js?v=20260703-17", html)
+            self.assertIn("ui-utils.js?v=20260703-18", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260703-17';", service_worker)
+        self.assertIn("const VERSION = '20260703-18';", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
 
     def test_event_update_tooling_is_present(self):
@@ -54,6 +54,9 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn('class="empty-state event-empty-state"', app)
         self.assertIn("const recordsPerPage = 10", (ROOT / "records.js").read_text(encoding="utf-8"))
         self.assertIn(".calendar-badge.title-badge", styles)
+        self.assertIn("--record-side-size: 40px;", styles)
+        self.assertIn(".count-pill { display: inline-flex; width: var(--record-side-size);", styles)
+        self.assertIn(".record-list-item > .delete-icon-button { position: absolute; right: 15px; bottom: 15px; width: var(--record-side-size); height: var(--record-side-size);", styles)
 
 
 if __name__ == "__main__":

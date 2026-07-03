@@ -9,6 +9,7 @@
   --green-soft: #dce8df;
   --orange: #d46d3d;
   --orange-soft: #f6e2d5;
+  --record-side-size: 40px;
   --shadow: 0 6px 18px rgba(33, 49, 41, .02);
 }
 
@@ -74,6 +75,7 @@ select { font: inherit; }
 .section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
 .section-heading h2 { margin: 2px 0 0; font-weight: 700; font-size: 1.5rem; line-height: 1.4; letter-spacing: -.02em; }
 .count-pill, .required-note { flex: none; border-radius: 999px; padding: 5px 10px; background: var(--green-soft); color: var(--green); font-size: .78rem; font-weight: 700; }
+.count-pill { display: inline-flex; width: var(--record-side-size); min-height: 30px; align-items: center; justify-content: center; padding-right: 0; padding-left: 0; white-space: nowrap; }
 
 .event-list { display: grid; gap: 12px; }
 .calendar-context-row { display: flex; flex-wrap: wrap; gap: 7px; }
@@ -181,7 +183,7 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
 .record-list-link { display: grid; min-width: 0; gap: 6px; color: inherit; text-decoration: none; }
 .record-list-item { position: relative; }
 .delete-icon-button { display: inline-flex; flex: none; width: 40px; height: 40px; align-items: center; justify-content: center; border: 1px solid #ead4cd; border-radius: 11px; background: #fff8f5; color: #9a422d; cursor: pointer; }
-.record-list-item > .delete-icon-button { position: absolute; right: 15px; bottom: 15px; width: 34px; height: 34px; border-radius: 9px; }
+.record-list-item > .delete-icon-button { position: absolute; right: 15px; bottom: 15px; width: var(--record-side-size); height: var(--record-side-size); border-radius: 10px; }
 .delete-icon-button svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .detail-actions { display: grid; grid-template-columns: 1fr 54px; align-items: stretch; gap: 10px; margin-top: 18px; }
 .detail-actions .save-button, .detail-actions .delete-icon-button { height: 54px; margin-top: 0; }
