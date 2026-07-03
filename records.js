@@ -1,4 +1,5 @@
 const listRoot = document.querySelector('#records-list');
+const paginationRoot = document.querySelector('#records-pagination');
 const authPanel = document.querySelector('#records-auth');
 const loginButton = document.querySelector('#login-button');
 const navAuthButton = document.querySelector('#nav-auth-button');
@@ -11,6 +12,9 @@ const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'short' });
 let eventMap = new Map();
 let activeUser = null;
 let pendingDeleteDate = '';
+let allRecords = [];
+let currentPage = 1;
+const recordsPerPage = 10;
 function dateLabel(value) {
   const date = new Date(`${value}T12:00:00`);
   return `${value.replaceAll('-', '/')}（${weekday.format(date)}）`;
@@ -38,12 +42,27 @@ function recordMarkup(item) {
   return `<article class="record-list-item"><a class="record-list-link" href="./record.html?date=${encodeURIComponent(item.date)}"><div class="record-list-head"><strong>${escapeHtml(dateLabel(item.date))}</strong><span class="count-pill">${escapeHtml(item.trafficLevel || '未入力')}</span></div><div class="record-list-events">${escapeHtml(eventNames(item))}</div><div class="record-list-meta"><span>天気 ${escapeHtml(item.weather || '不明')}</span><span>影響 ${escapeHtml(item.eventImpact || '未記録')}</span>${context}</div></a><button class="delete-icon-button" type="button" data-delete-date="${escapeHtml(item.date)}" aria-label="${escapeHtml(dateLabel(item.date))}の記録を削除">${trashIcon}</button></article>`;
 }
 
+function renderPage() {
+  const pageCount = Math.max(1, Math.ceil(allRecords.length / recordsPerPage));
+  currentPage = Math.min(Math.max(currentPage, 1), pageCount);
+  const start = (currentPage - 1) * recordsPerPage;
+  listRoot.innerHTML = allRecords.length
+    ? allRecords.slice(start, start + recordsPerPage).map(recordMarkup).join('')
+    : '<p class="empty-state">保存済みの記録はありません。</p>';
+  paginationRoot.hidden = allRecords.length <= recordsPerPage;
+  paginationRoot.innerHTML = paginationRoot.hidden ? '' : `<button type="button" data-page="${currentPage - 1}"${currentPage === 1 ? ' disabled' : ''}>前へ</button><div class="pagination-pages">${Array.from({ length: pageCount }, (_, index) => { const page = index + 1; return `<button type="button" data-page="${page}"${page === currentPage ? ' class="is-current" aria-current="page"' : ''}>${page}</button>`; }).join('')}</div><button type="button" data-page="${currentPage + 1}"${currentPage === pageCount ? ' disabled' : ''}>次へ</button>`;
+  const url = new URL(location.href);
+  if (currentPage === 1) url.searchParams.delete('page'); else url.searchParams.set('page', currentPage);
+  history.replaceState(null, '', url);
+}
+
 async function render(user) {
   activeUser = user;
   authPanel.hidden = Boolean(user);
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
   if (!user) {
     listRoot.innerHTML = '<p class="empty-state">ログインすると記録一覧を表示します。</p>';
+    paginationRoot.hidden = true;
     return;
   }
   try {
@@ -51,14 +70,22 @@ async function render(user) {
       const events = await fetch('./data/events.json', { cache: 'no-store' }).then(response => response.json()).catch(() => []);
       eventMap = new Map(events.map(event => [event.id, event]));
     }
-    const records = await RecordsBackend.list();
-    listRoot.innerHTML = records.length
-      ? records.map(recordMarkup).join('')
-      : '<p class="empty-state">保存済みの記録はありません。</p>';
+    allRecords = await RecordsBackend.list();
+    const requestedPage = Number.parseInt(new URLSearchParams(location.search).get('page'), 10);
+    currentPage = Number.isInteger(requestedPage) && requestedPage > 0 ? requestedPage : currentPage;
+    renderPage();
   } catch (error) {
     listRoot.innerHTML = `<p class="empty-state">${escapeHtml(error.message)}</p>`;
   }
 }
+
+paginationRoot.addEventListener('click', event => {
+  const button = event.target.closest('[data-page]');
+  if (!button || button.disabled) return;
+  currentPage = Number(button.dataset.page);
+  renderPage();
+  document.querySelector('.page-intro').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
 
 function closeDeleteModal() { deleteModal.hidden = true; pendingDeleteDate = ''; }
 listRoot.addEventListener('click', event => {
