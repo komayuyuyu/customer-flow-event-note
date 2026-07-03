@@ -9,7 +9,7 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260703-27">
+  <link rel="stylesheet" href="./styles.css?v=20260703-28">
 </head>
 <body>
   <main class="shell">
@@ -81,11 +81,11 @@
         <label for="record-date">記録日</label>
         <input id="record-date" type="date">
         <button id="date-picker-button" class="date-picker-button" type="button" aria-haspopup="dialog" aria-expanded="false"></button>
-        <button id="today-button" class="today-button" type="button">今日</button>
         <div id="calendar-popover" class="calendar-popover" role="dialog" aria-label="記録日を選択" hidden>
           <div class="calendar-header"><button id="calendar-prev" type="button" aria-label="前の月">←</button><strong id="calendar-month"></strong><button id="calendar-next" type="button" aria-label="次の月">→</button></div>
           <div class="calendar-weekdays" aria-hidden="true"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
           <div id="calendar-days" class="calendar-days"></div>
+          <button id="calendar-today" class="calendar-today-button" type="button">今日</button>
         </div>
       </section>
 
@@ -161,10 +161,10 @@
       </div>
     </div>
   </div>
-  <script src="./menu.js?v=20260703-27" defer></script>
+  <script src="./menu.js?v=20260703-28" defer></script>
   <script src="./firebase-config.js"></script>
-  <script src="./ui-utils.js?v=20260703-27"></script>
-  <script src="./app-data.js?v=20260703-27"></script>
-  <script src="./app.js?v=20260703-27" defer></script>
+  <script src="./ui-utils.js?v=20260703-28"></script>
+  <script src="./app-data.js?v=20260703-28"></script>
+  <script src="./app.js?v=20260703-28" defer></script>
 </body>
 </html>

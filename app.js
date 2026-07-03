@@ -10,7 +10,7 @@ const calendarMonth = document.querySelector('#calendar-month');
 const calendarDays = document.querySelector('#calendar-days');
 const calendarPrev = document.querySelector('#calendar-prev');
 const calendarNext = document.querySelector('#calendar-next');
-const todayButton = document.querySelector('#today-button');
+const calendarToday = document.querySelector('#calendar-today');
 const eventTitleHeading = document.querySelector('#event-title');
 const eventsRoot = document.querySelector('#events');
 const eventCount = document.querySelector('#event-count');
@@ -155,7 +155,7 @@ function shortDate(dateText) {
 
 function dottedDate(dateText) {
   const { year, month, day } = dateParts(dateText);
-  return `${year}.${month}.${day}`;
+  return `${String(year).slice(-2)}.${String(month).padStart(2, '0')}.${String(day).padStart(2, '0')}`;
 }
 
 function eventHeadingLabel(dateText) {
@@ -203,6 +203,15 @@ function currentWeekStart() {
   return startOfWeek(localToday());
 }
 
+function weekOfYearMonday(dateText) {
+  const { year } = dateParts(dateText);
+  const start = new Date(`${dateText}T12:00:00`);
+  const firstDay = new Date(year, 0, 1, 12);
+  const firstMonday = new Date(year, 0, 1 + ((8 - firstDay.getDay()) % 7), 12);
+  if (start < firstMonday) return 1;
+  return Math.floor((start - firstMonday) / (7 * 24 * 60 * 60 * 1000)) + 2;
+}
+
 function weekStartDate() {
   if (!displayedWeekStart) displayedWeekStart = startOfWeek(dateInput.value);
   return displayedWeekStart;
@@ -220,9 +229,8 @@ async function earliestEventWeekStart() {
 
 async function updateWeekNav() {
   const start = weekStartDate();
-  const label = shortDate(start);
   const current = currentWeekStart();
-  weekLabel.textContent = start === current ? '今週' : `${label.date}週`;
+  weekLabel.textContent = start === current ? '今週' : `第${weekOfYearMonday(start)}週`;
   weekPrev.disabled = start <= await earliestEventWeekStart();
   weekNext.disabled = start >= addDays(current, MAX_WEEK_OFFSET * 7);
 }
@@ -395,8 +403,8 @@ function calendarBadge(item) {
 function renderWeekDay(day) {
   const rowClass = day.events.length ? 'has-events' : 'is-empty';
   return `<div class="week-row ${rowClass}">
-    <div class="week-date"><strong>${escapeHtml(dottedDate(day.date))}</strong></div>
-    <div class="week-events">${weekDayImpactBadge(day.events)}${renderWeekContext(day.context)}${renderWeekEvents(day.events)}</div>
+    <div class="week-date"><strong>${escapeHtml(dottedDate(day.date))}</strong>${weekDayImpactBadge(day.events)}</div>
+    <div class="week-events">${renderWeekContext(day.context)}${renderWeekEvents(day.events)}</div>
   </div>`;
 }
 
@@ -419,16 +427,22 @@ function renderWeekEvents(events = []) {
 }
 
 function renderWeekEvent(event) {
-  const impactLevel = event.impactLevel || DEFAULT_EVENT_IMPACT;
   const confidence = event.confidence || DEFAULT_EVENT_CONFIDENCE;
   return `<div class="week-event">
     <div class="week-event-head">
-      <span class="week-impact ${impactLevel === '大' ? 'high' : ''}">影響 ${escapeHtml(impactLevel)}</span>
-      <span class="week-event-name">${escapeHtml(event.title || DEFAULT_EVENT_TITLE)}</span>
+      <span class="week-event-name">${escapeHtml(displayEventTitle(event.title || DEFAULT_EVENT_TITLE))}</span>
     </div>
     <span class="week-event-time">${escapeHtml(eventTime(event))}開始・確からしさ ${escapeHtml(confidence)}${event.area ? `・${escapeHtml(event.area)}` : ''}</span>
     ${renderChampionshipCountdown(event, 'week-event-note')}
   </div>`;
+}
+
+function displayEventTitle(title) {
+  return String(title || DEFAULT_EVENT_TITLE).replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
+    if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
+    if (away === 'JPN' && home !== 'JPN') return `対 ${home}`;
+    return `${home} 対 ${away}`;
+  });
 }
 
 function compactCalendarLabel(item) {
@@ -621,7 +635,7 @@ dateInput.addEventListener('change', () => {
   displayedWeekStart = startOfWeek(dateInput.value);
   loadDay();
 });
-todayButton.addEventListener('click', () => selectDate(localToday()));
+calendarToday.addEventListener('click', () => selectDate(localToday()));
 weekPrev.addEventListener('click', () => {
   if (weekPrev.disabled) return;
   displayedWeekStart = addDays(weekStartDate(), -7);
@@ -753,7 +767,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-27', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-28', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
