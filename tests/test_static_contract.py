@@ -17,6 +17,7 @@ class StaticContractTest(unittest.TestCase):
             "records.js",
             "record.js",
             "records-backend.js",
+            "app-data.js",
             "ui-utils.js",
             "menu.js",
             "firebase-config.js",
@@ -31,10 +32,12 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("ui-utils.js?v=20260703-18", html)
+            self.assertIn("ui-utils.js?v=20260703-19", html)
+            self.assertIn("app-data.js?v=20260703-19", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260703-18';", service_worker)
+        self.assertIn("const VERSION = '20260703-19';", service_worker)
+        self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
 
     def test_event_update_tooling_is_present(self):
@@ -50,6 +53,7 @@ class StaticContractTest(unittest.TestCase):
 
         self.assertIn("function renderTodayEventCard", app)
         self.assertIn("function renderWeekEvent", app)
+        self.assertIn("window.AppData", (ROOT / "app-data.js").read_text(encoding="utf-8"))
         self.assertIn("'ゴールデンウィーク': 'G.W'", app)
         self.assertIn('class="empty-state event-empty-state"', app)
         self.assertIn("const recordsPerPage = 10", (ROOT / "records.js").read_text(encoding="utf-8"))

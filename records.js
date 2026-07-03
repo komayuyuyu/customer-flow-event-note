@@ -8,6 +8,7 @@ const deleteTargetDate = document.querySelector('#delete-target-date');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
 const { escapeHtml, readableAuthError, trashIcon } = window.UiUtils;
+const { loadEventData } = window.AppData;
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'short' });
 let eventMap = new Map();
 let activeUser = null;
@@ -67,7 +68,7 @@ async function render(user) {
   }
   try {
     if (!eventMap.size) {
-      const events = await fetch('./data/events.json', { cache: 'no-store' }).then(response => response.json()).catch(() => []);
+      const events = await loadEventData({ fallbackToEmpty: true });
       eventMap = new Map(events.map(event => [event.id, event]));
     }
     allRecords = await RecordsBackend.list();

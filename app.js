@@ -1,6 +1,7 @@
 const FIREBASE_SDK_VERSION = '12.15.0';
 const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
 const { escapeHtml, readableAuthError } = window.UiUtils;
+const { addDays, contextForDate, dateParts, eventsForDate, eventsForDay, localToday } = window.AppData;
 
 const dateInput = document.querySelector('#record-date');
 const datePickerButton = document.querySelector('#date-picker-button');
@@ -37,8 +38,6 @@ let backend;
 let currentEvents = [];
 let currentUser = null;
 let initialized = false;
-let calendarContext;
-let eventData;
 let calendarCursor;
 
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'long' });
@@ -57,41 +56,6 @@ const CALENDAR_LABEL_ALIASES = {
   'お盆休み': 'お盆',
 };
 
-async function loadCalendarContext() {
-  if (!calendarContext) {
-    calendarContext = fetch('./data/calendar-context.json', { cache: 'no-store' })
-      .then(response => response.ok ? response.json() : { holidays: {}, periods: [] })
-      .catch(() => ({ holidays: {}, periods: [] }));
-  }
-  return calendarContext;
-}
-
-async function loadEventData() {
-  if (!eventData) {
-    eventData = fetch('./data/events.json', { cache: 'no-store' }).then(response => {
-      if (!response.ok) throw new Error('イベント情報を読み込めませんでした');
-      return response.json();
-    });
-  }
-  return eventData;
-}
-
-async function contextForDate(dateText) {
-  const context = await loadCalendarContext();
-  const items = [];
-  if (context.holidays?.[dateText]) items.push({ type: '祝日', label: context.holidays[dateText] });
-  for (const period of context.periods || []) {
-    if (period.start <= dateText && dateText <= period.end) items.push({ type: '大型連休', label: period.label });
-  }
-  return items;
-}
-
-function localToday() {
-  const now = new Date();
-  const offset = now.getTimezoneOffset();
-  return new Date(now.getTime() - offset * 60_000).toISOString().slice(0, 10);
-}
-
 function checkedValue(name, fallback = '') {
   return form.querySelector(`[name="${name}"]:checked`)?.value || fallback;
 }
@@ -103,18 +67,6 @@ function setChecked(name, value) {
 
 function formatWindow(window) {
   return `${window.label}：${window.start}〜${window.end}`;
-}
-
-function addDays(dateText, amount) {
-  const base = new Date(`${dateText}T12:00:00`);
-  base.setDate(base.getDate() + amount);
-  const offset = base.getTimezoneOffset();
-  return new Date(base.getTime() - offset * 60_000).toISOString().slice(0, 10);
-}
-
-function dateParts(dateText) {
-  const [year, month, day] = dateText.split('-').map(Number);
-  return { year, month, day };
 }
 
 function updateDatePickerButton() {
@@ -168,14 +120,6 @@ function eventTime(event) {
   return new Intl.DateTimeFormat('ja-JP', { hour: '2-digit', minute: '2-digit', hour12: false }).format(start);
 }
 
-function eventsForDay(events, targetDate) {
-  return events.filter(event => {
-    const eventDate = String(event.startAt || '').slice(0, 10);
-    const windowDates = new Set((event.predictedWindows || []).map(window => window.date));
-    return eventDate === targetDate || windowDates.has(targetDate);
-  });
-}
-
 function createLocalBackend() {
   return {
     mode: 'local',
@@ -186,7 +130,7 @@ function createLocalBackend() {
       return response.json();
     },
     async getEvents(date) {
-      return eventsForDay(await loadEventData(), date);
+      return eventsForDate(date);
     },
     async saveObservation(payload) {
       const response = await fetch('./api/observations', {
@@ -260,7 +204,7 @@ async function createCloudBackend() {
       await authSdk.signOut(auth);
     },
     async getDay(date) {
-      const events = eventsForDay(await loadEventData(), date);
+      const events = eventsForDay(await window.AppData.loadEventData(), date);
       let observation = null;
       if (currentUser) {
         const reference = firestoreSdk.doc(db, 'users', currentUser.uid, 'observations', date);
@@ -661,7 +605,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-17', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-19', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

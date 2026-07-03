@@ -5,6 +5,7 @@ const deleteTargetDate = document.querySelector('#delete-target-date');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
 const { escapeHtml: esc, readableAuthError, trashIcon } = window.UiUtils;
+const { enrichLegacyRecord } = window.AppData;
 const date = new URLSearchParams(location.search).get('date') || '';
 let record;
 function value(label, content, className = '') { return `<div class="detail-row ${className}"><dt>${esc(label)}</dt><dd>${content || '—'}</dd></div>`; }
@@ -82,28 +83,6 @@ confirmDeleteButton.addEventListener('click', async () => {
     confirmDeleteButton.disabled = false;
   }
 });
-async function enrichLegacyRecord(item) {
-  if (!item) return item;
-  const relatedIds = (item.relatedEvents || []).map(event => event.id).filter(Boolean);
-  const eventIds = [...new Set([...(item.eventIds || []), ...relatedIds])];
-  if (eventIds.length) {
-    const events = await fetch('./data/events.json', { cache: 'no-store' }).then(response => response.json()).catch(() => []);
-    const eventMap = new Map(events.map(event => [event.id, event]));
-    const storedMap = new Map((item.relatedEvents || []).map(event => [event.id, event]));
-    item.relatedEvents = eventIds.map(id => {
-      const stored = storedMap.get(id) || {};
-      const current = eventMap.get(id);
-      return { id, title: current?.title || stored.title || '関連イベント', status: stored.status || '実施済み' };
-    });
-  }
-  if (!(item.calendarContext || []).length) {
-    const context = await fetch('./data/calendar-context.json', { cache: 'no-store' }).then(response => response.json()).catch(() => ({ holidays: {}, periods: [] }));
-    item.calendarContext = [];
-    if (context.holidays?.[item.date]) item.calendarContext.push({ type: '祝日', label: context.holidays[item.date] });
-    for (const period of context.periods || []) if (period.start <= item.date && item.date <= period.end) item.calendarContext.push({ type: '大型連休', label: period.label });
-  }
-  return item;
-}
 async function load(user) {
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
   if (!user) {
