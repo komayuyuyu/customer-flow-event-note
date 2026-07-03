@@ -401,10 +401,12 @@ function calendarBadge(item) {
 }
 
 function renderWeekDay(day) {
-  const rowClass = day.events.length ? 'has-events' : 'is-empty';
+  const calendarEvents = renderWeekContextEvents(day.context);
+  const hasDisplayEvents = day.events.length || calendarEvents;
+  const rowClass = hasDisplayEvents ? 'has-events' : 'is-empty';
   return `<div class="week-row ${rowClass}">
     <div class="week-date"><strong>${escapeHtml(dottedDate(day.date))}</strong>${weekDayImpactBadge(day.events)}</div>
-    <div class="week-events">${renderWeekContext(day.context)}${renderWeekEvents(day.events)}</div>
+    <div class="week-events">${calendarEvents}${hasDisplayEvents ? renderWeekEvents(day.events, false) : renderWeekEvents(day.events, true)}</div>
   </div>`;
 }
 
@@ -417,12 +419,15 @@ function weekDayImpactBadge(events) {
   return `<span class="week-day-impact ${dayImpact === '大' ? 'high' : ''}">影響 ${escapeHtml(dayImpact)}</span>`;
 }
 
-function renderWeekContext(contextItems = []) {
-  return contextItems.map(calendarBadge).join('');
+function renderWeekContextEvents(contextItems = []) {
+  return contextItems.map(item => `<div class="week-event calendar-week-event">
+    <div class="week-event-head"><span class="week-event-name">${escapeHtml(compactCalendarLabel(item))}</span></div>
+    <span class="week-event-time">終日・${escapeHtml(item.type || 'カレンダー')}</span>
+  </div>`).join('');
 }
 
-function renderWeekEvents(events = []) {
-  if (!events.length) return `<span class="week-empty">${EMPTY_WEEK_EVENT_TEXT}</span>`;
+function renderWeekEvents(events = [], showEmpty = true) {
+  if (!events.length) return showEmpty ? `<span class="week-empty">${EMPTY_WEEK_EVENT_TEXT}</span>` : '';
   return events.map(renderWeekEvent).join('');
 }
 
@@ -484,23 +489,29 @@ async function loadWeek() {
 function renderEvents(events, contextItems = []) {
   currentEvents = events;
   updateRecordMode(events);
-  eventCount.textContent = `${events.length}件`;
-  const titleBadge = calendarTitleBadge(contextItems);
-  if (!events.length) {
-    eventsRoot.innerHTML = renderEmptyTodayEvent(titleBadge);
+  const contextCards = contextItems.map(renderCalendarEventCard);
+  eventCount.textContent = `${events.length + contextCards.length}件`;
+  if (!events.length && !contextCards.length) {
+    eventsRoot.innerHTML = renderEmptyTodayEvent();
     return;
   }
-  eventsRoot.innerHTML = events.map(event => renderTodayEventCard(event, titleBadge)).join('');
+  eventsRoot.innerHTML = [...contextCards, ...events.map(renderTodayEventCard)].join('');
 }
 
-function renderEmptyTodayEvent(titleBadge) {
-  return `<div class="empty-state event-empty-state"><div class="event-title-row event-empty-title">${titleBadge}<span>${EMPTY_EVENT_TEXT}</span></div></div>`;
+function renderEmptyTodayEvent() {
+  return `<div class="empty-state event-empty-state"><div class="event-title-row event-empty-title"><span>${EMPTY_EVENT_TEXT}</span></div></div>`;
 }
 
-function renderTodayEventCard(event, titleBadge) {
+function renderCalendarEventCard(item) {
+  return `<article class="event-card calendar-event-card">
+    <div class="event-title-row"><h3>${escapeHtml(compactCalendarLabel(item))}</h3></div>
+    <div class="event-meta"><span class="tag">${escapeHtml(item.type || 'カレンダー')}</span><span class="tag">終日</span></div>
+  </article>`;
+}
+
+function renderTodayEventCard(event) {
   return `<article class="event-card">
     <div class="event-title-row">
-      ${titleBadge}
       <h3>${escapeHtml(event.title || DEFAULT_EVENT_TITLE)}</h3>
     </div>
     ${renderEventMeta(event)}
@@ -767,7 +778,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-29', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-30', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
