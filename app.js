@@ -42,6 +42,21 @@ let eventData;
 let calendarCursor;
 
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'long' });
+const EMPTY_EVENT_TEXT = 'イベントなし';
+const EMPTY_WEEK_EVENT_TEXT = '影響イベントなし';
+const DEFAULT_EVENT_TITLE = '名称未設定';
+const DEFAULT_EVENT_IMPACT = '未判定';
+const DEFAULT_EVENT_CONFIDENCE = '未判定';
+const DEFAULT_CALENDAR_LABEL = '通常日';
+const CALENDAR_LABEL_ALIASES = {
+  'ゴールデンウィーク': 'G.W',
+  'ゴールデン・ウィーク': 'G.W',
+  'シルバーウィーク': 'S.W',
+  'シルバー・ウィーク': 'S.W',
+  '年末年始休み': '年末年始',
+  'お盆休み': 'お盆',
+};
+
 async function loadCalendarContext() {
   if (!calendarContext) {
     calendarContext = fetch('./data/calendar-context.json', { cache: 'no-store' })
@@ -313,45 +328,55 @@ function setRecordAccess(user, errorMessage = '') {
 function renderWeek(days) {
   const total = days.reduce((sum, day) => sum + day.events.length, 0);
   weekCount.textContent = `${total}件`;
-  weekRoot.innerHTML = days.map(day => {
-    const label = shortDate(day.date);
-    const dayImpact = day.events.some(event => event.impactLevel === '大') ? '大' : '中';
-    const dayImpactMarkup = day.events.length
-      ? `<span class="week-day-impact ${dayImpact === '大' ? 'high' : ''}">影響 ${escapeHtml(dayImpact)}</span>`
-      : '';
-    const contextMarkup = day.context.length
-      ? day.context.map(item => `<span class="calendar-badge">${escapeHtml(item.type)}：${escapeHtml(item.label)}</span>`).join('')
-      : '';
-    const eventMarkup = day.events.length
-      ? day.events.map(event => `<div class="week-event">
-          <div class="week-event-head">
-            <span class="week-impact ${event.impactLevel === '大' ? 'high' : ''}">影響 ${escapeHtml(event.impactLevel || '未判定')}</span>
-            <span class="week-event-name">${escapeHtml(event.title || '名称未設定')}</span>
-          </div>
-          <span class="week-event-time">${escapeHtml(eventTime(event))}開始・確からしさ ${escapeHtml(event.confidence || '未判定')}</span>
-        </div>`).join('')
-      : '<span class="week-empty">影響イベントなし</span>';
-    return `<div class="week-row ${day.events.length ? 'has-events' : 'is-empty'}">
-      <div class="week-date"><strong>${escapeHtml(label.date)}</strong><span>（${escapeHtml(label.weekday)}）</span></div>
-      ${dayImpactMarkup}
-      <div class="week-events">${contextMarkup}${eventMarkup}</div>
-    </div>`;
-  }).join('');
+  weekRoot.innerHTML = days.map(renderWeekDay).join('');
+}
+
+function calendarBadge(item) {
+  return `<span class="calendar-badge">${escapeHtml(item.type)}：${escapeHtml(item.label)}</span>`;
+}
+
+function renderWeekDay(day) {
+  const label = shortDate(day.date);
+  const rowClass = day.events.length ? 'has-events' : 'is-empty';
+  return `<div class="week-row ${rowClass}">
+    <div class="week-date"><strong>${escapeHtml(label.date)}</strong><span>（${escapeHtml(label.weekday)}）</span></div>
+    ${weekDayImpactBadge(day.events)}
+    <div class="week-events">${renderWeekContext(day.context)}${renderWeekEvents(day.events)}</div>
+  </div>`;
+}
+
+function weekDayImpactBadge(events) {
+  if (!events.length) return '';
+  const dayImpact = events.some(event => event.impactLevel === '大') ? '大' : '中';
+  return `<span class="week-day-impact ${dayImpact === '大' ? 'high' : ''}">影響 ${escapeHtml(dayImpact)}</span>`;
+}
+
+function renderWeekContext(contextItems = []) {
+  return contextItems.map(calendarBadge).join('');
+}
+
+function renderWeekEvents(events = []) {
+  if (!events.length) return `<span class="week-empty">${EMPTY_WEEK_EVENT_TEXT}</span>`;
+  return events.map(renderWeekEvent).join('');
+}
+
+function renderWeekEvent(event) {
+  const impactLevel = event.impactLevel || DEFAULT_EVENT_IMPACT;
+  const confidence = event.confidence || DEFAULT_EVENT_CONFIDENCE;
+  return `<div class="week-event">
+    <div class="week-event-head">
+      <span class="week-impact ${impactLevel === '大' ? 'high' : ''}">影響 ${escapeHtml(impactLevel)}</span>
+      <span class="week-event-name">${escapeHtml(event.title || DEFAULT_EVENT_TITLE)}</span>
+    </div>
+    <span class="week-event-time">${escapeHtml(eventTime(event))}開始・確からしさ ${escapeHtml(confidence)}</span>
+  </div>`;
 }
 
 function compactCalendarLabel(item) {
-  if (!item) return '通常日';
-  const label = item.label || item.type || '通常日';
+  if (!item) return DEFAULT_CALENDAR_LABEL;
+  const label = item.label || item.type || DEFAULT_CALENDAR_LABEL;
   const normalized = label.replace(/\s+/g, '');
-  const aliases = {
-    'ゴールデンウィーク': 'G.W',
-    'ゴールデン・ウィーク': 'G.W',
-    'シルバーウィーク': 'S.W',
-    'シルバー・ウィーク': 'S.W',
-    '年末年始休み': '年末年始',
-    'お盆休み': 'お盆'
-  };
-  return aliases[normalized] || (label.length > 7 ? `${label.slice(0, 6)}…` : label);
+  return CALENDAR_LABEL_ALIASES[normalized] || (label.length > 7 ? `${label.slice(0, 6)}…` : label);
 }
 
 function primaryCalendarContext(contextItems = []) {
@@ -384,28 +409,41 @@ function renderEvents(events, contextItems = []) {
   eventCount.textContent = `${events.length}件`;
   const titleBadge = calendarTitleBadge(contextItems);
   if (!events.length) {
-    eventsRoot.innerHTML = `<div class="empty-state event-empty-state"><div class="event-title-row event-empty-title">${titleBadge}<span>イベントなし</span></div></div>`;
+    eventsRoot.innerHTML = renderEmptyTodayEvent(titleBadge);
     return;
   }
-  eventsRoot.innerHTML = events.map(event => {
-    const windows = (event.predictedWindows || [])
-      .filter(window => window.date === dateInput.value)
-      .map(window => `<p>${escapeHtml(formatWindow(window))}<br>${escapeHtml(window.reason || '')}</p>`)
-      .join('');
-    return `<article class="event-card">
-      <div class="event-title-row">
-        ${titleBadge}
-        <h3>${escapeHtml(event.title || '名称未設定')}</h3>
-      </div>
-      <div class="event-meta">
-        <span class="tag high">影響 ${escapeHtml(event.impactLevel || '未判定')}</span>
-        <span class="tag">確からしさ ${escapeHtml(event.confidence || '未判定')}</span>
-        ${event.broadcast ? `<span class="tag">${escapeHtml(event.broadcast)}</span>` : ''}
-      </div>
-      ${event.liveReason ? `<p>${escapeHtml(event.liveReason)}</p>` : ''}
-      ${windows}
-    </article>`;
-  }).join('');
+  eventsRoot.innerHTML = events.map(event => renderTodayEventCard(event, titleBadge)).join('');
+}
+
+function renderEmptyTodayEvent(titleBadge) {
+  return `<div class="empty-state event-empty-state"><div class="event-title-row event-empty-title">${titleBadge}<span>${EMPTY_EVENT_TEXT}</span></div></div>`;
+}
+
+function renderTodayEventCard(event, titleBadge) {
+  return `<article class="event-card">
+    <div class="event-title-row">
+      ${titleBadge}
+      <h3>${escapeHtml(event.title || DEFAULT_EVENT_TITLE)}</h3>
+    </div>
+    ${renderEventMeta(event)}
+    ${event.liveReason ? `<p>${escapeHtml(event.liveReason)}</p>` : ''}
+    ${renderPredictedWindows(event)}
+  </article>`;
+}
+
+function renderEventMeta(event) {
+  return `<div class="event-meta">
+    <span class="tag high">影響 ${escapeHtml(event.impactLevel || DEFAULT_EVENT_IMPACT)}</span>
+    <span class="tag">確からしさ ${escapeHtml(event.confidence || DEFAULT_EVENT_CONFIDENCE)}</span>
+    ${event.broadcast ? `<span class="tag">${escapeHtml(event.broadcast)}</span>` : ''}
+  </div>`;
+}
+
+function renderPredictedWindows(event) {
+  return (event.predictedWindows || [])
+    .filter(window => window.date === dateInput.value)
+    .map(window => `<p>${escapeHtml(formatWindow(window))}<br>${escapeHtml(window.reason || '')}</p>`)
+    .join('');
 }
 
 function updateRecordMode(events) {
@@ -623,7 +661,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-16', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-17', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
