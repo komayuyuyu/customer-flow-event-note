@@ -384,7 +384,7 @@ function renderEvents(events, contextItems = []) {
   eventCount.textContent = `${events.length}件`;
   const titleBadge = calendarTitleBadge(contextItems);
   if (!events.length) {
-    eventsRoot.innerHTML = `<div class="event-title-row event-empty-title">${titleBadge}<p class="empty-state">大きな影響イベントはありません</p></div>`;
+    eventsRoot.innerHTML = `<div class="empty-state event-empty-state"><div class="event-title-row event-empty-title">${titleBadge}<span>大きな影響イベントはありません</span></div></div>`;
     return;
   }
   eventsRoot.innerHTML = events.map(event => {
@@ -623,7 +623,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-14', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-15', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

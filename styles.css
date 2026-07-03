@@ -90,7 +90,8 @@ select { font: inherit; }
 .empty-state { margin: 0; border: 1px dashed var(--line); border-radius: 14px; padding: 18px; color: var(--muted); text-align: center; }
 .event-panel .empty-state { text-align: left; }
 .event-empty-title { margin-bottom: 0; }
-.event-empty-title .empty-state { flex: 1 1 auto; min-width: 0; }
+.event-empty-state { padding: 18px; }
+.event-empty-title span:not(.calendar-badge) { flex: 1 1 auto; min-width: 0; }
 
 .week-list { display: grid; gap: 2px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--line); }
 .week-row { display: grid; grid-template-columns: max-content 1fr; gap: 14px; align-items: start; padding: 14px 16px; background: white; }
