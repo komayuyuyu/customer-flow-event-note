@@ -596,7 +596,8 @@ async function initialize() {
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-9', { updateViaCache: 'none' }).catch(() => {});
+  if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-10', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
