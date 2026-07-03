@@ -7,6 +7,7 @@
 - 静的Webアプリ: GitHub Pages
 - 記録保存: Firebase Authentication + Cloud Firestore
 - イベント予定: `data/events.json`
+- 勤務カレンダー由来の店頭・館イベント: `data/store-events.json`
 - 祝日・大型連休: `data/calendar-context.json`
 - 表示範囲: トップ画面の週間予定から9週先まで
 
@@ -24,6 +25,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `record.js`: 記録詳細・編集
 - `records-backend.js`: Firebase/ローカル互換の記録処理
 - `data/events.json`: 表示するイベント情報
+- `data/store-events.json`: 勤務カレンダーから入れる店頭施策・館イベント
 - `data/calendar-context.json`: 祝日・大型連休
 - `scripts/evaluate_candidates.py`: 候補イベントの影響度計算とマージ
 - `impact.py`: 影響度計算ロジック

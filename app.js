@@ -508,10 +508,11 @@ async function loadWeek() {
 
 function renderEvents(events, contextItems = []) {
   const calendarEvents = contextItems.map(item => calendarContextEvent(item, dateInput.value));
-  currentEvents = [...calendarEvents, ...events];
+  const displayEvents = [...calendarEvents, ...events];
+  currentEvents = displayEvents.filter(event => event.recordLink !== false);
   updateRecordMode(currentEvents);
-  eventCount.textContent = `${currentEvents.length}件`;
-  if (!currentEvents.length) {
+  eventCount.textContent = `${displayEvents.length}件`;
+  if (!displayEvents.length) {
     eventsRoot.innerHTML = renderEmptyTodayEvent();
     return;
   }
@@ -798,7 +799,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-31', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-33', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

@@ -9,6 +9,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 ## アプリが参照するデータ
 
 - 注目イベント: `data/events.json`
+- 勤務カレンダー由来の店頭・館イベント: `data/store-events.json`
 - 祝日・大型連休: `data/calendar-context.json`
 - 勤務後の集客記録: Firebase Authentication + Cloud Firestore
 
@@ -24,6 +25,15 @@ https://komayuyuyu.github.io/customer-flow-event-note/
    ```powershell
    python scripts/evaluate_candidates.py
    ```
+
+勤務カレンダー画像から拾った店頭施策・館イベントは `data/store-events.json` に追加する。下部メモや通常MTではなく、カレンダーの「イベント関連」欄にある予定だけを入れる。
+
+勤務カレンダーから店内イベントを吸い出す時は、反映前に必ずチャットでイベント名と期間の一覧を提示し、ユーザー確認を受ける。提示前には以下を確認する。
+
+- 長期イベントは、帯の左端と右端が乗っている日付セルをそれぞれ確認する。
+- 単日イベントは、表示されている日付セルと下部メモ欄を混同していないか確認する。
+- `イベントとして表示するが通常日扱い` の予定は `recordLink: false` を付け、保存時の関連イベントには入れない。
+- `イベント情報に掲載不要` とされた予定は `data/store-events.json` に入れない。
 
 3. テストする。
 

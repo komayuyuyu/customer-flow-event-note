@@ -25,7 +25,10 @@
 
   async function loadEventData(options = {}) {
     if (!eventDataPromise) {
-      eventDataPromise = fetchJson('./data/events.json', { errorMessage: 'イベント情報を読み込めませんでした' });
+      eventDataPromise = Promise.all([
+        fetchJson('./data/events.json', { errorMessage: 'イベント情報を読み込めませんでした' }),
+        fetchJson('./data/store-events.json', { fallback: [] }),
+      ]).then(([events, storeEvents]) => [...events, ...storeEvents].sort((a, b) => String(a.startAt || '').localeCompare(String(b.startAt || ''))));
     }
     if (!options.fallbackToEmpty) return eventDataPromise;
     return eventDataPromise.catch(() => []);
@@ -34,8 +37,9 @@
   function eventsForDay(events, targetDate) {
     return events.filter(event => {
       const eventDate = String(event.startAt || '').slice(0, 10);
+      const eventEndDate = event.showEachDay ? String(event.endAt || event.startAt || '').slice(0, 10) : '';
       const windowDates = new Set((event.predictedWindows || []).map(window => window.date));
-      return eventDate === targetDate || windowDates.has(targetDate);
+      return eventDate === targetDate || windowDates.has(targetDate) || (event.showEachDay && eventDate <= targetDate && targetDate <= eventEndDate);
     });
   }
 

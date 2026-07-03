@@ -25,6 +25,7 @@ class StaticContractTest(unittest.TestCase):
             "manifest.webmanifest",
             "icon.svg",
             "data/events.json",
+            "data/store-events.json",
             "data/calendar-context.json",
         ):
             self.assertTrue((ROOT / name).is_file(), name)
@@ -32,16 +33,17 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260703-31", html)
-            self.assertIn("ui-utils.js?v=20260703-31", html)
-            self.assertIn("app-data.js?v=20260703-31", html)
+            self.assertIn("styles.css?v=20260703-33", html)
+            self.assertIn("ui-utils.js?v=20260703-33", html)
+            self.assertIn("app-data.js?v=20260703-33", html)
             self.assertIn("EVENT INFO ＆ CUSTOMER NOTE", html)
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260703-31';", service_worker)
+        self.assertIn("const VERSION = '20260703-33';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
+        self.assertIn("./data/store-events.json", service_worker)
 
     def test_event_update_tooling_is_present(self):
         self.assertTrue((ROOT / "impact.py").is_file())
@@ -78,6 +80,9 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("const MAX_WEEK_OFFSET = 9", app)
         self.assertIn("function startOfWeek", app)
         self.assertIn("function renderChampionshipCountdown", app)
+        self.assertIn("const displayEvents = [...calendarEvents, ...events];", app)
+        self.assertIn("event.recordLink !== false", app)
+        self.assertIn("eventCount.textContent = `${displayEvents.length}件`;", app)
         self.assertNotIn("function renderEventCountdown", app)
         app_data = (ROOT / "app-data.js").read_text(encoding="utf-8")
         ui_utils = (ROOT / "ui-utils.js").read_text(encoding="utf-8")
@@ -85,6 +90,8 @@ class StaticContractTest(unittest.TestCase):
         record = (ROOT / "record.js").read_text(encoding="utf-8")
 
         self.assertIn("window.AppData", app_data)
+        self.assertIn("fetchJson('./data/store-events.json'", app_data)
+        self.assertIn("event.showEachDay", app_data)
         self.assertIn("function bindTimePlaceholders", ui_utils)
         self.assertIn("function syncTimePlaceholders", ui_utils)
         self.assertIn("function displayEventTitle", records)
@@ -125,6 +132,31 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn(".site-nav { position: fixed !important; top: 0; right: 0; bottom: 0;", styles)
         self.assertIn(".site-nav > #nav-auth-button { margin-top: 0; }", styles)
         self.assertIn(".record-list-item > .delete-icon-button { position: absolute; right: 15px; bottom: 15px; width: var(--record-side-size); height: var(--record-side-size);", styles)
+
+    def test_store_events_are_available_for_record_linking(self):
+        store_events = json.loads((ROOT / "data" / "store-events.json").read_text(encoding="utf-8"))
+        by_title = {event["title"]: event for event in store_events}
+        self.assertEqual(set(by_title), {
+            "MORE PRICE DOWN 打ち出し",
+            "ORCIVAL 打ち出し",
+            "館 SUPER OUTLET SALE",
+            "営業時間延長",
+            "棚卸",
+        })
+        self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["startAt"][:10], "2026-07-03")
+        self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["endAt"][:10], "2026-07-12")
+        self.assertEqual(by_title["ORCIVAL 打ち出し"]["startAt"][:10], "2026-07-17")
+        self.assertEqual(by_title["ORCIVAL 打ち出し"]["endAt"][:10], "2026-07-26")
+        self.assertEqual(by_title["館 SUPER OUTLET SALE"]["startAt"][:10], "2026-07-17")
+        self.assertEqual(by_title["館 SUPER OUTLET SALE"]["endAt"][:10], "2026-07-28")
+        self.assertEqual(by_title["営業時間延長"]["startAt"][:10], "2026-07-19")
+        self.assertEqual(by_title["棚卸"].get("recordLink"), False)
+        for event in store_events:
+            self.assertTrue(event.get("id"))
+            self.assertTrue(event.get("startAt"))
+            self.assertTrue(event.get("endAt"))
+            self.assertTrue(event.get("predictedWindows"))
+            self.assertNotIn("calendarContextEvent", event)
 
 
 if __name__ == "__main__":
