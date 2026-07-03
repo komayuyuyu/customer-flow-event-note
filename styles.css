@@ -58,7 +58,7 @@ select { font: inherit; }
 .date-row label { font-weight: 700; }
 .date-row input, .time-grid input { width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--card); color: var(--ink); -webkit-text-fill-color: var(--ink); opacity: 1; }
 .date-row input { display: none; min-width: 0; }
-.date-picker-button { min-width: 190px; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--card); color: var(--ink); cursor: pointer; text-align: left; }
+.date-picker-button { min-width: 190px; border: 1px solid var(--green); border-radius: 12px; padding: 10px 12px; background: var(--green); color: white; cursor: pointer; text-align: left; font-weight: 800; }
 .calendar-popover { position: absolute; top: calc(100% - 8px); left: 62px; z-index: 70; width: 320px; border: 1px solid var(--line); border-radius: 16px; padding: 15px; background: var(--card); box-shadow: 0 8px 22px rgba(33,49,41,.07); }
 .calendar-popover.is-floating { position: fixed; z-index: 120; display: block; max-width: calc(100vw - 24px); }
 .calendar-header { display: grid; grid-template-columns: 42px 1fr 42px; align-items: center; gap: 8px; margin-bottom: 12px; }
@@ -113,14 +113,14 @@ select { font: inherit; }
 .week-row { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 16px; background: white; }
 .week-row.is-empty { align-items: center; padding-top: 10px; padding-bottom: 10px; }
 .week-date { display: grid; width: 96px; justify-items: end; gap: 4px; white-space: nowrap; color: var(--muted); font-size: .8rem; font-weight: 600; }
-.week-date strong { width: 96px; color: var(--ink); font-size: .92rem; font-weight: 600; text-align: right; }
+.week-date strong { width: 96px; padding-right: 16px; color: var(--ink); font-size: .92rem; font-weight: 600; text-align: right; }
 .week-events { display: grid; gap: 8px; }
 .week-events > .calendar-badge { margin-bottom: 2px; }
 .week-event { display: grid; gap: 3px; }
 .week-event-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 .week-event-name { color: var(--ink); font-size: .92rem; font-weight: 700; }
 .week-event-time { color: var(--muted); font-size: .78rem; }
-.week-day-impact { display: inline-flex; width: max-content; align-items: center; border-radius: 999px; padding: 2px 7px; background: var(--green-soft); color: var(--green); font-size: .7rem; font-weight: 800; }
+.week-day-impact { display: inline-flex; width: max-content; justify-self: center; align-items: center; border-radius: 999px; padding: 2px 7px; background: var(--green-soft); color: var(--green); font-size: .7rem; font-weight: 800; }
 .week-day-impact.high { background: var(--orange-soft); color: #8f3b1e; }
 .week-row.has-events .week-event-head { justify-content: flex-start; align-items: center; gap: 12px; }
 .week-empty { color: var(--muted); font-size: .86rem; }
@@ -259,8 +259,8 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   body.menu-open { overflow: hidden; }
   .date-row { display: flex; width: 100%; align-items: center; justify-content: flex-start; gap: 8px; }
   .date-row label { flex: 0 0 auto; }
-  .date-row input { display: block; flex: 0 1 auto; width: 134px; min-width: 0; max-width: 100%; height: 42px; min-height: 42px; padding: 0 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); -webkit-text-fill-color: var(--ink); font-size: 14px; line-height: 20px; opacity: 1; }
-  .date-row input::-webkit-date-and-time-value { display: flex; min-height: 40px; align-items: center; color: var(--ink); text-align: left; }
+  .date-row input { display: block; flex: 0 1 auto; width: 134px; min-width: 0; max-width: 100%; height: 42px; min-height: 42px; padding: 0 8px; border: 1px solid var(--green); border-radius: 12px; background: var(--green); color: white; -webkit-text-fill-color: white; font-size: 14px; font-weight: 800; line-height: 20px; opacity: 1; }
+  .date-row input::-webkit-date-and-time-value { display: flex; min-height: 40px; align-items: center; color: white; text-align: left; }
   .time-grid input::-webkit-date-and-time-value { min-height: 20px; color: var(--ink); text-align: left; }
   .date-picker-button, .calendar-popover { display: none; }
   .calendar-popover.is-floating { display: block; }

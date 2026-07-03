@@ -21,9 +21,17 @@ function dateLabel(value) {
   return `${value.replaceAll('-', '/')}（${weekday.format(date)}）`;
 }
 
+function displayEventTitle(title) {
+  return String(title || '').replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
+    if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
+    if (away === 'JPN' && home !== 'JPN') return `対 ${home}`;
+    return `${home} 対 ${away}`;
+  });
+}
+
 function eventNames(item) {
   const relatedNames = (item.relatedEvents || []).map(event => {
-    const title = eventMap.get(event.id)?.title || event.title;
+    const title = displayEventTitle(eventMap.get(event.id)?.title || event.title);
     const status = event.status && event.status !== '実施済み' ? `［${event.status}］` : '';
     return `${title}${status}`;
   });
@@ -31,6 +39,7 @@ function eventNames(item) {
 
   const legacyNames = (item.eventIds || [])
     .map(id => eventMap.get(id)?.title)
+    .map(displayEventTitle)
     .filter(Boolean);
   if (legacyNames.length) return legacyNames.join('／');
   return item.eventIds?.length ? '関連イベントあり' : '通常日の記録';

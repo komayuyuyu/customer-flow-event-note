@@ -10,8 +10,15 @@ const date = new URLSearchParams(location.search).get('date') || '';
 let record;
 function value(label, content, className = '') { return `<div class="detail-row ${className}"><dt>${esc(label)}</dt><dd>${content || '—'}</dd></div>`; }
 function combinedMemo(item) { return [item.note, item.customerTopics].filter(Boolean).join('\n'); }
+function displayEventTitle(title) {
+  return String(title || '').replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
+    if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
+    if (away === 'JPN' && home !== 'JPN') return `対 ${home}`;
+    return `${home} 対 ${away}`;
+  });
+}
 function renderView() {
-  const events = (record.relatedEvents || []).map(item => `${esc(item.title)} <span class="tag">${esc(item.status || '実施済み')}</span>`).join('<br>') || (record.eventIds?.length ? '関連イベントあり' : '通常日の記録');
+  const events = (record.relatedEvents || []).map(item => `${esc(displayEventTitle(item.title))} <span class="tag">${esc(item.status || '実施済み')}</span>`).join('<br>') || (record.eventIds?.length ? '関連イベントあり' : '通常日の記録');
   root.innerHTML = `<dl class="detail-grid">${value('記録日', esc(record.date))}${value('集客状況', esc(record.trafficLevel))}${value('天気', esc(record.weather))}${value('祝日・大型連休', (record.calendarContext || []).map(item => `<span class="calendar-badge">${esc(item.type)}：${esc(item.label)}</span>`).join(' '))}${value('関連イベント', events, 'detail-wide')}${value('特に暇もしくは混雑した時間', esc((record.quietPeriods || []).join('・')))}${value('イベントの影響', esc(record.eventImpact))}${value('予測結果', esc(record.accuracy))}${value('影響を感じた開始時刻', esc(record.actualImpactStart))}${value('落ち着いた時刻', esc(record.actualImpactEnd))}${value('メモ', esc(combinedMemo(record)), 'detail-wide')}</dl><div class="detail-actions"><button id="edit-button" class="save-button" type="button">編集する</button><button id="delete-record-button" class="delete-icon-button" type="button" aria-label="この記録を削除">${trashIcon}</button></div>`;
   document.querySelector('#edit-button').addEventListener('click', renderEdit);
   document.querySelector('#delete-record-button').addEventListener('click', openDeleteModal);
@@ -47,7 +54,7 @@ function editedRecord() {
 
 function renderEdit() {
   const periods = ['午前', '昼', '夕方', '終日', '特になし'];
-  const events = (record.relatedEvents || []).map((item, index) => `<label class="related-event-row"><span>${esc(item.title)}</span><select class="event-status" data-index="${index}">${options(['実施予定', '実施済み', '中止', '延期'], item.status || '実施済み')}</select></label>`).join('');
+  const events = (record.relatedEvents || []).map((item, index) => `<label class="related-event-row"><span>${esc(displayEventTitle(item.title))}</span><select class="event-status" data-index="${index}">${options(['実施予定', '実施済み', '中止', '延期'], item.status || '実施済み')}</select></label>`).join('');
   root.innerHTML = `<form id="detail-form"><p><strong>${esc(record.date)}</strong></p>${events ? `<div class="related-events"><strong>関連イベント</strong>${events}</div>` : ''}<label class="note-label">集客状況</label><select id="traffic">${options(['暇', '通常', '混雑'], record.trafficLevel || '通常')}</select><label class="note-label">天気</label><select id="weather">${options(['晴れ', '曇り', '雨', '雪', '荒天', '不明'], record.weather || '不明')}</select><fieldset><legend>特に暇もしくは混雑した時間</legend><div class="choice-grid periods">${periods.map(value => `<label class="choice"><input type="checkbox" name="period" value="${value}"${(record.quietPeriods || []).includes(value) ? ' checked' : ''}><span>${value}</span></label>`).join('')}</div></fieldset><div class="time-grid"><label>影響を感じた開始時刻<span class="time-input-wrap" data-placeholder="--:--"><input id="impact-start" type="time" value="${esc(record.actualImpactStart)}"></span></label><label>落ち着いた時刻<span class="time-input-wrap" data-placeholder="--:--"><input id="impact-end" type="time" value="${esc(record.actualImpactEnd)}"></span></label></div><label class="note-label">イベントによる影響</label><select id="impact">${options(['感じた', '感じなかった', 'わからない', '対象外'], record.eventImpact || 'わからない')}</select><label class="note-label">予測結果</label><select id="accuracy">${options(['予測どおり', '一部当たった', '外れた', '未判断'], record.accuracy || '未判断')}</select><label class="note-label">メモ</label><textarea id="note" maxlength="600">${esc(combinedMemo(record))}</textarea><button class="save-button" type="submit">変更を保存</button><button id="cancel-button" class="action-link" type="button">キャンセル</button><p id="edit-status" class="save-status"></p></form>`;
   bindTimePlaceholders(root);
   document.querySelector('#cancel-button').addEventListener('click', renderView);
