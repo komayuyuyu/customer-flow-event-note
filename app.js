@@ -38,15 +38,27 @@ let currentEvents = [];
 let currentUser = null;
 let initialized = false;
 let calendarContext;
+let eventData;
 let calendarCursor;
 
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'long' });
 async function loadCalendarContext() {
   if (!calendarContext) {
     calendarContext = fetch('./data/calendar-context.json', { cache: 'no-store' })
-      .then(response => response.ok ? response.json() : { holidays: {}, periods: [] });
+      .then(response => response.ok ? response.json() : { holidays: {}, periods: [] })
+      .catch(() => ({ holidays: {}, periods: [] }));
   }
   return calendarContext;
+}
+
+async function loadEventData() {
+  if (!eventData) {
+    eventData = fetch('./data/events.json', { cache: 'no-store' }).then(response => {
+      if (!response.ok) throw new Error('イベント情報を読み込めませんでした');
+      return response.json();
+    });
+  }
+  return eventData;
 }
 
 async function contextForDate(dateText) {
@@ -158,6 +170,9 @@ function createLocalBackend() {
       if (!response.ok) throw new Error('読み込みに失敗しました');
       return response.json();
     },
+    async getEvents(date) {
+      return eventsForDay(await loadEventData(), date);
+    },
     async saveObservation(payload) {
       const response = await fetch('./api/observations', {
         method: 'POST',
@@ -189,7 +204,6 @@ async function createCloudBackend() {
   const db = firestoreSdk.getFirestore(app);
   const provider = new authSdk.GoogleAuthProvider();
   provider.setCustomParameters({ prompt: 'select_account' });
-  let eventCache;
   let authError = '';
   let notifyUserChange = () => {};
   let initialAuthResolved = false;
@@ -217,16 +231,6 @@ async function createCloudBackend() {
     }
   });
 
-  async function loadEvents() {
-    if (!eventCache) {
-      eventCache = fetch('./data/events.json', { cache: 'no-store' }).then(response => {
-        if (!response.ok) throw new Error('イベント情報を読み込めませんでした');
-        return response.json();
-      });
-    }
-    return eventCache;
-  }
-
   return {
     mode: 'cloud',
     async initialize(onUserChange) {
@@ -241,7 +245,7 @@ async function createCloudBackend() {
       await authSdk.signOut(auth);
     },
     async getDay(date) {
-      const events = eventsForDay(await loadEvents(), date);
+      const events = eventsForDay(await loadEventData(), date);
       let observation = null;
       if (currentUser) {
         const reference = firestoreSdk.doc(db, 'users', currentUser.uid, 'observations', date);
@@ -249,6 +253,9 @@ async function createCloudBackend() {
         if (snapshot.exists()) observation = snapshot.data();
       }
       return { date, events, observation };
+    },
+    async getEvents(date) {
+      return eventsForDay(await loadEventData(), date);
     },
     async saveObservation(payload) {
       if (!currentUser) throw new Error('記録するにはGoogleログインが必要です。');
@@ -337,9 +344,9 @@ async function loadWeek() {
   weekRoot.innerHTML = '<p class="empty-state">読み込んでいます…</p>';
   try {
     const dates = Array.from({ length: 7 }, (_, index) => addDays(dateInput.value, index));
-    const payloads = await Promise.all(dates.map(value => backend.getDay(value)));
+    const eventLists = await Promise.all(dates.map(value => backend.getEvents(value)));
     const contexts = await Promise.all(dates.map(contextForDate));
-    renderWeek(payloads.map((payload, index) => ({ date: dates[index], events: payload.events || [], context: contexts[index] })));
+    renderWeek(dates.map((date, index) => ({ date, events: eventLists[index], context: contexts[index] })));
   } catch (error) {
     weekCount.textContent = '取得失敗';
     weekRoot.innerHTML = '<p class="empty-state">1週間の予定を読み込めませんでした。</p>';
@@ -382,7 +389,7 @@ function updateRecordMode(events) {
     accuracyFieldset.hidden = false;
     eventImpactFieldset.hidden = false;
     renderRelatedEvents(events);
-    saveButton.textContent = 'イベント日の集客記録を保存';
+    saveButton.textContent = '集客記録を保存';
     return;
   }
   recordContext.classList.remove('event-linked');
@@ -391,7 +398,7 @@ function updateRecordMode(events) {
   eventImpactFieldset.hidden = true;
   relatedEventsRoot.hidden = true;
   setChecked('accuracy', '未判断');
-  saveButton.textContent = '通常日の集客記録を保存';
+  saveButton.textContent = '集客記録を保存';
 }
 
 function renderRelatedEvents(events, savedStatuses = {}) {
@@ -403,7 +410,10 @@ function renderRelatedEvents(events, savedStatuses = {}) {
 }
 
 function clearForm() {
+  const selectedDate = dateInput.value;
   form.reset();
+  dateInput.value = selectedDate;
+  updateDatePickerButton();
   document.querySelector('#impact-start').value = '';
   document.querySelector('#impact-end').value = '';
   note.value = '';
@@ -572,7 +582,7 @@ async function initialize() {
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-3', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-6', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
