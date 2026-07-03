@@ -330,7 +330,7 @@ function renderWeek(days) {
           </div>
           <span class="week-event-time">${escapeHtml(eventTime(event))}開始・確からしさ ${escapeHtml(event.confidence || '未判定')}</span>
         </div>`).join('')
-      : '<span class="week-empty">大きな影響イベントなし</span>';
+      : '<span class="week-empty">影響イベントなし</span>';
     return `<div class="week-row ${day.events.length ? 'has-events' : 'is-empty'}">
       <div class="week-date"><strong>${escapeHtml(label.date)}</strong><span>（${escapeHtml(label.weekday)}）</span></div>
       ${dayImpactMarkup}
@@ -384,7 +384,7 @@ function renderEvents(events, contextItems = []) {
   eventCount.textContent = `${events.length}件`;
   const titleBadge = calendarTitleBadge(contextItems);
   if (!events.length) {
-    eventsRoot.innerHTML = `<div class="empty-state event-empty-state"><div class="event-title-row event-empty-title">${titleBadge}<span>大きな影響イベントはありません</span></div></div>`;
+    eventsRoot.innerHTML = `<div class="empty-state event-empty-state"><div class="event-title-row event-empty-title">${titleBadge}<span>イベントなし</span></div></div>`;
     return;
   }
   eventsRoot.innerHTML = events.map(event => {
@@ -623,7 +623,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-15', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-16', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
