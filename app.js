@@ -339,6 +339,31 @@ function renderWeek(days) {
   }).join('');
 }
 
+function compactCalendarLabel(item) {
+  if (!item) return '通常日';
+  const label = item.label || item.type || '通常日';
+  const normalized = label.replace(/\s+/g, '');
+  const aliases = {
+    'ゴールデンウィーク': 'G.W',
+    'ゴールデン・ウィーク': 'G.W',
+    'シルバーウィーク': 'S.W',
+    'シルバー・ウィーク': 'S.W',
+    '年末年始休み': '年末年始',
+    'お盆休み': 'お盆'
+  };
+  return aliases[normalized] || (label.length > 7 ? `${label.slice(0, 6)}…` : label);
+}
+
+function primaryCalendarContext(contextItems = []) {
+  return contextItems.find(item => item.type === '大型連休') || contextItems[0] || null;
+}
+
+function calendarTitleBadge(contextItems = []) {
+  const context = primaryCalendarContext(contextItems);
+  const muted = context ? '' : ' muted';
+  return `<span class="calendar-badge title-badge${muted}">${escapeHtml(compactCalendarLabel(context))}</span>`;
+}
+
 async function loadWeek() {
   weekCount.textContent = '確認中';
   weekRoot.innerHTML = '<p class="empty-state">読み込んでいます…</p>';
@@ -357,25 +382,26 @@ function renderEvents(events, contextItems = []) {
   currentEvents = events;
   updateRecordMode(events);
   eventCount.textContent = `${events.length}件`;
-  const contextMarkup = contextItems.length
-    ? `<div class="calendar-context-row">${contextItems.map(item => `<span class="calendar-badge">${escapeHtml(item.type)}：${escapeHtml(item.label)}</span>`).join('')}</div>`
-    : '<div class="calendar-context-row"><span class="calendar-badge muted">通常日</span></div>';
+  const titleBadge = calendarTitleBadge(contextItems);
   if (!events.length) {
-    eventsRoot.innerHTML = `${contextMarkup}<p class="empty-state">大きな影響イベントはありません</p>`;
+    eventsRoot.innerHTML = `<div class="event-title-row event-empty-title">${titleBadge}<p class="empty-state">大きな影響イベントはありません</p></div>`;
     return;
   }
-  eventsRoot.innerHTML = contextMarkup + events.map(event => {
+  eventsRoot.innerHTML = events.map(event => {
     const windows = (event.predictedWindows || [])
       .filter(window => window.date === dateInput.value)
       .map(window => `<p>${escapeHtml(formatWindow(window))}<br>${escapeHtml(window.reason || '')}</p>`)
       .join('');
     return `<article class="event-card">
+      <div class="event-title-row">
+        ${titleBadge}
+        <h3>${escapeHtml(event.title || '名称未設定')}</h3>
+      </div>
       <div class="event-meta">
         <span class="tag high">影響 ${escapeHtml(event.impactLevel || '未判定')}</span>
         <span class="tag">確からしさ ${escapeHtml(event.confidence || '未判定')}</span>
         ${event.broadcast ? `<span class="tag">${escapeHtml(event.broadcast)}</span>` : ''}
       </div>
-      <h3>${escapeHtml(event.title || '名称未設定')}</h3>
       ${event.liveReason ? `<p>${escapeHtml(event.liveReason)}</p>` : ''}
       ${windows}
     </article>`;
@@ -597,7 +623,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-13', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-14', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

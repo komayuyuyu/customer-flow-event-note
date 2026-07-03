@@ -79,14 +79,18 @@ select { font: inherit; }
 .calendar-context-row { display: flex; flex-wrap: wrap; gap: 7px; }
 .calendar-badge { display: inline-flex; width: max-content; border-radius: 999px; padding: 3px 9px; background: var(--orange-soft); color: #7d351c; font-size: .76rem; font-weight: 800; }
 .calendar-badge.muted { background: var(--green-soft); color: var(--green); }
+.event-title-row { display: flex; min-width: 0; align-items: center; gap: 8px; margin-bottom: 8px; }
+.calendar-badge.title-badge { flex: 0 0 auto; max-width: 88px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .event-card { border-left: 4px solid var(--orange); border-radius: 12px; padding: 15px 16px; background: #faf5ec; }
-.event-card h3 { margin: 0 0 5px; font-size: 1.05rem; }
+.event-card h3 { flex: 1 1 auto; min-width: 0; margin: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 1.05rem; }
 .event-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
 .tag { border-radius: 999px; padding: 3px 8px; background: white; border: 1px solid var(--line); font-size: .75rem; }
 .tag.high { background: var(--orange-soft); border-color: transparent; color: #8f3b1e; font-weight: 800; }
 .event-card p { margin: 5px 0; color: var(--muted); font-size: .92rem; }
 .empty-state { margin: 0; border: 1px dashed var(--line); border-radius: 14px; padding: 18px; color: var(--muted); text-align: center; }
 .event-panel .empty-state { text-align: left; }
+.event-empty-title { margin-bottom: 0; }
+.event-empty-title .empty-state { flex: 1 1 auto; min-width: 0; }
 
 .week-list { display: grid; gap: 2px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--line); }
 .week-row { display: grid; grid-template-columns: max-content 1fr; gap: 14px; align-items: start; padding: 14px 16px; background: white; }
