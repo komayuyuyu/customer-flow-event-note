@@ -124,9 +124,34 @@ function shortDate(dateText) {
   };
 }
 
-function eventHeadingText(dateText) {
+function eventHeadingLabel(dateText) {
   const label = shortDate(dateText);
-  return `${label.date}（${label.weekday}）のイベント`;
+  return `${label.date.replace('/', '／')}（${label.weekday}）`;
+}
+
+function openRecordDatePicker() {
+  const datePickerVisible = datePickerButton && getComputedStyle(datePickerButton).display !== 'none';
+  if (datePickerVisible) {
+    setCalendarOpen(true);
+    return;
+  }
+  dateInput.scrollIntoView({ block: 'center' });
+  if (typeof dateInput.showPicker === 'function') {
+    dateInput.showPicker();
+    return;
+  }
+  dateInput.focus();
+  dateInput.click();
+}
+
+function updateEventHeading(dateText) {
+  const label = eventHeadingLabel(dateText);
+  eventTitleHeading.innerHTML = `<a class="event-title-date-button" href="#record-date" aria-label="記録日を変更">${escapeHtml(label)}</a><span>のイベント</span>`;
+  eventTitleHeading.querySelector('.event-title-date-button')?.addEventListener('click', event => {
+    event.preventDefault();
+    event.stopPropagation();
+    openRecordDatePicker();
+  });
 }
 
 function startOfWeek(dateText) {
@@ -531,7 +556,7 @@ async function loadDay() {
   saveStatus.textContent = '';
   saveStatus.classList.remove('error');
   saveActions.hidden = true;
-  eventTitleHeading.textContent = eventHeadingText(dateInput.value);
+  updateEventHeading(dateInput.value);
   eventCount.textContent = '確認中';
   eventsRoot.innerHTML = '<p class="empty-state">読み込んでいます…</p>';
   try {
@@ -689,7 +714,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-25', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-26', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

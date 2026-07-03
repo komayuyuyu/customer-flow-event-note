@@ -32,13 +32,14 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260703-25", html)
-            self.assertIn("ui-utils.js?v=20260703-25", html)
-            self.assertIn("app-data.js?v=20260703-25", html)
-            self.assertIn("IVENT INFO ＆ CUSTOMER NOTE", html)
+            self.assertIn("styles.css?v=20260703-26", html)
+            self.assertIn("ui-utils.js?v=20260703-26", html)
+            self.assertIn("app-data.js?v=20260703-26", html)
+            self.assertIn("EVENT INFO ＆ CUSTOMER NOTE", html)
+            self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260703-25';", service_worker)
+        self.assertIn("const VERSION = '20260703-26';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
 
@@ -55,6 +56,12 @@ class StaticContractTest(unittest.TestCase):
 
         self.assertIn("function renderTodayEventCard", app)
         self.assertIn("function renderWeekEvent", app)
+        self.assertIn("function updateEventHeading", app)
+        self.assertIn("function openRecordDatePicker", app)
+        self.assertIn("label.date.replace('/', '／')", app)
+        self.assertIn("event-title-date-button", app)
+        self.assertIn("event.stopPropagation();", app)
+        self.assertIn("dateInput.scrollIntoView({ block: 'center' });", app)
         self.assertIn("const MAX_WEEK_OFFSET = 9", app)
         self.assertIn("function startOfWeek", app)
         self.assertIn("function renderChampionshipCountdown", app)
@@ -76,6 +83,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("--status-pill-size: 58px;", styles)
         self.assertIn(".detail-shell .page-intro h2, .records-shell .page-intro h2 { font-size: 24px; }", styles)
         self.assertIn(".count-pill { display: inline-flex; min-width: var(--status-pill-size);", styles)
+        self.assertIn(".event-title-date-button { min-height: 36px;", styles)
         self.assertIn(".week-nav { display: grid; grid-template-columns: 46px minmax(0, 1fr) 46px; width: 100%; height: 38px;", styles)
         self.assertIn("transform: translateY(-2px);", styles)
         self.assertIn(".week-row { display: grid; grid-template-columns: 82px minmax(0, 1fr);", styles)

@@ -76,6 +76,8 @@ select { font: inherit; }
 .week-panel, .record-panel { margin-top: 20px; }
 .section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
 .section-heading h2 { margin: 2px 0 0; font-weight: 700; font-size: 1.5rem; line-height: 1.4; letter-spacing: -.02em; }
+.event-title-date-button { min-height: 36px; margin: -4px 0; border: 0; border-radius: 8px; padding: 4px 0; background: transparent; color: inherit; cursor: pointer; font: inherit; font-weight: inherit; letter-spacing: inherit; text-decoration: none; }
+.event-title-date-button:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
 .week-nav-row { display: flex; width: 100%; justify-content: center; margin: -8px 0 14px; }
 .week-nav { display: grid; grid-template-columns: 46px minmax(0, 1fr) 46px; width: 100%; height: 38px; align-items: stretch; justify-content: center; overflow: hidden; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--green); font-size: 14px; font-weight: 800; white-space: nowrap; }
 .week-nav button { display: inline-flex; height: 36px; min-height: 36px; align-items: center; justify-content: center; border: 0; background: transparent; color: var(--green); cursor: pointer; font-size: 14px; font-weight: 800; line-height: 1; }
