@@ -230,16 +230,18 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   .site-nav .menu-header { display: flex; width: 100%; min-height: 44px; margin-bottom: 12px; align-items: center; justify-content: space-between; gap: 8px; }
   .menu-brand { min-width: 0; white-space: nowrap; line-height: 1.2; }
   .menu-brand strong, .menu-brand span { display: block; white-space: nowrap; }
-  .menu-brand strong { font-size: clamp(13px, 4vw, 16px); font-weight: 600; letter-spacing: -.03em; }
-  .menu-brand span { margin-top: 3px; color: var(--orange); font-size: clamp(7px, 2.2vw, 9px); font-weight: 800; letter-spacing: .04em; }
-  .site-nav .menu-close { display: flex; flex: 0 0 44px; width: 44px; min-height: 44px; margin: 0; padding: 0; justify-content: center; border: 1px solid var(--line); background: white; color: var(--ink); font-size: 1.6rem; line-height: 1; }
+  .menu-brand span { color: var(--orange); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+  .menu-brand strong { margin-top: 2px; font-size: clamp(13px, 4vw, 16px); font-weight: 600; letter-spacing: -.03em; }
+  .site-nav .menu-close { display: flex; flex: 0 0 44px; width: 44px; height: 44px; min-height: 44px; margin: 0; padding: 0; justify-content: center; border: 1px solid var(--line); border-radius: 12px; background: white; color: var(--ink); font-size: 1.6rem; line-height: 1; }
   body.menu-open { overflow: hidden; }
   .date-row { display: flex; width: 100%; align-items: center; justify-content: flex-start; gap: 8px; }
   .date-row label, .today-button { flex: 0 0 auto; }
-  .date-row input { display: block; flex: 0 1 auto; width: 134px; min-width: 0; max-width: 100%; height: 38px; min-height: 38px; padding: 7px 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); -webkit-text-fill-color: var(--ink); font-size: 14px; line-height: 20px; opacity: 1; }
-  .date-row input::-webkit-date-and-time-value, .time-grid input::-webkit-date-and-time-value { min-height: 20px; color: var(--ink); text-align: left; }
+  .date-row input { display: block; flex: 0 1 auto; width: 134px; min-width: 0; max-width: 100%; height: 42px; min-height: 42px; padding: 0 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); -webkit-text-fill-color: var(--ink); font-size: 14px; line-height: 20px; opacity: 1; }
+  .date-row input::-webkit-date-and-time-value { display: flex; min-height: 40px; align-items: center; color: var(--ink); text-align: left; }
+  .time-grid input::-webkit-date-and-time-value { min-height: 20px; color: var(--ink); text-align: left; }
   .date-picker-button, .calendar-popover { display: none; }
-  .today-button { padding: 8px 9px; }
+  .today-button { height: 42px; padding: 0 9px; }
+  .page-intro > .eyebrow { max-width: 100%; font-size: 10px; letter-spacing: .12em; }
   .panel { border-radius: 19px; padding: 20px 16px; }
   .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
   .detail-row { padding: 7px 8px; }
