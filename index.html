@@ -9,16 +9,15 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260703-6">
+  <link rel="stylesheet" href="./styles.css?v=20260703-7">
 </head>
 <body>
   <main class="shell">
     <div class="menu-overlay" hidden></div>
     <nav class="site-nav" aria-label="メインメニュー">
-      <button class="menu-close" type="button" aria-label="メニューを閉じる">×</button>
-      <a class="is-current" href="./">ホーム</a>
+      <div class="menu-header"><div class="menu-brand"><strong>イベント情報・集客記録</strong><span>EVENT INFO &amp; CUSTOMER FLOW RECORDS</span></div><button class="menu-close" type="button" aria-label="メニューを閉じる">×</button></div>
+      <a class="is-current" href="#record-form">新規記録</a>
       <a href="./records.html">記録一覧</a>
-      <a href="#record-form">新規記録</a>
       <button id="nav-auth-button" type="button">ログイン</button>
     </nav>
     <header class="hero app-header">
@@ -115,8 +114,8 @@
       </fieldset>
 
       <div class="time-grid">
-        <label>影響を感じた開始時刻<input id="impact-start" type="time"></label>
-        <label>落ち着いた時刻<input id="impact-end" type="time"></label>
+        <label>影響を感じた開始時刻<span class="time-input-wrap" data-placeholder="--:--"><input id="impact-start" type="time"></span></label>
+        <label>落ち着いた時刻<span class="time-input-wrap" data-placeholder="--:--"><input id="impact-end" type="time"></span></label>
       </div>
 
       <fieldset id="event-impact-fieldset" hidden>
@@ -155,9 +154,9 @@
       </div>
     </div>
   </div>
-  <script src="./menu.js?v=20260703-6" defer></script>
+  <script src="./menu.js?v=20260703-7" defer></script>
   <script src="./firebase-config.js"></script>
-  <script src="./ui-utils.js?v=20260703-6"></script>
-  <script src="./app.js?v=20260703-6" defer></script>
+  <script src="./ui-utils.js?v=20260703-7"></script>
+  <script src="./app.js?v=20260703-7" defer></script>
 </body>
 </html>
