@@ -1,7 +1,7 @@
 const FIREBASE_SDK_VERSION = '12.15.0';
 const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
-const { bindTimePlaceholders, escapeHtml, readableAuthError, syncTimePlaceholders } = window.UiUtils;
-const { addDays, contextForDate, dateParts, eventsForDate, eventsForDay, localToday } = window.AppData;
+const { bindTimePlaceholders, displayEventTitle, escapeHtml, readableAuthError, syncTimePlaceholders } = window.UiUtils;
+const { addDays, contextForDate, dateParts, eventsForDate, eventsForDay, isRecordLinkedEvent, localToday } = window.AppData;
 
 const dateInput = document.querySelector('#record-date');
 const datePickerButton = document.querySelector('#date-picker-button');
@@ -435,19 +435,11 @@ function renderWeekEvent(event) {
   const confidence = event.confidence || DEFAULT_EVENT_CONFIDENCE;
   return `<div class="week-event">
     <div class="week-event-head">
-      <span class="week-event-name">${escapeHtml(displayEventTitle(event.title || DEFAULT_EVENT_TITLE))}</span>
+      <span class="week-event-name">${escapeHtml(displayEventTitle(event.title, DEFAULT_EVENT_TITLE))}</span>
     </div>
     <span class="week-event-time">${escapeHtml(eventTime(event))}開始・確からしさ ${escapeHtml(confidence)}${event.area ? `・${escapeHtml(event.area)}` : ''}</span>
     ${renderChampionshipCountdown(event, 'week-event-note')}
   </div>`;
-}
-
-function displayEventTitle(title) {
-  return String(title || DEFAULT_EVENT_TITLE).replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
-    if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
-    if (away === 'JPN' && home !== 'JPN') return `対 ${home}`;
-    return `${home} 対 ${away}`;
-  });
 }
 
 function compactCalendarLabel(item) {
@@ -509,7 +501,7 @@ async function loadWeek() {
 function renderEvents(events, contextItems = []) {
   const calendarEvents = contextItems.map(item => calendarContextEvent(item, dateInput.value));
   const displayEvents = [...calendarEvents, ...events];
-  currentEvents = displayEvents.filter(event => event.recordLink !== false);
+  currentEvents = displayEvents.filter(isRecordLinkedEvent);
   updateRecordMode(currentEvents);
   eventCount.textContent = `${displayEvents.length}件`;
   if (!displayEvents.length) {
@@ -799,7 +791,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-33', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-34', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

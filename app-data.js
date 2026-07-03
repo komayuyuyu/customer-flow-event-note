@@ -1,4 +1,5 @@
 (function () {
+  const EVENT_DATA_PATHS = ['./data/events.json', './data/store-events.json'];
   let calendarContextPromise;
   let eventDataPromise;
 
@@ -26,21 +27,41 @@
   async function loadEventData(options = {}) {
     if (!eventDataPromise) {
       eventDataPromise = Promise.all([
-        fetchJson('./data/events.json', { errorMessage: 'イベント情報を読み込めませんでした' }),
-        fetchJson('./data/store-events.json', { fallback: [] }),
-      ]).then(([events, storeEvents]) => [...events, ...storeEvents].sort((a, b) => String(a.startAt || '').localeCompare(String(b.startAt || ''))));
+        fetchJson(EVENT_DATA_PATHS[0], { errorMessage: 'イベント情報を読み込めませんでした' }),
+        fetchJson(EVENT_DATA_PATHS[1], { fallback: [] }),
+      ]).then(eventGroups => eventGroups.flat().sort(compareEventsByStart));
     }
     if (!options.fallbackToEmpty) return eventDataPromise;
     return eventDataPromise.catch(() => []);
   }
 
+  function eventStartDate(event) {
+    return String(event.startAt || '').slice(0, 10);
+  }
+
+  function eventEndDate(event) {
+    return String(event.endAt || event.startAt || '').slice(0, 10);
+  }
+
+  function compareEventsByStart(a, b) {
+    return String(a.startAt || '').localeCompare(String(b.startAt || ''));
+  }
+
+  function hasPredictedWindowOn(event, targetDate) {
+    return (event.predictedWindows || []).some(window => window.date === targetDate);
+  }
+
+  function eventCoversDate(event, targetDate) {
+    if (eventStartDate(event) === targetDate || hasPredictedWindowOn(event, targetDate)) return true;
+    return Boolean(event.showEachDay && eventStartDate(event) <= targetDate && targetDate <= eventEndDate(event));
+  }
+
+  function isRecordLinkedEvent(event) {
+    return event?.recordLink !== false;
+  }
+
   function eventsForDay(events, targetDate) {
-    return events.filter(event => {
-      const eventDate = String(event.startAt || '').slice(0, 10);
-      const eventEndDate = event.showEachDay ? String(event.endAt || event.startAt || '').slice(0, 10) : '';
-      const windowDates = new Set((event.predictedWindows || []).map(window => window.date));
-      return eventDate === targetDate || windowDates.has(targetDate) || (event.showEachDay && eventDate <= targetDate && targetDate <= eventEndDate);
-    });
+    return events.filter(event => eventCoversDate(event, targetDate));
   }
 
   async function eventsForDate(date) {
@@ -100,6 +121,7 @@
     enrichLegacyRecord,
     eventsForDate,
     eventsForDay,
+    isRecordLinkedEvent,
     loadCalendarContext,
     loadEventData,
     localToday,

@@ -21,6 +21,14 @@
     return 'Googleログインを完了できませんでした。';
   }
 
+  function displayEventTitle(title, fallback = '') {
+    return String(title || fallback).replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
+      if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
+      if (away === 'JPN' && home !== 'JPN') return `対 ${home}`;
+      return `${home} 対 ${away}`;
+    });
+  }
+
   function syncTimePlaceholders(root = document) {
     root.querySelectorAll(TIME_INPUT_SELECTOR).forEach(input => {
       input.closest('.time-input-wrap').classList.toggle('is-empty', !input.value);
@@ -35,5 +43,5 @@
     syncTimePlaceholders(root);
   }
 
-  window.UiUtils = { bindTimePlaceholders, escapeHtml, readableAuthError, syncTimePlaceholders, trashIcon };
+  window.UiUtils = { bindTimePlaceholders, displayEventTitle, escapeHtml, readableAuthError, syncTimePlaceholders, trashIcon };
 }());

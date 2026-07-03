@@ -35,6 +35,16 @@
 - `impactLevelOverride`: 神戸の勤務先への影響度を手動で調整する。東京など遠方の現地イベントは、テレビ放送・全国的な話題化が見込める場合だけ `大` にする。
 - `championship`: ヴィッセル神戸など優勝接近イベント用の詳細。
 
+## 勤務カレンダー由来イベント
+
+勤務カレンダー・シフト表の「イベント関連」欄から入れる店内イベントは `data/store-events.json` に書く。
+
+- 長期イベントは `showEachDay: true` を付け、`startAt` と `endAt` に実際の開始日・終了日を入れる。
+- `predictedWindows[0].date` は開始日と合わせる。
+- 表示はしたいが通常日扱いで保存したいイベントは `recordLink: false` を付ける。現在の固定対象は `棚卸`。
+- `recordLink: false` のイベントは、EVENT SIGNAL と週間予定には表示されるが、集客記録の `relatedEvents` / `eventIds` には入らない。
+- `レイアウトUP`、`館店長会`、`施策〆`、`OL店長会`、`HELP ○○` は掲載不要。
+
 ```json
 {
   "championship": {

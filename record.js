@@ -4,19 +4,12 @@ const deleteModal = document.querySelector('#delete-modal');
 const deleteTargetDate = document.querySelector('#delete-target-date');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
-const { bindTimePlaceholders, escapeHtml: esc, readableAuthError, trashIcon } = window.UiUtils;
+const { bindTimePlaceholders, displayEventTitle, escapeHtml: esc, readableAuthError, trashIcon } = window.UiUtils;
 const { enrichLegacyRecord } = window.AppData;
 const date = new URLSearchParams(location.search).get('date') || '';
 let record;
 function value(label, content, className = '') { return `<div class="detail-row ${className}"><dt>${esc(label)}</dt><dd>${content || '—'}</dd></div>`; }
 function combinedMemo(item) { return [item.note, item.customerTopics].filter(Boolean).join('\n'); }
-function displayEventTitle(title) {
-  return String(title || '').replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
-    if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
-    if (away === 'JPN' && home !== 'JPN') return `対 ${home}`;
-    return `${home} 対 ${away}`;
-  });
-}
 function renderView() {
   const events = (record.relatedEvents || []).map(item => `${esc(displayEventTitle(item.title))} <span class="tag">${esc(item.status || '実施済み')}</span>`).join('<br>') || (record.eventIds?.length ? '関連イベントあり' : '通常日の記録');
   root.innerHTML = `<dl class="detail-grid">${value('記録日', esc(record.date))}${value('集客状況', esc(record.trafficLevel))}${value('天気', esc(record.weather))}${value('祝日・大型連休', (record.calendarContext || []).map(item => `<span class="calendar-badge">${esc(item.type)}：${esc(item.label)}</span>`).join(' '))}${value('関連イベント', events, 'detail-wide')}${value('特に暇もしくは混雑した時間', esc((record.quietPeriods || []).join('・')))}${value('イベントの影響', esc(record.eventImpact))}${value('予測結果', esc(record.accuracy))}${value('影響を感じた開始時刻', esc(record.actualImpactStart))}${value('落ち着いた時刻', esc(record.actualImpactEnd))}${value('メモ', esc(combinedMemo(record)), 'detail-wide')}</dl><div class="detail-actions"><button id="edit-button" class="save-button" type="button">編集する</button><button id="delete-record-button" class="delete-icon-button" type="button" aria-label="この記録を削除">${trashIcon}</button></div>`;

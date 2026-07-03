@@ -7,7 +7,7 @@ const deleteModal = document.querySelector('#delete-modal');
 const deleteTargetDate = document.querySelector('#delete-target-date');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
-const { escapeHtml, readableAuthError, trashIcon } = window.UiUtils;
+const { displayEventTitle, escapeHtml, readableAuthError, trashIcon } = window.UiUtils;
 const { loadEventData } = window.AppData;
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'short' });
 let eventMap = new Map();
@@ -19,14 +19,6 @@ const recordsPerPage = 10;
 function dateLabel(value) {
   const date = new Date(`${value}T12:00:00`);
   return `${value.replaceAll('-', '/')}（${weekday.format(date)}）`;
-}
-
-function displayEventTitle(title) {
-  return String(title || '').replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
-    if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
-    if (away === 'JPN' && home !== 'JPN') return `対 ${home}`;
-    return `${home} 対 ${away}`;
-  });
 }
 
 function eventNames(item) {
