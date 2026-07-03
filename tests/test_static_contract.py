@@ -32,13 +32,13 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260703-21", html)
-            self.assertIn("ui-utils.js?v=20260703-21", html)
-            self.assertIn("app-data.js?v=20260703-21", html)
+            self.assertIn("styles.css?v=20260703-22", html)
+            self.assertIn("ui-utils.js?v=20260703-22", html)
+            self.assertIn("app-data.js?v=20260703-22", html)
             self.assertIn("IVENT INFO＆CUSTOMER NOTE", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260703-21';", service_worker)
+        self.assertIn("const VERSION = '20260703-22';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
 
@@ -55,7 +55,13 @@ class StaticContractTest(unittest.TestCase):
 
         self.assertIn("function renderTodayEventCard", app)
         self.assertIn("function renderWeekEvent", app)
-        self.assertIn("window.AppData", (ROOT / "app-data.js").read_text(encoding="utf-8"))
+        app_data = (ROOT / "app-data.js").read_text(encoding="utf-8")
+        ui_utils = (ROOT / "ui-utils.js").read_text(encoding="utf-8")
+
+        self.assertIn("window.AppData", app_data)
+        self.assertIn("function bindTimePlaceholders", ui_utils)
+        self.assertIn("function syncTimePlaceholders", ui_utils)
+        self.assertNotIn("document.querySelectorAll('.time-input-wrap input", app)
         self.assertNotIn("await loadEventData()", app)
         self.assertIn("'ゴールデンウィーク': 'G.W'", app)
         self.assertIn('class="empty-state event-empty-state"', app)

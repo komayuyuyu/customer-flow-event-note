@@ -1,6 +1,6 @@
 const FIREBASE_SDK_VERSION = '12.15.0';
 const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
-const { escapeHtml, readableAuthError } = window.UiUtils;
+const { bindTimePlaceholders, escapeHtml, readableAuthError, syncTimePlaceholders } = window.UiUtils;
 const { addDays, contextForDate, dateParts, eventsForDate, eventsForDay, localToday } = window.AppData;
 
 const dateInput = document.querySelector('#record-date');
@@ -417,12 +417,6 @@ function renderRelatedEvents(events, savedStatuses = {}) {
   }).join('')}`;
 }
 
-function syncTimePlaceholders() {
-  document.querySelectorAll('.time-input-wrap input[type="time"]').forEach(input => {
-    input.closest('.time-input-wrap').classList.toggle('is-empty', !input.value);
-  });
-}
-
 function clearForm() {
   const selectedDate = dateInput.value;
   form.reset();
@@ -507,10 +501,7 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !calendarPopover.hidden) setCalendarOpen(false);
 });
 note.addEventListener('input', () => { noteCount.textContent = `${note.value.length} / 600`; });
-document.querySelectorAll('.time-input-wrap input[type="time"]').forEach(input => {
-  input.addEventListener('input', syncTimePlaceholders);
-  input.addEventListener('change', syncTimePlaceholders);
-});
+bindTimePlaceholders();
 form.addEventListener('change', event => {
   if (event.target.name !== 'eventImpact') return;
   const noImpact = event.target.value === '感じなかった';
@@ -605,7 +596,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-21', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-22', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
