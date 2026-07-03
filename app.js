@@ -15,6 +15,9 @@ const eventsRoot = document.querySelector('#events');
 const eventCount = document.querySelector('#event-count');
 const weekRoot = document.querySelector('#week-schedule');
 const weekCount = document.querySelector('#week-count');
+const weekLabel = document.querySelector('#week-label');
+const weekPrev = document.querySelector('#week-prev');
+const weekNext = document.querySelector('#week-next');
 const form = document.querySelector('#record-form');
 const note = document.querySelector('#note');
 const noteCount = document.querySelector('#note-count');
@@ -39,8 +42,10 @@ let currentEvents = [];
 let currentUser = null;
 let initialized = false;
 let calendarCursor;
+let weekOffset = 0;
 
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'long' });
+const MAX_WEEK_OFFSET = 9;
 const EMPTY_EVENT_TEXT = 'イベントなし';
 const EMPTY_WEEK_EVENT_TEXT = '影響イベントなし';
 const DEFAULT_EVENT_TITLE = '名称未設定';
@@ -112,6 +117,24 @@ function shortDate(dateText) {
     date: new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric' }).format(value),
     weekday: weekday.format(value).replace('曜日', ''),
   };
+}
+
+function daysUntil(dateText) {
+  const today = new Date(`${localToday()}T12:00:00`);
+  const target = new Date(`${dateText}T12:00:00`);
+  return Math.round((target - today) / 86_400_000);
+}
+
+function weekStartDate() {
+  return addDays(dateInput.value, weekOffset * 7);
+}
+
+function updateWeekNav() {
+  const start = weekStartDate();
+  const label = shortDate(start);
+  weekLabel.textContent = weekOffset === 0 ? '今週' : `${label.date}週`;
+  weekPrev.disabled = weekOffset <= 0;
+  weekNext.disabled = weekOffset >= MAX_WEEK_OFFSET;
 }
 
 function eventTime(event) {
@@ -312,7 +335,8 @@ function renderWeekEvent(event) {
       <span class="week-impact ${impactLevel === '大' ? 'high' : ''}">影響 ${escapeHtml(impactLevel)}</span>
       <span class="week-event-name">${escapeHtml(event.title || DEFAULT_EVENT_TITLE)}</span>
     </div>
-    <span class="week-event-time">${escapeHtml(eventTime(event))}開始・確からしさ ${escapeHtml(confidence)}</span>
+    <span class="week-event-time">${escapeHtml(eventTime(event))}開始・確からしさ ${escapeHtml(confidence)}${event.area ? `・${escapeHtml(event.area)}` : ''}</span>
+    ${renderEventCountdown(event, 'week-event-note')}
   </div>`;
 }
 
@@ -334,10 +358,12 @@ function calendarTitleBadge(contextItems = []) {
 }
 
 async function loadWeek() {
+  updateWeekNav();
   weekCount.textContent = '確認中';
   weekRoot.innerHTML = '<p class="empty-state">読み込んでいます…</p>';
   try {
-    const dates = Array.from({ length: 7 }, (_, index) => addDays(dateInput.value, index));
+    const start = weekStartDate();
+    const dates = Array.from({ length: 7 }, (_, index) => addDays(start, index));
     const eventLists = await Promise.all(dates.map(value => backend.getEvents(value)));
     const contexts = await Promise.all(dates.map(contextForDate));
     renderWeek(dates.map((date, index) => ({ date, events: eventLists[index], context: contexts[index] })));
@@ -371,6 +397,8 @@ function renderTodayEventCard(event, titleBadge) {
     </div>
     ${renderEventMeta(event)}
     ${event.liveReason ? `<p>${escapeHtml(event.liveReason)}</p>` : ''}
+    ${renderEventCountdown(event)}
+    ${renderEventDetails(event)}
     ${renderPredictedWindows(event)}
   </article>`;
 }
@@ -379,8 +407,29 @@ function renderEventMeta(event) {
   return `<div class="event-meta">
     <span class="tag high">影響 ${escapeHtml(event.impactLevel || DEFAULT_EVENT_IMPACT)}</span>
     <span class="tag">確からしさ ${escapeHtml(event.confidence || DEFAULT_EVENT_CONFIDENCE)}</span>
+    ${event.category ? `<span class="tag">${escapeHtml(event.category)}</span>` : ''}
+    ${event.area ? `<span class="tag">${escapeHtml(event.area)}</span>` : ''}
     ${event.broadcast ? `<span class="tag">${escapeHtml(event.broadcast)}</span>` : ''}
   </div>`;
+}
+
+function renderEventCountdown(event, className = 'event-countdown') {
+  const eventDate = String(event.startAt || '').slice(0, 10);
+  if (!eventDate) return '';
+  const remaining = daysUntil(eventDate);
+  if (remaining < 0) return '';
+  const prefix = remaining === 0 ? '今日' : `あと${remaining}日`;
+  const winText = event.championship?.winsToTitle ? `・あと${escapeHtml(event.championship.winsToTitle)}勝で優勝` : '';
+  return `<p class="${className}">${escapeHtml(prefix)}${winText}</p>`;
+}
+
+function renderEventDetails(event) {
+  const items = [];
+  if (event.championship?.condition) items.push(`優勝条件：${event.championship.condition}`);
+  if (event.championship?.runnerUpCondition) items.push(`逆転条件：${event.championship.runnerUpCondition}`);
+  if (event.trafficReason) items.push(`客足メモ：${event.trafficReason}`);
+  if (!items.length) return '';
+  return `<ul class="event-detail-list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
 function renderPredictedWindows(event) {
@@ -478,9 +527,20 @@ async function loadDay() {
 
 dateInput.addEventListener('change', () => {
   updateDatePickerButton();
+  weekOffset = 0;
   loadDay();
 });
 todayButton.addEventListener('click', () => selectDate(localToday()));
+weekPrev.addEventListener('click', () => {
+  if (weekOffset <= 0) return;
+  weekOffset -= 1;
+  loadWeek();
+});
+weekNext.addEventListener('click', () => {
+  if (weekOffset >= MAX_WEEK_OFFSET) return;
+  weekOffset += 1;
+  loadWeek();
+});
 datePickerButton.addEventListener('click', () => setCalendarOpen(calendarPopover.hidden));
 calendarPrev.addEventListener('click', () => {
   calendarCursor.setMonth(calendarCursor.getMonth() - 1);
@@ -596,7 +656,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-22', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260703-23', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

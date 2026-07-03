@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "id": "sumidagawa-hanabi-2026",
+    "title": "隅田川花火大会",
+    "startAt": "2026-07-25T19:00:00+09:00",
+    "endAt": "2026-07-25T20:30:00+09:00",
+    "category": "花火",
+    "area": "東京",
+    "inPersonEvent": true,
+    "broadcast": "テレビ東京系列",
+    "liveReason": "東京の夏を代表する大規模花火大会。会場周辺へ大きな人流が発生し、テレビ中継でも話題化しやすい",
+    "trafficReason": "浅草・隅田川周辺へ観覧客が集中し、夕方から夜にかけて交通規制、駅混雑、帰宅混雑の影響が出やすい",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "隅田川花火大会 公式Webサイト",
+        "url": "https://www.sumidagawa-hanabi.com/"
+      },
+      {
+        "title": "令和8年 第49回 隅田川花火大会 実施計画概要",
+        "url": "https://www.sumidagawa-hanabi.com/assets/pdf/%E4%BB%A4%E5%92%8C8%E5%B9%B4(%E7%AC%AC49%E5%9B%9E)%E5%AE%9F%E6%96%BD%E8%A8%88%E7%94%BB%E6%A6%82%E8%A6%81.pdf"
+      }
+    ]
+  },
+  {
+    "id": "jingugaien-hanabi-2026",
+    "title": "神宮外苑花火大会",
+    "startAt": "2026-08-08T19:30:00+09:00",
+    "endAt": "2026-08-08T20:30:00+09:00",
+    "category": "花火",
+    "area": "東京",
+    "inPersonEvent": true,
+    "broadcast": "現地イベント",
+    "liveReason": "神宮外苑で開催される都心型の大規模花火大会。ライブと花火が組み合わさり、会場周辺の滞在時間が長くなりやすい",
+    "trafficReason": "神宮球場・秩父宮ラグビー場周辺へ夕方から来場者が集中し、青山・外苑前・信濃町周辺の移動と帰宅混雑が強まりやすい",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "2026 神宮外苑花火大会 公式サイト",
+        "url": "https://www.jinguhanabi.com/"
+      },
+      {
+        "title": "2026 神宮外苑花火大会 大会概要",
+        "url": "https://www.jinguhanabi.com/about.html"
+      }
+    ]
+  }
+]

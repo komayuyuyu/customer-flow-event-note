@@ -32,13 +32,13 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260703-22", html)
-            self.assertIn("ui-utils.js?v=20260703-22", html)
-            self.assertIn("app-data.js?v=20260703-22", html)
+            self.assertIn("styles.css?v=20260703-23", html)
+            self.assertIn("ui-utils.js?v=20260703-23", html)
+            self.assertIn("app-data.js?v=20260703-23", html)
             self.assertIn("IVENT INFO＆CUSTOMER NOTE", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260703-22';", service_worker)
+        self.assertIn("const VERSION = '20260703-23';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
 
@@ -55,6 +55,8 @@ class StaticContractTest(unittest.TestCase):
 
         self.assertIn("function renderTodayEventCard", app)
         self.assertIn("function renderWeekEvent", app)
+        self.assertIn("const MAX_WEEK_OFFSET = 9", app)
+        self.assertIn("function renderEventCountdown", app)
         app_data = (ROOT / "app-data.js").read_text(encoding="utf-8")
         ui_utils = (ROOT / "ui-utils.js").read_text(encoding="utf-8")
 
@@ -71,6 +73,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("--status-pill-size: 58px;", styles)
         self.assertIn(".detail-shell .page-intro h2, .records-shell .page-intro h2 { font-size: 24px; }", styles)
         self.assertIn(".count-pill { display: inline-flex; min-width: var(--status-pill-size);", styles)
+        self.assertIn(".week-nav { display: inline-flex;", styles)
         self.assertIn(".record-list-head .count-pill { width: var(--record-side-size);", styles)
         self.assertIn(".site-nav { position: fixed !important; top: 0; right: 0; bottom: 0;", styles)
         self.assertIn(".site-nav > #nav-auth-button { margin-top: 0; }", styles)

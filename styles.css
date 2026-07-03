@@ -19,6 +19,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: "Noto Sans JP", "Noto Sans CJK JP", "Yu Gothic", "Yu Gothic UI", "Hiragino Sans", sans-serif;
@@ -41,7 +42,7 @@ select { font: inherit; }
 .site-nav .nav-new-record, .site-nav .nav-new-record.is-current { background: var(--green); color: white; }
 .menu-toggle, .menu-header, .menu-close, .menu-overlay { display: none; }
 .hero { margin-bottom: 8px; }
-.app-header { position: sticky; top: 0; z-index: 80; display: flex; width: 100vw; min-height: 72px; margin-left: calc(50% - 50vw); padding: 10px max(16px, calc((100vw - 760px) / 2)); align-items: center; justify-content: space-between; gap: 32px; background: rgba(243, 240, 232, .96); box-shadow: 0 3px 12px rgba(33,49,41,.04); backdrop-filter: blur(10px); }
+.app-header { position: sticky; top: 0; z-index: 80; display: flex; width: calc(100vw - 16px); min-height: 72px; margin-left: calc(50% - 50vw + 8px); padding: 10px max(16px, calc((100vw - 760px) / 2)); align-items: center; justify-content: space-between; gap: 32px; background: rgba(243, 240, 232, .96); box-shadow: 0 3px 12px rgba(33,49,41,.04); backdrop-filter: blur(10px); }
 .brand-link { color: inherit; text-decoration: none; }
 .brand-title { min-width: 0; }
 .eyebrow, .section-kicker { margin: 0; color: var(--orange); font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
@@ -75,6 +76,11 @@ select { font: inherit; }
 .week-panel, .record-panel { margin-top: 20px; }
 .section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
 .section-heading h2 { margin: 2px 0 0; font-weight: 700; font-size: 1.5rem; line-height: 1.4; letter-spacing: -.02em; }
+.week-heading-actions { display: flex; flex: none; align-items: center; gap: 8px; }
+.week-nav { display: inline-flex; min-height: 30px; align-items: center; overflow: hidden; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--green); font-size: .78rem; font-weight: 800; white-space: nowrap; }
+.week-nav button { display: inline-flex; width: 31px; min-height: 30px; align-items: center; justify-content: center; border: 0; background: transparent; color: var(--green); cursor: pointer; font-size: 1.05rem; line-height: 1; }
+.week-nav button:disabled { color: var(--line); cursor: default; }
+.week-nav span { min-width: 56px; padding: 0 6px; text-align: center; }
 .count-pill, .required-note { flex: none; border-radius: 999px; padding: 5px 10px; background: var(--green-soft); color: var(--green); font-size: .78rem; font-weight: 700; }
 .count-pill { display: inline-flex; min-width: var(--status-pill-size); min-height: 30px; align-items: center; justify-content: center; white-space: nowrap; }
 
@@ -90,6 +96,10 @@ select { font: inherit; }
 .tag { border-radius: 999px; padding: 3px 8px; background: white; border: 1px solid var(--line); font-size: .75rem; }
 .tag.high { background: var(--orange-soft); border-color: transparent; color: #8f3b1e; font-weight: 800; }
 .event-card p { margin: 5px 0; color: var(--muted); font-size: .92rem; }
+.event-countdown, .week-event-note { color: var(--green) !important; font-weight: 800; }
+.week-event-note { margin: 0; font-size: .78rem; }
+.event-detail-list { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .86rem; }
+.event-detail-list li { border-left: 3px solid var(--green-soft); padding-left: 8px; }
 .empty-state { margin: 0; border: 1px dashed var(--line); border-radius: 14px; padding: 18px; color: var(--muted); text-align: center; }
 .event-panel .empty-state { text-align: left; }
 .event-empty-title { margin-bottom: 0; }
@@ -266,6 +276,9 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   .detail-row dd { font-size: 15px; }
   .event-panel .section-heading { gap: 8px; }
   .event-panel .section-heading h2 { white-space: nowrap; font-size: clamp(1.15rem, 6vw, 1.5rem); }
+  .week-panel .section-heading { align-items: flex-start; }
+  .week-heading-actions { align-items: flex-end; flex-direction: column; gap: 6px; }
+  .week-nav span { min-width: 52px; }
   .choice-grid.weather, .choice-grid.periods { grid-template-columns: repeat(3, 1fr); }
   .choice-grid.accuracy { grid-template-columns: repeat(2, 1fr); }
   .week-row { grid-template-columns: max-content 1fr; gap: 10px; padding: 13px 12px; }

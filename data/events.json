@@ -271,5 +271,113 @@
         "reason": "生中継・ライブ配信をその時間に見る人が増える可能性"
       }
     ]
+  },
+  {
+    "id": "sumidagawa-hanabi-2026",
+    "title": "隅田川花火大会",
+    "startAt": "2026-07-25T19:00:00+09:00",
+    "endAt": "2026-07-25T20:30:00+09:00",
+    "category": "花火",
+    "area": "東京",
+    "inPersonEvent": true,
+    "broadcast": "テレビ東京系列",
+    "liveReason": "東京の夏を代表する大規模花火大会。会場周辺へ大きな人流が発生し、テレビ中継でも話題化しやすい",
+    "trafficReason": "浅草・隅田川周辺へ観覧客が集中し、夕方から夜にかけて交通規制、駅混雑、帰宅混雑の影響が出やすい",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "隅田川花火大会 公式Webサイト",
+        "url": "https://www.sumidagawa-hanabi.com/"
+      },
+      {
+        "title": "令和8年 第49回 隅田川花火大会 実施計画概要",
+        "url": "https://www.sumidagawa-hanabi.com/assets/pdf/%E4%BB%A4%E5%92%8C8%E5%B9%B4(%E7%AC%AC49%E5%9B%9E)%E5%AE%9F%E6%96%BD%E8%A8%88%E7%94%BB%E6%A6%82%E8%A6%81.pdf"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "来場・交通混雑",
+        "date": "2026-07-25",
+        "start": "15:00",
+        "end": "19:00",
+        "reason": "会場周辺への移動、駅や道路の混雑、待ち合わせで広域の人流が変わる可能性"
+      },
+      {
+        "label": "イベント開催中",
+        "date": "2026-07-25",
+        "start": "19:00",
+        "end": "20:30",
+        "reason": "現地滞在や周辺回遊により、通常の買い物動線が変わる可能性"
+      },
+      {
+        "label": "終了後の帰宅混雑",
+        "date": "2026-07-25",
+        "start": "20:30",
+        "end": "22:30",
+        "reason": "終了後の一斉移動で交通機関と繁華街の混雑が変わる可能性"
+      }
+    ]
+  },
+  {
+    "id": "jingugaien-hanabi-2026",
+    "title": "神宮外苑花火大会",
+    "startAt": "2026-08-08T19:30:00+09:00",
+    "endAt": "2026-08-08T20:30:00+09:00",
+    "category": "花火",
+    "area": "東京",
+    "inPersonEvent": true,
+    "broadcast": "現地イベント",
+    "liveReason": "神宮外苑で開催される都心型の大規模花火大会。ライブと花火が組み合わさり、会場周辺の滞在時間が長くなりやすい",
+    "trafficReason": "神宮球場・秩父宮ラグビー場周辺へ夕方から来場者が集中し、青山・外苑前・信濃町周辺の移動と帰宅混雑が強まりやすい",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "2026 神宮外苑花火大会 公式サイト",
+        "url": "https://www.jinguhanabi.com/"
+      },
+      {
+        "title": "2026 神宮外苑花火大会 大会概要",
+        "url": "https://www.jinguhanabi.com/about.html"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "来場・交通混雑",
+        "date": "2026-08-08",
+        "start": "15:30",
+        "end": "19:30",
+        "reason": "会場周辺への移動、駅や道路の混雑、待ち合わせで広域の人流が変わる可能性"
+      },
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-08",
+        "start": "19:30",
+        "end": "20:30",
+        "reason": "現地滞在や周辺回遊により、通常の買い物動線が変わる可能性"
+      },
+      {
+        "label": "終了後の帰宅混雑",
+        "date": "2026-08-08",
+        "start": "20:30",
+        "end": "22:30",
+        "reason": "終了後の一斉移動で交通機関と繁華街の混雑が変わる可能性"
+      }
+    ]
   }
 ]

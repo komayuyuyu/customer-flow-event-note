@@ -9,7 +9,7 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260703-22">
+  <link rel="stylesheet" href="./styles.css?v=20260703-23">
 </head>
 <body>
   <main class="shell">
@@ -42,7 +42,14 @@
           <p class="section-kicker">NEXT 7 DAYS</p>
           <h2 id="week-title">1週間のイベント予定</h2>
         </div>
-        <span id="week-count" class="count-pill">確認中</span>
+        <div class="week-heading-actions">
+          <div class="week-nav" aria-label="表示する週">
+            <button id="week-prev" type="button" aria-label="前の週">‹</button>
+            <span id="week-label">今週</span>
+            <button id="week-next" type="button" aria-label="翌週">›</button>
+          </div>
+          <span id="week-count" class="count-pill">確認中</span>
+        </div>
       </div>
       <div id="week-schedule" class="week-list" aria-live="polite"></div>
     </section>
@@ -154,10 +161,10 @@
       </div>
     </div>
   </div>
-  <script src="./menu.js?v=20260703-22" defer></script>
+  <script src="./menu.js?v=20260703-23" defer></script>
   <script src="./firebase-config.js"></script>
-  <script src="./ui-utils.js?v=20260703-22"></script>
-  <script src="./app-data.js?v=20260703-22"></script>
-  <script src="./app.js?v=20260703-22" defer></script>
+  <script src="./ui-utils.js?v=20260703-23"></script>
+  <script src="./app-data.js?v=20260703-23"></script>
+  <script src="./app.js?v=20260703-23" defer></script>
 </body>
 </html>

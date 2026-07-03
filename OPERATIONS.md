@@ -15,6 +15,8 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 ## イベント情報の更新手順
 
 1. 調査した候補を `data/candidates.json` に書く。
+   - 通常の全国的な注目イベントに加えて、兵庫・大阪・京都・東京の花火、ルミナリエ、祭り、優勝パレード級の広域人流イベントを確認する。
+   - ヴィッセル神戸が優勝争いに入った時は、直近試合を候補化し、`championship` に「あと何勝で優勝」「優勝条件」「2位以下の逆転条件」を入れる。
 2. 影響度を計算して `data/events.json` へマージする。
 
    ```powershell
@@ -36,6 +38,12 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 4. `app.js` / `styles.css` / HTML / Service Workerを変更した場合は、静的資産の更新番号と `sw.js` のキャッシュ名を変更する。
 5. GitHubへpushし、GitHub Pagesのデプロイ成功を確認する。
 6. 公開HTMLに新しい更新番号またはデータ変更が反映されていることを確認する。
+
+## 表示期間
+
+- トップの週間予定は、記録日を起点に7日単位で表示する。
+- 矢印で今週から9週先まで確認できる。
+- 更新頻度は従来どおり、毎朝チェックと週1回の広めチェックを維持する。
 
 ## Firebase
 

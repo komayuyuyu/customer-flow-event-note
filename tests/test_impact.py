@@ -44,6 +44,14 @@ class ImpactTest(unittest.TestCase):
         labels = {window["label"] for window in result["predictedWindows"]}
         self.assertIn("深夜視聴の翌日", labels)
 
+    def test_in_person_event_creates_traffic_windows(self):
+        candidate = high_event("2026-07-25T19:00:00+09:00", "2026-07-25T20:30:00+09:00")
+        candidate["category"] = "花火"
+        result = calculate_impact(candidate)
+        labels = [window["label"] for window in result["predictedWindows"]]
+        self.assertEqual(labels, ["来場・交通混雑", "イベント開催中", "終了後の帰宅混雑"])
+        self.assertEqual(result["predictedWindows"][0]["start"], "15:00")
+
 
 if __name__ == "__main__":
     unittest.main()
