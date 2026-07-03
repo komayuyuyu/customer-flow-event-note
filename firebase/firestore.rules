@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAllowedOwner(userId) {
+      return request.auth != null
+        && request.auth.uid == userId
+        && request.auth.uid == '__ALLOWED_UID__';
+    }
+
+    match /users/{userId}/observations/{recordDate} {
+      allow read: if isAllowedOwner(userId);
+      allow create, update: if isAllowedOwner(userId)
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.date == recordDate;
+      allow delete: if isAllowedOwner(userId);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
