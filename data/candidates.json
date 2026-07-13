@@ -1,21 +1,496 @@
 [
   {
+    "id": "wimbledon-2026-mens-final",
+    "title": "ウィンブルドン2026 男子シングルス決勝",
+    "startAt": "2026-07-13T00:00:00+09:00",
+    "endAt": "2026-07-13T03:30:00+09:00",
+    "broadcast": "海外: ESPN・BBCなど、日本国内放送・配信は番組表確認",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "四大大会の男子決勝で、Jannik SinnerがAlexander Zverevを破って連覇した試合。日本時間では前夜深夜から未明にかかり、テニスファンのリアルタイム視聴と朝の結果確認が起きやすい",
+    "trafficReason": "深夜視聴後の睡眠不足や朝の結果確認で、7月13日午前から昼の外出開始が遅れる可能性を確認する。日本選手の本戦決勝ではないため影響は中程度に抑える",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "AP Jannik Sinner beats Alexander Zverev to win Wimbledon again",
+        "url": "https://apnews.com/article/e3e69ad0a4900b484b0eccd2751923e0"
+      },
+      {
+        "title": "The Guardian Sinner caps Wimbledon fortnight",
+        "url": "https://www.theguardian.com/sport/2026/jul/12/jannik-sinner-wimbledon-2026-alexander-zverev-arthur-fery-tennis"
+      },
+      {
+        "title": "New York Post Wimbledon 2026 men's final watch guide",
+        "url": "https://nypost.com/2026/07/12/sports/how-to-watch-zverev-sinner-in-wimbledon-2026-final-for-free/"
+      }
+    ]
+  },
+  {
+    "id": "sumo-july-basho-2026-opening-days",
+    "title": "大相撲七月場所 序盤",
+    "startAt": "2026-07-12T15:05:00+09:00",
+    "endAt": "2026-07-13T18:00:00+09:00",
+    "broadcast": "NHK総合・NHK BSなど（番組表確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "日本相撲協会公式で七月場所が7月12日から26日までIGアリーナ開催と確認できる。初日から序盤は新会場・番付・上位陣の結果確認で話題化する可能性がある",
+    "trafficReason": "午後から夕方のテレビ視聴・結果確認が一部で起きるが、序盤のため全国的な客足低下は小から中程度に抑えて確認する",
+    "nationalReach": 2,
+    "liveUrgency": 1,
+    "accessibility": 3,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本相撲協会 2026 Grand Tournament Schedule",
+        "url": "https://www.sumo.or.jp/EnTicket/year_schedule/"
+      },
+      {
+        "title": "NHK 大相撲中継",
+        "url": "https://www.nhk.jp/p/ts/JY7XMMG241/"
+      },
+      {
+        "title": "2026 in sumo",
+        "url": "https://en.wikipedia.org/wiki/2026_in_sumo"
+      }
+    ]
+  },
+  {
+    "id": "mlb-home-run-derby-2026",
+    "title": "MLBオールスターゲーム2026 ホームランダービー",
+    "startAt": "2026-07-14T09:00:00+09:00",
+    "endAt": "2026-07-14T12:00:00+09:00",
+    "broadcast": "Netflix（日本時間9:00開始、特別番組は8:00開始）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "MLB公式で村上宗隆選手を含む8選手の出場と、日本時間9:00からNetflixでのライブ配信が確定。日本時間の午前帯に野球ファンのリアルタイム視聴とSNS確認が起きやすい",
+    "trafficReason": "午前の在宅視聴・SNS確認で外出開始が遅れる可能性はあるが、Netflix配信のため地上波中継より視聴範囲は限定的として中程度に扱う",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "MLB公式 2026 Home Run Derby出場者・配信情報",
+        "url": "https://www.mlb.com/news/2026-mlb-home-run-derby-participants"
+      },
+      {
+        "title": "MLB公式 All-Star Game 2026",
+        "url": "https://www.mlb.com/all-star"
+      },
+      {
+        "title": "New York Post Juan Soto Home Run Derby report",
+        "url": "https://nypost.com/2026/07/11/sports/mets-juan-soto-explains-why-he-decided-to-skip-home-run-derby/"
+      }
+    ]
+  },
+  {
+    "id": "fifa-world-cup-2026-semifinal-fra-esp",
+    "title": "サッカーW杯 準決勝 FRA対ESP",
+    "startAt": "2026-07-15T04:00:00+09:00",
+    "endAt": "2026-07-15T06:30:00+09:00",
+    "broadcast": "日本テレビ（生中継）・DAZN（無料ライブ／見逃し配信）・NHK BSプレミアム4K（7月15日21:00録画放送）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "サッカーW杯準決勝。現地7月14日の準決勝で、公開報道でもFRA対ESPとして話題化している。日本時間は早朝だが、結果確認とハイライト視聴が朝の行動に影響しやすい",
+    "trafficReason": "早朝リアルタイム視聴や起床直後の結果確認で、午前から昼の外出開始が遅れる可能性を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "FIFA World Cup 2026 Matches",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/matches"
+      },
+      {
+        "title": "GOAL フランス対スペイン 放送・配信予定",
+        "url": "https://www.goal.com/jp/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9/when-france-spain-kickoff-time-broadcast-world-cup-2026/blt14fc5f0ba5ac14f6"
+      },
+      {
+        "title": "The Guardian World Cup 2026 coverage",
+        "url": "https://www.theguardian.com/football/2026/jul/12/argentina-switzerland-lionel-scaloni-england-semi-final"
+      },
+      {
+        "title": "2026 FIFA World Cup broadcasting rights",
+        "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights"
+      }
+    ]
+  },
+  {
+    "id": "mlb-all-star-game-2026",
+    "title": "MLBオールスターゲーム2026 本戦",
+    "startAt": "2026-07-15T09:00:00+09:00",
+    "endAt": "2026-07-15T12:30:00+09:00",
+    "broadcast": "MLB公式配信・米FOX（日本国内放送は番組表確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "MLB公式で7月14日20時ETの開催が確認できる。日本時間は7月15日午前で、大谷翔平選手など日本関連選手の話題で結果確認が起きやすい",
+    "trafficReason": "午前の在宅視聴・結果確認で外出開始が遅れる可能性はあるが、日本国内の地上波同時視聴が未確認のため中程度に扱う",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "MLB公式 All-Star Game 2026",
+        "url": "https://www.mlb.com/all-star"
+      },
+      {
+        "title": "Bleed Cubbie Blue MLB All-Star broadcast note",
+        "url": "https://www.bleedcubbieblue.com/chicago-cubs-news/224425/pete-crow-armstrong-cubs-only-all-star"
+      }
+    ]
+  },
+  {
+    "id": "fifa-world-cup-2026-semifinal-arg-eng",
+    "title": "サッカーW杯 準決勝 ARG対ENG",
+    "startAt": "2026-07-16T09:00:00+09:00",
+    "endAt": "2026-07-16T11:30:00+09:00",
+    "broadcast": "国内放送権対象: NHK・日本テレビ・フジテレビ・DAZN（個別編成は番組表確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "サッカーW杯準決勝。公開報道でARG対ENGとして大きく扱われており、メッシ、イングランド、決勝進出争いの話題性が高い",
+    "trafficReason": "午前のリアルタイム視聴・結果確認で外出開始が遅れる可能性を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "FIFA World Cup 2026 Matches",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/matches"
+      },
+      {
+        "title": "The Guardian Argentina vs England semi-final report",
+        "url": "https://www.theguardian.com/football/2026/jul/12/argentina-switzerland-lionel-scaloni-england-semi-final"
+      },
+      {
+        "title": "2026 FIFA World Cup broadcasting rights",
+        "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights"
+      }
+    ]
+  },
+  {
+    "id": "gion-matsuri-2026-saki-yama",
+    "title": "祇園祭 前祭 宵山",
+    "startAt": "2026-07-14T18:00:00+09:00",
+    "endAt": "2026-07-16T23:30:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "京都",
+    "inPersonEvent": true,
+    "liveReason": "日本三大祭の一つとして全国認知があり、前祭の宵山期間は京都中心部の夜間人流が大きい",
+    "trafficReason": "京都中心部の夜間人流・交通混雑が大きく、関西圏の外出先選択や帰宅動線に影響する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "GionFestival.org Gion Festival overview",
+        "url": "https://www.gionfestival.org/"
+      },
+      {
+        "title": "京都観光Navi 祇園祭",
+        "url": "https://ja.kyoto.travel/event/major/gion/"
+      }
+    ]
+  },
+  {
+    "id": "gion-matsuri-2026-saki-junko",
+    "title": "祇園祭 前祭 山鉾巡行・神幸祭",
+    "startAt": "2026-07-17T09:00:00+09:00",
+    "endAt": "2026-07-17T21:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "京都",
+    "inPersonEvent": true,
+    "liveReason": "祇園祭の中心行事。山鉾巡行と神輿渡御で京都中心部に終日人流が集まり、全国ニュースでも扱われやすい",
+    "trafficReason": "京都中心部の終日人流・交通規制・夕方以降の帰宅混雑が見込まれ、関西圏の外出先選択や帰宅動線に影響する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "GionFestival.org Gion Festival overview",
+        "url": "https://www.gionfestival.org/"
+      },
+      {
+        "title": "京都観光Navi 祇園祭",
+        "url": "https://ja.kyoto.travel/event/major/gion/"
+      }
+    ]
+  },
+  {
+    "id": "ongaku-no-hi-2026",
+    "title": "音楽の日2026",
+    "startAt": "2026-07-18T14:00:00+09:00",
+    "endAt": "2026-07-18T22:00:00+09:00",
+    "broadcast": "TBS系列（8時間生放送）",
+    "category": "音楽特番",
+    "area": "全国",
+    "liveReason": "TBS公式で7月18日14時から8時間生放送が確認できる大型音楽特番。出演者発表と番組公式SNSで当日視聴の話題が出やすい",
+    "trafficReason": "午後から夜にかけて長時間の生放送が続くため、目当ての出演時間に合わせた早めの帰宅や在宅視聴で客足が弱まる可能性を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 1,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "TBSテレビ 音楽の日",
+        "url": "https://www.tbs.co.jp/ongakunohi/"
+      },
+      {
+        "title": "TBS 音楽の日2026 お知らせ",
+        "url": "https://www.tbs.co.jp/ongakunohi/"
+      }
+    ]
+  },
+  {
+    "id": "fifa-world-cup-2026-third-place",
+    "title": "サッカーW杯 3位決定戦",
+    "startAt": "2026-07-19T06:00:00+09:00",
+    "endAt": "2026-07-19T08:30:00+09:00",
+    "broadcast": "国内放送権対象: NHK・日本テレビ・フジテレビ・DAZN（個別編成は番組表確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "サッカーW杯終盤の3位決定戦。決勝より注目度は落ちるが、週末早朝のリアルタイム視聴・結果確認が起きやすい",
+    "trafficReason": "早朝視聴後の日曜午前の外出開始遅れを確認する",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "FIFA World Cup 2026 Matches",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/matches"
+      },
+      {
+        "title": "2026 FIFA World Cup broadcasting rights",
+        "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights"
+      }
+    ]
+  },
+  {
+    "id": "fifa-world-cup-2026-final",
+    "title": "サッカーW杯 決勝",
+    "startAt": "2026-07-20T04:00:00+09:00",
+    "endAt": "2026-07-20T06:45:00+09:00",
+    "broadcast": "国内放送権対象: NHK・日本テレビ・フジテレビ・DAZN（個別編成は番組表確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "サッカーW杯決勝。世界最大級のスポーツイベントで、海の日の祝日早朝に重なるためリアルタイム視聴と結果確認の動機が強い",
+    "trafficReason": "深夜・早朝視聴後の睡眠不足、祝日午前の外出開始遅れ、SNS・ニュース確認による行動変化を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "FIFA World Cup 2026 Matches",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/matches"
+      },
+      {
+        "title": "AP World Cup final ticket report",
+        "url": "https://apnews.com/article/1eb6731d9cb7dc1bde02b41c9992174c"
+      },
+      {
+        "title": "2026 FIFA World Cup broadcasting rights",
+        "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights"
+      }
+    ]
+  },
+  {
+    "id": "gion-matsuri-2026-ato-yama",
+    "title": "祇園祭 後祭 宵山",
+    "startAt": "2026-07-21T18:00:00+09:00",
+    "endAt": "2026-07-23T23:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "京都",
+    "inPersonEvent": true,
+    "liveReason": "祇園祭の後祭宵山。前祭より規模は抑えめだが、京都中心部の夜間人流と観光回遊が発生する",
+    "trafficReason": "京都中心部の夜間人流・帰宅混雑が関西圏の外出先選択や移動時間に影響する可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "GionFestival.org Gion Festival overview",
+        "url": "https://www.gionfestival.org/"
+      },
+      {
+        "title": "京都観光Navi 祇園祭",
+        "url": "https://ja.kyoto.travel/event/major/gion/"
+      }
+    ]
+  },
+  {
+    "id": "gion-matsuri-2026-ato-junko",
+    "title": "祇園祭 後祭 山鉾巡行・還幸祭",
+    "startAt": "2026-07-24T09:30:00+09:00",
+    "endAt": "2026-07-24T22:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "京都",
+    "inPersonEvent": true,
+    "liveReason": "祇園祭の後祭山鉾巡行と還幸祭。京都中心部の終日人流・観光回遊が発生する",
+    "trafficReason": "京都中心部の交通規制・観光回遊・夜の帰宅混雑が、関西圏の移動や外出先選択に影響する可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "GionFestival.org Gion Festival overview",
+        "url": "https://www.gionfestival.org/"
+      },
+      {
+        "title": "京都観光Navi 祇園祭",
+        "url": "https://ja.kyoto.travel/event/major/gion/"
+      }
+    ]
+  },
+  {
+    "id": "tenjin-matsuri-2026-yomiya",
+    "title": "天神祭 宵宮",
+    "startAt": "2026-07-24T07:45:00+09:00",
+    "endAt": "2026-07-24T21:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "大阪",
+    "inPersonEvent": true,
+    "liveReason": "大阪天満宮公式で24日の宵宮祭・鉾流神事・獅子舞氏地巡行が確認できる。日本三大祭の一つとして関西圏の話題性が高い",
+    "trafficReason": "大阪市中心部の人流・交通混雑、夜の帰宅動線変化が関西圏の外出先選択に影響する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "大阪天満宮 天神祭",
+        "url": "https://osakatemmangu.or.jp/saijireki/tjm"
+      },
+      {
+        "title": "大阪観光局 天神祭",
+        "url": "https://osaka-info.jp/spot/tenjin-matsuri/"
+      }
+    ]
+  },
+  {
+    "id": "fuji-rock-festival-2026",
+    "title": "FUJI ROCK FESTIVAL '26",
+    "startAt": "2026-07-24T11:00:00+09:00",
+    "endAt": "2026-07-26T23:00:00+09:00",
+    "broadcast": "現地イベント・公式配信有無は直前確認",
+    "category": "音楽フェス",
+    "area": "新潟",
+    "inPersonEvent": true,
+    "liveReason": "国内最大級の野外音楽フェス。7月24日から26日の開催で、Kaze Fujii、Kendrick Lamarなどの出演情報が公開され話題化しやすい",
+    "trafficReason": "現地影響は新潟中心。全国的には出演者・配信・SNS話題による間接影響として扱い、神戸への直接影響は過大評価しない",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "FUJI ROCK FESTIVAL '26 公式サイト",
+        "url": "https://www.fujirockfestival.com/"
+      },
+      {
+        "title": "Fuji Rock Festival 2026 summary",
+        "url": "https://de.wikipedia.org/wiki/Fuji_Rock_Festival"
+      }
+    ]
+  },
+  {
+    "id": "tenjin-matsuri-2026-hongu",
+    "title": "天神祭 本宮・奉納花火",
+    "startAt": "2026-07-25T15:30:00+09:00",
+    "endAt": "2026-07-25T21:30:00+09:00",
+    "broadcast": "現地イベント・テレビ大阪系など番組表確認",
+    "category": "祭り・花火",
+    "area": "大阪",
+    "inPersonEvent": true,
+    "liveReason": "大阪天満宮公式で25日の本宮、陸渡御、船渡御、奉納花火が確認できる。日本三大祭の一つで、関西圏の人流影響が大きい",
+    "trafficReason": "大阪市中心部の夕方以降の人流・交通混雑、花火終了後の帰宅混雑が、関西圏の移動と外出先選択に影響する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "大阪天満宮 天神祭",
+        "url": "https://osakatemmangu.or.jp/saijireki/tjm"
+      },
+      {
+        "title": "大阪観光局 天神祭",
+        "url": "https://osaka-info.jp/spot/tenjin-matsuri/"
+      }
+    ]
+  },
+  {
     "id": "sumidagawa-hanabi-2026",
     "title": "隅田川花火大会",
     "startAt": "2026-07-25T19:00:00+09:00",
     "endAt": "2026-07-25T20:30:00+09:00",
+    "broadcast": "テレビ東京系列・現地イベント",
     "category": "花火",
     "area": "東京",
     "inPersonEvent": true,
-    "impactLevelOverride": "中",
-    "broadcast": "テレビ東京系列",
-    "liveReason": "東京の夏を代表する大規模花火大会。神戸の勤務先への直接影響は小さいが、テレビ放送やニュースで話題に上がる可能性がある",
+    "liveReason": "公式サイトで令和8年7月25日19時開催予定が確認できる東京の代表的花火大会。神戸への直接影響は小さいが、テレビ放送・SNS・ニュースで全国話題になりやすい",
     "trafficReason": "現地の人流影響は東京中心。神戸ではテレビ放送やSNSで話題になる場合のみ、客足への間接影響を確認する",
     "nationalReach": 3,
     "liveUrgency": 2,
     "accessibility": 3,
     "buzz": 3,
     "significance": 3,
+    "impactLevelOverride": "中",
     "officialConfirmed": true,
     "sources": [
       {
@@ -29,31 +504,29 @@
     ]
   },
   {
-    "id": "jingugaien-hanabi-2026",
-    "title": "神宮外苑花火大会",
-    "startAt": "2026-08-08T19:30:00+09:00",
-    "endAt": "2026-08-08T20:30:00+09:00",
-    "category": "花火",
-    "area": "東京",
-    "inPersonEvent": true,
-    "impactLevelOverride": "小",
-    "broadcast": "現地イベント",
-    "liveReason": "神宮外苑で開催される都心型の大規模花火大会。神戸の勤務先への直接影響は基本的にほぼないため、話題確認用として扱う",
-    "trafficReason": "現地の交通・人流影響は東京中心。神戸では通常、客足への影響は小さい",
+    "id": "sumo-july-basho-2026-final-day",
+    "title": "大相撲七月場所 千秋楽",
+    "startAt": "2026-07-26T15:05:00+09:00",
+    "endAt": "2026-07-26T18:00:00+09:00",
+    "broadcast": "NHK総合・NHK BSなど（番組表確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "日本相撲協会公式で七月場所が7月12日から26日までIGアリーナ開催と確認できる。千秋楽は優勝争いと表彰でリアルタイム視聴の動機が強い",
+    "trafficReason": "日曜夕方のテレビ視聴・結果確認で、夕方の外出や買い物時間が前後する可能性を確認する",
     "nationalReach": 2,
     "liveUrgency": 2,
-    "accessibility": 2,
-    "buzz": 3,
+    "accessibility": 3,
+    "buzz": 2,
     "significance": 3,
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "2026 神宮外苑花火大会 公式サイト",
-        "url": "https://www.jinguhanabi.com/"
+        "title": "日本相撲協会 2026 Grand Tournament Schedule",
+        "url": "https://www.sumo.or.jp/EnTicket/year_schedule/"
       },
       {
-        "title": "2026 神宮外苑花火大会 大会概要",
-        "url": "https://www.jinguhanabi.com/about.html"
+        "title": "NHK 大相撲中継",
+        "url": "https://www.nhk.jp/p/ts/JY7XMMG241/"
       }
     ]
   }
