@@ -52,6 +52,15 @@ class StaticContractTest(unittest.TestCase):
         candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
         self.assertIsInstance(candidates, list)
 
+    def test_weekly_research_window_is_sixty_days(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
+        data_format = (ROOT / "event-data-format.md").read_text(encoding="utf-8")
+
+        self.assertIn("週1回の広めチェック: 実行日から60日先まで", readme)
+        self.assertIn("週1回の広めチェックは、実行日を基準に当日から60日先まで", operations)
+        self.assertIn("実行日を基準に当日から60日先までを候補確認範囲", data_format)
+
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")
