@@ -76,7 +76,8 @@ select { font: inherit; }
 .event-panel { margin-top: 20px; }
 .week-panel, .record-panel { margin-top: 20px; }
 .section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
-.section-heading h2 { margin: 2px 0 0; font-weight: 700; font-size: 1.5rem; line-height: 1.4; letter-spacing: -.02em; }
+.section-heading > div { min-width: 0; }
+.section-heading h2 { margin: 2px 0 0; font-weight: 700; font-size: 1.5rem; line-height: 1.4; letter-spacing: -.02em; overflow-wrap: anywhere; }
 .event-title-date-button { min-height: 36px; margin: -4px 0; border: 0; border-radius: 8px; padding: 4px 0; background: transparent; color: rgb(40, 76, 57); cursor: pointer; font: inherit; font-weight: inherit; letter-spacing: inherit; text-decoration: none; }
 .event-title-date-button:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
 .week-nav-row { display: flex; width: 100%; justify-content: center; margin: -8px 0 14px; }
@@ -271,8 +272,9 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   .detail-row { padding: 7px 8px; }
   .detail-row dt { font-size: .65rem; }
   .detail-row dd { font-size: 15px; }
-  .event-panel .section-heading { gap: 8px; }
-  .event-panel .section-heading h2 { white-space: nowrap; font-size: clamp(1.15rem, 6vw, 1.5rem); }
+  .event-panel .section-heading { display: grid; grid-template-columns: minmax(0, 1fr) var(--status-pill-size); align-items: start; gap: 8px; }
+  .event-panel .section-heading .count-pill { justify-self: end; }
+  .event-panel .section-heading h2 { white-space: normal; font-size: clamp(1.15rem, 6vw, 1.5rem); }
   .event-card h3 { overflow: visible; white-space: normal; text-overflow: clip; overflow-wrap: anywhere; line-height: 1.45; }
   .event-title-row { align-items: flex-start; }
   .choice-grid.weather, .choice-grid.periods { grid-template-columns: repeat(3, 1fr); }

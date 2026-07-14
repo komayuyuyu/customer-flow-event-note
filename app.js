@@ -185,7 +185,7 @@ function openRecordDatePicker(anchor = null) {
 
 function updateEventHeading(dateText) {
   const label = eventHeadingLabel(dateText);
-  eventTitleHeading.innerHTML = `<a class="event-title-date-button" href="#record-date" aria-label="記録日を変更">${escapeHtml(label)}</a><span>のイベント</span>`;
+  eventTitleHeading.innerHTML = `<a class="event-title-date-button" href="#record-date" aria-label="記録日を変更">${escapeHtml(label)}</a><span>イベント</span>`;
   eventTitleHeading.querySelector('.event-title-date-button')?.addEventListener('click', event => {
     event.preventDefault();
     event.stopPropagation();
@@ -791,7 +791,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260714-01', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260714-02', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
