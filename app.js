@@ -432,12 +432,11 @@ function renderWeekEvents(events = [], showEmpty = true) {
 }
 
 function renderWeekEvent(event) {
-  const confidence = event.confidence || DEFAULT_EVENT_CONFIDENCE;
   return `<div class="week-event">
     <div class="week-event-head">
       <span class="week-event-name">${escapeHtml(displayEventTitle(event.title, DEFAULT_EVENT_TITLE))}</span>
     </div>
-    <span class="week-event-time">${escapeHtml(eventTime(event))}開始・確からしさ ${escapeHtml(confidence)}${event.area ? `・${escapeHtml(event.area)}` : ''}</span>
+    <span class="week-event-time">${escapeHtml(eventTime(event))}開始${event.area ? `・${escapeHtml(event.area)}` : ''}</span>
     ${renderChampionshipCountdown(event, 'week-event-note')}
   </div>`;
 }
@@ -538,11 +537,26 @@ function renderTodayEventCard(event) {
 function renderEventMeta(event) {
   return `<div class="event-meta">
     <span class="tag high">影響 ${escapeHtml(event.impactLevel || DEFAULT_EVENT_IMPACT)}</span>
-    <span class="tag">確からしさ ${escapeHtml(event.confidence || DEFAULT_EVENT_CONFIDENCE)}</span>
     ${event.category ? `<span class="tag">${escapeHtml(event.category)}</span>` : ''}
     ${event.area ? `<span class="tag">${escapeHtml(event.area)}</span>` : ''}
-    ${event.broadcast ? `<span class="tag">${escapeHtml(event.broadcast)}</span>` : ''}
+    ${renderBroadcastTags(event.broadcast)}
   </div>`;
+}
+
+function compactBroadcastLabels(broadcast = '') {
+  const compactSource = broadcast.replace(/[（(].*?[）)]/g, '').replace(/有無は直前確認/g, '');
+  return compactSource
+    .split(/[・、,／]/)
+    .map(item => item.replace(/^(海外|国内放送権対象)[:：]\s*/, '').trim())
+    .filter(Boolean)
+    .map(item => item.length > 10 ? `${item.slice(0, 9)}…` : item)
+    .slice(0, 3);
+}
+
+function renderBroadcastTags(broadcast = '') {
+  return compactBroadcastLabels(broadcast)
+    .map(label => `<span class="tag">${escapeHtml(label)}</span>`)
+    .join('');
 }
 
 function renderChampionshipCountdown(event, className = 'event-countdown') {
@@ -555,6 +569,7 @@ function renderEventDetails(event) {
   const items = [];
   if (event.championship?.condition) items.push(`優勝条件：${event.championship.condition}`);
   if (event.championship?.runnerUpCondition) items.push(`逆転条件：${event.championship.runnerUpCondition}`);
+  if (event.broadcast) items.push(`放送・配信：${event.broadcast}`);
   if (event.trafficReason) items.push(`客足メモ：${event.trafficReason}`);
   if (!items.length) return '';
   return `<ul class="event-detail-list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
@@ -791,7 +806,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260714-02', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260714-03', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
