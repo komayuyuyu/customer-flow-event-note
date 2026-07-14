@@ -558,29 +558,33 @@
     "title": "MLBオールスターゲーム2026 本戦",
     "startAt": "2026-07-15T09:00:00+09:00",
     "endAt": "2026-07-15T12:30:00+09:00",
-    "broadcast": "MLB公式配信・米FOX（日本国内放送は番組表確認）",
+    "broadcast": "TBS系列（9:00から生中継）・SPOTV NOW（無料ライブ配信）・米FOX",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "MLB公式で7月14日20時ETの開催が確認できる。日本時間は7月15日午前で、大谷翔平選手など日本関連選手の話題で結果確認が起きやすい",
-    "trafficReason": "午前の在宅視聴・結果確認で外出開始が遅れる可能性はあるが、日本国内の地上波同時視聴が未確認のため中程度に扱う",
-    "nationalReach": 2,
-    "liveUrgency": 2,
-    "accessibility": 1,
-    "buzz": 2,
+    "liveReason": "MLB公式で日本時間7月15日9:00開始が確認でき、TBS系列の生中継とSPOTV NOWの無料ライブ配信も確定。村上宗隆選手・山本由伸選手ら日本関連選手への注目が高く、午前帯のリアルタイム視聴とSNS確認が起きやすい",
+    "trafficReason": "平日午前の地上波生中継・無料配信により、在宅視聴や結果確認で午前から昼の外出開始が遅れる可能性を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
     "significance": 2,
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "MLB公式 All-Star Game 2026",
-        "url": "https://www.mlb.com/all-star"
+        "title": "MLB公式 2026オールスターのメンバー発表",
+        "url": "https://www.mlb.com/ja/news/2026-mlb-all-star-rosters"
       },
       {
-        "title": "Bleed Cubbie Blue MLB All-Star broadcast note",
-        "url": "https://www.bleedcubbieblue.com/chicago-cubs-news/224425/pete-crow-armstrong-cubs-only-all-star"
+        "title": "TBSテレビ MLBオールスター2026",
+        "url": "https://www.tbs.co.jp/tv/20260715_B595.html"
+      },
+      {
+        "title": "SPOTV NOW MLBオールスター2026無料ライブ配信",
+        "url": "https://prtimes.jp/main/html/rd/p/000000048.000075946.html"
       }
     ],
-    "impactScore": 15,
-    "impactLevel": "中",
+    "impactScore": 22,
+    "impactLevel": "大",
     "confidence": "高",
     "predictedWindows": [
       {
