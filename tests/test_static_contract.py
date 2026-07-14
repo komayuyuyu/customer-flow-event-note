@@ -57,9 +57,9 @@ class StaticContractTest(unittest.TestCase):
         operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
         data_format = (ROOT / "event-data-format.md").read_text(encoding="utf-8")
 
-        self.assertIn("週1回の広めチェック: 実行日から60日先まで", readme)
-        self.assertIn("週1回の広めチェックは、実行日を基準に当日から60日先まで", operations)
-        self.assertIn("実行日を基準に当日から60日先までを候補確認範囲", data_format)
+        self.assertIn("週1回の広めチェック: 毎週日曜日の夜に、実行日から60日先まで", readme)
+        self.assertIn("週1回の広めチェックは、毎週日曜日の夜に実行し、実行日を基準に当日から60日先まで", operations)
+        self.assertIn("毎週日曜日の夜に、実行日を基準に当日から60日先までを候補確認範囲", data_format)
 
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")

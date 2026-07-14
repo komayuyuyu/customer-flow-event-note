@@ -1,36 +1,5 @@
 [
   {
-    "id": "wimbledon-2026-mens-final",
-    "title": "ウィンブルドン2026 男子シングルス決勝",
-    "startAt": "2026-07-13T00:00:00+09:00",
-    "endAt": "2026-07-13T03:30:00+09:00",
-    "broadcast": "海外: ESPN・BBCなど、日本国内放送・配信は番組表確認",
-    "category": "スポーツ中継",
-    "area": "全国",
-    "liveReason": "四大大会の男子決勝で、Jannik SinnerがAlexander Zverevを破って連覇した試合。日本時間では前夜深夜から未明にかかり、テニスファンのリアルタイム視聴と朝の結果確認が起きやすい",
-    "trafficReason": "深夜視聴後の睡眠不足や朝の結果確認で、7月13日午前から昼の外出開始が遅れる可能性を確認する。日本選手の本戦決勝ではないため影響は中程度に抑える",
-    "nationalReach": 2,
-    "liveUrgency": 2,
-    "accessibility": 1,
-    "buzz": 2,
-    "significance": 3,
-    "officialConfirmed": false,
-    "sources": [
-      {
-        "title": "AP Jannik Sinner beats Alexander Zverev to win Wimbledon again",
-        "url": "https://apnews.com/article/e3e69ad0a4900b484b0eccd2751923e0"
-      },
-      {
-        "title": "The Guardian Sinner caps Wimbledon fortnight",
-        "url": "https://www.theguardian.com/sport/2026/jul/12/jannik-sinner-wimbledon-2026-alexander-zverev-arthur-fery-tennis"
-      },
-      {
-        "title": "New York Post Wimbledon 2026 men's final watch guide",
-        "url": "https://nypost.com/2026/07/12/sports/how-to-watch-zverev-sinner-in-wimbledon-2026-final-for-free/"
-      }
-    ]
-  },
-  {
     "id": "sumo-july-basho-2026-opening-days",
     "title": "大相撲七月場所 序盤",
     "startAt": "2026-07-12T15:05:00+09:00",
@@ -63,6 +32,37 @@
     ]
   },
   {
+    "id": "wimbledon-2026-mens-final",
+    "title": "ウィンブルドン2026 男子シングルス決勝",
+    "startAt": "2026-07-13T00:00:00+09:00",
+    "endAt": "2026-07-13T03:30:00+09:00",
+    "broadcast": "海外: ESPN・BBCなど、日本国内放送・配信は番組表確認",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "四大大会の男子決勝で、Jannik SinnerがAlexander Zverevを破って連覇した試合。日本時間では前夜深夜から未明にかかり、テニスファンのリアルタイム視聴と朝の結果確認が起きやすい",
+    "trafficReason": "深夜視聴後の睡眠不足や朝の結果確認で、7月13日午前から昼の外出開始が遅れる可能性を確認する。日本選手の本戦決勝ではないため影響は中程度に抑える",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "AP Jannik Sinner beats Alexander Zverev to win Wimbledon again",
+        "url": "https://apnews.com/article/e3e69ad0a4900b484b0eccd2751923e0"
+      },
+      {
+        "title": "The Guardian Sinner caps Wimbledon fortnight",
+        "url": "https://www.theguardian.com/sport/2026/jul/12/jannik-sinner-wimbledon-2026-alexander-zverev-arthur-fery-tennis"
+      },
+      {
+        "title": "New York Post Wimbledon 2026 men's final watch guide",
+        "url": "https://nypost.com/2026/07/12/sports/how-to-watch-zverev-sinner-in-wimbledon-2026-final-for-free/"
+      }
+    ]
+  },
+  {
     "id": "mlb-home-run-derby-2026",
     "title": "MLBオールスターゲーム2026 ホームランダービー",
     "startAt": "2026-07-14T09:00:00+09:00",
@@ -90,6 +90,35 @@
       {
         "title": "New York Post Juan Soto Home Run Derby report",
         "url": "https://nypost.com/2026/07/11/sports/mets-juan-soto-explains-why-he-decided-to-skip-home-run-derby/"
+      }
+    ]
+  },
+  {
+    "id": "gion-matsuri-2026-saki-yama",
+    "title": "祇園祭 前祭 宵山",
+    "startAt": "2026-07-14T18:00:00+09:00",
+    "endAt": "2026-07-16T23:30:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "京都",
+    "inPersonEvent": true,
+    "liveReason": "日本三大祭の一つとして全国認知があり、前祭の宵山期間は京都中心部の夜間人流が大きい",
+    "trafficReason": "京都中心部の夜間人流・交通混雑が大きく、関西圏の外出先選択や帰宅動線に影響する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "GionFestival.org Gion Festival overview",
+        "url": "https://www.gionfestival.org/"
+      },
+      {
+        "title": "京都観光Navi 祇園祭",
+        "url": "https://ja.kyoto.travel/event/major/gion/"
       }
     ]
   },
@@ -187,35 +216,6 @@
       {
         "title": "2026 FIFA World Cup broadcasting rights",
         "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights"
-      }
-    ]
-  },
-  {
-    "id": "gion-matsuri-2026-saki-yama",
-    "title": "祇園祭 前祭 宵山",
-    "startAt": "2026-07-14T18:00:00+09:00",
-    "endAt": "2026-07-16T23:30:00+09:00",
-    "broadcast": "現地イベント",
-    "category": "祭り",
-    "area": "京都",
-    "inPersonEvent": true,
-    "liveReason": "日本三大祭の一つとして全国認知があり、前祭の宵山期間は京都中心部の夜間人流が大きい",
-    "trafficReason": "京都中心部の夜間人流・交通混雑が大きく、関西圏の外出先選択や帰宅動線に影響する可能性がある",
-    "nationalReach": 3,
-    "liveUrgency": 2,
-    "accessibility": 1,
-    "buzz": 2,
-    "significance": 3,
-    "impactLevelOverride": "中",
-    "officialConfirmed": true,
-    "sources": [
-      {
-        "title": "GionFestival.org Gion Festival overview",
-        "url": "https://www.gionfestival.org/"
-      },
-      {
-        "title": "京都観光Navi 祇園祭",
-        "url": "https://ja.kyoto.travel/event/major/gion/"
       }
     ]
   },
@@ -363,31 +363,30 @@
     ]
   },
   {
-    "id": "gion-matsuri-2026-ato-junko",
-    "title": "祇園祭 後祭 山鉾巡行・還幸祭",
-    "startAt": "2026-07-24T09:30:00+09:00",
-    "endAt": "2026-07-24T22:00:00+09:00",
-    "broadcast": "現地イベント",
-    "category": "祭り",
-    "area": "京都",
-    "inPersonEvent": true,
-    "liveReason": "祇園祭の後祭山鉾巡行と還幸祭。京都中心部の終日人流・観光回遊が発生する",
-    "trafficReason": "京都中心部の交通規制・観光回遊・夜の帰宅混雑が、関西圏の移動や外出先選択に影響する可能性がある",
+    "id": "vnl-women-2026-final-round",
+    "title": "VNL女子2026 ファイナルラウンド",
+    "startAt": "2026-07-22T18:00:00+09:00",
+    "endAt": "2026-07-26T23:00:00+09:00",
+    "broadcast": "VBTV・国内放送は番組表確認",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "女子バレーボールの国際大会決勝ラウンド。日本が進出した場合はリアルタイム視聴と結果確認が起きやすいため、7月下旬の候補として確認する",
+    "trafficReason": "日本代表の進出状況と放送有無で影響が大きく変わるため、確定カード発表後に更新する。現時点では候補扱いで過大評価しない",
     "nationalReach": 2,
-    "liveUrgency": 3,
+    "liveUrgency": 2,
     "accessibility": 1,
     "buzz": 2,
-    "significance": 3,
-    "impactLevelOverride": "中",
-    "officialConfirmed": true,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": false,
     "sources": [
       {
-        "title": "GionFestival.org Gion Festival overview",
-        "url": "https://www.gionfestival.org/"
+        "title": "2026 FIVB Women's Volleyball Nations League",
+        "url": "https://en.wikipedia.org/wiki/2026_FIVB_Women%27s_Volleyball_Nations_League"
       },
       {
-        "title": "京都観光Navi 祇園祭",
-        "url": "https://ja.kyoto.travel/event/major/gion/"
+        "title": "2026年女子排球國家聯賽",
+        "url": "https://zh.wikipedia.org/wiki/2026%E5%B9%B4%E5%A5%B3%E5%AD%90%E6%8E%92%E7%90%83%E5%9C%8B%E5%AE%B6%E8%81%AF%E8%B3%BD"
       }
     ]
   },
@@ -417,6 +416,35 @@
       {
         "title": "大阪観光局 天神祭",
         "url": "https://osaka-info.jp/spot/tenjin-matsuri/"
+      }
+    ]
+  },
+  {
+    "id": "gion-matsuri-2026-ato-junko",
+    "title": "祇園祭 後祭 山鉾巡行・還幸祭",
+    "startAt": "2026-07-24T09:30:00+09:00",
+    "endAt": "2026-07-24T22:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "京都",
+    "inPersonEvent": true,
+    "liveReason": "祇園祭の後祭山鉾巡行と還幸祭。京都中心部の終日人流・観光回遊が発生する",
+    "trafficReason": "京都中心部の交通規制・観光回遊・夜の帰宅混雑が、関西圏の移動や外出先選択に影響する可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "GionFestival.org Gion Festival overview",
+        "url": "https://www.gionfestival.org/"
+      },
+      {
+        "title": "京都観光Navi 祇園祭",
+        "url": "https://ja.kyoto.travel/event/major/gion/"
       }
     ]
   },
@@ -531,6 +559,193 @@
       {
         "title": "NHK 大相撲中継",
         "url": "https://www.nhk.jp/p/ts/JY7XMMG241/"
+      }
+    ]
+  },
+  {
+    "id": "vnl-men-2026-final-round",
+    "title": "VNL男子2026 ファイナルラウンド",
+    "startAt": "2026-07-29T18:00:00+09:00",
+    "endAt": "2026-08-02T23:00:00+09:00",
+    "broadcast": "VBTV・国内放送は番組表確認",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "男子バレーボールの国際大会決勝ラウンド。日本が進出した場合はSNS・ニュース確認とリアルタイム視聴が起きやすい",
+    "trafficReason": "日本代表の進出状況と放送有無で影響が大きく変わるため、確定カード発表後に更新する。現時点では候補扱いで過大評価しない",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "2026 FIVB Men's Volleyball Nations League",
+        "url": "https://en.wikipedia.org/wiki/2026_FIVB_Men%27s_Volleyball_Nations_League"
+      }
+    ]
+  },
+  {
+    "id": "summer-koshien-2026-opening",
+    "title": "夏の甲子園2026 開幕",
+    "startAt": "2026-08-05T16:00:00+09:00",
+    "endAt": "2026-08-05T20:00:00+09:00",
+    "broadcast": "NHK・ABCテレビなど（番組表確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "兵庫",
+    "inPersonEvent": true,
+    "liveReason": "第108回全国高校野球選手権大会の開幕日。関西ローカルと全国ニュースで扱われやすく、開会式と初戦の視聴・結果確認が起きやすい",
+    "trafficReason": "甲子園周辺と阪神沿線の来場混雑が中心。神戸では高校野球の話題化、テレビ視聴、阪神間の移動混雑を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "第108屆全國高等學校棒球錦標賽",
+        "url": "https://zh.wikipedia.org/wiki/%E7%AC%AC108%E5%B1%86%E5%85%A8%E5%9C%8B%E9%AB%98%E7%AD%89%E5%AD%B8%E6%A0%A1%E6%A3%92%E7%90%83%E9%8C%A6%E6%A8%99%E8%B3%BD"
+      }
+    ]
+  },
+  {
+    "id": "awa-odori-tokushima-2026",
+    "title": "徳島市阿波おどり",
+    "startAt": "2026-08-12T18:00:00+09:00",
+    "endAt": "2026-08-15T22:30:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "徳島",
+    "inPersonEvent": true,
+    "liveReason": "毎年8月12日から15日に徳島市で開催される大型盆踊りイベント。お盆時期の旅行・帰省・SNS話題化と重なりやすい",
+    "trafficReason": "直接影響は徳島中心。関西からの旅行・帰省・高速バスやフェリー利用、連休中の外出先選択への間接影響を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "Awa Odori",
+        "url": "https://de.wikipedia.org/wiki/Awa_Odori"
+      },
+      {
+        "title": "阿波舞",
+        "url": "https://zh.wikipedia.org/wiki/%E9%98%BF%E6%B3%A2%E8%88%9E"
+      }
+    ]
+  },
+  {
+    "id": "comic-market-108",
+    "title": "コミックマーケット108",
+    "startAt": "2026-08-15T10:00:00+09:00",
+    "endAt": "2026-08-16T16:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "大型イベント",
+    "area": "東京",
+    "inPersonEvent": true,
+    "liveReason": "東京ビッグサイト開催の大型同人誌即売会。SNSでの話題量が大きく、参加者の遠征・通販・関連消費が発生しやすい",
+    "trafficReason": "直接影響は東京中心。神戸では遠征客、SNS話題、関連商品のオンライン確認など間接影響として確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "Comiket",
+        "url": "https://en.wikipedia.org/wiki/Comiket"
+      }
+    ]
+  },
+  {
+    "id": "kyoto-gozan-okuribi-2026",
+    "title": "京都五山送り火",
+    "startAt": "2026-08-16T20:00:00+09:00",
+    "endAt": "2026-08-16T20:45:00+09:00",
+    "broadcast": "現地イベント・中継は番組表確認",
+    "category": "祭り",
+    "area": "京都",
+    "inPersonEvent": true,
+    "liveReason": "毎年8月16日夜に京都で行われる伝統行事。お盆最終盤の観光・帰省動線と重なり、関西圏のニュースでも扱われやすい",
+    "trafficReason": "京都市内の夜間人流・観光回遊・帰宅混雑が中心。神戸では関西圏の外出先選択や帰宅時間の変化を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "Gozan no Okuribi",
+        "url": "https://en.wikipedia.org/wiki/Gozan_no_Okuribi"
+      },
+      {
+        "title": "五山送火",
+        "url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E5%B1%B1%E9%80%81%E7%81%AB"
+      }
+    ]
+  },
+  {
+    "id": "summer-koshien-2026-final",
+    "title": "夏の甲子園2026 決勝",
+    "startAt": "2026-08-22T10:00:00+09:00",
+    "endAt": "2026-08-22T13:00:00+09:00",
+    "broadcast": "NHK・ABCテレビなど（番組表確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "兵庫",
+    "inPersonEvent": true,
+    "liveReason": "夏の甲子園決勝。全国的な注目度が高く、出場校次第でテレビ視聴・SNS確認・ニュース確認が大きくなる",
+    "trafficReason": "甲子園周辺と阪神沿線の来場混雑が中心。神戸では午前から昼のテレビ視聴、結果確認、阪神間移動の混雑を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "第108屆全國高等學校棒球錦標賽",
+        "url": "https://zh.wikipedia.org/wiki/%E7%AC%AC108%E5%B1%86%E5%85%A8%E5%9C%8B%E9%AB%98%E7%AD%89%E5%AD%B8%E6%A0%A1%E6%A3%92%E7%90%83%E9%8C%A6%E6%A8%99%E8%B3%BD"
+      }
+    ]
+  },
+  {
+    "id": "twenty-four-hour-tv-2026",
+    "title": "24時間テレビ2026",
+    "startAt": "2026-08-29T18:30:00+09:00",
+    "endAt": "2026-08-30T20:54:00+09:00",
+    "showEachDay": true,
+    "broadcast": "日本テレビ系列",
+    "category": "テレビ特番",
+    "area": "全国",
+    "liveReason": "日本テレビ系列の大型長時間特番。土曜夜から日曜夜にかけて放送され、出演者・企画・チャリティー企画でSNS確認が起きやすい",
+    "trafficReason": "在宅視聴や話題企画の確認で、土曜夜から日曜夜の外出時間が前後する可能性を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": false,
+    "sources": [
+      {
+        "title": "24時間テレビ 日本テレビ",
+        "url": "https://www.ntv.co.jp/24h/"
+      },
+      {
+        "title": "24小時電視 愛心救地球",
+        "url": "https://zh.wikipedia.org/wiki/24%E5%B0%8F%E6%99%82%E9%9B%BB%E8%A6%96_%E3%80%8C%E6%84%9B%E5%BF%83%E6%95%91%E5%9C%B0%E7%90%83%E3%80%8D"
       }
     ]
   }
