@@ -6,6 +6,8 @@
 
 客足注意イベントはこのWebアプリ内で確認する。Google Calendarへの `[客足注意]` 登録は行わない。
 
+`data/candidates.json` は調査した入力データ、`data/events.json` は表示用に計算済みの出力データ。`data/events.json` には過去に直接追加したイベントや履歴も残るため、`data/candidates.json` と完全一致しなくてもよい。更新時は既存イベントを削除せず、`scripts/evaluate_candidates.py` で候補をマージする。
+
 ```json
 [
   {

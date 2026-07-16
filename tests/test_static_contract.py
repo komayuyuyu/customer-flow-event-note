@@ -33,14 +33,14 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260714-03", html)
-            self.assertIn("ui-utils.js?v=20260714-03", html)
-            self.assertIn("app-data.js?v=20260714-03", html)
+            self.assertIn("styles.css?v=20260716-01", html)
+            self.assertIn("ui-utils.js?v=20260716-01", html)
+            self.assertIn("app-data.js?v=20260716-01", html)
             self.assertIn("EVENT INFO ＆ CUSTOMER NOTE", html)
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260714-03';", service_worker)
+        self.assertIn("const VERSION = '20260716-01';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)

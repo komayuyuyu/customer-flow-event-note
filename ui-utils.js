@@ -9,6 +9,14 @@
 
   const trashIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M5.5 7l1.2 12a1.2 1.2 0 0 0 1.2 1h8.2a1.2 1.2 0 0 0 1.2-1l1.2-12M9.5 11v5M14.5 11v5"/></svg>';
   const TIME_INPUT_SELECTOR = '.time-input-wrap input[type="time"]';
+  const FORM_OPTIONS = {
+    accuracy: ['予測どおり', '一部当たった', '外れた', '未判断'],
+    eventImpact: ['感じた', '感じなかった', 'わからない', '対象外'],
+    eventStatus: ['実施予定', '実施済み', '中止', '延期'],
+    periods: ['午前', '昼', '夕方', '終日', '特になし'],
+    traffic: ['暇', '通常', '混雑'],
+    weather: ['晴れ', '曇り', '雨', '雪', '荒天', '不明'],
+  };
 
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>'"]/g, character => HTML_ESCAPE_MAP[character]);
@@ -29,6 +37,14 @@
     });
   }
 
+  function combinedMemo(item = {}) {
+    return [item.note, item.customerTopics].filter(Boolean).join('\n');
+  }
+
+  function renderOptions(values, selected) {
+    return values.map(value => `<option${value === selected ? ' selected' : ''}>${escapeHtml(value)}</option>`).join('');
+  }
+
   function syncTimePlaceholders(root = document) {
     root.querySelectorAll(TIME_INPUT_SELECTOR).forEach(input => {
       input.closest('.time-input-wrap').classList.toggle('is-empty', !input.value);
@@ -43,5 +59,15 @@
     syncTimePlaceholders(root);
   }
 
-  window.UiUtils = { bindTimePlaceholders, displayEventTitle, escapeHtml, readableAuthError, syncTimePlaceholders, trashIcon };
+  window.UiUtils = {
+    FORM_OPTIONS,
+    bindTimePlaceholders,
+    combinedMemo,
+    displayEventTitle,
+    escapeHtml,
+    readableAuthError,
+    renderOptions,
+    syncTimePlaceholders,
+    trashIcon,
+  };
 }());

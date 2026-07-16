@@ -1,6 +1,6 @@
 const FIREBASE_SDK_VERSION = '12.15.0';
 const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
-const { bindTimePlaceholders, displayEventTitle, escapeHtml, readableAuthError, syncTimePlaceholders } = window.UiUtils;
+const { bindTimePlaceholders, combinedMemo, displayEventTitle, escapeHtml, readableAuthError, syncTimePlaceholders } = window.UiUtils;
 const { addDays, contextForDate, dateParts, eventsForDate, eventsForDay, isRecordLinkedEvent, localToday } = window.AppData;
 
 const dateInput = document.querySelector('#record-date');
@@ -20,6 +20,8 @@ const weekLabel = document.querySelector('#week-label');
 const weekPrev = document.querySelector('#week-prev');
 const weekNext = document.querySelector('#week-next');
 const form = document.querySelector('#record-form');
+const impactStartInput = document.querySelector('#impact-start');
+const impactEndInput = document.querySelector('#impact-end');
 const note = document.querySelector('#note');
 const noteCount = document.querySelector('#note-count');
 const saveStatus = document.querySelector('#save-status');
@@ -51,7 +53,6 @@ const EMPTY_EVENT_TEXT = 'イベントなし';
 const EMPTY_WEEK_EVENT_TEXT = '影響イベントなし';
 const DEFAULT_EVENT_TITLE = '名称未設定';
 const DEFAULT_EVENT_IMPACT = '未判定';
-const DEFAULT_EVENT_CONFIDENCE = '未判定';
 const DEFAULT_CALENDAR_LABEL = '通常日';
 const CALENDAR_LABEL_ALIASES = {
   'ゴールデンウィーク': 'G.W',
@@ -72,6 +73,28 @@ function checkedValue(name, fallback = '') {
 function setChecked(name, value) {
   const target = form.querySelector(`[name="${name}"][value="${CSS.escape(value || '')}"]`);
   if (target) target.checked = true;
+}
+
+function clearImpactTimeFields() {
+  impactStartInput.value = '';
+  impactEndInput.value = '';
+}
+
+function setImpactTimeFieldsDisabled(disabled) {
+  impactStartInput.disabled = disabled;
+  impactEndInput.disabled = disabled;
+}
+
+function setImpactTimeValues(observation = {}) {
+  impactStartInput.value = observation.actualImpactStart || '';
+  impactEndInput.value = observation.actualImpactEnd || '';
+}
+
+function impactTimeValues() {
+  return {
+    actualImpactStart: impactStartInput.value,
+    actualImpactEnd: impactEndInput.value,
+  };
 }
 
 function formatWindow(window) {
@@ -614,8 +637,7 @@ function clearForm() {
   form.reset();
   dateInput.value = selectedDate;
   updateDatePickerButton();
-  document.querySelector('#impact-start').value = '';
-  document.querySelector('#impact-end').value = '';
+  clearImpactTimeFields();
   syncTimePlaceholders();
   note.value = '';
   noteCount.textContent = '0 / 600';
@@ -634,10 +656,9 @@ function fillObservation(observation) {
   setChecked('accuracy', observation.accuracy);
   setChecked('eventImpact', observation.eventImpact);
   for (const period of observation.quietPeriods || []) setChecked('period', period);
-  document.querySelector('#impact-start').value = observation.actualImpactStart || '';
-  document.querySelector('#impact-end').value = observation.actualImpactEnd || '';
+  setImpactTimeValues(observation);
   syncTimePlaceholders();
-  note.value = [observation.note, observation.customerTopics].filter(Boolean).join('\n');
+  note.value = combinedMemo(observation);
   noteCount.textContent = `${note.value.length} / 600`;
   const statuses = Object.fromEntries((observation.relatedEvents || []).map(item => [item.id, item.status]));
   if (currentEvents.length) renderRelatedEvents(currentEvents, statuses);
@@ -657,8 +678,7 @@ async function loadDay() {
     fillObservation(null);
     setRecordAccess(currentUser);
     if (checkedValue('eventImpact') === '感じなかった') {
-      document.querySelector('#impact-start').disabled = true;
-      document.querySelector('#impact-end').disabled = true;
+      setImpactTimeFieldsDisabled(true);
     }
     await loadWeek();
   } catch (error) {
@@ -714,11 +734,9 @@ bindTimePlaceholders();
 form.addEventListener('change', event => {
   if (event.target.name !== 'eventImpact') return;
   const noImpact = event.target.value === '感じなかった';
-  document.querySelector('#impact-start').disabled = noImpact;
-  document.querySelector('#impact-end').disabled = noImpact;
+  setImpactTimeFieldsDisabled(noImpact);
   if (noImpact) {
-    document.querySelector('#impact-start').value = '';
-    document.querySelector('#impact-end').value = '';
+    clearImpactTimeFields();
     syncTimePlaceholders();
   }
 });
@@ -761,8 +779,7 @@ form.addEventListener('submit', async event => {
     weather: checkedValue('weather', '不明'),
     trafficLevel: checkedValue('traffic'),
     quietPeriods: [...form.querySelectorAll('[name="period"]:checked')].map(input => input.value),
-    actualImpactStart: document.querySelector('#impact-start').value,
-    actualImpactEnd: document.querySelector('#impact-end').value,
+    ...impactTimeValues(),
     accuracy: checkedValue('accuracy', '未判断'),
     eventImpact: checkedValue('eventImpact', currentEvents.length ? 'わからない' : '対象外'),
     note: note.value,
@@ -806,7 +823,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260714-03', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260716-01', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
