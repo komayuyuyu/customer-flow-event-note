@@ -228,7 +228,7 @@
     "title": "祇園祭 前祭 山鉾巡行・神幸祭",
     "startAt": "2026-07-17T09:00:00+09:00",
     "endAt": "2026-07-17T21:00:00+09:00",
-    "broadcast": "現地イベント",
+    "broadcast": "KBS京都（山鉾巡行 8:30〜11:30生中継）・京都観光Navi YouTube（混雑ライブカメラ）",
     "category": "祭り",
     "area": "京都",
     "inPersonEvent": true,
@@ -249,6 +249,14 @@
       {
         "title": "京都観光Navi 祇園祭",
         "url": "https://ja.kyoto.travel/event/major/gion/"
+      },
+      {
+        "title": "KBS京都 生中継 祇園祭山鉾巡行・前祭2026",
+        "url": "https://www.kbs-kyoto.co.jp/info/sp_prog/sp_146520.htm"
+      },
+      {
+        "title": "京都市交通局 祇園祭に伴う臨時増発・経路変更",
+        "url": "https://www.city.kyoto.lg.jp/kotsu/page/0000355768.html"
       }
     ]
   },
