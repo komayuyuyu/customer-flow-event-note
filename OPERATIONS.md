@@ -29,6 +29,8 @@ https://komayuyuyu.github.io/customer-flow-event-note/
    python scripts/evaluate_candidates.py
    ```
 
+客足注意イベントは、Webアプリの `data/events.json` / `data/store-events.json` を正本とし、Google Calendarには登録しない。初期運用で使っていた `[客足注意]` のGoogle Calendar通知は廃止済み。
+
 勤務カレンダー画像から拾った店頭施策・館イベントは `data/store-events.json` に追加する。下部メモや通常MTではなく、カレンダーの「イベント関連」欄にある予定だけを入れる。
 
 勤務カレンダーから店内イベントを吸い出す時は、反映前に必ずチャットでイベント名と期間の一覧を提示し、ユーザー確認を受ける。提示前には以下を確認する。

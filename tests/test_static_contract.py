@@ -61,6 +61,13 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("週1回の広めチェックは、毎週日曜日の夜に実行し、実行日を基準に当日から60日先まで", operations)
         self.assertIn("毎週日曜日の夜に、実行日を基準に当日から60日先までを候補確認範囲", data_format)
 
+    def test_customer_flow_alerts_are_not_registered_to_google_calendar(self):
+        operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
+        data_format = (ROOT / "event-data-format.md").read_text(encoding="utf-8")
+
+        self.assertIn("Google Calendarには登録しない", operations)
+        self.assertIn("Google Calendarへの `[客足注意]` 登録は行わない", data_format)
+
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")
