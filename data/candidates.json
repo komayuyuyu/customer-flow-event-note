@@ -190,14 +190,14 @@
   },
   {
     "id": "fifa-world-cup-2026-semifinal-arg-eng",
-    "title": "サッカーW杯 準決勝 ARG対ENG",
-    "startAt": "2026-07-16T09:00:00+09:00",
-    "endAt": "2026-07-16T11:30:00+09:00",
-    "broadcast": "国内放送権対象: NHK・日本テレビ・フジテレビ・DAZN（個別編成は番組表確認）",
+    "title": "サッカーW杯 準決勝 ENG対ARG",
+    "startAt": "2026-07-16T04:00:00+09:00",
+    "endAt": "2026-07-16T06:30:00+09:00",
+    "broadcast": "NHK総合・BSP4K（3:45から生放送）・NHK ONE・DAZN",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "サッカーW杯準決勝。公開報道でARG対ENGとして大きく扱われており、メッシ、イングランド、決勝進出争いの話題性が高い",
-    "trafficReason": "午前のリアルタイム視聴・結果確認で外出開始が遅れる可能性を確認する",
+    "liveReason": "サッカーW杯準決勝。ENG対ARGの歴史的対戦とメッシ出場で公開SNS・ニュースの注目が高まり、ARGが2–1で勝利して決勝進出。日本時間の深夜・早朝にリアルタイム視聴と起床後の結果確認が起きやすい",
+    "trafficReason": "深夜・早朝のリアルタイム視聴や起床直後の結果・ハイライト確認で、午前から昼の外出開始が遅れる可能性を確認する",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -206,16 +206,20 @@
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "FIFA World Cup 2026 Matches",
-        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/matches"
+        "title": "FIFA England v Argentina match preview",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/england-v-argentina-live-stream-team-news-tickets-and-more"
       },
       {
-        "title": "The Guardian Argentina vs England semi-final report",
-        "url": "https://www.theguardian.com/football/2026/jul/12/argentina-switzerland-lionel-scaloni-england-semi-final"
+        "title": "NHK FIFAワールドカップ2026 決勝トーナメント放送試合",
+        "url": "https://prtimes.jp/main/html/rd/p/000000074.000160617.html"
       },
       {
-        "title": "2026 FIFA World Cup broadcasting rights",
-        "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights"
+        "title": "AV Watch ENG対ARG 放送・配信予定",
+        "url": "https://av.watch.impress.co.jp/docs/news/2125462.html"
+      },
+      {
+        "title": "AP ARGがENGに2–1で勝利",
+        "url": "https://apnews.com/article/2ae6a218ae88248db6565ffd13f60d38"
       }
     ]
   },
