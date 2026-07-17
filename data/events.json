@@ -732,10 +732,10 @@
     "title": "音楽の日2026",
     "startAt": "2026-07-18T14:00:00+09:00",
     "endAt": "2026-07-18T22:00:00+09:00",
-    "broadcast": "TBS系列（8時間生放送）",
+    "broadcast": "TBS系列（14:00から8時間生放送）",
     "category": "音楽特番",
     "area": "全国",
-    "liveReason": "TBS公式で7月18日14時から8時間生放送が確認できる大型音楽特番。出演者発表と番組公式SNSで当日視聴の話題が出やすい",
+    "liveReason": "TBS公式で7月18日14時から8時間生放送と総勢80組のタイムテーブルが確認できる大型音楽特番。出演時間に合わせたリアルタイム視聴と番組公式SNSで当日の話題化が起きやすい",
     "trafficReason": "午後から夜にかけて長時間の生放送が続くため、目当ての出演時間に合わせた早めの帰宅や在宅視聴で客足が弱まる可能性を確認する",
     "nationalReach": 3,
     "liveUrgency": 2,
@@ -745,12 +745,12 @@
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "TBSテレビ 音楽の日",
-        "url": "https://www.tbs.co.jp/ongakunohi/"
+        "title": "TBSテレビ 音楽の日2026 放送概要",
+        "url": "https://www.tbs.co.jp/ongakunohi/articles/20260601.html"
       },
       {
-        "title": "TBS 音楽の日2026 お知らせ",
-        "url": "https://www.tbs.co.jp/ongakunohi/"
+        "title": "TBS 音楽の日2026 タイムテーブル",
+        "url": "https://www.tbs.co.jp/ongakunohi/timetable/"
       }
     ],
     "impactScore": 17,
@@ -775,14 +775,14 @@
   },
   {
     "id": "fifa-world-cup-2026-third-place",
-    "title": "サッカーW杯 3位決定戦",
+    "title": "サッカーW杯 3位決定戦 FRA対ENG",
     "startAt": "2026-07-19T06:00:00+09:00",
     "endAt": "2026-07-19T08:30:00+09:00",
-    "broadcast": "国内放送権対象: NHK・日本テレビ・フジテレビ・DAZN（個別編成は番組表確認）",
+    "broadcast": "NHK総合・BSP4K・NHK ONE（5:45から生放送）・DAZN（無料ライブ配信）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "サッカーW杯終盤の3位決定戦。決勝より注目度は落ちるが、週末早朝のリアルタイム視聴・結果確認が起きやすい",
-    "trafficReason": "早朝視聴後の日曜午前の外出開始遅れを確認する",
+    "liveReason": "FIFA公式でサッカーW杯3位決定戦の対戦カードがFRA対ENGに確定。NHK地上波・BSP4K・NHK ONEの生放送とDAZN無料配信があり、週末早朝のリアルタイム視聴・結果確認が起きやすい",
+    "trafficReason": "5:45からの放送・配信と6:00キックオフをリアルタイム視聴した後、日曜午前から昼の外出開始が遅れる可能性を確認する",
     "nationalReach": 3,
     "liveUrgency": 2,
     "accessibility": 3,
@@ -791,12 +791,16 @@
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "FIFA World Cup 2026 Matches",
-        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/matches"
+        "title": "FIFA サッカーW杯2026 3位決定戦 FRA対ENG",
+        "url": "https://www.fifa.com/fr/tournaments/mens/worldcup/canadamexicousa2026/articles/france-angleterre-match-troisieme-place-presentation-diffusion-infos-equipes-billettere"
       },
       {
-        "title": "2026 FIFA World Cup broadcasting rights",
-        "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights"
+        "title": "NHK FIFAワールドカップ2026 決勝トーナメント放送試合",
+        "url": "https://prtimes.jp/main/html/rd/p/000000074.000160617.html"
+      },
+      {
+        "title": "AV Watch W杯3位決定戦・決勝の放送配信予定",
+        "url": "https://av.watch.impress.co.jp/docs/news/2125462.html"
       }
     ],
     "impactScore": 19,
