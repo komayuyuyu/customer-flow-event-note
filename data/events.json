@@ -888,13 +888,13 @@
   },
   {
     "id": "fifa-world-cup-2026-final",
-    "title": "サッカーW杯 決勝",
+    "title": "サッカーW杯 決勝 ESP対ARG",
     "startAt": "2026-07-20T04:00:00+09:00",
     "endAt": "2026-07-20T06:45:00+09:00",
-    "broadcast": "国内放送権対象: NHK・日本テレビ・フジテレビ・DAZN（個別編成は番組表確認）",
+    "broadcast": "NHK総合・BSP4K・NHK ONE（3:00から生放送、4:00キックオフ）・DAZN",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "サッカーW杯決勝。世界最大級のスポーツイベントで、海の日の祝日早朝に重なるためリアルタイム視聴と結果確認の動機が強い",
+    "liveReason": "サッカーW杯 決勝 ESP対ARG。世界最大級のスポーツイベントで、海の日の祝日早朝に重なり、NHKとDAZNでのリアルタイム視聴と結果確認の動機が強い",
     "trafficReason": "深夜・早朝視聴後の睡眠不足、祝日午前の外出開始遅れ、SNS・ニュース確認による行動変化を確認する",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -912,8 +912,8 @@
         "url": "https://apnews.com/article/1eb6731d9cb7dc1bde02b41c9992174c"
       },
       {
-        "title": "2026 FIFA World Cup broadcasting rights",
-        "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights"
+        "title": "NHK FIFAワールドカップ2026 決勝・出演者のお知らせ",
+        "url": "https://prtimes.jp/main/html/rd/p/000000084.000160617.html"
       }
     ],
     "impactScore": 24,
