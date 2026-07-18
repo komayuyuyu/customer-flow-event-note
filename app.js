@@ -465,7 +465,7 @@ function renderEventTitle(event = {}, fallback = DEFAULT_EVENT_TITLE) {
   const sourceUrl = eventSourceUrl(event);
   if (!sourceUrl) return escapeHtml(title);
   const label = `${title}のWebサイトを新規タブで開く`;
-  return `<a class="event-title-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)}">${escapeHtml(title)}<span class="external-link-mark" aria-hidden="true">↗</span></a>`;
+  return `<a class="event-title-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)}">${escapeHtml(title)}</a>`;
 }
 
 function renderWeekEvent(event) {
@@ -837,7 +837,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260718-01', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260718-02', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
