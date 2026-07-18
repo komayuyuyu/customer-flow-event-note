@@ -45,8 +45,8 @@ select { font: inherit; }
 .app-header { position: sticky; top: 0; z-index: 80; display: flex; width: calc(100vw - 16px); min-height: 72px; margin-left: calc(50% - 50vw + 8px); padding: 10px max(16px, calc((100vw - 760px) / 2)); align-items: center; justify-content: space-between; gap: 32px; background: rgba(243, 240, 232, .96); box-shadow: 0 3px 12px rgba(33,49,41,.04); backdrop-filter: blur(10px); }
 .brand-link { color: inherit; text-decoration: none; }
 .brand-title { min-width: 0; }
-.brand-title h1 { margin: 0; }
-.brand-title .eyebrow { margin-top: 4px; }
+.brand-title h1 { margin: 4px 0 0; }
+.brand-title .eyebrow { margin-top: 0; }
 .eyebrow, .section-kicker { margin: 0; color: var(--orange); font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
 .hero h1 { margin: 1px 0 0; white-space: nowrap; font-size: 1.4rem; line-height: 1.2; font-weight: 600; letter-spacing: -.03em; }
 .hero-description { margin: 8px 0 28px; color: var(--muted); }
@@ -237,8 +237,8 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   .shell { width: min(calc(100% - 30px), 760px); }
   .app-header { width: auto; min-height: 68px; margin: 0 -15px; padding: 12px 15px; gap: 16px; }
   .app-header .brand-title { width: 100%; }
-  .app-header .eyebrow { display: block; margin-top: 6px; font-size: 8px; line-height: 1; letter-spacing: .12em; }
-  .app-header h1 { margin: 0; white-space: nowrap; font-size: clamp(1.12rem, 5.7vw, 1.35rem); line-height: 1.15; letter-spacing: -.02em; }
+  .app-header .eyebrow { display: block; margin-top: 0; font-size: 8px; line-height: 1; letter-spacing: .12em; }
+  .app-header h1 { margin: 6px 0 0; white-space: nowrap; font-size: clamp(1.12rem, 5.7vw, 1.35rem); line-height: 1.15; letter-spacing: -.02em; }
   .page-intro { margin-top: 28px; }
   .page-intro h2, .detail-shell .page-intro h2, .records-shell .page-intro h2 { font-size: 1.5rem; }
   .hero-description { margin-top: 18px; font-size: 11px; }
@@ -258,8 +258,8 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
   .site-nav .menu-header { display: flex; width: 100%; min-height: 44px; margin-bottom: 12px; align-items: center; justify-content: space-between; gap: 8px; }
   .site-nav .menu-brand { display: block; width: auto; min-height: 0; min-width: 0; border-radius: 0; padding: 0; background: transparent; color: var(--ink); white-space: nowrap; line-height: 1.2; text-decoration: none; }
   .menu-brand strong, .menu-brand span { display: block; white-space: nowrap; }
-  .menu-brand span { margin-top: 2px; color: var(--orange); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
-  .menu-brand strong { margin-top: 0; font-size: clamp(13px, 4vw, 16px); font-weight: 600; letter-spacing: -.03em; }
+  .menu-brand span { margin-top: 0; color: var(--orange); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+  .menu-brand strong { margin-top: 2px; font-size: clamp(13px, 4vw, 16px); font-weight: 600; letter-spacing: -.03em; }
   .site-nav .menu-close { display: flex; flex: 0 0 44px; width: 44px; height: 44px; min-height: 44px; margin: 0; padding: 0; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 12px; background: white; color: var(--ink); font-family: Arial, sans-serif; font-size: 1.6rem; line-height: 1; }
   .site-nav > #nav-auth-button { margin-top: 0; }
   body.menu-open { overflow: hidden; }
