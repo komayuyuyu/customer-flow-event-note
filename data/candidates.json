@@ -1,5 +1,35 @@
 [
   {
+    "id": "kaijinja-summer-festival-2026",
+    "title": "海神社 夏祭り",
+    "startAt": "2026-07-18T17:00:00+09:00",
+    "endAt": "2026-07-20T21:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "神戸・垂水",
+    "inPersonEvent": true,
+    "liveReason": "海神社公式で7月18日から20日までの3日間開催が確認できる。JR・山陽垂水駅から徒歩1分の地元祭りで、勤務先に近く来街者が集中する",
+    "trafficReason": "夏祭り期間中は17時頃から交通規制が予定され、垂水駅周辺の人流・帰宅動線・買い回りに直接かつ大きな影響が見込まれる",
+    "nationalReach": 1,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "海神社 令和8年夏祭り・交通規制のお知らせ",
+        "url": "https://kaijinjya.jp/"
+      },
+      {
+        "title": "海神社駐車場休業日について",
+        "url": "https://kaijinjya.jp/news/251222-3"
+      }
+    ]
+  },
+  {
     "id": "sumo-july-basho-2026-opening-days",
     "title": "大相撲七月場所 序盤",
     "startAt": "2026-07-12T15:05:00+09:00",

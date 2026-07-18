@@ -72,6 +72,21 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("Google Calendarには登録しない", operations)
         self.assertIn("Google Calendarへの `[客足注意]` 登録は行わない", data_format)
 
+    def test_nearby_tarumi_events_are_fixed_research_targets(self):
+        operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
+        data_format = (ROOT / "event-data-format.md").read_text(encoding="utf-8")
+        candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
+        by_id = {event["id"]: event for event in candidates}
+
+        self.assertIn("海神社の夏祭りは毎年の固定確認対象", operations)
+        self.assertIn("勤務先の近距離で行われる祭り・地域イベント", data_format)
+        festival = by_id["kaijinja-summer-festival-2026"]
+        self.assertEqual(festival["startAt"][:10], "2026-07-18")
+        self.assertEqual(festival["endAt"][:10], "2026-07-20")
+        self.assertTrue(festival["showEachDay"])
+        self.assertEqual(festival["impactLevelOverride"], "大")
+        self.assertTrue(festival["officialConfirmed"])
+
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")
