@@ -454,10 +454,24 @@ function renderWeekEvents(events = [], showEmpty = true) {
   return events.map(renderWeekEvent).join('');
 }
 
+function eventSourceUrl(event = {}) {
+  const sources = Array.isArray(event.sources) ? event.sources : [];
+  const source = sources.find(item => typeof item?.url === 'string' && /^https?:\/\//i.test(item.url.trim()));
+  return source?.url.trim() || '';
+}
+
+function renderEventTitle(event = {}, fallback = DEFAULT_EVENT_TITLE) {
+  const title = displayEventTitle(event.title, fallback);
+  const sourceUrl = eventSourceUrl(event);
+  if (!sourceUrl) return escapeHtml(title);
+  const label = `${title}のWebサイトを新規タブで開く`;
+  return `<a class="event-title-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)}">${escapeHtml(title)}<span class="external-link-mark" aria-hidden="true">↗</span></a>`;
+}
+
 function renderWeekEvent(event) {
   return `<div class="week-event">
     <div class="week-event-head">
-      <span class="week-event-name">${escapeHtml(displayEventTitle(event.title, DEFAULT_EVENT_TITLE))}</span>
+      <span class="week-event-name">${renderEventTitle(event)}</span>
     </div>
     <span class="week-event-time">${escapeHtml(eventTime(event))}開始${event.area ? `・${escapeHtml(event.area)}` : ''}</span>
     ${renderChampionshipCountdown(event, 'week-event-note')}
@@ -547,7 +561,7 @@ function renderCalendarEventCard(event) {
 function renderTodayEventCard(event) {
   return `<article class="event-card">
     <div class="event-title-row">
-      <h3>${escapeHtml(event.title || DEFAULT_EVENT_TITLE)}</h3>
+      <h3>${renderEventTitle(event)}</h3>
     </div>
     ${renderEventMeta(event)}
     ${event.liveReason ? `<p>${escapeHtml(event.liveReason)}</p>` : ''}
@@ -823,7 +837,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260716-01', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260718-01', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

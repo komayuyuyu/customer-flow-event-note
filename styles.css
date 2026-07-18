@@ -98,6 +98,10 @@ select { font: inherit; }
 .event-card { min-width: 0; max-width: 100%; overflow: hidden; border-left: 4px solid var(--orange); border-radius: 12px; padding: 15px 16px; background: #faf5ec; }
 .event-card.calendar-event-card { border-left-color: var(--green); background: white; }
 .event-card h3 { flex: 1 1 auto; min-width: 0; margin: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 1.05rem; }
+.event-title-link { color: inherit; text-decoration-line: underline; text-decoration-color: rgba(36, 55, 45, .35); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.event-title-link:hover { color: var(--orange); text-decoration-color: currentColor; }
+.event-title-link:focus-visible { border-radius: 3px; outline: 2px solid var(--green); outline-offset: 3px; }
+.external-link-mark { display: inline-block; margin-left: .3em; color: var(--orange); font-size: .78em; font-weight: 800; text-decoration: none; }
 .event-meta { display: flex; min-width: 0; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
 .tag { max-width: 100%; border-radius: 999px; padding: 3px 8px; background: white; border: 1px solid var(--line); font-size: .75rem; overflow-wrap: anywhere; }
 .tag.high { background: var(--orange-soft); border-color: transparent; color: #8f3b1e; font-weight: 800; }
