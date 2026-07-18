@@ -1,6 +1,6 @@
 {
-  "name": "客足イベントノート",
-  "short_name": "客足ノート",
+  "name": "イベント情報",
+  "short_name": "イベント情報",
   "id": "./",
   "start_url": "./",
   "scope": "./",

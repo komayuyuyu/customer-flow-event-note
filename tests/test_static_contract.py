@@ -33,14 +33,16 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260716-01", html)
-            self.assertIn("ui-utils.js?v=20260716-01", html)
-            self.assertIn("app-data.js?v=20260716-01", html)
-            self.assertIn("EVENT INFO ＆ CUSTOMER NOTE", html)
+            self.assertIn("styles.css?v=20260718-01", html)
+            self.assertIn("ui-utils.js?v=20260718-01", html)
+            self.assertIn("app-data.js?v=20260718-01", html)
+            self.assertIn("EVENT INFO", html)
+            self.assertNotIn("CUSTOMER NOTE", html)
+            self.assertNotIn("イベント情報・集客記録", html)
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260716-01';", service_worker)
+        self.assertIn("const VERSION = '20260718-01';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
@@ -75,6 +77,11 @@ class StaticContractTest(unittest.TestCase):
 
         self.assertIn("function renderTodayEventCard", app)
         self.assertIn("function renderWeekEvent", app)
+        self.assertIn("function renderEventTitle", app)
+        self.assertIn("function eventSourceUrl", app)
+        self.assertIn('target="_blank"', app)
+        self.assertIn('rel="noopener noreferrer"', app)
+        self.assertIn("${renderEventTitle(event)}", app)
         self.assertIn("function updateEventHeading", app)
         self.assertIn("function openRecordDatePicker", app)
         self.assertIn("function renderCalendarEventCard", app)
