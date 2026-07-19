@@ -410,29 +410,33 @@
   },
   {
     "id": "vnl-women-2026-final-round",
-    "title": "VNL女子2026 ファイナルラウンド",
-    "startAt": "2026-07-22T18:00:00+09:00",
-    "endAt": "2026-07-26T23:00:00+09:00",
-    "broadcast": "VBTV・国内放送は番組表確認",
+    "title": "VNL女子2026 ファイナルラウンド 準々決勝 JPN対BRA",
+    "startAt": "2026-07-22T20:30:00+09:00",
+    "endAt": "2026-07-22T23:00:00+09:00",
+    "broadcast": "VBTV・TBS系列（日本戦の追加放送枠は公式番組表で直前確認）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "女子バレーボールの国際大会決勝ラウンド。日本が進出した場合はリアルタイム視聴と結果確認が起きやすいため、7月下旬の候補として確認する",
-    "trafficReason": "日本代表の進出状況と放送有無で影響が大きく変わるため、確定カード発表後に更新する。現時点では候補扱いで過大評価しない",
-    "nationalReach": 2,
-    "liveUrgency": 2,
-    "accessibility": 1,
-    "buzz": 2,
-    "significance": 2,
-    "impactLevelOverride": "小",
-    "officialConfirmed": false,
+    "liveReason": "Volleyball World公式で日本の決勝ラウンド進出と、7月22日20時30分開始の準々決勝JPN対BRAが確定。日本代表の一発勝負でリアルタイム視聴とSNS確認の動機が強い",
+    "trafficReason": "平日夜の試合で、開始2時間前から帰宅・視聴準備が起き、試合中は外出や買い物を控える可能性を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
     "sources": [
       {
-        "title": "2026 FIVB Women's Volleyball Nations League",
-        "url": "https://en.wikipedia.org/wiki/2026_FIVB_Women%27s_Volleyball_Nations_League"
+        "title": "Volleyball World VNL 2026 Finals match schedule",
+        "url": "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/news/vnl-2026-finals-match-schedule-set-showdown-macao"
       },
       {
-        "title": "2026年女子排球國家聯賽",
-        "url": "https://zh.wikipedia.org/wiki/2026%E5%B9%B4%E5%A5%B3%E5%AD%90%E6%8E%92%E7%90%83%E5%9C%8B%E5%AE%B6%E8%81%AF%E8%B3%BD"
+        "title": "TBS VNL女子2026 試合日程・結果",
+        "url": "https://www.tbs.co.jp/volley-nationsleague/result/w.html"
+      },
+      {
+        "title": "TBS VNL2026 放送情報",
+        "url": "https://www.tbs.co.jp/volley-nationsleague/schedule/"
       }
     ]
   },
@@ -528,7 +532,7 @@
     "title": "天神祭 本宮・奉納花火",
     "startAt": "2026-07-25T15:30:00+09:00",
     "endAt": "2026-07-25T21:30:00+09:00",
-    "broadcast": "現地イベント・テレビ大阪系など番組表確認",
+    "broadcast": "テレビ大阪 18:58から生中継・eo光テレビ 16:00から陸渡御生中継・現地イベント",
     "category": "祭り・花火",
     "area": "大阪",
     "inPersonEvent": true,
@@ -549,6 +553,10 @@
       {
         "title": "大阪観光局 天神祭",
         "url": "https://osaka-info.jp/spot/tenjin-matsuri/"
+      },
+      {
+        "title": "テレビ大阪 天神祭 生中継 2026",
+        "url": "https://www.tv-osaka.co.jp/tenjin2026/"
       }
     ]
   },
@@ -557,7 +565,7 @@
     "title": "隅田川花火大会",
     "startAt": "2026-07-25T19:00:00+09:00",
     "endAt": "2026-07-25T20:30:00+09:00",
-    "broadcast": "テレビ東京系列・現地イベント",
+    "broadcast": "テレビ東京系列 18:30から独占生中継・TVer／YouTube裏生配信・現地イベント",
     "category": "花火",
     "area": "東京",
     "inPersonEvent": true,
@@ -578,6 +586,10 @@
       {
         "title": "令和8年 第49回 隅田川花火大会 実施計画概要",
         "url": "https://www.sumidagawa-hanabi.com/assets/pdf/%E4%BB%A4%E5%92%8C8%E5%B9%B4(%E7%AC%AC49%E5%9B%9E)%E5%AE%9F%E6%96%BD%E8%A8%88%E7%94%BB%E6%A6%82%E8%A6%81.pdf"
+      },
+      {
+        "title": "テレビ東京 独占生中継 隅田川花火大会 2026",
+        "url": "https://www.tv-tokyo.co.jp/hanabi2026/"
       }
     ]
   },

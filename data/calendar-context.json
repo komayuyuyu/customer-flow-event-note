@@ -24,5 +24,12 @@
     {"start": "2026-08-13", "end": "2026-08-16", "label": "一般的なお盆休み期間"},
     {"start": "2026-09-19", "end": "2026-09-23", "label": "シルバーウィーク"},
     {"start": "2026-12-29", "end": "2027-01-03", "label": "一般的な正月休み期間"}
+  ],
+  "verifiedAt": "2026-07-19T20:00:00+09:00",
+  "sources": [
+    {
+      "title": "内閣府 国民の祝日について",
+      "url": "https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html"
+    }
   ]
 }
