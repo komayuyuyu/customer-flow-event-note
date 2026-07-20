@@ -87,6 +87,21 @@ class StaticContractTest(unittest.TestCase):
         self.assertEqual(festival["impactLevelOverride"], "大")
         self.assertTrue(festival["officialConfirmed"])
 
+    def test_minatogawa_shrine_events_are_fixed_research_targets(self):
+        operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
+        data_format = (ROOT / "event-data-format.md").read_text(encoding="utf-8")
+        candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
+        by_id = {event["id"]: event for event in candidates}
+
+        self.assertIn("湊川神社の祭典・行事等一覧を毎朝・週次チェックの固定巡回先", operations)
+        self.assertIn("湊川神社の夏まつり（献燈祭・菊水天神祭）は毎年の固定確認対象", data_format)
+        festival = by_id["minatogawa-shrine-summer-festival-2026"]
+        self.assertEqual(festival["startAt"][:10], "2026-08-22")
+        self.assertEqual(festival["endAt"][:10], "2026-08-26")
+        self.assertTrue(festival["showEachDay"])
+        self.assertEqual(festival["impactLevelOverride"], "中")
+        self.assertTrue(festival["officialConfirmed"])
+
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")

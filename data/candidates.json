@@ -1,5 +1,35 @@
 [
   {
+    "id": "minatogawa-shrine-summer-festival-2026",
+    "title": "湊川神社 夏まつり～献燈祭・菊水天神祭～",
+    "startAt": "2026-08-22T17:00:00+09:00",
+    "endAt": "2026-08-26T21:30:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "神戸・中央区",
+    "inPersonEvent": true,
+    "liveReason": "湊川神社公式で8月22日から26日までの5日間開催が確認できる神戸の夏の風物詩。提灯、ねぶた灯籠、屋台、奉納行事などで夕方から夜に来場が集中する",
+    "trafficReason": "夏まつり期間中は境内駐車場が利用できず、神戸駅・高速神戸駅周辺の徒歩移動、近隣駐車場、夜間の帰宅動線への影響が見込まれる",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "湊川神社 夏まつり～献燈祭・菊水天神祭～",
+        "url": "https://www.minatogawajinja.or.jp/natumaturi/"
+      },
+      {
+        "title": "湊川神社 祭典・行事等一覧",
+        "url": "https://www.minatogawajinja.or.jp/event/"
+      }
+    ]
+  },
+  {
     "id": "kaijinja-summer-festival-2026",
     "title": "海神社 夏祭り",
     "startAt": "2026-07-18T17:00:00+09:00",
