@@ -1168,6 +1168,7 @@
     "title": "FUJI ROCK FESTIVAL '26",
     "startAt": "2026-07-24T11:00:00+09:00",
     "endAt": "2026-07-26T23:00:00+09:00",
+    "showEachDay": true,
     "broadcast": "現地イベント・公式配信有無は直前確認",
     "category": "音楽フェス",
     "area": "新潟",
@@ -1859,6 +1860,61 @@
         "start": "10:00",
         "end": "14:00",
         "reason": "睡眠不足や外出開始の遅れで午前から昼の客足が落ちる可能性"
+      }
+    ]
+  },
+  {
+    "id": "bshop-ongakusai-2026",
+    "title": "ビショップ音楽祭2026",
+    "startAt": "2026-10-03T11:00:00+09:00",
+    "endAt": "2026-10-03T21:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "音楽フェス",
+    "area": "神戸・メリケンパーク",
+    "inPersonEvent": true,
+    "liveReason": "Bshop公式で10月3日、神戸メリケンパークでの開催と10時開場・11時開演が確認できる。音楽、ファッション、フードを組み合わせたBshop主催の野外フェスで、勤務先ブランドと来店客層への関連が特に強い",
+    "trafficReason": "神戸中心部で一日開催され、公式も休日の駐車場・周辺道路の混雑を案内している。来場、会場内のBshop関連消費、夕方以降の帰宅動線が店頭客足へ直接影響する可能性が高い",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "ビショップ音楽祭2026 公式サイト",
+        "url": "https://ongakusai.bshop-inc.com/"
+      },
+      {
+        "title": "Bshop ビショップ音楽祭",
+        "url": "https://bshop-inc.com/feature/article/bshop_ongakusai"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "来場・交通混雑",
+        "date": "2026-10-03",
+        "start": "07:00",
+        "end": "11:00",
+        "reason": "会場周辺への移動、駅や道路の混雑、待ち合わせで広域の人流が変わる可能性"
+      },
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-03",
+        "start": "11:00",
+        "end": "21:00",
+        "reason": "現地滞在や周辺回遊により、通常の買い物動線が変わる可能性"
+      },
+      {
+        "label": "終了後の帰宅混雑",
+        "date": "2026-10-03",
+        "start": "21:00",
+        "end": "23:00",
+        "reason": "終了後の一斉移動で交通機関と繁華街の混雑が変わる可能性"
       }
     ]
   }

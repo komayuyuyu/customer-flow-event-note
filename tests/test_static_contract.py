@@ -102,6 +102,22 @@ class StaticContractTest(unittest.TestCase):
         self.assertEqual(festival["impactLevelOverride"], "中")
         self.assertTrue(festival["officialConfirmed"])
 
+    def test_multiday_preview_and_bshop_festival_rules(self):
+        operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
+        candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
+        by_id = {event["id"]: event for event in candidates}
+
+        fuji_rock = by_id["fuji-rock-festival-2026"]
+        self.assertTrue(fuji_rock["showEachDay"])
+        self.assertIn("開始日から終了日までの全開催日に表示", operations)
+
+        bshop = by_id["bshop-ongakusai-2026"]
+        self.assertEqual(bshop["startAt"][:10], "2026-10-03")
+        self.assertEqual(bshop["area"], "神戸・メリケンパーク")
+        self.assertEqual(bshop["impactLevelOverride"], "大")
+        self.assertTrue(bshop["officialConfirmed"])
+        self.assertIn("ビショップ音楽祭は毎年の固定確認対象", operations)
+
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")
