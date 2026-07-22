@@ -1003,7 +1003,7 @@
     "title": "VNL女子2026 ファイナルラウンド 準々決勝 JPN対BRA",
     "startAt": "2026-07-22T20:30:00+09:00",
     "endAt": "2026-07-22T23:00:00+09:00",
-    "broadcast": "VBTV・TBS系列（日本戦の追加放送枠は公式番組表で直前確認）",
+    "broadcast": "VBTV・TBS系列 20:10から生中継（試合開始20:30）",
     "category": "スポーツ中継",
     "area": "全国",
     "liveReason": "Volleyball World公式で日本の決勝ラウンド進出と、7月22日20時30分開始の準々決勝JPN対BRAが確定。日本代表の一発勝負でリアルタイム視聴とSNS確認の動機が強い",
@@ -1027,6 +1027,10 @@
       {
         "title": "TBS VNL2026 放送情報",
         "url": "https://www.tbs.co.jp/volley-nationsleague/schedule/"
+      },
+      {
+        "title": "TBS バレーボールネーションズリーグ女子 準々決勝 日本対ブラジル",
+        "url": "https://www.tbs.co.jp/tv/20260722_B69B.html"
       }
     ],
     "impactScore": 23,
