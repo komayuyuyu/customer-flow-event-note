@@ -60,14 +60,16 @@ def _parse_datetime(value: str) -> datetime:
     return parsed.astimezone(TOKYO)
 
 
-def _window(label: str, start: datetime, end: datetime, reason: str) -> dict[str, str]:
-    return {
+def _window(label: str, start: datetime, end: datetime, reason: str | None = None) -> dict[str, str]:
+    window = {
         "label": label,
         "date": start.date().isoformat(),
         "start": start.strftime("%H:%M"),
         "end": end.strftime("%H:%M"),
-        "reason": reason,
     }
+    if reason:
+        window["reason"] = reason
+    return window
 
 
 def _event_mode(candidate: dict[str, Any]) -> str:
@@ -111,29 +113,11 @@ def _impact_windows(start: datetime, end: datetime, level: str, mode: str = "bro
         )
         return windows
 
-    if start.hour >= 20:
-        lead_hours = 3 if level == "大" else 2
-    elif start.hour >= 17:
-        lead_hours = 2 if level in {"大", "中"} else 1
-    else:
-        lead_hours = 1
-
-    prep_start = start - timedelta(hours=lead_hours)
-    windows.append(
-        _window(
-            "視聴準備・早めの帰宅",
-            prep_start,
-            start,
-            "食事や飲み物の購入、帰宅、視聴準備で街から人が引く可能性",
-        )
-    )
-
     windows.append(
         _window(
             "リアルタイム視聴",
             start,
             end,
-            "生中継・ライブ配信をその時間に見る人が増える可能性",
         )
     )
 
