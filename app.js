@@ -612,10 +612,19 @@ function renderEventDetails(event) {
   return `<ul class="event-detail-list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
+const REDUNDANT_PREDICTED_WINDOW_LABELS = new Set([
+  '視聴準備・早めの帰宅',
+  'リアルタイム視聴',
+]);
+
 function renderPredictedWindows(event) {
   return (event.predictedWindows || [])
     .filter(window => window.date === dateInput.value)
-    .map(window => `<p>${escapeHtml(formatWindow(window))}<br>${escapeHtml(window.reason || '')}</p>`)
+    .filter(window => !REDUNDANT_PREDICTED_WINDOW_LABELS.has(window.label))
+    .map(window => {
+      const reason = window.reason ? `<br>${escapeHtml(window.reason)}` : '';
+      return `<p>${escapeHtml(formatWindow(window))}${reason}</p>`;
+    })
     .join('');
 }
 
@@ -837,7 +846,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260718-03', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260729-01', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
