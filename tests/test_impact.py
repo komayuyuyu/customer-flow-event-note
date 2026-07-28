@@ -20,12 +20,15 @@ def high_event(start_at: str, end_at: str):
 
 
 class ImpactTest(unittest.TestCase):
-    def test_21_oclock_event_keeps_preparation_window(self):
+    def test_21_oclock_event_keeps_realtime_window_without_redundant_reason(self):
         result = calculate_impact(high_event("2026-07-05T21:00:00+09:00", "2026-07-05T23:00:00+09:00"))
         self.assertEqual(result["impactLevel"], "大")
-        prep = result["predictedWindows"][0]
-        self.assertEqual(prep["start"], "18:00")
-        self.assertEqual(prep["end"], "21:00")
+        realtime = result["predictedWindows"][0]
+        self.assertEqual(realtime["label"], "リアルタイム視聴")
+        self.assertEqual(realtime["start"], "21:00")
+        self.assertEqual(realtime["end"], "23:00")
+        self.assertNotIn("reason", realtime)
+        self.assertNotIn("視聴準備・早めの帰宅", {window["label"] for window in result["predictedWindows"]})
 
     def test_overnight_event_creates_next_day_window(self):
         result = calculate_impact(high_event("2026-07-06T02:00:00+09:00", "2026-07-06T04:30:00+09:00"))
@@ -37,7 +40,7 @@ class ImpactTest(unittest.TestCase):
 
     def test_outside_business_hours_is_not_filtered(self):
         result = calculate_impact(high_event("2026-07-07T23:30:00+09:00", "2026-07-08T02:00:00+09:00"))
-        self.assertGreaterEqual(len(result["predictedWindows"]), 3)
+        self.assertGreaterEqual(len(result["predictedWindows"]), 2)
 
     def test_early_morning_event_creates_same_day_recovery_window(self):
         result = calculate_impact(high_event("2026-07-06T05:00:00+09:00", "2026-07-06T07:30:00+09:00"))

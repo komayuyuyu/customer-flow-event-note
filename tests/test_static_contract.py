@@ -33,9 +33,9 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260729-02", html)
-            self.assertIn("ui-utils.js?v=20260729-02", html)
-            self.assertIn("app-data.js?v=20260729-02", html)
+            self.assertIn("styles.css?v=20260729-03", html)
+            self.assertIn("ui-utils.js?v=20260729-03", html)
+            self.assertIn("app-data.js?v=20260729-03", html)
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
             self.assertIn('<span>EVENT INFO</span><strong>イベント情報</strong>', html)
@@ -44,8 +44,8 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v57';", service_worker)
-        self.assertIn("const VERSION = '20260729-02';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v58';", service_worker)
+        self.assertIn("const VERSION = '20260729-03';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
@@ -83,16 +83,15 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotEqual(event.get("broadcast"), "勤務カレンダー")
 
         app_js = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertIn(
-            "const HIDDEN_PREDICTED_WINDOW_LABELS = new Set([\n  '視聴準備・早めの帰宅',\n]);",
-            app_js,
-        )
-        self.assertIn(
-            "const HIDDEN_PREDICTED_WINDOW_REASON_LABELS = new Set([\n  'リアルタイム視聴',\n]);",
-            app_js,
-        )
-        self.assertIn(".filter(window => !HIDDEN_PREDICTED_WINDOW_LABELS.has(window.label))", app_js)
-        self.assertIn("const showReason = window.reason && !HIDDEN_PREDICTED_WINDOW_REASON_LABELS.has(window.label);", app_js)
+        self.assertNotIn("HIDDEN_PREDICTED_WINDOW", app_js)
+        self.assertIn("const reason = window.reason ? `<br>${escapeHtml(window.reason)}` : '';", app_js)
+
+        vnl = next(event for event in events if event["id"] == "vnl-men-2026-final-round")
+        vnl_windows = {window["label"]: window for window in vnl["predictedWindows"]}
+        self.assertNotIn("視聴準備・早めの帰宅", vnl_windows)
+        self.assertEqual(vnl_windows["リアルタイム視聴"]["start"], "18:00")
+        self.assertEqual(vnl_windows["リアルタイム視聴"]["end"], "23:00")
+        self.assertNotIn("reason", vnl_windows["リアルタイム視聴"])
 
     def test_weekly_research_window_is_sixty_days(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

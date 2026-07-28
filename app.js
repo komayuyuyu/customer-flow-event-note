@@ -612,21 +612,11 @@ function renderEventDetails(event) {
   return `<ul class="event-detail-list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
-const HIDDEN_PREDICTED_WINDOW_LABELS = new Set([
-  '視聴準備・早めの帰宅',
-]);
-
-const HIDDEN_PREDICTED_WINDOW_REASON_LABELS = new Set([
-  'リアルタイム視聴',
-]);
-
 function renderPredictedWindows(event) {
   return (event.predictedWindows || [])
     .filter(window => window.date === dateInput.value)
-    .filter(window => !HIDDEN_PREDICTED_WINDOW_LABELS.has(window.label))
     .map(window => {
-      const showReason = window.reason && !HIDDEN_PREDICTED_WINDOW_REASON_LABELS.has(window.label);
-      const reason = showReason ? `<br>${escapeHtml(window.reason)}` : '';
+      const reason = window.reason ? `<br>${escapeHtml(window.reason)}` : '';
       return `<p>${escapeHtml(formatWindow(window))}${reason}</p>`;
     })
     .join('');
@@ -850,7 +840,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260729-02', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260729-03', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
