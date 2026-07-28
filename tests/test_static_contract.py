@@ -56,6 +56,30 @@ class StaticContractTest(unittest.TestCase):
         candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
         self.assertIsInstance(candidates, list)
 
+    def test_visible_event_copy_excludes_internal_production_notes(self):
+        candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
+        events = json.loads((ROOT / "data" / "events.json").read_text(encoding="utf-8"))
+        store_events = json.loads((ROOT / "data" / "store-events.json").read_text(encoding="utf-8"))
+        forbidden = ("表示上は", "集客記録では", "候補扱い", "過大評価", "中程度に扱う", "抑えて確認", "勤務カレンダーのイベント関連欄に記載")
+
+        for event in [*candidates, *events, *store_events]:
+            visible_copy = " ".join(str(event.get(field, "")) for field in ("liveReason", "trafficReason"))
+            for phrase in forbidden:
+                self.assertNotIn(phrase, visible_copy, f"{event.get('id')}: {phrase}")
+
+        candidate_by_id = {event["id"]: event for event in candidates}
+        self.assertEqual(
+            candidate_by_id["vnl-men-2026-final-round"]["trafficReason"],
+            "確定カード発表後、日本代表の進出状況を見て更新",
+        )
+
+        store_by_id = {event["id"]: event for event in store_events}
+        inventory = store_by_id["store-inventory-20260729"]
+        self.assertNotIn("trafficReason", inventory)
+        self.assertIn("recordLink", inventory.get("internalNote", ""))
+        for event in store_events:
+            self.assertNotEqual(event.get("broadcast"), "勤務カレンダー")
+
     def test_weekly_research_window_is_sixty_days(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
