@@ -8,8 +8,7 @@
     "confidence": "中",
     "category": "店頭施策",
     "area": "勤務先ショップ",
-    "broadcast": "勤務カレンダー",
-    "liveReason": "勤務カレンダーのイベント関連欄に記載された価格訴求期間。",
+    "liveReason": "価格訴求期間。",
     "trafficReason": "価格訴求により、来店動機や接客内容に影響する可能性がある。",
     "showEachDay": true,
     "predictedWindows": [
@@ -36,8 +35,7 @@
     "confidence": "中",
     "category": "店頭施策",
     "area": "勤務先ショップ",
-    "broadcast": "勤務カレンダー",
-    "liveReason": "勤務カレンダーのイベント関連欄に記載されたブランド訴求期間。",
+    "liveReason": "ブランド訴求期間。",
     "trafficReason": "ブランド打ち出しにより、来店動機や問い合わせ、接客内容に影響する可能性がある。",
     "showEachDay": true,
     "predictedWindows": [
@@ -64,8 +62,7 @@
     "confidence": "中",
     "category": "館イベント",
     "area": "勤務先館内",
-    "broadcast": "勤務カレンダー",
-    "liveReason": "勤務カレンダーのイベント関連欄に記載された館セール期間。",
+    "liveReason": "館全体のセール期間。",
     "trafficReason": "館全体のセールにより、来館数や客層、店頭の流れに影響する可能性が高い。",
     "showEachDay": true,
     "predictedWindows": [
@@ -92,8 +89,7 @@
     "confidence": "中",
     "category": "館イベント",
     "area": "勤務先館内",
-    "broadcast": "勤務カレンダー",
-    "liveReason": "勤務カレンダーのイベント関連欄に記載された営業時間延長日。",
+    "liveReason": "営業時間が9:30〜21:00に延長。",
     "trafficReason": "営業時間が9:30から21:00までに延長され、来店時間帯や客足の山が通常日と変わる可能性がある。",
     "predictedWindows": [
       {
@@ -119,9 +115,7 @@
     "confidence": "中",
     "category": "店頭運営",
     "area": "勤務先ショップ",
-    "broadcast": "勤務カレンダー",
-    "liveReason": "勤務カレンダーのイベント関連欄に記載された棚卸日。",
-    "trafficReason": "表示上はイベントとして確認するが、集客記録では通常日の比較データとして扱う。",
+    "internalNote": "集客記録では通常日の比較データとして扱うため、recordLinkをfalseにする。",
     "recordLink": false,
     "predictedWindows": [
       {
