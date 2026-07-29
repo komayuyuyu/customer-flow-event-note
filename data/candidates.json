@@ -685,6 +685,62 @@
     ]
   },
   {
+    "id": "npb-all-star-2026-game-1",
+    "title": "マイナビオールスターゲーム2026 第1戦",
+    "startAt": "2026-07-28T18:30:00+09:00",
+    "endAt": "2026-07-28T22:00:00+09:00",
+    "broadcast": "テレビ朝日系列・BS朝日・CSテレ朝チャンネル2・ABEMA",
+    "category": "スポーツ中継・話題",
+    "area": "全国",
+    "liveReason": "日本プロ野球のスター選手が集まる年1回の球宴。第1戦は東京ドームで開催。",
+    "trafficReason": "選出選手やホームランダービー、試合結果が店頭の会話に上がりやすい",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "NPB マイナビオールスターゲーム2026 開催要項",
+        "url": "https://npb.jp/allstar/2026/information.html"
+      },
+      {
+        "title": "テレ朝チャンネル マイナビオールスターゲーム2026 生中継",
+        "url": "https://www.tv-asahi.co.jp/ch/contents/sports/0657/"
+      }
+    ]
+  },
+  {
+    "id": "npb-all-star-2026-game-2",
+    "title": "マイナビオールスターゲーム2026 第2戦",
+    "startAt": "2026-07-29T18:30:00+09:00",
+    "endAt": "2026-07-29T22:00:00+09:00",
+    "broadcast": "テレビ朝日系列・BS朝日・CSテレ朝チャンネル2・ABEMA",
+    "category": "スポーツ中継・話題",
+    "area": "全国",
+    "liveReason": "日本プロ野球のスター選手が集まる年1回の球宴。第2戦は富山市民球場で開催。",
+    "trafficReason": "選出選手やホームランダービー、試合結果が店頭の会話に上がりやすい",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "NPB マイナビオールスターゲーム2026 開催要項",
+        "url": "https://npb.jp/allstar/2026/information.html"
+      },
+      {
+        "title": "テレ朝チャンネル マイナビオールスターゲーム2026 生中継",
+        "url": "https://www.tv-asahi.co.jp/ch/contents/sports/0657/"
+      }
+    ]
+  },
+  {
     "id": "vnl-men-2026-final-round",
     "title": "VNL男子2026 ファイナルラウンド",
     "startAt": "2026-07-29T18:00:00+09:00",
