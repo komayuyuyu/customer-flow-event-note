@@ -155,6 +155,31 @@ class StaticContractTest(unittest.TestCase):
         self.assertTrue(bshop["officialConfirmed"])
         self.assertIn("ビショップ音楽祭は毎年の固定確認対象", operations)
 
+    def test_national_conversation_events_and_npb_all_star_are_fixed_targets(self):
+        operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
+        data_format = (ROOT / "event-data-format.md").read_text(encoding="utf-8")
+        candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
+        events = json.loads((ROOT / "data" / "events.json").read_text(encoding="utf-8"))
+        candidate_by_id = {event["id"]: event for event in candidates}
+        event_by_id = {event["id"]: event for event in events}
+
+        self.assertIn("幅広い来店客との会話に使える話題イベント", operations)
+        self.assertIn("NPBオールスターゲームは毎年の固定確認対象", operations)
+        self.assertIn("幅広い来店客との会話に使える話題性も収集基準", data_format)
+
+        expected = {
+            "npb-all-star-2026-game-1": ("2026-07-28", "東京ドーム"),
+            "npb-all-star-2026-game-2": ("2026-07-29", "富山市民球場"),
+        }
+        for event_id, (date, venue) in expected.items():
+            candidate = candidate_by_id[event_id]
+            self.assertEqual(candidate["startAt"][:10], date)
+            self.assertEqual(candidate["impactLevelOverride"], "中")
+            self.assertEqual(candidate["category"], "スポーツ中継・話題")
+            self.assertIn(venue, candidate["liveReason"])
+            self.assertTrue(candidate["officialConfirmed"])
+            self.assertIn(event_id, event_by_id)
+
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")
