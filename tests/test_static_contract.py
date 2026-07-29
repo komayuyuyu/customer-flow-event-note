@@ -278,7 +278,8 @@ class StaticContractTest(unittest.TestCase):
         self.assertEqual(by_title["ORCIVAL 打ち出し"]["startAt"][:10], "2026-07-17")
         self.assertEqual(by_title["ORCIVAL 打ち出し"]["endAt"][:10], "2026-07-26")
         self.assertEqual(by_title["館 SUPER OUTLET SALE"]["startAt"][:10], "2026-07-17")
-        self.assertEqual(by_title["館 SUPER OUTLET SALE"]["endAt"][:10], "2026-07-28")
+        self.assertEqual(by_title["館 SUPER OUTLET SALE"]["endAt"][:10], "2026-08-16")
+        self.assertTrue(by_title["館 SUPER OUTLET SALE"]["showEachDay"])
         self.assertEqual(by_title["営業時間延長"]["startAt"][:10], "2026-07-19")
         self.assertEqual(by_title["棚卸"].get("recordLink"), False)
         for event in store_events:
