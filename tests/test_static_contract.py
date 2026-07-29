@@ -109,6 +109,15 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("Google Calendarには登録しない", operations)
         self.assertIn("Google Calendarへの `[客足注意]` 登録は行わない", data_format)
 
+    def test_early_2027_holidays_are_available(self):
+        context = json.loads((ROOT / "data" / "calendar-context.json").read_text(encoding="utf-8"))
+        self.assertEqual(context["holidays"]["2027-01-01"], "元日")
+        self.assertEqual(context["holidays"]["2027-01-11"], "成人の日")
+        self.assertEqual(
+            context["sources"][0]["url"],
+            "https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html",
+        )
+
     def test_nearby_tarumi_events_are_fixed_research_targets(self):
         operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
         data_format = (ROOT / "event-data-format.md").read_text(encoding="utf-8")
