@@ -217,6 +217,29 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("舞花火", source_registry["scope"]["keywords"])
         self.assertEqual(len(source_registry["officialSources"]), 4)
 
+        events = json.loads((ROOT / "data" / "events.json").read_text(encoding="utf-8"))
+        store_events = json.loads((ROOT / "data" / "store-events.json").read_text(encoding="utf-8"))
+        forbidden_windows = {"視聴準備・早めの帰宅", "来場・交通混雑", "終了後の帰宅混雑"}
+        for event in [*events, *store_events]:
+            windows = event.get("predictedWindows", [])
+            labels = {window["label"] for window in windows}
+            self.assertFalse(labels & forbidden_windows, event["id"])
+            for window in windows:
+                self.assertNotIn("reason", window, event["id"])
+
+        sakai = next(event for event in events if event["id"] == "sbi-maihanabi-sakai-ooichiyoichi-2026")
+        self.assertEqual(
+            sakai["predictedWindows"],
+            [
+                {
+                    "label": "イベント開催中",
+                    "date": "2026-07-31",
+                    "start": "20:20",
+                    "end": "20:50",
+                }
+            ],
+        )
+
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")

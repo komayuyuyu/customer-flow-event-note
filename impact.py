@@ -85,30 +85,11 @@ def _impact_windows(start: datetime, end: datetime, level: str, mode: str = "bro
     windows: list[dict[str, str]] = []
 
     if mode == "in_person":
-        lead_hours = 4 if level == "大" else 3
-        arrival_start = start - timedelta(hours=lead_hours)
-        windows.append(
-            _window(
-                "来場・交通混雑",
-                arrival_start,
-                start,
-                "会場周辺への移動、駅や道路の混雑、待ち合わせで広域の人流が変わる可能性",
-            )
-        )
         windows.append(
             _window(
                 "イベント開催中",
                 start,
                 end,
-                "現地滞在や周辺回遊により、通常の買い物動線が変わる可能性",
-            )
-        )
-        windows.append(
-            _window(
-                "終了後の帰宅混雑",
-                end,
-                end + timedelta(hours=2),
-                "終了後の一斉移動で交通機関と繁華街の混雑が変わる可能性",
             )
         )
         return windows
@@ -130,7 +111,6 @@ def _impact_windows(start: datetime, end: datetime, level: str, mode: str = "bro
                 "深夜視聴の翌日",
                 recovery_start,
                 recovery_end,
-                "睡眠不足や外出開始の遅れで午前から昼の客足が落ちる可能性",
             )
         )
 

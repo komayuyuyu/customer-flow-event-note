@@ -47,13 +47,21 @@ class ImpactTest(unittest.TestCase):
         labels = {window["label"] for window in result["predictedWindows"]}
         self.assertIn("深夜視聴の翌日", labels)
 
-    def test_in_person_event_creates_traffic_windows(self):
+    def test_in_person_event_keeps_only_event_time(self):
         candidate = high_event("2026-07-25T19:00:00+09:00", "2026-07-25T20:30:00+09:00")
         candidate["category"] = "花火"
         result = calculate_impact(candidate)
-        labels = [window["label"] for window in result["predictedWindows"]]
-        self.assertEqual(labels, ["来場・交通混雑", "イベント開催中", "終了後の帰宅混雑"])
-        self.assertEqual(result["predictedWindows"][0]["start"], "15:00")
+        self.assertEqual(
+            result["predictedWindows"],
+            [
+                {
+                    "label": "イベント開催中",
+                    "date": "2026-07-25",
+                    "start": "19:00",
+                    "end": "20:30",
+                }
+            ],
+        )
 
     def test_impact_level_override_adjusts_shop_relevance(self):
         candidate = high_event("2026-08-08T19:30:00+09:00", "2026-08-08T20:30:00+09:00")

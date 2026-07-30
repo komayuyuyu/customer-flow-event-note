@@ -14,6 +14,7 @@ from impact import calculate_impact  # noqa: E402
 
 CANDIDATES = PROJECT_ROOT / "data" / "candidates.json"
 EVENTS = PROJECT_ROOT / "data" / "events.json"
+HIDDEN_OBVIOUS_WINDOWS = {"視聴準備・早めの帰宅", "来場・交通混雑", "終了後の帰宅混雑"}
 
 
 def event_id(candidate: dict) -> str:
@@ -24,9 +25,25 @@ def event_id(candidate: dict) -> str:
     return hashlib.sha256(base.encode("utf-8")).hexdigest()[:16]
 
 
+def normalize_visible_windows(event: dict) -> dict:
+    normalized = dict(event)
+    if "predictedWindows" not in event:
+        return normalized
+
+    windows = []
+    for original in event.get("predictedWindows") or []:
+        if original.get("label") in HIDDEN_OBVIOUS_WINDOWS:
+            continue
+        window = dict(original)
+        window.pop("reason", None)
+        windows.append(window)
+    normalized["predictedWindows"] = windows
+    return normalized
+
+
 def merge_events(existing_events: list[dict], candidates: list[dict]) -> list[dict]:
     events_by_id = {
-        str(item["id"]): item
+        str(item["id"]): normalize_visible_windows(item)
         for item in existing_events
         if item.get("id")
     }
@@ -35,7 +52,7 @@ def merge_events(existing_events: list[dict], candidates: list[dict]) -> list[di
         if not required.issubset(candidate):
             continue
         candidate["id"] = event_id(candidate)
-        events_by_id[candidate["id"]] = calculate_impact(candidate)
+        events_by_id[candidate["id"]] = normalize_visible_windows(calculate_impact(candidate))
     evaluated = list(events_by_id.values())
     evaluated.sort(key=lambda item: item.get("startAt", ""))
     return evaluated
