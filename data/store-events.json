@@ -16,8 +16,7 @@
         "label": "店頭施策期間",
         "date": "2026-07-03",
         "start": "10:00",
-        "end": "20:30",
-        "reason": "MORE PRICE DOWN 打ち出し期間"
+      "end": "20:30"
       }
     ],
     "sources": [
@@ -43,8 +42,7 @@
         "label": "ブランド訴求期間",
         "date": "2026-07-17",
         "start": "10:00",
-        "end": "20:30",
-        "reason": "ORCIVAL 打ち出し期間"
+      "end": "20:30"
       }
     ],
     "sources": [
@@ -69,8 +67,7 @@
         "label": "館セール期間",
         "date": "2026-07-17",
         "start": "10:00",
-        "end": "20:30",
-        "reason": "SUPER OUTLET SALE期間"
+      "end": "20:30"
       }
     ],
     "sources": [
@@ -95,8 +92,7 @@
         "label": "営業時間延長",
         "date": "2026-07-19",
         "start": "09:30",
-        "end": "21:00",
-        "reason": "営業時間延長"
+      "end": "21:00"
       }
     ],
     "sources": [
