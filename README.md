@@ -26,6 +26,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `records.html`: 記録一覧
 - `record.html`: 記録詳細
 - `app.js`: ホーム画面と記録保存
+- `app-backend.js`: ホーム画面のデータ取得・Firebase記録保存
 - `records.js`: 記録一覧
 - `record.js`: 記録詳細・編集
 - `records-backend.js`: Firebase/ローカル互換の記録処理
@@ -35,6 +36,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `scripts/evaluate_candidates.py`: 候補イベントの影響度計算とマージ
 - `impact.py`: 影響度計算ロジック
 - `OPERATIONS.md`: 更新・保守手順
+- `CODEMAP.md`: ファイルごとの責務と更新時の確認先
 
 ## イベント情報の更新
 
