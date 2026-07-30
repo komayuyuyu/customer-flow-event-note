@@ -27,6 +27,7 @@ class StaticContractTest(unittest.TestCase):
             "data/events.json",
             "data/store-events.json",
             "data/calendar-context.json",
+            "data/event-source-registry.json",
         ):
             self.assertTrue((ROOT / name).is_file(), name)
 
@@ -188,6 +189,33 @@ class StaticContractTest(unittest.TestCase):
             self.assertIn(venue, candidate["liveReason"])
             self.assertTrue(candidate["officialConfirmed"])
             self.assertIn(event_id, event_by_id)
+
+    def test_kansai_fireworks_and_research_coverage_are_present(self):
+        operations = (ROOT / "OPERATIONS.md").read_text(encoding="utf-8")
+        data_format = (ROOT / "event-data-format.md").read_text(encoding="utf-8")
+        candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
+        source_registry = json.loads((ROOT / "data" / "event-source-registry.json").read_text(encoding="utf-8"))
+        by_id = {event["id"]: event for event in candidates}
+
+        expected = {
+            "sbi-maihanabi-sakai-ooichiyoichi-2026": ("2026-07-31", "中"),
+            "kinosaki-yumehanabi-2026-07-31": ("2026-07-31", "小"),
+            "ashiya-summer-carnival-2026": ("2026-08-01", "大"),
+            "tatsuno-noryo-hanabi-2026": ("2026-08-01", "中"),
+        }
+        for event_id, (date, impact) in expected.items():
+            event = by_id[event_id]
+            self.assertEqual(event["startAt"][:10], date)
+            self.assertEqual(event["impactLevelOverride"], impact)
+            self.assertTrue(event["officialConfirmed"])
+
+        self.assertIn("当日・翌日・翌々日", operations)
+        self.assertIn("日付×地域", operations)
+        self.assertIn("前年の日付を流用せず", operations)
+        self.assertIn("名称に「花火」がない催事内花火", data_format)
+        self.assertEqual(source_registry["scope"]["dailyRegions"], ["兵庫", "大阪"])
+        self.assertIn("舞花火", source_registry["scope"]["keywords"])
+        self.assertEqual(len(source_registry["officialSources"]), 4)
 
     def test_core_ui_contracts(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
