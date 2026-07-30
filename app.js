@@ -1,7 +1,7 @@
-const FIREBASE_SDK_VERSION = '12.15.0';
 const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
 const { bindTimePlaceholders, combinedMemo, displayEventTitle, escapeHtml, readableAuthError, syncTimePlaceholders } = window.UiUtils;
-const { addDays, contextForDate, dateParts, eventsForDate, eventsForDay, isRecordLinkedEvent, localToday } = window.AppData;
+const { addDays, contextForDate, dateParts, eventsForDate, isRecordLinkedEvent, localToday } = window.AppData;
+const { createCloudBackend, createLocalBackend, isCloudConfigured } = window.AppBackend;
 
 const dateInput = document.querySelector('#record-date');
 const datePickerButton = document.querySelector('#date-picker-button');
@@ -262,127 +262,6 @@ function eventTime(event) {
   const start = event.startAt ? new Date(event.startAt) : null;
   if (!start || Number.isNaN(start.getTime())) return '時刻未定';
   return new Intl.DateTimeFormat('ja-JP', { hour: '2-digit', minute: '2-digit', hour12: false }).format(start);
-}
-
-function createLocalBackend() {
-  return {
-    mode: 'local',
-    async initialize() {},
-    async getDay(date) {
-      const response = await fetch(`./api/day?date=${encodeURIComponent(date)}`);
-      if (!response.ok) throw new Error('読み込みに失敗しました');
-      return response.json();
-    },
-    async getEvents(date) {
-      return eventsForDate(date);
-    },
-    async saveObservation(payload) {
-      const response = await fetch('./api/observations', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error || '保存できませんでした');
-      return result;
-    },
-    async listObservations() {
-      const response = await fetch('./api/observations');
-      if (!response.ok) throw new Error('記録一覧を読み込めませんでした');
-      return response.json();
-    },
-  };
-}
-
-async function createCloudBackend() {
-  const sdkRoot = `https://www.gstatic.com/firebasejs/${FIREBASE_SDK_VERSION}`;
-  const [{ initializeApp }, authSdk, firestoreSdk] = await Promise.all([
-    import(`${sdkRoot}/firebase-app.js`),
-    import(`${sdkRoot}/firebase-auth.js`),
-    import(`${sdkRoot}/firebase-firestore.js`),
-  ]);
-
-  const app = initializeApp(cloudConfig.firebase);
-  const auth = authSdk.getAuth(app);
-  const db = firestoreSdk.getFirestore(app);
-  const provider = new authSdk.GoogleAuthProvider();
-  provider.setCustomParameters({ prompt: 'select_account' });
-  let authError = '';
-  let notifyUserChange = () => {};
-  let initialAuthResolved = false;
-  let resolveInitialAuth;
-  const initialAuth = new Promise(resolve => { resolveInitialAuth = resolve; });
-
-  await authSdk.setPersistence(auth, authSdk.browserLocalPersistence);
-  authSdk.getRedirectResult(auth).catch(error => {
-    authError = readableAuthError(error);
-    notifyUserChange(null, authError);
-  });
-
-  authSdk.onAuthStateChanged(auth, user => {
-    if (user && cloudConfig.allowedUid && user.uid !== cloudConfig.allowedUid) {
-      authError = 'このGoogleアカウントには記録権限がありません。';
-      authSdk.signOut(auth);
-      return;
-    }
-    currentUser = user;
-    notifyUserChange(user, authError);
-    authError = '';
-    if (!initialAuthResolved) {
-      initialAuthResolved = true;
-      resolveInitialAuth();
-    }
-  });
-
-  return {
-    mode: 'cloud',
-    async initialize(onUserChange) {
-      notifyUserChange = onUserChange;
-      await initialAuth;
-      onUserChange(currentUser, authError);
-    },
-    async login() {
-      return authSdk.signInWithPopup(auth, provider);
-    },
-    async logout() {
-      await authSdk.signOut(auth);
-    },
-    async getDay(date) {
-      const events = eventsForDay(await window.AppData.loadEventData(), date);
-      let observation = null;
-      if (currentUser) {
-        const reference = firestoreSdk.doc(db, 'users', currentUser.uid, 'observations', date);
-        const snapshot = await firestoreSdk.getDoc(reference);
-        if (snapshot.exists()) observation = snapshot.data();
-      }
-      return { date, events, observation };
-    },
-    async getEvents(date) {
-      return eventsForDate(date);
-    },
-    async saveObservation(payload) {
-      if (!currentUser) throw new Error('記録するにはGoogleログインが必要です。');
-      const observation = {
-        ...payload,
-        ownerUid: currentUser.uid,
-        updatedAt: firestoreSdk.serverTimestamp(),
-      };
-      const reference = firestoreSdk.doc(db, 'users', currentUser.uid, 'observations', payload.date);
-      await firestoreSdk.setDoc(reference, observation, { merge: true });
-      return { ok: true, observation };
-    },
-    async listObservations() {
-      if (!currentUser) return [];
-      const collection = firestoreSdk.collection(db, 'users', currentUser.uid, 'observations');
-      const snapshot = await firestoreSdk.getDocs(collection);
-      return snapshot.docs.map(item => item.data()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
-    },
-  };
-}
-
-function isCloudConfigured() {
-  const firebase = cloudConfig.firebase || {};
-  return Boolean(cloudConfig.enabled && firebase.apiKey && firebase.authDomain && firebase.projectId && firebase.appId);
 }
 
 function setRecordAccess(user, errorMessage = '') {
@@ -830,17 +709,23 @@ async function initialize() {
   displayedWeekStart = startOfWeek(dateInput.value);
   updateDatePickerButton();
   syncTimePlaceholders();
-  backend = isCloudConfigured() ? await createCloudBackend() : createLocalBackend();
-  await backend.initialize(async (user, errorMessage) => {
+  const handleUserChange = async (user, error) => {
     currentUser = user;
+    const errorMessage = error?.message === 'このGoogleアカウントには記録権限がありません。'
+      ? error.message
+      : error ? readableAuthError(error) : '';
     setRecordAccess(user, errorMessage);
     if (initialized) await loadDay();
-  });
+  };
+  backend = isCloudConfigured(cloudConfig)
+    ? await createCloudBackend({ config: cloudConfig, eventsForDate, onUserChange: handleUserChange })
+    : createLocalBackend({ eventsForDate });
+  await backend.initialize();
   setRecordAccess(currentUser);
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260729-03', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260731-01', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

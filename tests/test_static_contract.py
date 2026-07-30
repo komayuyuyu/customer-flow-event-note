@@ -18,6 +18,7 @@ class StaticContractTest(unittest.TestCase):
             "record.js",
             "records-backend.js",
             "app-data.js",
+            "app-backend.js",
             "ui-utils.js",
             "menu.js",
             "firebase-config.js",
@@ -34,9 +35,11 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260729-03", html)
-            self.assertIn("ui-utils.js?v=20260729-03", html)
-            self.assertIn("app-data.js?v=20260729-03", html)
+            self.assertIn("styles.css?v=20260731-01", html)
+            self.assertIn("ui-utils.js?v=20260731-01", html)
+            self.assertIn("app-data.js?v=20260731-01", html)
+            if name == "index.html":
+                self.assertIn("app-backend.js?v=20260731-01", html)
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
             self.assertIn('<span>EVENT INFO</span><strong>イベント情報</strong>', html)
@@ -45,9 +48,10 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v58';", service_worker)
-        self.assertIn("const VERSION = '20260729-03';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v59';", service_worker)
+        self.assertIn("const VERSION = '20260731-01';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
+        self.assertIn("app-backend.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
 
