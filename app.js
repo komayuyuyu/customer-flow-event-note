@@ -2,6 +2,7 @@ const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
 const { bindTimePlaceholders, combinedMemo, escapeHtml, readableAuthError, syncTimePlaceholders } = window.UiUtils;
 const { addDays, contextForDate, dateParts, eventsForDate, isRecordLinkedEvent, localToday } = window.AppData;
 const { createCloudBackend, createLocalBackend, isCloudConfigured } = window.AppBackend;
+const { create: createDatePicker } = window.AppDatePicker;
 const {
   calendarContextEvent,
   renderCalendarEventCard,
@@ -51,11 +52,29 @@ let backend;
 let currentEvents = [];
 let currentUser = null;
 let initialized = false;
-let calendarCursor;
 let displayedWeekStart = '';
 
-const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'long' });
 const MAX_WEEK_OFFSET = 9;
+
+const datePicker = createDatePicker({
+  dateInput,
+  datePickerButton,
+  calendarPopover,
+  calendarMonth,
+  calendarDays,
+  calendarPrev,
+  calendarNext,
+  calendarToday,
+  eventTitleHeading,
+  dateParts,
+  localToday,
+  escapeHtml,
+  async onSelect(value) {
+    displayedWeekStart = startOfWeek(value);
+    await loadDay();
+  },
+});
+datePicker.bindEvents();
 
 function checkedValue(name, fallback = '') {
   return form.querySelector(`[name="${name}"]:checked`)?.value || fallback;
@@ -88,116 +107,6 @@ function impactTimeValues() {
   };
 }
 
-function updateDatePickerButton() {
-  const { year, month, day } = dateParts(dateInput.value);
-  datePickerButton.textContent = `${year}年${month}月${day}日`;
-}
-
-function renderCalendar() {
-  const year = calendarCursor.getFullYear();
-  const month = calendarCursor.getMonth();
-  const firstWeekday = new Date(year, month, 1).getDay();
-  const lastDay = new Date(year, month + 1, 0).getDate();
-  const blanks = Array.from({ length: firstWeekday }, () => '<span class="calendar-blank"></span>');
-  const days = Array.from({ length: lastDay }, (_, index) => {
-    const day = index + 1;
-    const value = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    const selected = value === dateInput.value ? ' class="is-selected"' : '';
-    return `<button type="button" data-date="${value}"${selected}>${day}</button>`;
-  });
-  calendarMonth.textContent = `${year}年${month + 1}月`;
-  calendarDays.innerHTML = [...blanks, ...days].join('');
-}
-
-function resetCalendarPosition() {
-  calendarPopover.classList.remove('is-floating');
-  calendarPopover.style.removeProperty('top');
-  calendarPopover.style.removeProperty('left');
-}
-
-function positionCalendarAt(anchor) {
-  calendarPopover.classList.add('is-floating');
-  calendarPopover.hidden = false;
-  const rect = anchor.getBoundingClientRect();
-  const margin = 12;
-  const gap = 8;
-  const width = calendarPopover.offsetWidth || 320;
-  const height = calendarPopover.offsetHeight || 340;
-  const maxLeft = Math.max(margin, window.innerWidth - width - margin);
-  const left = Math.min(Math.max(rect.left, margin), maxLeft);
-  const below = rect.bottom + gap;
-  const above = rect.top - height - gap;
-  const top = below + height <= window.innerHeight - margin ? below : Math.max(margin, above);
-  calendarPopover.style.left = `${left}px`;
-  calendarPopover.style.top = `${top}px`;
-}
-
-function setCalendarOpen(open, anchor = null) {
-  datePickerButton.setAttribute('aria-expanded', String(open));
-  if (!open) {
-    calendarPopover.hidden = true;
-    resetCalendarPosition();
-    return;
-  }
-  const { year, month } = dateParts(dateInput.value);
-  calendarCursor = new Date(year, month - 1, 1);
-  renderCalendar();
-  calendarPopover.hidden = false;
-  if (anchor) positionCalendarAt(anchor);
-  else resetCalendarPosition();
-}
-
-async function selectDate(value) {
-  dateInput.value = value;
-  displayedWeekStart = startOfWeek(value);
-  updateDatePickerButton();
-  setCalendarOpen(false);
-  await loadDay();
-}
-
-function shortDate(dateText) {
-  const value = new Date(`${dateText}T12:00:00`);
-  return {
-    date: new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric' }).format(value),
-    weekday: weekday.format(value).replace('曜日', ''),
-  };
-}
-
-function eventHeadingLabel(dateText) {
-  const { month, day } = dateParts(dateText);
-  const label = shortDate(dateText);
-  return `${month}月${day}日（${label.weekday}）`;
-}
-
-function openRecordDatePicker(anchor = null) {
-  if (anchor) {
-    setCalendarOpen(true, anchor);
-    return;
-  }
-  const datePickerVisible = datePickerButton && getComputedStyle(datePickerButton).display !== 'none';
-  if (datePickerVisible) {
-    setCalendarOpen(true);
-    return;
-  }
-  dateInput.scrollIntoView({ block: 'center' });
-  if (typeof dateInput.showPicker === 'function') {
-    dateInput.showPicker();
-    return;
-  }
-  dateInput.focus();
-  dateInput.click();
-}
-
-function updateEventHeading(dateText) {
-  const label = eventHeadingLabel(dateText);
-  eventTitleHeading.innerHTML = `<a class="event-title-date-button" href="#record-date" aria-label="記録日を変更">${escapeHtml(label)}</a><span>イベント</span>`;
-  eventTitleHeading.querySelector('.event-title-date-button')?.addEventListener('click', event => {
-    event.preventDefault();
-    event.stopPropagation();
-    openRecordDatePicker(event.currentTarget);
-  });
-}
-
 function startOfWeek(dateText) {
   const base = new Date(`${dateText}T12:00:00`);
   const daysFromMonday = (base.getDay() + 6) % 7;
@@ -226,7 +135,7 @@ async function earliestEventWeekStart() {
   const events = await window.AppData.loadEventData({ fallbackToEmpty: true });
   const dates = events.flatMap(event => [
     String(event.startAt || '').slice(0, 10),
-    ...(event.predictedWindows || []).map(window => window.date),
+    ...(event.predictedWindows || []).map(predictedWindow => predictedWindow.date),
   ]).filter(Boolean);
   if (!dates.length) return currentWeekStart();
   return startOfWeek(dates.sort()[0]);
@@ -338,7 +247,7 @@ function clearForm() {
   const selectedDate = dateInput.value;
   form.reset();
   dateInput.value = selectedDate;
-  updateDatePickerButton();
+  datePicker.updateButton();
   clearImpactTimeFields();
   syncTimePlaceholders();
   note.value = '';
@@ -370,7 +279,7 @@ async function loadDay() {
   saveStatus.textContent = '';
   saveStatus.classList.remove('error');
   saveActions.hidden = true;
-  updateEventHeading(dateInput.value);
+  datePicker.updateEventHeading(dateInput.value);
   eventCount.textContent = '確認中';
   eventsRoot.innerHTML = '<p class="empty-state">読み込んでいます…</p>';
   try {
@@ -391,12 +300,6 @@ async function loadDay() {
   }
 }
 
-dateInput.addEventListener('change', () => {
-  updateDatePickerButton();
-  displayedWeekStart = startOfWeek(dateInput.value);
-  loadDay();
-});
-calendarToday.addEventListener('click', () => selectDate(localToday()));
 weekPrev.addEventListener('click', () => {
   if (weekPrev.disabled) return;
   displayedWeekStart = addDays(weekStartDate(), -7);
@@ -410,26 +313,6 @@ weekNext.addEventListener('click', () => {
   if (weekNext.disabled) return;
   displayedWeekStart = addDays(weekStartDate(), 7);
   loadWeek();
-});
-datePickerButton.addEventListener('click', () => setCalendarOpen(calendarPopover.hidden));
-calendarPrev.addEventListener('click', () => {
-  calendarCursor.setMonth(calendarCursor.getMonth() - 1);
-  renderCalendar();
-});
-calendarNext.addEventListener('click', () => {
-  calendarCursor.setMonth(calendarCursor.getMonth() + 1);
-  renderCalendar();
-});
-calendarDays.addEventListener('click', event => {
-  const button = event.target.closest('[data-date]');
-  if (button) selectDate(button.dataset.date);
-});
-document.addEventListener('click', event => {
-  const calendarTarget = event.target.closest('.date-row, .calendar-popover, .event-title-date-button');
-  if (!calendarPopover.hidden && !calendarTarget) setCalendarOpen(false);
-});
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !calendarPopover.hidden) setCalendarOpen(false);
 });
 note.addEventListener('input', () => { noteCount.textContent = `${note.value.length} / 600`; });
 bindTimePlaceholders();
@@ -505,7 +388,7 @@ form.addEventListener('submit', async event => {
 
 continueButton.addEventListener('click', async () => {
   saveActions.hidden = true;
-  await selectDate(addDays(dateInput.value, -1));
+  await datePicker.select(addDays(dateInput.value, -1));
   document.querySelector('#record-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
@@ -513,7 +396,7 @@ async function initialize() {
   const requestedDate = new URLSearchParams(location.search).get('date');
   dateInput.value = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate || '') ? requestedDate : localToday();
   displayedWeekStart = startOfWeek(dateInput.value);
-  updateDatePickerButton();
+  datePicker.updateButton();
   syncTimePlaceholders();
   const handleUserChange = async (user, error) => {
     currentUser = user;
@@ -531,7 +414,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-03', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-04', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

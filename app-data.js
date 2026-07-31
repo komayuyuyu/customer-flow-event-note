@@ -48,7 +48,7 @@
   }
 
   function hasPredictedWindowOn(event, targetDate) {
-    return (event.predictedWindows || []).some(window => window.date === targetDate);
+    return (event.predictedWindows || []).some(predictedWindow => predictedWindow.date === targetDate);
   }
 
   function eventCoversDate(event, targetDate) {

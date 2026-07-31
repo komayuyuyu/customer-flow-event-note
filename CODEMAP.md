@@ -5,6 +5,7 @@
 ## 画面
 
 - `index.html` / `app.js`: ホーム画面の状態管理、週送り、記録フォームの操作を扱う。
+- `app-date-picker.js`: 記録日のカレンダー表示、選択、配置、見出し更新を扱う。
 - `app-view.js`: ホーム画面のイベントカードと週間予定のHTML生成を扱う。
 - `records.html` / `records.js`: 記録一覧。
 - `record.html` / `record.js`: 記録詳細と編集。
