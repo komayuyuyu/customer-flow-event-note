@@ -18,5 +18,5 @@
   overlay.addEventListener('click', () => setOpen(false));
   menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
   document.addEventListener('keydown', event => { if (event.key === 'Escape') setOpen(false); });
-  window.addEventListener('resize', () => setOpen(false));
+  window.addEventListener('resize', () => { if (window.innerWidth > 620) setOpen(false); });
 }());
