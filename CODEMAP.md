@@ -4,7 +4,8 @@
 
 ## 画面
 
-- `index.html` / `app.js`: ホーム画面。イベント表示、週送り、記録フォームのUIだけを扱う。
+- `index.html` / `app.js`: ホーム画面の状態管理、週送り、記録フォームの操作を扱う。
+- `app-view.js`: ホーム画面のイベントカードと週間予定のHTML生成を扱う。
 - `records.html` / `records.js`: 記録一覧。
 - `record.html` / `record.js`: 記録詳細と編集。
 - `styles.css`: 3画面共通の見た目。
@@ -13,8 +14,9 @@
 ## 共通処理
 
 - `app-data.js`: イベント・祝日データの読み込み、日付計算、旧記録の補完。
-- `app-backend.js`: ホーム画面のFirebase認証、Firestore保存、ローカル互換API。
-- `records-backend.js`: 記録一覧・詳細画面の認証と記録CRUD。
+- `firebase-client.js`: Firebase SDKの読み込みと共通のGoogle認証初期化。
+- `app-backend.js`: ホーム画面のFirestore保存とローカル互換API。
+- `records-backend.js`: 記録一覧・詳細画面の記録CRUD。
 - `ui-utils.js`: HTMLエスケープ、表示名、フォーム選択肢などの小さな共通部品。
 
 ## データと更新
