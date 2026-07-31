@@ -13,8 +13,15 @@ function renderDetailRow(label, content, className = '') {
   return `<div class="detail-row ${className}"><dt>${escapeHtml(label)}</dt><dd>${content || '—'}</dd></div>`;
 }
 
+function recordEventLabel(item) {
+  const status = ['中止', '延期'].includes(item.status)
+    ? ` <span class="record-event-status">${escapeHtml(item.status)}</span>`
+    : '';
+  return `${escapeHtml(displayEventTitle(item.title))}${status}`;
+}
+
 function renderReadOnlyView() {
-  const events = (currentRecord.relatedEvents || []).map(item => `${escapeHtml(displayEventTitle(item.title))} <span class="tag">${escapeHtml(item.status || '実施済み')}</span>`).join('<br>') || (currentRecord.eventIds?.length ? '関連イベントあり' : '通常日の記録');
+  const events = (currentRecord.relatedEvents || []).map(recordEventLabel).join('<br>') || (currentRecord.eventIds?.length ? '関連イベントあり' : '通常日の記録');
   const calendarContext = (currentRecord.calendarContext || [])
     .map(item => `<span class="calendar-badge">${escapeHtml(item.type)}：${escapeHtml(item.label)}</span>`)
     .join(' ');
