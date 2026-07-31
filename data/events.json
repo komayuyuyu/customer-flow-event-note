@@ -1145,47 +1145,6 @@
     ]
   },
   {
-    "id": "vnl-men-2026-final-round",
-    "title": "VNL男子2026 ファイナルラウンド",
-    "startAt": "2026-07-29T18:00:00+09:00",
-    "endAt": "2026-08-02T23:00:00+09:00",
-    "broadcast": "VBTV・国内放送は番組表確認",
-    "category": "スポーツ中継",
-    "area": "全国",
-    "liveReason": "男子バレーボールの国際大会決勝ラウンド。日本が進出した場合はSNS・ニュース確認とリアルタイム視聴が起きやすい",
-    "trafficReason": "確定カード発表後、日本代表の進出状況を見て更新",
-    "nationalReach": 2,
-    "liveUrgency": 2,
-    "accessibility": 1,
-    "buzz": 2,
-    "significance": 2,
-    "impactLevelOverride": "小",
-    "officialConfirmed": false,
-    "sources": [
-      {
-        "title": "2026 FIVB Men's Volleyball Nations League",
-        "url": "https://en.wikipedia.org/wiki/2026_FIVB_Men%27s_Volleyball_Nations_League"
-      }
-    ],
-    "impactScore": 15,
-    "impactLevel": "小",
-    "confidence": "低",
-    "predictedWindows": [
-      {
-        "label": "リアルタイム視聴",
-        "date": "2026-07-29",
-        "start": "18:00",
-        "end": "23:00"
-      },
-      {
-        "label": "深夜視聴の翌日",
-        "date": "2026-08-02",
-        "start": "10:00",
-        "end": "14:00"
-      }
-    ]
-  },
-  {
     "id": "npb-all-star-2026-game-2",
     "title": "マイナビオールスターゲーム2026 第2戦",
     "startAt": "2026-07-29T18:30:00+09:00",
@@ -1384,6 +1343,48 @@
         "date": "2026-08-01",
         "start": "19:50",
         "end": "20:30"
+      }
+    ]
+  },
+  {
+    "id": "vnl-men-2026-final-round",
+    "title": "VNL男子2026 ファイナルラウンド 準決勝 JPN対USA",
+    "startAt": "2026-08-01T20:30:00+09:00",
+    "endAt": "2026-08-01T23:00:00+09:00",
+    "broadcast": "VBTV（ライブ配信）・TBS系列は追加放送日時を発表予定",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "男子日本代表がVNLファイナルラウンド準決勝へ進出。大会公式で8月1日20:30開始のJPN対USAと確定。",
+    "trafficReason": "土曜夜の日本代表による国際大会準決勝。20:30からライブ配信。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "Volleyball World VNL男子2026 準決勝 JPN対USA",
+        "url": "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/26546/"
+      },
+      {
+        "title": "JVA VNL男子2026 ファイナルラウンド競技日程",
+        "url": "https://www.jva.or.jp/topics/20260728-2/"
+      },
+      {
+        "title": "TBS VNL2026 放送情報",
+        "url": "https://www.tbs.co.jp/volley-nationsleague/schedule/w3.html"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-01",
+        "start": "20:30",
+        "end": "23:00"
       }
     ]
   },
