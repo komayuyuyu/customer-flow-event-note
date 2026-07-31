@@ -274,6 +274,7 @@ function setRecordAccess(user, errorMessage = '') {
   }
 
   const unlocked = Boolean(user);
+  navAuthButton.hidden = false;
   authPanel.hidden = unlocked;
   form.classList.toggle('is-locked', !unlocked);
   form.querySelectorAll('fieldset input, .time-grid input, textarea, select, button[type="submit"]').forEach(control => {
@@ -486,7 +487,7 @@ function renderEventDetails(event) {
   if (event.championship?.condition) items.push(`優勝条件：${event.championship.condition}`);
   if (event.championship?.runnerUpCondition) items.push(`逆転条件：${event.championship.runnerUpCondition}`);
   if (event.broadcast) items.push(`放送・配信：${event.broadcast}`);
-  if (event.trafficReason) items.push(`客足メモ：${event.trafficReason}`);
+  if (event.trafficReason) items.push(`メモ：${event.trafficReason}`);
   if (!items.length) return '';
   return `<ul class="event-detail-list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
@@ -725,7 +726,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260731-01', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-02', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
