@@ -18,7 +18,9 @@ class StaticContractTest(unittest.TestCase):
             "record.js",
             "records-backend.js",
             "app-data.js",
+            "app-view.js",
             "app-backend.js",
+            "firebase-client.js",
             "ui-utils.js",
             "menu.js",
             "firebase-config.js",
@@ -35,11 +37,13 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260801-02", html)
-            self.assertIn("ui-utils.js?v=20260801-02", html)
-            self.assertIn("app-data.js?v=20260801-02", html)
+            self.assertIn("styles.css?v=20260801-03", html)
+            self.assertIn("ui-utils.js?v=20260801-03", html)
+            self.assertIn("app-data.js?v=20260801-03", html)
+            self.assertIn("firebase-client.js?v=20260801-03", html)
             if name == "index.html":
-                self.assertIn("app-backend.js?v=20260801-02", html)
+                self.assertIn("app-view.js?v=20260801-03", html)
+                self.assertIn("app-backend.js?v=20260801-03", html)
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
             self.assertIn('<span>EVENT INFO</span><strong>イベント情報</strong>', html)
@@ -48,10 +52,12 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v61';", service_worker)
-        self.assertIn("const VERSION = '20260801-02';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v62';", service_worker)
+        self.assertIn("const VERSION = '20260801-03';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
+        self.assertIn("app-view.js?v=${VERSION}", service_worker)
         self.assertIn("app-backend.js?v=${VERSION}", service_worker)
+        self.assertIn("firebase-client.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
 
@@ -87,12 +93,13 @@ class StaticContractTest(unittest.TestCase):
         for event in store_events:
             self.assertNotEqual(event.get("broadcast"), "勤務カレンダー")
 
-        app_js = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertIn("`メモ：${event.trafficReason}`", app_js)
-        self.assertNotIn("客足メモ：", app_js)
-        self.assertIn("navAuthButton.hidden = false;", app_js)
-        self.assertNotIn("HIDDEN_PREDICTED_WINDOW", app_js)
-        self.assertIn("const reason = window.reason ? `<br>${escapeHtml(window.reason)}` : '';", app_js)
+        app_view = (ROOT / "app-view.js").read_text(encoding="utf-8")
+        app_controller = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertIn("`メモ：${event.trafficReason}`", app_view)
+        self.assertNotIn("客足メモ：", app_view)
+        self.assertIn("navAuthButton.hidden = false;", app_controller)
+        self.assertNotIn("HIDDEN_PREDICTED_WINDOW", app_view)
+        self.assertIn("const reason = window.reason ? `<br>${escapeHtml(window.reason)}` : '';", app_view)
 
         vnl = next(event for event in events if event["id"] == "vnl-men-2026-final-round")
         vnl_windows = {window["label"]: window for window in vnl["predictedWindows"]}
@@ -248,7 +255,10 @@ class StaticContractTest(unittest.TestCase):
         )
 
     def test_core_ui_contracts(self):
-        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        app = "\n".join(
+            (ROOT / name).read_text(encoding="utf-8")
+            for name in ("app.js", "app-view.js")
+        )
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")
         index = (ROOT / "index.html").read_text(encoding="utf-8")
 
@@ -322,6 +332,14 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("navAuthButton.textContent = unlocked ? 'ログアウト' : 'ログイン';", app)
         self.assertIn("navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';", records)
         self.assertIn("navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';", record)
+        firebase_client = (ROOT / "firebase-client.js").read_text(encoding="utf-8")
+        app_backend = (ROOT / "app-backend.js").read_text(encoding="utf-8")
+        records_backend = (ROOT / "records-backend.js").read_text(encoding="utf-8")
+        self.assertIn("window.FirebaseClient", firebase_client)
+        self.assertIn("window.FirebaseClient.create", app_backend)
+        self.assertIn("window.FirebaseClient.create", records_backend)
+        self.assertNotIn("firebase-app.js", app_backend)
+        self.assertNotIn("firebase-app.js", records_backend)
         self.assertIn("イベントと紐づけて保存します", app)
         self.assertNotIn("今日の注目イベントと紐づけて保存します", app)
         self.assertNotIn("document.querySelectorAll('.time-input-wrap input", app)
@@ -331,7 +349,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("'ゴールデンウィーク': 'G.W'", app)
         self.assertIn("'一般的なお盆休み期間': 'お盆'", app)
         self.assertIn('class="empty-state event-empty-state"', app)
-        self.assertIn("const recordsPerPage = 10", (ROOT / "records.js").read_text(encoding="utf-8"))
+        self.assertIn("const RECORDS_PER_PAGE = 10", (ROOT / "records.js").read_text(encoding="utf-8"))
         self.assertIn(".calendar-badge.title-badge", styles)
         self.assertIn("--record-side-size: 40px;", styles)
         self.assertIn("--status-pill-size: 58px;", styles)

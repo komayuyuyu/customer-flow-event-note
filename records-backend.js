@@ -1,56 +1,37 @@
 (function () {
-  const SDK_VERSION = '12.15.0';
   const config = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
-  let auth;
-  let db;
-  let authSdk;
-  let firestoreSdk;
-  let user;
+  let firebase;
+  let currentUser;
 
   async function initialize(onUserChange = () => {}) {
     if (!config.enabled) {
-      user = { uid: 'local' };
-      onUserChange(user);
-      return user;
+      currentUser = { uid: 'local' };
+      onUserChange(currentUser);
+      return currentUser;
     }
-    const root = `https://www.gstatic.com/firebasejs/${SDK_VERSION}`;
-    const [{ initializeApp }, loadedAuth, loadedFirestore] = await Promise.all([
-      import(`${root}/firebase-app.js`),
-      import(`${root}/firebase-auth.js`),
-      import(`${root}/firebase-firestore.js`),
-    ]);
-    authSdk = loadedAuth;
-    firestoreSdk = loadedFirestore;
-    const app = initializeApp(config.firebase);
-    auth = authSdk.getAuth(app);
-    db = firestoreSdk.getFirestore(app);
-    await authSdk.setPersistence(auth, authSdk.browserLocalPersistence);
-    return new Promise(resolve => {
-      let first = true;
-      authSdk.onAuthStateChanged(auth, async current => {
-        if (current && config.allowedUid && current.uid !== config.allowedUid) {
-          await authSdk.signOut(auth);
-          current = null;
-        }
-        user = current;
-        onUserChange(user);
-        if (first) { first = false; resolve(user); }
-      });
+    firebase = await window.FirebaseClient.create(config, {
+      onUserChange(user) {
+        currentUser = user;
+        onUserChange(currentUser);
+      },
     });
+    await firebase.initialize();
+    return currentUser;
   }
 
   async function login() {
-    if (!config.enabled) return user;
-    const provider = new authSdk.GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: 'select_account' });
-    return authSdk.signInWithPopup(auth, provider);
+    if (!config.enabled) return currentUser;
+    return firebase.login();
   }
 
-  async function logout() { if (!config.enabled) return; return authSdk.signOut(auth); }
+  async function logout() {
+    if (!config.enabled) return;
+    return firebase.logout();
+  }
 
-  function requireUser() {
-    if (!user) throw new Error('記録を見るにはGoogleログインが必要です。');
-    return user;
+  function requireCurrentUser() {
+    if (!currentUser) throw new Error('記録を見るにはGoogleログインが必要です。');
+    return currentUser;
   }
 
   async function list() {
@@ -59,9 +40,9 @@
       if (!response.ok) throw new Error('記録一覧を読み込めませんでした。');
       return response.json();
     }
-    const current = requireUser();
-    const collection = firestoreSdk.collection(db, 'users', current.uid, 'observations');
-    const snapshot = await firestoreSdk.getDocs(collection);
+    const user = requireCurrentUser();
+    const collection = firebase.firestoreSdk.collection(firebase.db, 'users', user.uid, 'observations');
+    const snapshot = await firebase.firestoreSdk.getDocs(collection);
     return snapshot.docs.map(item => item.data()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
   }
 
@@ -71,9 +52,9 @@
       if (!response.ok) throw new Error('記録を読み込めませんでした。');
       return (await response.json()).observation;
     }
-    const current = requireUser();
-    const reference = firestoreSdk.doc(db, 'users', current.uid, 'observations', date);
-    const snapshot = await firestoreSdk.getDoc(reference);
+    const user = requireCurrentUser();
+    const reference = firebase.firestoreSdk.doc(firebase.db, 'users', user.uid, 'observations', date);
+    const snapshot = await firebase.firestoreSdk.getDoc(reference);
     return snapshot.exists() ? snapshot.data() : null;
   }
 
@@ -83,12 +64,12 @@
       if (!response.ok) throw new Error('記録を保存できませんでした。');
       return;
     }
-    const current = requireUser();
-    const reference = firestoreSdk.doc(db, 'users', current.uid, 'observations', payload.date);
-    await firestoreSdk.setDoc(reference, {
+    const user = requireCurrentUser();
+    const reference = firebase.firestoreSdk.doc(firebase.db, 'users', user.uid, 'observations', payload.date);
+    await firebase.firestoreSdk.setDoc(reference, {
       ...payload,
-      ownerUid: current.uid,
-      updatedAt: firestoreSdk.serverTimestamp(),
+      ownerUid: user.uid,
+      updatedAt: firebase.firestoreSdk.serverTimestamp(),
     }, { merge: true });
   }
 
@@ -98,10 +79,10 @@
       if (!response.ok) throw new Error('記録を削除できませんでした。');
       return;
     }
-    const current = requireUser();
-    const reference = firestoreSdk.doc(db, 'users', current.uid, 'observations', date);
-    await firestoreSdk.deleteDoc(reference);
+    const user = requireCurrentUser();
+    const reference = firebase.firestoreSdk.doc(firebase.db, 'users', user.uid, 'observations', date);
+    await firebase.firestoreSdk.deleteDoc(reference);
   }
 
-  window.RecordsBackend = { initialize, login, logout, list, get, save, remove, currentUser: () => user };
+  window.RecordsBackend = { initialize, login, logout, list, get, save, remove, currentUser: () => currentUser };
 }());

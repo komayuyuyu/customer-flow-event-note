@@ -15,13 +15,14 @@ let activeUser = null;
 let pendingDeleteDate = '';
 let allRecords = [];
 let currentPage = 1;
-const recordsPerPage = 10;
-function dateLabel(value) {
+const RECORDS_PER_PAGE = 10;
+
+function formatDateLabel(value) {
   const date = new Date(`${value}T12:00:00`);
   return `${value.replaceAll('-', '/')}（${weekday.format(date)}）`;
 }
 
-function eventNames(item) {
+function relatedEventLabel(item) {
   const relatedNames = (item.relatedEvents || []).map(event => {
     const title = displayEventTitle(eventMap.get(event.id)?.title || event.title);
     const status = event.status && event.status !== '実施済み' ? `［${event.status}］` : '';
@@ -37,28 +38,36 @@ function eventNames(item) {
   return item.eventIds?.length ? '関連イベントあり' : '通常日の記録';
 }
 
-function recordMarkup(item) {
+function renderRecordCard(item) {
   const context = (item.calendarContext || [])
     .map(value => `<span>${escapeHtml(value.type)}：${escapeHtml(value.label)}</span>`)
     .join('');
-  return `<article class="record-list-item"><a class="record-list-link" href="./record.html?date=${encodeURIComponent(item.date)}"><div class="record-list-head"><strong>${escapeHtml(dateLabel(item.date))}</strong><span class="count-pill">${escapeHtml(item.trafficLevel || '未入力')}</span></div><div class="record-list-events">${escapeHtml(eventNames(item))}</div><div class="record-list-meta"><span>天気 ${escapeHtml(item.weather || '不明')}</span><span>影響 ${escapeHtml(item.eventImpact || '未記録')}</span>${context}</div></a><button class="delete-icon-button" type="button" data-delete-date="${escapeHtml(item.date)}" aria-label="${escapeHtml(dateLabel(item.date))}の記録を削除">${trashIcon}</button></article>`;
+  const date = escapeHtml(formatDateLabel(item.date));
+  return `<article class="record-list-item">
+    <a class="record-list-link" href="./record.html?date=${encodeURIComponent(item.date)}">
+      <div class="record-list-head"><strong>${date}</strong><span class="count-pill">${escapeHtml(item.trafficLevel || '未入力')}</span></div>
+      <div class="record-list-events">${escapeHtml(relatedEventLabel(item))}</div>
+      <div class="record-list-meta"><span>天気 ${escapeHtml(item.weather || '不明')}</span><span>影響 ${escapeHtml(item.eventImpact || '未記録')}</span>${context}</div>
+    </a>
+    <button class="delete-icon-button" type="button" data-delete-date="${escapeHtml(item.date)}" aria-label="${date}の記録を削除">${trashIcon}</button>
+  </article>`;
 }
 
 function renderPage() {
-  const pageCount = Math.max(1, Math.ceil(allRecords.length / recordsPerPage));
+  const pageCount = Math.max(1, Math.ceil(allRecords.length / RECORDS_PER_PAGE));
   currentPage = Math.min(Math.max(currentPage, 1), pageCount);
-  const start = (currentPage - 1) * recordsPerPage;
+  const start = (currentPage - 1) * RECORDS_PER_PAGE;
   listRoot.innerHTML = allRecords.length
-    ? allRecords.slice(start, start + recordsPerPage).map(recordMarkup).join('')
+    ? allRecords.slice(start, start + RECORDS_PER_PAGE).map(renderRecordCard).join('')
     : '<p class="empty-state">保存済みの記録はありません。</p>';
-  paginationRoot.hidden = allRecords.length <= recordsPerPage;
+  paginationRoot.hidden = allRecords.length <= RECORDS_PER_PAGE;
   paginationRoot.innerHTML = paginationRoot.hidden ? '' : `<button type="button" data-page="${currentPage - 1}"${currentPage === 1 ? ' disabled' : ''}>前へ</button><div class="pagination-pages">${Array.from({ length: pageCount }, (_, index) => { const page = index + 1; return `<button type="button" data-page="${page}"${page === currentPage ? ' class="is-current" aria-current="page"' : ''}>${page}</button>`; }).join('')}</div><button type="button" data-page="${currentPage + 1}"${currentPage === pageCount ? ' disabled' : ''}>次へ</button>`;
   const url = new URL(location.href);
   if (currentPage === 1) url.searchParams.delete('page'); else url.searchParams.set('page', currentPage);
   history.replaceState(null, '', url);
 }
 
-async function render(user) {
+async function renderRecordsPage(user) {
   activeUser = user;
   authPanel.hidden = Boolean(user);
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
@@ -94,7 +103,7 @@ listRoot.addEventListener('click', event => {
   const button = event.target.closest('[data-delete-date]');
   if (!button) return;
   pendingDeleteDate = button.dataset.deleteDate;
-  deleteTargetDate.textContent = dateLabel(pendingDeleteDate);
+  deleteTargetDate.textContent = formatDateLabel(pendingDeleteDate);
   deleteModal.hidden = false;
 });
 cancelDeleteButton.addEventListener('click', closeDeleteModal);
@@ -105,7 +114,7 @@ confirmDeleteButton.addEventListener('click', async () => {
   try {
     await RecordsBackend.remove(pendingDeleteDate);
     closeDeleteModal();
-    await render(activeUser);
+    await renderRecordsPage(activeUser);
   } catch (error) {
     deleteTargetDate.textContent = error.message || '削除できませんでした。';
   } finally {
@@ -122,4 +131,4 @@ async function handleAuth() {
 }
 loginButton.addEventListener('click', handleAuth);
 navAuthButton.addEventListener('click', handleAuth);
-RecordsBackend.initialize(render).catch(error => { listRoot.innerHTML = `<p class="empty-state">${escapeHtml(error.message)}</p>`; });
+RecordsBackend.initialize(renderRecordsPage).catch(error => { listRoot.innerHTML = `<p class="empty-state">${escapeHtml(error.message)}</p>`; });
