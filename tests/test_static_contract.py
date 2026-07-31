@@ -18,6 +18,7 @@ class StaticContractTest(unittest.TestCase):
             "record.js",
             "records-backend.js",
             "app-data.js",
+            "app-date-picker.js",
             "app-view.js",
             "app-backend.js",
             "firebase-client.js",
@@ -37,13 +38,15 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260801-03", html)
-            self.assertIn("ui-utils.js?v=20260801-03", html)
-            self.assertIn("app-data.js?v=20260801-03", html)
-            self.assertIn("firebase-client.js?v=20260801-03", html)
+            self.assertIn("styles.css?v=20260801-04", html)
+            self.assertIn("ui-utils.js?v=20260801-04", html)
+            self.assertIn("app-data.js?v=20260801-04", html)
+            self.assertIn("firebase-client.js?v=20260801-04", html)
             if name == "index.html":
-                self.assertIn("app-view.js?v=20260801-03", html)
-                self.assertIn("app-backend.js?v=20260801-03", html)
+                self.assertIn("app-view.js?v=20260801-04", html)
+                self.assertIn("app-date-picker.js?v=20260801-04", html)
+                self.assertIn("app-backend.js?v=20260801-04", html)
+                self.assertLess(html.index("app-date-picker.js"), html.index("app.js"))
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
             self.assertIn('<span>EVENT INFO</span><strong>イベント情報</strong>', html)
@@ -52,10 +55,11 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v62';", service_worker)
-        self.assertIn("const VERSION = '20260801-03';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v63';", service_worker)
+        self.assertIn("const VERSION = '20260801-04';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("app-view.js?v=${VERSION}", service_worker)
+        self.assertIn("app-date-picker.js?v=${VERSION}", service_worker)
         self.assertIn("app-backend.js?v=${VERSION}", service_worker)
         self.assertIn("firebase-client.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
@@ -99,7 +103,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertNotIn("客足メモ：", app_view)
         self.assertIn("navAuthButton.hidden = false;", app_controller)
         self.assertNotIn("HIDDEN_PREDICTED_WINDOW", app_view)
-        self.assertIn("const reason = window.reason ? `<br>${escapeHtml(window.reason)}` : '';", app_view)
+        self.assertIn("const reason = predictedWindow.reason ? `<br>${escapeHtml(predictedWindow.reason)}` : '';", app_view)
 
         vnl = next(event for event in events if event["id"] == "vnl-men-2026-final-round")
         vnl_windows = {window["label"]: window for window in vnl["predictedWindows"]}
@@ -255,10 +259,10 @@ class StaticContractTest(unittest.TestCase):
         )
 
     def test_core_ui_contracts(self):
-        app = "\n".join(
-            (ROOT / name).read_text(encoding="utf-8")
-            for name in ("app.js", "app-view.js")
-        )
+        app_controller = (ROOT / "app.js").read_text(encoding="utf-8")
+        app_view = (ROOT / "app-view.js").read_text(encoding="utf-8")
+        app_date_picker = (ROOT / "app-date-picker.js").read_text(encoding="utf-8")
+        app = "\n".join((app_controller, app_view, app_date_picker))
         styles = (ROOT / "styles.css").read_text(encoding="utf-8")
         index = (ROOT / "index.html").read_text(encoding="utf-8")
 
@@ -272,7 +276,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertNotIn("↗", app)
         self.assertIn("${renderEventTitle(event)}", app)
         self.assertIn("function updateEventHeading", app)
-        self.assertIn("function openRecordDatePicker", app)
+        self.assertIn("function openForRecord", app)
         self.assertIn("function renderCalendarEventCard", app)
         self.assertIn("function renderWeekContextEvents", app)
         self.assertIn("function calendarContextEvent", app)
@@ -302,7 +306,18 @@ class StaticContractTest(unittest.TestCase):
         self.assertNotIn("<span class=\"tag\">確からしさ", app)
         self.assertNotIn("開始・確からしさ", app)
         self.assertIn("event.stopPropagation();", app)
-        self.assertIn("openRecordDatePicker(event.currentTarget)", app)
+        self.assertIn("openForRecord(event.currentTarget)", app)
+        for function_name in (
+            "renderCalendar",
+            "positionCalendarAt",
+            "setOpen",
+            "openForRecord",
+            "updateEventHeading",
+        ):
+            self.assertIn(f"function {function_name}", app_date_picker)
+            self.assertNotIn(f"function {function_name}", app_controller)
+        self.assertIn("const datePicker = createDatePicker({", app_controller)
+        self.assertIn("datePicker.updateEventHeading(dateInput.value);", app_controller)
         self.assertIn("const MAX_WEEK_OFFSET = 9", app)
         self.assertIn("function startOfWeek", app)
         self.assertIn("function renderChampionshipCountdown", app)
@@ -315,6 +330,7 @@ class StaticContractTest(unittest.TestCase):
         record = (ROOT / "record.js").read_text(encoding="utf-8")
 
         self.assertIn("window.AppData", app_data)
+        self.assertIn("window.AppDatePicker", app_date_picker)
         self.assertIn("const EVENT_DATA_PATHS = ['./data/events.json', './data/store-events.json'];", app_data)
         self.assertIn("function eventCoversDate", app_data)
         self.assertIn("function isRecordLinkedEvent", app_data)

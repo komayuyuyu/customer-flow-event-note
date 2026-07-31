@@ -19,8 +19,8 @@
     'お盆休み': 'お盆',
   };
 
-  function formatPredictedWindow(window) {
-    return `${window.label}：${window.start}〜${window.end}`;
+  function formatPredictedWindow(predictedWindow) {
+    return `${predictedWindow.label}：${predictedWindow.start}〜${predictedWindow.end}`;
   }
 
   function dottedDate(dateText) {
@@ -175,10 +175,10 @@
 
   function renderPredictedWindows(event, dateText) {
     return (event.predictedWindows || [])
-      .filter(window => window.date === dateText)
-      .map(window => {
-        const reason = window.reason ? `<br>${escapeHtml(window.reason)}` : '';
-        return `<p>${escapeHtml(formatPredictedWindow(window))}${reason}</p>`;
+      .filter(predictedWindow => predictedWindow.date === dateText)
+      .map(predictedWindow => {
+        const reason = predictedWindow.reason ? `<br>${escapeHtml(predictedWindow.reason)}` : '';
+        return `<p>${escapeHtml(formatPredictedWindow(predictedWindow))}${reason}</p>`;
       })
       .join('');
   }

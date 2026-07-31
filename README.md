@@ -26,6 +26,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `records.html`: 記録一覧
 - `record.html`: 記録詳細
 - `app.js`: ホーム画面と記録保存
+- `app-date-picker.js`: 記録日のカレンダー表示と選択操作
 - `app-view.js`: イベントカードと週間予定の表示生成
 - `app-backend.js`: ホーム画面のデータ取得・記録保存
 - `firebase-client.js`: Firebase SDK・Google認証の共通初期化
