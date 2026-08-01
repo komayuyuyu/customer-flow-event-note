@@ -14,7 +14,6 @@
       getDay: records.getDay,
       async getEvents(date) { return eventsForDate(date); },
       saveObservation: records.save,
-      listObservations: records.list,
     };
   }
 
@@ -43,7 +42,6 @@
         const observation = await records.save(payload);
         return { ok: true, observation };
       },
-      async listObservations() { return records.list({ allowAnonymous: true }); },
     };
   }
 

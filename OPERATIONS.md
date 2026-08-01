@@ -67,6 +67,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
    node --check app.js
    node --check records.js
    node --check record.js
+   python scripts/check_project_contracts.py
    node --check records-backend.js
    node --check menu.js
    node --check ui-utils.js
