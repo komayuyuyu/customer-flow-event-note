@@ -60,6 +60,8 @@ let currentEvents = [];
 let currentUser = null;
 let initialized = false;
 let displayedWeekStart = '';
+let dayLoadRequestId = 0;
+let weekLoadRequestId = 0;
 
 const MAX_WEEK_OFFSET = 9;
 
@@ -150,14 +152,6 @@ async function earliestEventWeekStart() {
   return startOfWeek(dates.sort()[0]);
 }
 
-async function updateWeekNav() {
-  const start = weekStartDate();
-  const current = currentWeekStart();
-  weekLabel.textContent = start === current ? '今週' : `第${weekOfYearMonday(start)}週`;
-  weekPrev.disabled = start <= await earliestEventWeekStart();
-  weekNext.disabled = start >= addDays(current, MAX_WEEK_OFFSET * 7);
-}
-
 function setRecordAccess(user, errorMessage = '') {
   const cloudMode = backend?.mode === 'cloud';
   if (!cloudMode) {
@@ -194,16 +188,24 @@ function renderWeek(days) {
 }
 
 async function loadWeek() {
-  await updateWeekNav();
+  const requestId = ++weekLoadRequestId;
+  const start = weekStartDate();
+  const current = currentWeekStart();
+  const earliest = await earliestEventWeekStart();
+  if (requestId !== weekLoadRequestId) return;
+  weekLabel.textContent = start === current ? '今週' : `第${weekOfYearMonday(start)}週`;
+  weekPrev.disabled = start <= earliest;
+  weekNext.disabled = start >= addDays(current, MAX_WEEK_OFFSET * 7);
   weekCount.textContent = '確認中';
   weekRoot.innerHTML = '<p class="empty-state">読み込んでいます…</p>';
   try {
-    const start = weekStartDate();
     const dates = Array.from({ length: 7 }, (_, index) => addDays(start, index));
     const eventLists = await Promise.all(dates.map(value => backend.getEvents(value)));
     const contexts = await Promise.all(dates.map(contextForDate));
+    if (requestId !== weekLoadRequestId) return;
     renderWeek(dates.map((date, index) => ({ date, events: eventLists[index], context: contexts[index] })));
   } catch (error) {
+    if (requestId !== weekLoadRequestId) return;
     weekCount.textContent = '取得失敗';
     weekRoot.innerHTML = '<p class="empty-state">1週間の予定を読み込めませんでした。</p>';
   }
@@ -271,20 +273,24 @@ function resetObservationForm() {
 }
 
 async function loadDay() {
+  const requestId = ++dayLoadRequestId;
+  const selectedDate = dateInput.value;
   saveStatus.textContent = '';
   saveStatus.classList.remove('error');
   saveActions.hidden = true;
-  datePicker.updateEventHeading(dateInput.value);
+  datePicker.updateEventHeading(selectedDate);
   eventCount.textContent = '確認中';
   eventsRoot.innerHTML = '<p class="empty-state">読み込んでいます…</p>';
   try {
-    const data = await backend.getDay(dateInput.value);
-    const dateContext = await contextForDate(dateInput.value);
+    const data = await backend.getDay(selectedDate);
+    const dateContext = await contextForDate(selectedDate);
+    if (requestId !== dayLoadRequestId) return;
     renderEvents(data.events || [], dateContext);
     resetObservationForm();
     setRecordAccess(currentUser);
     await loadWeek();
   } catch (error) {
+    if (requestId !== dayLoadRequestId) return;
     eventCount.textContent = '取得失敗';
     eventsRoot.innerHTML = '<p class="empty-state">イベント情報を読み込めませんでした。</p>';
     saveStatus.classList.add('error');
@@ -402,7 +408,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-21', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-22', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {

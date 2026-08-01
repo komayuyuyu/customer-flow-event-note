@@ -12,7 +12,7 @@ NODE = shutil.which("node")
 
 class AppFormRuntimeTest(unittest.TestCase):
     @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
-    def test_impact_time_inputs_are_reenabled_after_form_resets(self):
+    def test_form_resets_and_ignores_stale_date_loads(self):
         result = subprocess.run(
             [
                 NODE,
@@ -137,15 +137,22 @@ class AppFormRuntimeTest(unittest.TestCase):
                       loadEventData: async () => [],
                       localToday: () => '2026-08-01',
                     };
+                    const pendingDays = new Map();
+                    const pendingWeekEvents = new Map();
+                    function createDeferredDay() {
+                      let resolve;
+                      const promise = new Promise(done => { resolve = done; });
+                      return { promise, resolve };
+                    }
                     const backendMock = {
                       mode: 'local',
-                      getDay: async () => ({ events: [{
+                      getDay: async date => pendingDays.get(date)?.promise || ({ events: [{
                         id: 'event-1',
                         title: 'イベント',
                         status: '実施予定',
                         startAt: '2026-08-01T18:00:00+09:00',
                       }] }),
-                      getEvents: async () => [],
+                      getEvents: async date => pendingWeekEvents.get(date)?.promise || [],
                       initialize: async () => null,
                       login: async () => null,
                       logout: async () => null,
@@ -175,8 +182,8 @@ class AppFormRuntimeTest(unittest.TestCase):
                       calendarContextEvent: item => item,
                       renderCalendarEventCard: () => '',
                       renderEmptyTodayEvent: () => '',
-                      renderTodayEventCard: () => '',
-                      renderWeekDay: () => '',
+                      renderTodayEventCard: (event, date) => `${event.id}:${date}`,
+                      renderWeekDay: day => `${day.date}:${day.events.map(event => event.id).join(',')}`,
                     };
 
                     vm.runInThisContext(fs.readFileSync(process.argv[1], 'utf8'));
@@ -220,6 +227,57 @@ class AppFormRuntimeTest(unittest.TestCase):
                       assert.equal(formElement.checkedValues.eventImpact, undefined);
                       assert.equal(impactStart.disabled, false);
                       assert.equal(impactEnd.disabled, false);
+
+                      const staleDay = createDeferredDay();
+                      const latestDay = createDeferredDay();
+                      pendingDays.set('2026-08-03', staleDay);
+                      pendingDays.set('2026-08-04', latestDay);
+                      const staleSelection = createdDatePicker.select('2026-08-03');
+                      await new Promise(resolve => setImmediate(resolve));
+                      const latestSelection = createdDatePicker.select('2026-08-04');
+                      latestDay.resolve({ events: [{
+                        id: 'event-latest',
+                        title: '最新日イベント',
+                        status: '実施予定',
+                        startAt: '2026-08-04T18:00:00+09:00',
+                      }] });
+                      await latestSelection;
+                      assert.equal(elements.get('#events').innerHTML, 'event-latest:2026-08-04');
+
+                      staleDay.resolve({ events: [{
+                        id: 'event-stale',
+                        title: '古い日イベント',
+                        status: '実施予定',
+                        startAt: '2026-08-03T18:00:00+09:00',
+                      }] });
+                      await staleSelection;
+                      assert.equal(elements.get('#events').innerHTML, 'event-latest:2026-08-04');
+
+                      const staleWeek = createDeferredDay();
+                      const latestWeek = createDeferredDay();
+                      pendingWeekEvents.set('2026-08-10', staleWeek);
+                      pendingWeekEvents.set('2026-08-17', latestWeek);
+                      const staleWeekSelection = createdDatePicker.select('2026-08-10');
+                      await new Promise(resolve => setImmediate(resolve));
+                      const latestWeekSelection = createdDatePicker.select('2026-08-17');
+                      latestWeek.resolve([{
+                        id: 'week-latest',
+                        title: '最新週イベント',
+                        status: '実施予定',
+                        startAt: '2026-08-17T18:00:00+09:00',
+                      }]);
+                      await latestWeekSelection;
+                      assert.match(elements.get('#week-schedule').innerHTML, /2026-08-17:week-latest/);
+
+                      staleWeek.resolve([{
+                        id: 'week-stale',
+                        title: '古い週イベント',
+                        status: '実施予定',
+                        startAt: '2026-08-10T18:00:00+09:00',
+                      }]);
+                      await staleWeekSelection;
+                      assert.match(elements.get('#week-schedule').innerHTML, /2026-08-17:week-latest/);
+                      assert.doesNotMatch(elements.get('#week-schedule').innerHTML, /week-stale/);
                     })().catch(error => { console.error(error); process.exitCode = 1; });
                     """
                 ),
