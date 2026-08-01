@@ -29,9 +29,11 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `app-date-picker.js`: 記録日のカレンダー表示と選択操作
 - `app-view.js`: イベントカードと週間予定の表示生成
 - `app-backend.js`: ホーム画面のデータ取得・記録保存
+- `record-store.js`: Firestore上の記録取得・一覧・保存・削除の共通処理
 - `firebase-client.js`: Firebase SDK・Google認証の共通初期化
 - `firebase/firestore.rules`: 所有者・項目・型・文字数を検証するFirestoreルールテンプレート
 - `.github/workflows/codeql.yml`: JavaScriptの継続的なセキュリティスキャン
+- `.github/workflows/quality.yml`: Pythonテスト・JavaScript構文・JSON構文の自動検査
 - `records.js`: 記録一覧
 - `record.js`: 記録詳細・編集
 - `records-backend.js`: Firebase/ローカル互換の記録処理

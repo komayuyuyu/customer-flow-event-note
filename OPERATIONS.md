@@ -111,6 +111,13 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - App CheckをAuthenticationより先に初期化するとGoogleログインを妨げる可能性があるため、上記の初期化順を変更しない。
 - クライアント公開前にApp Checkを強制適用しない。先に強制すると、正規ユーザーの保存・閲覧も拒否される。
 
+### Firebase Web SDKの更新確認
+
+- CDN読込の版は `firebase-client.js` の `FIREBASE_SDK_VERSION` で一元管理する。
+- [Firebase JavaScript SDK公式リリースノート](https://firebase.google.com/support/release-notes/js) を確認し、Authentication、App Check、Cloud Firestore、またはセキュリティに関係する変更を優先する。
+- 使用していない製品だけの機能追加であれば、最新版へ追従すること自体を目的に更新しない。
+- 更新する場合は専用PRへ分離し、Pythonテスト、全JavaScript構文、JSON構文、Googleログイン、記録一覧・詳細、PC・スマホ表示を確認してから公開する。
+
 ## 公開してはいけないもの
 
 - 個人のログ、実作業メモ
