@@ -7,7 +7,7 @@ const deleteModal = document.querySelector('#delete-modal');
 const deleteTargetDate = document.querySelector('#delete-target-date');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
-const { displayEventTitle, escapeHtml, readableAuthError, trashIcon } = window.UiUtils;
+const { createAuthAction, displayEventTitle, escapeHtml, readableAuthError, recordAuthMessage, trashIcon } = window.UiUtils;
 const { loadEventData } = window.AppData;
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'short' });
 let eventMap = new Map();
@@ -74,9 +74,7 @@ async function renderRecordsPage(user, authError) {
   authPanel.hidden = Boolean(user);
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
   if (!user) {
-    const message = authError?.message === 'このGoogleアカウントには記録権限がありません。'
-      ? authError.message
-      : authError ? readableAuthError(authError) : 'ログインすると記録一覧を表示します。';
+    const message = recordAuthMessage(authError, 'ログインすると記録一覧を表示します。');
     listRoot.innerHTML = `<p class="empty-state">${escapeHtml(message)}</p>`;
     paginationRoot.hidden = true;
     return;
@@ -131,13 +129,12 @@ confirmDeleteButton.addEventListener('click', async () => {
   }
 });
 
-async function handleAuth() {
-  try {
-    if (RecordsBackend.currentUser()) await RecordsBackend.logout(); else await RecordsBackend.login();
-  } catch (error) {
+const handleAuth = createAuthAction({
+  backend: RecordsBackend,
+  onError(error) {
     listRoot.innerHTML = `<p class="empty-state">${escapeHtml(readableAuthError(error))}</p>`;
-  }
-}
+  },
+});
 loginButton.addEventListener('click', handleAuth);
 navAuthButton.addEventListener('click', handleAuth);
 RecordsBackend.initialize(renderRecordsPage).catch(error => { listRoot.innerHTML = `<p class="empty-state">${escapeHtml(error.message)}</p>`; });

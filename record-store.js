@@ -1,6 +1,52 @@
 (function () {
   const { normalizeRecordArrays } = window.AppData;
 
+  function createLocalRecordStore({ messages = {} } = {}) {
+    const errorMessages = {
+      get: '記録を読み込めませんでした。',
+      list: '記録一覧を読み込めませんでした。',
+      save: '記録を保存できませんでした。',
+      remove: '記録を削除できませんでした。',
+      ...messages,
+    };
+
+    async function getDay(date) {
+      const response = await fetch(`./api/day?date=${encodeURIComponent(date)}`);
+      if (!response.ok) throw new Error(errorMessages.get);
+      const result = await response.json();
+      return { ...result, observation: normalizeRecordArrays(result.observation) };
+    }
+
+    async function get(date) {
+      return (await getDay(date)).observation;
+    }
+
+    async function list() {
+      const response = await fetch('./api/observations');
+      if (!response.ok) throw new Error(errorMessages.list);
+      return (await response.json()).map(normalizeRecordArrays);
+    }
+
+    async function save(payload) {
+      const observation = normalizeRecordArrays(payload);
+      const response = await fetch('./api/observations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(observation),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || errorMessages.save);
+      return result;
+    }
+
+    async function remove(date) {
+      const response = await fetch(`./api/observations?date=${encodeURIComponent(date)}`, { method: 'DELETE' });
+      if (!response.ok) throw new Error(errorMessages.remove);
+    }
+
+    return { getDay, get, list, save, remove };
+  }
+
   function createCloudRecordStore({
     currentUser,
     dataServices,
@@ -57,5 +103,5 @@
     return { get, list, save, remove };
   }
 
-  window.RecordStore = { createCloudRecordStore };
+  window.RecordStore = { createCloudRecordStore, createLocalRecordStore };
 }());

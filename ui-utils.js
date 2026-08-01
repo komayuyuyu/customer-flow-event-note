@@ -46,6 +46,23 @@
     return 'Googleログインを完了できませんでした。';
   }
 
+  function recordAuthMessage(error, fallback) {
+    if (!error) return fallback;
+    if (error.message === 'このGoogleアカウントには記録権限がありません。') return error.message;
+    return readableAuthError(error);
+  }
+
+  function createAuthAction({ backend, onError }) {
+    return async function handleAuthAction() {
+      try {
+        if (backend.currentUser()) await backend.logout();
+        else await backend.login();
+      } catch (error) {
+        onError(error);
+      }
+    };
+  }
+
   function displayEventTitle(title, fallback = '') {
     return String(title || fallback).replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
       if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
@@ -103,9 +120,11 @@
     bindQuietPeriodExclusivity,
     bindTimePlaceholders,
     combinedMemo,
+    createAuthAction,
     displayEventTitle,
     escapeHtml,
     readableAuthError,
+    recordAuthMessage,
     renderOptions,
     safeExternalUrl,
     normalizeQuietPeriods,

@@ -68,6 +68,56 @@ class UiUtilsRuntimeTest(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
+    def test_record_auth_helpers_share_messages_and_actions(self):
+        script = textwrap.dedent(
+            """
+            const assert = require('node:assert/strict');
+            const fs = require('node:fs');
+            const vm = require('node:vm');
+
+            global.window = {};
+            vm.runInThisContext(fs.readFileSync(process.argv[1], 'utf8'));
+            const { createAuthAction, recordAuthMessage } = window.UiUtils;
+
+            assert.equal(recordAuthMessage(null, 'ログインしてください。'), 'ログインしてください。');
+            assert.equal(
+              recordAuthMessage(new Error('このGoogleアカウントには記録権限がありません。'), 'fallback'),
+              'このGoogleアカウントには記録権限がありません。',
+            );
+
+            let currentUser = null;
+            let loginCalls = 0;
+            let logoutCalls = 0;
+            let capturedError;
+            const backend = {
+              currentUser: () => currentUser,
+              async login() { loginCalls += 1; currentUser = { uid: 'owner' }; },
+              async logout() { logoutCalls += 1; currentUser = null; },
+            };
+            const handleAuth = createAuthAction({ backend, onError: error => { capturedError = error; } });
+
+            (async () => {
+              await handleAuth();
+              assert.equal(loginCalls, 1);
+              await handleAuth();
+              assert.equal(logoutCalls, 1);
+              backend.login = async () => { throw new Error('login failed'); };
+              await handleAuth();
+              assert.equal(capturedError.message, 'login failed');
+            })().catch(error => { console.error(error); process.exitCode = 1; });
+            """
+        )
+        result = subprocess.run(
+            [NODE, "-e", script, str(ROOT / "ui-utils.js")],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            check=False,
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()
