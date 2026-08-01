@@ -1,0 +1,28 @@
+{
+  "files": [
+    "404.html",
+    "app-backend.js",
+    "app-data.js",
+    "app-date-picker.js",
+    "app-view.js",
+    "app.js",
+    "data/calendar-context.json",
+    "data/events.json",
+    "data/store-events.json",
+    "firebase-client.js",
+    "firebase-config.js",
+    "icon.svg",
+    "index.html",
+    "manifest.webmanifest",
+    "menu.js",
+    "record-store.js",
+    "record.html",
+    "record.js",
+    "records-backend.js",
+    "records.html",
+    "records.js",
+    "styles.css",
+    "sw.js",
+    "ui-utils.js"
+  ]
+}

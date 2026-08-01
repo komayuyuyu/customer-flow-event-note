@@ -46,3 +46,6 @@ jobs:
 
       - name: Check maintainability and accessibility contracts
         run: python scripts/check_project_contracts.py
+
+      - name: Build Firebase Hosting bundle
+        run: node scripts/build-hosting.mjs
