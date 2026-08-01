@@ -23,6 +23,9 @@ class SecurityContractTests(unittest.TestCase):
         app_view = (ROOT / "app-view.js").read_text(encoding="utf-8")
 
         self.assertIn("function safeExternalUrl", ui_utils)
+        self.assertIn("if (!candidate) return '';", ui_utils)
+        self.assertIn("new URL(candidate);", ui_utils)
+        self.assertNotIn("new URL(candidate, window.location.href)", ui_utils)
         self.assertIn("url.protocol === 'https:' || url.protocol === 'http:'", ui_utils)
         self.assertIn("!url.username && !url.password", ui_utils)
         self.assertIn("safeExternalUrl(item?.url)", app_view)
