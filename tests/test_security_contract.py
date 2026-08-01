@@ -1,3 +1,4 @@
+import json
 import unittest
 from pathlib import Path
 
@@ -6,6 +7,40 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SecurityContractTests(unittest.TestCase):
+    def test_firebase_hosting_rejects_embedding_and_excludes_private_operations_files(self):
+        config = json.loads((ROOT / "firebase.json").read_text(encoding="utf-8"))
+        hosting = config["hosting"]
+        self.assertEqual(hosting["site"], "customer-flow-event-note")
+        self.assertEqual(hosting["public"], ".")
+
+        headers = {
+            header["key"].lower(): header["value"]
+            for rule in hosting["headers"]
+            if rule["source"] == "**"
+            for header in rule["headers"]
+        }
+        self.assertEqual(headers["content-security-policy"], "frame-ancestors 'none'")
+        self.assertEqual(headers["x-frame-options"], "DENY")
+        self.assertEqual(headers["x-content-type-options"], "nosniff")
+        self.assertEqual(headers["referrer-policy"], "strict-origin-when-cross-origin")
+        self.assertEqual(headers["permissions-policy"], "camera=(), microphone=(), geolocation=()")
+
+        ignored = set(hosting["ignore"])
+        for private_path in (
+            ".github/**",
+            "firebase/**",
+            "scripts/**",
+            "tests/**",
+            "README.md",
+            "OPERATIONS.md",
+            "CODEMAP.md",
+            "event-data-format.md",
+            "impact.py",
+            "data/candidates.json",
+            "data/event-source-registry.json",
+        ):
+            self.assertIn(private_path, ignored)
+
     def test_firestore_rules_restrict_owner_and_observation_shape(self):
         rules = (ROOT / "firebase" / "firestore.rules").read_text(encoding="utf-8")
 

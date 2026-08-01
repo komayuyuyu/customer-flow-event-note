@@ -1,0 +1,52 @@
+{
+  "hosting": {
+    "site": "customer-flow-event-note",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      ".gitignore",
+      ".nojekyll",
+      "**/.*",
+      "**/node_modules/**",
+      ".github/**",
+      "firebase/**",
+      "scripts/**",
+      "tests/**",
+      "README.md",
+      "OPERATIONS.md",
+      "CODEMAP.md",
+      "event-data-format.md",
+      "impact.py",
+      "data/candidates.json",
+      "data/event-source-registry.json"
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "frame-ancestors 'none'"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=()"
+          }
+        ]
+      }
+    ]
+  }
+}

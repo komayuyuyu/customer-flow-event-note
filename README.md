@@ -4,7 +4,7 @@
 
 ## 構成
 
-- 静的Webアプリ: GitHub Pages
+- 静的Webアプリ: Firebase Hosting
 - 記録保存: Firebase Authentication + Cloud Firestore + App Check
 - イベント予定: `data/events.json`
 - 勤務カレンダー由来の店頭・館イベント: `data/store-events.json`
@@ -18,7 +18,9 @@
 
 ## 公開URL
 
-https://komayuyuyu.github.io/customer-flow-event-note/
+https://customer-flow-event-note.web.app/
+
+旧GitHub Pages URLは上記URLへの案内ページとして残す。
 
 ## 主なファイル
 
@@ -32,6 +34,8 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `app-backend.js`: ホーム画面のデータ取得・記録保存
 - `record-store.js`: Firestore上の記録取得・一覧・保存・削除の共通処理
 - `firebase-client.js`: Firebase SDK・Google認証の共通初期化
+- `firebase.json`: Firebase Hostingの公開範囲とセキュリティヘッダー
+- `.firebaserc`: 公開先Firebaseプロジェクト
 - `firebase/firestore.rules`: 所有者・項目・型・文字数を検証するFirestoreルールテンプレート
 - `.github/workflows/codeql.yml`: JavaScriptの継続的なセキュリティスキャン
 - `.github/workflows/quality.yml`: Pythonテスト・JavaScript構文・JSON構文の自動検査
