@@ -1,13 +1,13 @@
 :root {
   color-scheme: light;
   --ink: #213129;
-  --muted: #68766f;
+  --muted: #5f6b65;
   --paper: #f3f0e8;
   --card: #fffdf8;
   --line: #d9ddd6;
   --green: #284c39;
   --green-soft: #dce8df;
-  --orange: #d46d3d;
+  --orange: #a94f27;
   --orange-soft: #f6e2d5;
   --record-side-size: 40px;
   --status-pill-size: 58px;

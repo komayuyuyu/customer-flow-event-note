@@ -10,6 +10,7 @@ const {
   bindTimePlaceholders,
   combinedMemo,
   createAuthAction,
+  createModalController,
   displayEventTitle,
   escapeHtml,
   normalizeQuietPeriods,
@@ -93,20 +94,20 @@ function renderEditForm() {
   detailRoot.innerHTML = `<form id="detail-form">
     <p><strong>${escapeHtml(currentRecord.date)}</strong></p>
     ${events ? `<div class="related-events"><strong>関連イベント</strong>${events}</div>` : ''}
-    <label class="note-label">集客状況</label>
+    <label class="note-label" for="traffic">集客状況</label>
     <select id="traffic">${renderOptions(FORM_OPTIONS.traffic, currentRecord.trafficLevel || '通常')}</select>
-    <label class="note-label">天気</label>
+    <label class="note-label" for="weather">天気</label>
     <select id="weather">${renderOptions(FORM_OPTIONS.weather, currentRecord.weather || '不明')}</select>
     <fieldset><legend>特に暇もしくは混雑した時間</legend><div class="choice-grid periods">${periods}</div></fieldset>
     <div class="time-grid">
       <label>影響を感じた開始時刻<span class="time-input-wrap" data-placeholder="--:--"><input id="impact-start" type="time" value="${escapeHtml(currentRecord.actualImpactStart)}"></span></label>
       <label>落ち着いた時刻<span class="time-input-wrap" data-placeholder="--:--"><input id="impact-end" type="time" value="${escapeHtml(currentRecord.actualImpactEnd)}"></span></label>
     </div>
-    <label class="note-label">イベントによる影響</label>
+    <label class="note-label" for="impact">イベントによる影響</label>
     <select id="impact">${renderOptions(FORM_OPTIONS.eventImpact, currentRecord.eventImpact || 'わからない')}</select>
-    <label class="note-label">予測結果</label>
+    <label class="note-label" for="accuracy">予測結果</label>
     <select id="accuracy">${renderOptions(FORM_OPTIONS.accuracy, currentRecord.accuracy || '未判断')}</select>
-    <label class="note-label">メモ</label>
+    <label class="note-label" for="note">メモ</label>
     <textarea id="note" maxlength="600">${escapeHtml(combinedMemo(currentRecord))}</textarea>
     <button class="save-button" type="submit">変更を保存</button>
     <button id="cancel-button" class="action-link" type="button">キャンセル</button>
@@ -136,10 +137,9 @@ function renderEditForm() {
     }
   });
 }
-function openDeleteModal() { deleteTargetDate.textContent = currentRecord?.date || recordDate; deleteModal.hidden = false; }
-function closeDeleteModal() { deleteModal.hidden = true; }
-cancelDeleteButton.addEventListener('click', closeDeleteModal);
-deleteModal.addEventListener('click', event => { if (event.target === deleteModal) closeDeleteModal(); });
+const deleteDialog = createModalController({ modal: deleteModal, initialFocus: cancelDeleteButton });
+function openDeleteModal() { deleteTargetDate.textContent = currentRecord?.date || recordDate; deleteDialog.open(); }
+cancelDeleteButton.addEventListener('click', deleteDialog.close);
 confirmDeleteButton.addEventListener('click', async () => {
   confirmDeleteButton.disabled = true;
   try {

@@ -7,7 +7,7 @@ const deleteModal = document.querySelector('#delete-modal');
 const deleteTargetDate = document.querySelector('#delete-target-date');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
-const { createAuthAction, displayEventTitle, escapeHtml, readableAuthError, recordAuthMessage, trashIcon } = window.UiUtils;
+const { createAuthAction, createModalController, displayEventTitle, escapeHtml, readableAuthError, recordAuthMessage, trashIcon } = window.UiUtils;
 const { loadEventData } = window.AppData;
 const weekday = new Intl.DateTimeFormat('ja-JP', { weekday: 'short' });
 let eventMap = new Map();
@@ -105,22 +105,25 @@ paginationRoot.addEventListener('click', event => {
   document.querySelector('.page-intro').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-function closeDeleteModal() { deleteModal.hidden = true; pendingDeleteDate = ''; }
+const deleteDialog = createModalController({
+  modal: deleteModal,
+  initialFocus: cancelDeleteButton,
+  onClose() { pendingDeleteDate = ''; },
+});
 listRoot.addEventListener('click', event => {
   const button = event.target.closest('[data-delete-date]');
   if (!button) return;
   pendingDeleteDate = button.dataset.deleteDate;
   deleteTargetDate.textContent = formatDateLabel(pendingDeleteDate);
-  deleteModal.hidden = false;
+  deleteDialog.open();
 });
-cancelDeleteButton.addEventListener('click', closeDeleteModal);
-deleteModal.addEventListener('click', event => { if (event.target === deleteModal) closeDeleteModal(); });
+cancelDeleteButton.addEventListener('click', deleteDialog.close);
 confirmDeleteButton.addEventListener('click', async () => {
   if (!pendingDeleteDate) return;
   confirmDeleteButton.disabled = true;
   try {
     await RecordsBackend.remove(pendingDeleteDate);
-    closeDeleteModal();
+    deleteDialog.close();
     await renderRecordsPage(activeUser);
   } catch (error) {
     deleteTargetDate.textContent = error.message || '削除できませんでした。';

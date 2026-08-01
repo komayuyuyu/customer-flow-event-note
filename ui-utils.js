@@ -63,6 +63,51 @@
     };
   }
 
+  function createModalController({ modal, initialFocus, onClose = () => {} }) {
+    const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    let returnFocus = null;
+
+    function open() {
+      returnFocus = document.activeElement;
+      modal.hidden = false;
+      (initialFocus || modal.querySelector(focusableSelector))?.focus?.();
+    }
+
+    function close() {
+      if (modal.hidden) return;
+      modal.hidden = true;
+      onClose();
+      returnFocus?.focus?.();
+      returnFocus = null;
+    }
+
+    modal.addEventListener('click', event => {
+      if (event.target === modal) close();
+    });
+    modal.addEventListener('keydown', event => {
+      if (modal.hidden) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const focusable = [...modal.querySelectorAll(focusableSelector)].filter(element => !element.hidden && !element.disabled);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+
+    return { open, close };
+  }
+
   function displayEventTitle(title, fallback = '') {
     return String(title || fallback).replace(/\b([A-Z]{3})\s*対\s*([A-Z]{3})\b/g, (_match, home, away) => {
       if (home === 'JPN' && away !== 'JPN') return `対 ${away}`;
@@ -121,6 +166,7 @@
     bindTimePlaceholders,
     combinedMemo,
     createAuthAction,
+    createModalController,
     displayEventTitle,
     escapeHtml,
     readableAuthError,

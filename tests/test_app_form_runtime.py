@@ -118,6 +118,12 @@ class AppFormRuntimeTest(unittest.TestCase):
                     window.UiUtils = {
                       bindQuietPeriodExclusivity() {},
                       bindTimePlaceholders() {},
+                      createModalController({ modal }) {
+                        return {
+                          open() { modal.hidden = false; },
+                          close() { modal.hidden = true; },
+                        };
+                      },
                       escapeHtml: value => String(value ?? ''),
                       readableAuthError: error => error?.message || '',
                       selectedQuietPeriods: () => [],

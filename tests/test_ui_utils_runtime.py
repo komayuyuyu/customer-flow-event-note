@@ -118,6 +118,57 @@ class UiUtilsRuntimeTest(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
+    def test_modal_controller_manages_focus_escape_and_tab(self):
+        script = textwrap.dedent(
+            """
+            const assert = require('node:assert/strict');
+            const fs = require('node:fs');
+            const vm = require('node:vm');
+
+            class FakeElement {
+              constructor() { this.disabled = false; this.hidden = false; this.listeners = {}; }
+              addEventListener(type, listener) { this.listeners[type] = listener; }
+              focus() { document.activeElement = this; }
+            }
+            const opener = new FakeElement();
+            const first = new FakeElement();
+            const last = new FakeElement();
+            const modal = new FakeElement();
+            modal.hidden = true;
+            modal.querySelector = () => first;
+            modal.querySelectorAll = () => [first, last];
+            global.document = { activeElement: opener };
+            global.window = {};
+            vm.runInThisContext(fs.readFileSync(process.argv[1], 'utf8'));
+
+            let closed = 0;
+            const dialog = window.UiUtils.createModalController({ modal, initialFocus: first, onClose: () => { closed += 1; } });
+            dialog.open();
+            assert.equal(modal.hidden, false);
+            assert.equal(document.activeElement, first);
+
+            document.activeElement = last;
+            let prevented = 0;
+            modal.listeners.keydown({ key: 'Tab', shiftKey: false, preventDefault() { prevented += 1; } });
+            assert.equal(document.activeElement, first);
+            assert.equal(prevented, 1);
+
+            modal.listeners.keydown({ key: 'Escape', preventDefault() { prevented += 1; } });
+            assert.equal(modal.hidden, true);
+            assert.equal(document.activeElement, opener);
+            assert.equal(closed, 1);
+            """
+        )
+        result = subprocess.run(
+            [NODE, "-e", script, str(ROOT / "ui-utils.js")],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()
