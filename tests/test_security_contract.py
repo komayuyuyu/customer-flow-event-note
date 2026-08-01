@@ -66,6 +66,7 @@ class SecurityContractTests(unittest.TestCase):
     def test_codeql_scans_javascript_on_main_and_pull_requests(self):
         workflow = (ROOT / ".github" / "workflows" / "codeql.yml").read_text(encoding="utf-8")
 
+        self.assertIn("actions/checkout@v6", workflow)
         self.assertIn("github/codeql-action/init@v4", workflow)
         self.assertIn("github/codeql-action/analyze@v4", workflow)
         self.assertIn("languages: javascript-typescript", workflow)
