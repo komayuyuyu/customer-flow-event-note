@@ -226,6 +226,7 @@ textarea:focus, input:focus { outline: 3px solid rgba(40, 76, 57, .18); border-c
 #detail-form .action-link { width: 100%; margin-top: 10px; }
 
 @media (min-width: 621px) {
+  html { scrollbar-gutter: stable; }
   .week-row.has-events .week-event { grid-template-columns: 1fr; row-gap: 3px; }
   .week-row.has-events .week-event-head { display: block; }
   .week-row.has-events .week-event-name,
