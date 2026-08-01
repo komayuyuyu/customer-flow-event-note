@@ -23,8 +23,11 @@
   }
 
   function safeExternalUrl(value) {
+    const candidate = String(value ?? '').trim();
+    if (!candidate) return '';
+
     try {
-      const url = new URL(String(value ?? '').trim(), window.location.href);
+      const url = new URL(candidate);
       const usesWebProtocol = url.protocol === 'https:' || url.protocol === 'http:';
       return usesWebProtocol && !url.username && !url.password ? url.href : '';
     } catch (_error) {
