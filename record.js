@@ -9,10 +9,12 @@ const {
   bindQuietPeriodExclusivity,
   bindTimePlaceholders,
   combinedMemo,
+  createAuthAction,
   displayEventTitle,
   escapeHtml,
   normalizeQuietPeriods,
   readableAuthError,
+  recordAuthMessage,
   renderOptions,
   selectedQuietPeriods,
   trashIcon,
@@ -153,9 +155,7 @@ async function loadRecord(user, authError) {
   activeUser = user;
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
   if (!user) {
-    const message = authError?.message === 'このGoogleアカウントには記録権限がありません。'
-      ? authError.message
-      : authError ? readableAuthError(authError) : '記録を見るにはGoogleログインが必要です。';
+    const message = recordAuthMessage(authError, '記録を見るにはGoogleログインが必要です。');
     detailRoot.innerHTML = `<p class="empty-state">${escapeHtml(message)}</p>`;
     return;
   }
@@ -172,14 +172,12 @@ async function loadRecord(user, authError) {
   if (currentRecord) renderReadOnlyView();
 }
 
-navAuthButton.addEventListener('click', async () => {
-  try {
-    if (RecordsBackend.currentUser()) await RecordsBackend.logout();
-    else await RecordsBackend.login();
-  } catch (error) {
+navAuthButton.addEventListener('click', createAuthAction({
+  backend: RecordsBackend,
+  onError(error) {
     detailRoot.innerHTML = `<p class="empty-state">${escapeHtml(readableAuthError(error))}</p>`;
-  }
-});
+  },
+}));
 
 RecordsBackend.initialize(loadRecord).catch(error => {
   detailRoot.innerHTML = `<p class="empty-state">${escapeHtml(error.message)}</p>`;

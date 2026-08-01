@@ -1,5 +1,5 @@
-const CACHE = 'customer-flow-note-v87';
-const VERSION = '20260802-1';
+const CACHE = 'customer-flow-note-v88';
+const VERSION = '20260802-2';
 const ASSETS = ['./', './records.html', './record.html', `./styles.css?v=${VERSION}`, `./app.js?v=${VERSION}`, `./app-view.js?v=${VERSION}`, `./app-date-picker.js?v=${VERSION}`, `./app-backend.js?v=${VERSION}`, `./records.js?v=${VERSION}`, `./record.js?v=${VERSION}`, `./record-store.js?v=${VERSION}`, `./records-backend.js?v=${VERSION}`, `./firebase-client.js?v=${VERSION}`, `./ui-utils.js?v=${VERSION}`, `./app-data.js?v=${VERSION}`, `./menu.js?v=${VERSION}`, `./firebase-config.js?v=${VERSION}`, './manifest.webmanifest', './icon.svg', './data/events.json', './data/store-events.json', './data/calendar-context.json'];
 
 self.addEventListener('install', event => {

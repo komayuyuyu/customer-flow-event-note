@@ -194,6 +194,61 @@ class RecordArrayRuntimeTest(unittest.TestCase):
             ROOT / "records-backend.js",
         )
 
+    @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
+    def test_local_backends_share_the_record_api_boundary(self):
+        self.run_node(
+            """
+            const assert = require('node:assert/strict');
+            const fs = require('node:fs');
+            const vm = require('node:vm');
+
+            global.window = {};
+            const requests = [];
+            global.fetch = async (path, options = {}) => {
+              requests.push({ path, options });
+              if (path.startsWith('./api/day')) return {
+                ok: true,
+                async json() {
+                  return {
+                    date: '2026-08-02',
+                    events: [],
+                    observation: { date: '2026-08-02', eventIds: [null, 'event-1'] },
+                  };
+                },
+              };
+              if (options.method === 'POST') return { ok: true, async json() { return { ok: true }; } };
+              if (options.method === 'DELETE') return { ok: true, async json() { return {}; } };
+              return { ok: true, async json() { return [{ date: '2026-08-02', eventIds: [null, 'event-1'] }]; } };
+            };
+            vm.runInThisContext(fs.readFileSync(process.argv[1], 'utf8'));
+            vm.runInThisContext(fs.readFileSync(process.argv[2], 'utf8'));
+            vm.runInThisContext(fs.readFileSync(process.argv[3], 'utf8'));
+            window.CUSTOMER_FLOW_FIREBASE_CONFIG = { enabled: false };
+            vm.runInThisContext(fs.readFileSync(process.argv[4], 'utf8'));
+
+            (async () => {
+              const appBackend = window.AppBackend.createLocalBackend({ eventsForDate: async () => [] });
+              const day = await appBackend.getDay('2026-08-02');
+              assert.deepEqual(day.observation.eventIds, ['event-1']);
+              await appBackend.saveObservation({ date: '2026-08-02', eventIds: [null, 'event-2'] });
+
+              await window.RecordsBackend.initialize();
+              const listed = await window.RecordsBackend.list();
+              const loaded = await window.RecordsBackend.get('2026-08-02');
+              await window.RecordsBackend.remove('2026-08-02');
+              assert.deepEqual(listed[0].eventIds, ['event-1']);
+              assert.deepEqual(loaded.eventIds, ['event-1']);
+              assert.equal(requests.filter(item => item.path.startsWith('./api/day')).length, 2);
+              assert.equal(requests.filter(item => item.path === './api/observations').length, 2);
+              assert.equal(requests.some(item => item.options.method === 'DELETE'), true);
+            })().catch(error => { console.error(error); process.exitCode = 1; });
+            """,
+            ROOT / "app-data.js",
+            ROOT / "record-store.js",
+            ROOT / "app-backend.js",
+            ROOT / "records-backend.js",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

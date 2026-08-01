@@ -1,7 +1,8 @@
 (function () {
   const config = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
   const { normalizeRecordArrays } = window.AppData;
-  const { createCloudRecordStore } = window.RecordStore;
+  const { createCloudRecordStore, createLocalRecordStore } = window.RecordStore;
+  const localRecords = createLocalRecordStore();
   let firebase;
   let cloudRecords;
   let currentUser;
@@ -39,39 +40,23 @@
   }
 
   async function list() {
-    if (!config.enabled) {
-      const response = await fetch('./api/observations');
-      if (!response.ok) throw new Error('記録一覧を読み込めませんでした。');
-      return (await response.json()).map(normalizeRecordArrays);
-    }
+    if (!config.enabled) return localRecords.list();
     return cloudRecords.list();
   }
 
   async function get(date) {
-    if (!config.enabled) {
-      const response = await fetch(`./api/day?date=${encodeURIComponent(date)}`);
-      if (!response.ok) throw new Error('記録を読み込めませんでした。');
-      return normalizeRecordArrays((await response.json()).observation);
-    }
+    if (!config.enabled) return localRecords.get(date);
     return cloudRecords.get(date);
   }
 
   async function save(payload) {
     const observation = normalizeRecordArrays(payload);
-    if (!config.enabled) {
-      const response = await fetch('./api/observations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(observation) });
-      if (!response.ok) throw new Error('記録を保存できませんでした。');
-      return;
-    }
+    if (!config.enabled) return localRecords.save(observation);
     await cloudRecords.save(observation);
   }
 
   async function remove(date) {
-    if (!config.enabled) {
-      const response = await fetch(`./api/observations?date=${encodeURIComponent(date)}`, { method: 'DELETE' });
-      if (!response.ok) throw new Error('記録を削除できませんでした。');
-      return;
-    }
+    if (!config.enabled) return localRecords.remove(date);
     await cloudRecords.remove(date);
   }
 

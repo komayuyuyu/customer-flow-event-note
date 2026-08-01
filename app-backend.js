@@ -1,30 +1,20 @@
 (function () {
-  const { normalizeRecordArrays } = window.AppData;
-  const { createCloudRecordStore } = window.RecordStore;
+  const { createCloudRecordStore, createLocalRecordStore } = window.RecordStore;
 
   function createLocalBackend({ eventsForDate }) {
+    const records = createLocalRecordStore({
+      messages: {
+        get: '読み込みに失敗しました',
+        save: '保存できませんでした',
+      },
+    });
     return {
       mode: 'local',
       async initialize() {},
-      async getDay(date) {
-        const response = await fetch(`./api/day?date=${encodeURIComponent(date)}`);
-        if (!response.ok) throw new Error('読み込みに失敗しました');
-        const result = await response.json();
-        return { ...result, observation: normalizeRecordArrays(result.observation) };
-      },
+      getDay: records.getDay,
       async getEvents(date) { return eventsForDate(date); },
-      async saveObservation(payload) {
-        const observation = normalizeRecordArrays(payload);
-        const response = await fetch('./api/observations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(observation) });
-        const result = await response.json();
-        if (!response.ok) throw new Error(result.error || '保存できませんでした');
-        return result;
-      },
-      async listObservations() {
-        const response = await fetch('./api/observations');
-        if (!response.ok) throw new Error('記録一覧を読み込めませんでした');
-        return (await response.json()).map(normalizeRecordArrays);
-      },
+      saveObservation: records.save,
+      listObservations: records.list,
     };
   }
 
