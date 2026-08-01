@@ -79,7 +79,7 @@ https://customer-flow-event-note.web.app/
 
 4. `app.js` / `styles.css` / HTML / Service Workerを変更した場合は、静的資産の更新番号と `sw.js` のキャッシュ名を変更する。
 5. GitHubへpushしてPull Requestの必須CIを通し、`main`へマージする。
-6. 最新`main`でFirebase Hostingへ公開する。
+6. 最新`main`でFirebase Hostingへ公開する。公開前に`hosting-public-files.json`の許可リストから`.firebase-public/`が自動生成される。
 
    ```powershell
    npx.cmd --yes firebase-tools@15.25.1 deploy --only hosting --project customer-flow-event-note
@@ -130,7 +130,9 @@ https://customer-flow-event-note.web.app/
 ## Firebase
 
 - `firebase-config.js` は公開アプリが使うFirebase設定を含む。
-- `firebase.json` は公開対象を静的アプリの必要ファイルへ限定し、クリックジャッキング、MIME推測、不要なブラウザ権限をHTTPヘッダーで拒否する。
+- `hosting-public-files.json` は本番へ配信する静的ファイルの許可リストである。画面が読み込む新しいファイルを追加した時だけ、このリストへ明示的に加える。
+- `scripts/build-hosting.mjs` は許可リストの24ファイルだけを`.firebase-public/`へコピーする。Firebase Hostingはこの生成先だけを公開するため、リポジトリ管理情報や運用ファイルは配信されない。
+- `firebase.json` は上記生成先を公開し、クリックジャッキング、MIME推測、不要なブラウザ権限をHTTPヘッダーで拒否する。
 - APIキーはFirebase Webアプリ用の公開設定であり、秘密鍵ではない。
 - APIキーはGoogle Cloud Consoleで、Firebase関連APIと次のHTTPリファラーだけに制限する。
   - `https://customer-flow-event-note.firebaseapp.com/*`
@@ -138,7 +140,7 @@ https://customer-flow-event-note.web.app/
   - `http://localhost:8000/*`
   - `http://127.0.0.1:8000/*`
 - GitHub Pagesは案内ページだけを配信しFirebase APIを呼ばないため、GitHub Pages用リファラーをAPIキー制限へ追加しない。
-- 公開対象は`firebase.json`の`hosting.ignore`で制限する。README、運用資料、テスト、候補データ、Firestoreルールを本番URLから配信しない。
+- 公開対象は`hosting-public-files.json`の許可リストで制限する。README、運用資料、テスト、候補データ、Firestoreルールを本番URLから配信しない。
 - Firestoreルールのテンプレートは `firebase/firestore.rules` に置く。
 - 実デプロイ時は `__ALLOWED_UID__` を所有者UIDへ置換したルールをFirebaseへ反映する。
 - Firestoreルールを変更した時は、Firebase Consoleの構文検査を通し、公開後に未認証RESTアクセスが `403` になることを確認する。

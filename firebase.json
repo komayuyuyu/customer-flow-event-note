@@ -1,35 +1,14 @@
 {
   "hosting": {
     "site": "customer-flow-event-note",
-    "public": ".",
+    "public": ".firebase-public",
+    "predeploy": [
+      "node scripts/build-hosting.mjs"
+    ],
     "ignore": [
       "firebase.json",
-      ".firebaserc",
-      ".gitignore",
-      ".nojekyll",
-      ".git",
-      ".git/**",
-      ".firebase",
-      ".firebase/**",
-      "firebase-debug.log*",
-      "__pycache__",
-      "__pycache__/**",
-      "**/__pycache__/**",
-      "*.py[cod]",
-      "**/*.py[cod]",
       "**/.*",
-      "**/node_modules/**",
-      ".github/**",
-      "firebase/**",
-      "scripts/**",
-      "tests/**",
-      "README.md",
-      "OPERATIONS.md",
-      "CODEMAP.md",
-      "event-data-format.md",
-      "impact.py",
-      "data/candidates.json",
-      "data/event-source-registry.json"
+      "**/node_modules/**"
     ],
     "headers": [
       {

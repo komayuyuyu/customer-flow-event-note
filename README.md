@@ -27,7 +27,7 @@ https://customer-flow-event-note.web.app/
 - `index.html`: ホーム、今日の注目イベント、1週間の予定、集客記録フォーム
 - `records.html`: 記録一覧
 - `record.html`: 記録詳細
-- `404.html`: 存在しないURLの案内
+- `404.html`: Firebase Hostingで存在しないURLを開いた時の案内
 - `app.js`: ホーム画面と記録保存
 - `app-date-picker.js`: 記録日のカレンダー表示と選択操作
 - `app-view.js`: イベントカードと週間予定の表示生成
@@ -36,6 +36,8 @@ https://customer-flow-event-note.web.app/
 - `firebase-client.js`: Firebase SDK・Google認証の共通初期化
 - `firebase.json`: Firebase Hostingの公開範囲とセキュリティヘッダー
 - `.firebaserc`: 公開先Firebaseプロジェクト
+- `hosting-public-files.json`: 本番へ配信する静的ファイルの許可リスト
+- `scripts/build-hosting.mjs`: 許可リストからHosting用成果物を生成
 - `firebase/firestore.rules`: 所有者・項目・型・文字数を検証するFirestoreルールテンプレート
 - `.github/workflows/codeql.yml`: JavaScriptの継続的なセキュリティスキャン
 - `.github/workflows/quality.yml`: Pythonテスト・JavaScript構文・JSON構文の自動検査

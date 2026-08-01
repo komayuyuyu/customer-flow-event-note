@@ -11,7 +11,8 @@ class SecurityContractTests(unittest.TestCase):
         config = json.loads((ROOT / "firebase.json").read_text(encoding="utf-8"))
         hosting = config["hosting"]
         self.assertEqual(hosting["site"], "customer-flow-event-note")
-        self.assertEqual(hosting["public"], ".")
+        self.assertEqual(hosting["public"], ".firebase-public")
+        self.assertEqual(hosting["predeploy"], ["node scripts/build-hosting.mjs"])
 
         headers = {
             header["key"].lower(): header["value"]
@@ -25,31 +26,22 @@ class SecurityContractTests(unittest.TestCase):
         self.assertEqual(headers["referrer-policy"], "strict-origin-when-cross-origin")
         self.assertEqual(headers["permissions-policy"], "camera=(), microphone=(), geolocation=()")
 
-        ignored = set(hosting["ignore"])
+        manifest = json.loads((ROOT / "hosting-public-files.json").read_text(encoding="utf-8"))
+        public_files = manifest["files"]
+        self.assertEqual(len(public_files), 24)
+        self.assertEqual(len(public_files), len(set(public_files)))
+        for public_file in public_files:
+            self.assertTrue((ROOT / public_file).is_file(), public_file)
         for private_path in (
-            ".git",
-            ".git/**",
-            ".firebase",
-            ".firebase/**",
-            "firebase-debug.log*",
-            "__pycache__",
-            "__pycache__/**",
-            "**/__pycache__/**",
-            "*.py[cod]",
-            "**/*.py[cod]",
-            ".github/**",
-            "firebase/**",
-            "scripts/**",
-            "tests/**",
+            ".git/HEAD",
+            ".firebase/hosting..cache",
             "README.md",
             "OPERATIONS.md",
-            "CODEMAP.md",
-            "event-data-format.md",
-            "impact.py",
+            "firebase/firestore.rules",
             "data/candidates.json",
-            "data/event-source-registry.json",
+            "tests/test_security_contract.py",
         ):
-            self.assertIn(private_path, ignored)
+            self.assertNotIn(private_path, public_files)
 
     def test_firestore_rules_restrict_owner_and_observation_shape(self):
         rules = (ROOT / "firebase" / "firestore.rules").read_text(encoding="utf-8")

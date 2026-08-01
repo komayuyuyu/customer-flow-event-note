@@ -9,7 +9,7 @@
 - `app-view.js`: ホーム画面のイベントカードと週間予定のHTML生成を扱う。
 - `records.html` / `records.js`: 記録一覧。
 - `record.html` / `record.js`: 記録詳細と編集。
-- `404.html`: GitHub Pagesで存在しないURLを開いた時の案内。
+- `404.html`: Firebase Hostingで存在しないURLを開いた時の案内。
 - `styles.css`: 3画面共通の見た目。
 - `menu.js`: 共通メニュー。
 
@@ -30,5 +30,7 @@
 - `data/calendar-context.json`: 祝日・大型連休。
 - `scripts/evaluate_candidates.py`: 候補を評価して `events.json` へ反映。
 - `scripts/check_project_contracts.py`: スクリプト読込順、保守性、アクセシビリティ契約を検査するCI用処理。
+- `hosting-public-files.json`: Firebase Hostingへ配信する静的ファイルの許可リスト。
+- `scripts/build-hosting.mjs`: 許可リストから`.firebase-public/`へ公開成果物を生成。
 
 更新手順は [OPERATIONS.md](OPERATIONS.md) を参照します。画面を変えない整理では、まず `node --check` とPythonテストを実行し、次にPC・スマホ幅でホーム／一覧／詳細を確認します。
