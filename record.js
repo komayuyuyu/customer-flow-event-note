@@ -20,6 +20,7 @@ const {
 const { enrichLegacyRecord } = window.AppData;
 const recordDate = new URLSearchParams(location.search).get('date') || '';
 let currentRecord;
+let saveInProgress = false;
 
 function renderDetailRow(label, content, className = '') {
   return `<div class="detail-row ${className}"><dt>${escapeHtml(label)}</dt><dd>${content || '—'}</dd></div>`;
@@ -112,7 +113,11 @@ function renderEditForm() {
   document.querySelector('#cancel-button').addEventListener('click', renderReadOnlyView);
   document.querySelector('#detail-form').addEventListener('submit', async event => {
     event.preventDefault();
+    if (saveInProgress) return;
+    const submitButton = event.submitter || event.currentTarget?.querySelector('button[type="submit"]');
     const status = document.querySelector('#edit-status');
+    saveInProgress = true;
+    if (submitButton) submitButton.disabled = true;
     try {
       const updatedRecord = editedRecord();
       await RecordsBackend.save(updatedRecord);
@@ -121,6 +126,9 @@ function renderEditForm() {
     } catch (error) {
       status.textContent = error.message;
       status.classList.add('error');
+    } finally {
+      saveInProgress = false;
+      if (submitButton) submitButton.disabled = false;
     }
   });
 }
