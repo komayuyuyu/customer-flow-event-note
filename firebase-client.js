@@ -1,5 +1,5 @@
 (function () {
-  const FIREBASE_SDK_VERSION = '12.15.0';
+  const FIREBASE_SDK_VERSION = '12.17.0';
   let sdkPromise;
 
   function isConfigured(config) {
