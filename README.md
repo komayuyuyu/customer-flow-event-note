@@ -5,7 +5,7 @@
 ## 構成
 
 - 静的Webアプリ: GitHub Pages
-- 記録保存: Firebase Authentication + Cloud Firestore
+- 記録保存: Firebase Authentication + Cloud Firestore + App Check
 - イベント予定: `data/events.json`
 - 勤務カレンダー由来の店頭・館イベント: `data/store-events.json`
 - 祝日・大型連休: `data/calendar-context.json`
@@ -30,6 +30,8 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `app-view.js`: イベントカードと週間予定の表示生成
 - `app-backend.js`: ホーム画面のデータ取得・記録保存
 - `firebase-client.js`: Firebase SDK・Google認証の共通初期化
+- `firebase/firestore.rules`: 所有者・項目・型・文字数を検証するFirestoreルールテンプレート
+- `.github/workflows/codeql.yml`: JavaScriptの継続的なセキュリティスキャン
 - `records.js`: 記録一覧
 - `record.js`: 記録詳細・編集
 - `records-backend.js`: Firebase/ローカル互換の記録処理

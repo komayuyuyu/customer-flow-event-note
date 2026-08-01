@@ -22,6 +22,16 @@
     return String(value ?? '').replace(/[&<>'"]/g, character => HTML_ESCAPE_MAP[character]);
   }
 
+  function safeExternalUrl(value) {
+    try {
+      const url = new URL(String(value ?? '').trim(), window.location.href);
+      const usesWebProtocol = url.protocol === 'https:' || url.protocol === 'http:';
+      return usesWebProtocol && !url.username && !url.password ? url.href : '';
+    } catch (_error) {
+      return '';
+    }
+  }
+
   function readableAuthError(error) {
     if (error?.code === 'auth/popup-closed-by-user') return 'ログイン画面が閉じられました。';
     if (error?.code === 'auth/popup-blocked') return 'ログイン画面を開けませんでした。ブラウザでポップアップを許可して、もう一度お試しください。';
@@ -67,6 +77,7 @@
     escapeHtml,
     readableAuthError,
     renderOptions,
+    safeExternalUrl,
     syncTimePlaceholders,
     trashIcon,
   };

@@ -6,5 +6,11 @@ window.CUSTOMER_FLOW_FIREBASE_CONFIG = {
     "projectId": "customer-flow-event-note",
     "appId": "1:766604675895:web:04039db41b5244f71a68b2"
   },
+  "appCheck": {
+    "enabled": true,
+    "provider": "recaptcha-enterprise",
+    "siteKey": "6LcCo28tAAAAAJzubrsGWw28dY9osUH574_1I-Zy",
+    "tokenAutoRefresh": true
+  },
   "allowedUid": "oOPQbgmbcEVAfPKJpkUgZuZNux02"
 };

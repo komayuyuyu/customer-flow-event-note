@@ -12,9 +12,10 @@
       const root = `https://www.gstatic.com/firebasejs/${FIREBASE_SDK_VERSION}`;
       sdkPromise = Promise.all([
         import(`${root}/firebase-app.js`),
+        import(`${root}/firebase-app-check.js`),
         import(`${root}/firebase-auth.js`),
         import(`${root}/firebase-firestore.js`),
-      ]).then(([appSdk, authSdk, firestoreSdk]) => ({ appSdk, authSdk, firestoreSdk }));
+      ]).then(([appSdk, appCheckSdk, authSdk, firestoreSdk]) => ({ appSdk, appCheckSdk, authSdk, firestoreSdk }));
     }
     return sdkPromise;
   }
@@ -25,8 +26,15 @@
       onUserChange = () => {},
       unauthorizedMessage = '',
     } = options;
-    const { appSdk, authSdk, firestoreSdk } = await loadSdk();
+    const { appSdk, appCheckSdk, authSdk, firestoreSdk } = await loadSdk();
     const app = appSdk.initializeApp(config.firebase);
+    if (config.appCheck?.enabled && config.appCheck.siteKey) {
+      const provider = new appCheckSdk.ReCaptchaEnterpriseProvider(config.appCheck.siteKey);
+      appCheckSdk.initializeAppCheck(app, {
+        provider,
+        isTokenAutoRefreshEnabled: config.appCheck.tokenAutoRefresh !== false,
+      });
+    }
     const auth = authSdk.getAuth(app);
     const db = firestoreSdk.getFirestore(app);
     const provider = new authSdk.GoogleAuthProvider();
