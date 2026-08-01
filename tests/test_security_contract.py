@@ -16,6 +16,8 @@ class SecurityContractTests(unittest.TestCase):
         self.assertIn("data.trafficLevel in ['暇', '通常', '混雑']", rules)
         self.assertIn("isOptionalShortString(data, 'note', 600)", rules)
         self.assertIn("isOptionalList(data, 'relatedEvents', 64)", rules)
+        self.assertIn("!data.quietPeriods.toSet().hasAny(['特になし'])", rules)
+        self.assertIn("data.quietPeriods.toSet().hasOnly(['特になし'])", rules)
         self.assertIn("data.updatedAt == request.time", rules)
 
     def test_external_event_links_are_scheme_limited_and_isolated(self):

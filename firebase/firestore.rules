@@ -63,7 +63,9 @@ service cloud.firestore {
         && isOptionalList(data, 'relatedEvents', 64)
         && isOptionalList(data, 'quietPeriods', 5)
         && (!('quietPeriods' in data)
-          || data.quietPeriods.toSet().hasOnly(['午前', '昼', '夕方', '終日', '特になし']))
+          || (data.quietPeriods.toSet().hasOnly(['午前', '昼', '夕方', '終日', '特になし'])
+            && (!data.quietPeriods.toSet().hasAny(['特になし'])
+              || data.quietPeriods.toSet().hasOnly(['特になし']))))
         && isOptionalList(data, 'calendarContext', 16)
         && data.updatedAt is timestamp
         && data.updatedAt == request.time;

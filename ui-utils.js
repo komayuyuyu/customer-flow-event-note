@@ -9,6 +9,7 @@
 
   const trashIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M5.5 7l1.2 12a1.2 1.2 0 0 0 1.2 1h8.2a1.2 1.2 0 0 0 1.2-1l1.2-12M9.5 11v5M14.5 11v5"/></svg>';
   const TIME_INPUT_SELECTOR = '.time-input-wrap input[type="time"]';
+  const QUIET_PERIOD_NONE = '特になし';
   const FORM_OPTIONS = {
     accuracy: ['予測どおり', '一部当たった', '外れた', '未判断'],
     eventImpact: ['感じた', '感じなかった', 'わからない', '対象外'],
@@ -61,6 +62,28 @@
     return values.map(value => `<option${value === selected ? ' selected' : ''}>${escapeHtml(value)}</option>`).join('');
   }
 
+  function normalizeQuietPeriods(values = []) {
+    const uniqueValues = [...new Set(Array.isArray(values) ? values : [])];
+    if (uniqueValues.length <= 1 || !uniqueValues.includes(QUIET_PERIOD_NONE)) return uniqueValues;
+    return uniqueValues.filter(value => value !== QUIET_PERIOD_NONE);
+  }
+
+  function selectedQuietPeriods(root = document) {
+    const values = [...root.querySelectorAll('[name="period"]:checked')].map(input => input.value);
+    return normalizeQuietPeriods(values);
+  }
+
+  function bindQuietPeriodExclusivity(root = document) {
+    root.addEventListener('change', event => {
+      const target = event.target;
+      if (target?.name !== 'period' || !target.checked) return;
+      root.querySelectorAll('[name="period"]').forEach(input => {
+        const conflictsWithSelection = target.value === QUIET_PERIOD_NONE || input.value === QUIET_PERIOD_NONE;
+        if (input !== target && conflictsWithSelection) input.checked = false;
+      });
+    });
+  }
+
   function syncTimePlaceholders(root = document) {
     root.querySelectorAll(TIME_INPUT_SELECTOR).forEach(input => {
       input.closest('.time-input-wrap').classList.toggle('is-empty', !input.value);
@@ -77,6 +100,7 @@
 
   window.UiUtils = {
     FORM_OPTIONS,
+    bindQuietPeriodExclusivity,
     bindTimePlaceholders,
     combinedMemo,
     displayEventTitle,
@@ -84,6 +108,8 @@
     readableAuthError,
     renderOptions,
     safeExternalUrl,
+    normalizeQuietPeriods,
+    selectedQuietPeriods,
     syncTimePlaceholders,
     trashIcon,
   };
