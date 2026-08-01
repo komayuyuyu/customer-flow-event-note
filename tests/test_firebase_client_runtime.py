@@ -148,6 +148,81 @@ class FirebaseClientRuntimeTest(unittest.TestCase):
             """
         )
 
+    @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
+    def test_auth_operations_are_deduplicated_while_pending(self):
+        self.run_node(
+            """
+            const assert = require('node:assert/strict');
+            const fs = require('node:fs');
+            const vm = require('node:vm');
+
+            global.window = {};
+            vm.runInThisContext(fs.readFileSync(process.argv[1], 'utf8'));
+
+            let loginCalls = 0;
+            let logoutCalls = 0;
+            let releaseLogin;
+            let releaseLogout;
+            let loginGate = new Promise(resolve => { releaseLogin = resolve; });
+            let logoutGate = new Promise(resolve => { releaseLogout = resolve; });
+            const auth = {};
+            class GoogleAuthProvider { setCustomParameters() {} }
+            const sdk = {
+              appSdk: { initializeApp: () => ({}) },
+              appCheckSdk: {
+                ReCaptchaEnterpriseProvider: class {},
+                initializeAppCheck: () => {},
+              },
+              authSdk: {
+                GoogleAuthProvider,
+                browserLocalPersistence: 'local',
+                getAuth: () => auth,
+                setPersistence: async () => {},
+                getRedirectResult: async () => null,
+                onAuthStateChanged: () => {},
+                async signInWithPopup() {
+                  loginCalls += 1;
+                  await loginGate;
+                },
+                async signOut() {
+                  logoutCalls += 1;
+                  await logoutGate;
+                },
+              },
+              firestoreSdk: { getFirestore: () => 'db' },
+            };
+
+            (async () => {
+              const client = await window.FirebaseClient.create({
+                enabled: true,
+                firebase: { apiKey: 'public', authDomain: 'example', projectId: 'project', appId: 'app' },
+              }, {}, async () => sdk);
+
+              const firstLogin = client.login();
+              const duplicateLogin = client.login();
+              await new Promise(resolve => setImmediate(resolve));
+              assert.equal(loginCalls, 1);
+              releaseLogin();
+              await Promise.all([firstLogin, duplicateLogin]);
+
+              loginGate = Promise.resolve();
+              await client.login();
+              assert.equal(loginCalls, 2);
+
+              const firstLogout = client.logout();
+              const duplicateLogout = client.logout();
+              await new Promise(resolve => setImmediate(resolve));
+              assert.equal(logoutCalls, 1);
+              releaseLogout();
+              await Promise.all([firstLogout, duplicateLogout]);
+
+              logoutGate = Promise.resolve();
+              await client.logout();
+              assert.equal(logoutCalls, 2);
+            })().catch(error => { console.error(error); process.exitCode = 1; });
+            """
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
