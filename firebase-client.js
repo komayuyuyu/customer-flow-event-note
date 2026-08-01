@@ -51,6 +51,8 @@
     }
     let currentUser = null;
     let authError = null;
+    let loginPromise;
+    let logoutPromise;
     let notificationsEnabled = false;
     let initialAuthResolved = false;
     let initialNotificationSent = false;
@@ -82,6 +84,24 @@
       }
     });
 
+    async function login() {
+      if (!loginPromise) loginPromise = authSdk.signInWithPopup(auth, provider);
+      try {
+        return await loginPromise;
+      } finally {
+        loginPromise = null;
+      }
+    }
+
+    async function logout() {
+      if (!logoutPromise) logoutPromise = authSdk.signOut(auth);
+      try {
+        return await logoutPromise;
+      } finally {
+        logoutPromise = null;
+      }
+    }
+
     return {
       authSdk,
       dataServices,
@@ -94,8 +114,8 @@
         }
         return currentUser;
       },
-      async login() { return authSdk.signInWithPopup(auth, provider); },
-      async logout() { return authSdk.signOut(auth); },
+      login,
+      logout,
       currentUser() { return currentUser; },
     };
   }
