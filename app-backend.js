@@ -1,5 +1,6 @@
 (function () {
   const { normalizeRecordArrays } = window.AppData;
+  const { createCloudRecordStore } = window.RecordStore;
 
   function createLocalBackend({ eventsForDate }) {
     return {
@@ -33,6 +34,10 @@
       onUserChange,
       unauthorizedMessage: 'このGoogleアカウントには記録権限がありません。',
     });
+    const records = createCloudRecordStore({
+      currentUser: firebase.currentUser,
+      dataServices: firebase.dataServices,
+    });
 
     return {
       mode: 'cloud',
@@ -41,35 +46,15 @@
       logout: firebase.logout,
       async getDay(date) {
         const events = await eventsForDate(date);
-        let observation = null;
-        const user = firebase.currentUser();
-        if (user) {
-          const { db, firestoreSdk } = firebase.dataServices();
-          const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', date);
-          const snapshot = await firestoreSdk.getDoc(reference);
-          if (snapshot.exists()) observation = normalizeRecordArrays(snapshot.data());
-        }
+        const observation = await records.get(date, { allowAnonymous: true });
         return { date, events, observation };
       },
       async getEvents(date) { return eventsForDate(date); },
       async saveObservation(payload) {
-        const user = firebase.currentUser();
-        if (!user) throw new Error('記録するにはGoogleログインが必要です。');
-        const { db, firestoreSdk } = firebase.dataServices();
-        const normalizedPayload = normalizeRecordArrays(payload);
-        const observation = { ...normalizedPayload, ownerUid: user.uid, updatedAt: firestoreSdk.serverTimestamp() };
-        const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', normalizedPayload.date);
-        await firestoreSdk.setDoc(reference, observation, { merge: true });
+        const observation = await records.save(payload);
         return { ok: true, observation };
       },
-      async listObservations() {
-        const user = firebase.currentUser();
-        if (!user) return [];
-        const { db, firestoreSdk } = firebase.dataServices();
-        const collection = firestoreSdk.collection(db, 'users', user.uid, 'observations');
-        const snapshot = await firestoreSdk.getDocs(collection);
-        return snapshot.docs.map(item => normalizeRecordArrays(item.data())).sort((a, b) => String(b.date).localeCompare(String(a.date)));
-      },
+      async listObservations() { return records.list({ allowAnonymous: true }); },
     };
   }
 
