@@ -114,8 +114,9 @@ function renderEditForm() {
     event.preventDefault();
     const status = document.querySelector('#edit-status');
     try {
-      currentRecord = editedRecord();
-      await RecordsBackend.save(currentRecord);
+      const updatedRecord = editedRecord();
+      await RecordsBackend.save(updatedRecord);
+      currentRecord = updatedRecord;
       renderReadOnlyView();
     } catch (error) {
       status.textContent = error.message;

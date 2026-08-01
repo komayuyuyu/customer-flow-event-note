@@ -231,6 +231,7 @@ class RecordPagesRuntimeTest(unittest.TestCase):
             };
             let initialized;
             let savedRecord;
+            let rejectSave = true;
             const removedDates = [];
             global.RecordsBackend = {
               currentUser: () => ({ uid: 'owner' }),
@@ -245,7 +246,10 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               login: async () => {},
               logout: async () => {},
               remove: async date => { removedDates.push(date); },
-              save: async record => { savedRecord = record; },
+              save: async record => {
+                savedRecord = record;
+                if (rejectSave) throw new Error('保存に失敗しました。');
+              },
             };
 
             vm.runInThisContext(fs.readFileSync(process.argv[2], 'utf8'));
@@ -269,6 +273,15 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               assert.match(detail.innerHTML, /class="detail-grid"/);
               assert.doesNotMatch(detail.innerHTML, /<form id="detail-form">/);
 
+              elements.get('#edit-button').dispatch('click');
+              await elements.get('#detail-form').dispatch('submit', { preventDefault() {} });
+              assert.equal(elements.get('#edit-status').textContent, '保存に失敗しました。');
+              assert.equal(elements.get('#edit-status').addedClass, 'error');
+              elements.get('#cancel-button').dispatch('click');
+              assert.match(detail.innerHTML, /&lt;script&gt;alert\(1\)&lt;\/script&gt;/);
+              assert.doesNotMatch(detail.innerHTML, /更新後メモ/);
+
+              rejectSave = false;
               elements.get('#edit-button').dispatch('click');
               await elements.get('#detail-form').dispatch('submit', { preventDefault() {} });
               assert.equal(savedRecord.trafficLevel, '混雑');
