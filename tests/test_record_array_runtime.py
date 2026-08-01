@@ -115,10 +115,14 @@ class RecordArrayRuntimeTest(unittest.TestCase):
             };
             const writes = [];
             const deletions = [];
+            let getDocCount = 0;
             const firestoreSdk = {
               doc: (...parts) => parts.join('/'),
               collection: (...parts) => parts.join('/'),
-              getDoc: async () => ({ exists: () => true, data: () => invalidRecord }),
+              getDoc: async () => {
+                getDocCount += 1;
+                return { exists: () => true, data: () => invalidRecord };
+              },
               getDocs: async () => ({ docs: [{ data: () => invalidRecord }] }),
               setDoc: async (_reference, value) => { writes.push(value); },
               deleteDoc: async reference => { deletions.push(reference); },
@@ -146,8 +150,8 @@ class RecordArrayRuntimeTest(unittest.TestCase):
               });
               await backend.initialize();
               const day = await backend.getDay('2026-01-01');
-              assert.deepEqual(day.observation.eventIds, ['event-1']);
-              assert.deepEqual(day.observation.calendarContext, [{ type: '祝日', label: '元日' }]);
+              assert.deepEqual(day, { date: '2026-01-01', events: [] });
+              assert.equal(getDocCount, 0);
               await backend.saveObservation({
                 date: '2026-01-01',
                 eventIds: [null, ' event-2 '],
@@ -164,6 +168,7 @@ class RecordArrayRuntimeTest(unittest.TestCase):
               await window.RecordsBackend.initialize();
               const listed = await window.RecordsBackend.list();
               const loaded = await window.RecordsBackend.get('2026-01-01');
+              assert.equal(getDocCount, 1);
               assert.deepEqual(listed[0].eventIds, ['event-1']);
               assert.deepEqual(loaded.relatedEvents, [
                 { id: 'event-1', title: 'イベント', status: '実施済み' },

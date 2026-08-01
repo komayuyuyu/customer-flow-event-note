@@ -39,16 +39,16 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260801-15", html)
-            self.assertIn("ui-utils.js?v=20260801-15", html)
-            self.assertIn("app-data.js?v=20260801-15", html)
-            self.assertIn("record-store.js?v=20260801-15", html)
-            self.assertIn("firebase-client.js?v=20260801-15", html)
+            self.assertIn("styles.css?v=20260801-16", html)
+            self.assertIn("ui-utils.js?v=20260801-16", html)
+            self.assertIn("app-data.js?v=20260801-16", html)
+            self.assertIn("record-store.js?v=20260801-16", html)
+            self.assertIn("firebase-client.js?v=20260801-16", html)
             self.assertLess(html.index("record-store.js"), html.index("firebase-client.js"))
             if name == "index.html":
-                self.assertIn("app-view.js?v=20260801-15", html)
-                self.assertIn("app-date-picker.js?v=20260801-15", html)
-                self.assertIn("app-backend.js?v=20260801-15", html)
+                self.assertIn("app-view.js?v=20260801-16", html)
+                self.assertIn("app-date-picker.js?v=20260801-16", html)
+                self.assertIn("app-backend.js?v=20260801-16", html)
                 self.assertLess(html.index("app-date-picker.js"), html.index("app.js"))
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
@@ -58,8 +58,8 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v74';", service_worker)
-        self.assertIn("const VERSION = '20260801-15';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v75';", service_worker)
+        self.assertIn("const VERSION = '20260801-16';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("app-view.js?v=${VERSION}", service_worker)
         self.assertIn("app-date-picker.js?v=${VERSION}", service_worker)
@@ -69,7 +69,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("record-store.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
         app_controller = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260801-15'", app_controller)
+        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260801-16'", app_controller)
 
     def test_event_update_tooling_is_present(self):
         self.assertTrue((ROOT / "impact.py").is_file())
@@ -77,6 +77,14 @@ class StaticContractTest(unittest.TestCase):
         self.assertTrue((ROOT / "data" / "candidates.json").is_file())
         candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))
         self.assertIsInstance(candidates, list)
+
+    def test_home_form_stays_empty_without_loading_an_unused_record(self):
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        backend = (ROOT / "app-backend.js").read_text(encoding="utf-8")
+
+        self.assertIn("function resetObservationForm()", app)
+        self.assertNotIn("function fillObservation", app)
+        self.assertNotIn("await records.get(date", backend)
 
     def test_visible_event_copy_excludes_internal_production_notes(self):
         candidates = json.loads((ROOT / "data" / "candidates.json").read_text(encoding="utf-8"))

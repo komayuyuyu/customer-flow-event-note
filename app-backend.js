@@ -46,8 +46,7 @@
       logout: firebase.logout,
       async getDay(date) {
         const events = await eventsForDate(date);
-        const observation = await records.get(date, { allowAnonymous: true });
-        return { date, events, observation };
+        return { date, events };
       },
       async getEvents(date) { return eventsForDate(date); },
       async saveObservation(payload) {

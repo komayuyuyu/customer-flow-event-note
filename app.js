@@ -2,9 +2,7 @@ const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
 const {
   bindQuietPeriodExclusivity,
   bindTimePlaceholders,
-  combinedMemo,
   escapeHtml,
-  normalizeQuietPeriods,
   readableAuthError,
   selectedQuietPeriods,
   syncTimePlaceholders,
@@ -102,11 +100,6 @@ function clearImpactTimeFields() {
 function setImpactTimeFieldsDisabled(disabled) {
   impactStartInput.disabled = disabled;
   impactEndInput.disabled = disabled;
-}
-
-function setImpactTimeValues(observation = {}) {
-  impactStartInput.value = observation.actualImpactStart || '';
-  impactEndInput.value = observation.actualImpactEnd || '';
 }
 
 function impactTimeValues() {
@@ -264,24 +257,10 @@ function clearForm() {
   saveActions.hidden = true;
 }
 
-function fillObservation(observation) {
+function resetObservationForm() {
   clearForm();
-  if (!observation) {
-    setChecked('weather', '不明');
-    setChecked('accuracy', '未判断');
-    return;
-  }
-  setChecked('traffic', observation.trafficLevel);
-  setChecked('weather', observation.weather);
-  setChecked('accuracy', observation.accuracy);
-  setChecked('eventImpact', observation.eventImpact);
-  for (const period of normalizeQuietPeriods(observation.quietPeriods)) setChecked('period', period);
-  setImpactTimeValues(observation);
-  syncTimePlaceholders();
-  note.value = combinedMemo(observation);
-  noteCount.textContent = `${note.value.length} / 600`;
-  const statuses = Object.fromEntries((observation.relatedEvents || []).map(item => [item.id, item.status]));
-  if (currentEvents.length) renderRelatedEvents(currentEvents, statuses);
+  setChecked('weather', '不明');
+  setChecked('accuracy', '未判断');
 }
 
 async function loadDay() {
@@ -295,7 +274,7 @@ async function loadDay() {
     const data = await backend.getDay(dateInput.value);
     const dateContext = await contextForDate(dateInput.value);
     renderEvents(data.events || [], dateContext);
-    fillObservation(null);
+    resetObservationForm();
     setRecordAccess(currentUser);
     if (checkedValue('eventImpact') === '感じなかった') {
       setImpactTimeFieldsDisabled(true);
@@ -385,7 +364,7 @@ form.addEventListener('submit', async event => {
     await backend.saveObservation(payload);
     saveStatus.textContent = '';
     detailLink.href = `./record.html?date=${encodeURIComponent(payload.date)}`;
-    fillObservation(null);
+    resetObservationForm();
     updateRecordMode(currentEvents);
     saveActions.hidden = false;
   } catch (error) {
@@ -424,7 +403,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-15', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-16', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
