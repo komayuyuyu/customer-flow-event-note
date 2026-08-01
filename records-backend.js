@@ -1,5 +1,6 @@
 (function () {
   const config = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
+  const { normalizeRecordArrays } = window.AppData;
   let firebase;
   let currentUser;
 
@@ -42,39 +43,40 @@
     if (!config.enabled) {
       const response = await fetch('./api/observations');
       if (!response.ok) throw new Error('記録一覧を読み込めませんでした。');
-      return response.json();
+      return (await response.json()).map(normalizeRecordArrays);
     }
     const user = requireCurrentUser();
     const { db, firestoreSdk } = protectedFirestore();
     const collection = firestoreSdk.collection(db, 'users', user.uid, 'observations');
     const snapshot = await firestoreSdk.getDocs(collection);
-    return snapshot.docs.map(item => item.data()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    return snapshot.docs.map(item => normalizeRecordArrays(item.data())).sort((a, b) => String(b.date).localeCompare(String(a.date)));
   }
 
   async function get(date) {
     if (!config.enabled) {
       const response = await fetch(`./api/day?date=${encodeURIComponent(date)}`);
       if (!response.ok) throw new Error('記録を読み込めませんでした。');
-      return (await response.json()).observation;
+      return normalizeRecordArrays((await response.json()).observation);
     }
     const user = requireCurrentUser();
     const { db, firestoreSdk } = protectedFirestore();
     const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', date);
     const snapshot = await firestoreSdk.getDoc(reference);
-    return snapshot.exists() ? snapshot.data() : null;
+    return snapshot.exists() ? normalizeRecordArrays(snapshot.data()) : null;
   }
 
   async function save(payload) {
+    const observation = normalizeRecordArrays(payload);
     if (!config.enabled) {
-      const response = await fetch('./api/observations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const response = await fetch('./api/observations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(observation) });
       if (!response.ok) throw new Error('記録を保存できませんでした。');
       return;
     }
     const user = requireCurrentUser();
     const { db, firestoreSdk } = protectedFirestore();
-    const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', payload.date);
+    const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', observation.date);
     await firestoreSdk.setDoc(reference, {
-      ...payload,
+      ...observation,
       ownerUid: user.uid,
       updatedAt: firestoreSdk.serverTimestamp(),
     }, { merge: true });

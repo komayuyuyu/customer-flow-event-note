@@ -1,7 +1,64 @@
 (function () {
   const EVENT_DATA_PATHS = ['./data/events.json', './data/store-events.json'];
+  const MAX_EVENT_REFERENCES = 64;
+  const MAX_CALENDAR_CONTEXTS = 16;
+  const EVENT_STATUSES = new Set(['実施予定', '実施済み', '中止', '延期']);
   let calendarContextPromise;
   let eventDataPromise;
+
+  function normalizedText(value) {
+    return typeof value === 'string' ? value.trim() : '';
+  }
+
+  function normalizeEventIds(value) {
+    if (!Array.isArray(value)) return [];
+    return [...new Set(value.map(normalizedText).filter(Boolean))].slice(0, MAX_EVENT_REFERENCES);
+  }
+
+  function normalizeRelatedEvents(value) {
+    if (!Array.isArray(value)) return [];
+    const byId = new Map();
+    for (const item of value) {
+      if (!item || typeof item !== 'object' || Array.isArray(item)) continue;
+      const id = normalizedText(item.id);
+      if (!id) continue;
+      const status = normalizedText(item.status);
+      byId.set(id, {
+        id,
+        title: normalizedText(item.title) || '関連イベント',
+        status: EVENT_STATUSES.has(status) ? status : '実施済み',
+      });
+    }
+    return [...byId.values()].slice(0, MAX_EVENT_REFERENCES);
+  }
+
+  function normalizeCalendarContext(value) {
+    if (!Array.isArray(value)) return [];
+    const byKey = new Map();
+    for (const item of value) {
+      if (!item || typeof item !== 'object' || Array.isArray(item)) continue;
+      const type = normalizedText(item.type);
+      const label = normalizedText(item.label);
+      if (!type || !label) continue;
+      byKey.set(`${type}\u0000${label}`, { type, label });
+    }
+    return [...byKey.values()].slice(0, MAX_CALENDAR_CONTEXTS);
+  }
+
+  function normalizeRecordArrays(item) {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) return item;
+    const relatedEvents = normalizeRelatedEvents(item.relatedEvents);
+    const eventIds = normalizeEventIds([
+      ...(Array.isArray(item.eventIds) ? item.eventIds : []),
+      ...relatedEvents.map(event => event.id),
+    ]);
+    return {
+      ...item,
+      eventIds,
+      relatedEvents: relatedEvents.filter(event => eventIds.includes(event.id)),
+      calendarContext: normalizeCalendarContext(item.calendarContext),
+    };
+  }
 
   async function fetchJson(path, { fallback, errorMessage } = {}) {
     try {
@@ -98,20 +155,20 @@
 
   async function enrichLegacyRecord(item) {
     if (!item) return item;
-    const relatedIds = (item.relatedEvents || []).map(event => event.id).filter(Boolean);
-    const eventIds = [...new Set([...(item.eventIds || []), ...relatedIds])];
+    const normalized = normalizeRecordArrays(item);
+    const eventIds = normalized.eventIds;
     if (eventIds.length) {
       const events = await loadEventData({ fallbackToEmpty: true });
       const eventMap = new Map(events.map(event => [event.id, event]));
-      const storedMap = new Map((item.relatedEvents || []).map(event => [event.id, event]));
-      item.relatedEvents = eventIds.map(id => {
+      const storedMap = new Map(normalized.relatedEvents.map(event => [event.id, event]));
+      normalized.relatedEvents = eventIds.map(id => {
         const stored = storedMap.get(id) || {};
         const current = eventMap.get(id);
         return { id, title: current?.title || stored.title || '関連イベント', status: stored.status || '実施済み' };
       });
     }
-    if (!(item.calendarContext || []).length) item.calendarContext = await contextForDate(item.date);
-    return item;
+    if (!normalized.calendarContext.length) normalized.calendarContext = await contextForDate(normalized.date);
+    return normalizeRecordArrays(normalized);
   }
 
   window.AppData = {
@@ -125,5 +182,6 @@
     loadCalendarContext,
     loadEventData,
     localToday,
+    normalizeRecordArrays,
   };
 }());

@@ -100,6 +100,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - Firestoreルールのテンプレートは `firebase/firestore.rules` に置く。
 - 実デプロイ時は `__ALLOWED_UID__` を所有者UIDへ置換したルールをFirebaseへ反映する。
 - Firestoreルールを変更した時は、Firebase Consoleの構文検査を通し、公開後に未認証RESTアクセスが `403` になることを確認する。
+- 記録内の `eventIds`、`relatedEvents`、`calendarContext` は、`app-data.js` の共通処理で読込時と保存前に正規化する。配列の保存形式を変更する時は、ホームと一覧・詳細の両バックエンド、および不正要素・初期版記録のランタイムテストを同時に更新する。
 - Firebase App CheckはreCAPTCHA Enterpriseを使用する。サイトキーは公開用識別子であり、秘密鍵ではない。
 - App Checkを更新する時は、以下の順序を守る。
   1. App CheckへWebアプリを登録する。
