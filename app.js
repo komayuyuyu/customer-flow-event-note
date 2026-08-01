@@ -371,7 +371,7 @@ form.addEventListener('submit', async event => {
     accuracy: checkedValue('accuracy', '未判断'),
     eventImpact: checkedValue('eventImpact', currentEvents.length ? 'わからない' : '対象外'),
     note: note.value,
-    customerTopics: '',
+    customerTopics: '', // 旧版データとの互換性を保ち、メモはnoteへ一本化する。
     calendarContext: await contextForDate(dateInput.value),
   };
   try {
@@ -417,7 +417,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260802-5', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260802-6', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
