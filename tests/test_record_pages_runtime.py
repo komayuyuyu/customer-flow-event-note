@@ -46,6 +46,7 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               }
               addEventListener(type, listener) { this.listeners[type] = listener; }
               dispatch(type, event = {}) { return this.listeners[type](event); }
+              focus() { document.activeElement = this; }
               querySelectorAll() { return []; }
               scrollIntoView() { this.scrolled = true; }
             }
@@ -179,6 +180,7 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               }
               addEventListener(type, listener) { this.listeners[type] = listener; }
               dispatch(type, event = {}) { return this.listeners[type](event); }
+              focus() { document.activeElement = this; }
               querySelectorAll(selector) {
                 if (selector === '[name="period"]:checked') return this.selectedPeriods;
                 return [];

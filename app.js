@@ -2,6 +2,7 @@ const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
 const {
   bindQuietPeriodExclusivity,
   bindTimePlaceholders,
+  createModalController,
   escapeHtml,
   readableAuthError,
   selectedQuietPeriods,
@@ -64,6 +65,7 @@ let dayLoadRequestId = 0;
 let weekLoadRequestId = 0;
 
 const MAX_WEEK_OFFSET = 9;
+const saveDialog = createModalController({ modal: saveActions, initialFocus: detailLink });
 
 const datePicker = createDatePicker({
   dateInput,
@@ -378,7 +380,7 @@ form.addEventListener('submit', async event => {
     detailLink.href = `./record.html?date=${encodeURIComponent(payload.date)}`;
     resetObservationForm();
     updateRecordMode(currentEvents);
-    saveActions.hidden = false;
+    saveDialog.open();
   } catch (error) {
     saveStatus.classList.add('error');
     saveStatus.textContent = readableDataError(error, '保存できませんでした。');
@@ -388,7 +390,7 @@ form.addEventListener('submit', async event => {
 });
 
 continueButton.addEventListener('click', async () => {
-  saveActions.hidden = true;
+  saveDialog.close();
   await datePicker.select(addDays(dateInput.value, -1));
   document.querySelector('#record-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
@@ -415,7 +417,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260802-3', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260802-4', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
