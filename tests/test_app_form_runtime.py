@@ -12,7 +12,7 @@ NODE = shutil.which("node")
 
 class AppFormRuntimeTest(unittest.TestCase):
     @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
-    def test_form_resets_and_ignores_stale_date_loads(self):
+    def test_home_form_async_state_and_failure_recovery(self):
         result = subprocess.run(
             [
                 NODE,
@@ -144,6 +144,7 @@ class AppFormRuntimeTest(unittest.TestCase):
                       const promise = new Promise(done => { resolve = done; });
                       return { promise, resolve };
                     }
+                    let logoutError = null;
                     const backendMock = {
                       mode: 'local',
                       getDay: async date => pendingDays.get(date)?.promise || ({ events: [{
@@ -155,7 +156,9 @@ class AppFormRuntimeTest(unittest.TestCase):
                       getEvents: async date => pendingWeekEvents.get(date)?.promise || [],
                       initialize: async () => null,
                       login: async () => null,
-                      logout: async () => null,
+                      logout: async () => {
+                        if (logoutError) throw logoutError;
+                      },
                       saveObservation: async () => null,
                     };
                     window.AppBackend = {
@@ -278,6 +281,11 @@ class AppFormRuntimeTest(unittest.TestCase):
                       await staleWeekSelection;
                       assert.match(elements.get('#week-schedule').innerHTML, /2026-08-17:week-latest/);
                       assert.doesNotMatch(elements.get('#week-schedule').innerHTML, /week-stale/);
+
+                      logoutError = new Error('ログアウトに失敗しました。');
+                      await elements.get('#logout-button').click();
+                      assert.equal(elements.get('#logout-button').disabled, false);
+                      assert.equal(elements.get('#save-status').textContent, 'ログアウトに失敗しました。');
                     })().catch(error => { console.error(error); process.exitCode = 1; });
                     """
                 ),

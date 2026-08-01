@@ -331,16 +331,23 @@ async function requestLogin(triggerButton) {
   }
 }
 
-loginButton.addEventListener('click', () => requestLogin(loginButton));
+async function requestLogout(triggerButton) {
+  triggerButton.disabled = true;
+  try {
+    await backend.logout();
+  } catch (error) {
+    saveStatus.classList.add('error');
+    saveStatus.textContent = readableAuthError(error);
+  } finally {
+    triggerButton.disabled = false;
+  }
+}
 
-logoutButton.addEventListener('click', async () => {
-  logoutButton.disabled = true;
-  await backend.logout();
-  logoutButton.disabled = false;
-});
+loginButton.addEventListener('click', () => requestLogin(loginButton));
+logoutButton.addEventListener('click', () => requestLogout(logoutButton));
 
 navAuthButton.addEventListener('click', async () => {
-  if (currentUser) return logoutButton.click();
+  if (currentUser) return requestLogout(navAuthButton);
   return requestLogin(navAuthButton);
 });
 
@@ -408,7 +415,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-22', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-23', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
