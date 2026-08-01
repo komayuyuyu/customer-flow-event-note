@@ -31,9 +31,10 @@ select { font: inherit; }
 
 .shell { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 0 0 80px; }
 .detail-shell { padding-bottom: 20px; }
-.detail-shell .page-intro { margin: 20px 0 40px; }
+.detail-shell .page-intro { margin: 0 0 32px; }
 .detail-shell .page-intro h2, .records-shell .page-intro h2 { font-size: 24px; }
-.records-shell .page-intro { margin-bottom: 40px; }
+.records-shell .page-intro { margin: 0 0 32px; }
+.records-shell > .panel, .detail-shell > .panel { margin-top: 20px; }
 .detail-shell > .panel { padding: 20px; }
 .detail-shell .detail-grid { gap: 12px; }
 .detail-shell .detail-row { padding: 6px 8px; }
