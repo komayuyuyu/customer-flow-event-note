@@ -38,14 +38,14 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260801-10", html)
-            self.assertIn("ui-utils.js?v=20260801-10", html)
-            self.assertIn("app-data.js?v=20260801-10", html)
-            self.assertIn("firebase-client.js?v=20260801-10", html)
+            self.assertIn("styles.css?v=20260801-11", html)
+            self.assertIn("ui-utils.js?v=20260801-11", html)
+            self.assertIn("app-data.js?v=20260801-11", html)
+            self.assertIn("firebase-client.js?v=20260801-11", html)
             if name == "index.html":
-                self.assertIn("app-view.js?v=20260801-10", html)
-                self.assertIn("app-date-picker.js?v=20260801-10", html)
-                self.assertIn("app-backend.js?v=20260801-10", html)
+                self.assertIn("app-view.js?v=20260801-11", html)
+                self.assertIn("app-date-picker.js?v=20260801-11", html)
+                self.assertIn("app-backend.js?v=20260801-11", html)
                 self.assertLess(html.index("app-date-picker.js"), html.index("app.js"))
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
@@ -55,8 +55,8 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v69';", service_worker)
-        self.assertIn("const VERSION = '20260801-10';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v70';", service_worker)
+        self.assertIn("const VERSION = '20260801-11';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("app-view.js?v=${VERSION}", service_worker)
         self.assertIn("app-date-picker.js?v=${VERSION}", service_worker)

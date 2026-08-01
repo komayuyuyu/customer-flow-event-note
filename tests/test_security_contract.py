@@ -39,6 +39,7 @@ class SecurityContractTests(unittest.TestCase):
             self.assertIn("default-src 'self'", html)
             self.assertIn("object-src 'none'", html)
             self.assertIn("https://www.gstatic.com", html)
+            self.assertIn("https://apis.google.com", html)
             self.assertIn("https://www.google.com", html)
             self.assertIn("https://www.recaptcha.net", html)
             self.assertIn("https://*.googleapis.com", html)
@@ -47,7 +48,7 @@ class SecurityContractTests(unittest.TestCase):
 
         self.assertEqual(len(set(policies)), 1)
 
-    def test_app_check_is_initialized_before_firebase_services(self):
+    def test_app_check_is_initialized_after_auth_and_before_firestore(self):
         config = (ROOT / "firebase-config.js").read_text(encoding="utf-8")
         client = (ROOT / "firebase-client.js").read_text(encoding="utf-8")
 
@@ -56,8 +57,9 @@ class SecurityContractTests(unittest.TestCase):
         self.assertIn("firebase-app-check.js", client)
         self.assertIn("new appCheckSdk.ReCaptchaEnterpriseProvider", client)
         self.assertIn("isTokenAutoRefreshEnabled", client)
-        self.assertLess(client.index("appCheckSdk.initializeAppCheck"), client.index("authSdk.getAuth"))
+        self.assertLess(client.index("authSdk.getAuth"), client.index("appCheckSdk.initializeAppCheck"))
         self.assertLess(client.index("appCheckSdk.initializeAppCheck"), client.index("firestoreSdk.getFirestore"))
+        self.assertIn("dataServices", client)
 
     def test_codeql_scans_javascript_on_main_and_pull_requests(self):
         workflow = (ROOT / ".github" / "workflows" / "codeql.yml").read_text(encoding="utf-8")

@@ -30,7 +30,6 @@
       onUserChange,
       unauthorizedMessage: 'このGoogleアカウントには記録権限がありません。',
     });
-    const { db, authSdk, firestoreSdk } = firebase;
 
     return {
       mode: 'cloud',
@@ -42,6 +41,7 @@
         let observation = null;
         const user = firebase.currentUser();
         if (user) {
+          const { db, firestoreSdk } = firebase.dataServices();
           const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', date);
           const snapshot = await firestoreSdk.getDoc(reference);
           if (snapshot.exists()) observation = snapshot.data();
@@ -52,6 +52,7 @@
       async saveObservation(payload) {
         const user = firebase.currentUser();
         if (!user) throw new Error('記録するにはGoogleログインが必要です。');
+        const { db, firestoreSdk } = firebase.dataServices();
         const observation = { ...payload, ownerUid: user.uid, updatedAt: firestoreSdk.serverTimestamp() };
         const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', payload.date);
         await firestoreSdk.setDoc(reference, observation, { merge: true });
@@ -60,6 +61,7 @@
       async listObservations() {
         const user = firebase.currentUser();
         if (!user) return [];
+        const { db, firestoreSdk } = firebase.dataServices();
         const collection = firestoreSdk.collection(db, 'users', user.uid, 'observations');
         const snapshot = await firestoreSdk.getDocs(collection);
         return snapshot.docs.map(item => item.data()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
