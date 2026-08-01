@@ -34,6 +34,10 @@
     return currentUser;
   }
 
+  function protectedFirestore() {
+    return firebase.dataServices();
+  }
+
   async function list() {
     if (!config.enabled) {
       const response = await fetch('./api/observations');
@@ -41,8 +45,9 @@
       return response.json();
     }
     const user = requireCurrentUser();
-    const collection = firebase.firestoreSdk.collection(firebase.db, 'users', user.uid, 'observations');
-    const snapshot = await firebase.firestoreSdk.getDocs(collection);
+    const { db, firestoreSdk } = protectedFirestore();
+    const collection = firestoreSdk.collection(db, 'users', user.uid, 'observations');
+    const snapshot = await firestoreSdk.getDocs(collection);
     return snapshot.docs.map(item => item.data()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
   }
 
@@ -53,8 +58,9 @@
       return (await response.json()).observation;
     }
     const user = requireCurrentUser();
-    const reference = firebase.firestoreSdk.doc(firebase.db, 'users', user.uid, 'observations', date);
-    const snapshot = await firebase.firestoreSdk.getDoc(reference);
+    const { db, firestoreSdk } = protectedFirestore();
+    const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', date);
+    const snapshot = await firestoreSdk.getDoc(reference);
     return snapshot.exists() ? snapshot.data() : null;
   }
 
@@ -65,11 +71,12 @@
       return;
     }
     const user = requireCurrentUser();
-    const reference = firebase.firestoreSdk.doc(firebase.db, 'users', user.uid, 'observations', payload.date);
-    await firebase.firestoreSdk.setDoc(reference, {
+    const { db, firestoreSdk } = protectedFirestore();
+    const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', payload.date);
+    await firestoreSdk.setDoc(reference, {
       ...payload,
       ownerUid: user.uid,
-      updatedAt: firebase.firestoreSdk.serverTimestamp(),
+      updatedAt: firestoreSdk.serverTimestamp(),
     }, { merge: true });
   }
 
@@ -80,8 +87,9 @@
       return;
     }
     const user = requireCurrentUser();
-    const reference = firebase.firestoreSdk.doc(firebase.db, 'users', user.uid, 'observations', date);
-    await firebase.firestoreSdk.deleteDoc(reference);
+    const { db, firestoreSdk } = protectedFirestore();
+    const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', date);
+    await firestoreSdk.deleteDoc(reference);
   }
 
   window.RecordsBackend = { initialize, login, logout, list, get, save, remove, currentUser: () => currentUser };

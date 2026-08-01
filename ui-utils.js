@@ -39,6 +39,9 @@
     if (error?.code === 'auth/popup-closed-by-user') return 'ログイン画面が閉じられました。';
     if (error?.code === 'auth/popup-blocked') return 'ログイン画面を開けませんでした。ブラウザでポップアップを許可して、もう一度お試しください。';
     if (error?.code === 'auth/unauthorized-domain') return 'このURLはGoogleログインの許可対象になっていません。';
+    if (error?.code === 'auth/network-request-failed') return '認証サービスと通信できませんでした。通信状態を確認して、もう一度お試しください。';
+    if (error?.code === 'auth/operation-not-allowed') return 'Googleログインが無効になっています。管理者へご連絡ください。';
+    if (String(error?.code || '').startsWith('appCheck/')) return 'セキュリティ確認を完了できませんでした。ページを開き直して、もう一度お試しください。';
     return 'Googleログインを完了できませんでした。';
   }
 

@@ -28,17 +28,27 @@
     } = options;
     const { appSdk, appCheckSdk, authSdk, firestoreSdk } = await loadSdk();
     const app = appSdk.initializeApp(config.firebase);
-    if (config.appCheck?.enabled && config.appCheck.siteKey) {
-      const provider = new appCheckSdk.ReCaptchaEnterpriseProvider(config.appCheck.siteKey);
-      appCheckSdk.initializeAppCheck(app, {
-        provider,
-        isTokenAutoRefreshEnabled: config.appCheck.tokenAutoRefresh !== false,
-      });
-    }
     const auth = authSdk.getAuth(app);
-    const db = firestoreSdk.getFirestore(app);
     const provider = new authSdk.GoogleAuthProvider();
     provider.setCustomParameters({ prompt: 'select_account' });
+    let protectedServices;
+
+    function dataServices() {
+      if (!protectedServices) {
+        if (config.appCheck?.enabled && config.appCheck.siteKey) {
+          const appCheckProvider = new appCheckSdk.ReCaptchaEnterpriseProvider(config.appCheck.siteKey);
+          appCheckSdk.initializeAppCheck(app, {
+            provider: appCheckProvider,
+            isTokenAutoRefreshEnabled: config.appCheck.tokenAutoRefresh !== false,
+          });
+        }
+        protectedServices = {
+          db: firestoreSdk.getFirestore(app),
+          firestoreSdk,
+        };
+      }
+      return protectedServices;
+    }
     let currentUser = null;
     let authError = null;
     let notificationsEnabled = false;
@@ -72,8 +82,7 @@
 
     return {
       authSdk,
-      firestoreSdk,
-      db,
+      dataServices,
       async initialize() {
         notificationsEnabled = true;
         await initialAuth;
