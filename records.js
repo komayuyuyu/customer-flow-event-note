@@ -15,6 +15,7 @@ let activeUser = null;
 let pendingDeleteDate = '';
 let allRecords = [];
 let currentPage = 1;
+let recordsLoadRequest = 0;
 const RECORDS_PER_PAGE = 10;
 
 function formatDateLabel(value) {
@@ -68,6 +69,7 @@ function renderPage() {
 }
 
 async function renderRecordsPage(user, authError) {
+  const request = ++recordsLoadRequest;
   activeUser = user;
   authPanel.hidden = Boolean(user);
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
@@ -82,13 +84,17 @@ async function renderRecordsPage(user, authError) {
   try {
     if (!eventMap.size) {
       const events = await loadEventData({ fallbackToEmpty: true });
+      if (request !== recordsLoadRequest || activeUser !== user) return;
       eventMap = new Map(events.map(event => [event.id, event]));
     }
-    allRecords = await RecordsBackend.list();
+    const records = await RecordsBackend.list();
+    if (request !== recordsLoadRequest || activeUser !== user) return;
+    allRecords = records;
     const requestedPage = Number.parseInt(new URLSearchParams(location.search).get('page'), 10);
     currentPage = Number.isInteger(requestedPage) && requestedPage > 0 ? requestedPage : currentPage;
     renderPage();
   } catch (error) {
+    if (request !== recordsLoadRequest || activeUser !== user) return;
     listRoot.innerHTML = `<p class="empty-state">${escapeHtml(error.message)}</p>`;
   }
 }
