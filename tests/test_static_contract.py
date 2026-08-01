@@ -12,6 +12,7 @@ class StaticContractTest(unittest.TestCase):
             "index.html",
             "records.html",
             "record.html",
+            "404.html",
             "styles.css",
             "app.js",
             "records.js",
@@ -39,16 +40,16 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260802-5", html)
-            self.assertIn("ui-utils.js?v=20260802-5", html)
-            self.assertIn("app-data.js?v=20260802-5", html)
-            self.assertIn("record-store.js?v=20260802-5", html)
-            self.assertIn("firebase-client.js?v=20260802-5", html)
+            self.assertIn("styles.css?v=20260802-6", html)
+            self.assertIn("ui-utils.js?v=20260802-6", html)
+            self.assertIn("app-data.js?v=20260802-6", html)
+            self.assertIn("record-store.js?v=20260802-6", html)
+            self.assertIn("firebase-client.js?v=20260802-6", html)
             self.assertLess(html.index("record-store.js"), html.index("firebase-client.js"))
             if name == "index.html":
-                self.assertIn("app-view.js?v=20260802-5", html)
-                self.assertIn("app-date-picker.js?v=20260802-5", html)
-                self.assertIn("app-backend.js?v=20260802-5", html)
+                self.assertIn("app-view.js?v=20260802-6", html)
+                self.assertIn("app-date-picker.js?v=20260802-6", html)
+                self.assertIn("app-backend.js?v=20260802-6", html)
                 self.assertLess(html.index("app-date-picker.js"), html.index("app.js"))
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
@@ -58,8 +59,14 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v91';", service_worker)
-        self.assertIn("const VERSION = '20260802-5';", service_worker)
+        error_page = (ROOT / "404.html").read_text(encoding="utf-8")
+        self.assertIn("ページが見つかりません", error_page)
+        self.assertIn("/customer-flow-event-note/styles.css?v=20260802-6", error_page)
+        self.assertIn('href="/customer-flow-event-note/"', error_page)
+
+        service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
+        self.assertIn("const CACHE = 'customer-flow-note-v92';", service_worker)
+        self.assertIn("const VERSION = '20260802-6';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("app-view.js?v=${VERSION}", service_worker)
         self.assertIn("app-date-picker.js?v=${VERSION}", service_worker)
@@ -69,7 +76,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("record-store.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
         app_controller = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260802-5'", app_controller)
+        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260802-6'", app_controller)
         firebase_client = (ROOT / "firebase-client.js").read_text(encoding="utf-8")
         self.assertIn("const FIREBASE_SDK_VERSION = '12.17.0';", firebase_client)
 

@@ -8,7 +8,7 @@ const {
   FORM_OPTIONS,
   bindQuietPeriodExclusivity,
   bindTimePlaceholders,
-  combinedMemo,
+  recordMemoWithLegacyTopics,
   createAuthAction,
   createModalController,
   displayEventTitle,
@@ -54,7 +54,7 @@ function renderReadOnlyView() {
     ${renderDetailRow('予測結果', escapeHtml(currentRecord.accuracy))}
     ${renderDetailRow('影響を感じた開始時刻', escapeHtml(currentRecord.actualImpactStart))}
     ${renderDetailRow('落ち着いた時刻', escapeHtml(currentRecord.actualImpactEnd))}
-    ${renderDetailRow('メモ', escapeHtml(combinedMemo(currentRecord)), 'detail-wide')}
+    ${renderDetailRow('メモ', escapeHtml(recordMemoWithLegacyTopics(currentRecord)), 'detail-wide')}
   </dl>
   <div class="detail-actions">
     <button id="edit-button" class="save-button" type="button">編集する</button>
@@ -82,7 +82,7 @@ function editedRecord() {
     actualImpactEnd: document.querySelector('#impact-end').value,
     eventImpact: document.querySelector('#impact').value,
     accuracy: document.querySelector('#accuracy').value,
-    customerTopics: '',
+    customerTopics: '', // 旧版の別メモ欄を編集保存時に空へ統合する互換項目。
     note: document.querySelector('#note').value,
   };
 }
@@ -108,7 +108,7 @@ function renderEditForm() {
     <label class="note-label" for="accuracy">予測結果</label>
     <select id="accuracy">${renderOptions(FORM_OPTIONS.accuracy, currentRecord.accuracy || '未判断')}</select>
     <label class="note-label" for="note">メモ</label>
-    <textarea id="note" maxlength="600">${escapeHtml(combinedMemo(currentRecord))}</textarea>
+    <textarea id="note" maxlength="600">${escapeHtml(recordMemoWithLegacyTopics(currentRecord))}</textarea>
     <button class="save-button" type="submit">変更を保存</button>
     <button id="cancel-button" class="action-link" type="button">キャンセル</button>
     <p id="edit-status" class="save-status"></p>

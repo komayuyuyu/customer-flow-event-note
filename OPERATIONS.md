@@ -86,6 +86,38 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - 更新頻度は従来どおり、毎朝チェックと週1回の広めチェックを維持する。
 - 週1回の広めチェックは毎週日曜日の夜に行い、実行日から60日先までのイベント候補を確認する。
 
+## ローカルプレビュー
+
+1. リポジトリ直下で次を実行する。
+
+   ```powershell
+   python -m http.server 8000 --bind 127.0.0.1
+   ```
+
+2. `http://127.0.0.1:8000/`、`records.html`、`record.html?date=YYYY-MM-DD`をPC幅と390px幅で確認する。
+3. 確認後はサーバーを `Ctrl+C` で停止する。プレビューサーバーの生成物やログはリポジトリへ保存しない。
+
+## Firestoreのバックアップと復旧
+
+- 詳細仕様は [Firestore公式のデータのエクスポートとインポート](https://firebase.google.com/docs/firestore/manage-data/export-import) を正本とする。
+- 記録の一括削除、ルール・保存形式の大幅変更、移行作業の前にバックアップを作成する。通常の閲覧・1件保存だけでは毎回実行しない。
+- Firestoreのマネージド書き出しには、課金が有効なGoogle Cloudプロジェクトと、Firestoreと互換のロケーションにあるCloud Storageバケットが必要。未準備の場合は削除や移行を開始しない。
+- バケット名と保存先日時を作業ログへ記録し、秘密鍵や認証情報は記録しない。
+
+  ```powershell
+  $backupBucket = 'gs://YOUR_BACKUP_BUCKET/customer-flow-event-note/YYYYMMDD-HHMM'
+  gcloud firestore export $backupBucket --collection-ids=observations --database='(default)'
+  ```
+
+- コマンド終了後、Cloud Storage上のエクスポートメタデータとFirestoreの処理成功を確認してから変更する。
+- 復旧前にバックアップ日時とプロジェクトIDを照合し、次を実行する。インポート後は許可UIDで対象記録を確認し、未認証アクセスが拒否されることも確認する。
+
+  ```powershell
+  gcloud firestore import $backupBucket --collection-ids=observations --database='(default)'
+  ```
+
+- 新しい記録を意図せず上書きする可能性がある場合は、先に別プロジェクトへ復元して内容を確認する。バックアップ削除は保存期間と復旧不要を確認してから別作業として行う。
+
 ## Firebase
 
 - `firebase-config.js` は公開アプリが使うFirebase設定を含む。

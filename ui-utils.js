@@ -116,7 +116,7 @@
     });
   }
 
-  function combinedMemo(item = {}) {
+  function recordMemoWithLegacyTopics(item = {}) {
     return [item.note, item.customerTopics].filter(Boolean).join('\n');
   }
 
@@ -164,7 +164,7 @@
     FORM_OPTIONS,
     bindQuietPeriodExclusivity,
     bindTimePlaceholders,
-    combinedMemo,
+    recordMemoWithLegacyTopics,
     createAuthAction,
     createModalController,
     displayEventTitle,

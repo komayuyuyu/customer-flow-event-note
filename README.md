@@ -25,6 +25,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `index.html`: ホーム、今日の注目イベント、1週間の予定、集客記録フォーム
 - `records.html`: 記録一覧
 - `record.html`: 記録詳細
+- `404.html`: 存在しないURLの案内
 - `app.js`: ホーム画面と記録保存
 - `app-date-picker.js`: 記録日のカレンダー表示と選択操作
 - `app-view.js`: イベントカードと週間予定の表示生成
@@ -41,6 +42,7 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 - `data/store-events.json`: 勤務カレンダーから入れる店頭施策・館イベント
 - `data/calendar-context.json`: 祝日・大型連休
 - `scripts/evaluate_candidates.py`: 候補イベントの影響度計算とマージ
+- `scripts/check_project_contracts.py`: 読込順・保守性・アクセシビリティ契約の検査
 - `impact.py`: 影響度計算ロジック
 - `OPERATIONS.md`: 更新・保守手順
 - `CODEMAP.md`: ファイルごとの責務と更新時の確認先
@@ -55,6 +57,8 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 python scripts/evaluate_candidates.py
 python -m unittest discover -s tests -p "test_*.py"
 ```
+
+ローカル表示確認とFirestoreのバックアップ・復旧は `OPERATIONS.md` の手順に従う。
 
 ## 注意
 

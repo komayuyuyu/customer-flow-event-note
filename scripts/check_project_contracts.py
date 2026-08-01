@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-HTML_FILES = ("index.html", "records.html", "record.html")
+HTML_FILES = ("index.html", "records.html", "record.html", "404.html")
 PROVIDERS = {
     "AppBackend": "app-backend.js",
     "AppData": "app-data.js",
