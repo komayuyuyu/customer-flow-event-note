@@ -72,6 +72,22 @@ class SecurityContractTests(unittest.TestCase):
         self.assertIn("queries: security-extended", workflow)
         self.assertIn("security-events: write", workflow)
 
+    def test_quality_checks_validate_code_and_data_without_write_permission(self):
+        workflow = (ROOT / ".github" / "workflows" / "quality.yml").read_text(encoding="utf-8")
+
+        self.assertIn("push:\n    branches: [main]", workflow)
+        self.assertIn("pull_request:\n    branches: [main]", workflow)
+        self.assertIn("permissions:\n  contents: read", workflow)
+        self.assertIn("actions/checkout@v6", workflow)
+        self.assertIn("actions/setup-python@v6", workflow)
+        self.assertIn("actions/setup-node@v6", workflow)
+        self.assertIn('python -m unittest discover -s tests -p "test_*.py"', workflow)
+        self.assertIn('node --check "$file"', workflow)
+        self.assertIn("pathlib.Path('data').glob('*.json')", workflow)
+        self.assertNotIn("contents: write", workflow)
+        self.assertNotIn("git push", workflow)
+        self.assertNotIn("deploy", workflow.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

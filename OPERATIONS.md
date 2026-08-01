@@ -72,6 +72,8 @@ https://komayuyuyu.github.io/customer-flow-event-note/
    node --check ui-utils.js
    ```
 
+   Pull Request作成時と`main`へのpush時は、GitHub Actionsの`Quality Checks`がPythonテスト、ルート直下の全JavaScript、`data/*.json`を自動検査する。このワークフローは読み取り専用で、デプロイや自動コミットは行わない。
+
 4. `app.js` / `styles.css` / HTML / Service Workerを変更した場合は、静的資産の更新番号と `sw.js` のキャッシュ名を変更する。
 5. GitHubへpushし、GitHub Pagesのデプロイ成功を確認する。
 6. 公開HTMLに新しい更新番号またはデータ変更が反映されていることを確認する。

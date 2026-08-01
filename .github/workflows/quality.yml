@@ -1,0 +1,45 @@
+name: Quality Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-validate:
+    name: Test and validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          package-manager-cache: false
+
+      - name: Run Python tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          for file in ./*.js; do
+            node --check "$file"
+          done
+
+      - name: Check JSON syntax
+        run: python -c "import json, pathlib; [json.loads(path.read_text(encoding='utf-8')) for path in pathlib.Path('data').glob('*.json')]"
