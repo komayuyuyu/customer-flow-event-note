@@ -1,6 +1,6 @@
 (function () {
   const { dateParts } = window.AppData;
-  const { displayEventTitle, escapeHtml } = window.UiUtils;
+  const { displayEventTitle, escapeHtml, safeExternalUrl } = window.UiUtils;
 
   const EMPTY_EVENT_TEXT = 'イベントなし';
   const EMPTY_WEEK_EVENT_TEXT = '影響イベントなし';
@@ -67,8 +67,7 @@
 
   function eventSourceUrl(event = {}) {
     const sources = Array.isArray(event.sources) ? event.sources : [];
-    const source = sources.find(item => typeof item?.url === 'string' && /^https?:\/\//i.test(item.url.trim()));
-    return source?.url.trim() || '';
+    return sources.map(item => safeExternalUrl(item?.url)).find(Boolean) || '';
   }
 
   function renderEventTitle(event = {}, fallback = DEFAULT_EVENT_TITLE) {

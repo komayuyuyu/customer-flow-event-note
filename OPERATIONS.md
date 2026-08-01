@@ -87,8 +87,22 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 
 - `firebase-config.js` は公開アプリが使うFirebase設定を含む。
 - APIキーはFirebase Webアプリ用の公開設定であり、秘密鍵ではない。
+- APIキーはGoogle Cloud Consoleで、Firebase関連APIと次のHTTPリファラーだけに制限する。
+  - `https://komayuyuyu.github.io/customer-flow-event-note/*`
+  - `https://customer-flow-event-note.firebaseapp.com/*`
+  - `https://customer-flow-event-note.web.app/*`
+  - `http://localhost:8000/*`
+  - `http://127.0.0.1:8000/*`
 - Firestoreルールのテンプレートは `firebase/firestore.rules` に置く。
 - 実デプロイ時は `__ALLOWED_UID__` を所有者UIDへ置換したルールをFirebaseへ反映する。
+- Firestoreルールを変更した時は、Firebase Consoleの構文検査を通し、公開後に未認証RESTアクセスが `403` になることを確認する。
+- Firebase App CheckはreCAPTCHA Enterpriseを使用する。サイトキーは公開用識別子であり、秘密鍵ではない。
+- App Checkを更新する時は、以下の順序を守る。
+  1. App CheckへWebアプリを登録する。
+  2. `firebase-client.js` でFirestoreやAuthenticationより先にApp Checkを初期化する。
+  3. GitHub Pagesへ公開し、本番リクエストが有効なApp Checkトークンとして計測されることを確認する。
+  4. 最後にCloud Firestoreの強制適用を有効にする。
+- クライアント公開前にApp Checkを強制適用しない。先に強制すると、正規ユーザーの保存・閲覧も拒否される。
 
 ## 公開してはいけないもの
 
