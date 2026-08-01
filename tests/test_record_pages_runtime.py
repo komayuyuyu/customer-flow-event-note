@@ -232,6 +232,8 @@ class RecordPagesRuntimeTest(unittest.TestCase):
             let initialized;
             let savedRecord;
             let rejectSave = true;
+            let saveCalls = 0;
+            let saveGate = Promise.resolve();
             const removedDates = [];
             global.RecordsBackend = {
               currentUser: () => ({ uid: 'owner' }),
@@ -247,8 +249,10 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               logout: async () => {},
               remove: async date => { removedDates.push(date); },
               save: async record => {
+                saveCalls += 1;
                 savedRecord = record;
                 if (rejectSave) throw new Error('保存に失敗しました。');
+                await saveGate;
               },
             };
 
@@ -282,8 +286,25 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               assert.doesNotMatch(detail.innerHTML, /更新後メモ/);
 
               rejectSave = false;
+              saveCalls = 0;
+              let releaseSave;
+              saveGate = new Promise(resolve => { releaseSave = resolve; });
               elements.get('#edit-button').dispatch('click');
-              await elements.get('#detail-form').dispatch('submit', { preventDefault() {} });
+              const submitButton = new FakeElement();
+              const firstSave = elements.get('#detail-form').dispatch('submit', {
+                preventDefault() {},
+                submitter: submitButton,
+              });
+              const duplicateSave = elements.get('#detail-form').dispatch('submit', {
+                preventDefault() {},
+                submitter: submitButton,
+              });
+              await new Promise(resolve => setImmediate(resolve));
+              assert.equal(saveCalls, 1);
+              assert.equal(submitButton.disabled, true);
+              releaseSave();
+              await Promise.all([firstSave, duplicateSave]);
+              assert.equal(submitButton.disabled, false);
               assert.equal(savedRecord.trafficLevel, '混雑');
               assert.equal(savedRecord.weather, '雨');
               assert.deepEqual(savedRecord.quietPeriods, ['16〜17時']);
