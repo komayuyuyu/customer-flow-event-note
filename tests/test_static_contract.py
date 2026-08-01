@@ -38,14 +38,14 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260801-12", html)
-            self.assertIn("ui-utils.js?v=20260801-12", html)
-            self.assertIn("app-data.js?v=20260801-12", html)
-            self.assertIn("firebase-client.js?v=20260801-12", html)
+            self.assertIn("styles.css?v=20260801-13", html)
+            self.assertIn("ui-utils.js?v=20260801-13", html)
+            self.assertIn("app-data.js?v=20260801-13", html)
+            self.assertIn("firebase-client.js?v=20260801-13", html)
             if name == "index.html":
-                self.assertIn("app-view.js?v=20260801-12", html)
-                self.assertIn("app-date-picker.js?v=20260801-12", html)
-                self.assertIn("app-backend.js?v=20260801-12", html)
+                self.assertIn("app-view.js?v=20260801-13", html)
+                self.assertIn("app-date-picker.js?v=20260801-13", html)
+                self.assertIn("app-backend.js?v=20260801-13", html)
                 self.assertLess(html.index("app-date-picker.js"), html.index("app.js"))
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
@@ -55,8 +55,8 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v71';", service_worker)
-        self.assertIn("const VERSION = '20260801-12';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v72';", service_worker)
+        self.assertIn("const VERSION = '20260801-13';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("app-view.js?v=${VERSION}", service_worker)
         self.assertIn("app-date-picker.js?v=${VERSION}", service_worker)
@@ -64,6 +64,8 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("firebase-client.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
+        app_controller = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260801-13'", app_controller)
 
     def test_event_update_tooling_is_present(self):
         self.assertTrue((ROOT / "impact.py").is_file())

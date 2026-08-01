@@ -14,10 +14,10 @@
 
 ## 共通処理
 
-- `app-data.js`: イベント・祝日データの読み込み、日付計算、旧記録の補完。
+- `app-data.js`: イベント・祝日データの読み込み、日付計算、記録内配列の正規化、旧記録の補完。
 - `firebase-client.js`: Firebase SDKの読み込みと共通のGoogle認証初期化。
-- `app-backend.js`: ホーム画面のFirestore保存とローカル互換API。
-- `records-backend.js`: 記録一覧・詳細画面の記録CRUD。
+- `app-backend.js`: ホーム画面のFirestore読込・保存境界とローカル互換API。
+- `records-backend.js`: 記録一覧・詳細画面の読込・保存境界と記録CRUD。
 - `ui-utils.js`: HTMLエスケープ、表示名、フォーム選択肢などの小さな共通部品。
 
 ## データと更新
