@@ -20,13 +20,13 @@
     return sdkPromise;
   }
 
-  async function create(config, options = {}) {
+  async function create(config, options = {}, sdkLoader = loadSdk) {
     const {
       captureRedirectErrors = false,
       onUserChange = () => {},
       unauthorizedMessage = '',
     } = options;
-    const { appSdk, appCheckSdk, authSdk, firestoreSdk } = await loadSdk();
+    const { appSdk, appCheckSdk, authSdk, firestoreSdk } = await sdkLoader();
     const app = appSdk.initializeApp(config.firebase);
     const auth = authSdk.getAuth(app);
     const provider = new authSdk.GoogleAuthProvider();
@@ -53,6 +53,7 @@
     let authError = null;
     let notificationsEnabled = false;
     let initialAuthResolved = false;
+    let initialNotificationSent = false;
     let resolveInitialAuth;
     const initialAuth = new Promise(resolve => { resolveInitialAuth = resolve; });
 
@@ -72,6 +73,7 @@
       currentUser = user;
       if (notificationsEnabled) {
         onUserChange(currentUser, authError);
+        if (!initialAuthResolved) initialNotificationSent = true;
         authError = null;
       }
       if (!initialAuthResolved) {
@@ -86,8 +88,10 @@
       async initialize() {
         notificationsEnabled = true;
         await initialAuth;
-        onUserChange(currentUser, authError);
-        authError = null;
+        if (!initialNotificationSent) {
+          onUserChange(currentUser, authError);
+          authError = null;
+        }
         return currentUser;
       },
       async login() { return authSdk.signInWithPopup(auth, provider); },
