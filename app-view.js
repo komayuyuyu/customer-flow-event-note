@@ -31,7 +31,12 @@
   function eventTime(event) {
     const start = event.startAt ? new Date(event.startAt) : null;
     if (!start || Number.isNaN(start.getTime())) return '時刻未定';
-    return new Intl.DateTimeFormat('ja-JP', { hour: '2-digit', minute: '2-digit', hour12: false }).format(start);
+    return new Intl.DateTimeFormat('ja-JP', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'Asia/Tokyo',
+    }).format(start);
   }
 
   function renderWeekDay(day) {

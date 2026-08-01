@@ -1,3 +1,4 @@
+import os
 import shutil
 import subprocess
 import textwrap
@@ -24,6 +25,7 @@ class AppViewRuntimeTest(unittest.TestCase):
             text=True,
             encoding="utf-8",
             check=False,
+            env={**os.environ, "TZ": "UTC"},
         )
         self.assertEqual(result.returncode, 0, result.stderr)
 
