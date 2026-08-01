@@ -4,7 +4,19 @@ const deleteModal = document.querySelector('#delete-modal');
 const deleteTargetDate = document.querySelector('#delete-target-date');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
-const { FORM_OPTIONS, bindTimePlaceholders, combinedMemo, displayEventTitle, escapeHtml, readableAuthError, renderOptions, trashIcon } = window.UiUtils;
+const {
+  FORM_OPTIONS,
+  bindQuietPeriodExclusivity,
+  bindTimePlaceholders,
+  combinedMemo,
+  displayEventTitle,
+  escapeHtml,
+  normalizeQuietPeriods,
+  readableAuthError,
+  renderOptions,
+  selectedQuietPeriods,
+  trashIcon,
+} = window.UiUtils;
 const { enrichLegacyRecord } = window.AppData;
 const recordDate = new URLSearchParams(location.search).get('date') || '';
 let currentRecord;
@@ -31,7 +43,7 @@ function renderReadOnlyView() {
     ${renderDetailRow('天気', escapeHtml(currentRecord.weather))}
     ${renderDetailRow('祝日・大型連休', calendarContext)}
     ${renderDetailRow('関連イベント', events, 'detail-wide')}
-    ${renderDetailRow('特に暇もしくは混雑した時間', escapeHtml((currentRecord.quietPeriods || []).join('・')))}
+    ${renderDetailRow('特に暇もしくは混雑した時間', escapeHtml(normalizeQuietPeriods(currentRecord.quietPeriods).join('・')))}
     ${renderDetailRow('イベントの影響', escapeHtml(currentRecord.eventImpact))}
     ${renderDetailRow('予測結果', escapeHtml(currentRecord.accuracy))}
     ${renderDetailRow('影響を感じた開始時刻', escapeHtml(currentRecord.actualImpactStart))}
@@ -44,10 +56,6 @@ function renderReadOnlyView() {
   </div>`;
   document.querySelector('#edit-button').addEventListener('click', renderEditForm);
   document.querySelector('#delete-record-button').addEventListener('click', openDeleteModal);
-}
-
-function selectedQuietPeriods() {
-  return [...document.querySelectorAll('[name="period"]:checked')].map(input => input.value);
 }
 
 function editedRelatedEvents() {
@@ -63,7 +71,7 @@ function editedRecord() {
     relatedEvents: editedRelatedEvents(),
     trafficLevel: document.querySelector('#traffic').value,
     weather: document.querySelector('#weather').value,
-    quietPeriods: selectedQuietPeriods(),
+    quietPeriods: selectedQuietPeriods(document.querySelector('#detail-form')),
     actualImpactStart: document.querySelector('#impact-start').value,
     actualImpactEnd: document.querySelector('#impact-end').value,
     eventImpact: document.querySelector('#impact').value,
@@ -75,7 +83,8 @@ function editedRecord() {
 
 function renderEditForm() {
   const events = (currentRecord.relatedEvents || []).map((item, index) => `<label class="related-event-row"><span>${escapeHtml(displayEventTitle(item.title))}</span><select class="event-status" data-index="${index}">${renderOptions(FORM_OPTIONS.eventStatus, item.status || '実施済み')}</select></label>`).join('');
-  const periods = FORM_OPTIONS.periods.map(value => `<label class="choice"><input type="checkbox" name="period" value="${value}"${(currentRecord.quietPeriods || []).includes(value) ? ' checked' : ''}><span>${value}</span></label>`).join('');
+  const selectedPeriods = normalizeQuietPeriods(currentRecord.quietPeriods);
+  const periods = FORM_OPTIONS.periods.map(value => `<label class="choice"><input type="checkbox" name="period" value="${value}"${selectedPeriods.includes(value) ? ' checked' : ''}><span>${value}</span></label>`).join('');
   detailRoot.innerHTML = `<form id="detail-form">
     <p><strong>${escapeHtml(currentRecord.date)}</strong></p>
     ${events ? `<div class="related-events"><strong>関連イベント</strong>${events}</div>` : ''}
@@ -98,6 +107,7 @@ function renderEditForm() {
     <button id="cancel-button" class="action-link" type="button">キャンセル</button>
     <p id="edit-status" class="save-status"></p>
   </form>`;
+  bindQuietPeriodExclusivity(document.querySelector('#detail-form'));
   bindTimePlaceholders(detailRoot);
   document.querySelector('#cancel-button').addEventListener('click', renderReadOnlyView);
   document.querySelector('#detail-form').addEventListener('submit', async event => {

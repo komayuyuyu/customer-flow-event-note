@@ -1,5 +1,14 @@
 const cloudConfig = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
-const { bindTimePlaceholders, combinedMemo, escapeHtml, readableAuthError, syncTimePlaceholders } = window.UiUtils;
+const {
+  bindQuietPeriodExclusivity,
+  bindTimePlaceholders,
+  combinedMemo,
+  escapeHtml,
+  normalizeQuietPeriods,
+  readableAuthError,
+  selectedQuietPeriods,
+  syncTimePlaceholders,
+} = window.UiUtils;
 const { addDays, contextForDate, dateParts, eventsForDate, isRecordLinkedEvent, localToday } = window.AppData;
 const { createCloudBackend, createLocalBackend, isCloudConfigured } = window.AppBackend;
 const { create: createDatePicker } = window.AppDatePicker;
@@ -266,7 +275,7 @@ function fillObservation(observation) {
   setChecked('weather', observation.weather);
   setChecked('accuracy', observation.accuracy);
   setChecked('eventImpact', observation.eventImpact);
-  for (const period of observation.quietPeriods || []) setChecked('period', period);
+  for (const period of normalizeQuietPeriods(observation.quietPeriods)) setChecked('period', period);
   setImpactTimeValues(observation);
   syncTimePlaceholders();
   note.value = combinedMemo(observation);
@@ -316,6 +325,7 @@ weekNext.addEventListener('click', () => {
 });
 note.addEventListener('input', () => { noteCount.textContent = `${note.value.length} / 600`; });
 bindTimePlaceholders();
+bindQuietPeriodExclusivity(form);
 form.addEventListener('change', event => {
   if (event.target.name !== 'eventImpact') return;
   const noImpact = event.target.value === '感じなかった';
@@ -363,7 +373,7 @@ form.addEventListener('submit', async event => {
     }),
     weather: checkedValue('weather', '不明'),
     trafficLevel: checkedValue('traffic'),
-    quietPeriods: [...form.querySelectorAll('[name="period"]:checked')].map(input => input.value),
+    quietPeriods: selectedQuietPeriods(form),
     ...impactTimeValues(),
     accuracy: checkedValue('accuracy', '未判断'),
     eventImpact: checkedValue('eventImpact', currentEvents.length ? 'わからない' : '対象外'),
