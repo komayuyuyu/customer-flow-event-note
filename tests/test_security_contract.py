@@ -27,6 +27,11 @@ class SecurityContractTests(unittest.TestCase):
 
         ignored = set(hosting["ignore"])
         for private_path in (
+            ".git",
+            ".git/**",
+            ".firebase",
+            ".firebase/**",
+            "firebase-debug.log*",
             ".github/**",
             "firebase/**",
             "scripts/**",
