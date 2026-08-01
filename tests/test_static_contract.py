@@ -61,8 +61,9 @@ class StaticContractTest(unittest.TestCase):
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
         error_page = (ROOT / "404.html").read_text(encoding="utf-8")
         self.assertIn("ページが見つかりません", error_page)
-        self.assertIn("/customer-flow-event-note/styles.css?v=20260802-6", error_page)
-        self.assertIn('href="/customer-flow-event-note/"', error_page)
+        self.assertIn("/styles.css?v=20260802-6", error_page)
+        self.assertIn('href="/"', error_page)
+        self.assertNotIn("/customer-flow-event-note/", error_page)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
         self.assertIn("const CACHE = 'customer-flow-note-v92';", service_worker)

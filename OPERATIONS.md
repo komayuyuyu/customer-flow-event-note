@@ -6,7 +6,9 @@
 
 ## 公開URL
 
-https://komayuyuyu.github.io/customer-flow-event-note/
+https://customer-flow-event-note.web.app/
+
+旧URL `https://komayuyuyu.github.io/customer-flow-event-note/` は、新URLを案内するGitHub Pagesとして維持する。
 
 ## アプリが参照するデータ
 
@@ -76,8 +78,15 @@ https://komayuyuyu.github.io/customer-flow-event-note/
    Pull Request作成時と`main`へのpush時は、GitHub Actionsの`Quality Checks`がPythonテスト、ルート直下の全JavaScript、`data/*.json`を自動検査する。このワークフローは読み取り専用で、デプロイや自動コミットは行わない。
 
 4. `app.js` / `styles.css` / HTML / Service Workerを変更した場合は、静的資産の更新番号と `sw.js` のキャッシュ名を変更する。
-5. GitHubへpushし、GitHub Pagesのデプロイ成功を確認する。
-6. 公開HTMLに新しい更新番号またはデータ変更が反映されていることを確認する。
+5. GitHubへpushしてPull Requestの必須CIを通し、`main`へマージする。
+6. 最新`main`でFirebase Hostingへ公開する。
+
+   ```powershell
+   npx.cmd --yes firebase-tools@15.25.1 deploy --only hosting --project customer-flow-event-note
+   ```
+
+7. 公開HTMLに新しい更新番号またはデータ変更が反映されていることを確認する。
+8. `curl.exe -I -L https://customer-flow-event-note.web.app/`で、`Content-Security-Policy: frame-ancestors 'none'`と`X-Frame-Options: DENY`を確認する。
 
 ## 表示期間
 
@@ -121,15 +130,15 @@ https://komayuyuyu.github.io/customer-flow-event-note/
 ## Firebase
 
 - `firebase-config.js` は公開アプリが使うFirebase設定を含む。
+- `firebase.json` は公開対象を静的アプリの必要ファイルへ限定し、クリックジャッキング、MIME推測、不要なブラウザ権限をHTTPヘッダーで拒否する。
 - APIキーはFirebase Webアプリ用の公開設定であり、秘密鍵ではない。
 - APIキーはGoogle Cloud Consoleで、Firebase関連APIと次のHTTPリファラーだけに制限する。
-  - `https://komayuyuyu.github.io/*`
-  - `https://komayuyuyu.github.io/customer-flow-event-note/*`
   - `https://customer-flow-event-note.firebaseapp.com/*`
   - `https://customer-flow-event-note.web.app/*`
   - `http://localhost:8000/*`
   - `http://127.0.0.1:8000/*`
-- Firebase Authenticationのリクエストではパスを含まないGitHub Pagesのオリジンがリファラーとして送られるため、`https://komayuyuyu.github.io/*` を削除しない。
+- GitHub Pagesは案内ページだけを配信しFirebase APIを呼ばないため、GitHub Pages用リファラーをAPIキー制限へ追加しない。
+- 公開対象は`firebase.json`の`hosting.ignore`で制限する。README、運用資料、テスト、候補データ、Firestoreルールを本番URLから配信しない。
 - Firestoreルールのテンプレートは `firebase/firestore.rules` に置く。
 - 実デプロイ時は `__ALLOWED_UID__` を所有者UIDへ置換したルールをFirebaseへ反映する。
 - Firestoreルールを変更した時は、Firebase Consoleの構文検査を通し、公開後に未認証RESTアクセスが `403` になることを確認する。
