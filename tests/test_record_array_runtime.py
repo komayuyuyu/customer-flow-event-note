@@ -105,6 +105,7 @@ class RecordArrayRuntimeTest(unittest.TestCase):
             global.window = {};
             global.fetch = async () => { throw new Error('Unexpected local API access'); };
             vm.runInThisContext(fs.readFileSync(process.argv[1], 'utf8'));
+            vm.runInThisContext(fs.readFileSync(process.argv[2], 'utf8'));
 
             const invalidRecord = {
               date: '2026-01-01',
@@ -113,12 +114,14 @@ class RecordArrayRuntimeTest(unittest.TestCase):
               calendarContext: [null, { type: '祝日', label: '元日' }],
             };
             const writes = [];
+            const deletions = [];
             const firestoreSdk = {
               doc: (...parts) => parts.join('/'),
               collection: (...parts) => parts.join('/'),
               getDoc: async () => ({ exists: () => true, data: () => invalidRecord }),
               getDocs: async () => ({ docs: [{ data: () => invalidRecord }] }),
               setDoc: async (_reference, value) => { writes.push(value); },
+              deleteDoc: async reference => { deletions.push(reference); },
               serverTimestamp: () => 'timestamp',
             };
             const user = { uid: 'owner' };
@@ -134,7 +137,7 @@ class RecordArrayRuntimeTest(unittest.TestCase):
                 };
               },
             };
-            vm.runInThisContext(fs.readFileSync(process.argv[2], 'utf8'));
+            vm.runInThisContext(fs.readFileSync(process.argv[3], 'utf8'));
 
             (async () => {
               const backend = await window.AppBackend.createCloudBackend({
@@ -157,7 +160,7 @@ class RecordArrayRuntimeTest(unittest.TestCase):
               ]);
 
               window.CUSTOMER_FLOW_FIREBASE_CONFIG = { enabled: true };
-              vm.runInThisContext(fs.readFileSync(process.argv[3], 'utf8'));
+              vm.runInThisContext(fs.readFileSync(process.argv[4], 'utf8'));
               await window.RecordsBackend.initialize();
               const listed = await window.RecordsBackend.list();
               const loaded = await window.RecordsBackend.get('2026-01-01');
@@ -176,9 +179,12 @@ class RecordArrayRuntimeTest(unittest.TestCase):
                 { id: 'event-3', title: '関連イベント', status: '中止' },
               ]);
               assert.deepEqual(writes.at(-1).calendarContext, []);
+              await window.RecordsBackend.remove('2026-01-01');
+              assert.equal(deletions.length, 1);
             })().catch(error => { console.error(error); process.exitCode = 1; });
             """,
             ROOT / "app-data.js",
+            ROOT / "record-store.js",
             ROOT / "app-backend.js",
             ROOT / "records-backend.js",
         )

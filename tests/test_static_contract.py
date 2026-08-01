@@ -16,6 +16,7 @@ class StaticContractTest(unittest.TestCase):
             "app.js",
             "records.js",
             "record.js",
+            "record-store.js",
             "records-backend.js",
             "app-data.js",
             "app-date-picker.js",
@@ -38,14 +39,16 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260801-13", html)
-            self.assertIn("ui-utils.js?v=20260801-13", html)
-            self.assertIn("app-data.js?v=20260801-13", html)
-            self.assertIn("firebase-client.js?v=20260801-13", html)
+            self.assertIn("styles.css?v=20260801-14", html)
+            self.assertIn("ui-utils.js?v=20260801-14", html)
+            self.assertIn("app-data.js?v=20260801-14", html)
+            self.assertIn("record-store.js?v=20260801-14", html)
+            self.assertIn("firebase-client.js?v=20260801-14", html)
+            self.assertLess(html.index("record-store.js"), html.index("firebase-client.js"))
             if name == "index.html":
-                self.assertIn("app-view.js?v=20260801-13", html)
-                self.assertIn("app-date-picker.js?v=20260801-13", html)
-                self.assertIn("app-backend.js?v=20260801-13", html)
+                self.assertIn("app-view.js?v=20260801-14", html)
+                self.assertIn("app-date-picker.js?v=20260801-14", html)
+                self.assertIn("app-backend.js?v=20260801-14", html)
                 self.assertLess(html.index("app-date-picker.js"), html.index("app.js"))
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
@@ -55,17 +58,18 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v72';", service_worker)
-        self.assertIn("const VERSION = '20260801-13';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v73';", service_worker)
+        self.assertIn("const VERSION = '20260801-14';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("app-view.js?v=${VERSION}", service_worker)
         self.assertIn("app-date-picker.js?v=${VERSION}", service_worker)
         self.assertIn("app-backend.js?v=${VERSION}", service_worker)
         self.assertIn("firebase-client.js?v=${VERSION}", service_worker)
         self.assertIn("ui-utils.js?v=${VERSION}", service_worker)
+        self.assertIn("record-store.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
         app_controller = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260801-13'", app_controller)
+        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260801-14'", app_controller)
 
     def test_event_update_tooling_is_present(self):
         self.assertTrue((ROOT / "impact.py").is_file())
@@ -362,9 +366,21 @@ class StaticContractTest(unittest.TestCase):
         firebase_client = (ROOT / "firebase-client.js").read_text(encoding="utf-8")
         app_backend = (ROOT / "app-backend.js").read_text(encoding="utf-8")
         records_backend = (ROOT / "records-backend.js").read_text(encoding="utf-8")
+        record_store = (ROOT / "record-store.js").read_text(encoding="utf-8")
         self.assertIn("window.FirebaseClient", firebase_client)
         self.assertIn("window.FirebaseClient.create", app_backend)
         self.assertIn("window.FirebaseClient.create", records_backend)
+        self.assertIn("window.RecordStore", record_store)
+        self.assertIn("createCloudRecordStore", app_backend)
+        self.assertIn("createCloudRecordStore", records_backend)
+        self.assertIn("firestoreSdk.doc", record_store)
+        self.assertNotIn("firestoreSdk.doc", app_backend)
+        self.assertNotIn("firestoreSdk.doc", records_backend)
+        self.assertIn("unauthorizedMessage: 'このGoogleアカウントには記録権限がありません。'", records_backend)
+        self.assertIn("async function renderRecordsPage(user, authError)", records)
+        self.assertIn("async function loadRecord(user, authError)", record)
+        self.assertIn("authError.message", records)
+        self.assertIn("authError.message", record)
         self.assertNotIn("firebase-app.js", app_backend)
         self.assertNotIn("firebase-app.js", records_backend)
         self.assertIn("イベントと紐づけて保存します", app)

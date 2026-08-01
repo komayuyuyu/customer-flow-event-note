@@ -1,7 +1,9 @@
 (function () {
   const config = window.CUSTOMER_FLOW_FIREBASE_CONFIG || { enabled: false };
   const { normalizeRecordArrays } = window.AppData;
+  const { createCloudRecordStore } = window.RecordStore;
   let firebase;
+  let cloudRecords;
   let currentUser;
 
   async function initialize(onUserChange = () => {}) {
@@ -11,10 +13,16 @@
       return currentUser;
     }
     firebase = await window.FirebaseClient.create(config, {
-      onUserChange(user) {
+      unauthorizedMessage: 'このGoogleアカウントには記録権限がありません。',
+      onUserChange(user, error) {
         currentUser = user;
-        onUserChange(currentUser);
+        onUserChange(currentUser, error);
       },
+    });
+    cloudRecords = createCloudRecordStore({
+      currentUser: () => currentUser,
+      dataServices: firebase.dataServices,
+      writeAuthMessage: '記録を見るにはGoogleログインが必要です。',
     });
     await firebase.initialize();
     return currentUser;
@@ -30,26 +38,13 @@
     return firebase.logout();
   }
 
-  function requireCurrentUser() {
-    if (!currentUser) throw new Error('記録を見るにはGoogleログインが必要です。');
-    return currentUser;
-  }
-
-  function protectedFirestore() {
-    return firebase.dataServices();
-  }
-
   async function list() {
     if (!config.enabled) {
       const response = await fetch('./api/observations');
       if (!response.ok) throw new Error('記録一覧を読み込めませんでした。');
       return (await response.json()).map(normalizeRecordArrays);
     }
-    const user = requireCurrentUser();
-    const { db, firestoreSdk } = protectedFirestore();
-    const collection = firestoreSdk.collection(db, 'users', user.uid, 'observations');
-    const snapshot = await firestoreSdk.getDocs(collection);
-    return snapshot.docs.map(item => normalizeRecordArrays(item.data())).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    return cloudRecords.list();
   }
 
   async function get(date) {
@@ -58,11 +53,7 @@
       if (!response.ok) throw new Error('記録を読み込めませんでした。');
       return normalizeRecordArrays((await response.json()).observation);
     }
-    const user = requireCurrentUser();
-    const { db, firestoreSdk } = protectedFirestore();
-    const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', date);
-    const snapshot = await firestoreSdk.getDoc(reference);
-    return snapshot.exists() ? normalizeRecordArrays(snapshot.data()) : null;
+    return cloudRecords.get(date);
   }
 
   async function save(payload) {
@@ -72,14 +63,7 @@
       if (!response.ok) throw new Error('記録を保存できませんでした。');
       return;
     }
-    const user = requireCurrentUser();
-    const { db, firestoreSdk } = protectedFirestore();
-    const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', observation.date);
-    await firestoreSdk.setDoc(reference, {
-      ...observation,
-      ownerUid: user.uid,
-      updatedAt: firestoreSdk.serverTimestamp(),
-    }, { merge: true });
+    await cloudRecords.save(observation);
   }
 
   async function remove(date) {
@@ -88,10 +72,7 @@
       if (!response.ok) throw new Error('記録を削除できませんでした。');
       return;
     }
-    const user = requireCurrentUser();
-    const { db, firestoreSdk } = protectedFirestore();
-    const reference = firestoreSdk.doc(db, 'users', user.uid, 'observations', date);
-    await firestoreSdk.deleteDoc(reference);
+    await cloudRecords.remove(date);
   }
 
   window.RecordsBackend = { initialize, login, logout, list, get, save, remove, currentUser: () => currentUser };

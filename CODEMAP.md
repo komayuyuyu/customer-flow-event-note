@@ -15,6 +15,7 @@
 ## 共通処理
 
 - `app-data.js`: イベント・祝日データの読み込み、日付計算、記録内配列の正規化、旧記録の補完。
+- `record-store.js`: Firestore上の記録取得・一覧・保存・削除を3画面共通で扱う。
 - `firebase-client.js`: Firebase SDKの読み込みと共通のGoogle認証初期化。
 - `app-backend.js`: ホーム画面のFirestore読込・保存境界とローカル互換API。
 - `records-backend.js`: 記録一覧・詳細画面の読込・保存境界と記録CRUD。

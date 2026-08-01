@@ -67,12 +67,15 @@ function renderPage() {
   history.replaceState(null, '', url);
 }
 
-async function renderRecordsPage(user) {
+async function renderRecordsPage(user, authError) {
   activeUser = user;
   authPanel.hidden = Boolean(user);
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
   if (!user) {
-    listRoot.innerHTML = '<p class="empty-state">ログインすると記録一覧を表示します。</p>';
+    const message = authError?.message === 'このGoogleアカウントには記録権限がありません。'
+      ? authError.message
+      : authError ? readableAuthError(authError) : 'ログインすると記録一覧を表示します。';
+    listRoot.innerHTML = `<p class="empty-state">${escapeHtml(message)}</p>`;
     paginationRoot.hidden = true;
     return;
   }

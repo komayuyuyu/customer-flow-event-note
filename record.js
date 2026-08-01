@@ -137,10 +137,13 @@ confirmDeleteButton.addEventListener('click', async () => {
     confirmDeleteButton.disabled = false;
   }
 });
-async function loadRecord(user) {
+async function loadRecord(user, authError) {
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
   if (!user) {
-    detailRoot.innerHTML = '<p class="empty-state">記録を見るにはGoogleログインが必要です。</p>';
+    const message = authError?.message === 'このGoogleアカウントには記録権限がありません。'
+      ? authError.message
+      : authError ? readableAuthError(authError) : '記録を見るにはGoogleログインが必要です。';
+    detailRoot.innerHTML = `<p class="empty-state">${escapeHtml(message)}</p>`;
     return;
   }
   if (!recordDate) {
