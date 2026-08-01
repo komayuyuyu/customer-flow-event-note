@@ -39,16 +39,16 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260801-24", html)
-            self.assertIn("ui-utils.js?v=20260801-24", html)
-            self.assertIn("app-data.js?v=20260801-24", html)
-            self.assertIn("record-store.js?v=20260801-24", html)
-            self.assertIn("firebase-client.js?v=20260801-24", html)
+            self.assertIn("styles.css?v=20260801-25", html)
+            self.assertIn("ui-utils.js?v=20260801-25", html)
+            self.assertIn("app-data.js?v=20260801-25", html)
+            self.assertIn("record-store.js?v=20260801-25", html)
+            self.assertIn("firebase-client.js?v=20260801-25", html)
             self.assertLess(html.index("record-store.js"), html.index("firebase-client.js"))
             if name == "index.html":
-                self.assertIn("app-view.js?v=20260801-24", html)
-                self.assertIn("app-date-picker.js?v=20260801-24", html)
-                self.assertIn("app-backend.js?v=20260801-24", html)
+                self.assertIn("app-view.js?v=20260801-25", html)
+                self.assertIn("app-date-picker.js?v=20260801-25", html)
+                self.assertIn("app-backend.js?v=20260801-25", html)
                 self.assertLess(html.index("app-date-picker.js"), html.index("app.js"))
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
@@ -58,8 +58,8 @@ class StaticContractTest(unittest.TestCase):
             self.assertNotIn("IVENT INFO", html)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'customer-flow-note-v83';", service_worker)
-        self.assertIn("const VERSION = '20260801-24';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v84';", service_worker)
+        self.assertIn("const VERSION = '20260801-25';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("app-view.js?v=${VERSION}", service_worker)
         self.assertIn("app-date-picker.js?v=${VERSION}", service_worker)
@@ -69,7 +69,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("record-store.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
         app_controller = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260801-24'", app_controller)
+        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260801-25'", app_controller)
 
     def test_event_update_tooling_is_present(self):
         self.assertTrue((ROOT / "impact.py").is_file())
@@ -435,6 +435,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn(".record-list-head .count-pill { width: var(--record-side-size);", styles)
         self.assertIn(".site-nav { position: fixed; top: 10px; right: max(16px, calc((100vw - 760px) / 2));", styles)
         self.assertIn(".menu-toggle, .menu-header, .menu-close, .menu-overlay { display: none; }", styles)
+        self.assertIn("html { scrollbar-gutter: stable; }", styles)
         self.assertIn(".site-nav { position: fixed !important; top: 0; right: 0; bottom: 0;", styles)
         self.assertIn(".menu-toggle { -webkit-appearance: none; appearance: none; display: flex;", styles)
         self.assertIn(".event-panel .section-heading { display: grid; grid-template-columns: minmax(0, 1fr) var(--status-pill-size);", styles)
