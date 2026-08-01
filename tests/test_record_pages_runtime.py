@@ -89,14 +89,17 @@ class RecordPagesRuntimeTest(unittest.TestCase):
                 : [],
             }));
             let initialized;
+            let authCallback;
+            let recordsResult = Promise.resolve(records);
             const removedDates = [];
             global.RecordsBackend = {
               currentUser: () => ({ uid: 'owner' }),
               initialize(callback) {
+                authCallback = callback;
                 initialized = Promise.resolve().then(() => callback({ uid: 'owner' }));
                 return initialized;
               },
-              list: async () => records,
+              list: () => recordsResult,
               login: async () => {},
               logout: async () => {},
               remove: async date => { removedDates.push(date); },
@@ -140,6 +143,16 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               assert.deepEqual(removedDates, ['2026-08-01']);
               assert.equal(modal.hidden, true);
               assert.equal(elements.get('#confirm-delete-button').disabled, false);
+
+              let releaseStaleRecords;
+              recordsResult = new Promise(resolve => { releaseStaleRecords = resolve; });
+              const staleLoad = authCallback({ uid: 'owner' });
+              await new Promise(resolve => setImmediate(resolve));
+              await authCallback(null);
+              releaseStaleRecords(records);
+              await staleLoad;
+              assert.match(list.innerHTML, /ログインすると記録一覧を表示します。/);
+              assert.doesNotMatch(list.innerHTML, /2026\/08\/01/);
             })().catch(error => { console.error(error); process.exitCode = 1; });
             """,
             "records.js",
@@ -230,18 +243,21 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               calendarContext: [{ type: '<b>祝日</b>', label: '<i>危険</i>' }],
             };
             let initialized;
+            let authCallback;
             let savedRecord;
             let rejectSave = true;
             let saveCalls = 0;
             let saveGate = Promise.resolve();
+            let recordResult = Promise.resolve(sourceRecord);
             const removedDates = [];
             global.RecordsBackend = {
               currentUser: () => ({ uid: 'owner' }),
-              get: async date => {
+              get: date => {
                 assert.equal(date, '2026-08-01');
-                return sourceRecord;
+                return recordResult;
               },
               initialize(callback) {
+                authCallback = callback;
                 initialized = Promise.resolve().then(() => callback({ uid: 'owner' }));
                 return initialized;
               },
@@ -327,6 +343,17 @@ class RecordPagesRuntimeTest(unittest.TestCase):
               await elements.get('#confirm-delete-button').dispatch('click');
               assert.deepEqual(removedDates, ['2026-08-01']);
               assert.equal(location.href, './records.html');
+
+              location.href = 'https://example.test/record.html?date=2026-08-01';
+              let releaseStaleRecord;
+              recordResult = new Promise(resolve => { releaseStaleRecord = resolve; });
+              const staleLoad = authCallback({ uid: 'owner' });
+              await new Promise(resolve => setImmediate(resolve));
+              await authCallback(null);
+              releaseStaleRecord(sourceRecord);
+              await staleLoad;
+              assert.match(detail.innerHTML, /記録を見るにはGoogleログインが必要です。/);
+              assert.doesNotMatch(detail.innerHTML, /class="detail-grid"/);
             })().catch(error => { console.error(error); process.exitCode = 1; });
             """,
             "record.js",

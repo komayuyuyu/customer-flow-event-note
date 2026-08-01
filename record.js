@@ -21,6 +21,8 @@ const { enrichLegacyRecord } = window.AppData;
 const recordDate = new URLSearchParams(location.search).get('date') || '';
 let currentRecord;
 let saveInProgress = false;
+let activeUser = null;
+let recordLoadRequest = 0;
 
 function renderDetailRow(label, content, className = '') {
   return `<div class="detail-row ${className}"><dt>${escapeHtml(label)}</dt><dd>${content || '—'}</dd></div>`;
@@ -147,6 +149,8 @@ confirmDeleteButton.addEventListener('click', async () => {
   }
 });
 async function loadRecord(user, authError) {
+  const request = ++recordLoadRequest;
+  activeUser = user;
   navAuthButton.textContent = user ? 'ログアウト' : 'ログイン';
   if (!user) {
     const message = authError?.message === 'このGoogleアカウントには記録権限がありません。'
@@ -159,7 +163,11 @@ async function loadRecord(user, authError) {
     detailRoot.innerHTML = '<p class="empty-state">記録日が指定されていません。</p>';
     return;
   }
-  currentRecord = await enrichLegacyRecord(await RecordsBackend.get(recordDate));
+  const storedRecord = await RecordsBackend.get(recordDate);
+  if (request !== recordLoadRequest || activeUser !== user) return;
+  const loadedRecord = await enrichLegacyRecord(storedRecord);
+  if (request !== recordLoadRequest || activeUser !== user) return;
+  currentRecord = loadedRecord;
   detailRoot.innerHTML = currentRecord ? '' : '<p class="empty-state">記録が見つかりません。</p>';
   if (currentRecord) renderReadOnlyView();
 }
