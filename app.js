@@ -102,6 +102,13 @@ function setImpactTimeFieldsDisabled(disabled) {
   impactEndInput.disabled = disabled;
 }
 
+function syncImpactTimeFields() {
+  const noImpact = checkedValue('eventImpact') === '感じなかった';
+  setImpactTimeFieldsDisabled(noImpact);
+  if (noImpact) clearImpactTimeFields();
+  syncTimePlaceholders();
+}
+
 function impactTimeValues() {
   return {
     actualImpactStart: impactStartInput.value,
@@ -251,7 +258,6 @@ function clearForm() {
   dateInput.value = selectedDate;
   datePicker.updateButton();
   clearImpactTimeFields();
-  syncTimePlaceholders();
   note.value = '';
   noteCount.textContent = '0 / 600';
   saveActions.hidden = true;
@@ -261,6 +267,7 @@ function resetObservationForm() {
   clearForm();
   setChecked('weather', '不明');
   setChecked('accuracy', '未判断');
+  syncImpactTimeFields();
 }
 
 async function loadDay() {
@@ -276,9 +283,6 @@ async function loadDay() {
     renderEvents(data.events || [], dateContext);
     resetObservationForm();
     setRecordAccess(currentUser);
-    if (checkedValue('eventImpact') === '感じなかった') {
-      setImpactTimeFieldsDisabled(true);
-    }
     await loadWeek();
   } catch (error) {
     eventCount.textContent = '取得失敗';
@@ -307,12 +311,7 @@ bindTimePlaceholders();
 bindQuietPeriodExclusivity(form);
 form.addEventListener('change', event => {
   if (event.target.name !== 'eventImpact') return;
-  const noImpact = event.target.value === '感じなかった';
-  setImpactTimeFieldsDisabled(noImpact);
-  if (noImpact) {
-    clearImpactTimeFields();
-    syncTimePlaceholders();
-  }
+  syncImpactTimeFields();
 });
 
 async function requestLogin(triggerButton) {
@@ -403,7 +402,7 @@ async function initialize() {
   initialized = true;
   await loadDay();
   if (location.hash === '#record-form') requestAnimationFrame(() => requestAnimationFrame(() => form.scrollIntoView({ block: 'start' })));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-17', { updateViaCache: 'none' }).catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260801-18', { updateViaCache: 'none' }).catch(() => {});
 }
 
 initialize().catch(error => {
