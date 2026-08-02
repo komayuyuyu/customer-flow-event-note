@@ -1390,10 +1390,10 @@
   },
   {
     "id": "summer-koshien-2026-opening",
-    "title": "夏の甲子園2026 開幕",
+    "title": "第108回全国高等学校野球選手権大会 開幕",
     "startAt": "2026-08-05T16:00:00+09:00",
-    "endAt": "2026-08-05T20:00:00+09:00",
-    "broadcast": "NHK・ABCテレビなど（番組表確認）",
+    "endAt": "2026-08-05T20:30:00+09:00",
+    "broadcast": "NHK・ABCテレビ、バーチャル高校野球など",
     "category": "スポーツ中継・現地イベント",
     "area": "兵庫",
     "inPersonEvent": true,
@@ -1405,22 +1405,74 @@
     "buzz": 2,
     "significance": 3,
     "impactLevelOverride": "中",
-    "officialConfirmed": false,
+    "officialConfirmed": true,
     "sources": [
       {
-        "title": "第108屆全國高等學校棒球錦標賽",
-        "url": "https://zh.wikipedia.org/wiki/%E7%AC%AC108%E5%B1%86%E5%85%A8%E5%9C%8B%E9%AB%98%E7%AD%89%E5%AD%B8%E6%A0%A1%E6%A3%92%E7%90%83%E9%8C%A6%E6%A8%99%E8%B3%BD"
+        "title": "日本高等学校野球連盟 第108回全国高等学校野球選手権大会",
+        "url": "https://www.jhbf.or.jp/sensyuken/2026/"
+      },
+      {
+        "title": "日本高等学校野球連盟 大会日程",
+        "url": "https://www.jhbf.or.jp/sensyuken/2026/schedule/"
+      },
+      {
+        "title": "ABCテレビ 第108回全国高校野球選手権大会",
+        "url": "https://www.asahi.co.jp/koshien/index.html"
       }
     ],
     "impactScore": 21,
     "impactLevel": "中",
-    "confidence": "低",
+    "confidence": "高",
     "predictedWindows": [
       {
         "label": "イベント開催中",
         "date": "2026-08-05",
         "start": "16:00",
-        "end": "20:00"
+        "end": "20:30"
+      }
+    ]
+  },
+  {
+    "id": "biwako-fireworks-2026",
+    "title": "2026びわ湖大花火大会",
+    "startAt": "2026-08-06T19:30:00+09:00",
+    "endAt": "2026-08-06T20:30:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "滋賀・大津",
+    "inPersonEvent": true,
+    "liveReason": "第40回記念大会として過去最多の12,000発とドローンショーを実施する、関西を代表する大規模花火大会",
+    "trafficReason": "大津港周辺で大規模な交通規制が実施され、JR琵琶湖線を含む関西圏の夜間移動に影響する",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "2026びわ湖大花火大会 開催概要",
+        "url": "https://www.biwako-visitors.jp/hanabi/outline"
+      },
+      {
+        "title": "2026びわ湖大花火大会 交通規制",
+        "url": "https://www.biwako-visitors.jp/hanabi"
+      },
+      {
+        "title": "共同通信社 第40回記念大会・過去最多12,000発",
+        "url": "https://www.kyodo.co.jp/pr/2026-07-21_4023786/"
+      }
+    ],
+    "impactScore": 20,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-06",
+        "start": "19:30",
+        "end": "20:30"
       }
     ]
   },
@@ -1482,15 +1534,11 @@
     "buzz": 2,
     "significance": 3,
     "impactLevelOverride": "小",
-    "officialConfirmed": false,
+    "officialConfirmed": true,
     "sources": [
       {
-        "title": "Awa Odori",
-        "url": "https://de.wikipedia.org/wiki/Awa_Odori"
-      },
-      {
-        "title": "阿波舞",
-        "url": "https://zh.wikipedia.org/wiki/%E9%98%BF%E6%B3%A2%E8%88%9E"
+        "title": "阿波おどり未来へつなぐ実行委員会 2026年度開催資料",
+        "url": "https://www.awaodorimirai.com/_files/ugd/827d27_ac79cf17ec0d46ef86e58095ef3a61d3.pdf"
       }
     ],
     "impactScore": 17,
@@ -1502,6 +1550,51 @@
         "date": "2026-08-12",
         "start": "18:00",
         "end": "22:30"
+      }
+    ]
+  },
+  {
+    "id": "summer-sonic-2026",
+    "title": "SUMMER SONIC 2026",
+    "startAt": "2026-08-14T09:00:00+09:00",
+    "endAt": "2026-08-16T22:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "音楽フェス",
+    "area": "大阪・東京",
+    "inPersonEvent": true,
+    "liveReason": "大阪・東京で3日間開催され、L'Arc-en-Ciel、The Strokes、BUMP OF CHICKENなど国内外の大型出演者で公開SNSと主要音楽媒体の話題が集中する",
+    "trafficReason": "大阪会場への来場と終演後の夜間移動が、お盆休みの関西圏の交通・外出動線と重なる",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "SUMMER SONIC 2026 大阪開催情報",
+        "url": "https://www.summersonic.com/info/osaka/"
+      },
+      {
+        "title": "SUMMER SONIC 2026 日程別ラインナップ",
+        "url": "https://www.summersonic.com/news/2026-03-13-19870/"
+      },
+      {
+        "title": "ニッポン放送 SUMMER SONIC 2026",
+        "url": "https://event.1242.com/events/summer-sonic-2026/"
+      }
+    ],
+    "impactScore": 20,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-14",
+        "start": "09:00",
+        "end": "22:00"
       }
     ]
   },
@@ -1523,16 +1616,16 @@
     "buzz": 3,
     "significance": 2,
     "impactLevelOverride": "小",
-    "officialConfirmed": false,
+    "officialConfirmed": true,
     "sources": [
       {
-        "title": "Comiket",
-        "url": "https://en.wikipedia.org/wiki/Comiket"
+        "title": "コミックマーケット108 コミケットアピール",
+        "url": "https://www.comiket.co.jp/info-c/C108/C108Appeal.pdf"
       }
     ],
     "impactScore": 16,
     "impactLevel": "小",
-    "confidence": "低",
+    "confidence": "中",
     "predictedWindows": [
       {
         "label": "イベント開催中",
@@ -1559,15 +1652,11 @@
     "buzz": 2,
     "significance": 3,
     "impactLevelOverride": "中",
-    "officialConfirmed": false,
+    "officialConfirmed": true,
     "sources": [
       {
-        "title": "Gozan no Okuribi",
-        "url": "https://en.wikipedia.org/wiki/Gozan_no_Okuribi"
-      },
-      {
-        "title": "五山送火",
-        "url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E5%B1%B1%E9%80%81%E7%81%AB"
+        "title": "京都市公式 京都観光Navi 五山送り火鑑賞2026",
+        "url": "https://ja.kyoto.travel/event/single.php?event_id=12218"
       }
     ],
     "impactScore": 17,
@@ -1584,7 +1673,7 @@
   },
   {
     "id": "summer-koshien-2026-final",
-    "title": "夏の甲子園2026 決勝",
+    "title": "第108回全国高等学校野球選手権大会 決勝",
     "startAt": "2026-08-22T10:00:00+09:00",
     "endAt": "2026-08-22T13:00:00+09:00",
     "broadcast": "NHK・ABCテレビなど（番組表確認）",
@@ -1599,16 +1688,24 @@
     "buzz": 3,
     "significance": 3,
     "impactLevelOverride": "中",
-    "officialConfirmed": false,
+    "officialConfirmed": true,
     "sources": [
       {
-        "title": "第108屆全國高等學校棒球錦標賽",
-        "url": "https://zh.wikipedia.org/wiki/%E7%AC%AC108%E5%B1%86%E5%85%A8%E5%9C%8B%E9%AB%98%E7%AD%89%E5%AD%B8%E6%A0%A1%E6%A3%92%E7%90%83%E9%8C%A6%E6%A8%99%E8%B3%BD"
+        "title": "日本高等学校野球連盟 第108回全国高等学校野球選手権大会",
+        "url": "https://www.jhbf.or.jp/sensyuken/2026/"
+      },
+      {
+        "title": "日本高等学校野球連盟 大会日程",
+        "url": "https://www.jhbf.or.jp/sensyuken/2026/schedule/"
+      },
+      {
+        "title": "ABCテレビ 熱闘甲子園",
+        "url": "https://www.asahi.co.jp/netto/"
       }
     ],
     "impactScore": 24,
     "impactLevel": "中",
-    "confidence": "低",
+    "confidence": "高",
     "predictedWindows": [
       {
         "label": "イベント開催中",
