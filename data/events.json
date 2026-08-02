@@ -1348,14 +1348,14 @@
   },
   {
     "id": "vnl-men-2026-final-round",
-    "title": "VNL男子2026 ファイナルラウンド 準決勝 JPN対USA",
-    "startAt": "2026-08-01T20:30:00+09:00",
-    "endAt": "2026-08-01T23:00:00+09:00",
-    "broadcast": "VBTV（ライブ配信）・TBS系列は追加放送日時を発表予定",
+    "title": "VNL男子2026 ファイナルラウンド 3位決定戦 JPN対SLO",
+    "startAt": "2026-08-02T16:00:00+09:00",
+    "endAt": "2026-08-02T18:00:00+09:00",
+    "broadcast": "VBTV（ライブ配信）・TBS公式サイトで試合結果とハイライトを掲載",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "男子日本代表がVNLファイナルラウンド準決勝へ進出。大会公式で8月1日20:30開始のJPN対USAと確定。",
-    "trafficReason": "土曜夜の日本代表による国際大会準決勝。20:30からライブ配信。",
+    "liveReason": "男子日本代表がVNLファイナルラウンド3位決定戦に出場。8月2日16:00開始のJPN対SLOは日本が1–3で敗れ、大会4位となった。",
+    "trafficReason": "日曜午後の日本代表による国際大会3位決定戦。VBTVでライブ配信された。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 1,
@@ -1364,8 +1364,8 @@
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "Volleyball World VNL男子2026 準決勝 JPN対USA",
-        "url": "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/schedule/26546/"
+        "title": "TBS VNL男子2026 ファイナルラウンド試合結果",
+        "url": "https://www.tbs.co.jp/volley-nationsleague/result/m.html"
       },
       {
         "title": "JVA VNL男子2026 ファイナルラウンド競技日程",
@@ -1382,9 +1382,87 @@
     "predictedWindows": [
       {
         "label": "リアルタイム視聴",
-        "date": "2026-08-01",
-        "start": "20:30",
-        "end": "23:00"
+        "date": "2026-08-02",
+        "start": "16:00",
+        "end": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "kinosaki-yumehanabi-2026-08-03",
+    "title": "城崎温泉夏物語2026 夢花火",
+    "startAt": "2026-08-03T21:00:00+09:00",
+    "endAt": "2026-08-03T21:05:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・豊岡",
+    "inPersonEvent": true,
+    "liveReason": "夏季平日開催の5分間花火。8月3日は21:00〜21:05。",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "城崎温泉観光協会 城崎温泉夏物語2026",
+        "url": "https://kinosaki-spa.gr.jp/event/natsu-monogatari/"
+      },
+      {
+        "title": "豊岡市観光公式サイト 城崎温泉夏物語2026 夢花火",
+        "url": "https://toyooka-tourism.com/event/kinosaki_yumehanabi/"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-03",
+        "start": "21:00",
+        "end": "21:05"
+      }
+    ]
+  },
+  {
+    "id": "kinosaki-yumehanabi-2026-08-04",
+    "title": "城崎温泉夏物語2026 夢花火",
+    "startAt": "2026-08-04T21:00:00+09:00",
+    "endAt": "2026-08-04T21:05:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・豊岡",
+    "inPersonEvent": true,
+    "liveReason": "夏季平日開催の5分間花火。8月4日は21:00〜21:05。",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "城崎温泉観光協会 城崎温泉夏物語2026",
+        "url": "https://kinosaki-spa.gr.jp/event/natsu-monogatari/"
+      },
+      {
+        "title": "豊岡市観光公式サイト 城崎温泉夏物語2026 夢花火",
+        "url": "https://toyooka-tourism.com/event/kinosaki_yumehanabi/"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-04",
+        "start": "21:00",
+        "end": "21:05"
       }
     ]
   },

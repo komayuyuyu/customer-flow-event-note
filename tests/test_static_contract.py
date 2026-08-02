@@ -110,7 +110,7 @@ class StaticContractTest(unittest.TestCase):
         candidate_by_id = {event["id"]: event for event in candidates}
         self.assertEqual(
             candidate_by_id["vnl-men-2026-final-round"]["trafficReason"],
-            "土曜夜の日本代表による国際大会準決勝。20:30からライブ配信。",
+            "日曜午後の日本代表による国際大会3位決定戦。VBTVでライブ配信された。",
         )
 
         store_by_id = {event["id"]: event for event in store_events}
@@ -132,8 +132,8 @@ class StaticContractTest(unittest.TestCase):
         vnl = next(event for event in events if event["id"] == "vnl-men-2026-final-round")
         vnl_windows = {window["label"]: window for window in vnl["predictedWindows"]}
         self.assertNotIn("視聴準備・早めの帰宅", vnl_windows)
-        self.assertEqual(vnl_windows["リアルタイム視聴"]["start"], "20:30")
-        self.assertEqual(vnl_windows["リアルタイム視聴"]["end"], "23:00")
+        self.assertEqual(vnl_windows["リアルタイム視聴"]["start"], "16:00")
+        self.assertEqual(vnl_windows["リアルタイム視聴"]["end"], "18:00")
         self.assertNotIn("reason", vnl_windows["リアルタイム視聴"])
 
     def test_weekly_research_window_is_sixty_days(self):
