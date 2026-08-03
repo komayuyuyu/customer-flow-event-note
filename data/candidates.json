@@ -831,29 +831,30 @@
   },
   {
     "id": "kinosaki-yumehanabi-2026-08-04",
-    "title": "城崎温泉夏物語2026 夢花火",
-    "startAt": "2026-08-04T21:00:00+09:00",
-    "endAt": "2026-08-04T21:05:00+09:00",
+    "title": "第50回 城崎温泉ふるさと祭り2026",
+    "startAt": "2026-08-04T16:00:00+09:00",
+    "endAt": "2026-08-04T21:30:00+09:00",
     "broadcast": "現地イベント",
-    "category": "花火",
+    "category": "祭り・花火",
     "area": "兵庫・豊岡",
     "inPersonEvent": true,
-    "liveReason": "夏季平日開催の5分間花火。8月4日は21:00〜21:05。",
+    "liveReason": "城崎温泉最大の夏祭り。約40店の露店・キッチンカーとステージを展開し、21:00から第50回記念の約500発の夢花火を予定。",
+    "trafficReason": "城崎温泉街で16:00〜21:30に開催。安全確保のため円山川沿いの堤防エリアは立入禁止。",
     "nationalReach": 1,
     "liveUrgency": 2,
     "accessibility": 1,
-    "buzz": 1,
-    "significance": 1,
+    "buzz": 2,
+    "significance": 2,
     "impactLevelOverride": "小",
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "城崎温泉観光協会 城崎温泉夏物語2026",
-        "url": "https://kinosaki-spa.gr.jp/event/natsu-monogatari/"
+        "title": "城崎温泉観光協会 第50回 城崎温泉ふるさと祭り2026",
+        "url": "https://kinosaki-spa.gr.jp/do/30464/"
       },
       {
-        "title": "豊岡市観光公式サイト 城崎温泉夏物語2026 夢花火",
-        "url": "https://toyooka-tourism.com/event/kinosaki_yumehanabi/"
+        "title": "豊岡市観光公式サイト 城崎温泉ふるさとまつり",
+        "url": "https://toyooka-tourism.com/event/kinosaki_furusato/"
       }
     ]
   },
