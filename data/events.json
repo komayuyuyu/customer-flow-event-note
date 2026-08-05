@@ -1512,6 +1512,45 @@
     ]
   },
   {
+    "id": "hiroshima-peace-memorial-ceremony-2026",
+    "title": "令和8年 広島平和記念式典",
+    "startAt": "2026-08-06T08:00:00+09:00",
+    "endAt": "2026-08-06T08:50:00+09:00",
+    "broadcast": "NHK総合・NHK ONE",
+    "category": "式典・生中継",
+    "area": "全国・広島",
+    "liveReason": "被爆81年、日本被団協結成70年、原爆ドーム世界遺産登録30年の節目に行われる全国中継の平和記念式典",
+    "trafficReason": "式典は8:00〜8:50、NHK総合は8:00〜8:55に生中継。神戸での直接的な人流影響は小さい",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "広島市 令和8年（2026年）平和記念式典",
+        "url": "https://www.city.hiroshima.lg.jp/atomicbomb-peace/peace-ceremony/1021111/1049876.html"
+      },
+      {
+        "title": "NHK広島 被爆81年 夏の特集番組",
+        "url": "https://prtimes.jp/main/html/rd/p/000000082.000160617.html"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-06",
+        "start": "08:00",
+        "end": "08:50"
+      }
+    ]
+  },
+  {
     "id": "biwako-fireworks-2026",
     "title": "2026びわ湖大花火大会",
     "startAt": "2026-08-06T19:30:00+09:00",
