@@ -1042,6 +1042,40 @@
     ]
   },
   {
+    "id": "aomori-nebuta-fireworks-2026",
+    "title": "青森ねぶた祭 最終日・第72回青森花火大会",
+    "startAt": "2026-08-07T13:00:00+09:00",
+    "endAt": "2026-08-07T21:00:00+09:00",
+    "broadcast": "青森花火大会公式YouTubeライブ配信（19:00開始予定）",
+    "category": "祭り・花火",
+    "area": "青森",
+    "inPersonEvent": true,
+    "liveReason": "青森ねぶた祭の最終日。昼の大型ねぶた運行に続き、夜は受賞ねぶたの海上運行と1万発以上の花火でフィナーレを迎え、公式YouTubeでもライブ配信される",
+    "trafficReason": "青森市中心部と青森港周辺で終日来場が集中し、8月2日から7日まで交通規制が行われる",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "花火大会は荒天時の順延なし。中止決定は当日15時で、公式サイトと専用電話で告知されるため15時以降に再確認する。",
+    "sources": [
+      {
+        "title": "青森ねぶた祭 オフィシャルサイト スケジュール・運行コース",
+        "url": "https://www.nebuta.jp/info/schedule/schedule.html"
+      },
+      {
+        "title": "第72回青森花火大会 公式サイト",
+        "url": "https://aomorihanabitaikai.jp/"
+      },
+      {
+        "title": "津軽海峡フェリー 青森ねぶた祭・青森花火大会の交通規制",
+        "url": "https://www.tsugarukaikyo.co.jp/guidance/aomori-nebuta/"
+      }
+    ]
+  },
+  {
     "id": "awa-odori-tokushima-2026",
     "title": "徳島市阿波おどり",
     "startAt": "2026-08-12T18:00:00+09:00",
