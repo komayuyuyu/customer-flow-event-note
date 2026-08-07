@@ -1076,6 +1076,64 @@
     ]
   },
   {
+    "id": "black-samurai-summit-2026-nagoya",
+    "title": "バスケットボール BLACK SAMURAI SUMMIT 2026 名古屋サミット",
+    "startAt": "2026-08-08T13:30:00+09:00",
+    "endAt": "2026-08-08T16:00:00+09:00",
+    "broadcast": "テレビ朝日系列生中継（13:30開始）",
+    "category": "バスケットボール中継・現地イベント",
+    "area": "愛知・全国",
+    "inPersonEvent": true,
+    "liveReason": "八村塁が選抜した18歳以下の選手によるスペシャルマッチ。テレビ朝日系列で生中継され、国内バスケットボールファンの注目が集まる",
+    "trafficReason": "現地の人流影響は名古屋中心。神戸では昼のテレビ視聴と公開SNSでの結果確認による間接影響を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "BLACK SAMURAI SUMMIT 2026 名古屋サミット 公式サイト",
+        "url": "https://blacksamurai.jp/2026/summit/"
+      },
+      {
+        "title": "テレビ朝日 八村塁スペシャルマッチ BLACK SAMURAI SUMMIT",
+        "url": "https://www.tv-asahi.co.jp/basketball/blacksamurai_summit/2026/"
+      }
+    ]
+  },
+  {
+    "id": "gifu-nagara-hanabi-2026",
+    "title": "第4回ぎふ長良川花火大会",
+    "startAt": "2026-08-08T19:30:00+09:00",
+    "endAt": "2026-08-08T20:40:00+09:00",
+    "broadcast": "BS11・岐阜放送・テレビ愛知 生中継（19:00〜20:55）",
+    "category": "花火・テレビ中継",
+    "area": "岐阜・全国",
+    "inPersonEvent": true,
+    "liveReason": "長良川河畔で開催される大規模花火大会。BS11の全国無料放送を含む3局共同制作で生中継される",
+    "trafficReason": "現地の交通・人流影響は岐阜中心。神戸では全国無料放送による夜の在宅視聴と話題確認の間接影響を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "第4回ぎふ長良川花火大会 公式サイト",
+        "url": "https://nagara-hanabi.jp/"
+      },
+      {
+        "title": "BS11 生中継 ぎふ長良川花火大会 2026",
+        "url": "https://www.bs11.jp/entertainment/nagara-hanabi2026/"
+      }
+    ]
+  },
+  {
     "id": "awa-odori-tokushima-2026",
     "title": "徳島市阿波おどり",
     "startAt": "2026-08-12T18:00:00+09:00",
