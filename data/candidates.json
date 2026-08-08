@@ -1304,5 +1304,60 @@
         "url": "https://zh.wikipedia.org/wiki/24%E5%B0%8F%E6%99%82%E9%9B%BB%E8%A6%96_%E3%80%8C%E6%84%9B%E5%BF%83%E6%95%91%E5%9C%B0%E7%90%83%E3%80%8D"
       }
     ]
+  },
+  {
+    "id": "nagasaki-peace-memorial-ceremony-2026",
+    "title": "被爆81周年長崎原爆犠牲者慰霊平和祈念式典",
+    "startAt": "2026-08-09T10:45:00+09:00",
+    "endAt": "2026-08-09T11:45:00+09:00",
+    "broadcast": "テレビ・ライブ配信",
+    "category": "式典・生中継",
+    "area": "全国・長崎",
+    "inPersonEvent": true,
+    "liveReason": "被爆81年の長崎原爆の日に行われる平和祈念式典。11時2分に黙とうし、全国ニュースやライブ配信で広く注目される",
+    "trafficReason": "平和公園は7:30〜12:15頃に入場規制。神戸での直接的な人流影響は小さい",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "長崎市 被爆81周年長崎原爆犠牲者慰霊平和祈念式典",
+        "url": "https://www.city.nagasaki.lg.jp/page/81947.html"
+      }
+    ]
+  },
+  {
+    "id": "nesta-ultra-summer-festival-2026-08-09",
+    "title": "ネスタ“超”夏祭り2026 スターライト・ラグーン・“超”夏花火",
+    "startAt": "2026-08-09T16:00:00+09:00",
+    "endAt": "2026-08-09T20:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "夏祭り・花火",
+    "area": "兵庫・三木",
+    "inPersonEvent": true,
+    "liveReason": "お盆期間限定のナイトプールを16:00〜20:00に開催し、19:45から音楽連動の花火を実施する",
+    "trafficReason": "神戸から車で約40分の大型レジャー施設で、日曜夕方から夜の来退場と周辺道路の混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "花火は雨天決行だが、強風などにより内容変更・中止の場合がある。",
+    "sources": [
+      {
+        "title": "ネスタリゾート神戸 ネスタ“超”夏祭り2026",
+        "url": "https://nesta.co.jp/event/567/"
+      },
+      {
+        "title": "ネスタリゾート神戸 ウォーターフォート2026",
+        "url": "https://www.nesta.co.jp/pool/"
+      }
+    ]
   }
 ]
