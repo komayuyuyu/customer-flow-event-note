@@ -1838,6 +1838,84 @@
     ]
   },
   {
+    "id": "himesai-summer-fireworks-2026-08-10",
+    "title": "姫祭夏花火2026 ～Upgraded Summer～",
+    "startAt": "2026-08-10T19:50:00+09:00",
+    "endAt": "2026-08-10T20:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・姫路",
+    "inPersonEvent": true,
+    "liveReason": "姫路セントラルパークのお盆期間特別開催日。約10分間に3,000発を打ち上げる",
+    "trafficReason": "姫路セントラルパーク周辺と姫路駅からのバスで、夕方から閉園後の来退場混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "雨天・強風などにより中止する場合がある。当日朝時点で2026年8月10日の中止告知は確認できない。",
+    "sources": [
+      {
+        "title": "姫路セントラルパーク 姫祭夏花火2026 ～Upgraded Summer～",
+        "url": "https://www.central-park.co.jp/calendar/attime-table.html"
+      },
+      {
+        "title": "姫路セントラルパーク イベント・NEWS",
+        "url": "https://www.central-park.co.jp/calendar/event-news.php?date=2026-08-01"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-10",
+        "start": "19:50",
+        "end": "20:00"
+      }
+    ]
+  },
+  {
+    "id": "nanki-shirahama-fireworks-festa-2026",
+    "title": "南紀白浜花火フェスタ2026",
+    "startAt": "2026-08-10T20:10:00+09:00",
+    "endAt": "2026-08-10T20:40:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "和歌山・白浜",
+    "inPersonEvent": true,
+    "liveReason": "白良浜で約2,500発を台船などから打ち上げる南紀白浜の夏の花火大会",
+    "trafficReason": "会場周辺で交通規制があり、白良浜と白浜駅・周辺道路で夕方から終了後の混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "荒天時は2026年8月23日同時刻へ延期。当日朝時点で2026年分の中止・延期告知は確認できない。2025年8月10日の延期告知と混同しない。",
+    "sources": [
+      {
+        "title": "南紀白浜観光協会 南紀白浜花火フェスタ2026",
+        "url": "https://www.nankishirahama.jp/news/19125/"
+      }
+    ],
+    "impactScore": 12,
+    "impactLevel": "小",
+    "confidence": "中",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-10",
+        "start": "20:10",
+        "end": "20:40"
+      }
+    ]
+  },
+  {
     "id": "awa-odori-tokushima-2026",
     "title": "徳島市阿波おどり",
     "startAt": "2026-08-12T18:00:00+09:00",
