@@ -1024,6 +1024,48 @@
     ]
   },
   {
+    "id": "nesta-ultra-summer-festival-2026-08-09",
+    "title": "ネスタ“超”夏祭り2026 “超”夏花火",
+    "startAt": "2026-07-25T17:00:00+09:00",
+    "endAt": "2026-08-23T19:55:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "夏祭り・花火",
+    "area": "兵庫・三木",
+    "inPersonEvent": true,
+    "liveReason": "7月25日から8月23日まで毎日、17時から縁日・夜市、19時45分から約10分間の音楽連動花火を開催する",
+    "trafficReason": "神戸から車で約40分の大型レジャー施設で、夕方から夜の来退場と周辺道路の混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "花火は雨天決行だが、強風などにより内容変更・中止の場合がある。ナイトプールは8月8日・9日・11日・13日〜16日のみ。",
+    "sources": [
+      {
+        "title": "ネスタリゾート神戸 ネスタ“超”夏祭り2026",
+        "url": "https://nesta.co.jp/event/567/"
+      },
+      {
+        "title": "ネスタリゾート神戸 ウォーターフォート2026",
+        "url": "https://www.nesta.co.jp/pool/"
+      }
+    ],
+    "impactScore": 13,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-07-25",
+        "start": "17:00",
+        "end": "19:55"
+      }
+    ]
+  },
+  {
     "id": "sumidagawa-hanabi-2026",
     "title": "隅田川花火大会",
     "startAt": "2026-07-25T19:00:00+09:00",
@@ -1796,47 +1838,6 @@
     ]
   },
   {
-    "id": "nesta-ultra-summer-festival-2026-08-09",
-    "title": "ネスタ“超”夏祭り2026 スターライト・ラグーン・“超”夏花火",
-    "startAt": "2026-08-09T16:00:00+09:00",
-    "endAt": "2026-08-09T20:00:00+09:00",
-    "broadcast": "現地イベント",
-    "category": "夏祭り・花火",
-    "area": "兵庫・三木",
-    "inPersonEvent": true,
-    "liveReason": "お盆期間限定のナイトプールを16:00〜20:00に開催し、19:45から音楽連動の花火を実施する",
-    "trafficReason": "神戸から車で約40分の大型レジャー施設で、日曜夕方から夜の来退場と周辺道路の混雑を確認する",
-    "nationalReach": 1,
-    "liveUrgency": 2,
-    "accessibility": 1,
-    "buzz": 2,
-    "significance": 2,
-    "impactLevelOverride": "小",
-    "officialConfirmed": true,
-    "internalNote": "花火は雨天決行だが、強風などにより内容変更・中止の場合がある。",
-    "sources": [
-      {
-        "title": "ネスタリゾート神戸 ネスタ“超”夏祭り2026",
-        "url": "https://nesta.co.jp/event/567/"
-      },
-      {
-        "title": "ネスタリゾート神戸 ウォーターフォート2026",
-        "url": "https://www.nesta.co.jp/pool/"
-      }
-    ],
-    "impactScore": 13,
-    "impactLevel": "小",
-    "confidence": "高",
-    "predictedWindows": [
-      {
-        "label": "イベント開催中",
-        "date": "2026-08-09",
-        "start": "16:00",
-        "end": "20:00"
-      }
-    ]
-  },
-  {
     "id": "awa-odori-tokushima-2026",
     "title": "徳島市阿波おどり",
     "startAt": "2026-08-12T18:00:00+09:00",
@@ -1960,15 +1961,15 @@
     "title": "京都五山送り火",
     "startAt": "2026-08-16T20:00:00+09:00",
     "endAt": "2026-08-16T20:45:00+09:00",
-    "broadcast": "現地イベント・中継は番組表確認",
+    "broadcast": "KBS京都・BS11・インターネット生中継",
     "category": "祭り",
     "area": "京都",
     "inPersonEvent": true,
-    "liveReason": "毎年8月16日夜に京都で行われる伝統行事。お盆最終盤の観光・帰省動線と重なり、関西圏のニュースでも扱われやすい",
-    "trafficReason": "京都市内の夜間人流・観光回遊・帰宅混雑が中心。神戸では関西圏の外出先選択や帰宅時間の変化を確認する",
+    "liveReason": "毎年8月16日夜に京都で行われる伝統行事。KBS京都・BS11・インターネットで生中継予定のため、現地来場に加えて夜のリアルタイム視聴が見込まれる",
+    "trafficReason": "京都市内では鑑賞場所の入場規制や夜間の帰宅混雑が見込まれる。神戸では19時台からの視聴準備と関西圏からの帰宅時間の変化を確認する",
     "nationalReach": 2,
     "liveUrgency": 2,
-    "accessibility": 1,
+    "accessibility": 3,
     "buzz": 2,
     "significance": 3,
     "impactLevelOverride": "中",
@@ -1977,17 +1978,105 @@
       {
         "title": "京都市公式 京都観光Navi 五山送り火鑑賞2026",
         "url": "https://ja.kyoto.travel/event/single.php?event_id=12218"
+      },
+      {
+        "title": "京都市 京都五山送り火点火に伴う御協力のお願い等",
+        "url": "https://www.city.kyoto.lg.jp/bunshi/page/0000356620.html"
+      },
+      {
+        "title": "京都駅ビル 五山の送り火鑑賞会に伴う一部入場規制",
+        "url": "https://www.kyoto-station-building.co.jp/news/gozanokuribukisei2026/"
       }
     ],
-    "impactScore": 17,
+    "impactScore": 19,
     "impactLevel": "中",
-    "confidence": "中",
+    "confidence": "高",
     "predictedWindows": [
       {
         "label": "イベント開催中",
         "date": "2026-08-16",
         "start": "20:00",
         "end": "20:45"
+      }
+    ]
+  },
+  {
+    "id": "summer-koshien-2026-quarterfinals",
+    "title": "第108回全国高等学校野球選手権大会 準々決勝",
+    "startAt": "2026-08-18T08:00:00+09:00",
+    "endAt": "2026-08-18T18:00:00+09:00",
+    "broadcast": "ABCテレビ・Sky Aなど（番組表確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "兵庫",
+    "inPersonEvent": true,
+    "liveReason": "第108回全国高等学校野球選手権大会のベスト8による4試合。朝から夕方まで試合が続き、全国放送・配信と結果速報への注目が高まる",
+    "trafficReason": "甲子園周辺と阪神沿線では朝から夕方まで来場・退場が繰り返される。神戸ではテレビ視聴と結果確認による外出時間の変化を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本高等学校野球連盟 第108回全国高等学校野球選手権大会 大会日程",
+        "url": "https://www.jhbf.or.jp/sensyuken/2026/schedule/"
+      },
+      {
+        "title": "Sky A 第108回全国高等学校野球選手権大会",
+        "url": "https://sky-a.asahi.co.jp/category/baseball/4000050/"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-18",
+        "start": "08:00",
+        "end": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "summer-koshien-2026-semifinals",
+    "title": "第108回全国高等学校野球選手権大会 準決勝",
+    "startAt": "2026-08-20T08:00:00+09:00",
+    "endAt": "2026-08-20T13:30:00+09:00",
+    "broadcast": "ABCテレビ・Sky Aなど（番組表確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "兵庫",
+    "inPersonEvent": true,
+    "liveReason": "第108回全国高等学校野球選手権大会の決勝進出を決める2試合。全国放送・配信、ニュース、公開SNSで出場校への注目が集中する",
+    "trafficReason": "甲子園周辺と阪神沿線では朝から昼過ぎに来場・帰宅が集中する。神戸では午前のテレビ視聴と結果確認による外出時間の変化を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本高等学校野球連盟 第108回全国高等学校野球選手権大会 大会日程",
+        "url": "https://www.jhbf.or.jp/sensyuken/2026/schedule/"
+      },
+      {
+        "title": "Sky A 第108回全国高等学校野球選手権大会",
+        "url": "https://sky-a.asahi.co.jp/category/baseball/4000050/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-20",
+        "start": "08:00",
+        "end": "13:30"
       }
     ]
   },
@@ -2092,15 +2181,11 @@
     "accessibility": 3,
     "buzz": 2,
     "significance": 2,
-    "officialConfirmed": false,
+    "officialConfirmed": true,
     "sources": [
       {
         "title": "24時間テレビ 日本テレビ",
         "url": "https://www.ntv.co.jp/24h/"
-      },
-      {
-        "title": "24小時電視 愛心救地球",
-        "url": "https://zh.wikipedia.org/wiki/24%E5%B0%8F%E6%99%82%E9%9B%BB%E8%A6%96_%E3%80%8C%E6%84%9B%E5%BF%83%E6%95%91%E5%9C%B0%E7%90%83%E3%80%8D"
       }
     ],
     "impactScore": 19,
