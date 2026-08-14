@@ -1958,11 +1958,11 @@
     "startAt": "2026-08-14T10:00:00+09:00",
     "endAt": "2026-08-16T22:00:00+09:00",
     "showEachDay": true,
-    "broadcast": "現地イベント",
+    "broadcast": "現地イベント・WOWOWオンデマンド（東京会場4ステージを3日間ライブ配信）",
     "category": "音楽フェス",
     "area": "大阪・東京",
     "inPersonEvent": true,
-    "liveReason": "大阪・東京で3日間開催。大阪会場は10時開場・11時開演で、L'Arc-en-Ciel、The Strokes、BUMP OF CHICKENなど国内外の大型出演者に注目が集まる",
+    "liveReason": "大阪・東京で3日間開催。大阪会場は10時開場・11時開演で、L'Arc-en-Ciel、The Strokes、BUMP OF CHICKENなど国内外の大型出演者に注目が集まり、東京会場4ステージはWOWOWオンデマンドでライブ配信される",
     "trafficReason": "大阪会場への来場と終演後の夜間移動が、お盆休みの関西圏の交通・外出動線と重なる",
     "nationalReach": 3,
     "liveUrgency": 2,
@@ -1983,6 +1983,10 @@
       {
         "title": "ニッポン放送 SUMMER SONIC 2026",
         "url": "https://event.1242.com/events/summer-sonic-2026/"
+      },
+      {
+        "title": "SUMMER SONIC 2026 WOWOWオンデマンドライブ配信",
+        "url": "https://www.summersonic.com/news/2026-06-26-42499/"
       }
     ],
     "impactScore": 20,
@@ -2000,9 +2004,8 @@
   {
     "id": "comic-market-108",
     "title": "コミックマーケット108",
-    "startAt": "2026-08-15T10:00:00+09:00",
-    "endAt": "2026-08-16T16:00:00+09:00",
-    "showEachDay": true,
+    "startAt": "2026-08-15T10:30:00+09:00",
+    "endAt": "2026-08-15T17:00:00+09:00",
     "broadcast": "現地イベント",
     "category": "大型イベント",
     "area": "東京",
@@ -2018,8 +2021,8 @@
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "コミックマーケット108 コミケットアピール",
-        "url": "https://www.comiket.co.jp/info-c/C108/C108Appeal.pdf"
+        "title": "コミックマーケット108 公式参加者情報",
+        "url": "https://www.comiket.co.jp/info-a/TAFO/C108TAFO/index.html"
       }
     ],
     "impactScore": 16,
@@ -2029,7 +2032,43 @@
       {
         "label": "イベント開催中",
         "date": "2026-08-15",
-        "start": "10:00",
+        "start": "10:30",
+        "end": "17:00"
+      }
+    ]
+  },
+  {
+    "id": "comic-market-108-day2",
+    "title": "コミックマーケット108",
+    "startAt": "2026-08-16T10:30:00+09:00",
+    "endAt": "2026-08-16T16:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "大型イベント",
+    "area": "東京",
+    "inPersonEvent": true,
+    "liveReason": "東京ビッグサイト開催の大型同人誌即売会。SNSでの話題量が大きく、参加者の遠征・通販・関連消費が発生しやすい",
+    "trafficReason": "直接影響は東京中心。神戸では遠征客、SNS話題、関連商品のオンライン確認など間接影響として確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "コミックマーケット108 公式参加者情報",
+        "url": "https://www.comiket.co.jp/info-a/TAFO/C108TAFO/index.html"
+      }
+    ],
+    "impactScore": 16,
+    "impactLevel": "小",
+    "confidence": "中",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-16",
+        "start": "10:30",
         "end": "16:00"
       }
     ]
