@@ -1506,5 +1506,57 @@
         "url": "https://www.nankishirahama.jp/news/19125/"
       }
     ]
+  },
+  {
+    "id": "kurodasho-summer-festival-2026",
+    "title": "第47回 にしわき市・黒田庄夏まつり",
+    "startAt": "2026-08-16T18:30:00+09:00",
+    "endAt": "2026-08-16T21:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "夏祭り・花火",
+    "area": "兵庫・西脇",
+    "inPersonEvent": true,
+    "liveReason": "盆踊り、屋台、福引と、20時20分から約400発の花火を行う地域の夏祭り",
+    "trafficReason": "黒田庄グラウンド周辺で夕方から終了後の来退場と駐車場混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "雨天決行、荒天時は中止。当日朝時点で中止告知は確認できない。花火は20時20分から約20分間。",
+    "sources": [
+      {
+        "title": "西脇市 にしわき市・黒田庄夏まつり",
+        "url": "https://www.city.nishiwaki.lg.jp/kankotokusan/eventmatsuri/nenkan_gyouji/13871.html"
+      }
+    ]
+  },
+  {
+    "id": "asago-summer-festival-fireworks-2026",
+    "title": "第48回あさご夏祭り花火大会",
+    "startAt": "2026-08-16T19:40:00+09:00",
+    "endAt": "2026-08-16T21:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "夏祭り・花火",
+    "area": "兵庫・朝来",
+    "inPersonEvent": true,
+    "liveReason": "朝来グラウンド周辺で夜店と、19時40分から21時までの花火大会を開催する",
+    "trafficReason": "朝来グラウンド周辺で夕方から終了後の来退場と駐車場混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "当日朝時点で中止・延期告知は確認できない。開催可否の追加告知が出た場合は状態を更新する。",
+    "sources": [
+      {
+        "title": "朝来市 第48回あさご夏祭り",
+        "url": "https://www.city.asago.hyogo.jp/calendar/index.php?d=17&dsp=2&m=7&s_kw=&sch=&sec_sec1=0&srt=&sub_id=0&y=2025"
+      }
+    ]
   }
 ]
