@@ -2196,7 +2196,7 @@
     "title": "第108回全国高等学校野球選手権大会 準々決勝",
     "startAt": "2026-08-18T08:00:00+09:00",
     "endAt": "2026-08-18T18:00:00+09:00",
-    "broadcast": "ABCテレビ・Sky Aなど（番組表確認）",
+    "broadcast": "バーチャル高校野球（全試合無料ライブ配信）・BS朝日4K（生中継）・Sky A（録画中継）",
     "category": "スポーツ中継・現地イベント",
     "area": "兵庫",
     "inPersonEvent": true,
@@ -2217,6 +2217,14 @@
       {
         "title": "Sky A 第108回全国高等学校野球選手権大会",
         "url": "https://sky-a.asahi.co.jp/category/baseball/4000050/"
+      },
+      {
+        "title": "朝日新聞社 バーチャル高校野球で全48試合無料ライブ配信",
+        "url": "https://prtimes.jp/main/html/rd/p/000002259.000009214.html"
+      },
+      {
+        "title": "BS朝日 第108回全国高等学校野球選手権大会",
+        "url": "https://www.bs-asahi.co.jp/koshien108/"
       }
     ],
     "impactScore": 22,
@@ -2236,7 +2244,7 @@
     "title": "第108回全国高等学校野球選手権大会 準決勝",
     "startAt": "2026-08-20T08:00:00+09:00",
     "endAt": "2026-08-20T13:30:00+09:00",
-    "broadcast": "ABCテレビ・Sky Aなど（番組表確認）",
+    "broadcast": "バーチャル高校野球（全試合無料ライブ配信）・BS朝日4K（生中継）・Sky A（録画中継）",
     "category": "スポーツ中継・現地イベント",
     "area": "兵庫",
     "inPersonEvent": true,
@@ -2257,6 +2265,14 @@
       {
         "title": "Sky A 第108回全国高等学校野球選手権大会",
         "url": "https://sky-a.asahi.co.jp/category/baseball/4000050/"
+      },
+      {
+        "title": "朝日新聞社 バーチャル高校野球で全48試合無料ライブ配信",
+        "url": "https://prtimes.jp/main/html/rd/p/000002259.000009214.html"
+      },
+      {
+        "title": "BS朝日 第108回全国高等学校野球選手権大会",
+        "url": "https://www.bs-asahi.co.jp/koshien108/"
       }
     ],
     "impactScore": 24,
@@ -2272,11 +2288,50 @@
     ]
   },
   {
+    "id": "avc-women-2026-jpn-hkg",
+    "title": "バレーボール女子アジア選手権2026 JPN対HKG",
+    "startAt": "2026-08-21T19:00:00+09:00",
+    "endAt": "2026-08-21T20:54:00+09:00",
+    "broadcast": "フジテレビ系列（全国ネット）・FODプレミアム（ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "LA五輪出場権が懸かるアジア最高峰の大会で、日本代表の初戦を地上波全国ネットで生中継する",
+    "trafficReason": "金曜夜の生中継前後で、帰宅や外出の時間が前後する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "フジテレビ バレーボール女子アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/index.html"
+      },
+      {
+        "title": "JVA バレーボール日本代表大会日程",
+        "url": "https://www.jva.or.jp/watch/"
+      }
+    ],
+    "impactScore": 21,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-21",
+        "start": "19:00",
+        "end": "20:54"
+      }
+    ]
+  },
+  {
     "id": "summer-koshien-2026-final",
     "title": "第108回全国高等学校野球選手権大会 決勝",
     "startAt": "2026-08-22T10:00:00+09:00",
     "endAt": "2026-08-22T13:00:00+09:00",
-    "broadcast": "NHK・ABCテレビなど（番組表確認）",
+    "broadcast": "バーチャル高校野球（全試合無料ライブ配信）・BS朝日4K（生中継）・Sky A（19:00録画中継）",
     "category": "スポーツ中継・現地イベント",
     "area": "兵庫",
     "inPersonEvent": true,
@@ -2301,6 +2356,14 @@
       {
         "title": "ABCテレビ 熱闘甲子園",
         "url": "https://www.asahi.co.jp/netto/"
+      },
+      {
+        "title": "朝日新聞社 バーチャル高校野球で全48試合無料ライブ配信",
+        "url": "https://prtimes.jp/main/html/rd/p/000002259.000009214.html"
+      },
+      {
+        "title": "BS朝日 第108回全国高等学校野球選手権大会",
+        "url": "https://www.bs-asahi.co.jp/koshien108/"
       }
     ],
     "impactScore": 24,
@@ -2312,6 +2375,50 @@
         "date": "2026-08-22",
         "start": "10:00",
         "end": "13:00"
+      }
+    ]
+  },
+  {
+    "id": "sbi-maihanabi-sennan-2026",
+    "title": "SBI舞花火 in 大阪・泉南",
+    "startAt": "2026-08-22T12:00:00+09:00",
+    "endAt": "2026-08-22T20:30:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火・音楽フェス",
+    "area": "大阪・泉南",
+    "inPersonEvent": true,
+    "liveReason": "開催10周年に全国10社の尺玉、4,000機のドローン、音楽ライブを組み合わせ、泉南史上最大規模で開催する",
+    "trafficReason": "SENNAN LONG PARKで昼から音楽フェスと花火を連続開催し、りんくう南浜周辺では夕方から終演後の来退場集中が見込まれる",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "SBIホールディングス SBI舞花火 in 大阪・泉南",
+        "url": "https://www.sbigroup.co.jp/news/pr/2026/0625_16427.html"
+      },
+      {
+        "title": "大阪公式観光情報 SBI舞花火 in 大阪・泉南",
+        "url": "https://osaka-info.jp/event/sbi-maihanabi2026/"
+      },
+      {
+        "title": "SBI舞花火 公式X公開投稿の検索結果",
+        "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&mtype=image&p=%23sbi%E8%88%9E%E8%8A%B1%E7%81%AB&rkf=1"
+      }
+    ],
+    "impactScore": 20,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-22",
+        "start": "12:00",
+        "end": "20:30"
       }
     ]
   },
@@ -2357,8 +2464,206 @@
     ]
   },
   {
+    "id": "avc-women-2026-jpn-kor",
+    "title": "バレーボール女子アジア選手権2026 JPN対KOR",
+    "startAt": "2026-08-23T19:00:00+09:00",
+    "endAt": "2026-08-23T20:54:00+09:00",
+    "broadcast": "フジテレビ系列（全国ネット）・FODプレミアム（ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "LA五輪出場権が懸かるアジア選手権の日本代表戦で、日韓戦を地上波全国ネットで生中継する",
+    "trafficReason": "日曜夜の生中継前後で、帰宅や外出の時間が前後する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "フジテレビ バレーボール女子アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/index.html"
+      },
+      {
+        "title": "JVA バレーボール日本代表大会日程",
+        "url": "https://www.jva.or.jp/watch/"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-23",
+        "start": "19:00",
+        "end": "20:54"
+      }
+    ]
+  },
+  {
+    "id": "jpn-bra-volleyball-friendly-tokyo-2026",
+    "title": "2026バレーボール男子日本代表国際親善試合 東京大会 JPN対BRA",
+    "startAt": "2026-08-25T18:30:00+09:00",
+    "endAt": "2026-08-25T21:00:00+09:00",
+    "broadcast": "FODプレミアム・フジテレビONE（8月25日26:00から時差放送）",
+    "category": "スポーツ・現地イベント",
+    "area": "東京・全国",
+    "inPersonEvent": true,
+    "liveReason": "有明アリーナで男子日本代表が強豪BRAと対戦し、石川祐希、髙橋藍、西田有志らへの注目が見込まれる",
+    "trafficReason": "東京会場の来退場が中心で、神戸では夜間の結果確認と深夜2時からの時差視聴を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 2026バレーボール男子日本代表国際親善試合 東京大会",
+        "url": "https://www.jva.or.jp/international/2026/men_tokyo/"
+      },
+      {
+        "title": "フジテレビ FOD・フジテレビONE放送決定",
+        "url": "https://www.fujitv.co.jp/fujitv/news/20260583.html"
+      }
+    ],
+    "impactScore": 15,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-25",
+        "start": "18:30",
+        "end": "21:00"
+      }
+    ]
+  },
+  {
+    "id": "avc-women-2026-jpn-vie",
+    "title": "バレーボール女子アジア選手権2026 JPN対VIE",
+    "startAt": "2026-08-25T19:00:00+09:00",
+    "endAt": "2026-08-25T20:54:00+09:00",
+    "broadcast": "フジテレビ系列（全国ネット）・FODプレミアム（ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "LA五輪出場権が懸かるアジア選手権の日本代表グループ最終戦を地上波全国ネットで生中継する",
+    "trafficReason": "平日夜の生中継前後で、帰宅や外出の時間が前後する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "フジテレビ バレーボール女子アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/index.html"
+      },
+      {
+        "title": "JVA バレーボール日本代表大会日程",
+        "url": "https://www.jva.or.jp/watch/"
+      }
+    ],
+    "impactScore": 21,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-25",
+        "start": "19:00",
+        "end": "20:54"
+      }
+    ]
+  },
+  {
+    "id": "avc-women-2026-quarterfinal",
+    "title": "バレーボール女子アジア選手権2026 準々決勝",
+    "startAt": "2026-08-27T19:00:00+09:00",
+    "endAt": "2026-08-27T20:54:00+09:00",
+    "broadcast": "フジテレビ系列（全国ネット）・FODプレミアム（ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "日本代表が進出した場合、LA五輪出場権へ直結する一発勝負を地上波全国ネットで生中継する",
+    "trafficReason": "平日夜の決勝トーナメント生中継前後で、帰宅や外出の時間が前後する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "日本代表の進出と対戦相手はグループ戦終了後に更新する。",
+    "sources": [
+      {
+        "title": "フジテレビ バレーボール女子アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/index.html"
+      },
+      {
+        "title": "フジテレビ アジア選手権 Road to Los Angeles",
+        "url": "https://www.fujitv.co.jp/fujitv/news/20260493.html"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-27",
+        "start": "19:00",
+        "end": "20:54"
+      }
+    ]
+  },
+  {
+    "id": "avc-women-2026-semifinal",
+    "title": "バレーボール女子アジア選手権2026 準決勝",
+    "startAt": "2026-08-29T17:45:00+09:00",
+    "endAt": "2026-08-29T22:45:00+09:00",
+    "broadcast": "フジテレビ系列（全国ネット）・FODプレミアム（ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "日本代表が進出した場合、LA五輪出場権へあと一勝となる準決勝を地上波全国ネットで生中継する",
+    "trafficReason": "土曜夕方から夜の生中継で、帰宅や外出の時間が前後する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "放送枠は17:45開始と20:45開始の2枠。日本代表の進出枠確定後に開始・終了時刻を絞る。",
+    "sources": [
+      {
+        "title": "フジテレビ バレーボール女子アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/index.html"
+      },
+      {
+        "title": "フジテレビ アジア選手権 Road to Los Angeles",
+        "url": "https://www.fujitv.co.jp/fujitv/news/20260493.html"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-29",
+        "start": "17:45",
+        "end": "22:45"
+      }
+    ]
+  },
+  {
     "id": "twenty-four-hour-tv-2026",
-    "title": "24時間テレビ2026",
+    "title": "24時間テレビ49",
     "startAt": "2026-08-29T18:30:00+09:00",
     "endAt": "2026-08-30T20:54:00+09:00",
     "showEachDay": true,
@@ -2377,11 +2682,15 @@
       {
         "title": "24時間テレビ 日本テレビ",
         "url": "https://www.ntv.co.jp/24h/"
+      },
+      {
+        "title": "24時間テレビ 読売テレビ",
+        "url": "https://www.ytv.co.jp/24h/"
       }
     ],
     "impactScore": 19,
     "impactLevel": "大",
-    "confidence": "中",
+    "confidence": "高",
     "predictedWindows": [
       {
         "label": "リアルタイム視聴",
@@ -2392,6 +2701,91 @@
       {
         "label": "深夜視聴の翌日",
         "date": "2026-08-30",
+        "start": "10:00",
+        "end": "14:00"
+      }
+    ]
+  },
+  {
+    "id": "avc-women-2026-final",
+    "title": "バレーボール女子アジア選手権2026 決勝・3位決定戦",
+    "startAt": "2026-08-30T19:00:00+09:00",
+    "endAt": "2026-08-30T21:09:00+09:00",
+    "broadcast": "フジテレビ系列（全国ネット）・FODプレミアム（ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "日本代表が進出した試合を地上波全国ネットで生中継し、決勝で勝てばLA五輪出場権を獲得する",
+    "trafficReason": "日曜夜の順位決定戦生中継で、帰宅や外出の時間が前後する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "日本代表の進出試合が決勝か3位決定戦か確定後にタイトルを更新する。",
+    "sources": [
+      {
+        "title": "フジテレビ バレーボール女子アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/index.html"
+      },
+      {
+        "title": "フジテレビ アジア選手権 Road to Los Angeles",
+        "url": "https://www.fujitv.co.jp/fujitv/news/20260493.html"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-30",
+        "start": "19:00",
+        "end": "21:09"
+      }
+    ]
+  },
+  {
+    "id": "us-open-tennis-2026-opening-day",
+    "title": "全米オープンテニス2026 本戦第1日",
+    "startAt": "2026-08-30T23:45:00+09:00",
+    "endAt": "2026-08-31T12:00:00+09:00",
+    "broadcast": "WOWOW・WOWOWオンデマンド（連日生中継・ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "シーズン最後の四大大会が開幕し、日本時間の深夜から翌朝に男女シングルス1回戦を生中継する",
+    "trafficReason": "日曜深夜から月曜朝の視聴で、翌日午前から昼の外出開始が遅れる可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "WOWOW 全米オープンテニス2026 放送予定",
+        "url": "https://www.wowow.co.jp/detail/178147"
+      },
+      {
+        "title": "US Open 2026 Official Tickets and Schedule",
+        "url": "https://www.usopen.org/en_US/tickets/ticket_plans.html"
+      }
+    ],
+    "impactScore": 15,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-08-30",
+        "start": "23:45",
+        "end": "12:00"
+      },
+      {
+        "label": "深夜視聴の翌日",
+        "date": "2026-08-31",
         "start": "10:00",
         "end": "14:00"
       }
