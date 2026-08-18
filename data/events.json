@@ -2240,6 +2240,45 @@
     ]
   },
   {
+    "id": "kinosaki-yumehanabi-2026-08-18",
+    "title": "城崎温泉夏物語2026 夢花火",
+    "startAt": "2026-08-18T21:00:00+09:00",
+    "endAt": "2026-08-18T21:05:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・豊岡",
+    "inPersonEvent": true,
+    "liveReason": "夏季平日開催の5分間花火。8月18日は21:00〜21:05。",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "城崎温泉観光協会 城崎温泉夏物語2026",
+        "url": "https://kinosaki-spa.gr.jp/event/natsu-monogatari/"
+      },
+      {
+        "title": "城崎温泉観光協会 城崎温泉夢花火2026 開催決定",
+        "url": "https://kinosaki-spa.gr.jp/do/29991/"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-18",
+        "start": "21:00",
+        "end": "21:05"
+      }
+    ]
+  },
+  {
     "id": "summer-koshien-2026-semifinals",
     "title": "第108回全国高等学校野球選手権大会 準決勝",
     "startAt": "2026-08-20T08:00:00+09:00",
