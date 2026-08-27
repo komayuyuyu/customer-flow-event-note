@@ -1741,13 +1741,13 @@
   },
   {
     "id": "avc-women-2026-semifinal",
-    "title": "バレーボール女子アジア選手権2026 準決勝",
+    "title": "バレーボール女子アジア選手権2026 準決勝 JPN対THA",
     "startAt": "2026-08-29T17:45:00+09:00",
-    "endAt": "2026-08-29T22:45:00+09:00",
-    "broadcast": "フジテレビ系列（全国ネット）・TVer・FOD（ライブ配信）",
+    "endAt": "2026-08-29T19:45:00+09:00",
+    "broadcast": "フジテレビ系列（全国ネット）・フジテレビNEXT・TVer・FOD・Volleyball TV（生中継・ライブ配信）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "日本代表が進出した場合、LA五輪出場権へあと一勝となる準決勝を地上波全国ネットで生中継する",
+    "liveReason": "準々決勝まで4試合連続ストレート勝ちの日本代表が、LA五輪出場権獲得へあと2勝となる準決勝でタイと対戦する",
     "trafficReason": "土曜夕方から夜の生中継で、帰宅や外出の時間が前後する可能性がある",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -1756,7 +1756,7 @@
     "significance": 3,
     "impactLevelOverride": "大",
     "officialConfirmed": true,
-    "internalNote": "放送枠は17:45開始と20:45開始の2枠。日本代表の進出枠確定後に開始・終了時刻を絞る。",
+    "internalNote": "8月27日の準々決勝で日本がTPEに3-0、タイがKORに3-0で勝利。試合開始18:15、地上波番組開始17:45に確定。",
     "sources": [
       {"title": "フジテレビ バレーボール女子アジア選手権2026 放送日程", "url": "https://www.fujitv.co.jp/sports/volleyball/avc/index.html"},
       {"title": "フジテレビ アジア選手権 Road to Los Angeles", "url": "https://www.fujitv.co.jp/fujitv/news/20260493.html"}
@@ -1830,6 +1830,53 @@
       {"title": "SBIホールディングス SBI舞花火 in 大阪・泉南", "url": "https://www.sbigroup.co.jp/news/pr/2026/0625_16427.html"},
       {"title": "大阪公式観光情報 SBI舞花火 in 大阪・泉南", "url": "https://osaka-info.jp/event/sbi-maihanabi2026/"},
       {"title": "SBI舞花火 公式X公開投稿の検索結果", "url": "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&mtype=image&p=%23sbi%E8%88%9E%E8%8A%B1%E7%81%AB&rkf=1"}
+    ]
+  },
+  {
+    "id": "banpaku-summer-festival-2026-aug28",
+    "title": "万博夏まつり2026",
+    "startAt": "2026-08-28T17:00:00+09:00",
+    "endAt": "2026-08-30T22:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "夏祭り",
+    "area": "大阪・吹田",
+    "inPersonEvent": true,
+    "liveReason": "万博記念公園で屋台、縁日、盆踊り、ステージ、イルミネーション、手持ち花火エリアを展開する関西最大級の夏まつり",
+    "trafficReason": "16時30分以降は入退園ゲートが限定され、夕方から閉園後に万博記念公園駅、中央口・日本庭園前ゲート、周辺駐車場の利用集中を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "大阪府 万博記念公園 万博夏まつり2026", "url": "https://www.pref.osaka.lg.jp/hodo/fumin/o070130/prs_51199.html"},
+      {"title": "万博夏まつり2026 公式サイト", "url": "https://banpakunatsumatsuri.jp/"}
+    ]
+  },
+  {
+    "id": "mikki-summer-festival-2026",
+    "title": "みっきぃ夏まつり2026",
+    "startAt": "2026-08-29T16:00:00+09:00",
+    "endAt": "2026-08-29T21:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "夏祭り・花火",
+    "area": "兵庫・三木",
+    "inPersonEvent": true,
+    "liveReason": "三木総合防災公園で模擬店、屋台、ステージイベントを行い、19時45分頃から花火を打ち上げる市民まつり",
+    "trafficReason": "会場周辺で交通自主規制が行われ、夕方から終了後に三木総合防災公園、周辺道路、駐車場の混雑が見込まれる。小雨決行、荒天中止・順延なし",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "三木市 みっきぃ夏まつり2026", "url": "https://www.city.miki.lg.jp/site/natsumatsuri/"},
+      {"title": "三木市 みっきぃ夏まつり2026開催要領", "url": "https://www.city.miki.lg.jp/uploaded/attachment/56276.pdf"}
     ]
   },
   {
