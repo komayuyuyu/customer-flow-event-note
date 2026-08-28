@@ -2871,7 +2871,7 @@
     "title": "侍ジャパンU-18壮行試合2026 高校日本代表対大学日本代表",
     "startAt": "2026-08-29T18:00:00+09:00",
     "endAt": "2026-08-29T21:30:00+09:00",
-    "broadcast": "J SPORTS 1・J SPORTSオンデマンド（生中継・ライブ配信）",
+    "broadcast": "J SPORTS 1（17:30から生中継）・J SPORTSオンデマンド（17:30からライブ配信）",
     "category": "スポーツ中継・現地イベント",
     "area": "全国・東京",
     "inPersonEvent": true,
@@ -2903,6 +2903,51 @@
         "date": "2026-08-29",
         "start": "18:00",
         "end": "21:30"
+      }
+    ]
+  },
+  {
+    "id": "j1-gamba-osaka-sanfrecce-hiroshima-2026-08-29",
+    "title": "明治安田J1リーグ2026/27 第4節 ガンバ大阪対サンフレッチェ広島",
+    "startAt": "2026-08-29T18:03:00+09:00",
+    "endAt": "2026-08-29T20:15:00+09:00",
+    "broadcast": "DAZN（ライブ配信）",
+    "category": "サッカー・現地イベント",
+    "area": "大阪・吹田",
+    "inPersonEvent": true,
+    "liveReason": "明治安田J1リーグ第4節で、10位のガンバ大阪と首位浮上を狙う4位のサンフレッチェ広島が対戦する",
+    "trafficReason": "万博夏まつり2026と同日に隣接エリアで開催され、15時30分の一般開門から試合終了後にかけて、万博記念公園周辺の駅・道路・駐車場で利用が重なる",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "公式試合情報は8月28日更新。キックオフは18:03。終了時刻は通常の試合所要時間をもとに表示枠を設定。",
+    "sources": [
+      {
+        "title": "ガンバ大阪 明治安田J1リーグ2026/27 第4節 広島戦 試合情報",
+        "url": "https://www.gamba-osaka.net/gameinfo/news/no/20754/"
+      },
+      {
+        "title": "Jリーグ 明治安田J1リーグ2026/27 第4節 G大阪対広島",
+        "url": "https://www.jleague.jp/match/j1/2026/082902/"
+      },
+      {
+        "title": "万博記念公園 8月29日スタジアム開催時の駐車場予約運用",
+        "url": "https://www.expo70-park.jp/info/56788/"
+      }
+    ],
+    "impactScore": 13,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-08-29",
+        "start": "18:03",
+        "end": "20:15"
       }
     ]
   },
