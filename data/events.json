@@ -3002,41 +3002,45 @@
   },
   {
     "id": "avc-women-2026-final",
-    "title": "バレーボール女子アジア選手権2026 決勝・3位決定戦",
-    "startAt": "2026-08-30T19:00:00+09:00",
-    "endAt": "2026-08-30T21:09:00+09:00",
-    "broadcast": "フジテレビ系列（全国ネット）・TVer・FOD（ライブ配信）",
+    "title": "バレーボール女子アジア選手権2026 3位決定戦 JPN対IRI",
+    "startAt": "2026-08-30T15:35:00+09:00",
+    "endAt": "2026-08-30T18:30:00+09:00",
+    "broadcast": "FOD（15:35からライブ配信）・TVer・Volleyball TV・フジテレビ系列（19:00から録画放送）・フジテレビONE（19:35から録画放送）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "日本代表が進出した試合を地上波全国ネットで生中継し、決勝で勝てばLA五輪出場権を獲得する",
-    "trafficReason": "日曜夜の順位決定戦生中継で、帰宅や外出の時間が前後する可能性がある",
+    "liveReason": "日本代表が銅メダルと2027年女子ワールドカップ出場権を懸けてイランと対戦する",
+    "trafficReason": "日曜午後のライブ配信と夜の地上波録画放送で、外出や帰宅の時間が前後する可能性がある",
     "nationalReach": 3,
-    "liveUrgency": 3,
-    "accessibility": 3,
+    "liveUrgency": 2,
+    "accessibility": 2,
     "buzz": 3,
     "significance": 3,
-    "impactLevelOverride": "大",
+    "impactLevelOverride": "中",
     "officialConfirmed": true,
-    "internalNote": "日本代表の進出試合が決勝か3位決定戦か確定後にタイトルを更新する。",
+    "internalNote": "日本は8月29日の準決勝でTHAに1-3で敗れ、IRIとの3位決定戦に確定。試合開始は16:15。FODは15:35からライブ、地上波とフジテレビONEは録画放送。終了時刻は通常の試合所要時間をもとに表示枠を設定。",
     "sources": [
       {
         "title": "フジテレビ バレーボール女子アジア選手権2026 放送日程",
         "url": "https://www.fujitv.co.jp/sports/volleyball/avc/index.html"
       },
       {
-        "title": "フジテレビ アジア選手権 Road to Los Angeles",
-        "url": "https://www.fujitv.co.jp/fujitv/news/20260493.html"
+        "title": "女子アジア選手権2026 3位決定戦 JPN対IRI 放送予定",
+        "url": "https://www.sportingnews.com/jp/tsn/news/2026-08-30-volleyball-womens-japan-iran-tv-ott-schedule/6f2d8e8d842f634080848e63"
+      },
+      {
+        "title": "女子アジア選手権2026 準決勝結果",
+        "url": "https://www.nikkansports.com/sports/news/202608270001872.html"
       }
     ],
-    "impactScore": 24,
-    "impactLevel": "大",
+    "impactScore": 21,
+    "impactLevel": "中",
     "confidence": "高",
     "predictedWindows": [
       {
         "label": "リアルタイム視聴",
         "date": "2026-08-30",
-        "start": "19:00",
-        "end": "21:09"
+        "start": "15:35",
+        "end": "18:30"
       }
     ]
   },
