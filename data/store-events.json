@@ -125,5 +125,109 @@
         "title": "2026年7月勤務カレンダー"
       }
     ]
+  },
+  {
+    "id": "store-eunoia-feature-20260904",
+    "title": "eunoia 打ち出し",
+    "startAt": "2026-09-04T10:00:00+09:00",
+    "endAt": "2026-09-13T20:30:00+09:00",
+    "impactLevel": "中",
+    "confidence": "中",
+    "category": "店頭施策",
+    "area": "勤務先ショップ",
+    "liveReason": "eunoiaの店頭打ち出し期間。",
+    "trafficReason": "ブランド訴求により、来店動機や接客内容に影響する可能性がある。",
+    "showEachDay": true,
+    "predictedWindows": [
+      {
+        "label": "店頭施策期間",
+        "date": "2026-09-04",
+        "start": "10:00",
+        "end": "20:30"
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年9月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-orcival-fair-20260918",
+    "title": "ORCIVAL フェア",
+    "startAt": "2026-09-18T10:00:00+09:00",
+    "endAt": "2026-09-27T20:30:00+09:00",
+    "impactLevel": "中",
+    "confidence": "中",
+    "category": "店頭施策",
+    "area": "勤務先ショップ",
+    "liveReason": "ORCIVALフェアの開催期間。",
+    "trafficReason": "ブランドフェアにより、来店動機や問い合わせ、接客内容に影響する可能性がある。",
+    "showEachDay": true,
+    "predictedWindows": [
+      {
+        "label": "ブランドフェア期間",
+        "date": "2026-09-18",
+        "start": "10:00",
+        "end": "20:30"
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年9月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-noritoku-campaign-20260919",
+    "title": "乗りトクCP",
+    "startAt": "2026-09-19T10:00:00+09:00",
+    "endAt": "2026-09-23T20:30:00+09:00",
+    "impactLevel": "中",
+    "confidence": "中",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "liveReason": "乗りトクCPの実施期間。",
+    "trafficReason": "館内キャンペーンにより、来館動機や客足に影響する可能性がある。",
+    "showEachDay": true,
+    "predictedWindows": [
+      {
+        "label": "館内キャンペーン期間",
+        "date": "2026-09-19",
+        "start": "10:00",
+        "end": "20:30"
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年9月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-medal-point-up-20260918",
+    "title": "メダルdeポイントアップ",
+    "startAt": "2026-09-18T10:00:00+09:00",
+    "endAt": "2026-09-27T20:30:00+09:00",
+    "impactLevel": "中",
+    "confidence": "中",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "liveReason": "メダルdeポイントアップの実施期間。",
+    "trafficReason": "ポイント施策により、来館動機や客足に影響する可能性がある。",
+    "showEachDay": true,
+    "predictedWindows": [
+      {
+        "label": "館内ポイント施策期間",
+        "date": "2026-09-18",
+        "start": "10:00",
+        "end": "20:30"
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年9月勤務カレンダー"
+      }
+    ]
   }
 ]
