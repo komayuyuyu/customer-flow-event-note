@@ -2019,5 +2019,120 @@
       {"title": "WOWOW 全米オープンテニス2026 放送予定", "url": "https://www.wowow.co.jp/detail/178147"},
       {"title": "US Open 2026 Official Tickets and Schedule", "url": "https://www.usopen.org/en_US/tickets/ticket_plans.html"}
     ]
+  },
+  {
+    "id": "rugby-pnc-2026-semifinal-jpn-usa",
+    "title": "ラグビー アサヒスーパードライ パシフィックネーションズカップ2026 準決勝 JPN対USA",
+    "startAt": "2026-09-12T19:05:00+09:00",
+    "endAt": "2026-09-12T21:15:00+09:00",
+    "broadcast": "日本テレビ系全国ネット・J SPORTS 1・Hulu・J SPORTSオンデマンド（生中継・ライブ配信）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・大阪",
+    "inPersonEvent": true,
+    "liveReason": "男子15人制日本代表が国内開催の大会準決勝でアメリカ代表と対戦し、日本テレビ系全国ネットと有料放送・配信で生中継される",
+    "trafficReason": "東大阪市花園ラグビー場では同日16時からの準決勝を含む2試合開催で、関西圏の来退場と19時前からの在宅視聴、21時台の帰宅動線への影響を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "日本ラグビーフットボール協会 パシフィックネーションズカップ2026大会日程", "url": "https://www.rugby-japan.jp/schedule/"},
+      {"title": "日本ラグビーフットボール協会 パシフィックネーションズカップ2026チケット情報", "url": "https://www.rugby-japan.jp/news/54075"}
+    ]
+  },
+  {
+    "id": "us-open-tennis-2026-womens-final",
+    "title": "全米オープンテニス2026 女子シングルス決勝",
+    "startAt": "2026-09-13T05:00:00+09:00",
+    "endAt": "2026-09-13T08:00:00+09:00",
+    "broadcast": "WOWOW・WOWOWオンデマンド（生中継・ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "シーズン最後の四大大会の女子シングルス決勝。公式日程では現地9月12日16時開始で、WOWOWが大会を連日生中継・ライブ配信する",
+    "trafficReason": "日曜早朝のリアルタイム視聴後、午前から昼の外出開始が遅れる可能性を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "US Open 2026 公式日程", "url": "https://www.usopen.org/en_US/tickets/individual_tickets.html"},
+      {"title": "WOWOW テニス 放送・配信予定", "url": "https://www.wowow.co.jp/sports/tennis/index.html"}
+    ]
+  },
+  {
+    "id": "sumo-september-basho-2026-opening-day",
+    "title": "大相撲九月場所2026 初日",
+    "startAt": "2026-09-13T15:05:00+09:00",
+    "endAt": "2026-09-13T18:00:00+09:00",
+    "broadcast": "NHK総合・NHK BSなど（番組表確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "日本相撲協会公式日程で九月場所が9月13日に初日を迎える。番付と初日の取組結果が全国ニュース・公開SNSで話題になりやすい",
+    "trafficReason": "日曜午後から夕方の中継視聴と結果確認で、一部の外出や買い物時間が前後する可能性を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 1,
+    "accessibility": 3,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "日本相撲協会 2026年九月場所日程", "url": "https://www.sumo.or.jp/EnSumoMuseum/schedule/2026-09"},
+      {"title": "日本相撲協会 年間日程", "url": "https://www.sumo.or.jp/EnTicket/year_schedule/"}
+    ]
+  },
+  {
+    "id": "joso-kinugawa-fireworks-2026",
+    "title": "第59回常総きぬ川花火大会",
+    "startAt": "2026-09-12T18:30:00+09:00",
+    "endAt": "2026-09-12T20:30:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火大会",
+    "area": "茨城",
+    "inPersonEvent": true,
+    "liveReason": "公式サイトで9月12日開催と約22,000発の打ち上げが確認できる、首都圏有数の大規模花火大会",
+    "trafficReason": "茨城県内と首都圏の現地人流が中心で、神戸への直接影響は小さい。全国的な花火映像・結果の話題化を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 1,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "常総きぬ川花火大会 公式 開催概要", "url": "https://joso-hanabi.jp/about.html"},
+      {"title": "常総きぬ川花火大会 公式サイト", "url": "https://joso-hanabi.jp/"}
+    ]
+  },
+  {
+    "id": "setomono-matsuri-2026",
+    "title": "第95回せともの祭",
+    "startAt": "2026-09-12T09:00:00+09:00",
+    "endAt": "2026-09-13T17:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "祭り・花火大会",
+    "area": "愛知",
+    "inPersonEvent": true,
+    "liveReason": "愛知県公式観光サイトで9月12日・13日開催、約200店が並ぶ全国最大級の陶磁器市と初日夜の約1,000発の花火が確認できる",
+    "trafficReason": "例年数十万人規模の現地人流は愛知県内が中心で、神戸への直接影響は小さい。公開SNSやニュースでの陶磁器・花火の話題化を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 1,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "愛知県公式観光サイト 第95回せともの祭", "url": "https://aichinow.pref.aichi.jp/events/detail/65/"},
+      {"title": "愛知県公式観光サイト せともの祭特集", "url": "https://aichinow.pref.aichi.jp/features/detail/113/"}
+    ]
   }
 ]
