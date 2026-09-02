@@ -1858,6 +1858,31 @@
     ]
   },
   {
+    "id": "banpaku-summer-festival-2026-sep04",
+    "title": "万博夏まつり2026",
+    "startAt": "2026-09-04T17:00:00+09:00",
+    "endAt": "2026-09-06T22:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "夏祭り",
+    "area": "大阪・吹田",
+    "inPersonEvent": true,
+    "liveReason": "万博記念公園で屋台、縁日、盆踊り、ステージ、イルミネーション、手持ち花火エリアを展開する関西最大級の夏まつり",
+    "trafficReason": "16時30分以降は入退園ゲートが限定され、夕方から閉園後に万博記念公園駅、中央口・日本庭園前ゲート、周辺駐車場の利用集中を確認する。雨天決行、荒天中止",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "大阪府 万博記念公園 万博夏まつり2026", "url": "https://www.pref.osaka.lg.jp/hodo/fumin/o070130/prs_51199.html"},
+      {"title": "万博記念公園 万博夏まつり2026", "url": "https://www.expo70-park.jp/event/76512/"},
+      {"title": "万博夏まつり2026 公式サイト", "url": "https://banpakunatsumatsuri.jp/"}
+    ]
+  },
+  {
     "id": "mikki-summer-festival-2026",
     "title": "みっきぃ夏まつり2026",
     "startAt": "2026-08-29T16:00:00+09:00",
