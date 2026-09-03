@@ -3137,14 +3137,13 @@
     "id": "banpaku-summer-festival-2026-sep04",
     "title": "万博夏まつり2026",
     "startAt": "2026-09-04T17:00:00+09:00",
-    "endAt": "2026-09-06T22:00:00+09:00",
-    "showEachDay": true,
+    "endAt": "2026-09-04T22:00:00+09:00",
     "broadcast": "現地イベント",
-    "category": "夏祭り",
+    "category": "イルミネーション",
     "area": "大阪・吹田",
     "inPersonEvent": true,
-    "liveReason": "万博記念公園で屋台、縁日、盆踊り、ステージ、イルミネーション、手持ち花火エリアを展開する関西最大級の夏まつり",
-    "trafficReason": "16時30分以降は入退園ゲートが限定され、夕方から閉園後に万博記念公園駅、中央口・日本庭園前ゲート、周辺駐車場の利用集中を確認する。雨天決行、荒天中止",
+    "liveReason": "荒天予報により9月4日は万博夜市と花火広場を中止し、太陽の塔プロジェクションマッピングなどのイルミナイト万博のみ通常通り開催する",
+    "trafficReason": "夜市と花火広場の中止により通常開催日より来場規模は縮小するが、16時30分以降は入退園ゲートが中央口・日本庭園前に限定される",
     "nationalReach": 1,
     "liveUrgency": 2,
     "accessibility": 1,
@@ -3162,6 +3161,10 @@
         "url": "https://www.expo70-park.jp/event/76512/"
       },
       {
+        "title": "万博記念公園 9月4日 一部コンテンツ開催中止",
+        "url": "https://www.expo70-park.jp/info/77439/"
+      },
+      {
         "title": "万博夏まつり2026 公式サイト",
         "url": "https://banpakunatsumatsuri.jp/"
       }
@@ -3175,6 +3178,86 @@
         "date": "2026-09-04",
         "start": "17:00",
         "end": "22:00"
+      }
+    ]
+  },
+  {
+    "id": "rugby-japan-fiji-women-2026",
+    "title": "女子ラグビー JAPAN RUGBY CHALLENGE MATCH 2026 JPN対FJI",
+    "startAt": "2026-09-04T17:00:00+09:00",
+    "endAt": "2026-09-04T19:00:00+09:00",
+    "broadcast": "J SPORTSオンデマンド（16:45からライブ配信）・J SPORTS 3（23:00から録画放送）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・福岡",
+    "inPersonEvent": true,
+    "liveReason": "女子15人制日本代表の国内テストマッチをJ SPORTSオンデマンドでライブ配信し、同日23時から録画放送する",
+    "trafficReason": "金曜夕方の有料ライブ配信と23時からの録画放送で、視聴時間帯の外出や就寝時刻への影響を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本ラグビーフットボール協会 女子日本代表戦日程・放送配信",
+        "url": "https://www.rugby-japan.jp/news/54106"
+      },
+      {
+        "title": "日本ラグビーフットボール協会 9月4日当日情報",
+        "url": "https://www.rugby-japan.jp/news/54153"
+      }
+    ],
+    "impactScore": 15,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-04",
+        "start": "17:00",
+        "end": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "volleyball-mens-asian-championship-2026-jpn-oma",
+    "title": "バレーボール男子アジア選手権2026 JPN対OMA",
+    "startAt": "2026-09-04T19:00:00+09:00",
+    "endAt": "2026-09-04T20:54:00+09:00",
+    "broadcast": "フジテレビ系列全国ネット・TVer・FOD（生中継・ライブ配信）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・福岡",
+    "inPersonEvent": true,
+    "liveReason": "LA五輪出場権が懸かる男子アジア選手権の日本代表開幕戦を、フジテレビ系列全国ネットとTVer・FODで生中継・ライブ配信する",
+    "trafficReason": "金曜夜の全国生中継で、19時前の外出切り上げと試合中の在宅視聴を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本バレーボール協会 アジア男子バレーボール選手権大会 福岡2026",
+        "url": "https://www.jva.or.jp/international/2026/asianchampionship_men/"
+      },
+      {
+        "title": "フジテレビ バレーボール アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-04",
+        "start": "19:00",
+        "end": "20:54"
       }
     ]
   },
@@ -3219,6 +3302,56 @@
     ]
   },
   {
+    "id": "banpaku-summer-festival-2026-sep05",
+    "title": "万博夏まつり2026",
+    "startAt": "2026-09-05T17:00:00+09:00",
+    "endAt": "2026-09-06T22:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "夏祭り",
+    "area": "大阪・吹田",
+    "inPersonEvent": true,
+    "liveReason": "万博記念公園で屋台、縁日、盆踊り、ステージ、イルミネーション、手持ち花火エリアを展開する関西最大級の夏まつり",
+    "trafficReason": "16時30分以降は入退園ゲートが限定され、夕方から閉園後に万博記念公園駅、中央口・日本庭園前ゲート、周辺駐車場の利用集中を確認する。雨天決行、荒天中止",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "9月4日の夜市・花火広場のみ荒天予報で中止。9月5日・6日は9月4日朝時点で中止告知なし。",
+    "sources": [
+      {
+        "title": "大阪府 万博記念公園 万博夏まつり2026",
+        "url": "https://www.pref.osaka.lg.jp/hodo/fumin/o070130/prs_51199.html"
+      },
+      {
+        "title": "万博記念公園 万博夏まつり2026",
+        "url": "https://www.expo70-park.jp/event/76512/"
+      },
+      {
+        "title": "万博記念公園 9月4日 一部コンテンツ開催中止",
+        "url": "https://www.expo70-park.jp/info/77439/"
+      },
+      {
+        "title": "万博夏まつり2026 公式サイト",
+        "url": "https://banpakunatsumatsuri.jp/"
+      }
+    ],
+    "impactScore": 13,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-05",
+        "start": "17:00",
+        "end": "22:00"
+      }
+    ]
+  },
+  {
     "id": "matsunoo-hassakusai-2026",
     "title": "松尾大社 八朔祭2026",
     "startAt": "2026-09-05T17:30:00+09:00",
@@ -3256,6 +3389,46 @@
         "date": "2026-09-05",
         "start": "17:30",
         "end": "20:30"
+      }
+    ]
+  },
+  {
+    "id": "volleyball-mens-asian-championship-2026-jpn-bhr",
+    "title": "バレーボール男子アジア選手権2026 JPN対BHR",
+    "startAt": "2026-09-06T19:00:00+09:00",
+    "endAt": "2026-09-06T20:54:00+09:00",
+    "broadcast": "フジテレビ系列全国ネット・TVer・FOD（生中継・ライブ配信）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・福岡",
+    "inPersonEvent": true,
+    "liveReason": "LA五輪出場権が懸かる男子アジア選手権の日本代表予選ラウンドを、フジテレビ系列全国ネットとTVer・FODで生中継・ライブ配信する",
+    "trafficReason": "日曜夜の全国生中継で、19時前の帰宅準備と試合中の在宅視聴を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本バレーボール協会 アジア男子バレーボール選手権大会 福岡2026",
+        "url": "https://www.jva.or.jp/international/2026/asianchampionship_men/"
+      },
+      {
+        "title": "フジテレビ バレーボール アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-06",
+        "start": "19:00",
+        "end": "20:54"
       }
     ]
   },
