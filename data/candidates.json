@@ -2123,14 +2123,14 @@
   },
   {
     "id": "volleyball-mens-asian-championship-2026-jpn-bhr",
-    "title": "バレーボール男子アジア選手権2026 JPN対BHR",
+    "title": "バレーボール男子アジア選手権2026 準々決勝 JPN対TPE",
     "startAt": "2026-09-06T19:00:00+09:00",
     "endAt": "2026-09-06T20:54:00+09:00",
     "broadcast": "フジテレビ系列全国ネット・TVer・FOD（生中継・ライブ配信）",
     "category": "スポーツ中継・現地イベント",
     "area": "全国・福岡",
     "inPersonEvent": true,
-    "liveReason": "LA五輪出場権が懸かる男子アジア選手権の日本代表予選ラウンドを、フジテレビ系列全国ネットとTVer・FODで生中継・ライブ配信する",
+    "liveReason": "LA五輪出場権が懸かる男子アジア選手権の準々決勝を、フジテレビ系列全国ネットとTVer・FODで生中継・ライブ配信する",
     "trafficReason": "日曜夜の全国生中継で、19時前の帰宅準備と試合中の在宅視聴を確認する",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -2154,8 +2154,8 @@
     "category": "祭り",
     "area": "京都",
     "inPersonEvent": true,
-    "liveReason": "京都で最後の夏祭りとされ、前夜の盆踊り、約3,000個の提灯、翌日の女神輿巡幸と船渡御を行う",
-    "trafficReason": "9月6日は8時の女神輿出御から渡月橋付近の船渡御、13時30分頃の還御まで嵐山周辺の移動集中を確認する",
+    "liveReason": "京都で最後の夏祭りとされ、前夜の盆踊り、約3,000個の提灯、翌日の女神輿巡幸などを行う。雨天による増水予想のため船渡御と迎え太鼓は中止",
+    "trafficReason": "9月6日は8時頃の女神輿出御から13時30分頃の還御まで巡幸を予定し、境内駐車場と周辺道路の混雑が見込まれる",
     "nationalReach": 1,
     "liveUrgency": 2,
     "accessibility": 1,
@@ -2165,7 +2165,8 @@
     "officialConfirmed": true,
     "sources": [
       {"title": "京都市公式 京都観光Navi 松尾大社 八朔祭", "url": "https://ja.kyoto.travel/event/single.php?event_id=4841"},
-      {"title": "松尾大社 年中行事", "url": "https://www.matsunoo.or.jp/event/"}
+      {"title": "松尾大社 年中行事", "url": "https://www.matsunoo.or.jp/event/"},
+      {"title": "松尾大社 八朔祭のご案内", "url": "https://www.matsunoo.or.jp/2026/09/04/%E5%85%AB%E6%9C%94%E7%A5%AD%E3%80%80%E6%AC%A1%E7%AC%AC%E5%A4%89%E6%9B%B4%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"}
     ]
   },
   {
