@@ -3527,14 +3527,14 @@
   },
   {
     "id": "volleyball-mens-asian-championship-2026-jpn-bhr",
-    "title": "バレーボール男子アジア選手権2026 準々決勝 JPN対TPE",
+    "title": "バレーボール男子アジア選手権2026 予選ラウンド JPN対BHR",
     "startAt": "2026-09-06T19:00:00+09:00",
     "endAt": "2026-09-06T20:54:00+09:00",
     "broadcast": "フジテレビ系列全国ネット・TVer・FOD（生中継・ライブ配信）",
     "category": "スポーツ中継・現地イベント",
     "area": "全国・福岡",
     "inPersonEvent": true,
-    "liveReason": "LA五輪出場権が懸かる男子アジア選手権の準々決勝を、フジテレビ系列全国ネットとTVer・FODで生中継・ライブ配信する",
+    "liveReason": "LA五輪出場権が懸かる男子アジア選手権の日本代表予選第2戦を、フジテレビ系列全国ネットとTVer・FODで生中継・ライブ配信する",
     "trafficReason": "日曜夜の全国生中継で、19時前の帰宅準備と試合中の在宅視聴を確認する",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -3640,6 +3640,46 @@
         "date": "2026-09-08",
         "start": "14:30",
         "end": "20:00"
+      }
+    ]
+  },
+  {
+    "id": "volleyball-mens-asian-championship-2026-jpn-aus",
+    "title": "バレーボール男子アジア選手権2026 予選ラウンド JPN対AUS",
+    "startAt": "2026-09-08T19:00:00+09:00",
+    "endAt": "2026-09-08T20:54:00+09:00",
+    "broadcast": "フジテレビ系列全国ネット・TVer・FOD（生中継・ライブ配信）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・福岡",
+    "inPersonEvent": true,
+    "liveReason": "LA五輪出場権が懸かる男子アジア選手権の日本代表予選第3戦を、フジテレビ系列全国ネットとTVer・FODで生中継・ライブ配信する",
+    "trafficReason": "火曜夜の全国生中継で、19時前の帰宅準備と試合中の在宅視聴を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本バレーボール協会 アジア男子バレーボール選手権大会 福岡2026",
+        "url": "https://www.jva.or.jp/international/2026/asianchampionship_men/"
+      },
+      {
+        "title": "フジテレビ バレーボール アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-08",
+        "start": "19:00",
+        "end": "20:54"
       }
     ]
   },
