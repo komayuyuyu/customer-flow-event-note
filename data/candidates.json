@@ -2632,5 +2632,29 @@
       {"title": "侍ジャパン 第14回BFA U18アジア選手権2026 大会概要・放送予定", "url": "https://www.japan-baseball.jp/jp/team/18u/2026/asianchampionship/overview.html"},
       {"title": "J SPORTS 野球 放送・配信予定", "url": "https://www.jsports.co.jp/baseball/"}
     ]
+  },
+  {
+    "id": "osaka-classic-2026",
+    "title": "大阪クラシック2026",
+    "startAt": "2026-09-06T12:00:00+09:00",
+    "endAt": "2026-09-12T18:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "音楽祭・現地イベント",
+    "area": "大阪",
+    "inPersonEvent": true,
+    "liveReason": "大阪市と在阪5楽団が主催し、9月6日から12日まで御堂筋・中之島周辺を中心に無料公演と低価格公演を連日開催する都市型クラシック音楽祭",
+    "trafficReason": "本町・淀屋橋・北浜・中之島・梅田・難波の複数会場で昼から夜まで公演が続き、各会場周辺で開演前後の来退場を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 1,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "大阪市 大阪クラシック2026開催案内", "url": "https://www.city.osaka.lg.jp/keizaisenryaku/page/0000684035.html"},
+      {"title": "大阪クラシック2026 公式公演スケジュール", "url": "https://osaka-classic.jp/schedule_2026/"}
+    ]
   }
 ]
