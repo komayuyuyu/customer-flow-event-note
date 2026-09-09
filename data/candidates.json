@@ -2634,6 +2634,28 @@
     ]
   },
   {
+    "id": "fifa-u20-womens-world-cup-2026-group-d-japan-usa",
+    "title": "サッカー FIFA U-20女子ワールドカップポーランド2026 グループD JPN対USA",
+    "startAt": "2026-09-10T01:00:00+09:00",
+    "endAt": "2026-09-10T03:00:00+09:00",
+    "broadcast": "DAZN（無料ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "U-20女子日本代表がワールドカップのグループステージ第2戦でアメリカ代表と対戦。JFA公式が日本時間1時開始とDAZNでの全試合無料ライブ配信を案内し、試合は2対2の引き分けとなった",
+    "trafficReason": "深夜の日本代表戦で、ライブ視聴による当日午前から昼の外出控えを確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "JFA FIFA U-20女子ワールドカップポーランド2026 TV放送・配信", "url": "https://jfa.jp/national_team/u20w_2026/u20_womensworldcup2026/tv.html"},
+      {"title": "Concacaf FIFA U-20女子ワールドカップ2026 JPN対USA試合結果", "url": "https://www.concacaf.com/competitions/womens-under-20-championship/news/the-usynt-secures-first-point-u-20-world-cup-against-japan"}
+    ]
+  },
+  {
     "id": "osaka-classic-2026",
     "title": "大阪クラシック2026",
     "startAt": "2026-09-06T12:00:00+09:00",
