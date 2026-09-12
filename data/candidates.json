@@ -2663,7 +2663,7 @@
     "broadcast": "J SPORTS 2・J SPORTSオンデマンド・バーチャル高校野球（生中継・ライブ配信）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "高校年代の野球日本代表が出場するアジア選手権スーパーラウンド第2戦。侍ジャパン公式が19時30分開始と、テレビ・有料配信・無料配信を案内している",
+    "liveReason": "高校年代の野球日本代表がアジア選手権スーパーラウンド第2戦でチャイニーズ・タイペイに2対1で勝利し、決勝進出を決めた。侍ジャパン公式が試合結果を掲載している",
     "trafficReason": "土曜夜の日本代表戦で、リアルタイム視聴と結果確認により夕方以降の外出や帰宅時刻が前後する可能性を確認する",
     "nationalReach": 2,
     "liveUrgency": 2,
@@ -2675,6 +2675,99 @@
     "sources": [
       {"title": "侍ジャパン 第14回BFA U18アジア選手権2026 大会概要・放送予定", "url": "https://www.japan-baseball.jp/jp/team/18u/2026/asianchampionship/overview.html"},
       {"title": "J SPORTS 野球 放送・配信予定", "url": "https://www.jsports.co.jp/baseball/"}
+    ]
+  },
+  {
+    "id": "bfa-u18-asian-championship-2026-korea-japan-final",
+    "title": "野球 第14回BFA U18アジア選手権2026 決勝 KOR対JPN",
+    "startAt": "2026-09-13T19:30:00+09:00",
+    "endAt": "2026-09-14T01:00:00+09:00",
+    "broadcast": "J SPORTS 2・J SPORTSオンデマンド・バーチャル高校野球（生中継・ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "高校年代の野球日本代表がアジア選手権決勝で韓国代表と対戦する。侍ジャパン公式が19時30分開始と、テレビ・有料配信・無料配信を案内している",
+    "trafficReason": "日曜夜の日本代表による決勝で、リアルタイム視聴と結果確認により夕方以降の外出や帰宅時刻が前後する可能性を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "侍ジャパン 第14回BFA U18アジア選手権2026 大会概要・放送予定", "url": "https://www.japan-baseball.jp/jp/team/18u/2026/asianchampionship/overview.html"},
+      {"title": "J SPORTS 野球 放送・配信予定", "url": "https://www.jsports.co.jp/baseball/"}
+    ]
+  },
+  {
+    "id": "shiawasenomura-festival-2026",
+    "title": "第36回しあわせの村まつり",
+    "startAt": "2026-09-12T16:30:00+09:00",
+    "endAt": "2026-09-13T20:30:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "祭り・花火",
+    "area": "神戸・北区",
+    "inPersonEvent": true,
+    "liveReason": "しあわせの村公式で9月12日・13日の開催を確認。ステージ、縁日・屋台、キッチンカー、手持ち花火に加え、19時20分と20時10分から吹き上げ花火ショーを実施する",
+    "trafficReason": "夕方から夜に家族連れの来退場が集中し、中央緑道の通行スペースも狭くなる。雨天中止のため当日の公式案内を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "しあわせの村 第36回しあわせの村まつり", "url": "https://shiawasenomura.org/events/9602"},
+      {"title": "Kiss PRESS 第36回しあわせの村まつり", "url": "https://kisspress.jp/event/65395/"}
+    ]
+  },
+  {
+    "id": "hyogo-kodomo-banpaku-kobe-2026",
+    "title": "ひょうごこども万博2026 in 神戸",
+    "startAt": "2026-09-12T10:00:00+09:00",
+    "endAt": "2026-09-13T17:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "ファミリーイベント",
+    "area": "神戸・ポートアイランド",
+    "inPersonEvent": true,
+    "liveReason": "公式サイトで9月12日・13日、神戸国際展示場3号館での開催を確認。夢スピーチ、こども店長体験、縁日、企業・地域ワークショップなどを実施する入場無料の県主催イベント",
+    "trafficReason": "会場に駐車場がなく、三宮からポートライナーを利用する家族連れの往復が午前から夕方に集中する可能性がある",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "こども万博 ひょうごこども万博2026 in 神戸", "url": "https://www.kodomo-banpaku.com/event/kobe2026/"},
+      {"title": "Kiss PRESS ひょうごこども万博2026 in 神戸", "url": "https://kisspress.jp/event/65394/"}
+    ]
+  },
+  {
+    "id": "kobe-mirai-fes-2026",
+    "title": "KOBE未来フェス2026",
+    "startAt": "2026-09-12T11:00:00+09:00",
+    "endAt": "2026-09-13T17:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "体験型イベント",
+    "area": "神戸・メリケンパーク",
+    "inPersonEvent": true,
+    "liveReason": "神戸ウォーターフロント公式で9月12日・13日、メリケンパークでの開催を確認。子どもから大人まで参加できる体験型イベントを神戸の海辺で実施する",
+    "trafficReason": "神戸中心部のウォーターフロントで開催され、元町・三宮方面からの来退場と周辺回遊が午前から夕方に見込まれる",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "KOBE WATERFRONT KOBE未来フェス2026", "url": "https://kobewaterfront.com/events/20260912m"}
     ]
   },
   {
