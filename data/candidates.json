@@ -2685,7 +2685,7 @@
     "broadcast": "J SPORTS 2・J SPORTSオンデマンド・バーチャル高校野球（生中継・ライブ配信）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "高校年代の野球日本代表がアジア選手権決勝で韓国代表と対戦する。侍ジャパン公式が19時30分開始と、テレビ・有料配信・無料配信を案内している",
+    "liveReason": "高校年代の野球日本代表が韓国代表と対戦したアジア選手権決勝。侍ジャパン公式で韓国2対0日本の試合終了と、日本の2大会連続準優勝を確認できる",
     "trafficReason": "日曜夜の日本代表による決勝で、リアルタイム視聴と結果確認により夕方以降の外出や帰宅時刻が前後する可能性を確認する",
     "nationalReach": 2,
     "liveUrgency": 3,
@@ -2695,8 +2695,18 @@
     "impactLevelOverride": "小",
     "officialConfirmed": true,
     "sources": [
-      {"title": "侍ジャパン 第14回BFA U18アジア選手権2026 大会概要・放送予定", "url": "https://www.japan-baseball.jp/jp/team/18u/2026/asianchampionship/overview.html"},
-      {"title": "J SPORTS 野球 放送・配信予定", "url": "https://www.jsports.co.jp/baseball/"}
+      {
+        "title": "侍ジャパン 第14回BFA U18アジア選手権2026 大会概要・放送予定",
+        "url": "https://www.japan-baseball.jp/jp/team/18u/2026/asianchampionship/overview.html"
+      },
+      {
+        "title": "J SPORTS 野球 放送・配信予定",
+        "url": "https://www.jsports.co.jp/baseball/"
+      },
+      {
+        "title": "侍ジャパン U18アジア選手権 決勝 試合結果",
+        "url": "https://www.japan-baseball.jp/jp/team/18u/score/20260913_1/"
+      }
     ]
   },
   {
@@ -2814,6 +2824,101 @@
     "sources": [
       {"title": "大阪市 大阪クラシック2026開催案内", "url": "https://www.city.osaka.lg.jp/keizaisenryaku/page/0000684035.html"},
       {"title": "大阪クラシック2026 公式公演スケジュール", "url": "https://osaka-classic.jp/schedule_2026/"}
+    ]
+  },
+  {
+    "id": "us-open-tennis-2026-mens-final",
+    "title": "全米オープンテニス2026 男子シングルス決勝",
+    "startAt": "2026-09-14T03:00:00+09:00",
+    "endAt": "2026-09-14T07:00:00+09:00",
+    "broadcast": "WOWOW・WOWOWオンデマンド（2時45分から生中継・ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "シーズン最後の四大大会の男子決勝。ズベレフとシェルトンが対戦し、公式販売日程では現地9月13日14時開始、WOWOWは日本時間14日2時45分から中継する",
+    "trafficReason": "月曜深夜から早朝の視聴により、当日午前から昼の外出開始が遅れる可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "終了時刻は視聴影響評価用の目安。実際の試合進行で変わる。",
+    "sources": [
+      {
+        "title": "US Open 2026 公式日程",
+        "url": "https://www.usopen.org/en_US/about/eventschedule.html"
+      },
+      {
+        "title": "US Open公式販売 男子決勝 現地14時開始",
+        "url": "https://www.ticketmaster.com/event/1D00646DB3386628?brand=usopen&tt_scene=anchor_view&wt.mc_id=USTA_USOPEN_INDV_TIX_PG_LINK60"
+      },
+      {
+        "title": "WOWOW 全米オープンテニス 放送予定",
+        "url": "https://www.wowow.co.jp/detail/178147"
+      }
+    ]
+  },
+  {
+    "id": "volleyball-mens-asian-championship-2026-jpn-iri-final",
+    "title": "バレーボール男子アジア選手権2026 決勝 JPN対IRI",
+    "startAt": "2026-09-13T19:00:00+09:00",
+    "endAt": "2026-09-13T20:54:00+09:00",
+    "broadcast": "フジテレビ系列全国ネット（19時～20時54分）・TVer・FOD、フジテレビONE（時差放送）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・福岡",
+    "inPersonEvent": true,
+    "liveReason": "LA五輪出場権が懸かる男子アジア選手権の決勝。試合は19時30分開始、地上波は19時から中継し、日本がイランに3対0で勝利した",
+    "trafficReason": "日曜夜の全国中継で、夕方の早めの帰宅と在宅視聴による外出時刻の変化が考えられる",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 男子アジア選手権2026 日程",
+        "url": "https://www.jva.or.jp/international/2026/asianchampionship_men/?entry=schedule"
+      },
+      {
+        "title": "JVA 男子アジア選手権2026 決勝結果",
+        "url": "https://www.jva.or.jp/international/2026/asianchampionship_men/?entry=results"
+      },
+      {
+        "title": "フジテレビ バレーボール アジア選手権2026 放送日程",
+        "url": "https://www.fujitv.co.jp/sports/volleyball/avc/"
+      },
+      {
+        "title": "フジテレビONE 決勝放送",
+        "url": "https://otn.fujitv.co.jp/b_hp/926200123l.html"
+      }
+    ]
+  },
+  {
+    "id": "bshop-ongakusai-2026-popup-grand-front-osaka",
+    "title": "ビショップ音楽祭2026 POP-UP グランフロント大阪",
+    "startAt": "2026-09-10T11:00:00+09:00",
+    "endAt": "2026-09-16T21:00:00+09:00",
+    "showEachDay": true,
+    "broadcast": "現地イベント",
+    "category": "物販・現地イベント",
+    "area": "大阪",
+    "inPersonEvent": true,
+    "liveReason": "Bshopグランフロント大阪店で、ビショップ音楽祭のオフィシャルグッズを期間限定販売。各日11時から21時まで、南館3階で開催する",
+    "nationalReach": 1,
+    "liveUrgency": 1,
+    "accessibility": 2,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "Bshop ビショップ音楽祭2026 POP-UP 開催概要",
+        "url": "https://bshop-inc.com/feature/event/bshop-ongakusai2026-popup"
+      }
     ]
   }
 ]
