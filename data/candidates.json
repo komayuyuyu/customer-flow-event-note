@@ -2954,5 +2954,39 @@
         "url": "https://www.aichi-nagoya2026.org/ja/news-1435/"
       }
     ]
+  },
+  {
+    "id": "asian-games-2026-football-women-group-e-vie-jpn",
+    "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋）女子グループE VIE対JPN",
+    "startAt": "2026-09-17T19:30:00+09:00",
+    "endAt": "2026-09-17T21:30:00+09:00",
+    "broadcast": "U-NEXT（19時30分キックオフ、生配信）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・静岡",
+    "inPersonEvent": true,
+    "liveReason": "日本で開催される第20回アジア競技大会の女子サッカー日本代表グループステージ第2戦。初戦を8対0で勝利した日本がベトナムと対戦し、JFA公式で19時30分キックオフとU-NEXT生配信を確認できる",
+    "trafficReason": "平日夜の日本代表戦のため、夕方から夜の在宅視聴による外出時刻の変化を確認する",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "U-NEXTの生配信のみをJFA公式で確認。終了時刻は視聴影響評価用の目安。",
+    "sources": [
+      {
+        "title": "JFA 第20回アジア競技大会 女子グループE VIE対JPN 試合情報",
+        "url": "https://www.jfa.jp/nadeshikojapan/"
+      },
+      {
+        "title": "JFA 第20回アジア競技大会 なでしこジャパン TV放送",
+        "url": "https://jfa.jp/nadeshikojapan/asiangames_2026_women/tv.html"
+      },
+      {
+        "title": "JFA 第20回アジア競技大会 なでしこジャパン初戦マッチレポート",
+        "url": "https://jfa.jp/national_team/news/00036743/"
+      }
+    ]
   }
 ]
