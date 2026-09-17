@@ -4451,7 +4451,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・愛知",
     "inPersonEvent": true,
-    "liveReason": "日本で開催される第20回アジア競技大会の男子サッカー日本代表初戦。JFA公式で19時30分キックオフと、TBS系列の19時からの全国生中継を確認できる",
+    "liveReason": "日本で開催される第20回アジア競技大会の男子サッカー日本代表初戦。JFA公式で19時30分キックオフとTBS系列の19時からの全国生中継を案内し、日本がホンコン・チャイナに2対0で勝利した",
     "trafficReason": "平日夜の日本代表戦を全国生中継するため、夕方の早めの帰宅と在宅視聴による外出時刻の変化を確認する",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -4463,7 +4463,7 @@
     "internalNote": "試合は19時30分開始。イベントのstartAtは全国生中継開始の19時に合わせた。終了時刻は視聴影響評価用の目安。",
     "sources": [
       {
-        "title": "JFA 第20回アジア競技大会 男子グループA JPN対HKG 試合情報",
+        "title": "JFA 第20回アジア競技大会 男子グループA JPN対HKG 試合結果",
         "url": "https://www.jfa.jp/national_team/u21_2026/asiangames_2026_men/groupA/match_page/m7.html"
       },
       {
@@ -4537,7 +4537,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・静岡",
     "inPersonEvent": true,
-    "liveReason": "日本で開催される第20回アジア競技大会の女子サッカー日本代表グループステージ第2戦。初戦を8対0で勝利した日本がベトナムと対戦し、JFA公式で19時30分キックオフとU-NEXT生配信を確認できる",
+    "liveReason": "日本で開催される第20回アジア競技大会の女子サッカー日本代表グループステージ第2戦。JFA公式で19時30分キックオフとU-NEXT生配信を案内し、日本がベトナムに8対0で勝利した",
     "trafficReason": "平日夜の日本代表戦のため、夕方から夜の在宅視聴による外出時刻の変化を確認する",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -4549,8 +4549,8 @@
     "internalNote": "U-NEXTの生配信のみをJFA公式で確認。終了時刻は視聴影響評価用の目安。",
     "sources": [
       {
-        "title": "JFA 第20回アジア競技大会 女子グループE VIE対JPN 試合情報",
-        "url": "https://www.jfa.jp/nadeshikojapan/"
+        "title": "JFA 第20回アジア競技大会 女子グループE VIE対JPN 試合結果",
+        "url": "https://www.jfa.jp/nadeshikojapan/asiangames_2026_women/groupE/match_page/m11.html"
       },
       {
         "title": "JFA 第20回アジア競技大会 なでしこジャパン TV放送",
@@ -4570,6 +4570,57 @@
         "date": "2026-09-17",
         "start": "19:30",
         "end": "21:30"
+      }
+    ]
+  },
+  {
+    "id": "fifa-u20-womens-world-cup-2026-r16-prk-jpn",
+    "title": "サッカー FIFA U-20女子ワールドカップポーランド2026 R16 PRK対JPN",
+    "startAt": "2026-09-18T01:30:00+09:00",
+    "endAt": "2026-09-18T03:30:00+09:00",
+    "broadcast": "DAZN（全試合無料ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国・海外",
+    "inPersonEvent": false,
+    "liveReason": "U-20女子日本代表がFIFA U-20女子ワールドカップのR16で朝鮮民主主義人民共和国と対戦。DAZNが全試合を無料ライブ配信し、日本は0対2で敗れて大会を終えた",
+    "trafficReason": "日本時間の深夜開催のため、前夜の在宅視聴と当日午前の外出時刻への影響を確認する",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "日本時間9月18日1時30分開始。終了時刻は視聴影響評価用の目安。",
+    "sources": [
+      {
+        "title": "JFA U-20日本女子代表 2026年試合日程・結果",
+        "url": "https://www.jfa.jp/national_team/u20w/schedule_result/2026.html"
+      },
+      {
+        "title": "JFA FIFA U-20女子ワールドカップポーランド2026 TV放送・配信",
+        "url": "https://jfa.jp/national_team/u20w_2026/u20_womensworldcup2026/tv.html"
+      },
+      {
+        "title": "FIFA U-20女子ワールドカップポーランド2026 R16 PRK対JPNプレビュー",
+        "url": "https://www.fifa.com/en/tournaments/womens/u20womensworldcup/poland-2026/articles/dpr-korea-japan-rivalry"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-09-18",
+        "start": "01:30",
+        "end": "03:30"
+      },
+      {
+        "label": "深夜視聴の翌日",
+        "date": "2026-09-18",
+        "start": "10:00",
+        "end": "14:00"
       }
     ]
   },
