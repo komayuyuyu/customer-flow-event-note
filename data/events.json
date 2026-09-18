@@ -4666,47 +4666,6 @@
     ]
   },
   {
-    "id": "rugby-pnc-2026-final-day-japan",
-    "title": "ラグビー アサヒスーパードライ パシフィックネーションズカップ2026 3位決定戦または決勝 日本代表戦",
-    "startAt": "2026-09-19T15:30:00+09:00",
-    "endAt": "2026-09-19T21:45:00+09:00",
-    "broadcast": "J SPORTS 1・J SPORTSオンデマンド（15:30〜21:45生中継・ライブ配信）",
-    "category": "スポーツ中継・現地イベント",
-    "area": "全国・東京",
-    "inPersonEvent": true,
-    "liveReason": "男子15人制日本代表が準決勝の結果に応じて3位決定戦または決勝へ出場し、J SPORTSが両試合を連続生中継・ライブ配信する",
-    "trafficReason": "16時または19時05分開始の日本代表戦となるため、午後から夜の視聴と秩父宮ラグビー場周辺の来退場を確認する",
-    "internalNote": "日本代表の試合開始時刻と対戦相手は9月12日の準決勝後に確定する。確定後に開始・終了時刻とタイトルを更新する",
-    "nationalReach": 2,
-    "liveUrgency": 3,
-    "accessibility": 1,
-    "buzz": 2,
-    "significance": 3,
-    "impactLevelOverride": "中",
-    "officialConfirmed": true,
-    "sources": [
-      {
-        "title": "日本ラグビーフットボール協会 パシフィックネーションズカップ2026チケット情報",
-        "url": "https://www.rugby-japan.jp/news/54075"
-      },
-      {
-        "title": "J SPORTS ラグビー日本代表 放送予定",
-        "url": "https://www.jsports.co.jp/rugby/japan/"
-      }
-    ],
-    "impactScore": 19,
-    "impactLevel": "中",
-    "confidence": "高",
-    "predictedWindows": [
-      {
-        "label": "イベント開催中",
-        "date": "2026-09-19",
-        "start": "15:30",
-        "end": "21:45"
-      }
-    ]
-  },
-  {
     "id": "expo70-park-summer-festival-2026-september-second",
     "title": "万博記念公園 万博夏まつり2026",
     "startAt": "2026-09-19T17:00:00+09:00",
@@ -4788,6 +4747,51 @@
         "date": "2026-09-19",
         "start": "18:00",
         "end": "21:00"
+      }
+    ]
+  },
+  {
+    "id": "rugby-pnc-2026-final-day-japan",
+    "title": "ラグビー アサヒスーパードライ パシフィックネーションズカップ2026 決勝 JPN対FIJ",
+    "startAt": "2026-09-19T18:35:00+09:00",
+    "endAt": "2026-09-19T21:45:00+09:00",
+    "broadcast": "J SPORTS 1・J SPORTSオンデマンド（18:35から生中継・ライブ配信）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "男子15人制日本代表が準決勝でアメリカ代表に63対14で勝利し、決勝でフィジー代表と対戦する。J SPORTSが生中継・ライブ配信する",
+    "trafficReason": "19時05分開始の日本代表決勝戦のため、夕方から夜の視聴と秩父宮ラグビー場周辺の来退場を確認する",
+    "internalNote": "試合は19時05分開始。イベントのstartAtはJ SPORTSの放送・配信開始18時35分に合わせた。終了時刻は放送予定に基づく",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本ラグビーフットボール協会 日本代表対アメリカ代表 試合結果",
+        "url": "https://www.rugby-japan.jp/news/54199"
+      },
+      {
+        "title": "日本ラグビーフットボール協会 決勝 日本代表対フィジー代表",
+        "url": "https://www.rugby-japan.jp/match/30785"
+      },
+      {
+        "title": "J SPORTS ラグビー日本代表 放送予定",
+        "url": "https://www.jsports.co.jp/rugby/japan/"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-19",
+        "start": "18:35",
+        "end": "21:45"
       }
     ]
   },
