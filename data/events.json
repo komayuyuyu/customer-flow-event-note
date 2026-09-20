@@ -4925,6 +4925,716 @@
     ]
   },
   {
+    "id": "asian-games-2026-volleyball-women-21",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 女子準決勝",
+    "startAt": "2026-09-21T16:00:00+09:00",
+    "endAt": "2026-09-21T21:50:00+09:00",
+    "broadcast": "U-NEXT（月額プラン）／TBS系列（18日は19:00、21日・22日は12:30からの中継内で放送予定、16日の女子戦地上波枠は未確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "女子日本代表の48年ぶりの金メダルが注目される国内開催の大会。予選は19時20分開始、準決勝は16時と19時20分、3位決定戦は16時・決勝は19時20分。",
+    "trafficReason": "夜の試合に向け16時20分〜19時20分の帰宅準備と視聴による外出時刻の変化が考えられる。",
+    "internalNote": "終了は2時間30分の目安。準決勝・決勝日の日本出場と試合枠・対戦相手は勝ち上がり後に確定。各日の競技枠を登録し、日本出場確定とは扱わない。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 女子競技日程",
+        "url": "https://www.jva.or.jp/international/2026/asia_women/?entry=schedule"
+      },
+      {
+        "title": "TBS 大会放送予定",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2670437?page=3"
+      },
+      {
+        "title": "U-NEXT 大会配信",
+        "url": "https://help.unext.jp/info-video/detail/info068c"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-09-21",
+        "start": "16:00",
+        "end": "21:50"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-football-women-group-e-jpn-tpe",
+    "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋） 女子グループE JPN対TPE",
+    "startAt": "2026-09-21T19:30:00+09:00",
+    "endAt": "2026-09-21T21:30:00+09:00",
+    "broadcast": "生配信（配信先はJFA公式SNSで案内）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・静岡",
+    "inPersonEvent": true,
+    "liveReason": "自国開催のアジア大会で、なでしこジャパンがグループ首位通過を目指す第3戦。JFA公式で19時30分開始と生配信を確認できる",
+    "trafficReason": "祝日夜の日本代表戦に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA 第20回アジア競技大会 なでしこジャパン TV放送・配信",
+        "url": "https://jfa.jp/nadeshikojapan/asiangames_2026_women/tv.html"
+      },
+      {
+        "title": "JFA 第20回アジア競技大会 女子サッカー日程",
+        "url": "https://jfa.jp/nadeshikojapan/asiangames_2026_women/"
+      }
+    ],
+    "impactScore": 20,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-21",
+        "start": "19:30",
+        "end": "21:30"
+      }
+    ]
+  },
+  {
+    "id": "himesai-summer-fireworks-2026-09-21",
+    "title": "姫祭夏花火2026 ～Upgraded Summer～",
+    "startAt": "2026-09-21T19:50:00+09:00",
+    "endAt": "2026-09-21T20:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・姫路",
+    "inPersonEvent": true,
+    "liveReason": "姫路セントラルパークのお盆期間特別開催日。約10分間に3,000発を打ち上げる",
+    "trafficReason": "姫路セントラルパーク周辺と姫路駅からのバスで、夕方から閉園後の来退場混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "雨天・強風などにより中止する場合がある。当日朝時点で2026年8月10日の中止告知は確認できない。",
+    "sources": [
+      {
+        "title": "姫路セントラルパーク 公式花火日程・営業時間",
+        "url": "https://wp.central-park.co.jp/calendar/attime-table.html"
+      },
+      {
+        "title": "姫路セントラルパーク 公式イベントスケジュール",
+        "url": "https://www.central-park.co.jp/event-schedule/"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-21",
+        "start": "19:50",
+        "end": "20:00"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-volleyball-women-22",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 女子決勝・3位決定戦",
+    "startAt": "2026-09-22T16:00:00+09:00",
+    "endAt": "2026-09-22T21:50:00+09:00",
+    "broadcast": "U-NEXT（月額プラン）／TBS系列（18日は19:00、21日・22日は12:30からの中継内で放送予定、16日の女子戦地上波枠は未確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "女子日本代表の48年ぶりの金メダルが注目される国内開催の大会。予選は19時20分開始、準決勝は16時と19時20分、3位決定戦は16時・決勝は19時20分。",
+    "trafficReason": "夜の試合に向け16時20分〜19時20分の帰宅準備と視聴による外出時刻の変化が考えられる。",
+    "internalNote": "終了は2時間30分の目安。準決勝・決勝日の日本出場と試合枠・対戦相手は勝ち上がり後に確定。各日の競技枠を登録し、日本出場確定とは扱わない。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 女子競技日程",
+        "url": "https://www.jva.or.jp/international/2026/asia_women/?entry=schedule"
+      },
+      {
+        "title": "TBS 大会放送予定",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2670437?page=3"
+      },
+      {
+        "title": "U-NEXT 大会配信",
+        "url": "https://help.unext.jp/info-video/detail/info068c"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-09-22",
+        "start": "16:00",
+        "end": "21:50"
+      }
+    ]
+  },
+  {
+    "id": "himesai-summer-fireworks-2026-09-22",
+    "title": "姫祭夏花火2026 ～Upgraded Summer～",
+    "startAt": "2026-09-22T19:50:00+09:00",
+    "endAt": "2026-09-22T20:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・姫路",
+    "inPersonEvent": true,
+    "liveReason": "姫路セントラルパークのお盆期間特別開催日。約10分間に3,000発を打ち上げる",
+    "trafficReason": "姫路セントラルパーク周辺と姫路駅からのバスで、夕方から閉園後の来退場混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "雨天・強風などにより中止する場合がある。当日朝時点で2026年8月10日の中止告知は確認できない。",
+    "sources": [
+      {
+        "title": "姫路セントラルパーク 公式花火日程・営業時間",
+        "url": "https://wp.central-park.co.jp/calendar/attime-table.html"
+      },
+      {
+        "title": "姫路セントラルパーク 公式イベントスケジュール",
+        "url": "https://www.central-park.co.jp/event-schedule/"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-22",
+        "start": "19:50",
+        "end": "20:00"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-football-men-jpn-tha",
+    "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋） 男子予選 JPN対THA",
+    "startAt": "2026-09-23T19:30:00+09:00",
+    "endAt": "2026-09-23T21:30:00+09:00",
+    "broadcast": "TBS系列（16日は19:00から生中継、20日・23日は放送予定）／U-NEXT（月額プラン、配信対象は当日の番組詳細を確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "U-21日本代表のグループAの一戦。JFAが19時30分キックオフとTBS系列の放送を案内している。",
+    "trafficReason": "19時30分の試合に向け、16時30分〜19時30分の帰宅準備で外出時刻が前後する可能性がある。",
+    "internalNote": "終了は試合所要時間からの目安。放送と個別配信の変更を当日再確認する。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA 男子サッカー日程・放送",
+        "url": "https://jfa.jp/national_team/u21_2026/asiangames_2026_men/tv.html"
+      },
+      {
+        "title": "TBS 大会放送予定",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2670437"
+      },
+      {
+        "title": "U-NEXT 大会ライブ配信",
+        "url": "https://help.unext.jp/info-video/detail/info068c"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-09-23",
+        "start": "19:30",
+        "end": "21:30"
+      }
+    ]
+  },
+  {
+    "id": "himesai-summer-fireworks-2026-09-23",
+    "title": "姫祭夏花火2026 ～Upgraded Summer～",
+    "startAt": "2026-09-23T19:50:00+09:00",
+    "endAt": "2026-09-23T20:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・姫路",
+    "inPersonEvent": true,
+    "liveReason": "姫路セントラルパークのお盆期間特別開催日。約10分間に3,000発を打ち上げる",
+    "trafficReason": "姫路セントラルパーク周辺と姫路駅からのバスで、夕方から閉園後の来退場混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "雨天・強風などにより中止する場合がある。当日朝時点で2026年8月10日の中止告知は確認できない。",
+    "sources": [
+      {
+        "title": "姫路セントラルパーク 公式花火日程・営業時間",
+        "url": "https://wp.central-park.co.jp/calendar/attime-table.html"
+      },
+      {
+        "title": "姫路セントラルパーク 公式イベントスケジュール",
+        "url": "https://www.central-park.co.jp/event-schedule/"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-23",
+        "start": "19:50",
+        "end": "20:00"
+      }
+    ]
+  },
+  {
+    "id": "samurai-blue-kirin-challenge-2026-jpn-uru",
+    "title": "サッカー キリンチャレンジカップ2026 JPN対URU",
+    "startAt": "2026-09-24T19:05:00+09:00",
+    "endAt": "2026-09-24T21:00:00+09:00",
+    "broadcast": "フジテレビ系列全国生中継・TVerライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・宮城",
+    "inPersonEvent": true,
+    "liveReason": "FIFAワールドカップ2026後初のSAMURAI BLUE国内戦。JFA公式で19時05分開始、フジテレビ系列全国生中継とTVerライブ配信を確認できる",
+    "trafficReason": "平日夜の日本代表戦に向け、16時05分から19時05分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA キリンチャレンジカップ2026 JPN対URU 開催概要・放送",
+        "url": "https://jfa.jp/samuraiblue_2026/news/00036601/"
+      },
+      {
+        "title": "JFA SAMURAI BLUE 2026年試合日程",
+        "url": "https://jfa.jp/samuraiblue/schedule_result/2026.html"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-24",
+        "start": "19:05",
+        "end": "21:00"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-football-men-quarterfinal-japan",
+    "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋） 男子準々決勝 日本代表戦",
+    "startAt": "2026-09-26T19:30:00+09:00",
+    "endAt": "2026-09-26T21:30:00+09:00",
+    "broadcast": "TBS系列・大会配信（日本がグループA1位通過時。詳細は確定後更新）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "U-21日本代表がグループAを1位通過した場合の準々決勝。JFAのライブビューイング案内で9月26日19時30分開始を確認できる",
+    "trafficReason": "土曜夜の決勝トーナメント日本代表戦となった場合、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "日本のグループA1位通過時のみこの日時。9月23日の順位確定後に対戦相手・放送を更新する。",
+    "sources": [
+      {
+        "title": "JFA blue-ing! 第20回アジア競技大会 ライブビューイング",
+        "url": "https://blueing.jfa.jp/202609-asiangames"
+      },
+      {
+        "title": "JFA 第20回アジア競技大会 男子サッカーマッチスケジュール",
+        "url": "https://jfa.jp/nadeshikojapan/asiangames_2026_women/news/00036588/"
+      }
+    ],
+    "impactScore": 21,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-26",
+        "start": "19:30",
+        "end": "21:30"
+      }
+    ]
+  },
+  {
+    "id": "himesai-summer-fireworks-2026-09-26",
+    "title": "姫祭夏花火2026 ～Upgraded Summer～",
+    "startAt": "2026-09-26T19:50:00+09:00",
+    "endAt": "2026-09-26T20:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・姫路",
+    "inPersonEvent": true,
+    "liveReason": "姫路セントラルパークのお盆期間特別開催日。約10分間に3,000発を打ち上げる",
+    "trafficReason": "姫路セントラルパーク周辺と姫路駅からのバスで、夕方から閉園後の来退場混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "雨天・強風などにより中止する場合がある。当日朝時点で2026年8月10日の中止告知は確認できない。",
+    "sources": [
+      {
+        "title": "姫路セントラルパーク 公式花火日程・営業時間",
+        "url": "https://wp.central-park.co.jp/calendar/attime-table.html"
+      },
+      {
+        "title": "姫路セントラルパーク 公式イベントスケジュール",
+        "url": "https://www.central-park.co.jp/event-schedule/"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-26",
+        "start": "19:50",
+        "end": "20:00"
+      }
+    ]
+  },
+  {
+    "id": "sumo-september-basho-2026-final-day",
+    "title": "大相撲九月場所 千秋楽",
+    "startAt": "2026-09-27T15:15:00+09:00",
+    "endAt": "2026-09-27T18:00:00+09:00",
+    "broadcast": "NHK総合・NHK BSなど（番組表確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "日本相撲協会公式で九月場所千秋楽を9月27日と確認。幕内土俵入りは15時15分ごろで、優勝決定を含む最終日の取組が全国的に注目される",
+    "trafficReason": "日曜午後から夕方の生中継視聴と優勝結果の確認で、外出や帰宅時刻が前後する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本相撲協会 令和八年九月場所 土俵上のタイムスケジュール",
+        "url": "https://www.sumo.or.jp/Watching/guide/tokyo/schedule/637/"
+      },
+      {
+        "title": "日本相撲協会 令和8年本場所日程",
+        "url": "https://www.sumo.or.jp/admission/schedule"
+      }
+    ],
+    "impactScore": 21,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-27",
+        "start": "15:15",
+        "end": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-volleyball-men-jpn-uzb",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 男子予選 JPN対UZB",
+    "startAt": "2026-09-27T19:20:00+09:00",
+    "endAt": "2026-09-27T21:50:00+09:00",
+    "broadcast": "TBS系列（27日は18:30からの中継内で放送予定）／U-NEXT（大会ライブ配信、月額プラン）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "JVAが男子日本代表の予選A組の試合日と19時20分開始を公表。",
+    "trafficReason": "夜の日本代表戦に向け、16時20分〜19時20分の帰宅準備で外出時刻が前後する可能性がある。",
+    "internalNote": "終了は2時間30分の目安。28日・29日の個別地上波枠は未確認のため大会放送情報として掲載。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 男子バレーボール競技日程",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=schedule"
+      },
+      {
+        "title": "TBS 大会中継予定",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2670437?page=5"
+      },
+      {
+        "title": "U-NEXT 大会ライブ配信",
+        "url": "https://help.unext.jp/info-video/detail/info068c"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-09-27",
+        "start": "19:20",
+        "end": "21:50"
+      }
+    ]
+  },
+  {
+    "id": "himesai-summer-fireworks-2026-09-27",
+    "title": "姫祭夏花火2026 ～Upgraded Summer～",
+    "startAt": "2026-09-27T19:50:00+09:00",
+    "endAt": "2026-09-27T20:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "兵庫・姫路",
+    "inPersonEvent": true,
+    "liveReason": "姫路セントラルパークのお盆期間特別開催日。約10分間に3,000発を打ち上げる",
+    "trafficReason": "姫路セントラルパーク周辺と姫路駅からのバスで、夕方から閉園後の来退場混雑を確認する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 1,
+    "significance": 1,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "雨天・強風などにより中止する場合がある。当日朝時点で2026年8月10日の中止告知は確認できない。",
+    "sources": [
+      {
+        "title": "姫路セントラルパーク 公式花火日程・営業時間",
+        "url": "https://wp.central-park.co.jp/calendar/attime-table.html"
+      },
+      {
+        "title": "姫路セントラルパーク 公式イベントスケジュール",
+        "url": "https://www.central-park.co.jp/event-schedule/"
+      }
+    ],
+    "impactScore": 10,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-27",
+        "start": "19:50",
+        "end": "20:00"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-volleyball-men-jpn-kaz",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 男子予選 JPN対KAZ",
+    "startAt": "2026-09-28T19:20:00+09:00",
+    "endAt": "2026-09-28T21:50:00+09:00",
+    "broadcast": "U-NEXT（大会ライブ配信、月額プラン。個別番組詳細を確認）／TBS系列（大会放送、当該試合の個別地上波枠は未確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "JVAが男子日本代表の予選A組の試合日と19時20分開始を公表。",
+    "trafficReason": "夜の日本代表戦に向け、16時20分〜19時20分の帰宅準備で外出時刻が前後する可能性がある。",
+    "internalNote": "終了は2時間30分の目安。28日・29日の個別地上波枠は未確認のため大会放送情報として掲載。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 男子バレーボール競技日程",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=schedule"
+      },
+      {
+        "title": "TBS 大会中継予定",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2670437?page=5"
+      },
+      {
+        "title": "U-NEXT 大会ライブ配信",
+        "url": "https://help.unext.jp/info-video/detail/info068c"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-09-28",
+        "start": "19:20",
+        "end": "21:50"
+      }
+    ]
+  },
+  {
+    "id": "samurai-blue-kirin-challenge-2026-jpn-ven",
+    "title": "サッカー キリンチャレンジカップ2026 JPN対VEN",
+    "startAt": "2026-09-28T19:25:00+09:00",
+    "endAt": "2026-09-28T21:10:00+09:00",
+    "broadcast": "日本テレビ系全国ネット生中継・TVer・DAZNライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・広島",
+    "inPersonEvent": true,
+    "liveReason": "SAMURAI BLUEの国内国際親善試合。JFA公式で19時25分開始と全国生中継・ライブ配信を確認でき、チケット完売も公表されている",
+    "trafficReason": "平日夜の日本代表戦に向け、16時25分から19時25分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA キリンチャレンジカップ2026 JPN対VEN 開催概要",
+        "url": "https://www.jfa.jp/samuraiblue/20260928/about.html"
+      },
+      {
+        "title": "JFA JPN対VEN チケット完売",
+        "url": "https://jfa.jp/samuraiblue_2026/news/00036762/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-28",
+        "start": "19:25",
+        "end": "21:10"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-volleyball-men-jpn-pak",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 男子予選 JPN対PAK",
+    "startAt": "2026-09-29T19:20:00+09:00",
+    "endAt": "2026-09-29T21:50:00+09:00",
+    "broadcast": "U-NEXT（大会ライブ配信、月額プラン。個別番組詳細を確認）／TBS系列（大会放送、当該試合の個別地上波枠は未確認）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "JVAが男子日本代表の予選A組の試合日と19時20分開始を公表。",
+    "trafficReason": "夜の日本代表戦に向け、16時20分〜19時20分の帰宅準備で外出時刻が前後する可能性がある。",
+    "internalNote": "終了は2時間30分の目安。28日・29日の個別地上波枠は未確認のため大会放送情報として掲載。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 男子バレーボール競技日程",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=schedule"
+      },
+      {
+        "title": "TBS 大会中継予定",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2670437?page=5"
+      },
+      {
+        "title": "U-NEXT 大会ライブ配信",
+        "url": "https://help.unext.jp/info-video/detail/info068c"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-09-29",
+        "start": "19:20",
+        "end": "21:50"
+      }
+    ]
+  },
+  {
+    "id": "samurai-blue-kirin-cup-2026-jpn-ecu",
+    "title": "サッカー キリンカップサッカー2026 JPN対ECU",
+    "startAt": "2026-10-01T19:10:00+09:00",
+    "endAt": "2026-10-01T21:10:00+09:00",
+    "broadcast": "TBS系列全国ネット生中継・TVerライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・神奈川",
+    "inPersonEvent": true,
+    "liveReason": "4か国によるキリンカップサッカー2026のSAMURAI BLUE初戦。JFA公式で19時10分開始とTBS系列全国ネット生中継・TVerライブ配信を確認できる",
+    "trafficReason": "平日夜の日本代表戦に向け、16時10分から19時10分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA キリンカップサッカー2026 大会概要・放送",
+        "url": "https://www.jfa.jp/samuraiblue/news/00036605/"
+      },
+      {
+        "title": "JFA キリンカップサッカー2026 開催概要",
+        "url": "https://www.jfa.jp/samuraiblue/kirincupsoccer_2026/about.html"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-01",
+        "start": "19:10",
+        "end": "21:10"
+      }
+    ]
+  },
+  {
     "id": "bshop-ongakusai-2026",
     "title": "ビショップ音楽祭2026",
     "startAt": "2026-10-03T11:00:00+09:00",
@@ -4961,6 +5671,51 @@
         "date": "2026-10-03",
         "start": "11:00",
         "end": "21:00"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-closing-ceremony",
+    "title": "第20回アジア競技大会（2026／愛知・名古屋） 閉会式",
+    "startAt": "2026-10-04T18:00:00+09:00",
+    "endAt": "2026-10-04T20:00:00+09:00",
+    "broadcast": "TBS系列（放送スケジュール掲載、詳細は番組表確認）",
+    "category": "国際総合競技大会・式典",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "32年ぶりの日本開催となるアジア大会の閉会式。公式チケット資料で10月4日18時開始、TBS公式で同日までの大会放送を確認できる",
+    "trafficReason": "日曜夕方の式典と大会総括の全国放送により、15時から18時ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性がある",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "終了時刻は式典所要時間の目安。個別放送開始・終了時刻は番組表で当日再確認する。",
+    "sources": [
+      {
+        "title": "第20回アジア競技大会 公式チケット資料 開閉会式",
+        "url": "https://tickets.tbs.co.jp/asiangames2026/docs/a660ef745617ba78239036d1e7dd2a4a34d22dfa.pdf"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      },
+      {
+        "title": "JOC 愛知・名古屋アジア大会",
+        "url": "https://www.joc.or.jp/aichi_nagoya2026/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-04",
+        "start": "18:00",
+        "end": "20:00"
       }
     ]
   }
