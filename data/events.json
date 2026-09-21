@@ -4934,6 +4934,43 @@
     ]
   },
   {
+    "id": "asian-games-2026-baseball-opening-china-japan",
+    "title": "野球 第20回アジア競技大会（2026／愛知・名古屋） オープニングラウンド グループA CHN対JPN",
+    "startAt": "2026-09-21T18:30:00+09:00",
+    "endAt": "2026-09-21T21:30:00+09:00",
+    "broadcast": "侍ジャパン公式試合速報",
+    "category": "スポーツ・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "社会人代表の侍ジャパンが出場する自国開催のアジア大会野球開幕戦。日本が中国に11対3で勝利した",
+    "trafficReason": "祝日夕方の日本代表戦で、結果確認や現地観戦により一部の外出時刻が前後する可能性を確認する",
+    "internalNote": "9月21日18時30分開始。侍ジャパン公式で中国3対11日本の試合終了を確認。",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "侍ジャパン 第20回アジア競技大会 CHN対JPN 試合結果",
+        "url": "https://www.japan-baseball.jp/jp/team/amateur/score/20260921_1/"
+      }
+    ],
+    "impactScore": 16,
+    "impactLevel": "小",
+    "confidence": "中",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-21",
+        "start": "18:30",
+        "end": "21:30"
+      }
+    ]
+  },
+  {
     "id": "asian-games-2026-volleyball-women-21",
     "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 女子準決勝 JPN対KOR",
     "startAt": "2026-09-21T19:20:00+09:00",
@@ -4941,9 +4978,9 @@
     "broadcast": "U-NEXT（月額プラン）／TBS系列（18日は19:00、21日・22日は12:30からの中継内で放送予定、16日の女子戦地上波枠は未確認）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "女子日本代表が準々決勝でTPEに3対0で勝利し、48年ぶりの金メダルを懸けて準決勝でKORと対戦する",
+    "liveReason": "女子日本代表が準決勝でKORに3対0で勝利し、48年ぶりの金メダルを懸ける決勝進出を決めた",
     "trafficReason": "夜の試合に向け16時20分〜19時20分の帰宅準備と視聴による外出時刻の変化が考えられる。",
-    "internalNote": "終了は2時間30分の目安。9月20日の準々決勝JPN対TPEは日本が3対0で勝利し、準決勝JPN対KORは9月21日19時20分開始に確定。",
+    "internalNote": "9月21日の準決勝JPN対KORは日本が3対0で勝利。",
     "nationalReach": 2,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -5059,16 +5096,53 @@
     ]
   },
   {
+    "id": "asian-games-2026-baseball-opening-japan-palestine",
+    "title": "野球 第20回アジア競技大会（2026／愛知・名古屋） オープニングラウンド グループA JPN対PLE",
+    "startAt": "2026-09-22T18:30:00+09:00",
+    "endAt": "2026-09-22T21:30:00+09:00",
+    "broadcast": "侍ジャパン公式試合速報",
+    "category": "スポーツ・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "社会人代表の侍ジャパンが出場する自国開催のアジア大会野球オープニングラウンド第2戦。公式日程で18時30分開始を確認できる",
+    "trafficReason": "祝日夕方の日本代表戦で、結果確認や現地観戦により一部の外出時刻が前後する可能性を確認する",
+    "internalNote": "終了は3時間の目安。放送・動画配信は公式発表を確認できず、侍ジャパン公式試合速報を記載。",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "侍ジャパン 第20回アジア競技大会 大会日程",
+        "url": "https://www.japan-baseball.jp/jp/team/amateur/score/20260921_1/"
+      }
+    ],
+    "impactScore": 16,
+    "impactLevel": "小",
+    "confidence": "中",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-22",
+        "start": "18:30",
+        "end": "21:30"
+      }
+    ]
+  },
+  {
     "id": "asian-games-2026-volleyball-women-22",
-    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 女子決勝・3位決定戦",
-    "startAt": "2026-09-22T16:00:00+09:00",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 女子決勝 JPN対CHN",
+    "startAt": "2026-09-22T19:20:00+09:00",
     "endAt": "2026-09-22T21:50:00+09:00",
     "broadcast": "U-NEXT（月額プラン）／TBS系列（18日は19:00、21日・22日は12:30からの中継内で放送予定、16日の女子戦地上波枠は未確認）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "女子日本代表の48年ぶりの金メダルが注目される国内開催の大会。予選は19時20分開始、準決勝は16時と19時20分、3位決定戦は16時・決勝は19時20分。",
+    "liveReason": "女子日本代表が準決勝でKORに3対0で勝利し、48年ぶりの金メダルを懸けて決勝でCHNと対戦する",
     "trafficReason": "夜の試合に向け16時20分〜19時20分の帰宅準備と視聴による外出時刻の変化が考えられる。",
-    "internalNote": "終了は2時間30分の目安。準決勝・決勝日の日本出場と試合枠・対戦相手は勝ち上がり後に確定。各日の競技枠を登録し、日本出場確定とは扱わない。",
+    "internalNote": "終了は2時間30分の目安。JVA公式で9月22日19時20分開始、決勝JPN対CHNを確認。",
     "nationalReach": 2,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -5097,7 +5171,7 @@
       {
         "label": "リアルタイム視聴",
         "date": "2026-09-22",
-        "start": "16:00",
+        "start": "19:20",
         "end": "21:50"
       }
     ]
