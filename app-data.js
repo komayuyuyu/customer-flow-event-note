@@ -2,6 +2,7 @@
   const EVENT_DATA_PATHS = ['./data/events.json', './data/store-events.json'];
   const MAX_EVENT_REFERENCES = 64;
   const MAX_CALENDAR_CONTEXTS = 16;
+  const DEFAULT_EVENT_DISPLAY_ORDER = 100;
   const EVENT_STATUSES = new Set(['実施予定', '実施済み', '中止', '延期']);
   let calendarContextPromise;
   let eventDataPromise;
@@ -104,6 +105,15 @@
     return String(a.startAt || '').localeCompare(String(b.startAt || ''));
   }
 
+  function eventDisplayOrder(event) {
+    const displayOrder = Number(event?.displayOrder);
+    return Number.isFinite(displayOrder) ? displayOrder : DEFAULT_EVENT_DISPLAY_ORDER;
+  }
+
+  function compareEventsForDisplay(a, b) {
+    return eventDisplayOrder(a) - eventDisplayOrder(b) || compareEventsByStart(a, b);
+  }
+
   function hasPredictedWindowOn(event, targetDate) {
     return (event.predictedWindows || []).some(predictedWindow => predictedWindow.date === targetDate);
   }
@@ -118,7 +128,7 @@
   }
 
   function eventsForDay(events, targetDate) {
-    return events.filter(event => eventCoversDate(event, targetDate));
+    return events.filter(event => eventCoversDate(event, targetDate)).sort(compareEventsForDisplay);
   }
 
   async function eventsForDate(date) {

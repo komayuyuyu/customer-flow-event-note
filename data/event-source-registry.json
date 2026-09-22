@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30",
+  "updatedAt": "2026-09-23",
   "scope": {
     "dailyRegions": [
       "兵庫",
@@ -20,10 +20,28 @@
       "サマーカーニバル",
       "夜市",
       "夢花火",
-      "舞花火"
+      "舞花火",
+      "営業時間",
+      "特別営業時間",
+      "営業時間変更",
+      "休館日"
     ]
   },
   "officialSources": [
+    {
+      "id": "mop-kobe-opening-hours",
+      "region": "兵庫",
+      "url": "https://mitsui-shopping-park.com/mop/kobe/hour/",
+      "cadence": "daily",
+      "purpose": "営業時間変更・特別営業時間・休館日の確認"
+    },
+    {
+      "id": "mop-kobe-information",
+      "region": "兵庫",
+      "url": "https://mitsui-shopping-park.com/mop/kobe/information/",
+      "cadence": "daily",
+      "purpose": "営業時間変更のお知らせと更新・取消の確認"
+    },
     {
       "id": "ashiya-summer-carnival",
       "region": "兵庫",
