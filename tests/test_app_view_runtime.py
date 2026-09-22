@@ -30,6 +30,45 @@ class AppViewRuntimeTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
 
     @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
+    def test_special_hours_are_ordered_below_calendar_context_and_above_other_events(self):
+        self.run_node(
+            r"""
+            const assert = require('node:assert/strict');
+            const fs = require('node:fs');
+            const vm = require('node:vm');
+
+            global.window = {};
+            for (const path of process.argv.slice(1)) {
+              vm.runInThisContext(fs.readFileSync(path, 'utf8'));
+            }
+
+            const { eventsForDay } = window.AppData;
+            const { renderWeekDay } = window.AppView;
+            const date = '2026-09-20';
+            const orderedEvents = eventsForDay([
+              { title: 'ORCIVAL フェア', startAt: '2026-09-18T10:00:00+09:00', endAt: '2026-09-27T20:00:00+09:00', showEachDay: true },
+              { title: '特別営業時間', startAt: '2026-09-20T09:30:00+09:00', endAt: '2026-09-22T22:00:00+09:00', showEachDay: true, displayOrder: 10 },
+              { title: '当日イベント', startAt: '2026-09-20T08:00:00+09:00', endAt: '2026-09-20T09:00:00+09:00' },
+            ], date);
+
+            assert.deepEqual(orderedEvents.map(event => event.title), [
+              '特別営業時間',
+              'ORCIVAL フェア',
+              '当日イベント',
+            ]);
+
+            const html = renderWeekDay({
+              date,
+              context: [{ type: '祝日', label: '敬老の日' }, { type: '大型連休', label: 'シルバーウィーク' }],
+              events: orderedEvents,
+            });
+            assert.ok(html.indexOf('敬老の日') < html.indexOf('特別営業時間'));
+            assert.ok(html.indexOf('シルバーウィーク') < html.indexOf('特別営業時間'));
+            assert.ok(html.indexOf('特別営業時間') < html.indexOf('ORCIVAL フェア'));
+            """
+        )
+
+    @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
     def test_event_cards_escape_values_and_only_link_to_safe_web_urls(self):
         self.run_node(
             r"""
