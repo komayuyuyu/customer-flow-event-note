@@ -30,6 +30,40 @@ class AppViewRuntimeTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
 
     @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
+    def test_calendar_context_orders_long_break_before_holiday(self):
+        self.run_node(
+            r"""
+            const assert = require('node:assert/strict');
+            const fs = require('node:fs');
+            const vm = require('node:vm');
+
+            global.window = {};
+            global.fetch = async path => ({
+              ok: true,
+              json: async () => path.includes('calendar-context')
+                ? {
+                    holidays: { '2026-09-21': '敬老の日' },
+                    periods: [{ start: '2026-09-19', end: '2026-09-23', label: 'シルバーウィーク' }],
+                  }
+                : [],
+            });
+            for (const path of process.argv.slice(1)) {
+              vm.runInThisContext(fs.readFileSync(path, 'utf8'));
+            }
+
+            window.AppData.contextForDate('2026-09-21').then(items => {
+              assert.deepEqual(items, [
+                { type: '大型連休', label: 'シルバーウィーク' },
+                { type: '祝日', label: '敬老の日' },
+              ]);
+            }).catch(error => {
+              console.error(error);
+              process.exit(1);
+            });
+            """
+        )
+
+    @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
     def test_special_hours_are_ordered_below_calendar_context_and_above_other_events(self):
         self.run_node(
             r"""
