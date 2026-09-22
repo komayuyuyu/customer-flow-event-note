@@ -138,10 +138,10 @@
   async function contextForDate(dateText) {
     const context = await loadCalendarContext();
     const items = [];
-    if (context.holidays?.[dateText]) items.push({ type: '祝日', label: context.holidays[dateText] });
     for (const period of context.periods || []) {
       if (period.start <= dateText && dateText <= period.end) items.push({ type: '大型連休', label: period.label });
     }
+    if (context.holidays?.[dateText]) items.push({ type: '祝日', label: context.holidays[dateText] });
     return items;
   }
 
