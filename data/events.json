@@ -5104,9 +5104,9 @@
     "category": "スポーツ・現地イベント",
     "area": "全国・愛知",
     "inPersonEvent": true,
-    "liveReason": "社会人代表の侍ジャパンが出場する自国開催のアジア大会野球オープニングラウンド第2戦。公式日程で18時30分開始を確認できる",
+    "liveReason": "社会人代表の侍ジャパンが出場する自国開催のアジア大会野球オープニングラウンド第2戦。日本がパレスチナに15対0の5回コールドで勝利した",
     "trafficReason": "祝日夕方の日本代表戦で、結果確認や現地観戦により一部の外出時刻が前後する可能性を確認する",
-    "internalNote": "終了は3時間の目安。放送・動画配信は公式発表を確認できず、侍ジャパン公式試合速報を記載。",
+    "internalNote": "9月22日18時30分開始。侍ジャパン公式で日本15対0パレスチナ、5回コールドの試合終了を確認。",
     "nationalReach": 2,
     "liveUrgency": 2,
     "accessibility": 2,
@@ -5116,8 +5116,8 @@
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "侍ジャパン 第20回アジア競技大会 大会日程",
-        "url": "https://www.japan-baseball.jp/jp/team/amateur/score/20260921_1/"
+        "title": "侍ジャパン 第20回アジア競技大会 JPN対PLE 試合結果",
+        "url": "https://www.japan-baseball.jp/jp/team/amateur/score/20260922_1/"
       }
     ],
     "impactScore": 16,
@@ -5140,9 +5140,9 @@
     "broadcast": "U-NEXT（月額プラン）／TBS系列（18日は19:00、21日・22日は12:30からの中継内で放送予定、16日の女子戦地上波枠は未確認）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "女子日本代表が準決勝でKORに3対0で勝利し、48年ぶりの金メダルを懸けて決勝でCHNと対戦する",
+    "liveReason": "女子日本代表は決勝でCHNに0対3で敗れ、2大会連続の銀メダルとなった",
     "trafficReason": "夜の試合に向け16時20分〜19時20分の帰宅準備と視聴による外出時刻の変化が考えられる。",
-    "internalNote": "終了は2時間30分の目安。JVA公式で9月22日19時20分開始、決勝JPN対CHNを確認。",
+    "internalNote": "9月22日19時20分開始。決勝は日本0対3中国（19-25、20-25、23-25）で終了。",
     "nationalReach": 2,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -5162,6 +5162,10 @@
       {
         "title": "U-NEXT 大会配信",
         "url": "https://help.unext.jp/info-video/detail/info068c"
+      },
+      {
+        "title": "女子決勝 JPN対CHN 試合結果",
+        "url": "https://volleyballking.jp/article/91774/"
       }
     ],
     "impactScore": 19,
@@ -5194,7 +5198,7 @@
     "significance": 1,
     "impactLevelOverride": "小",
     "officialConfirmed": true,
-    "internalNote": "雨天・強風などにより中止する場合がある。当日朝時点で2026年8月10日の中止告知は確認できない。",
+    "internalNote": "雨天・強風などにより中止する場合がある。9月23日朝時点で公式日程と花火開催日向けアトラクション案内を確認し、中止告知は確認できない。",
     "sources": [
       {
         "title": "姫路セントラルパーク 公式花火日程・営業時間",
@@ -5218,16 +5222,94 @@
     ]
   },
   {
+    "id": "asian-games-2026-baseball-opening-japan-philippines",
+    "title": "野球 第20回アジア競技大会（2026／愛知・名古屋） オープニングラウンド グループA JPN対PHI",
+    "startAt": "2026-09-23T12:00:00+09:00",
+    "endAt": "2026-09-23T15:00:00+09:00",
+    "broadcast": "侍ジャパン公式試合速報",
+    "category": "スポーツ・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "社会人代表の侍ジャパンが出場する自国開催のアジア大会野球オープニングラウンド第3戦。公式日程で12時開始を確認できる",
+    "trafficReason": "祝日の日本代表戦で、結果確認や現地観戦により一部の外出時刻が前後する可能性を確認する",
+    "internalNote": "終了は3時間の目安。放送・動画配信は公式発表を確認できず、侍ジャパン公式試合速報を記載。",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "侍ジャパン 第20回アジア競技大会 大会日程",
+        "url": "https://www.japan-baseball.jp/jp/news/press/20260911_1.html"
+      }
+    ],
+    "impactScore": 16,
+    "impactLevel": "小",
+    "confidence": "中",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-23",
+        "start": "12:00",
+        "end": "15:00"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-artistic-gymnastics-mens-team-final",
+    "title": "体操 第20回アジア競技大会（2026／愛知・名古屋） 男子団体決勝",
+    "startAt": "2026-09-23T13:00:00+09:00",
+    "endAt": "2026-09-23T15:30:00+09:00",
+    "broadcast": "TBS系列12:30から生中継／TBS FREE・TVer・U-NEXTでライブ配信",
+    "category": "スポーツ中継",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "日本男子が12年ぶりの団体金メダルを懸けて中国と対戦し、TBS系列が全国生中継する",
+    "trafficReason": "祝日昼の決勝生中継で、視聴により昼から午後の外出時刻が前後する可能性を確認する",
+    "internalNote": "TBS当日番組表で13時ごろ競技開始、12時30分から生中継を確認。終了は公式競技日程の15時30分。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "TBS アジア大会 体操男子団体決勝",
+        "url": "https://www.tbs.co.jp/tv/20260923_BDCF.html"
+      },
+      {
+        "title": "アジア大会 体操競技日程",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2750467?display=1"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-23",
+        "start": "13:00",
+        "end": "15:30"
+      }
+    ]
+  },
+  {
     "id": "asian-games-2026-football-men-jpn-tha",
     "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋） 男子予選 JPN対THA",
     "startAt": "2026-09-23T19:30:00+09:00",
     "endAt": "2026-09-23T21:30:00+09:00",
-    "broadcast": "TBS系列（16日は19:00から生中継、20日・23日は放送予定）／U-NEXT（月額プラン、配信対象は当日の番組詳細を確認）",
+    "broadcast": "TBS系列19:00から生中継／TBS FREE・TVer・U-NEXTでライブ配信",
     "category": "スポーツ中継",
     "area": "全国",
     "liveReason": "U-21日本代表のグループAの一戦。JFAが19時30分キックオフとTBS系列の放送を案内している。",
     "trafficReason": "19時30分の試合に向け、16時30分〜19時30分の帰宅準備で外出時刻が前後する可能性がある。",
-    "internalNote": "終了は試合所要時間からの目安。放送と個別配信の変更を当日再確認する。",
+    "internalNote": "終了は試合所要時間からの目安。JFAとTBSの当日番組表で19時からの生中継・ライブ配信を確認。",
     "nationalReach": 2,
     "liveUrgency": 3,
     "accessibility": 3,
