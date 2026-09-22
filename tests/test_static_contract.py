@@ -504,15 +504,19 @@ class StaticContractTest(unittest.TestCase):
         self.assertEqual(by_title["メダルdeポイントアップ"]["startAt"][:10], "2026-09-18")
         self.assertEqual(by_title["メダルdeポイントアップ"]["endAt"][:10], "2026-09-27")
         self.assertEqual(by_title["特別営業時間"]["startAt"], "2026-09-20T09:30:00+09:00")
-        self.assertEqual(by_title["特別営業時間"]["endAt"], "2026-09-22T22:00:00+09:00")
+        self.assertEqual(by_title["特別営業時間"]["endAt"], "2026-09-22T21:00:00+09:00")
         self.assertEqual(by_title["特別営業時間"]["displayOrder"], 10)
         self.assertTrue(by_title["特別営業時間"]["showEachDay"])
         self.assertEqual(by_title["特別営業時間"]["predictedWindows"][0]["date"], "2026-09-20")
         self.assertEqual(by_title["特別営業時間"]["predictedWindows"][0]["start"], "09:30")
         self.assertEqual(by_title["特別営業時間"]["predictedWindows"][0]["end"], "21:00")
-        self.assertEqual(by_title["特別営業時間"]["predictedWindows"][1]["end"], "22:00")
-        self.assertEqual(len(by_title["特別営業時間"]["predictedWindows"]), 12)
+        self.assertEqual(len(by_title["特別営業時間"]["predictedWindows"]), 3)
         self.assertEqual(by_title["特別営業時間"]["predictedWindows"][-1]["date"], "2026-09-22")
+        self.assertEqual(
+            {window["label"] for window in by_title["特別営業時間"]["predictedWindows"]},
+            {"ショップ"},
+        )
+        self.assertNotIn("レストラン", by_title["特別営業時間"]["liveReason"])
         self.assertEqual(
             by_title["特別営業時間"]["sources"][0]["url"],
             "https://mitsui-shopping-park.com/mop/kobe/hour/",
