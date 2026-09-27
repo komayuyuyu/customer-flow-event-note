@@ -6154,5 +6154,247 @@
         "end": "20:00"
       }
     ]
+  },
+  {
+    "id": "joyo-autumn-fireworks-2026",
+    "title": "城陽秋花火2026",
+    "startAt": "2026-10-04T19:00:00+09:00",
+    "endAt": "2026-10-04T19:40:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "京都・城陽",
+    "inPersonEvent": true,
+    "liveReason": "京都府立木津川運動公園で約2,000発を打ち上げる秋花火。京都市公式観光情報で14時開場、19時から19時40分の打ち上げを確認できる",
+    "trafficReason": "駐車場はなく、JR長池駅と近鉄寺田駅からの無料シャトルバスに来退場が集中する",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "京都市公式 京都観光Navi 城陽秋花火",
+        "url": "https://ja.kyoto.travel/event/single.php?event_id=15443"
+      },
+      {
+        "title": "京都府の秋の祭りと伝統行事、花火2026",
+        "url": "https://ja.kyoto.travel/times/night/article/single.php?id=594"
+      }
+    ],
+    "impactScore": 13,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-04",
+        "start": "19:00",
+        "end": "19:40"
+      }
+    ]
+  },
+  {
+    "id": "npb-2026-climax-central-first-stage-game-1",
+    "title": "2026 JERA クライマックスシリーズ セ ファーストステージ 第1戦",
+    "startAt": "2026-10-10T14:00:00+09:00",
+    "endAt": "2026-10-10T17:30:00+09:00",
+    "broadcast": "放送・配信未発表（公式発表後に更新）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国",
+    "inPersonEvent": true,
+    "liveReason": "日本シリーズ進出を争うセ・リーグのファーストステージ開幕戦。NPB公式で10月10日開催、球団公式で14時開始予定を確認できる",
+    "trafficReason": "土曜午後のポストシーズン開幕戦で、放送・配信発表後は在宅視聴による外出時刻への影響が見込まれる",
+    "internalNote": "対戦カードと放送・配信はレギュラーシーズン順位確定後に更新する。終了は試合時間の目安。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "NPB 2026年度 セントラル・リーグ クライマックスシリーズ日程",
+        "url": "https://npb.jp/games/2026/schedule_climax_cl.html"
+      },
+      {
+        "title": "横浜DeNAベイスターズ 2026 JERA クライマックスシリーズ セ チケット発売概要",
+        "url": "https://www.baystars.co.jp/news/2026/09/0922_02.php"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-10",
+        "start": "14:00",
+        "end": "17:30"
+      }
+    ]
+  },
+  {
+    "id": "npb-2026-climax-pacific-first-stage-game-1",
+    "title": "2026 パーソル クライマックスシリーズ パ ファーストステージ 第1戦",
+    "startAt": "2026-10-10T14:00:00+09:00",
+    "endAt": "2026-10-10T17:30:00+09:00",
+    "broadcast": "パーソル パ・リーグTVほか（個別放送・配信は公式発表後に更新）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国",
+    "inPersonEvent": true,
+    "liveReason": "日本シリーズ進出を争うパ・リーグのファーストステージ開幕戦。NPB公式で10月10日開催、球団公式で14時開始予定を確認できる",
+    "trafficReason": "土曜午後のポストシーズン開幕戦で、ライブ配信を中心に在宅視聴による外出時刻への影響が見込まれる",
+    "internalNote": "対戦カードと個別放送・配信はレギュラーシーズン順位確定後に更新する。終了は試合時間の目安。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "NPB 2026年度 パシフィック・リーグ クライマックスシリーズ日程",
+        "url": "https://npb.jp/games/2026/schedule_climax_pl.html"
+      },
+      {
+        "title": "埼玉西武ライオンズ 2026 パーソル クライマックスシリーズ パ チケット販売情報",
+        "url": "https://www.seibulions.jp/news/detail/202600713780.html"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-10",
+        "start": "14:00",
+        "end": "17:30"
+      }
+    ]
+  },
+  {
+    "id": "npb-2026-climax-central-first-stage-game-2",
+    "title": "2026 JERA クライマックスシリーズ セ ファーストステージ 第2戦",
+    "startAt": "2026-10-11T14:00:00+09:00",
+    "endAt": "2026-10-11T17:30:00+09:00",
+    "broadcast": "放送・配信未発表（公式発表後に更新）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国",
+    "inPersonEvent": true,
+    "liveReason": "日本シリーズ進出を争うセ・リーグのファーストステージ第2戦。NPB公式で10月11日開催、球団公式で14時開始予定を確認できる",
+    "trafficReason": "日曜午後のポストシーズンで、放送・配信発表後は在宅視聴による外出時刻への影響が見込まれる",
+    "internalNote": "対戦カードと放送・配信はレギュラーシーズン順位確定後に更新する。終了は試合時間の目安。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "NPB 2026年度 セントラル・リーグ クライマックスシリーズ日程",
+        "url": "https://npb.jp/games/2026/schedule_climax_cl.html"
+      },
+      {
+        "title": "横浜DeNAベイスターズ 2026 JERA クライマックスシリーズ セ チケット発売概要",
+        "url": "https://www.baystars.co.jp/news/2026/09/0922_02.php"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-11",
+        "start": "14:00",
+        "end": "17:30"
+      }
+    ]
+  },
+  {
+    "id": "npb-2026-climax-pacific-first-stage-game-2",
+    "title": "2026 パーソル クライマックスシリーズ パ ファーストステージ 第2戦",
+    "startAt": "2026-10-11T14:00:00+09:00",
+    "endAt": "2026-10-11T17:30:00+09:00",
+    "broadcast": "パーソル パ・リーグTVほか（個別放送・配信は公式発表後に更新）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国",
+    "inPersonEvent": true,
+    "liveReason": "日本シリーズ進出を争うパ・リーグのファーストステージ第2戦。NPB公式で10月11日開催、球団公式で14時開始予定を確認できる",
+    "trafficReason": "日曜午後のポストシーズンで、ライブ配信を中心に在宅視聴による外出時刻への影響が見込まれる",
+    "internalNote": "対戦カードと個別放送・配信はレギュラーシーズン順位確定後に更新する。終了は試合時間の目安。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "NPB 2026年度 パシフィック・リーグ クライマックスシリーズ日程",
+        "url": "https://npb.jp/games/2026/schedule_climax_pl.html"
+      },
+      {
+        "title": "埼玉西武ライオンズ 2026 パーソル クライマックスシリーズ パ チケット販売情報",
+        "url": "https://www.seibulions.jp/news/detail/202600713780.html"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-11",
+        "start": "14:00",
+        "end": "17:30"
+      }
+    ]
+  },
+  {
+    "id": "arashiyama-autumn-fireworks-2026-10-11",
+    "title": "京都 嵐山秋花火2026",
+    "startAt": "2026-10-11T20:30:00+09:00",
+    "endAt": "2026-10-11T20:35:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "京都・嵐山",
+    "inPersonEvent": true,
+    "liveReason": "嵐山中之島公園周辺で20時30分から約5分間打ち上げる秋花火。京都市公式観光情報で日程と時刻を確認できる",
+    "trafficReason": "駐車場はなく、JR嵯峨嵐山駅、嵐電嵐山駅、阪急嵐山駅の来退場混雑が予想されている",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "京都市公式 京都観光Navi 京都 嵐山秋花火2026",
+        "url": "https://ja.kyoto.travel/event/single.php?event_id=10705"
+      },
+      {
+        "title": "京都 嵐山秋花火2026 公式サイト",
+        "url": "https://arashiyamahanabi.hp.peraichi.com/"
+      }
+    ],
+    "impactScore": 13,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-11",
+        "start": "20:30",
+        "end": "20:35"
+      }
+    ]
   }
 ]
