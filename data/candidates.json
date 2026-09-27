@@ -3439,9 +3439,9 @@
     "broadcast": "TBS系列（27日は18:30からの中継内で放送予定）／U-NEXT（大会ライブ配信、月額プラン）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "JVAが男子日本代表の予選A組の試合日と19時20分開始を公表。",
+    "liveReason": "男子日本代表が予選A組初戦でUZBに3対0で勝利し、白星発進した。JVA公式でセットカウントと各セットの得点を確認できる。",
     "trafficReason": "夜の日本代表戦に向け、16時20分〜19時20分の帰宅準備で外出時刻が前後する可能性がある。",
-    "internalNote": "終了は2時間30分の目安。28日・29日の個別地上波枠は未確認のため大会放送情報として掲載。",
+    "internalNote": "9月27日終了。JPNがUZBに3対0（25-17、25-20、25-17）で勝利。",
     "nationalReach": 2,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -3453,6 +3453,10 @@
       {
         "title": "JVA 男子バレーボール競技日程",
         "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=schedule"
+      },
+      {
+        "title": "JVA 男子バレーボール JPN対UZB 試合結果",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=results"
       },
       {
         "title": "TBS 大会中継予定",
@@ -4067,7 +4071,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・静岡",
     "inPersonEvent": true,
-    "liveReason": "なでしこジャパンが決勝トーナメント初戦でPHIと対戦。JFA公式で9月25日19時30分開始を確認できる",
+    "liveReason": "なでしこジャパンが準々決勝でPHIに4対0で勝利し、準決勝進出を決めた。JFA公式で試合結果を確認できる。",
     "trafficReason": "平日夜の日本代表準々決勝に向け、16時30分から19時30分ごろの帰宅準備と配信視聴で外出時刻が前後する可能性がある",
     "nationalReach": 2,
     "liveUrgency": 3,
@@ -4076,7 +4080,7 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
-    "internalNote": "終了は2時間の目安。個別地上波枠は未確認のため大会放送情報として掲載。",
+    "internalNote": "9月25日終了。JPNがPHIに4対0で勝利。個別地上波枠は未確認のため大会放送情報として掲載。",
     "sources": [
       {
         "title": "JFA 女子準々決勝 JPN対PHI 試合情報",
@@ -4445,6 +4449,70 @@
       {
         "title": "埼玉西武ライオンズ 2026 パーソル クライマックスシリーズ パ チケット販売情報",
         "url": "https://www.seibulions.jp/news/detail/202600713780.html"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-athletics-day6-finals",
+    "title": "陸上 第20回アジア競技大会（2026／愛知・名古屋） 大会第6日決勝",
+    "startAt": "2026-09-28T18:05:00+09:00",
+    "endAt": "2026-09-28T23:27:00+09:00",
+    "broadcast": "TBS系列18:30～23:27生中継・TVerリアルタイム配信／U-NEXT9:30からライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "男子3000m障害物、男子1500m、男女4×100mリレーなど日本代表が出場する決勝が続き、TBS系列とTVerで全国生中継される。",
+    "trafficReason": "平日夕方から夜の長時間生中継により、視聴する人の帰宅や外出時刻が前後する可能性がある。",
+    "internalNote": "JAAF公式のDAY6時刻を採用。リレー出場選手は当日確定。放送・配信内容は変更の場合がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本陸上競技連盟 アジア大会DAY6見どころ・放送配信情報",
+        "url": "https://www.jaaf.or.jp/news/article/24157/?month=9&year=2026"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-football-women-semifinal-jpn-kor",
+    "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋） 女子準決勝 JPN対KOR",
+    "startAt": "2026-09-29T19:30:00+09:00",
+    "endAt": "2026-09-29T21:30:00+09:00",
+    "broadcast": "U-NEXT（大会ライブ配信、個別チャンネルは番組表確認）／TBS系列（大会放送、当該試合の個別地上波枠は未確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・静岡",
+    "inPersonEvent": true,
+    "liveReason": "準々決勝でPHIに4対0で勝利したなでしこジャパンが、決勝進出をかけてKORと対戦する。JFA公式で9月29日19時30分開始を確認できる。",
+    "trafficReason": "平日夜の日本代表準決勝に向け、16時30分から19時30分ごろの帰宅準備と配信視聴で外出時刻が前後する可能性がある。",
+    "internalNote": "終了は2時間の目安。個別地上波枠は未確認のため大会放送情報として掲載。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA 女子準決勝 JPN対KOR 試合情報",
+        "url": "https://www.jfa.jp/nadeshikojapan/asiangames_2026_women/final/match_page/m24.html"
+      },
+      {
+        "title": "JFA なでしこジャパン 2026年試合日程・結果",
+        "url": "https://www.jfa.jp/nadeshikojapan/schedule_result/2026.html"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
       }
     ]
   }
