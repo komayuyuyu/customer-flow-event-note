@@ -3973,7 +3973,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・愛知",
     "inPersonEvent": true,
-    "liveReason": "侍ジャパン社会人代表がスーパーラウンド初戦でKORと対戦。侍ジャパン公式で9月25日18時30分開始を確認できる",
+    "liveReason": "侍ジャパン社会人代表がスーパーラウンド初戦でKORに5対0で勝利。大会公式結果でも無失点勝利を確認できる",
     "trafficReason": "平日夜の日韓戦に向け、15時30分から18時30分ごろの帰宅準備と配信視聴で外出時刻が前後する可能性がある",
     "nationalReach": 2,
     "liveUrgency": 3,
@@ -3982,15 +3982,75 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
-    "internalNote": "終了は3時間の目安。個別地上波枠は未確認のため大会放送情報として掲載。",
+    "internalNote": "9月25日終了。JPNがKORに5対0で勝利。個別地上波枠は未確認のため大会放送情報として掲載。",
     "sources": [
       {
         "title": "侍ジャパン スーパーラウンド前日練習・KOR戦開始時刻",
         "url": "https://www.japan-baseball.jp/jp/news/press/20260924_2.html"
       },
       {
-        "title": "侍ジャパン 第20回アジア競技大会 大会概要",
-        "url": "https://www.japan-baseball.jp/en/team/amateur/2026/asiangames/overview.html"
+        "title": "侍ジャパン 第20回アジア競技大会 大会概要・試合結果",
+        "url": "https://www.japan-baseball.jp/jp/team/amateur/2026/asiangames/overview.html"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-baseball-super-round-japan-chinese-taipei",
+    "title": "野球 第20回アジア競技大会（2026／愛知・名古屋） スーパーラウンド JPN対TPE",
+    "startAt": "2026-09-26T19:00:00+09:00",
+    "endAt": "2026-09-26T22:00:00+09:00",
+    "broadcast": "U-NEXT（大会ライブ配信、個別チャンネルは番組表確認）／TBS系列（大会放送、当該試合の個別地上波枠は未確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "侍ジャパン社会人代表がスーパーラウンドでTPEに7対3で勝利し、3戦全勝の1位で決勝進出を決めた",
+    "trafficReason": "土曜夜の侍ジャパン戦で、16時から19時ごろの帰宅準備と配信視聴で外出時刻が前後する可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "9月26日終了。JPNがTPEに7対3で勝利し、スーパーラウンド1位で決勝進出。開始時刻は公式結果の19時00分を採用。",
+    "sources": [
+      {
+        "title": "侍ジャパン 第20回アジア競技大会 大会概要・試合結果",
+        "url": "https://www.japan-baseball.jp/jp/team/amateur/2026/asiangames/overview.html"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-baseball-final-japan-korea",
+    "title": "野球 第20回アジア競技大会（2026／愛知・名古屋） 決勝 JPN対KOR",
+    "startAt": "2026-09-27T18:30:00+09:00",
+    "endAt": "2026-09-27T21:30:00+09:00",
+    "broadcast": "U-NEXT（大会ライブ配信、個別チャンネルは番組表確認）／TBS系列（大会放送、当該試合の個別地上波枠は未確認）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "スーパーラウンド3戦全勝の侍ジャパン社会人代表が、金メダルをかけた決勝でKORと再戦する",
+    "trafficReason": "日曜夜の日韓決勝に向け、15時30分から18時30分ごろの帰宅準備と配信視聴で外出時刻が前後する可能性がある",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "侍ジャパン公式で9月27日18時30分開始、対戦相手KORを確認。終了は3時間の目安。個別地上波枠は未確認。",
+    "sources": [
+      {
+        "title": "侍ジャパン 第20回アジア競技大会 大会概要・決勝日程",
+        "url": "https://www.japan-baseball.jp/jp/team/amateur/2026/asiangames/overview.html"
       },
       {
         "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
