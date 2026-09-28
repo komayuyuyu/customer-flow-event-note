@@ -40,16 +40,16 @@ class StaticContractTest(unittest.TestCase):
     def test_static_asset_version_is_consistent(self):
         for name in ("index.html", "records.html", "record.html"):
             html = (ROOT / name).read_text(encoding="utf-8")
-            self.assertIn("styles.css?v=20260928-1", html)
-            self.assertIn("ui-utils.js?v=20260928-1", html)
-            self.assertIn("app-data.js?v=20260928-1", html)
-            self.assertIn("record-store.js?v=20260928-1", html)
-            self.assertIn("firebase-client.js?v=20260928-1", html)
+            self.assertIn("styles.css?v=20260928-2", html)
+            self.assertIn("ui-utils.js?v=20260928-2", html)
+            self.assertIn("app-data.js?v=20260928-2", html)
+            self.assertIn("record-store.js?v=20260928-2", html)
+            self.assertIn("firebase-client.js?v=20260928-2", html)
             self.assertLess(html.index("record-store.js"), html.index("firebase-client.js"))
             if name == "index.html":
-                self.assertIn("app-view.js?v=20260928-1", html)
-                self.assertIn("app-date-picker.js?v=20260928-1", html)
-                self.assertIn("app-backend.js?v=20260928-1", html)
+                self.assertIn("app-view.js?v=20260928-2", html)
+                self.assertIn("app-date-picker.js?v=20260928-2", html)
+                self.assertIn("app-backend.js?v=20260928-2", html)
                 self.assertLess(html.index("app-date-picker.js"), html.index("app.js"))
             self.assertIn("EVENT INFO", html)
             self.assertIn('<div class="brand-title"><p class="eyebrow">EVENT INFO</p><h1>イベント情報</h1></div>', html)
@@ -61,13 +61,13 @@ class StaticContractTest(unittest.TestCase):
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
         error_page = (ROOT / "404.html").read_text(encoding="utf-8")
         self.assertIn("ページが見つかりません", error_page)
-        self.assertIn("/styles.css?v=20260928-1", error_page)
+        self.assertIn("/styles.css?v=20260928-2", error_page)
         self.assertIn('href="/"', error_page)
         self.assertNotIn("/customer-flow-event-note/", error_page)
 
         service_worker = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const VERSION = '20260928-1';", service_worker)
-        self.assertIn("const CACHE = 'customer-flow-note-v96';", service_worker)
+        self.assertIn("const VERSION = '20260928-2';", service_worker)
+        self.assertIn("const CACHE = 'customer-flow-note-v97';", service_worker)
         self.assertIn("app-data.js?v=${VERSION}", service_worker)
         self.assertIn("app-view.js?v=${VERSION}", service_worker)
         self.assertIn("app-date-picker.js?v=${VERSION}", service_worker)
@@ -77,7 +77,7 @@ class StaticContractTest(unittest.TestCase):
         self.assertIn("record-store.js?v=${VERSION}", service_worker)
         self.assertIn("./data/store-events.json", service_worker)
         app_controller = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260928-1'", app_controller)
+        self.assertIn("navigator.serviceWorker.register('./sw.js?v=20260928-2'", app_controller)
         firebase_client = (ROOT / "firebase-client.js").read_text(encoding="utf-8")
         self.assertIn("const FIREBASE_SDK_VERSION = '12.17.0';", firebase_client)
 
@@ -127,6 +127,7 @@ class StaticContractTest(unittest.TestCase):
             "store-next-payment-terminal-20261020",
             "store-point-up-20261024",
             "store-point-up-20261031",
+            "store-next-payment-terminal-training-20261013",
         }
         for event in store_events:
             if event["id"] in october_shift_calendar_ids:
@@ -505,6 +506,7 @@ class StaticContractTest(unittest.TestCase):
             "次期決済端末スタート",
             "ポイントアップ（10/24〜25）",
             "ポイントアップ（10/31）",
+            "次期端末練習",
         })
         self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["startAt"][:10], "2026-07-03")
         self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["endAt"][:10], "2026-07-12")
@@ -552,6 +554,7 @@ class StaticContractTest(unittest.TestCase):
             "store-next-payment-terminal-20261020": ("2026-10-20", "2026-10-20"),
             "store-point-up-20261024": ("2026-10-24", "2026-10-25"),
             "store-point-up-20261031": ("2026-10-31", "2026-10-31"),
+            "store-next-payment-terminal-training-20261013": ("2026-10-13", "2026-10-13"),
         }
         for event_id, (start_date, end_date) in expected_october_dates.items():
             event = by_id[event_id]
@@ -559,6 +562,9 @@ class StaticContractTest(unittest.TestCase):
             self.assertEqual(event["endAt"][:10], end_date)
             self.assertEqual(event["predictedWindows"][0]["date"], start_date)
             self.assertEqual(event["broadcast"], "勤務カレンダー")
+        training = by_id["store-next-payment-terminal-training-20261013"]
+        self.assertTrue(training["timeUnknown"])
+        self.assertTrue(training["predictedWindows"][0]["timeUnknown"])
         for event in store_events:
             self.assertTrue(event.get("id"))
             self.assertTrue(event.get("startAt"))

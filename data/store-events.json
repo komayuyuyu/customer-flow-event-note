@@ -399,5 +399,21 @@
     "broadcast": "勤務カレンダー",
     "predictedWindows": [{ "label": "館内ポイント施策日", "date": "2026-10-31", "start": "10:00", "end": "20:30" }],
     "sources": [{ "title": "2026年10月勤務カレンダー" }]
+  },
+  {
+    "id": "store-next-payment-terminal-training-20261013",
+    "title": "次期端末練習",
+    "startAt": "2026-10-13T00:00:00+09:00",
+    "endAt": "2026-10-13T23:59:00+09:00",
+    "timeUnknown": true,
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "店頭運営",
+    "area": "勤務先ショップ",
+    "liveReason": "次期端末練習の実施日。",
+    "trafficReason": "端末操作の練習により、店頭運営や会計対応へ影響する可能性がある。",
+    "broadcast": "勤務カレンダー",
+    "predictedWindows": [{ "label": "実施日", "date": "2026-10-13", "timeUnknown": true }],
+    "sources": [{ "title": "2026年10月勤務カレンダー" }]
   }
 ]
