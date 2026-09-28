@@ -5955,7 +5955,7 @@
     "broadcast": "U-NEXT（大会ライブ配信、月額プラン。個別番組詳細を確認）／TBS系列（大会放送、当該試合の個別地上波枠は未確認）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "JVAが男子日本代表の予選A組の試合日と19時20分開始を公表。",
+    "liveReason": "男子日本代表の予選A組第2戦。JVA公式日程と公開結果で、日本がKAZに3対0で勝利したことを確認できる。",
     "trafficReason": "夜の日本代表戦に向け、16時20分〜19時20分の帰宅準備で外出時刻が前後する可能性がある。",
     "internalNote": "終了は2時間30分の目安。28日・29日の個別地上波枠は未確認のため大会放送情報として掲載。",
     "nationalReach": 2,
@@ -5977,6 +5977,10 @@
       {
         "title": "U-NEXT 大会ライブ配信",
         "url": "https://help.unext.jp/info-video/detail/info068c"
+      },
+      {
+        "title": "JVA 男子バレーボール 第20回アジア競技大会 試合結果",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=results"
       }
     ],
     "impactScore": 19,
@@ -6028,6 +6032,47 @@
         "date": "2026-09-28",
         "start": "19:25",
         "end": "21:10"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-athletics-day7-finals",
+    "title": "陸上 第20回アジア競技大会（2026／愛知・名古屋） 大会第7日決勝",
+    "startAt": "2026-09-29T15:49:00+09:00",
+    "endAt": "2026-09-29T23:27:00+09:00",
+    "broadcast": "TBS系列15:49～23:27生中継・TVerリアルタイム配信／U-NEXT11:00からライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "陸上最終日に男女800m、男子5000m、男女混合4×100mリレー、男女4×400mリレーなどの決勝が続き、TBS系列とTVerで全国生中継される。",
+    "trafficReason": "平日午後から夜の長時間生中継により、視聴する人の帰宅や外出時刻が前後する可能性がある。",
+    "internalNote": "JAAF公式オンエア情報のDAY7を採用。U-NEXTは11時から配信。放送・配信内容は変更の場合がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本陸上競技連盟 アジア大会オンエア情報 DAY7",
+        "url": "https://www.jaaf.or.jp/asian-games/2026/onair/"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-29",
+        "start": "15:49",
+        "end": "23:27"
       }
     ]
   },
