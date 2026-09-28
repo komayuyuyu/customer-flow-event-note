@@ -20,6 +20,7 @@
   };
 
   function formatPredictedWindow(predictedWindow) {
+    if (predictedWindow.timeUnknown) return `${predictedWindow.label}：時間未記載`;
     return `${predictedWindow.label}：${predictedWindow.start}〜${predictedWindow.end}`;
   }
 
@@ -29,6 +30,7 @@
   }
 
   function eventTime(event) {
+    if (event.timeUnknown) return '時間未記載';
     const start = event.startAt ? new Date(event.startAt) : null;
     if (!start || Number.isNaN(start.getTime())) return '時刻未定';
     return new Intl.DateTimeFormat('ja-JP', {
