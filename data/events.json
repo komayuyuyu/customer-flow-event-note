@@ -6084,9 +6084,9 @@
     "broadcast": "U-NEXT（大会ライブ配信、月額プラン。個別番組詳細を確認）／TBS系列（大会放送、当該試合の個別地上波枠は未確認）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "JVAが男子日本代表の予選A組の試合日と19時20分開始を公表。",
+    "liveReason": "男子日本代表の予選A組最終戦。JVA公式で、日本がPAKに3対0で勝利し、失セット0のA組1位で準々決勝へ進んだことを確認できる。",
     "trafficReason": "夜の日本代表戦に向け、16時20分〜19時20分の帰宅準備で外出時刻が前後する可能性がある。",
-    "internalNote": "終了は2時間30分の目安。28日・29日の個別地上波枠は未確認のため大会放送情報として掲載。",
+    "internalNote": "終了は2時間30分の目安。28日・29日の個別地上波枠は未確認のため大会放送情報として掲載。9月29日のJVA公式結果を反映。",
     "nationalReach": 2,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -6106,6 +6106,10 @@
       {
         "title": "U-NEXT 大会ライブ配信",
         "url": "https://help.unext.jp/info-video/detail/info068c"
+      },
+      {
+        "title": "JVA JPN対PAK試合結果",
+        "url": "https://www.jva.or.jp/topics/20260929-2/"
       }
     ],
     "impactScore": 19,
@@ -6129,9 +6133,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・静岡",
     "inPersonEvent": true,
-    "liveReason": "準々決勝でPHIに4対0で勝利したなでしこジャパンが、決勝進出をかけてKORと対戦する。JFA公式で9月29日19時30分開始を確認できる。",
+    "liveReason": "なでしこジャパンがKORに2対0で勝利し、10月2日の決勝進出を決めた。",
     "trafficReason": "平日夜の日本代表準決勝に向け、16時30分から19時30分ごろの帰宅準備と配信視聴で外出時刻が前後する可能性がある。",
-    "internalNote": "終了は2時間の目安。個別地上波枠は未確認のため大会放送情報として掲載。",
+    "internalNote": "終了は2時間の目安。個別地上波枠は未確認のため大会放送情報として掲載。9月29日の公開結果を反映。",
     "nationalReach": 2,
     "liveUrgency": 3,
     "accessibility": 2,
@@ -6151,6 +6155,10 @@
       {
         "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
         "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      },
+      {
+        "title": "スポーツナビ 女子準決勝結果",
+        "url": "https://soccer.yahoo.co.jp/japan/category/women/cups/167/31498"
       }
     ],
     "impactScore": 20,
@@ -6160,6 +6168,55 @@
       {
         "label": "イベント開催中",
         "date": "2026-09-29",
+        "start": "19:30",
+        "end": "21:30"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-football-men-semifinal-uzb-jpn",
+    "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋） 男子準決勝 UZB対JPN",
+    "startAt": "2026-09-30T19:30:00+09:00",
+    "endAt": "2026-09-30T21:30:00+09:00",
+    "broadcast": "TBS系列18:30～23:30生中継・TVerリアルタイム配信／U-NEXTライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・大阪",
+    "inPersonEvent": true,
+    "liveReason": "U-21日本代表が決勝進出をかけてU-23ウズベキスタン代表と対戦する。TBS系列の全国生中継でサッカー男子準決勝が中心競技として放送される。",
+    "trafficReason": "平日夜の日本代表準決勝に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
+    "internalNote": "終了は2時間の目安。TBS番組枠は18時30分～23時30分で、サッカー男子準決勝ほかを放送。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA U-21日本代表 第20回アジア競技大会",
+        "url": "https://jfa.jp/national_team/u21_2026/asiangames_2026_men/"
+      },
+      {
+        "title": "愛知・名古屋2026 サッカー対戦カード",
+        "url": "https://www.aichi-nagoya2026.org/ja/news-1435/"
+      },
+      {
+        "title": "TBS 9月30日放送予定",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2670437?page=7"
+      },
+      {
+        "title": "U-NEXT アジア大会ライブ配信",
+        "url": "https://help.unext.jp/info-video/detail/info068c"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-09-30",
         "start": "19:30",
         "end": "21:30"
       }
