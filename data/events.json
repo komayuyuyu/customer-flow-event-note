@@ -6182,9 +6182,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・大阪",
     "inPersonEvent": true,
-    "liveReason": "U-21日本代表が決勝進出をかけてU-23ウズベキスタン代表と対戦する。TBS系列の全国生中継でサッカー男子準決勝が中心競技として放送される。",
+    "liveReason": "U-21日本代表がU-23ウズベキスタン代表と1対1で延長戦を終え、PK戦9対8で勝利して10月3日の男子決勝へ進出した。",
     "trafficReason": "平日夜の日本代表準決勝に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
-    "internalNote": "終了は2時間の目安。TBS番組枠は18時30分～23時30分で、サッカー男子準決勝ほかを放送。",
+    "internalNote": "9月30日終了。JPNがUZBと1対1、延長後のPK戦を9対8で制して決勝進出。決勝は10月3日のKOR戦に確定。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -6195,7 +6195,7 @@
     "sources": [
       {
         "title": "JFA U-21日本代表 第20回アジア競技大会",
-        "url": "https://jfa.jp/national_team/u21_2026/asiangames_2026_men/"
+        "url": "https://www.jfa.jp/national_team/u21_2026/asiangames_2026_men/final/match_page/m27.html"
       },
       {
         "title": "愛知・名古屋2026 サッカー対戦カード",
@@ -6208,6 +6208,10 @@
       {
         "title": "U-NEXT アジア大会ライブ配信",
         "url": "https://help.unext.jp/info-video/detail/info068c"
+      },
+      {
+        "title": "スポーツナビ 男子準決勝結果",
+        "url": "https://soccer.yahoo.co.jp/agames/"
       }
     ],
     "impactScore": 24,
@@ -6259,6 +6263,51 @@
         "date": "2026-10-01",
         "start": "19:10",
         "end": "21:10"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-volleyball-men-quarterfinal-jpn-qat",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 男子準々決勝 JPN対QAT",
+    "startAt": "2026-10-01T19:20:00+09:00",
+    "endAt": "2026-10-01T21:50:00+09:00",
+    "broadcast": "TBS系列21:05～23:27放送／U-NEXTライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "男子日本代表が失セット0の予選A組1位で決勝トーナメントへ進み、16年ぶりの金メダルを目指してQATとの準々決勝に臨む。",
+    "trafficReason": "平日夜の日本代表準々決勝に向け、16時20分から19時20分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性がある。",
+    "internalNote": "終了は2時間30分の目安。TBSの放送枠は試合開始後の21時05分からで、U-NEXTは大会ライブ配信を実施。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 男子バレーボール競技日程",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=schedule"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      },
+      {
+        "title": "U-NEXT アジア大会ライブ配信",
+        "url": "https://help.unext.jp/info-video/detail/info068c"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-01",
+        "start": "19:20",
+        "end": "21:50"
       }
     ]
   },
