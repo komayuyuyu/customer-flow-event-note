@@ -30,6 +30,59 @@ class AppViewRuntimeTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
 
     @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
+    def test_campaign_periods_use_date_ranges_and_only_show_special_hours(self):
+        self.run_node(
+            r"""
+            const assert = require('node:assert/strict');
+            const fs = require('node:fs');
+            const vm = require('node:vm');
+
+            global.window = {};
+            for (const path of process.argv.slice(1)) {
+              vm.runInThisContext(fs.readFileSync(path, 'utf8'));
+            }
+
+            const { renderTodayEventCard, renderWeekEvent } = window.AppView;
+            const campaign = {
+              title: 'お買い物券プレゼント',
+              startAt: '2026-10-01T10:00:00+09:00',
+              endAt: '2026-10-12T20:30:00+09:00',
+              showEachDay: true,
+              area: '勤務先館内',
+              predictedWindows: [{
+                label: '館内キャンペーン期間',
+                date: '2026-10-01',
+                start: '10:00',
+                end: '20:30',
+              }],
+            };
+
+            const weekHtml = renderWeekEvent(campaign);
+            const todayHtml = renderTodayEventCard(campaign, '2026-10-01');
+            assert.match(weekHtml, /期間：10月1日〜10月12日・勤務先館内/);
+            assert.match(todayHtml, /期間：10月1日〜10月12日/);
+            assert.doesNotMatch(weekHtml, /10:00開始|20:30/);
+            assert.doesNotMatch(todayHtml, /10:00〜20:30/);
+
+            const limitedHours = {
+              ...campaign,
+              title: '時間限定キャンペーン',
+              showPeriodTime: true,
+              predictedWindows: [{
+                label: '館内キャンペーン期間',
+                date: '2026-10-01',
+                start: '13:00',
+                end: '17:00',
+              }],
+            };
+            const limitedWeekHtml = renderWeekEvent(limitedHours);
+            const limitedTodayHtml = renderTodayEventCard(limitedHours, '2026-10-01');
+            assert.match(limitedWeekHtml, /期間：10月1日〜10月12日・13:00〜17:00/);
+            assert.match(limitedTodayHtml, /期間：10月1日〜10月12日・13:00〜17:00/);
+            """
+        )
+
+    @unittest.skipUnless(NODE, "Node.js is required for JavaScript runtime tests")
     def test_calendar_context_orders_long_break_before_holiday(self):
         self.run_node(
             r"""

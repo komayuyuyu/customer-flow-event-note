@@ -41,6 +41,32 @@
     }).format(start);
   }
 
+  function monthDay(dateTimeText) {
+    const dateText = String(dateTimeText || '').slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateText)) return '';
+    const { month, day } = dateParts(dateText);
+    return `${month}月${day}日`;
+  }
+
+  function isCampaignPeriod(event = {}) {
+    return Boolean(event.showEachDay && (event.predictedWindows || [])
+      .some(predictedWindow => String(predictedWindow?.label || '').includes('期間')));
+  }
+
+  function campaignPeriodText(event = {}) {
+    if (!isCampaignPeriod(event)) return '';
+    const startDate = monthDay(event.startAt);
+    const endDate = monthDay(event.endAt || event.startAt);
+    if (!startDate || !endDate) return '';
+    const dateRange = startDate === endDate ? startDate : `${startDate}〜${endDate}`;
+    const specialWindow = event.showPeriodTime
+      ? (event.predictedWindows || []).find(item => !item?.timeUnknown && item?.start && item?.end)
+      : null;
+    return specialWindow
+      ? `期間：${dateRange}・${specialWindow.start}〜${specialWindow.end}`
+      : `期間：${dateRange}`;
+  }
+
   function renderWeekDay(day) {
     const calendarEvents = renderWeekContextEvents(day.context);
     const hasDisplayEvents = day.events.length || calendarEvents;
@@ -86,9 +112,10 @@
   }
 
   function renderWeekEvent(event) {
+    const schedule = campaignPeriodText(event) || `${eventTime(event)}開始`;
     return `<div class="week-event">
       <div class="week-event-head"><span class="week-event-name">${renderEventTitle(event)}</span></div>
-      <span class="week-event-time">${escapeHtml(eventTime(event))}開始${event.area ? `・${escapeHtml(event.area)}` : ''}</span>
+      <span class="week-event-time">${escapeHtml(schedule)}${event.area ? `・${escapeHtml(event.area)}` : ''}</span>
       ${renderChampionshipCountdown(event, 'week-event-note')}
     </div>`;
   }
@@ -131,9 +158,11 @@
   }
 
   function renderTodayEventCard(event, dateText) {
+    const periodText = campaignPeriodText(event);
     return `<article class="event-card">
       <div class="event-title-row"><h3>${renderEventTitle(event)}</h3></div>
       ${renderEventMeta(event)}
+      ${periodText ? `<p>${escapeHtml(periodText)}</p>` : ''}
       ${event.liveReason ? `<p>${escapeHtml(event.liveReason)}</p>` : ''}
       ${renderChampionshipCountdown(event)}
       ${renderEventDetails(event)}
@@ -180,6 +209,7 @@
   }
 
   function renderPredictedWindows(event, dateText) {
+    if (isCampaignPeriod(event)) return '';
     return (event.predictedWindows || [])
       .filter(predictedWindow => predictedWindow.date === dateText)
       .map(predictedWindow => {
@@ -191,15 +221,16 @@
 
   window.AppView = {
     calendarContextEvent,
+    campaignPeriodText,
     compactBroadcastLabels,
     compactCalendarLabel,
     eventSourceUrl,
     renderCalendarEventCard,
     renderEmptyTodayEvent,
     renderEventTitle,
+    renderWeekEvent,
     renderTodayEventCard,
     renderWeekDay,
-    renderWeekEvent,
     renderWeekContextEvents,
     renderChampionshipCountdown,
   };
