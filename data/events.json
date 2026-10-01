@@ -6235,7 +6235,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・神奈川",
     "inPersonEvent": true,
-    "liveReason": "4か国によるキリンカップサッカー2026のSAMURAI BLUE初戦。JFA公式で19時10分開始とTBS系列全国ネット生中継・TVerライブ配信を確認できる",
+    "liveReason": "4か国によるキリンカップサッカー2026のSAMURAI BLUE初戦。JFA公式で19時10分開始とTBS系列全国ネット生中継・TVerライブ配信を確認でき、日本がECUと0対0の後、PK戦を5対4で制した",
     "trafficReason": "平日夜の日本代表戦に向け、16時10分から19時10分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -6252,6 +6252,10 @@
       {
         "title": "JFA キリンカップサッカー2026 開催概要",
         "url": "https://www.jfa.jp/samuraiblue/kirincupsoccer_2026/about.html"
+      },
+      {
+        "title": "JFA キリンカップサッカー2026 JPN対ECU 試合結果",
+        "url": "https://www.jfa.jp/samuraiblue/lp/20261001/"
       }
     ],
     "impactScore": 24,
@@ -6275,9 +6279,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・愛知",
     "inPersonEvent": true,
-    "liveReason": "男子日本代表が失セット0の予選A組1位で決勝トーナメントへ進み、16年ぶりの金メダルを目指してQATとの準々決勝に臨む。",
+    "liveReason": "男子日本代表がQATに3対0（25-14、25-13、25-12）で勝利し、10月2日のCHNとの準決勝進出を決めた。",
     "trafficReason": "平日夜の日本代表準々決勝に向け、16時20分から19時20分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性がある。",
-    "internalNote": "終了は2時間30分の目安。TBSの放送枠は試合開始後の21時05分からで、U-NEXTは大会ライブ配信を実施。",
+    "internalNote": "10月1日終了。JPNがQATに3対0で勝利。TBSの放送枠は試合開始後の21時05分からで、U-NEXTは大会ライブ配信を実施。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -6297,6 +6301,10 @@
       {
         "title": "U-NEXT アジア大会ライブ配信",
         "url": "https://help.unext.jp/info-video/detail/info068c"
+      },
+      {
+        "title": "JVA 男子バレーボール JPN対QAT 試合結果",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=results"
       }
     ],
     "impactScore": 24,
@@ -6308,6 +6316,96 @@
         "date": "2026-10-01",
         "start": "19:20",
         "end": "21:50"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-volleyball-men-semifinal-jpn-chn",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 男子準決勝 JPN対CHN",
+    "startAt": "2026-10-02T19:20:00+09:00",
+    "endAt": "2026-10-02T21:50:00+09:00",
+    "broadcast": "TBS系列18:30から生中継・TVerリアルタイム配信／U-NEXT19:20からライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "男子日本代表が16年ぶりの金メダルと決勝進出をかけてCHNと対戦する準決勝。JVA公式で10月2日の対戦とTBS地上波生放送、U-NEXT生配信を確認できる。",
+    "trafficReason": "平日夜の日本代表準決勝に向け、16時20分から19時20分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
+    "internalNote": "終了は2時間30分の目安。TBS系列・TVerは18時30分からの大会中継、U-NEXTは19時20分から配信。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 男子バレーボール JPN対QAT 試合結果・次戦案内",
+        "url": "https://www.jva.or.jp/topics/20261001-2/"
+      },
+      {
+        "title": "JVA 男子バレーボール競技日程",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=schedule"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-02",
+        "start": "19:20",
+        "end": "21:50"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-football-women-final-jpn-prk",
+    "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋） 女子決勝 JPN対PRK",
+    "startAt": "2026-10-02T19:30:00+09:00",
+    "endAt": "2026-10-02T22:30:00+09:00",
+    "broadcast": "TBS系列18:30から大会中継・TVerリアルタイム配信／U-NEXTライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・静岡",
+    "inPersonEvent": true,
+    "liveReason": "なでしこジャパンが史上初の3連覇をかけてPRKと対戦する自国開催アジア大会の女子決勝。JFA公式で決勝進出、JOC公式で19時30分開始、TBS系列と配信での中継を確認できる。",
+    "trafficReason": "平日夜の日本代表決勝に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
+    "internalNote": "終了は延長・表彰式を含む公式競技枠の22時30分。放送・配信内容は当日の番組編成で変更される場合がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA 第20回アジア競技大会 なでしこジャパン大会情報",
+        "url": "https://www.jfa.jp/nadeshikojapan/asiangames_2026_women/"
+      },
+      {
+        "title": "JOC 10月2日の競技日程",
+        "url": "https://www.joc.or.jp/games/asia/2026/schedule/1002.html"
+      },
+      {
+        "title": "TBS アジア大会10月2日放送予定",
+        "url": "https://newsdig.tbs.co.jp/articles/-/2670437?page=7"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-02",
+        "start": "19:30",
+        "end": "22:30"
       }
     ]
   },
