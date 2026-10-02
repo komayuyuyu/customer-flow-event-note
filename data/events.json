@@ -6328,9 +6328,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・愛知",
     "inPersonEvent": true,
-    "liveReason": "男子日本代表が16年ぶりの金メダルと決勝進出をかけてCHNと対戦する準決勝。JVA公式で10月2日の対戦とTBS地上波生放送、U-NEXT生配信を確認できる。",
+    "liveReason": "男子日本代表がCHNとのフルセットの接戦を3対2（23-25、25-22、25-18、19-25、15-13）で制し、10月3日のIRIとの決勝進出を決めた。",
     "trafficReason": "平日夜の日本代表準決勝に向け、16時20分から19時20分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
-    "internalNote": "終了は2時間30分の目安。TBS系列・TVerは18時30分からの大会中継、U-NEXTは19時20分から配信。",
+    "internalNote": "10月2日終了。JPNがCHNに3対2で勝利。TBS系列・TVerは18時30分からの大会中継、U-NEXTは19時20分から配信。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -6373,9 +6373,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・静岡",
     "inPersonEvent": true,
-    "liveReason": "なでしこジャパンが史上初の3連覇をかけてPRKと対戦する自国開催アジア大会の女子決勝。JFA公式で決勝進出、JOC公式で19時30分開始、TBS系列と配信での中継を確認できる。",
+    "liveReason": "なでしこジャパンがPRKと2対2で延長戦を終え、PK戦を5対3で制して史上初のアジア大会3連覇を達成した。",
     "trafficReason": "平日夜の日本代表決勝に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
-    "internalNote": "終了は延長・表彰式を含む公式競技枠の22時30分。放送・配信内容は当日の番組編成で変更される場合がある。",
+    "internalNote": "10月2日終了。JPNがPRKと2対2、延長後のPK戦を5対3で制して3連覇。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -6446,6 +6446,100 @@
         "date": "2026-10-03",
         "start": "11:00",
         "end": "21:00"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-volleyball-men-final-jpn-iri",
+    "title": "バレーボール 第20回アジア競技大会（2026／愛知・名古屋） 男子決勝 JPN対IRI",
+    "startAt": "2026-10-03T19:20:00+09:00",
+    "endAt": "2026-10-03T22:10:00+09:00",
+    "broadcast": "TBS系列15:00～22:30大会中継・TVerリアルタイム配信／U-NEXTライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "男子日本代表が16年ぶりの金メダルをかけてIRIと対戦する自国開催アジア大会の男子決勝。JVA公式で19時20分開始、TBS系列・TVer・U-NEXTでの中継を確認できる。",
+    "trafficReason": "土曜夜の日本代表決勝に向け、16時20分から19時20分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
+    "internalNote": "終了はJOC公式の決勝・表彰式を含む競技枠22時10分。放送・配信内容は当日の番組編成で変更される場合がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JVA 第20回アジア競技大会 男子競技日程",
+        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=schedule"
+      },
+      {
+        "title": "JVA 男子バレーボール JPN対CHN 準決勝結果",
+        "url": "https://www.jva.or.jp/topics/20261002-1/"
+      },
+      {
+        "title": "JOC 10月3日バレーボール競技日程",
+        "url": "https://www.joc.or.jp/games/asia/2026/sports/volleyball/1003.html"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-03",
+        "start": "19:20",
+        "end": "22:10"
+      }
+    ]
+  },
+  {
+    "id": "asian-games-2026-football-men-final-jpn-kor",
+    "title": "サッカー 第20回アジア競技大会（2026／愛知・名古屋） 男子決勝 JPN対KOR",
+    "startAt": "2026-10-03T19:30:00+09:00",
+    "endAt": "2026-10-03T22:30:00+09:00",
+    "broadcast": "TBS系列15:00～22:30大会中継・TVerリアルタイム配信／U-NEXTライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・愛知",
+    "inPersonEvent": true,
+    "liveReason": "U-21日本代表が16年ぶりの金メダルをかけてKORと対戦する自国開催アジア大会の男子決勝。JFA公式で19時30分開始、TBS系列・TVer・U-NEXTでの中継を確認できる。",
+    "trafficReason": "土曜夜の日本代表決勝に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
+    "internalNote": "終了は延長・表彰式を含む目安。放送・配信内容は当日の番組編成で変更される場合がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA 第20回アジア競技大会 男子決勝 JPN対KOR",
+        "url": "https://www.jfa.jp/national_team/u21_2026/asiangames_2026_men/final/match_page/m29.html"
+      },
+      {
+        "title": "JFA U-21日本代表 決勝プレビュー",
+        "url": "https://www.jfa.jp/national_team/u21_2026/"
+      },
+      {
+        "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
+        "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-03",
+        "start": "19:30",
+        "end": "22:30"
       }
     ]
   },
