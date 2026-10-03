@@ -4719,7 +4719,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・愛知",
     "inPersonEvent": true,
-    "liveReason": "U-21日本代表が16年ぶりの金メダルをかけてKORと対戦する自国開催アジア大会の男子決勝。JFA公式で19時30分開始、TBS系列・TVer・U-NEXTでの中継を確認できる。",
+    "liveReason": "U-21日本代表が16年ぶりの金メダルをかけてKORと対戦した自国開催アジア大会の男子決勝。JFA公式結果で日本は0対1で敗れ、銀メダルとなった。",
     "trafficReason": "土曜夜の日本代表決勝に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
     "internalNote": "終了は延長・表彰式を含む目安。放送・配信内容は当日の番組編成で変更される場合がある。",
     "nationalReach": 3,
@@ -4735,8 +4735,8 @@
         "url": "https://www.jfa.jp/national_team/u21_2026/asiangames_2026_men/final/match_page/m29.html"
       },
       {
-        "title": "JFA U-21日本代表 決勝プレビュー",
-        "url": "https://www.jfa.jp/national_team/u21_2026/"
+        "title": "JFA 第20回アジア競技大会 男子決勝結果",
+        "url": "https://www.jfa.jp/national_team/u21_2026/asiangames_2026_men/final/match_page/m29.html"
       },
       {
         "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
@@ -4753,7 +4753,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・愛知",
     "inPersonEvent": true,
-    "liveReason": "男子日本代表が16年ぶりの金メダルをかけてIRIと対戦する自国開催アジア大会の男子決勝。JVA公式で19時20分開始、TBS系列・TVer・U-NEXTでの中継を確認できる。",
+    "liveReason": "男子日本代表が16年ぶりの金メダルをかけてIRIと対戦した自国開催アジア大会の男子決勝。JVA公式結果で日本はセットカウント1対3で敗れ、銀メダルとなった。",
     "trafficReason": "土曜夜の日本代表決勝に向け、16時20分から19時20分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
     "internalNote": "終了はJOC公式の決勝・表彰式を含む競技枠22時10分。放送・配信内容は当日の番組編成で変更される場合がある。",
     "nationalReach": 3,
@@ -4765,8 +4765,8 @@
     "officialConfirmed": true,
     "sources": [
       {
-        "title": "JVA 第20回アジア競技大会 男子競技日程",
-        "url": "https://www.jva.or.jp/international/2026/asia_men/?entry=schedule"
+        "title": "JVA 第20回アジア競技大会 男子決勝結果",
+        "url": "https://www.jva.or.jp/topics/20261003-2/"
       },
       {
         "title": "JVA 男子バレーボール JPN対CHN 準決勝結果",
