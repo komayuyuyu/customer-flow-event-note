@@ -4345,6 +4345,34 @@
     ]
   },
   {
+    "id": "arashiyama-autumn-fireworks-2026-10-12",
+    "title": "京都 嵐山秋花火2026",
+    "startAt": "2026-10-12T20:30:00+09:00",
+    "endAt": "2026-10-12T20:35:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "京都・嵐山",
+    "inPersonEvent": true,
+    "liveReason": "嵐山中之島公園周辺で20時30分から約5分間打ち上げる秋花火。京都市公式観光情報で日程と時刻を確認できる",
+    "trafficReason": "駐車場はなく、JR嵯峨嵐山駅、嵐電嵐山駅、阪急嵐山駅の来退場混雑が予想されている",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "京都市公式 京都観光Navi 京都 嵐山秋花火2026",
+        "url": "https://ja.kyoto.travel/event/single.php?event_id=10705"
+      },
+      {
+        "title": "京都 嵐山秋花火2026 公式サイト",
+        "url": "https://arashiyamahanabi.hp.peraichi.com/"
+      }
+    ]
+  },
+  {
     "id": "npb-2026-climax-central-first-stage-game-1",
     "title": "2026 JERA クライマックスシリーズ セ ファーストステージ 第1戦",
     "startAt": "2026-10-10T14:00:00+09:00",
@@ -4779,6 +4807,84 @@
       {
         "title": "TBS アジア大会 愛知・名古屋2026 放送スケジュール",
         "url": "https://www.tbs.co.jp/asiangames/schedule/"
+      }
+    ]
+  },
+  {
+    "id": "kirin-cup-soccer-2026-final-jpn-nzl",
+    "title": "サッカー キリンカップサッカー2026 決勝 JPN対NZL",
+    "startAt": "2026-10-05T19:30:00+09:00",
+    "endAt": "2026-10-05T22:00:00+09:00",
+    "broadcast": "テレビ朝日系列全国ネット生中継／TVer・ABEMA・DAZNライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "SAMURAI BLUEがニュージーランド代表と対戦するキリンカップサッカー2026決勝。国立競技場のチケットは完売し、全国生中継と複数のライブ配信がある。",
+    "trafficReason": "月曜夜の代表戦に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
+    "internalNote": "終了は試合時間の目安。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA キリンカップサッカー2026 TV放送・配信",
+        "url": "https://www.jfa.jp/samuraiblue/kirincupsoccer_2026/tv.html"
+      },
+      {
+        "title": "テレビ朝日 サッカー放送予定",
+        "url": "https://www.tv-asahi.co.jp/soccer/"
+      }
+    ]
+  },
+  {
+    "id": "nadeshiko-friendly-2026-jpn-hai",
+    "title": "サッカー なでしこジャパン 国際親善試合 JPN対HAI",
+    "startAt": "2026-10-10T03:00:00+09:00",
+    "endAt": "2026-10-10T05:00:00+09:00",
+    "broadcast": "ABEMA無料生配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "なでしこジャパンの欧州遠征初戦。深夜3時開始だがABEMAで無料生配信される。",
+    "trafficReason": "深夜から早朝の視聴後、土曜午前から昼にかけて外出を控える人が出る可能性がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA なでしこジャパン国際親善試合 放送・配信",
+        "url": "https://www.jfa.jp/national_team/news/00036815/"
+      }
+    ]
+  },
+  {
+    "id": "nadeshiko-friendly-2026-jpn-ger",
+    "title": "サッカー なでしこジャパン 国際親善試合 JPN対GER",
+    "startAt": "2026-10-14T00:45:00+09:00",
+    "endAt": "2026-10-14T02:45:00+09:00",
+    "broadcast": "NHK総合生中継・NHK ONE同時／見逃し配信・ABEMA無料生配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "なでしこジャパンがドイツ女子代表と対戦。NHK総合の全国生中継と無料配信がある。",
+    "trafficReason": "平日深夜の視聴後、当日午前から昼にかけて外出を控える人が出る可能性がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JFA なでしこジャパン国際親善試合 放送・配信",
+        "url": "https://www.jfa.jp/national_team/news/00036815/"
       }
     ]
   }
