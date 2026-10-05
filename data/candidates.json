@@ -4819,7 +4819,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・東京",
     "inPersonEvent": true,
-    "liveReason": "SAMURAI BLUEがニュージーランド代表と対戦するキリンカップサッカー2026決勝。国立競技場のチケットは完売し、全国生中継と複数のライブ配信がある。",
+    "liveReason": "キリンカップサッカー2026決勝でSAMURAI BLUEがニュージーランド代表に2対1で勝利し、15年ぶりの優勝を果たした。上田綺世と堂安律が得点した。",
     "trafficReason": "月曜夜の代表戦に向け、16時30分から19時30分ごろの帰宅準備と在宅視聴で外出時刻が前後する可能性が高い。",
     "internalNote": "終了は試合時間の目安。",
     "nationalReach": 3,
@@ -4837,6 +4837,10 @@
       {
         "title": "テレビ朝日 サッカー放送予定",
         "url": "https://www.tv-asahi.co.jp/soccer/"
+      },
+      {
+        "title": "FIFA 日本がニュージーランドを破りキリンカップ優勝",
+        "url": "https://www.fifa.com/ja/news/articles/japan-new-zealand-kirin-cup-2026-ja"
       }
     ]
   },
@@ -4861,6 +4865,105 @@
       {
         "title": "JFA なでしこジャパン国際親善試合 放送・配信",
         "url": "https://www.jfa.jp/national_team/news/00036815/"
+      }
+    ]
+  },
+  {
+    "id": "tarumi-autumn-festival-2026-10-10",
+    "title": "神戸・海神社 秋祭り2026",
+    "startAt": "2026-10-10T13:00:00+09:00",
+    "endAt": "2026-10-10T22:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "神戸・垂水",
+    "inPersonEvent": true,
+    "liveReason": "海神社周辺で開催される地域の伝統的な秋祭り。マリンピア神戸公式が開催と国道2号線の交通規制を案内している。",
+    "trafficReason": "11時ごろから12時ごろ、12時30分から13時ごろ、17時ごろから18時ごろに国道2号線の交通規制が予定され、無料シャトルバスは10時台・11時台が運休する。",
+    "nationalReach": 1,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "三井アウトレットパーク マリンピア神戸 垂水秋祭り開催に伴う交通規制のお知らせ",
+        "url": "https://mitsui-shopping-park.com/mop/kobe/information/"
+      },
+      {
+        "title": "神戸市イベントサイト 垂水の秋祭り",
+        "url": "https://event.city.kobe.lg.jp/event/SU99YM5ayxl59bcsLR3Y"
+      },
+      {
+        "title": "海神社 令和8年秋祭りのご案内",
+        "url": "https://kaijinjya.jp/"
+      }
+    ]
+  },
+  {
+    "id": "tarumi-autumn-festival-2026-10-11",
+    "title": "神戸・海神社 秋祭り2026",
+    "startAt": "2026-10-11T13:00:00+09:00",
+    "endAt": "2026-10-11T22:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "神戸・垂水",
+    "inPersonEvent": true,
+    "liveReason": "海神社周辺で開催される地域の伝統的な秋祭り。マリンピア神戸公式が開催と国道2号線の交通規制を案内している。",
+    "trafficReason": "国道2号線は複数時間帯で通行止め・交通規制、福田川交差点から施設までの前面道路は終日通行止めとなる。無料シャトルバスは終日運休する。",
+    "nationalReach": 1,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "三井アウトレットパーク マリンピア神戸 垂水秋祭り開催に伴う交通規制のお知らせ",
+        "url": "https://mitsui-shopping-park.com/mop/kobe/information/"
+      },
+      {
+        "title": "神戸市イベントサイト 垂水の秋祭り",
+        "url": "https://event.city.kobe.lg.jp/event/SU99YM5ayxl59bcsLR3Y"
+      },
+      {
+        "title": "海神社 令和8年秋祭りのご案内",
+        "url": "https://kaijinjya.jp/"
+      }
+    ]
+  },
+  {
+    "id": "tarumi-autumn-festival-2026-10-12",
+    "title": "神戸・海神社 秋祭り2026",
+    "startAt": "2026-10-12T13:00:00+09:00",
+    "endAt": "2026-10-12T22:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り",
+    "area": "神戸・垂水",
+    "inPersonEvent": true,
+    "liveReason": "海神社周辺で開催される地域の伝統的な秋祭り。マリンピア神戸公式が開催と国道2号線の交通規制を案内している。",
+    "trafficReason": "19時ごろから20時30分ごろ、21時30分ごろから22時ごろに国道2号線の交通規制、福田川交差点から施設までの前面道路は終日通行止めとなる。無料シャトルバスは終日運休する。",
+    "nationalReach": 1,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "三井アウトレットパーク マリンピア神戸 垂水秋祭り開催に伴う交通規制のお知らせ",
+        "url": "https://mitsui-shopping-park.com/mop/kobe/information/"
+      },
+      {
+        "title": "神戸市イベントサイト 垂水の秋祭り",
+        "url": "https://event.city.kobe.lg.jp/event/SU99YM5ayxl59bcsLR3Y"
+      },
+      {
+        "title": "海神社 令和8年秋祭りのご案内",
+        "url": "https://kaijinjya.jp/"
       }
     ]
   },
