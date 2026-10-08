@@ -6762,16 +6762,16 @@
     "title": "2026 JERA クライマックスシリーズ セ ファーストステージ 第1戦",
     "startAt": "2026-10-10T14:00:00+09:00",
     "endAt": "2026-10-10T17:30:00+09:00",
-    "broadcast": "放送・配信未発表（公式発表後に更新）",
+    "broadcast": "BS日テレ（トップ＆リレー中継）・日本テレビ系（15:00〜16:55、地域により放送）",
     "category": "スポーツ中継・現地イベント",
     "area": "全国",
     "inPersonEvent": true,
-    "liveReason": "日本シリーズ進出を争うセ・リーグのファーストステージ開幕戦。NPB公式で10月10日開催、球団公式で14時開始予定を確認できる",
-    "trafficReason": "土曜午後のポストシーズン開幕戦で、放送・配信発表後は在宅視聴による外出時刻への影響が見込まれる",
-    "internalNote": "対戦カードと放送・配信はレギュラーシーズン順位確定後に更新する。終了は試合時間の目安。",
+    "liveReason": "日本シリーズ進出を争うセ・リーグのファーストステージ開幕戦。NPB公式で巨人対DeNA、東京ドームで14時開始予定を確認できる",
+    "trafficReason": "土曜午後のポストシーズン開幕戦で、テレビ中継の視聴による外出時刻への影響が見込まれる",
+    "internalNote": "対戦カードはNPB公式の10月10日試合予定で確定。終了は試合時間の目安。",
     "nationalReach": 3,
     "liveUrgency": 3,
-    "accessibility": 1,
+    "accessibility": 2,
     "buzz": 3,
     "significance": 3,
     "impactLevelOverride": "中",
@@ -6782,11 +6782,23 @@
         "url": "https://npb.jp/games/2026/schedule_climax_cl.html"
       },
       {
+        "title": "NPB 2026年10月10日 クライマックスシリーズ試合予定",
+        "url": "https://npb.jp/bis/2026/games/gm20261010.html"
+      },
+      {
+        "title": "BS日テレ DRAMATIC BASEBALL 2026 放送日程",
+        "url": "https://www.bs4.jp/baseball/"
+      },
+      {
+        "title": "日本海テレビ 10月10日番組表",
+        "url": "https://www.nkt-tv.co.jp/program/detail.php?date=261010&no=16"
+      },
+      {
         "title": "横浜DeNAベイスターズ 2026 JERA クライマックスシリーズ セ チケット発売概要",
         "url": "https://www.baystars.co.jp/news/2026/09/0922_02.php"
       }
     ],
-    "impactScore": 22,
+    "impactScore": 23,
     "impactLevel": "中",
     "confidence": "高",
     "predictedWindows": [
@@ -6807,9 +6819,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国",
     "inPersonEvent": true,
-    "liveReason": "日本シリーズ進出を争うパ・リーグのファーストステージ開幕戦。NPB公式で10月10日開催、球団公式で14時開始予定を確認できる",
+    "liveReason": "日本シリーズ進出を争うパ・リーグのファーストステージ開幕戦。NPB公式で西武対日本ハム、ベルーナドームで14時開始予定を確認できる",
     "trafficReason": "土曜午後のポストシーズン開幕戦で、ライブ配信を中心に在宅視聴による外出時刻への影響が見込まれる",
-    "internalNote": "対戦カードと個別放送・配信はレギュラーシーズン順位確定後に更新する。終了は試合時間の目安。",
+    "internalNote": "対戦カードはNPB公式の10月10日試合予定で確定。個別放送・配信は公式発表後に更新する。終了は試合時間の目安。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 2,
@@ -6821,6 +6833,10 @@
       {
         "title": "NPB 2026年度 パシフィック・リーグ クライマックスシリーズ日程",
         "url": "https://npb.jp/games/2026/schedule_climax_pl.html"
+      },
+      {
+        "title": "NPB 2026年10月10日 クライマックスシリーズ試合予定",
+        "url": "https://npb.jp/bis/2026/games/gm20261010.html"
       },
       {
         "title": "埼玉西武ライオンズ 2026 パーソル クライマックスシリーズ パ チケット販売情報",
