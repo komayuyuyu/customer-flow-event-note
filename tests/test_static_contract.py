@@ -498,6 +498,7 @@ class StaticContractTest(unittest.TestCase):
             "乗りトクCP",
             "メダルdeポイントアップ",
             "特別営業時間",
+            "特別営業時間（11/22）",
             "お買い物券プレゼント",
             "MORE PRICE打ち出し",
             "乗りトクCP（10月）",
@@ -542,6 +543,15 @@ class StaticContractTest(unittest.TestCase):
         self.assertNotIn("レストラン", by_title["特別営業時間"]["liveReason"])
         self.assertEqual(
             by_title["特別営業時間"]["sources"][0]["url"],
+            "https://mitsui-shopping-park.com/mop/kobe/hour/",
+        )
+        self.assertEqual(by_title["特別営業時間（11/22）"]["startAt"], "2026-11-22T09:30:00+09:00")
+        self.assertEqual(by_title["特別営業時間（11/22）"]["endAt"], "2026-11-22T21:00:00+09:00")
+        self.assertEqual(by_title["特別営業時間（11/22）"]["displayOrder"], 10)
+        self.assertEqual(by_title["特別営業時間（11/22）"]["predictedWindows"][0]["label"], "ショップ")
+        self.assertNotIn("レストラン", by_title["特別営業時間（11/22）"]["liveReason"])
+        self.assertEqual(
+            by_title["特別営業時間（11/22）"]["sources"][0]["url"],
             "https://mitsui-shopping-park.com/mop/kobe/hour/",
         )
         by_id = {event["id"]: event for event in store_events}
