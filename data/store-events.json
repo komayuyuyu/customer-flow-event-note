@@ -415,5 +415,36 @@
     "broadcast": "勤務カレンダー",
     "predictedWindows": [{ "label": "実施日", "date": "2026-10-13", "timeUnknown": true }],
     "sources": [{ "title": "2026年10月勤務カレンダー" }]
+  },
+  {
+    "id": "store-special-hours-20261122",
+    "title": "特別営業時間（11/22）",
+    "startAt": "2026-11-22T09:30:00+09:00",
+    "endAt": "2026-11-22T21:00:00+09:00",
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "liveReason": "ショップ営業時間が9:30〜21:00に変更。通常より30分早く開店し、1時間延長。",
+    "trafficReason": "ショップの営業時間変更により、来店時間帯や客足の山が通常日と変わる可能性がある。",
+    "displayOrder": 10,
+    "predictedWindows": [
+      {
+        "label": "ショップ",
+        "date": "2026-11-22",
+        "start": "09:30",
+        "end": "21:00"
+      }
+    ],
+    "sources": [
+      {
+        "title": "三井アウトレットパーク マリンピア神戸 営業時間・休館日",
+        "url": "https://mitsui-shopping-park.com/mop/kobe/hour/"
+      },
+      {
+        "title": "三井アウトレットパーク マリンピア神戸 お知らせ",
+        "url": "https://mitsui-shopping-park.com/mop/kobe/information/"
+      }
+    ]
   }
 ]
