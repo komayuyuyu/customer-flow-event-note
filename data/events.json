@@ -6770,9 +6770,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国",
     "inPersonEvent": true,
-    "liveReason": "日本シリーズ進出を争うセ・リーグのファーストステージ開幕戦。NPB公式で巨人対DeNA、東京ドームで14時開始予定を確認できる",
+    "liveReason": "セ・リーグのファーストステージ開幕戦は、DeNAが巨人に2対1で勝利した。",
     "trafficReason": "土曜午後のポストシーズン開幕戦で、テレビ中継の視聴による外出時刻への影響が見込まれる",
-    "internalNote": "対戦カードはNPB公式の10月10日試合予定で確定。終了は試合時間の目安。",
+    "internalNote": "10月10日終了。NPB公式結果でDeNAが巨人に2対1で勝利。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 2,
@@ -6788,6 +6788,10 @@
       {
         "title": "NPB 2026年10月10日 クライマックスシリーズ試合予定",
         "url": "https://npb.jp/bis/2026/games/gm20261010.html"
+      },
+      {
+        "title": "NPB 2026年10月10日 クライマックスシリーズ試合結果",
+        "url": "https://npb.jp/bis/2026/games/"
       },
       {
         "title": "BS日テレ DRAMATIC BASEBALL 2026 放送日程",
@@ -6823,9 +6827,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国",
     "inPersonEvent": true,
-    "liveReason": "日本シリーズ進出を争うパ・リーグのファーストステージ開幕戦。NPB公式で西武対日本ハム、ベルーナドームで14時開始予定を確認できる",
+    "liveReason": "パ・リーグのファーストステージ開幕戦は、西武が日本ハムに延長10回、3対2でサヨナラ勝利した。",
     "trafficReason": "土曜午後のポストシーズン開幕戦で、ライブ配信を中心に在宅視聴による外出時刻への影響が見込まれる",
-    "internalNote": "対戦カードはNPB公式の10月10日試合予定で確定。個別放送・配信は公式発表後に更新する。終了は試合時間の目安。",
+    "internalNote": "10月10日終了。NPB公式結果で西武が日本ハムに延長10回、3対2で勝利。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 2,
@@ -6841,6 +6845,10 @@
       {
         "title": "NPB 2026年10月10日 クライマックスシリーズ試合予定",
         "url": "https://npb.jp/bis/2026/games/gm20261010.html"
+      },
+      {
+        "title": "NPB 2026年10月10日 西武対日本ハム 試合結果",
+        "url": "https://npb.jp/scores/2026/1010/l-f-01/"
       },
       {
         "title": "埼玉西武ライオンズ 2026 パーソル クライマックスシリーズ パ チケット販売情報",
@@ -6908,16 +6916,16 @@
     "title": "2026 JERA クライマックスシリーズ セ ファーストステージ 第2戦",
     "startAt": "2026-10-11T14:00:00+09:00",
     "endAt": "2026-10-11T17:30:00+09:00",
-    "broadcast": "放送・配信未発表（公式発表後に更新）",
+    "broadcast": "TVer・Hulu（試合終了までライブ配信）",
     "category": "スポーツ中継・現地イベント",
     "area": "全国",
     "inPersonEvent": true,
     "liveReason": "日本シリーズ進出を争うセ・リーグのファーストステージ第2戦。NPB公式で巨人対DeNA、東京ドームで14時開始予定を確認できる",
-    "trafficReason": "日曜午後のポストシーズンで、放送・配信発表後は在宅視聴による外出時刻への影響が見込まれる",
-    "internalNote": "対戦カードはNPB公式の10月11日試合予定で確定。放送・配信は公式発表後に更新する。終了は試合時間の目安。",
+    "trafficReason": "日曜午後のポストシーズンを無料ライブ配信し、在宅視聴による外出時刻への影響が見込まれる",
+    "internalNote": "対戦カードはNPB公式の10月11日試合予定で確定。TVerは14時頃、Huluは13時45分からライブ配信。終了は試合時間の目安。",
     "nationalReach": 3,
     "liveUrgency": 3,
-    "accessibility": 1,
+    "accessibility": 3,
     "buzz": 3,
     "significance": 3,
     "impactLevelOverride": "中",
@@ -6932,11 +6940,19 @@
         "url": "https://npb.jp/bis/2026/games/gm20261011.html"
       },
       {
+        "title": "TVer 2026 JERA クライマックスシリーズ セ ファーストステージ 第2戦ライブ配信",
+        "url": "https://tver.jp/live/special/leaj4j4xzj"
+      },
+      {
+        "title": "Hulu 2026 JERA クライマックスシリーズ セ ライブ配信日程",
+        "url": "https://news.hulu.jp/giants/"
+      },
+      {
         "title": "横浜DeNAベイスターズ 2026 JERA クライマックスシリーズ セ チケット発売概要",
         "url": "https://www.baystars.co.jp/news/2026/09/0922_02.php"
       }
     ],
-    "impactScore": 22,
+    "impactScore": 24,
     "impactLevel": "中",
     "confidence": "高",
     "predictedWindows": [
