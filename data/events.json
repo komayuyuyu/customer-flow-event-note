@@ -6680,7 +6680,7 @@
     "broadcast": "ABEMA無料生配信",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "なでしこジャパンの欧州遠征初戦。深夜3時開始だがABEMAで無料生配信される。",
+    "liveReason": "なでしこジャパンの欧州遠征初戦は日本が5対1でハイチに快勝。ABEMAで無料生配信され、試合後は5得点や浜野まいかのゴールがニュースで話題になった。",
     "trafficReason": "深夜から早朝の視聴後、土曜午前から昼にかけて外出を控える人が出る可能性がある。",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -6693,11 +6693,15 @@
       {
         "title": "JFA なでしこジャパン国際親善試合 放送・配信",
         "url": "https://www.jfa.jp/national_team/news/00036815/"
+      },
+      {
+        "title": "テレビ朝日 なでしこジャパンがハイチに5対1で快勝",
+        "url": "https://news.tv-asahi.co.jp/news_sports/articles/900201580.html"
       }
     ],
     "impactScore": 21,
     "impactLevel": "中",
-    "confidence": "中",
+    "confidence": "高",
     "predictedWindows": [
       {
         "label": "リアルタイム視聴",
