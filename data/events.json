@@ -6920,9 +6920,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国",
     "inPersonEvent": true,
-    "liveReason": "日本シリーズ進出を争うセ・リーグのファーストステージ第2戦。NPB公式で巨人対DeNA、東京ドームで14時開始予定を確認できる",
+    "liveReason": "セ・リーグのファーストステージ第2戦は、DeNAが巨人に4対1で勝利し、2連勝でファイナルステージ進出を決めた。",
     "trafficReason": "日曜午後のポストシーズンを無料ライブ配信し、在宅視聴による外出時刻への影響が見込まれる",
-    "internalNote": "対戦カードはNPB公式の10月11日試合予定で確定。TVerは14時頃、Huluは13時45分からライブ配信。終了は試合時間の目安。",
+    "internalNote": "10月11日終了。NPB公式結果でDeNAが巨人に4対1で勝利し、ファーストステージを2勝0敗で突破。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -6938,6 +6938,10 @@
       {
         "title": "NPB 2026年10月11日 クライマックスシリーズ試合予定",
         "url": "https://npb.jp/bis/2026/games/gm20261011.html"
+      },
+      {
+        "title": "NPB 2026年10月11日 クライマックスシリーズ試合結果",
+        "url": "https://npb.jp/bis/2026/games/"
       },
       {
         "title": "TVer 2026 JERA クライマックスシリーズ セ ファーストステージ 第2戦ライブ配信",
@@ -6973,9 +6977,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国",
     "inPersonEvent": true,
-    "liveReason": "日本シリーズ進出を争うパ・リーグのファーストステージ第2戦。NPB公式で西武対日本ハム、ベルーナドームで14時開始予定を確認できる",
+    "liveReason": "パ・リーグのファーストステージ第2戦は、日本ハムが西武に1対0で勝利し、対戦成績を1勝1敗とした。",
     "trafficReason": "日曜午後のポストシーズンで、ライブ配信を中心に在宅視聴による外出時刻への影響が見込まれる",
-    "internalNote": "対戦カードはNPB公式の10月11日試合予定で確定。個別放送・配信は公式発表後に更新する。終了は試合時間の目安。",
+    "internalNote": "10月11日終了。NPB公式結果で日本ハムが西武に1対0で勝利し、対戦成績は1勝1敗。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 2,
@@ -6991,6 +6995,10 @@
       {
         "title": "NPB 2026年10月11日 クライマックスシリーズ試合予定",
         "url": "https://npb.jp/bis/2026/games/gm20261011.html"
+      },
+      {
+        "title": "NPB 2026年10月11日 西武対日本ハム 試合結果",
+        "url": "https://npb.jp/scores/2026/1011/l-f-02/"
       },
       {
         "title": "埼玉西武ライオンズ 2026 パーソル クライマックスシリーズ パ チケット販売情報",
@@ -7049,6 +7057,42 @@
     ]
   },
   {
+    "id": "izumo-ekiden-2026",
+    "title": "陸上 第38回出雲全日本大学選抜駅伝競走",
+    "startAt": "2026-10-12T09:00:00+09:00",
+    "endAt": "2026-10-12T11:30:00+09:00",
+    "broadcast": "フジテレビ系列（生中継）・TVer・YouTube（ライブ配信）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・島根",
+    "inPersonEvent": true,
+    "liveReason": "学生三大駅伝の開幕戦を全国生中継し、地上波放送前からTVer・YouTubeでもライブ配信する。",
+    "trafficReason": "祝日午前の全国生中継とライブ配信により、在宅視聴や外出時刻に影響する可能性がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "フジテレビ 第38回出雲全日本大学選抜駅伝",
+        "url": "https://www.fujitv.co.jp/sports/ekiden/izumo/"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "中",
+    "confidence": "中",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-12",
+        "start": "09:00",
+        "end": "11:30"
+      }
+    ]
+  },
+  {
     "id": "tarumi-autumn-festival-2026-10-12",
     "title": "神戸・海神社 秋祭り2026",
     "startAt": "2026-10-12T13:00:00+09:00",
@@ -7089,6 +7133,47 @@
         "date": "2026-10-12",
         "start": "13:00",
         "end": "22:00"
+      }
+    ]
+  },
+  {
+    "id": "npb-2026-climax-pacific-first-stage-game-3",
+    "title": "2026 パーソル クライマックスシリーズ パ ファーストステージ 第3戦",
+    "startAt": "2026-10-12T14:00:00+09:00",
+    "endAt": "2026-10-12T18:00:00+09:00",
+    "broadcast": "フジテレビTWO・スカパー！番組配信（13:50から生中継・同時配信）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国",
+    "inPersonEvent": true,
+    "liveReason": "ファイナルステージ進出球団が決まるパ・リーグのファーストステージ第3戦。西武と日本ハムが1勝1敗で迎える決着戦。",
+    "trafficReason": "祝日午後のポストシーズン決着戦で、ライブ視聴による外出時刻への影響が見込まれる。",
+    "internalNote": "NPB公式で10月12日14時開始を確認。終了は放送枠を踏まえた目安。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "NPB 2026年10月12日 クライマックスシリーズ試合予定",
+        "url": "https://npb.jp/bis/2026/games/gm20261012.html"
+      },
+      {
+        "title": "スカパー！ LIONS BASEBALL L!VE 2026 西武対日本ハム",
+        "url": "https://www.skyperfectv.co.jp/program/detail/?uid=c31996969"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-12",
+        "start": "14:00",
+        "end": "18:00"
       }
     ]
   },
