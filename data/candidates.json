@@ -5183,9 +5183,9 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国",
     "inPersonEvent": true,
-    "liveReason": "ファイナルステージ進出球団が決まるパ・リーグのファーストステージ第3戦。西武と日本ハムが1勝1敗で迎える決着戦。",
+    "liveReason": "パ・リーグのファーストステージ第3戦は、日本ハムが西武に4対1で勝利し、2勝1敗でファイナルステージ進出を決めた。",
     "trafficReason": "祝日午後のポストシーズン決着戦で、ライブ視聴による外出時刻への影響が見込まれる。",
-    "internalNote": "NPB公式で10月12日14時開始を確認。終了は放送枠を踏まえた目安。",
+    "internalNote": "10月12日終了。NPB公式結果で日本ハムが西武に4対1で勝利し、ファーストステージを2勝1敗で突破。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 2,
@@ -5196,12 +5196,55 @@
     "sources": [
       {
         "title": "NPB 2026年10月12日 クライマックスシリーズ試合予定",
-        "url": "https://npb.jp/bis/2026/games/gm20261012.html"
+        "url": "https://npb.jp/bis/2026/games/"
       },
       {
         "title": "スカパー！ LIONS BASEBALL L!VE 2026 西武対日本ハム",
         "url": "https://www.skyperfectv.co.jp/program/detail/?uid=c31996969"
       }
+    ]
+  },
+  {
+    "id": "npb-climax-pacific-final-2026-1",
+    "title": "プロ野球 2026 パーソル クライマックスシリーズ パ ファイナルステージ",
+    "startAt": "2026-10-14T18:00:00+09:00",
+    "endAt": "2026-10-14T22:00:00+09:00",
+    "broadcast": "スポーツライブ＋生中継（17:30から）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "ソフトバンクと日本ハムが日本シリーズ進出をかけて戦うファイナルステージ第1戦。",
+    "trafficReason": "平日夕方からのポストシーズン生中継で、在宅視聴による外出時刻への影響が見込まれる。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"},
+      {"title": "スポーツライブ＋ HAWKSプロ野球中継2026", "url": "https://www.sportslive-plus.com/baseball/hawks/"}
+    ]
+  },
+  {
+    "id": "npb-climax-pacific-final-2026-2",
+    "title": "プロ野球 2026 パーソル クライマックスシリーズ パ ファイナルステージ",
+    "startAt": "2026-10-15T18:00:00+09:00",
+    "endAt": "2026-10-15T22:00:00+09:00",
+    "broadcast": "放送・配信情報は各局番組表で確認",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "ソフトバンクと日本ハムが日本シリーズ進出をかけて戦うファイナルステージ第2戦。",
+    "trafficReason": "平日夕方からのポストシーズンで、在宅視聴による外出時刻への影響が見込まれる。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"}
     ]
   }
 ]
