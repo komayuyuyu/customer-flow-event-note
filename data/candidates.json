@@ -5114,13 +5114,15 @@
     "broadcast": "スカイA生中継",
     "category": "スポーツ中継",
     "area": "全国・兵庫",
-    "liveReason": "阪神タイガースが日本シリーズ進出をかけて戦うファイナルステージ第1戦。",
+    "liveReason": "ファイナルステージ第1戦は横浜DeNAベイスターズが阪神タイガースに2対0で勝利した。",
     "trafficReason": "夕方から視聴準備や早めの帰宅が増える可能性がある。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 2, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
+    "internalNote": "10月14日終了。NPB公式結果でDeNAが阪神に2対0で勝利。",
     "sources": [
       {"title": "NPB 2026 JERA クライマックスシリーズ セ日程", "url": "https://npb.jp/games/2026/schedule_climax_cl.html"},
-      {"title": "スカイA ファイナルステージ放送予定", "url": "https://sky-a.asahi.co.jp/category/tigers/1000100/"}
+      {"title": "スカイA ファイナルステージ放送予定", "url": "https://sky-a.asahi.co.jp/category/tigers/1000100/"},
+      {"title": "NPB 2026年10月14日 阪神対DeNA 試合結果", "url": "https://npb.jp/scores/2026/1014/t-db-01/"}
     ]
   },
   {
@@ -5275,7 +5277,7 @@
     "broadcast": "スポーツライブ＋生中継（17:30から）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "ソフトバンクと日本ハムが日本シリーズ進出をかけて戦うファイナルステージ第1戦。",
+    "liveReason": "ファイナルステージ第1戦は福岡ソフトバンクホークスが北海道日本ハムファイターズに6対4で勝利した。",
     "trafficReason": "平日夕方からのポストシーズン生中継で、在宅視聴による外出時刻への影響が見込まれる。",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -5284,9 +5286,11 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
+    "internalNote": "10月14日終了。NPB公式結果でソフトバンクが日本ハムに6対4で勝利。",
     "sources": [
       {"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"},
-      {"title": "スポーツライブ＋ HAWKSプロ野球中継2026", "url": "https://www.sportslive-plus.com/baseball/hawks/"}
+      {"title": "スポーツライブ＋ HAWKSプロ野球中継2026", "url": "https://www.sportslive-plus.com/baseball/hawks/"},
+      {"title": "NPB 2026年10月14日 ソフトバンク対日本ハム 試合結果", "url": "https://npb.jp/scores/2026/1014/h-f-01/"}
     ]
   },
   {
@@ -5294,7 +5298,7 @@
     "title": "プロ野球 2026 パーソル クライマックスシリーズ パ ファイナルステージ",
     "startAt": "2026-10-15T18:00:00+09:00",
     "endAt": "2026-10-15T22:00:00+09:00",
-    "broadcast": "放送・配信情報は各局番組表で確認",
+    "broadcast": "スポーツライブ＋生中継（17:45から）・テレビ西日本生中継（19:00から）",
     "category": "スポーツ中継",
     "area": "全国",
     "liveReason": "ソフトバンクと日本ハムが日本シリーズ進出をかけて戦うファイナルステージ第2戦。",
@@ -5307,7 +5311,9 @@
     "impactLevelOverride": "中",
     "officialConfirmed": true,
     "sources": [
-      {"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"}
+      {"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"},
+      {"title": "スポーツライブ＋ HAWKSプロ野球中継2026", "url": "https://www.sportslive-plus.com/baseball/hawks/"},
+      {"title": "テレビ西日本 クライマックスシリーズ ファイナルステージ第2戦", "url": "https://www.tnc.co.jp/program/detail/261015Baseball_CS/20261015"}
     ]
   }
 ]
