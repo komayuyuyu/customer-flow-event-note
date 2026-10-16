@@ -5142,22 +5142,23 @@
     "title": "プロ野球 2026 JERA クライマックスシリーズ セ ファイナルステージ",
     "startAt": "2026-10-16T18:00:00+09:00", "endAt": "2026-10-16T22:00:00+09:00",
     "broadcast": "GAORA SPORTS生中継・ライブ配信（17:30から）", "category": "スポーツ中継", "area": "全国・兵庫",
-    "liveReason": "阪神タイガースが日本シリーズ進出をかけて戦うファイナルステージ第3戦。",
+    "liveReason": "ファイナルステージ第3戦は横浜DeNAベイスターズが阪神タイガースに4対0で勝利した。",
     "trafficReason": "夕方から視聴準備や早めの帰宅が増える可能性がある。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 2, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
-    "sources": [{"title": "NPB 2026 JERA クライマックスシリーズ セ日程", "url": "https://npb.jp/games/2026/schedule_climax_cl.html"}, {"title": "スカパー！ 阪神タイガース放送予定", "url": "https://baseball.skyperfectv.co.jp/schedule/index/team/tigers/202610/"}]
+    "internalNote": "10月16日終了。NPB公式結果でDeNAが阪神に4対0で勝利。",
+    "sources": [{"title": "NPB 2026 JERA クライマックスシリーズ セ日程", "url": "https://npb.jp/games/2026/schedule_climax_cl.html"}, {"title": "スカパー！ 阪神タイガース放送予定", "url": "https://baseball.skyperfectv.co.jp/schedule/index/team/tigers/202610/"}, {"title": "NPB 2026年10月16日 阪神対DeNA 試合結果", "url": "https://npb.jp/games/2026/schedule_10_detail.html"}]
   },
   {
     "id": "npb-climax-central-final-2026-4",
     "title": "プロ野球 2026 JERA クライマックスシリーズ セ ファイナルステージ",
     "startAt": "2026-10-17T14:00:00+09:00", "endAt": "2026-10-17T18:00:00+09:00",
-    "broadcast": "スカイA生中継（開催時）", "category": "スポーツ中継", "area": "全国・兵庫",
-    "liveReason": "勝敗決定状況により開催されるファイナルステージ第4戦。",
+    "broadcast": "NHKラジオ第1・スカイA生中継", "category": "スポーツ中継", "area": "全国・兵庫",
+    "liveReason": "阪神タイガースと横浜DeNAベイスターズが日本シリーズ進出をかけて戦うファイナルステージ第4戦。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 2, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
-    "internalNote": "先に日本シリーズ進出球団が決定した場合は開催されない。",
-    "sources": [{"title": "NPB 2026 JERA クライマックスシリーズ セ日程", "url": "https://npb.jp/games/2026/schedule_climax_cl.html"}, {"title": "スカイA ファイナルステージ放送予定", "url": "https://sky-a.asahi.co.jp/category/tigers/1000100/"}]
+    "internalNote": "10月17日14時開始。10月16日終了時点でDeNA3勝、阪神はアドバンテージを含む1勝。",
+    "sources": [{"title": "NPB 2026 JERA クライマックスシリーズ セ日程", "url": "https://npb.jp/games/2026/schedule_climax_cl.html"}, {"title": "阪神タイガース 放送予定", "url": "https://m.hanshintigers.jp/news/media_info_list/"}, {"title": "スカイA ファイナルステージ放送予定", "url": "https://sky-a.asahi.co.jp/category/tigers/1000100/"}]
   },
   {
     "id": "npb-climax-central-final-2026-5",
@@ -5327,32 +5328,58 @@
     "broadcast": "NHK BS生中継（18:00から）・スポーツライブ＋生中継、ライブ配信（17:45から）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "ソフトバンクと日本ハムが日本シリーズ進出をかけて戦うファイナルステージ第3戦。",
+    "liveReason": "ファイナルステージ第3戦は福岡ソフトバンクホークスが北海道日本ハムファイターズに6対2で勝利し、日本シリーズ進出を決めた。",
     "trafficReason": "平日夕方からのポストシーズン生中継で、在宅視聴による外出時刻への影響が見込まれる。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "中", "officialConfirmed": true,
-    "sources": [{"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"}, {"title": "スカパー！ 北海道日本ハムファイターズ放送予定", "url": "https://baseball.skyperfectv.co.jp/schedule/index/team/fighters/202610/"}]
+    "internalNote": "10月16日終了。NPB公式結果でソフトバンクが日本ハムに6対2で勝利し、アドバンテージを含む4勝でシリーズ終了。",
+    "sources": [{"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"}, {"title": "スカパー！ 北海道日本ハムファイターズ放送予定", "url": "https://baseball.skyperfectv.co.jp/schedule/index/team/fighters/202610/"}, {"title": "NPB 2026年10月16日 ソフトバンク対日本ハム 試合結果", "url": "https://npb.jp/scores/2026/1016/h-f-03/"}]
   },
   {
     "id": "npb-climax-pacific-final-2026-4",
     "title": "プロ野球 2026 パーソル クライマックスシリーズ パ ファイナルステージ",
     "startAt": "2026-10-17T18:00:00+09:00", "endAt": "2026-10-17T22:00:00+09:00",
-    "broadcast": "スポーツライブ＋生中継、ライブ配信（開催時）", "category": "スポーツ中継", "area": "全国",
-    "liveReason": "勝敗決定状況により開催されるファイナルステージ第4戦。",
+    "broadcast": "開催なし", "category": "スポーツ中継", "area": "全国",
+    "liveReason": "福岡ソフトバンクホークスの日本シリーズ進出決定により、ファイナルステージ第4戦は開催されない。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 2, "buzz": 3, "significance": 3,
-    "impactLevelOverride": "中", "officialConfirmed": true,
-    "internalNote": "先に日本シリーズ進出球団が決定した場合は開催されない。",
-    "sources": [{"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"}, {"title": "スカパー！ 北海道日本ハムファイターズ放送予定", "url": "https://baseball.skyperfectv.co.jp/schedule/index/team/fighters/202610/"}]
+    "impactLevelOverride": "小", "officialConfirmed": true,
+    "internalNote": "10月16日にソフトバンクがアドバンテージを含む4勝へ到達したため開催なし。中止・未開催履歴として残す。",
+    "sources": [{"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"}, {"title": "NPB 2026年10月16日 ソフトバンク対日本ハム 試合結果", "url": "https://npb.jp/scores/2026/1016/h-f-03/"}]
   },
   {
     "id": "npb-climax-pacific-final-2026-5",
     "title": "プロ野球 2026 パーソル クライマックスシリーズ パ ファイナルステージ",
     "startAt": "2026-10-18T18:00:00+09:00", "endAt": "2026-10-18T22:00:00+09:00",
-    "broadcast": "スポーツライブ＋生中継、ライブ配信（開催時）", "category": "スポーツ中継", "area": "全国",
-    "liveReason": "勝敗決定状況により開催されるファイナルステージ第5戦。",
+    "broadcast": "開催なし", "category": "スポーツ中継", "area": "全国",
+    "liveReason": "福岡ソフトバンクホークスの日本シリーズ進出決定により、ファイナルステージ第5戦は開催されない。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 2, "buzz": 3, "significance": 3,
-    "impactLevelOverride": "中", "officialConfirmed": true,
-    "internalNote": "先に日本シリーズ進出球団が決定した場合は開催されない。",
-    "sources": [{"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"}, {"title": "スカパー！ 北海道日本ハムファイターズ放送予定", "url": "https://baseball.skyperfectv.co.jp/schedule/index/team/fighters/202610/"}]
+    "impactLevelOverride": "小", "officialConfirmed": true,
+    "internalNote": "10月16日にソフトバンクがアドバンテージを含む4勝へ到達したため開催なし。中止・未開催履歴として残す。",
+    "sources": [{"title": "NPB 2026 パーソル クライマックスシリーズ パ日程", "url": "https://npb.jp/games/2026/schedule_climax_pl.html"}, {"title": "NPB 2026年10月16日 ソフトバンク対日本ハム 試合結果", "url": "https://npb.jp/scores/2026/1016/h-f-03/"}]
+  },
+  {
+    "id": "naniwa-yodogawa-fireworks-2026",
+    "title": "第38回 なにわ淀川花火大会",
+    "startAt": "2026-10-17T19:00:00+09:00",
+    "endAt": "2026-10-17T20:00:00+09:00",
+    "broadcast": "MBS NEWS DIG・YouTubeライブ配信（19:00から）",
+    "category": "花火",
+    "area": "大阪・淀川河川敷",
+    "inPersonEvent": true,
+    "liveReason": "大阪を代表する大規模花火大会で、音楽と同期した5部構成の花火を打ち上げる。MBS NEWS DIGで全編ライブ配信される。",
+    "trafficReason": "会場周辺で16時ごろから23時ごろまで車両通行禁止の交通規制が行われ、十三・塚本・西中島南方などの駅と周辺道路で混雑が見込まれる。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "雨天決行・荒天中止、順延なし。10月17日朝時点で中止告知なし。公開ニュースとライブ配信予定で直前の話題上昇を確認。",
+    "sources": [
+      {"title": "第38回 なにわ淀川花火大会 公式開催日", "url": "https://www.yodohanabi.com/3118.html"},
+      {"title": "なにわ淀川花火大会 公式交通規制案内", "url": "https://www.yodohanabi.com/certificate.html"},
+      {"title": "MBS NEWS DIG なにわ淀川花火大会2026ライブ配信", "url": "https://newsdig.tbs.co.jp/articles/mbs/2998662?display=1"}
+    ]
   }
 ]
