@@ -7827,7 +7827,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・京都",
     "inPersonEvent": true,
-    "liveReason": "3歳牝馬三冠の最終戦となるGⅠ競走を全国中継する。",
+    "liveReason": "モンローウォークが1分56秒1で優勝し、3歳牝馬三冠の最終戦を制した。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -7835,10 +7835,11 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
+    "internalNote": "10月18日終了。JRA公式結果でモンローウォークが1分56秒1で優勝。",
     "sources": [
       {
-        "title": "JRA 第31回秋華賞 出馬表",
-        "url": "https://www.jra.go.jp/JRADB/accessD.html?CNAME=pw01dde0108202604071120261018%2F30"
+        "title": "JRA 2026年秋華賞 結果",
+        "url": "https://www.jra.go.jp/datafile/seiseki/g1/shuka/result/shuka2026.html"
       },
       {
         "title": "JRA 2026年度テレビ・ラジオ中継・ライブ配信",
