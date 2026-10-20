@@ -5700,5 +5700,39 @@
       {"title": "神戸市 みなとHANABI2026詳細・交通規制", "url": "https://www.city.kobe.lg.jp/a44800/570186926290.html"},
       {"title": "みなとHANABI2026 お知らせ", "url": "https://minatohanabi.jp/news/"}
     ]
+  },
+  {
+    "id": "world-artistic-gymnastics-2026-men-team-final",
+    "title": "体操 第54回世界体操競技選手権大会",
+    "startAt": "2026-10-21T02:30:00+09:00",
+    "endAt": "2026-10-21T05:30:00+09:00",
+    "broadcast": "日本テレビ系列・TVer（ライブ・アーカイブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "男子団体総合決勝で日本が251.928点を記録して優勝し、大会連覇と2028年ロサンゼルス五輪の団体出場枠獲得を決めた。",
+    "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "internalNote": "10月20日夜（現地時間）の男子団体総合決勝を、10月21日深夜の日本向け生中継と公式結果に基づき追加。営業時間外を理由に除外しない。",
+    "sources": [
+      {"title": "日本体操協会 第54回世界体操競技選手権大会", "url": "https://jpn-gym.or.jp/event/event-7583/"},
+      {"title": "世界体操2026 男子団体決勝公式結果", "url": "https://worldgymnastics.org/en/events/ag-rotterdam-2026/results/final/men/team/"}
+    ]
+  },
+  {
+    "id": "world-artistic-gymnastics-2026-women-team-final",
+    "title": "体操 第54回世界体操競技選手権大会",
+    "startAt": "2026-10-22T02:15:00+09:00",
+    "endAt": "2026-10-22T05:30:00+09:00",
+    "broadcast": "日テレジータス・TVer（ライブ・アーカイブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "女子団体総合決勝に予選5位の日本が出場し、2028年ロサンゼルス五輪の団体出場枠獲得を目指す。",
+    "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 2, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "internalNote": "日本体操協会の競技日程と番組情報を確認。10月21日夜（現地時間）の決勝を日本時間10月22日深夜帯として登録。営業時間外を理由に除外しない。",
+    "sources": [
+      {"title": "日本体操協会 第54回世界体操競技選手権大会", "url": "https://jpn-gym.or.jp/event/event-7583/"},
+      {"title": "世界体操2026 大会公式日程", "url": "https://worldgymnastics.org/ja/events/ag-rotterdam-2026/schedule/"}
+    ]
   }
 ]
