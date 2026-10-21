@@ -7916,7 +7916,7 @@
     "significance": 3,
     "impactLevelOverride": "大",
     "officialConfirmed": true,
-    "internalNote": "10月19日は公式が当日開催と交通規制解除を発表済み。10月20日朝時点で20日以降の中止告知なし。雨天決行・荒天中止。",
+    "internalNote": "10月19日〜21日は公式が当日開催と交通規制解除を発表済み。10月22日朝時点で当日の中止告知なし。雨天決行・荒天中止。",
     "sources": [
       {
         "title": "みなとHANABI2026 開催情報",
@@ -8035,7 +8035,7 @@
     "broadcast": "日テレジータス・TVer（ライブ・アーカイブ配信）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "女子団体総合決勝に予選5位の日本が出場し、2028年ロサンゼルス五輪の団体出場枠獲得を目指す。",
+    "liveReason": "女子団体総合決勝で日本が164.063点を記録して3位となり、2028年ロサンゼルス五輪の団体出場枠を獲得した。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -8043,15 +8043,15 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
-    "internalNote": "日本体操協会の競技日程と番組情報を確認。10月21日夜（現地時間）の決勝を日本時間10月22日深夜帯として登録。営業時間外を理由に除外しない。",
+    "internalNote": "10月21日夜（現地時間）の女子団体総合決勝を、日本体操協会と公式結果で確認。営業時間外を理由に除外しない。",
     "sources": [
       {
         "title": "日本体操協会 第54回世界体操競技選手権大会",
         "url": "https://jpn-gym.or.jp/event/event-7583/"
       },
       {
-        "title": "世界体操2026 大会公式日程",
-        "url": "https://worldgymnastics.org/ja/events/ag-rotterdam-2026/schedule/"
+        "title": "世界体操2026 女子団体決勝公式結果",
+        "url": "https://jpn-gym.or.jp/wp-content/uploads/2026/10/A_20261021_NED_Rotterdam_54th_World_Championships_wteamF.pdf"
       }
     ],
     "impactScore": 23,
@@ -8077,7 +8077,7 @@
     "title": "プロ野球ドラフト会議2026 supported by リポビタンD",
     "startAt": "2026-10-22T16:50:00+09:00",
     "endAt": "2026-10-22T21:00:00+09:00",
-    "broadcast": "TBS系列全国ネット（16:40から）・スカイA・ニッポン放送・DAZN・U-NEXT",
+    "broadcast": "TBS系列全国ネット・TVer（16:40から）・スカイA・ニッポン放送・DAZN・U-NEXT",
     "category": "スポーツ中継",
     "area": "全国",
     "liveReason": "12球団の新人選手選択会議を全国ネットで生中継し、DAZNでは全指名巡を無料ライブ配信する。",
@@ -8088,7 +8088,7 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
-    "internalNote": "10月20日の直前確認で、NPB公式の開催要項と10月19日公開のDAZN無料配信詳細を確認して追加。",
+    "internalNote": "10月22日の当日確認で、NPB公式の開催時刻・中継とTBS公式の16:40放送・TVerリアルタイム配信を再確認。中止・延期なし。",
     "sources": [
       {
         "title": "NPB 2026年 プロ野球ドラフト会議 supported by リポビタンD",
@@ -8112,6 +8112,96 @@
         "date": "2026-10-22",
         "start": "16:50",
         "end": "21:00"
+      }
+    ]
+  },
+  {
+    "id": "world-artistic-gymnastics-2026-men-all-around-final",
+    "title": "体操 第54回世界体操競技選手権大会",
+    "startAt": "2026-10-23T03:05:00+09:00",
+    "endAt": "2026-10-23T05:20:00+09:00",
+    "broadcast": "日本テレビ系列・TVer（ライブ・アーカイブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "男子個人総合決勝に岡慎之助と橋本大輝が出場する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "日本体操協会の競技日程と番組情報を10月22日に再確認。営業時間外を理由に除外しない。",
+    "sources": [
+      {
+        "title": "日本体操協会 第54回世界体操競技選手権大会",
+        "url": "https://jpn-gym.or.jp/event/event-7583/"
+      },
+      {
+        "title": "世界体操2026 大会公式日程",
+        "url": "https://worldgymnastics.org/ja/events/ag-rotterdam-2026/schedule/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-10-23",
+        "start": "03:05",
+        "end": "05:20"
+      },
+      {
+        "label": "深夜視聴の翌日",
+        "date": "2026-10-23",
+        "start": "10:00",
+        "end": "14:00"
+      }
+    ]
+  },
+  {
+    "id": "world-artistic-gymnastics-2026-women-all-around-final",
+    "title": "体操 第54回世界体操競技選手権大会",
+    "startAt": "2026-10-24T02:15:00+09:00",
+    "endAt": "2026-10-24T05:30:00+09:00",
+    "broadcast": "日テレジータス・TVer（ライブ・アーカイブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "女子個人総合決勝に岸里奈と杉原愛子が出場する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "日本体操協会の競技日程と番組情報を10月22日に再確認。営業時間外を理由に除外しない。",
+    "sources": [
+      {
+        "title": "日本体操協会 第54回世界体操競技選手権大会",
+        "url": "https://jpn-gym.or.jp/event/event-7583/"
+      },
+      {
+        "title": "世界体操2026 大会公式日程",
+        "url": "https://worldgymnastics.org/ja/events/ag-rotterdam-2026/schedule/"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-10-24",
+        "start": "02:15",
+        "end": "05:30"
+      },
+      {
+        "label": "深夜視聴の翌日",
+        "date": "2026-10-24",
+        "start": "10:00",
+        "end": "14:00"
       }
     ]
   },
