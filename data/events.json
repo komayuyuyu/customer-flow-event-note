@@ -8168,7 +8168,7 @@
     "broadcast": "日テレジータス・TVer（ライブ・アーカイブ配信）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "女子個人総合決勝に岸里奈と杉原愛子が出場する。",
+    "liveReason": "女子個人総合決勝で杉原愛子が54.765点で5位、岸里奈が52.632点で15位となった。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -8176,15 +8176,15 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
-    "internalNote": "日本体操協会の競技日程と番組情報を10月22日に再確認。営業時間外を理由に除外しない。",
+    "internalNote": "10月24日早朝の女子個人総合決勝結果を確認。営業時間外を理由に除外しない。",
     "sources": [
       {
         "title": "日本体操協会 第54回世界体操競技選手権大会",
         "url": "https://jpn-gym.or.jp/event/event-7583/"
       },
       {
-        "title": "世界体操2026 大会公式日程",
-        "url": "https://worldgymnastics.org/ja/events/ag-rotterdam-2026/schedule/"
+        "title": "世界体操2026 女子個人総合決勝公式結果",
+        "url": "https://worldgymnastics.org/en/events/ag-rotterdam-2026/results/?day=2026-10-23&g=women"
       }
     ],
     "impactScore": 23,
@@ -8213,7 +8213,7 @@
     "broadcast": "テレビ朝日系列（一部地域を除く）女子ショート",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "グランプリシリーズ開幕戦の女子ショートをテレビ放送。",
+    "liveReason": "グランプリシリーズ開幕戦の女子ショートで青木祐奈が76.31点で首位、中井亜美が70.66点で3位、住吉りをんが61.10点で8位となった。テレビ朝日系列で当日午後に放送する。",
     "nationalReach": 3,
     "liveUrgency": 2,
     "accessibility": 3,
@@ -8227,8 +8227,8 @@
         "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"
       },
       {
-        "title": "ISU Grand Prix of Figure Skating 2026/27",
-        "url": "https://www.isu.org/figure-skating/events/isu-grand-prix"
+        "title": "ISU Grand Prix de France 2026 公式結果",
+        "url": "https://results.isu.org/results/season2627/gpfra2026/"
       }
     ],
     "impactScore": 19,
