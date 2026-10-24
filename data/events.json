@@ -8374,7 +8374,7 @@
     "broadcast": "TBS系列・TVer・U-NEXT",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "日本一を決めるSMBC日本シリーズ2026第1戦。",
+    "liveReason": "SMBC日本シリーズ2026第1戦は福岡ソフトバンクホークスが延長11回、2対1で横浜DeNAベイスターズに勝利した。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -8382,15 +8382,15 @@
     "significance": 3,
     "impactLevelOverride": "大",
     "officialConfirmed": true,
-    "internalNote": "横浜DeNA対福岡ソフトバンク。10月23日にNPB公式の中継予定を確認。",
+    "internalNote": "10月24日の第1戦終了後に公式結果を確認。ソフトバンクが1勝0敗。",
     "sources": [
       {
         "title": "NPB SMBC日本シリーズ2026 開催要項",
         "url": "https://npb.jp/nippons/2026/information.html"
       },
       {
-        "title": "NPB 2026年10月試合日程",
-        "url": "https://npb.jp/games/2026/schedule_10_detail.html"
+        "title": "横浜DeNAベイスターズ 2026年10月24日試合結果",
+        "url": "https://www.baystars.co.jp/game/result"
       }
     ],
     "impactScore": 24,
@@ -8443,6 +8443,88 @@
     ]
   },
   {
+    "id": "world-artistic-gymnastics-2026-apparatus-final-day-1",
+    "title": "体操 第54回世界体操競技選手権大会",
+    "startAt": "2026-10-24T22:00:00+09:00",
+    "endAt": "2026-10-25T02:23:00+09:00",
+    "broadcast": "BS日テレ・TVer（ライブ・アーカイブ配信）・大会公式ライブ配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "種目別決勝1日目で土井陵輔が男子ゆか4位、橋本大輝が男子あん馬8位、岡慎之助が男子つり輪4位となった。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "10月24日夜から25日未明の公式結果を確認。営業時間外を理由に除外しない。",
+    "sources": [
+      {
+        "title": "世界体操2026 種目別決勝1日目公式結果",
+        "url": "https://worldgymnastics.org/en/events/ag-rotterdam-2026/sport/artistic-apparatus/"
+      },
+      {
+        "title": "日本体操協会 第54回世界体操競技選手権大会",
+        "url": "https://jpn-gym.or.jp/event/event-7583/"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-10-24",
+        "start": "22:00",
+        "end": "02:23"
+      },
+      {
+        "label": "深夜視聴の翌日",
+        "date": "2026-10-25",
+        "start": "10:00",
+        "end": "14:00"
+      }
+    ]
+  },
+  {
+    "id": "kcp-mirai-fireworks-2026",
+    "title": "第5回 kcp未来花火 ～うちらの100円募金花火～",
+    "startAt": "2026-10-25T11:00:00+09:00",
+    "endAt": "2026-10-25T19:30:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火・現地イベント",
+    "area": "大阪・岸和田・蜻蛉池公園",
+    "inPersonEvent": true,
+    "liveReason": "蜻蛉池公園でグルメ、ステージ、フリーマーケット、体験ブースを行い、18時から花火を打ち上げる地域イベント。",
+    "trafficReason": "花火終了直後は駐車場からの出庫と周辺道路の渋滞が見込まれ、大芝生広場は終日立入禁止となる。",
+    "nationalReach": 1,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "悪天候時は中止、順延なし。10月25日朝時点で中止告知なし。岸和田の地域イベントのため神戸への直接影響は小とする。",
+    "sources": [
+      {
+        "title": "第5回 kcp未来花火 公式案内",
+        "url": "https://kishiwada-kcp.jp/miraihanabi/"
+      }
+    ],
+    "impactScore": 16,
+    "impactLevel": "小",
+    "confidence": "中",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-10-25",
+        "start": "11:00",
+        "end": "19:30"
+      }
+    ]
+  },
+  {
     "id": "all-japan-university-womens-ekiden-2026",
     "title": "陸上 第44回全日本大学女子駅伝",
     "startAt": "2026-10-25T12:00:00+09:00",
@@ -8488,7 +8570,7 @@
     "broadcast": "テレビ朝日系列 男子ショート・女子フリー",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "グランプリシリーズ開幕戦の男子ショートと女子フリーをテレビ放送。",
+    "liveReason": "グランプリシリーズ開幕戦の女子フリーで中井亜美が合計219.74点を記録し、ショート3位から逆転優勝して大会連覇を達成した。青木祐奈は200.62点で4位、住吉りをんは190.70点で6位となった。男子ショートとあわせてテレビ放送する。",
     "nationalReach": 3,
     "liveUrgency": 2,
     "accessibility": 3,
@@ -8502,8 +8584,8 @@
         "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"
       },
       {
-        "title": "ISU Grand Prix of Figure Skating 2026/27",
-        "url": "https://www.isu.org/figure-skating/events/isu-grand-prix"
+        "title": "ISU Grand Prix de France 2026 公式結果",
+        "url": "https://results.isu.org/results/season2627/gpfra2026/"
       }
     ],
     "impactScore": 21,
@@ -8515,6 +8597,45 @@
         "date": "2026-10-25",
         "start": "13:55",
         "end": "15:25"
+      }
+    ]
+  },
+  {
+    "id": "kikuka-sho-2026",
+    "title": "競馬 第87回菊花賞（GⅠ）",
+    "startAt": "2026-10-25T15:40:00+09:00",
+    "endAt": "2026-10-25T16:00:00+09:00",
+    "broadcast": "NHK総合・フジテレビ系列・JRA公式ライブ配信",
+    "category": "スポーツ中継",
+    "area": "全国・京都",
+    "liveReason": "3歳クラシック三冠の最終戦。2026年は二冠馬が最後の一冠に出走する全国注目のGⅠ競走。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "10月25日朝時点で中止・延期・発走時刻変更なし。",
+    "sources": [
+      {
+        "title": "JRA 第87回菊花賞（GⅠ）",
+        "url": "https://www.jra.go.jp/keiba/g1/kikka.html"
+      },
+      {
+        "title": "JRA 2026年10月25日競馬番組",
+        "url": "https://jra.jp/keiba/calendar2026/2026/10/1025.html"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-10-25",
+        "start": "15:40",
+        "end": "16:00"
       }
     ]
   },
@@ -8554,6 +8675,51 @@
         "date": "2026-10-25",
         "start": "18:00",
         "end": "22:00"
+      }
+    ]
+  },
+  {
+    "id": "world-artistic-gymnastics-2026-apparatus-final-day-2",
+    "title": "体操 第54回世界体操競技選手権大会",
+    "startAt": "2026-10-25T20:54:00+09:00",
+    "endAt": "2026-10-26T02:28:00+09:00",
+    "broadcast": "BS日テレ20:54〜22:54・TVer（ライブ・アーカイブ配信）・大会公式22:00〜ライブ配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "種目別決勝2日目。男子は岡慎之助が平行棒・鉄棒、橋本大輝が平行棒、川上翔平が跳馬・鉄棒、女子は岡村真が平均台の決勝に出場する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "10月25日朝時点で開催・放送・配信予定に変更なし。大会公式の現地14:00〜18:28 CETは日本時間22:00〜翌2:28。営業時間外を理由に除外しない。",
+    "sources": [
+      {
+        "title": "世界体操2026 種目別決勝2日目公式日程",
+        "url": "https://worldgymnastics.org/en/events/ag-rotterdam-2026/sport/artistic-apparatus/"
+      },
+      {
+        "title": "BS日テレ 世界体操2026 放送予定",
+        "url": "https://www.bs4.jp/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-10-25",
+        "start": "20:54",
+        "end": "02:28"
+      },
+      {
+        "label": "深夜視聴の翌日",
+        "date": "2026-10-26",
+        "start": "10:00",
+        "end": "14:00"
       }
     ]
   },
