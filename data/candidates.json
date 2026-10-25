@@ -5858,5 +5858,144 @@
       {"title": "日本体操協会 第54回世界体操競技選手権大会", "url": "https://jpn-gym.or.jp/event/event-7583/"},
       {"title": "世界体操2026 女子個人総合決勝公式結果", "url": "https://worldgymnastics.org/en/events/ag-rotterdam-2026/results/?day=2026-10-23&g=women"}
     ]
+  },
+  {
+    "id": "isu-grand-prix-canada-2026-women-free",
+    "title": "フィギュアスケート ISUグランプリシリーズ2026 カナダ大会",
+    "startAt": "2026-11-02T13:55:00+09:00",
+    "endAt": "2026-11-02T15:25:00+09:00",
+    "broadcast": "テレビ朝日系列（一部地域を除く）女子フリー",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "グランプリシリーズ第2戦の女子フリーをテレビ放送。",
+    "nationalReach": 3, "liveUrgency": 2, "accessibility": 3, "buzz": 2, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "sources": [
+      {"title": "テレビ朝日 フィギュアスケートグランプリシリーズ2026 放送予定", "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"},
+      {"title": "ISU Grand Prix of Figure Skating 2026/27", "url": "https://www.isu.org/figure-skating/events/isu-grand-prix"}
+    ]
+  },
+  {
+    "id": "jbc-2026",
+    "title": "地方競馬 JBC2026",
+    "startAt": "2026-11-03T13:30:00+09:00",
+    "endAt": "2026-11-03T17:00:00+09:00",
+    "broadcast": "BS11・YouTube BS11競馬チャンネル生中継",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・石川・北海道",
+    "inPersonEvent": true,
+    "liveReason": "JBCレディスクラシック、JBCスプリント、JBC2歳優駿、JBCクラシックの4競走を無料生中継するダート競馬の祭典。",
+    "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 2, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "sources": [
+      {"title": "JBC2026特設サイト 実施要項", "url": "https://www.keiba.go.jp/jbc2026/detail/"},
+      {"title": "BS11 ダート競馬の祭典 JBC 2026 生中継", "url": "https://www.bs11.jp/sports/jbc2026/"}
+    ]
+  },
+  {
+    "id": "isu-grand-prix-china-2026-short-programs",
+    "title": "フィギュアスケート ISUグランプリシリーズ2026 中国大会",
+    "startAt": "2026-11-07T02:45:00+09:00",
+    "endAt": "2026-11-07T04:45:00+09:00",
+    "broadcast": "テレビ朝日系列（一部地域を除く）男女ショート・ペアショート",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "グランプリシリーズ第3戦の男女ショートとペアショートを深夜にテレビ放送。",
+    "trafficReason": "深夜放送の視聴後、11月7日午前から昼の外出時刻に影響する可能性がある。",
+    "nationalReach": 3, "liveUrgency": 2, "accessibility": 3, "buzz": 2, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "sources": [
+      {"title": "テレビ朝日 フィギュアスケートグランプリシリーズ2026 放送予定", "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"},
+      {"title": "ISU Grand Prix of Figure Skating 2026/27", "url": "https://www.isu.org/figure-skating/events/isu-grand-prix"}
+    ]
+  },
+  {
+    "id": "kobe-port-weekend-fireworks-20261107",
+    "title": "神戸港ウィークエンド花火",
+    "startAt": "2026-11-07T18:00:00+09:00",
+    "endAt": "2026-11-07T18:05:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火・現地イベント",
+    "area": "神戸・メリケンパーク",
+    "inPersonEvent": true,
+    "liveReason": "メリケンパーク沖で約5分間打ち上げる神戸港の週末花火。",
+    "trafficReason": "神戸港周辺への来場と18時台の帰宅動線に影響する可能性がある。",
+    "nationalReach": 1, "liveUrgency": 2, "accessibility": 3, "buzz": 2, "significance": 2,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "sources": [
+      {"title": "神戸市 神戸港ウィークエンド花火 年間スケジュール", "url": "https://www.city.kobe.lg.jp/a44800/268553899396.html"},
+      {"title": "神戸港“U”パーク 2026年度神戸港ウィークエンド花火", "url": "https://www.kobeport-upark.jp/2026/07/04/2026%E5%B9%B4%E5%BA%A6%E7%A5%9E%E6%88%B8%E6%B8%AF%E3%82%A6%E3%82%A3%E3%83%BC%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89%E8%8A%B1%E7%81%AB%E3%81%AE%E5%B9%B4%E9%96%93%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92/"}
+    ]
+  },
+  {
+    "id": "isu-grand-prix-china-2026-women-pairs-free",
+    "title": "フィギュアスケート ISUグランプリシリーズ2026 中国大会",
+    "startAt": "2026-11-08T03:30:00+09:00",
+    "endAt": "2026-11-08T05:30:00+09:00",
+    "broadcast": "テレビ朝日系列（一部地域を除く）女子フリー・ペアフリー",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "グランプリシリーズ第3戦の女子フリーとペアフリーを深夜にテレビ放送。",
+    "trafficReason": "深夜放送の視聴後、11月8日午前から昼の外出時刻に影響する可能性がある。",
+    "nationalReach": 3, "liveUrgency": 2, "accessibility": 3, "buzz": 2, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "sources": [
+      {"title": "テレビ朝日 フィギュアスケートグランプリシリーズ2026 放送予定", "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"},
+      {"title": "ISU Grand Prix of Figure Skating 2026/27", "url": "https://www.isu.org/figure-skating/events/isu-grand-prix"}
+    ]
+  },
+  {
+    "id": "rugby-nations-championship-2026-wal-jpn",
+    "title": "ラグビー ネーションズチャンピオンシップ2026 WAL対JPN",
+    "startAt": "2026-11-08T01:10:00+09:00",
+    "endAt": "2026-11-08T05:10:00+09:00",
+    "broadcast": "J SPORTS生中継・J SPORTSオンデマンドライブ配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "男子日本代表がウェールズ代表と対戦するネーションズチャンピオンシップ2026。",
+    "trafficReason": "深夜から早朝のライブ視聴後、11月8日午前から昼の外出時刻に影響する可能性がある。",
+    "nationalReach": 3, "liveUrgency": 3, "accessibility": 1, "buzz": 3, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "sources": [
+      {"title": "J SPORTS ネーションズチャンピオンシップ", "url": "https://www.jsports.co.jp/rugby/nations/"},
+      {"title": "日本ラグビーフットボール協会 大会・試合情報", "url": "https://www.rugby-japan.jp/calendar/"}
+    ]
+  },
+  {
+    "id": "grand-sumo-november-2026-opening-day",
+    "title": "大相撲 令和八年十一月場所 初日",
+    "startAt": "2026-11-08T09:15:00+09:00",
+    "endAt": "2026-11-08T18:00:00+09:00",
+    "broadcast": "NHK総合・NHK BS・ABEMA",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・福岡",
+    "inPersonEvent": true,
+    "liveReason": "福岡国際センターで始まる大相撲十一月場所の初日。",
+    "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 2, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "sources": [
+      {"title": "日本相撲協会 年間日程表", "url": "https://www.sumo.or.jp/Admission/schedule/"},
+      {"title": "日本相撲協会 令和八年十一月場所 土俵上のタイムスケジュール", "url": "https://www.sumo.or.jp/Watching/guide/Nov/schedule/638/"}
+    ]
+  },
+  {
+    "id": "awajishima-festival-fireworks-2026",
+    "title": "第79回淡路島まつり花火大会",
+    "startAt": "2026-11-08T18:00:00+09:00",
+    "endAt": "2026-11-08T18:30:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火・現地イベント",
+    "area": "兵庫・洲本",
+    "inPersonEvent": true,
+    "liveReason": "洲本大浜海岸で開催され、例年約2万人が訪れる淡路島の大型花火大会。",
+    "trafficReason": "洲本市内の臨時駐車場と会場周辺への来場、夜の帰宅動線に影響する可能性がある。",
+    "nationalReach": 1, "liveUrgency": 3, "accessibility": 2, "buzz": 3, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "internalNote": "公式サイトで11月8日18:00〜18:30の開催と、14:00〜21:00の予約制臨時駐車場情報を確認。",
+    "sources": [
+      {"title": "淡路島まつり公式 花火大会開催概要", "url": "https://www.awajishimamatsuri.jp/fireworks/index.php"},
+      {"title": "淡路島まつり公式 交通規制・駐車場", "url": "https://www.awajishimamatsuri.jp/parking/index.php"},
+      {"title": "日本観光振興協会 第79回淡路島まつり花火大会", "url": "https://www.japan47go.travel/ja/detail/63e6cd27-c920-44ba-9607-82ea0dd82ad2"}
+    ]
   }
 ]
