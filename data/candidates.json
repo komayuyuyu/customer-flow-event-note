@@ -5209,11 +5209,11 @@
     "title": "プロ野球 SMBC日本シリーズ2026",
     "startAt": "2026-10-25T18:00:00+09:00", "endAt": "2026-10-25T22:00:00+09:00",
     "broadcast": "TBS系列・NHK BS・TVer・U-NEXT", "category": "スポーツ中継", "area": "全国",
-    "liveReason": "日本一を決めるSMBC日本シリーズ2026第2戦。",
+    "liveReason": "SMBC日本シリーズ2026第2戦は福岡ソフトバンクホークスが延長10回、4対3で横浜DeNAベイスターズに勝利した。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
-    "internalNote": "横浜DeNA対福岡ソフトバンク。10月23日にNPB公式の中継予定を確認。",
-    "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB 2026年10月試合日程", "url": "https://npb.jp/games/2026/schedule_10_detail.html"}]
+    "internalNote": "10月25日の第2戦終了後に結果を確認。ソフトバンクが2勝0敗。",
+    "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB SMBC日本シリーズ2026 第2戦公式記録", "url": "https://npb.jp/scores/2026/1025/db-h-02/"}]
   },
   {
     "id": "izumo-ekiden-2026",
@@ -5511,13 +5511,13 @@
     "broadcast": "NHK総合・フジテレビ系列・JRA公式ライブ配信",
     "category": "スポーツ中継",
     "area": "全国・京都",
-    "liveReason": "3歳クラシック三冠の最終戦。2026年は二冠馬が最後の一冠に出走する全国注目のGⅠ競走。",
+    "liveReason": "3歳クラシック三冠の最終戦はゴーイントゥスカイが3分4秒5で優勝し、武豊騎手が史上最年長GⅠ勝利記録を更新した。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "中", "officialConfirmed": true,
-    "internalNote": "10月25日朝時点で中止・延期・発走時刻変更なし。",
+    "internalNote": "10月25日に予定どおり開催。JRA公式結果でゴーイントゥスカイの優勝を確認。",
     "sources": [
       {"title": "JRA 第87回菊花賞（GⅠ）", "url": "https://www.jra.go.jp/keiba/g1/kikka.html"},
-      {"title": "JRA 2026年10月25日競馬番組", "url": "https://jra.jp/keiba/calendar2026/2026/10/1025.html"}
+      {"title": "JRA 2026年菊花賞 結果", "url": "https://www.jra.go.jp/datafile/seiseki/g1/kikka/result/kikka2026.html"}
     ]
   },
   {
@@ -5563,13 +5563,31 @@
     "broadcast": "BS日テレ20:54〜22:54・TVer（ライブ・アーカイブ配信）・大会公式22:00〜ライブ配信",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "種目別決勝2日目。男子は岡慎之助が平行棒・鉄棒、橋本大輝が平行棒、川上翔平が跳馬・鉄棒、女子は岡村真が平均台の決勝に出場する。",
+    "liveReason": "種目別決勝2日目は岡慎之助が男子鉄棒で14.800点の銀メダル。川上翔平は男子跳馬8位・鉄棒4位、橋本大輝は男子平行棒4位、岡慎之助は男子平行棒5位、岡村真は女子平均台8位となった。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "中", "officialConfirmed": true,
-    "internalNote": "10月25日朝時点で開催・放送・配信予定に変更なし。大会公式の現地14:00〜18:28 CETは日本時間22:00〜翌2:28。営業時間外を理由に除外しない。",
+    "internalNote": "10月25日夜から26日未明の公式結果を確認。営業時間外を理由に除外しない。",
     "sources": [
-      {"title": "世界体操2026 種目別決勝2日目公式日程", "url": "https://worldgymnastics.org/en/events/ag-rotterdam-2026/sport/artistic-apparatus/"},
+      {"title": "世界体操2026 種目別決勝2日目公式結果", "url": "https://worldgymnastics.org/en/events/ag-rotterdam-2026/results/"},
       {"title": "BS日テレ 世界体操2026 放送予定", "url": "https://www.bs4.jp/"}
+    ]
+  },
+  {
+    "id": "formula1-2026-united-states-grand-prix",
+    "title": "モータースポーツ F1 2026 第18戦 アメリカGP",
+    "startAt": "2026-10-26T05:00:00+09:00",
+    "endAt": "2026-10-26T07:00:00+09:00",
+    "broadcast": "フジテレビNEXT・FOD（生中継・ライブ配信）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "F1 2026シーズン第18戦の決勝を日本時間の早朝に生中継・ライブ配信する。",
+    "trafficReason": "早朝のライブ視聴後、10月26日午前から昼の外出時刻に影響する可能性がある。",
+    "nationalReach": 3, "liveUrgency": 3, "accessibility": 1, "buzz": 3, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "internalNote": "10月26日6時35分時点で決勝開催中。公式日程の現地10月25日15:00開始は日本時間10月26日5:00。営業時間外を理由に除外しない。",
+    "sources": [
+      {"title": "Formula 1 2026 アメリカGP公式日程", "url": "https://www.formula1.com/en/racing/2026/united-states"},
+      {"title": "フジテレビ 2026 FORMULA 1 第18戦アメリカ", "url": "https://otn.fujitv.co.jp/b_hp/926200019l.html"}
     ]
   },
   {
@@ -5580,13 +5598,14 @@
     "broadcast": "テレビ朝日系列（一部地域を除く）男子フリー",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "グランプリシリーズ開幕戦の男子フリーを深夜にテレビ放送。",
+    "liveReason": "男子は三浦佳生がフリー175.29点・合計247.96点で2位、山本草太が合計224.24点で5位となった。",
     "trafficReason": "深夜放送の視聴後、10月26日午前から昼の外出時刻に影響する可能性がある。",
     "nationalReach": 3, "liveUrgency": 2, "accessibility": 3, "buzz": 2, "significance": 3,
     "impactLevelOverride": "中", "officialConfirmed": true,
+    "internalNote": "10月25日夜の男子フリー・総合結果を確認。テレビ朝日系列は10月26日深夜に放送。営業時間外を理由に除外しない。",
     "sources": [
       {"title": "テレビ朝日 フィギュアスケートグランプリシリーズ2026 放送予定", "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"},
-      {"title": "ISU Grand Prix of Figure Skating 2026/27", "url": "https://www.isu.org/figure-skating/events/isu-grand-prix"}
+      {"title": "ISU Grand Prix de France 2026 男子公式結果", "url": "https://www.isuresults.com/results/season2627/gpfra2026/CAT001RS.htm"}
     ]
   },
   {
