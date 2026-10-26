@@ -6016,5 +6016,33 @@
       {"title": "淡路島まつり公式 交通規制・駐車場", "url": "https://www.awajishimamatsuri.jp/parking/index.php"},
       {"title": "日本観光振興協会 第79回淡路島まつり花火大会", "url": "https://www.japan47go.travel/ja/detail/63e6cd27-c920-44ba-9607-82ea0dd82ad2"}
     ]
+  },
+  {
+    "id": "kobe-marathon-20261115",
+    "title": "神戸マラソン2026",
+    "startAt": "2026-11-15T09:00:00+09:00",
+    "endAt": "2026-11-15T16:00:00+09:00",
+    "category": "マラソン・現地イベント",
+    "area": "兵庫・神戸・明石",
+    "inPersonEvent": true,
+    "liveReason": "神戸市役所前から明石市大蔵海岸付近を折り返し、神戸ハーバーランドへ。",
+    "trafficReason": "大会当日はコース周辺で長時間の大規模な交通規制。主催者は公共交通機関の利用を案内。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "神戸マラソン2026 大会要項",
+        "url": "https://kobe-marathon.net/2026/race/essentials/"
+      },
+      {
+        "title": "神戸マラソン2026 交通規制情報",
+        "url": "https://kobe-marathon.net/2026/race/traffic/traffic/"
+      }
+    ]
   }
 ]
