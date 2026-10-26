@@ -5580,13 +5580,14 @@
     "broadcast": "フジテレビNEXT・FOD（生中継・ライブ配信）",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "F1 2026シーズン第18戦の決勝を日本時間の早朝に生中継・ライブ配信する。",
+    "liveReason": "F1 2026シーズン第18戦アメリカGPはアンドレア・キミ・アントネッリが優勝し、シャルル・ルクレールが2位、マックス・フェルスタッペンが3位となった。",
     "trafficReason": "早朝のライブ視聴後、10月26日午前から昼の外出時刻に影響する可能性がある。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 1, "buzz": 3, "significance": 3,
     "impactLevelOverride": "中", "officialConfirmed": true,
-    "internalNote": "10月26日6時35分時点で決勝開催中。公式日程の現地10月25日15:00開始は日本時間10月26日5:00。営業時間外を理由に除外しない。",
+    "internalNote": "10月26日早朝の決勝終了後、Formula 1公式結果で確定順位を確認。営業時間外を理由に除外しない。",
     "sources": [
       {"title": "Formula 1 2026 アメリカGP公式日程", "url": "https://www.formula1.com/en/racing/2026/united-states"},
+      {"title": "Formula 1 2026 アメリカGP公式結果", "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/race-result"},
       {"title": "フジテレビ 2026 FORMULA 1 第18戦アメリカ", "url": "https://otn.fujitv.co.jp/b_hp/926200019l.html"}
     ]
   },
@@ -5612,13 +5613,13 @@
     "id": "smbc-nippon-series-2026-3",
     "title": "プロ野球 SMBC日本シリーズ2026",
     "startAt": "2026-10-27T18:00:00+09:00", "endAt": "2026-10-27T22:00:00+09:00",
-    "broadcast": "TBS系列・NHK BS・TVer・U-NEXT",
+    "broadcast": "TBS系列17:50〜・NHK BS・TVer・U-NEXT17:50〜",
     "category": "スポーツ中継", "area": "全国",
     "liveReason": "日本一を決めるSMBC日本シリーズ2026第3戦。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
-    "internalNote": "横浜DeNA対福岡ソフトバンク。10月23日にNPB公式の中継予定を確認。",
-    "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB SMBC日本シリーズ2026", "url": "https://npb.jp/nippons/"}]
+    "internalNote": "横浜DeNA対福岡ソフトバンク。10月27日朝にNPB公式で18:00開始、TBS公式とU-NEXT公式で17:50からの中継・配信を再確認。中止・延期告知なし。",
+    "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB SMBC日本シリーズ2026", "url": "https://npb.jp/nippons/"}, {"title": "TBS SMBC日本シリーズ2026 第3戦", "url": "https://www.tbs.co.jp/tv/20261027_C477.html"}, {"title": "U-NEXT SMBC日本シリーズ2026 ライブ配信", "url": "https://help.unext.jp/info-video/detail/info166c"}]
   },
   {
     "id": "smbc-nippon-series-2026-4",
