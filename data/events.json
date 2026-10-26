@@ -9542,5 +9542,44 @@
         "end": "18:30"
       }
     ]
+  },
+  {
+    "id": "kobe-marathon-20261115",
+    "title": "神戸マラソン2026",
+    "startAt": "2026-11-15T09:00:00+09:00",
+    "endAt": "2026-11-15T16:00:00+09:00",
+    "category": "マラソン・現地イベント",
+    "area": "兵庫・神戸・明石",
+    "inPersonEvent": true,
+    "liveReason": "神戸市役所前から明石市大蔵海岸付近を折り返し、神戸ハーバーランドへ。",
+    "trafficReason": "大会当日はコース周辺で長時間の大規模な交通規制。主催者は公共交通機関の利用を案内。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "神戸マラソン2026 大会要項",
+        "url": "https://kobe-marathon.net/2026/race/essentials/"
+      },
+      {
+        "title": "神戸マラソン2026 交通規制情報",
+        "url": "https://kobe-marathon.net/2026/race/traffic/traffic/"
+      }
+    ],
+    "impactScore": 20,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-15",
+        "start": "09:00",
+        "end": "16:00"
+      }
+    ]
   }
 ]

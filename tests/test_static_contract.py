@@ -508,6 +508,12 @@ class StaticContractTest(unittest.TestCase):
             "ポイントアップ（10/24〜25）",
             "ポイントアップ（10/31）",
             "次期端末練習",
+            "【神戸限定】ポイントアップデー",
+            "レイアウトアップ",
+            "KNIT打ち出し（MORRISメイン）",
+            "【館】サンプル・B品フェア",
+            "【P・W限定】ポイントアップ",
+            "【全会員】ポイントアップ",
         })
         self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["startAt"][:10], "2026-07-03")
         self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["endAt"][:10], "2026-07-12")

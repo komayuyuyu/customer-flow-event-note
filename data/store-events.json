@@ -446,5 +446,174 @@
         "url": "https://mitsui-shopping-park.com/mop/kobe/information/"
       }
     ]
+  },
+  {
+    "id": "store-kobe-point-up-20261101",
+    "title": "【神戸限定】ポイントアップデー",
+    "startAt": "2026-11-01T00:00:00+09:00",
+    "endAt": "2026-11-03T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-11-01",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年11月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-layout-up-20261108",
+    "title": "レイアウトアップ",
+    "startAt": "2026-11-08T00:00:00+09:00",
+    "endAt": "2026-11-08T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "店頭施策",
+    "area": "勤務先ショップ",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-11-08",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年11月勤務カレンダー"
+      }
+    ],
+    "internalNote": "2026-10-26本人指定により11/8のレイアウトアップを掲載。"
+  },
+  {
+    "id": "store-knit-morris-20261113",
+    "title": "KNIT打ち出し（MORRISメイン）",
+    "startAt": "2026-11-13T00:00:00+09:00",
+    "endAt": "2026-11-23T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "店頭施策",
+    "area": "勤務先ショップ",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-11-13",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年11月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-sample-b-fair-20261113",
+    "title": "【館】サンプル・B品フェア",
+    "startAt": "2026-11-13T00:00:00+09:00",
+    "endAt": "2026-11-15T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-11-13",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年11月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-pw-point-up-20261113",
+    "title": "【P・W限定】ポイントアップ",
+    "startAt": "2026-11-13T00:00:00+09:00",
+    "endAt": "2026-11-15T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-11-13",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年11月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-pw-point-up-20261120",
+    "title": "【P・W限定】ポイントアップ",
+    "startAt": "2026-11-20T00:00:00+09:00",
+    "endAt": "2026-11-23T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-11-20",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年11月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-all-members-point-up-20261127",
+    "title": "【全会員】ポイントアップ",
+    "startAt": "2026-11-27T00:00:00+09:00",
+    "endAt": "2026-11-29T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "中",
+    "confidence": "高",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-11-27",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年11月勤務カレンダー"
+      }
+    ]
   }
 ]
