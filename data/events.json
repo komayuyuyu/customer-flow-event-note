@@ -8835,7 +8835,7 @@
     "significance": 3,
     "impactLevelOverride": "大",
     "officialConfirmed": true,
-    "internalNote": "横浜DeNA対福岡ソフトバンク。10月27日朝にNPB公式で18:00開始、TBS公式とU-NEXT公式で17:50からの中継・配信を再確認。中止・延期告知なし。",
+    "internalNote": "横浜DeNA対福岡ソフトバンク。延長10回、福岡ソフトバンクが2対1で勝利し、3勝0敗で日本一へ王手。",
     "sources": [
       {
         "title": "NPB SMBC日本シリーズ2026 開催要項",
@@ -8846,12 +8846,12 @@
         "url": "https://npb.jp/nippons/"
       },
       {
-        "title": "TBS SMBC日本シリーズ2026 第3戦",
-        "url": "https://www.tbs.co.jp/tv/20261027_C477.html"
+        "title": "パ・リーグ.com SMBC日本シリーズ2026 第3戦結果",
+        "url": "https://pacificleague.com/news/87227"
       },
       {
-        "title": "U-NEXT SMBC日本シリーズ2026 ライブ配信",
-        "url": "https://help.unext.jp/info-video/detail/info166c"
+        "title": "福岡ソフトバンクホークス 第3戦スコアボード",
+        "url": "https://www.softbankhawks.co.jp/gamelive/result/2026102701/"
       }
     ],
     "impactScore": 24,
@@ -8871,7 +8871,7 @@
     "title": "プロ野球 SMBC日本シリーズ2026",
     "startAt": "2026-10-28T18:00:00+09:00",
     "endAt": "2026-10-28T22:00:00+09:00",
-    "broadcast": "日本テレビ系列・TVer・Hulu",
+    "broadcast": "日本テレビ系列17:53〜・TVer・Hulu",
     "category": "スポーツ中継",
     "area": "全国",
     "liveReason": "日本一を決めるSMBC日本シリーズ2026第4戦。",
@@ -8882,7 +8882,7 @@
     "significance": 3,
     "impactLevelOverride": "大",
     "officialConfirmed": true,
-    "internalNote": "横浜DeNA対福岡ソフトバンク。10月23日にNPB公式の中継予定を確認。",
+    "internalNote": "横浜DeNA対福岡ソフトバンク。福岡ソフトバンクが3勝0敗で日本一へ王手。10月28日朝に18:00開始、日本テレビ系列17:53から試合終了まで、TVer・Huluのライブ配信を再確認。中止・延期告知なし。",
     "sources": [
       {
         "title": "NPB SMBC日本シリーズ2026 開催要項",
@@ -8891,6 +8891,10 @@
       {
         "title": "NPB SMBC日本シリーズ2026",
         "url": "https://npb.jp/nippons/"
+      },
+      {
+        "title": "日本テレビ系列 第4戦番組情報",
+        "url": "https://bangumi.org/tv_events/AmPpQQHnIAM?overwrite_area=37"
       }
     ],
     "impactScore": 24,
@@ -8902,6 +8906,48 @@
         "date": "2026-10-28",
         "start": "18:00",
         "end": "22:00"
+      }
+    ]
+  },
+  {
+    "id": "tsuyoshi-nagabuchi-acoustic-hall-tour-2026-final",
+    "title": "音楽 長渕剛 ACOUSTIC HALL TOUR 2026 “JUST ONE” ツアーファイナル",
+    "startAt": "2026-10-28T18:30:00+09:00",
+    "endAt": "2026-10-28T21:00:00+09:00",
+    "broadcast": "TBSチャンネル1・U-NEXT・JOYSOUNDみるハコ生中継／ライブ配信",
+    "category": "音楽ライブ中継",
+    "area": "全国・東京",
+    "liveReason": "全国16都市19公演、全会場完売の5年ぶりアコースティックツアー最終公演。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "officialConfirmed": true,
+    "internalNote": "10月28日朝に本人公式、TBSチャンネル、U-NEXT公式で18:30開演と生中継・ライブ配信を再確認。中止・延期告知なし。営業時間外を理由に除外しない。",
+    "sources": [
+      {
+        "title": "長渕剛公式 ツアーファイナル生中継案内",
+        "url": "https://tsuyoshinagabuchi.com/news/24676/"
+      },
+      {
+        "title": "TBSチャンネル テレビ独占生中継",
+        "url": "https://www.tbs.co.jp/tbs-ch/information/2026_0728_0245.html"
+      },
+      {
+        "title": "U-NEXT 独占ライブ配信",
+        "url": "https://help.unext.jp/info-video/detail/info971b"
+      }
+    ],
+    "impactScore": 22,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-10-28",
+        "start": "18:30",
+        "end": "21:00"
       }
     ]
   },
