@@ -5627,11 +5627,11 @@
     "startAt": "2026-10-28T18:00:00+09:00", "endAt": "2026-10-28T22:00:00+09:00",
     "broadcast": "日本テレビ系列17:53〜・TVer・Hulu",
     "category": "スポーツ中継", "area": "全国",
-    "liveReason": "日本一を決めるSMBC日本シリーズ2026第4戦。",
+    "liveReason": "SMBC日本シリーズ2026第4戦は福岡ソフトバンクホークスが4対2で横浜DeNAベイスターズに勝利し、4連勝で2年連続13度目の日本一を決めた。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
-    "internalNote": "横浜DeNA対福岡ソフトバンク。福岡ソフトバンクが3勝0敗で日本一へ王手。10月28日朝に18:00開始、日本テレビ系列17:53から試合終了まで、TVer・Huluのライブ配信を再確認。中止・延期告知なし。",
-    "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB SMBC日本シリーズ2026", "url": "https://npb.jp/nippons/"}, {"title": "日本テレビ系列 第4戦番組情報", "url": "https://bangumi.org/tv_events/AmPpQQHnIAM?overwrite_area=37"}]
+    "internalNote": "10月28日終了後にNPB公式結果を確認。福岡ソフトバンクが4勝0敗でシリーズを制し、第5戦以降は開催なし。",
+    "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB SMBC日本シリーズ2026", "url": "https://npb.jp/nippons/"}, {"title": "NPB SMBC日本シリーズ2026 第4戦デイリーリポート", "url": "https://npb.jp/nippons/2026/dailyreport_1028.html"}]
   },
   {
     "id": "tsuyoshi-nagabuchi-acoustic-hall-tour-2026-final",
@@ -5661,11 +5661,47 @@
     "startAt": "2026-10-29T18:00:00+09:00", "endAt": "2026-10-29T22:00:00+09:00",
     "broadcast": "テレビ朝日系列・TVer・ABEMA",
     "category": "スポーツ中継", "area": "全国",
-    "liveReason": "日本一を決めるSMBC日本シリーズ2026第5戦（必要時）。",
+    "liveReason": "SMBC日本シリーズ2026は第4戦で福岡ソフトバンクホークスの日本一が決まり、第5戦は開催されない。",
+    "status": "中止",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
-    "internalNote": "一方の4勝到達前に限り開催。横浜DeNA対福岡ソフトバンク。10月23日にNPB公式の中継予定を確認。",
+    "internalNote": "福岡ソフトバンクが4勝0敗で日本一となったため開催なし。履歴保持のため削除せず状態を更新。",
     "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB SMBC日本シリーズ2026", "url": "https://npb.jp/nippons/"}]
+  },
+  {
+    "id": "youtube-fanfest-japan-2026-live-show",
+    "title": "YouTube Fanfest Japan 2026 Live Show",
+    "startAt": "2026-10-29T19:00:00+09:00",
+    "endAt": "2026-10-29T21:30:00+09:00",
+    "broadcast": "YouTube Japan公式チャンネル（ライブ配信）",
+    "category": "大型特番・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "今年YouTubeで話題になったクリエイターやアーティストが集まり、トレンドの振り返り、登録者100万人達成チャンネル表彰、ライブパフォーマンスを行う年次イベント。",
+    "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
+    "impactLevelOverride": "大", "officialConfirmed": true,
+    "internalNote": "10月29日朝にYouTube公式ブログで19:00開演とYouTube Japan公式チャンネルのライブ配信を再確認。中止・延期告知なし。終了時刻は公式未記載のため表示上の仮置き。",
+    "sources": [
+      {"title": "YouTube公式ブログ YouTube Fanfest Japan 2026 Live Show", "url": "https://blog.youtube/intl/ja-jp/news-and-events/youtube-fanfest-japan-2026-2/"},
+      {"title": "YouTube Japan公式チャンネル", "url": "https://www.youtube.com/@YouTubeJapan"}
+    ]
+  },
+  {
+    "id": "gang-parade-last-say-hello-2026",
+    "title": "音楽 GANG PARADE ラストライブ GANG PARADE LAST SAY HELLO!!",
+    "startAt": "2026-10-29T19:00:00+09:00",
+    "endAt": "2026-10-29T21:30:00+09:00",
+    "broadcast": "ニコニコ生放送（全編独占生中継、後半はプレミアム限定）",
+    "category": "音楽ライブ中継",
+    "area": "全国・東京",
+    "liveReason": "GANG PARADEの活動を締めくくるラストライブをZepp Hanedaから全編独占生中継する。",
+    "nationalReach": 2, "liveUrgency": 3, "accessibility": 2, "buzz": 3, "significance": 3,
+    "impactLevelOverride": "中", "officialConfirmed": true,
+    "internalNote": "10月26日に生中継が発表され、週次確認後に急上昇した当日イベントとして追加。10月29日朝に19:00開始、11月28日までのアーカイブを確認。中止・延期告知なし。終了時刻は公式未記載のため表示上の仮置き。",
+    "sources": [
+      {"title": "ドワンゴ GANG PARADEラストライブ独占生中継", "url": "https://prtimes.jp/main/html/rd/p/000001436.000056982.html"},
+      {"title": "ニコニコ生放送 GANG PARADE LAST SAY HELLO!!", "url": "https://live.nicovideo.jp/watch/lv351645486"}
+    ]
   },
   {
     "id": "rugby-wxv-global-2026-jpn-wal-2",
@@ -5689,10 +5725,11 @@
     "startAt": "2026-10-31T18:30:00+09:00", "endAt": "2026-10-31T22:30:00+09:00",
     "broadcast": "TBS系列・TVer・U-NEXT",
     "category": "スポーツ中継", "area": "全国",
-    "liveReason": "日本一を決めるSMBC日本シリーズ2026第6戦（必要時）。",
+    "liveReason": "SMBC日本シリーズ2026は第4戦で福岡ソフトバンクホークスの日本一が決まり、第6戦は開催されない。",
+    "status": "中止",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
-    "internalNote": "一方の4勝到達前に限り開催。横浜DeNA対福岡ソフトバンク。10月23日にNPB公式の中継予定を確認。",
+    "internalNote": "福岡ソフトバンクが4勝0敗で日本一となったため開催なし。履歴保持のため削除せず状態を更新。",
     "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB SMBC日本シリーズ2026", "url": "https://npb.jp/nippons/"}]
   },
   {
@@ -5734,10 +5771,11 @@
     "startAt": "2026-11-01T18:00:00+09:00", "endAt": "2026-11-01T22:00:00+09:00",
     "broadcast": "TBS系列・TVer・U-NEXT",
     "category": "スポーツ中継", "area": "全国",
-    "liveReason": "日本一を決めるSMBC日本シリーズ2026第7戦（必要時）。",
+    "liveReason": "SMBC日本シリーズ2026は第4戦で福岡ソフトバンクホークスの日本一が決まり、第7戦は開催されない。",
+    "status": "中止",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
     "impactLevelOverride": "大", "officialConfirmed": true,
-    "internalNote": "一方の4勝到達前に限り開催。横浜DeNA対福岡ソフトバンク。10月23日にNPB公式の中継予定を確認。",
+    "internalNote": "福岡ソフトバンクが4勝0敗で日本一となったため開催なし。履歴保持のため削除せず状態を更新。",
     "sources": [{"title": "NPB SMBC日本シリーズ2026 開催要項", "url": "https://npb.jp/nippons/2026/information.html"}, {"title": "NPB SMBC日本シリーズ2026", "url": "https://npb.jp/nippons/"}]
   },
   {
