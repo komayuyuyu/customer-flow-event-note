@@ -9071,6 +9071,45 @@
     ]
   },
   {
+    "id": "high-low-10th-anniversary-fever-stream-2026",
+    "title": "音楽 HiGH&LOW 10th ANNIVERSARY FEVER",
+    "startAt": "2026-10-30T18:00:00+09:00",
+    "endAt": "2026-10-30T21:00:00+09:00",
+    "broadcast": "U-NEXT（ライブ配信・見逃し配信あり）",
+    "category": "音楽ライブ中継",
+    "area": "全国",
+    "liveReason": "HiGH&LOWシリーズ10周年ライブを、EXILE THE SECOND、THE RAMPAGE、FANTASTICSなど7組総勢55名の出演で配信する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "10月30日朝にU-NEXT公式で18:00開始、見逃し配信あり、出演7組総勢55名を確認。9月22日・23日のKアリーナ横浜公演の配信で、終了時刻は公式未記載のため表示上の仮置き。中止・延期告知なし。",
+    "sources": [
+      {
+        "title": "U-NEXT HiGH&LOW 10th ANNIVERSARY FEVER",
+        "url": "https://www.video.unext.jp/livedetail/LIV0000016247"
+      },
+      {
+        "title": "U-NEXT 2026年10月ライブ配信ラインナップ",
+        "url": "https://www.unext.co.jp/en/press-room/2026-10-live-lineups"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-10-30",
+        "start": "18:00",
+        "end": "21:00"
+      }
+    ]
+  },
+  {
     "id": "rugby-wxv-global-2026-jpn-wal-2",
     "title": "ラグビー WXVグローバルシリーズ2026 女子JPN対WAL",
     "startAt": "2026-10-31T16:00:00+09:00",
