@@ -6122,5 +6122,98 @@
         "url": "https://kobe-marathon.net/2026/race/traffic/traffic/"
       }
     ]
+  },
+  {
+    "id": "hana-born-to-bloom-final-20261031",
+    "title": "音楽 HANA 1st TOUR 2026 “Born to Bloom” ツアーファイナル",
+    "startAt": "2026-10-31T16:30:00+09:00",
+    "endAt": "2026-10-31T18:45:00+09:00",
+    "broadcast": "Amazon Prime Video（PPVライブ配信・見逃し配信あり）",
+    "category": "音楽ライブ中継",
+    "area": "全国・東京",
+    "liveReason": "HANA初の全国ツアー追加公演最終日を日本武道館からライブ配信する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "10月31日朝にHANA公式とPrime Videoで16:30開始、約2時間15分予定、11月7日23:59までのアーカイブを確認。中止・延期告知なし。",
+    "sources": [
+      {"title": "HANA公式 Amazon Prime Videoライブ配信決定", "url": "https://hana.b-rave.tokyo/live/amazonprimevideo-livestreaming/"},
+      {"title": "HANA 1st TOUR 2026 “Born to Bloom” 追加公演", "url": "https://hana.b-rave.tokyo/tour/borntobloom/"},
+      {"title": "Prime Video HANA 1st TOUR 2026 “Born to Bloom”", "url": "https://www.primevideo.com/-/id/detail/0HFYJPQF53NKA72E03GYROSUKR"}
+    ]
+  },
+  {
+    "id": "itami-fireworks-2026",
+    "title": "第46回いたみ花火大会",
+    "startAt": "2026-10-31T18:30:00+09:00",
+    "endAt": "2026-10-31T19:15:00+09:00",
+    "broadcast": "伊丹市公式YouTubeライブ配信",
+    "category": "花火",
+    "area": "兵庫・伊丹",
+    "inPersonEvent": true,
+    "liveReason": "約3,500発を打ち上げ、伊丹市公式YouTubeでもライブ配信する秋開催の花火大会。",
+    "trafficReason": "16時台以降に市営バスの迂回・一部運休があり、会場周辺は花火終了後の退場に1時間以上かかる場合がある。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "10月30日更新の伊丹市公式で開催準備中、降雨により河川敷の状態が悪いこと、荒天中止・順延なしを確認。10月31日朝時点で中止告知なし。",
+    "sources": [
+      {"title": "伊丹市 令和8年度 第46回いたみ花火大会", "url": "https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/TOSID/itamihanabitaikai/47626.html"},
+      {"title": "伊丹市交通局 いたみ花火大会に伴うう回運行・一部運休", "url": "https://www.city.itami.lg.jp/SOSIKI/koutuukyoku/50599.html"}
+    ]
+  },
+  {
+    "id": "osaka-art-fireworks-2026",
+    "title": "大阪芸術花火2026",
+    "startAt": "2026-10-31T18:00:00+09:00",
+    "endAt": "2026-10-31T18:50:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火",
+    "area": "大阪・泉佐野",
+    "inPersonEvent": true,
+    "liveReason": "りんくう公園で約50分間、音楽と花火を同期させる全席指定の芸術花火を開催する。",
+    "trafficReason": "りんくう公園は12時以降に立入制限があり、最寄りのりんくうタウン駅は打上前後の混雑と規制退場が案内されている。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "10月31日朝に公式サイトで開場14:00、花火18:00開始予定、雨天決行・荒天中止を確認。中止・延期告知なし。",
+    "sources": [
+      {"title": "大阪芸術花火2026 公式サイト", "url": "https://www.osakafireworks.com/"}
+    ]
+  },
+  {
+    "id": "livejack-2026-smash-beat-sp",
+    "title": "音楽 Livejack 2026 SMASH BEAT SP",
+    "startAt": "2026-10-31T15:30:00+09:00",
+    "endAt": "2026-10-31T18:30:00+09:00",
+    "broadcast": "現地イベント（テレビ収録あり）",
+    "category": "音楽ライブ",
+    "area": "大阪・大阪城ホール",
+    "inPersonEvent": true,
+    "liveReason": "関西テレビの大型音楽イベントとして、ダンスボーカルをテーマに6組が大阪城ホールへ出演する。",
+    "trafficReason": "開場14:30・開演15:30の大阪城ホール公演で、開演前と終演後に大阪城公園駅周辺の人流集中が見込まれる。",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "10月31日朝に関西テレビ公式で開催日、開場14:30、開演15:30、出演6組、テレビ収録を確認。中止・延期告知なし。終了時刻は公式未記載のため表示上の仮置き。",
+    "sources": [
+      {"title": "関西テレビ Livejack 2026 SMASH BEAT SP", "url": "https://www.ktv.jp/event/livejack/"}
+    ]
   }
 ]
