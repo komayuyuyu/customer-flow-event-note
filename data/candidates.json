@@ -6008,13 +6008,17 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・石川・北海道",
     "inPersonEvent": true,
-    "liveReason": "JBCレディスクラシック（14:25）、JBCスプリント（15:10）、JBC2歳優駿（15:40）、JBCクラシック（16:25）の4競走を生中継するダート競馬の祭典。",
+    "liveReason": "ダート競馬の祭典4競走が終了。JBCレディスクラシックはアンズアメ、JBCスプリントはメイショウハチロー、JBC2歳優駿はオーリエイト、JBCクラシックはアウトレンジが優勝。",
     "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 2, "significance": 3,
     "impactLevelOverride": "中", "officialConfirmed": true,
     "sources": [
       {"title": "JBC2026特設サイト 実施要項", "url": "https://www.keiba.go.jp/jbc2026/detail/"},
       {"title": "JBC2026特設サイト 中継情報", "url": "https://www.keiba.go.jp/jbc2026/broadcast/"},
-      {"title": "BS11 ダート競馬の祭典 JBC 2026 生中継", "url": "https://www.bs11.jp/sports/jbc2026/"}
+      {"title": "BS11 ダート競馬の祭典 JBC 2026 生中継", "url": "https://www.bs11.jp/sports/jbc2026/"},
+      {"title": "地方競馬情報サイト JBCレディスクラシック競走成績", "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_babaCode=22&k_raceDate=2026/11/03&k_raceNo=7"},
+      {"title": "地方競馬情報サイト JBCスプリント競走成績", "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_babaCode=22&k_raceDate=2026/11/03&k_raceNo=8"},
+      {"title": "地方競馬情報サイト JBC2歳優駿競走成績", "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_babaCode=36&k_raceDate=2026/11/03&k_raceNo=9"},
+      {"title": "地方競馬情報サイト JBCクラシック競走成績", "url": "https://www.keiba.go.jp/KeibaWeb/TodayRaceInfo/RaceMarkTable?k_babaCode=22&k_raceDate=2026/11/03&k_raceNo=9"}
     ]
   },
   {
