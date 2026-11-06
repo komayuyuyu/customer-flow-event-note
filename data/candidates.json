@@ -6022,6 +6022,25 @@
     ]
   },
   {
+    "id": "air-jam-2026-hi-standard-live",
+    "title": "音楽 AIR JAM 2026 Hi-STANDARDライブ生中継",
+    "startAt": "2026-11-07T19:00:00+09:00",
+    "endAt": "2026-11-07T20:30:00+09:00",
+    "broadcast": "Hi-STANDARD公式YouTube・スペースシャワーTV（生中継、YouTubeはアーカイブなし）",
+    "category": "音楽ライブ中継",
+    "area": "全国・千葉",
+    "inPersonEvent": true,
+    "liveReason": "8年ぶりに開催されるAIR JAM 2026のHi-STANDARD出演パートをZOZOマリンスタジアムから生中継する。",
+    "nationalReach": 3, "liveUrgency": 3, "accessibility": 3, "buzz": 3, "significance": 3,
+    "impactLevelOverride": "大", "officialConfirmed": true,
+    "internalNote": "11月5日に生中継の詳細が公表され、週次確認後に急上昇した当日イベントとして11月7日朝に追加。AIR JAM公式で公演は9:30開場・11:30開演・20:00終演予定、Hi-STANDARDは19:05出演。公式YouTubeとスペースシャワーTVは19:00から生中継し、YouTubeのアーカイブはない。中止・延期告知なし。放送終了時刻はスペースシャワーTV番組表の20:30。",
+    "sources": [
+      {"title": "AIR JAM 2026 開催概要", "url": "https://airjam.jp/info/"},
+      {"title": "Hi-STANDARD公式YouTubeチャンネル", "url": "https://www.youtube.com/@histandardofficial"},
+      {"title": "スカパー！ 生中継 Live at AIR JAM 2026 / Hi-STANDARD", "url": "https://www.skyperfectv.co.jp/program/detail/?uid=c32054574"}
+    ]
+  },
+  {
     "id": "isu-grand-prix-china-2026-short-programs",
     "title": "フィギュアスケート ISUグランプリシリーズ2026 中国大会",
     "startAt": "2026-11-07T02:45:00+09:00",
@@ -6029,13 +6048,17 @@
     "broadcast": "テレビ朝日系列（一部地域を除く）男女ショート・ペアショート",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "グランプリシリーズ第3戦の男女ショートとペアショートを深夜にテレビ放送。",
+    "liveReason": "グランプリシリーズ第3戦のショートプログラムで、男子は三浦佳生が102.90点で1位、佐藤駿が101.97点で2位、女子は千葉百音が76.08点で1位。男女ショートとペアショートを深夜にテレビ放送。",
     "trafficReason": "深夜放送の視聴後、11月7日午前から昼の外出時刻に影響する可能性がある。",
     "nationalReach": 3, "liveUrgency": 2, "accessibility": 3, "buzz": 2, "significance": 3,
     "impactLevelOverride": "中", "officialConfirmed": true,
+    "internalNote": "11月7日朝にISU公式結果で男子ショートは三浦佳生1位・佐藤駿2位、女子ショートは千葉百音1位・山下真瑚5位・渡辺倫果11位、ペアショートは長岡柚奈／森口澄士組4位を確認。テレビ朝日の放送時刻と競技継続、中止・延期なしを再確認。",
     "sources": [
       {"title": "テレビ朝日 フィギュアスケートグランプリシリーズ2026 放送予定", "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"},
-      {"title": "ISU Grand Prix of Figure Skating 2026/27", "url": "https://www.isu.org/figure-skating/events/isu-grand-prix"}
+      {"title": "ISU GP Cup of China 2026 大会日程・結果", "url": "https://results.isu.org/results/season2627/gpchn2026/"},
+      {"title": "ISU GP Cup of China 2026 男子結果", "url": "https://results.isu.org/results/season2627/gpchn2026/CAT001RS.htm"},
+      {"title": "ISU GP Cup of China 2026 女子結果", "url": "https://results.isu.org/results/season2627/gpchn2026/CAT002RS.htm"},
+      {"title": "ISU GP Cup of China 2026 ペア結果", "url": "https://results.isu.org/results/season2627/gpchn2026/CAT003RS.htm"}
     ]
   },
   {
