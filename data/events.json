@@ -9850,29 +9850,34 @@
     "title": "ラグビー ネーションズチャンピオンシップ2026 WAL対JPN",
     "startAt": "2026-11-08T01:10:00+09:00",
     "endAt": "2026-11-08T05:10:00+09:00",
-    "broadcast": "J SPORTS生中継・J SPORTSオンデマンドライブ配信",
+    "broadcast": "NHK総合・NHK ONE・WOWOWプライム・WOWOWオンデマンド・J SPORTS 1・J SPORTSオンデマンド・Lemino",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "男子日本代表がウェールズ代表と対戦するネーションズチャンピオンシップ2026。",
+    "liveReason": "ネーションズチャンピオンシップ2026で男子日本代表はウェールズ代表に21対28で敗れた。",
     "trafficReason": "深夜から早朝のライブ視聴後、11月8日午前から昼の外出時刻に影響する可能性がある。",
     "nationalReach": 3,
     "liveUrgency": 3,
-    "accessibility": 1,
+    "accessibility": 3,
     "buzz": 3,
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
+    "internalNote": "11月8日朝に日本ラグビーフットボール協会の公式結果を確認。日本時間1:40キックオフ、日本21-28ウェールズ（前半14-21）で終了。放送・配信予定もJRFU公式11月案内へ更新。",
     "sources": [
       {
         "title": "J SPORTS ネーションズチャンピオンシップ",
         "url": "https://www.jsports.co.jp/rugby/nations/"
       },
       {
-        "title": "日本ラグビーフットボール協会 大会・試合情報",
-        "url": "https://www.rugby-japan.jp/calendar/"
+        "title": "日本ラグビーフットボール協会 ウェールズ代表戦 試合結果",
+        "url": "https://www.rugby-japan.jp/news/54311"
+      },
+      {
+        "title": "日本ラグビーフットボール協会 ネーションズチャンピオンシップ2026",
+        "url": "https://www.rugby-japan.jp/tournament/8700"
       }
     ],
-    "impactScore": 22,
+    "impactScore": 24,
     "impactLevel": "中",
     "confidence": "高",
     "predictedWindows": [
@@ -9898,7 +9903,7 @@
     "broadcast": "テレビ朝日系列（一部地域を除く）女子フリー・ペアフリー",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "グランプリシリーズ第3戦の女子フリーとペアフリーを深夜にテレビ放送。",
+    "liveReason": "グランプリシリーズ第3戦で、女子は千葉百音が224.48点で優勝。ペアは長岡柚奈／森口澄士組が181.50点で3位。女子フリーとペアフリーを深夜にテレビ放送。",
     "trafficReason": "深夜放送の視聴後、11月8日午前から昼の外出時刻に影響する可能性がある。",
     "nationalReach": 3,
     "liveUrgency": 2,
@@ -9907,14 +9912,19 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
+    "internalNote": "11月8日朝にISU公式最終結果を確認。女子は千葉百音が総合1位、山下真瑚6位、渡辺倫果11位。ペアは長岡柚奈／森口澄士組が総合3位。競技は予定どおり終了し、中止・延期なし。",
     "sources": [
       {
         "title": "テレビ朝日 フィギュアスケートグランプリシリーズ2026 放送予定",
         "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"
       },
       {
-        "title": "ISU Grand Prix of Figure Skating 2026/27",
-        "url": "https://www.isu.org/figure-skating/events/isu-grand-prix"
+        "title": "ISU GP Cup of China 2026 女子最終結果",
+        "url": "https://results.isu.org/results/season2627/gpchn2026/CAT002RS.htm"
+      },
+      {
+        "title": "ISU GP Cup of China 2026 ペア最終結果",
+        "url": "https://results.isu.org/results/season2627/gpchn2026/CAT003RS.htm"
       }
     ],
     "impactScore": 21,
@@ -9970,6 +9980,88 @@
         "label": "イベント開催中",
         "date": "2026-11-08",
         "start": "09:15",
+        "end": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "ryuka-festival-2026-day2-fireworks",
+    "title": "2026りゅうか祭 2日目・打ち上げ花火",
+    "startAt": "2026-11-08T10:00:00+09:00",
+    "endAt": "2026-11-08T18:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "学園祭・花火・現地イベント",
+    "area": "兵庫・神戸市西区",
+    "inPersonEvent": true,
+    "liveReason": "流通科学大学で地域向けの学園祭を開催し、エンディングで花火を打ち上げる。",
+    "trafficReason": "学園都市駅周辺への来場と、18時前後の帰宅動線に影響する可能性がある。",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "流通科学大学公式で11月7日・8日の開催、8日は10:00開始、17:45〜18:00にエンディング・花火カウントダウンを確認。11月8日朝時点で中止・延期告知なし。",
+    "sources": [
+      {
+        "title": "流通科学大学 2026りゅうか祭",
+        "url": "https://www.umds.ac.jp/ryuka-sai/"
+      },
+      {
+        "title": "流通科学大学 りゅうか祭 ステージイベント11月8日",
+        "url": "https://www.umds.ac.jp/ryuka-sai/stage2/"
+      }
+    ],
+    "impactScore": 15,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-08",
+        "start": "10:00",
+        "end": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "tomohisa-yamashita-tour-2026-dreaming-kobe-1108",
+    "title": "山下智久 TOMOHISA YAMASHITA TOUR 2026 DREAMING 神戸公演",
+    "startAt": "2026-11-08T15:00:00+09:00",
+    "endAt": "2026-11-08T18:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "音楽ライブ・現地イベント",
+    "area": "兵庫・神戸",
+    "inPersonEvent": true,
+    "liveReason": "山下智久の全国ツアー神戸公演をワールド記念ホールで開催。",
+    "trafficReason": "神戸ポートアイランドへの来場と、公演終了後の帰宅動線に影響する可能性がある。",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "11月5日の公式来場案内で11月8日14:00開場・15:00開演、グッズ販売11:00〜終演後30分程度を確認。11月8日朝時点で中止・延期告知なし。終演時刻は公表されていないため18:00を予測終了として設定。",
+    "sources": [
+      {
+        "title": "山下智久公式 神戸公演来場案内",
+        "url": "https://tomohisayamashita.com/news/detail/578"
+      },
+      {
+        "title": "TOMOHISA YAMASHITA TOUR 2026 DREAMING 日程",
+        "url": "https://movie.tomohisayamashita.com/news/detail/100"
+      }
+    ],
+    "impactScore": 16,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-08",
+        "start": "15:00",
         "end": "18:00"
       }
     ]
