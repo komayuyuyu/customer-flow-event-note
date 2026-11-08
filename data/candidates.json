@@ -6312,5 +6312,271 @@
     "sources": [
       {"title": "関西テレビ Livejack 2026 SMASH BEAT SP", "url": "https://www.ktv.jp/event/livejack/"}
     ]
+  },
+  {
+    "id": "best-hits-kayosai-2026",
+    "title": "音楽 ベストヒット歌謡祭2026",
+    "startAt": "2026-11-11T19:00:00+09:00",
+    "endAt": "2026-11-11T22:00:00+09:00",
+    "broadcast": "読売テレビ・日本テレビ系全国ネット生放送、読売テレビ公式YouTube・LINEで裏配信",
+    "category": "音楽特番・現地イベント",
+    "area": "全国・大阪",
+    "inPersonEvent": true,
+    "liveReason": "大阪城ホールから約30組が出演する年末恒例の音楽特番を3時間生放送する。",
+    "trafficReason": "約8,000人の観覧を予定し、大阪城公園駅周辺では開演前と22時頃の終演後に人流が集中する可能性がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "読売テレビ公式サイト・公式SNS導線と出演者各公式告知で話題の広がりを確認。",
+    "sources": [
+      {"title": "読売テレビ ベストヒット歌謡祭2026", "url": "https://www.ytv.co.jp/besthits/"},
+      {"title": "読売テレビ ベストヒット歌謡祭2026 観覧募集", "url": "https://www.ytv.co.jp/besthits/kanran/"}
+    ]
+  },
+  {
+    "id": "levain-cup-2026-quarterfinal-1-kobe-machida",
+    "title": "サッカー 2026/27 JリーグYBCルヴァンカップ 準々決勝 第1戦 ヴィッセル神戸対FC町田ゼルビア",
+    "startAt": "2026-11-11T19:00:00+09:00",
+    "endAt": "2026-11-11T21:00:00+09:00",
+    "broadcast": "フジテレビNEXT・スカパー！・FODフジテレビNEXTsmart・スカパー！動画ストア",
+    "category": "スポーツ中継・現地イベント",
+    "area": "兵庫・神戸",
+    "inPersonEvent": true,
+    "liveReason": "ヴィッセル神戸がノエビアスタジアム神戸で臨むルヴァンカップ準々決勝のホーム第1戦。",
+    "trafficReason": "平日夜のホームゲームで、御崎公園駅周辺は開場前と21時頃の試合終了後に混雑する可能性がある。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "Jリーグ公式 ヴィッセル神戸対FC町田ゼルビア", "url": "https://www.jleague.jp/match/leaguecup/2026/111101/"}
+    ]
+  },
+  {
+    "id": "samurai-blue-kallang-2026-jpn-bra",
+    "title": "サッカー MIZUHO BLUE CHALLENGE THE KALLANG FOOTBALL SERIES SINGAPORE JPN対BRA",
+    "startAt": "2026-11-14T19:15:00+09:00",
+    "endAt": "2026-11-14T21:15:00+09:00",
+    "broadcast": "テレビ朝日系全国ネット生中継、U-NEXT無料ライブ配信・見逃し配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "SAMURAI BLUEがブラジル代表と対戦するワールドカップ後初の強豪国戦。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "JFA公式SNSのメンバー発表投稿、FIFA公式記事、主要スポーツ報道で継続的な話題化を確認。",
+    "sources": [
+      {"title": "JFA 大会放送予定", "url": "https://jfa.jp/samuraiblue/20261117/tv.html"},
+      {"title": "JFA SAMURAI BLUEメンバー・スケジュール", "url": "https://www.jfa.jp/national_team/mens_all_2026/news/00036974/index.html"},
+      {"title": "FIFA 日本代表11月メンバー発表", "url": "https://www.fifa.com/ja/news/articles/japan-squad-announcement-november-2026-ja"}
+    ]
+  },
+  {
+    "id": "rugby-nations-championship-2026-eng-jpn",
+    "title": "ラグビー ネーションズチャンピオンシップ2026 ENG対JPN",
+    "startAt": "2026-11-15T01:40:00+09:00",
+    "endAt": "2026-11-15T03:40:00+09:00",
+    "broadcast": "NHK総合・NHK ONE・WOWOWプライム・WOWOWオンデマンド・J SPORTS 1・J SPORTSオンデマンド・Leminoで生中継・生配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "男子日本代表がロンドンでイングランド代表と対戦する北半球シリーズ第2戦。",
+    "trafficReason": "深夜のライブ視聴後、11月15日午前から昼の外出時刻に影響する可能性がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "日本ラグビーフットボール協会 11月放送・配信予定", "url": "https://www.rugby-japan.jp/news/54312"},
+      {"title": "J SPORTS 日本代表 放送・配信予定", "url": "https://www.jsports.co.jp/rugby/japan/schedule/"}
+    ]
+  },
+  {
+    "id": "jra-queen-elizabeth-ii-cup-2026",
+    "title": "競馬 第51回エリザベス女王杯（GⅠ）",
+    "startAt": "2026-11-15T15:40:00+09:00",
+    "endAt": "2026-11-15T16:00:00+09:00",
+    "broadcast": "テレビ・ラジオ・JRA公式競馬中継",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・京都",
+    "inPersonEvent": true,
+    "liveReason": "京都競馬場で行われる秋の牝馬チャンピオン決定戦。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "JRA 2026年GⅠレース一覧", "url": "https://www.jra.go.jp/datafile/seiseki/replay/2026/g1.html"},
+      {"title": "JRA 2026年11月15日競馬番組", "url": "https://www.jra.go.jp/keiba/calendar2026/2026/11/1115.html"}
+    ]
+  },
+  {
+    "id": "samurai-blue-kallang-2026-jpn-par",
+    "title": "サッカー MIZUHO BLUE CHALLENGE THE KALLANG FOOTBALL SERIES SINGAPORE JPN対PAR",
+    "startAt": "2026-11-17T22:10:00+09:00",
+    "endAt": "2026-11-18T00:10:00+09:00",
+    "broadcast": "日本テレビ系全国ネット生中継、TVerライブ配信、U-NEXTライブ配信・見逃し配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "SAMURAI BLUEが南米予選上位のパラグアイ代表と対戦する大会最終戦。",
+    "trafficReason": "22時台開始のライブ視聴により、11月17日夜の早めの帰宅と18日午前の外出時刻に影響する可能性がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "JFA公式SNSのメンバー発表投稿、FIFA公式記事、主要スポーツ報道で継続的な話題化を確認。",
+    "sources": [
+      {"title": "JFA 大会放送予定", "url": "https://jfa.jp/samuraiblue/20261117/tv.html"},
+      {"title": "JFA SAMURAI BLUEメンバー・スケジュール", "url": "https://www.jfa.jp/national_team/mens_all_2026/news/00036974/index.html"},
+      {"title": "FIFA 日本代表11月メンバー発表", "url": "https://www.fifa.com/ja/news/articles/japan-squad-announcement-november-2026-ja"}
+    ]
+  },
+  {
+    "id": "figure-gp-finland-2026-short",
+    "title": "フィギュアスケート ISUグランプリシリーズ2026 フィンランド大会 男女ショート",
+    "startAt": "2026-11-21T13:30:00+09:00",
+    "endAt": "2026-11-21T15:30:00+09:00",
+    "broadcast": "テレビ朝日系列（一部地域を除く）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "グランプリシリーズ第5戦で日本の男女有力選手が出場するショートプログラム。",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "テレビ朝日 フィギュアスケートグランプリシリーズ2026 放送予定", "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"}
+    ]
+  },
+  {
+    "id": "kobe-port-weekend-fireworks-20261121",
+    "title": "神戸港ウィークエンド花火",
+    "startAt": "2026-11-21T18:00:00+09:00",
+    "endAt": "2026-11-21T18:05:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "花火・現地イベント",
+    "area": "神戸・メリケンパーク",
+    "inPersonEvent": true,
+    "liveReason": "メリケンパーク沖で約5分間打ち上げる神戸港の週末花火。",
+    "trafficReason": "神戸港周辺への来場と18時台の帰宅動線に影響する可能性がある。",
+    "nationalReach": 1,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "神戸市 神戸港のイベント情報", "url": "https://www.city.kobe.lg.jp/z/kowankyoku/kurashi/access/harbor/index.html"},
+      {"title": "神戸港Uパーク 2026年度年間スケジュール", "url": "https://www.kobeport-upark.jp/2026/07/04/2026%E5%B9%B4%E5%BA%A6%E7%A5%9E%E6%88%B8%E6%B8%AF%E3%82%A6%E3%82%A3%E3%83%BC%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89%E8%8A%B1%E7%81%AB%E3%81%AE%E5%B9%B4%E9%96%93%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92/"}
+    ]
+  },
+  {
+    "id": "rugby-nations-championship-2026-sco-jpn",
+    "title": "ラグビー ネーションズチャンピオンシップ2026 SCO対JPN",
+    "startAt": "2026-11-21T23:10:00+09:00",
+    "endAt": "2026-11-22T01:10:00+09:00",
+    "broadcast": "WOWOWライブ・J SPORTS 1で生中継、WOWOWオンデマンド・Lemino・J SPORTSオンデマンドで生配信、NHK総合・NHK ONEで24:10から録画放送・配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "男子日本代表がスコットランド代表と対戦する北半球シリーズ第3戦。",
+    "trafficReason": "深夜までのライブ視聴後、11月22日午前から昼の外出時刻に影響する可能性がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "日本ラグビーフットボール協会 11月放送・配信予定", "url": "https://www.rugby-japan.jp/news/54312"},
+      {"title": "J SPORTS 日本代表 放送・配信予定", "url": "https://www.jsports.co.jp/rugby/japan/schedule/"}
+    ]
+  },
+  {
+    "id": "figure-gp-finland-2026-free",
+    "title": "フィギュアスケート ISUグランプリシリーズ2026 フィンランド大会 男女フリー",
+    "startAt": "2026-11-22T13:55:00+09:00",
+    "endAt": "2026-11-22T16:00:00+09:00",
+    "broadcast": "テレビ朝日系列",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "グランプリシリーズ第5戦の順位が決まる男女フリー。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "テレビ朝日 フィギュアスケートグランプリシリーズ2026 放送予定", "url": "https://www.tv-asahi.co.jp/figure-gp2026/onair/"}
+    ]
+  },
+  {
+    "id": "sumo-november-2026-final",
+    "title": "大相撲 令和八年十一月場所 千秋楽",
+    "startAt": "2026-11-22T15:05:00+09:00",
+    "endAt": "2026-11-22T18:00:00+09:00",
+    "broadcast": "NHK総合・NHK BS・NHK ONE",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・福岡",
+    "inPersonEvent": true,
+    "liveReason": "福岡国際センターで令和八年最後の本場所の優勝が決まる千秋楽。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "日本相撲協会 年間日程表", "url": "https://www.sumo.or.jp/Admission/schedule/"},
+      {"title": "日本相撲協会 相撲カレンダー", "url": "https://www.sumo.or.jp/Calendar/"}
+    ]
+  },
+  {
+    "id": "jra-mile-championship-2026",
+    "title": "競馬 第43回マイルチャンピオンシップ（GⅠ）",
+    "startAt": "2026-11-22T15:40:00+09:00",
+    "endAt": "2026-11-22T16:00:00+09:00",
+    "broadcast": "テレビ・ラジオ・JRA公式競馬中継",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・京都",
+    "inPersonEvent": true,
+    "liveReason": "京都競馬場で行われる秋のマイル王決定戦。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "JRA 第43回マイルチャンピオンシップ", "url": "https://www.jra.go.jp/keiba/g1/mile.html"},
+      {"title": "JRA 2026年GⅠレース一覧", "url": "https://www.jra.go.jp/datafile/seiseki/replay/2026/g1.html"}
+    ]
   }
 ]
