@@ -6578,5 +6578,27 @@
       {"title": "JRA 第43回マイルチャンピオンシップ", "url": "https://www.jra.go.jp/keiba/g1/mile.html"},
       {"title": "JRA 2026年GⅠレース一覧", "url": "https://www.jra.go.jp/datafile/seiseki/replay/2026/g1.html"}
     ]
+  },
+  {
+    "id": "showa-100-symphonic-kayosai-20261109",
+    "title": "音楽 昭和100年シンフォニック歌謡祭",
+    "startAt": "2026-11-09T19:00:00+09:00",
+    "endAt": "2026-11-09T21:00:00+09:00",
+    "broadcast": "U-NEXT独占ライブ配信・見逃し配信（有料）",
+    "category": "音楽ライブ配信",
+    "area": "全国",
+    "liveReason": "昭和の名曲をフルオーケストラとトークで届ける公演を独占ライブ配信する。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "U-NEXT公式の2026年11月配信ラインナップ掲載を確認。終了時刻は公式未記載のため表示上21:00を仮置き。",
+    "sources": [
+      {"title": "U-NEXT 昭和100年＆101年シンフォニック歌謡祭 独占ライブ配信", "url": "https://help.unext.jp/info-video/detail/info126c"},
+      {"title": "U-NEXT 2026年11月 音楽ライブ配信ラインナップ", "url": "https://www.unext.co.jp/ja/press-room/2026-11-live-lineups"}
+    ]
   }
 ]
