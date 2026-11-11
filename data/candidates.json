@@ -6600,5 +6600,75 @@
       {"title": "U-NEXT 昭和100年＆101年シンフォニック歌謡祭 独占ライブ配信", "url": "https://help.unext.jp/info-video/detail/info126c"},
       {"title": "U-NEXT 2026年11月 音楽ライブ配信ラインナップ", "url": "https://www.unext.co.jp/ja/press-room/2026-11-live-lineups"}
     ]
+  },
+  {
+    "id": "apbc-2026-jpn-tpe",
+    "title": "野球 ラグザス アジアプロ野球チャンピオンシップ2026 予選 JPN対TPE",
+    "startAt": "2026-11-12T19:00:00+09:00",
+    "endAt": "2026-11-12T22:00:00+09:00",
+    "broadcast": "Prime Videoライブ配信（18:30〜・有料）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "東京ドームで開幕するアジア4か国の国際大会で、侍ジャパンがチャイニーズ・タイペイ代表と初戦を戦う。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 1,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "侍ジャパン公式で11月12日19時開始、Prime Videoは18時30分配信開始を確認。終了時刻は試合時間3時間の目安。11月9日の始球式発表まで更新されており、中止・延期告知なし。",
+    "sources": [
+      {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 試合日程", "url": "https://www.japan-baseball.jp/jp/games/apbc2026/index.html"},
+      {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 放送・配信", "url": "https://www.japan-baseball.jp/jp/news/press/20261010_1.html"},
+      {"title": "侍ジャパン 11月12日始球式のお知らせ", "url": "https://www.japan-baseball.jp/jp/news/press/20261109_3.html"}
+    ]
+  },
+  {
+    "id": "apbc-2026-jpn-kor",
+    "title": "野球 ラグザス アジアプロ野球チャンピオンシップ2026 予選 JPN対KOR",
+    "startAt": "2026-11-13T19:00:00+09:00",
+    "endAt": "2026-11-13T22:00:00+09:00",
+    "broadcast": "テレビ朝日系列（一部地域を除く）18:50〜、Prime Videoライブ配信18:30〜",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "アジア4か国の国際大会で、侍ジャパンが韓国代表と対戦する地上波生中継の予選第2戦。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "侍ジャパン公式で11月13日19時開始、テレビ朝日系列18時50分、Prime Video18時30分開始を確認。終了時刻は試合時間3時間の目安。",
+    "sources": [
+      {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 試合日程", "url": "https://www.japan-baseball.jp/jp/games/apbc2026/index.html"},
+      {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 放送・配信", "url": "https://www.japan-baseball.jp/jp/news/press/20261010_1.html"}
+    ]
+  },
+  {
+    "id": "apbc-2026-jpn-aus",
+    "title": "野球 ラグザス アジアプロ野球チャンピオンシップ2026 予選 JPN対AUS",
+    "startAt": "2026-11-14T12:00:00+09:00",
+    "endAt": "2026-11-14T15:00:00+09:00",
+    "broadcast": "テレビ朝日系列12:00〜（BSリレーあり）、Prime Videoライブ配信11:30〜",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "アジア4か国の国際大会で、侍ジャパンがオーストラリア代表と対戦する地上波生中継の予選第3戦。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "侍ジャパン公式で11月14日12時開始、テレビ朝日系列12時、Prime Video11時30分開始を確認。終了時刻は試合時間3時間の目安。",
+    "sources": [
+      {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 試合日程", "url": "https://www.japan-baseball.jp/jp/games/apbc2026/index.html"},
+      {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 放送・配信", "url": "https://www.japan-baseball.jp/jp/news/press/20261010_1.html"}
+    ]
   }
 ]
