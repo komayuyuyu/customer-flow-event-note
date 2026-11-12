@@ -6610,7 +6610,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・東京",
     "inPersonEvent": true,
-    "liveReason": "東京ドームで開幕するアジア4か国の国際大会で、侍ジャパンがチャイニーズ・タイペイ代表と初戦を戦う。",
+    "liveReason": "東京ドームで開幕したアジア4か国の国際大会で、侍ジャパンがチャイニーズ・タイペイ代表に5対0で勝利した。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 1,
@@ -6618,11 +6618,12 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
-    "internalNote": "侍ジャパン公式で11月12日19時開始、Prime Videoは18時30分配信開始を確認。終了時刻は試合時間3時間の目安。11月9日の始球式発表まで更新されており、中止・延期告知なし。",
+    "internalNote": "侍ジャパン公式で11月12日19時開始、Prime Videoは18時30分配信開始を確認。11月12日23時59分更新の公式速報と試合レポートで日本5対0チャイニーズ・タイペイの試合終了を確認。終了時刻は試合時間3時間の目安。",
     "sources": [
       {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 試合日程", "url": "https://www.japan-baseball.jp/jp/games/apbc2026/index.html"},
       {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 放送・配信", "url": "https://www.japan-baseball.jp/jp/news/press/20261010_1.html"},
-      {"title": "侍ジャパン 11月12日始球式のお知らせ", "url": "https://www.japan-baseball.jp/jp/news/press/20261109_3.html"}
+      {"title": "侍ジャパン 11月12日始球式のお知らせ", "url": "https://www.japan-baseball.jp/jp/news/press/20261109_3.html"},
+      {"title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 JPN対TPE試合結果", "url": "https://www.japan-baseball.jp/jp/news/press/20261112_5.html"}
     ]
   },
   {
