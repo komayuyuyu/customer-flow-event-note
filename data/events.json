@@ -10908,6 +10908,50 @@
     ]
   },
   {
+    "id": "queens-ekiden-2026",
+    "title": "陸上 クイーンズ駅伝2026 第46回全日本実業団対抗女子駅伝競走大会",
+    "startAt": "2026-11-22T11:35:00+09:00",
+    "endAt": "2026-11-22T14:55:00+09:00",
+    "broadcast": "TBS系列全国生中継（11:35〜）",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・宮城",
+    "inPersonEvent": true,
+    "liveReason": "女子実業団駅伝の日本一を決める全国大会。24チームが6区間42.195キロを走る。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "TBS公式で11月22日11時35分放送開始、正午スタートを確認。終了時刻は番組枠の目安。",
+    "sources": [
+      {
+        "title": "TBS クイーンズ駅伝2026",
+        "url": "https://www.tbs.co.jp/ekiden/"
+      },
+      {
+        "title": "仙台市 クイーンズ駅伝2026交通規制",
+        "url": "https://www.city.sendai.jp/sports-jigyo/calendar/documents/queens2026kisei.pdf"
+      },
+      {
+        "title": "TBS NEWS DIG クイーンズ駅伝エントリー発表",
+        "url": "https://newsdig.tbs.co.jp/articles/-/3060247"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-22",
+        "start": "11:35",
+        "end": "14:55"
+      }
+    ]
+  },
+  {
     "id": "figure-gp-finland-2026-free",
     "title": "フィギュアスケート ISUグランプリシリーズ2026 フィンランド大会 男女フリー",
     "startAt": "2026-11-22T13:55:00+09:00",
@@ -11014,6 +11058,212 @@
       {
         "label": "イベント開催中",
         "date": "2026-11-22",
+        "start": "15:40",
+        "end": "16:00"
+      }
+    ]
+  },
+  {
+    "id": "figure-gp-nhk-trophy-2026-short",
+    "title": "フィギュアスケート ISUグランプリシリーズ2026 NHK杯 男女ショート",
+    "startAt": "2026-11-27T16:05:00+09:00",
+    "endAt": "2026-11-27T20:45:00+09:00",
+    "broadcast": "NHK総合・NHK BS・NHK BSP4K",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "グランプリシリーズ第6戦の男女ショートを国内開催し、NHKが生中継する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本スケート連盟 NHK杯2026 放送予定",
+        "url": "https://www.skatingjapan.or.jp/nhk2026/broadcast.html"
+      },
+      {
+        "title": "日本スケート連盟 NHK杯2026 日程・結果",
+        "url": "https://www.skatingjapan.or.jp/nhk2026/schedule.html"
+      },
+      {
+        "title": "ISU 2026/27グランプリシリーズ案内",
+        "url": "https://www.isu.org/en/news/ready-set-skate-your-guide-to-the-202627-isu-figure-skating-grand-prix-season"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-27",
+        "start": "16:05",
+        "end": "20:45"
+      }
+    ]
+  },
+  {
+    "id": "best-artist-2026",
+    "title": "音楽 ベストアーティスト2026",
+    "startAt": "2026-11-28T16:00:00+09:00",
+    "endAt": "2026-11-28T22:54:00+09:00",
+    "broadcast": "日本テレビ系 第一部16:00〜17:00（一部地域を除く）・第二部19:00〜22:54",
+    "category": "音楽特番",
+    "area": "全国",
+    "liveReason": "年末の大型音楽特番を約5時間にわたり放送する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本テレビ バラエティ・音楽 放送予定",
+        "url": "https://www.ntv.co.jp/variety/"
+      },
+      {
+        "title": "日本テレビ 公式SNS一覧 ベストアーティスト",
+        "url": "https://www.ntv.co.jp/sns/"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-11-28",
+        "start": "16:00",
+        "end": "22:54"
+      }
+    ]
+  },
+  {
+    "id": "figure-gp-nhk-trophy-2026-free",
+    "title": "フィギュアスケート ISUグランプリシリーズ2026 NHK杯 男女フリー",
+    "startAt": "2026-11-28T16:30:00+09:00",
+    "endAt": "2026-11-28T21:45:00+09:00",
+    "broadcast": "NHK総合・NHK BSP4K",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "グランプリシリーズ第6戦の順位が決まる男女フリーを国内開催し、NHKが生中継する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本スケート連盟 NHK杯2026 放送予定",
+        "url": "https://www.skatingjapan.or.jp/nhk2026/broadcast.html"
+      },
+      {
+        "title": "日本スケート連盟 NHK杯2026 日程・結果",
+        "url": "https://www.skatingjapan.or.jp/nhk2026/schedule.html"
+      },
+      {
+        "title": "ISU 2026/27グランプリシリーズ案内",
+        "url": "https://www.isu.org/en/news/ready-set-skate-your-guide-to-the-202627-isu-figure-skating-grand-prix-season"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-28",
+        "start": "16:30",
+        "end": "21:45"
+      }
+    ]
+  },
+  {
+    "id": "figure-gp-nhk-trophy-2026-exhibition",
+    "title": "フィギュアスケート ISUグランプリシリーズ2026 NHK杯 エキシビション",
+    "startAt": "2026-11-29T13:05:00+09:00",
+    "endAt": "2026-11-29T15:30:00+09:00",
+    "broadcast": "NHK総合・NHK BSP4K",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "NHK杯の上位選手らによる最終日のエキシビションを生中継する。",
+    "nationalReach": 3,
+    "liveUrgency": 2,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "日本スケート連盟 NHK杯2026 放送予定",
+        "url": "https://www.skatingjapan.or.jp/nhk2026/broadcast.html"
+      },
+      {
+        "title": "日本スケート連盟 NHK杯2026 日程・結果",
+        "url": "https://www.skatingjapan.or.jp/nhk2026/schedule.html"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-29",
+        "start": "13:05",
+        "end": "15:30"
+      }
+    ]
+  },
+  {
+    "id": "jra-japan-cup-2026",
+    "title": "競馬 ロンジン賞 第46回ジャパンカップ（GⅠ）",
+    "startAt": "2026-11-29T15:40:00+09:00",
+    "endAt": "2026-11-29T16:00:00+09:00",
+    "broadcast": "テレビ・ラジオ・JRA公式競馬中継",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "国内外の有力馬が東京競馬場で争う国際招待GⅠ。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {
+        "title": "JRA 第46回ジャパンカップ",
+        "url": "https://www.jra.go.jp/keiba/g1/jc.html"
+      },
+      {
+        "title": "JRA ジャパンカップ当日の東京競馬場利用方法",
+        "url": "https://www.jra.go.jp/news/202611/111301.html"
+      },
+      {
+        "title": "JRA 東京競馬場指定席抽選申込状況",
+        "url": "https://www.jra.go.jp/ticket/seat/status/2026tokyo.html"
+      }
+    ],
+    "impactScore": 24,
+    "impactLevel": "大",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-29",
         "start": "15:40",
         "end": "16:00"
       }
