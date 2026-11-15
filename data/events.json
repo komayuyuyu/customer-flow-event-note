@@ -10703,7 +10703,7 @@
     "category": "スポーツ中継・現地イベント",
     "area": "全国・東京",
     "inPersonEvent": true,
-    "liveReason": "アジア4か国の国際大会で、3連勝の侍ジャパンが大会3連覇を懸けて韓国代表と対戦する決勝。",
+    "liveReason": "アジア4か国の国際大会で、侍ジャパンが韓国代表に5対1で勝利し、無傷の4連勝で大会3連覇を達成した決勝。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -10711,7 +10711,7 @@
     "significance": 3,
     "impactLevelOverride": "大",
     "officialConfirmed": true,
-    "internalNote": "侍ジャパン公式で11月15日19時開始の決勝JPN対KOR、TBSテレビ系列19時、Prime Video18時30分開始を確認。終了時刻は試合時間3時間の目安。",
+    "internalNote": "侍ジャパン公式で11月15日19時8分開始、日本5対1韓国の試合終了、大会3連覇、宗山塁のMVPを確認。TBSテレビ系列19時、Prime Video18時30分開始。終了時刻は試合時間3時間の目安。",
     "sources": [
       {
         "title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 試合日程",
@@ -10722,8 +10722,8 @@
         "url": "https://www.japan-baseball.jp/jp/games/apbc2026/broadcast.html"
       },
       {
-        "title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 JPN対AUS試合結果",
-        "url": "https://www.japan-baseball.jp/jp/news/press/20261114_2.html"
+        "title": "侍ジャパン ラグザス アジアプロ野球チャンピオンシップ2026 JPN対KOR試合結果",
+        "url": "https://www.japan-baseball.jp/jp/games/apbc2026/index.html"
       }
     ],
     "impactScore": 24,
@@ -10735,6 +10735,50 @@
         "date": "2026-11-15",
         "start": "19:00",
         "end": "22:00"
+      }
+    ]
+  },
+  {
+    "id": "wbsc-u23-world-cup-2026-third-place-jpn-tpe",
+    "title": "野球 ラグザス presents WBSC U-23野球ワールドカップ2026 3位決定戦 JPN対TPE",
+    "startAt": "2026-11-16T03:00:00+09:00",
+    "endAt": "2026-11-16T05:30:00+09:00",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "侍ジャパンU-23代表がチャイニーズ・タイペイ代表に8対4で勝利し、世界大会3位となった。",
+    "nationalReach": 2,
+    "liveUrgency": 2,
+    "accessibility": 1,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "侍ジャパン公式で11月16日3時開始、日本8対4チャイニーズ・タイペイの試合終了を確認。公式の放送・配信案内は確認できず、試合速報を出典とした。終了時刻は7回制試合の目安。",
+    "sources": [
+      {
+        "title": "侍ジャパン ラグザス presents WBSC U-23野球ワールドカップ2026 3位決定戦試合結果",
+        "url": "https://www.japan-baseball.jp/jp/team/23u/score/20261116_1/"
+      },
+      {
+        "title": "侍ジャパン ラグザス presents WBSC U-23野球ワールドカップ2026 大会概要",
+        "url": "https://www.japan-baseball.jp/jp/team/23u/2026/worldcup/overview.html"
+      }
+    ],
+    "impactScore": 17,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-11-16",
+        "start": "03:00",
+        "end": "05:30"
+      },
+      {
+        "label": "深夜視聴の翌日",
+        "date": "2026-11-16",
+        "start": "10:00",
+        "end": "14:00"
       }
     ]
   },
