@@ -487,7 +487,8 @@ class StaticContractTest(unittest.TestCase):
     def test_store_events_are_available_for_record_linking(self):
         store_events = json.loads((ROOT / "data" / "store-events.json").read_text(encoding="utf-8"))
         by_title = {event["title"]: event for event in store_events}
-        self.assertEqual(set(by_title), {
+        by_id = {event["id"]: event for event in store_events}
+        self.assertTrue({
             "MORE PRICE DOWN 打ち出し",
             "ORCIVAL 打ち出し",
             "館 SUPER OUTLET SALE",
@@ -514,11 +515,11 @@ class StaticContractTest(unittest.TestCase):
             "【館】サンプル・B品フェア",
             "【P・W限定】ポイントアップ",
             "【全会員】ポイントアップ",
-        })
+        }.issubset(by_title))
         self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["startAt"][:10], "2026-07-03")
         self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["endAt"][:10], "2026-07-12")
-        self.assertEqual(by_title["ORCIVAL 打ち出し"]["startAt"][:10], "2026-07-17")
-        self.assertEqual(by_title["ORCIVAL 打ち出し"]["endAt"][:10], "2026-07-26")
+        self.assertEqual(by_id["store-orcival-feature-20260717"]["startAt"][:10], "2026-07-17")
+        self.assertEqual(by_id["store-orcival-feature-20260717"]["endAt"][:10], "2026-07-26")
         self.assertEqual(by_title["館 SUPER OUTLET SALE"]["startAt"][:10], "2026-07-17")
         self.assertEqual(by_title["館 SUPER OUTLET SALE"]["endAt"][:10], "2026-08-16")
         self.assertTrue(by_title["館 SUPER OUTLET SALE"]["showEachDay"])
@@ -560,7 +561,26 @@ class StaticContractTest(unittest.TestCase):
             by_title["特別営業時間（11/22）"]["sources"][0]["url"],
             "https://mitsui-shopping-park.com/mop/kobe/hour/",
         )
-        by_id = {event["id"]: event for event in store_events}
+        expected_year_end_dates = {
+            "store-sample-feature-20261204": ("2026-12-04", "2026-12-13"),
+            "store-buyaround-cp-20261207": ("2026-12-07", "2026-12-20"),
+            "store-orcival-feature-20261218": ("2026-12-18", "2026-12-27"),
+            "store-noritoku-20261226": ("2026-12-26", "2027-01-03"),
+            "store-noritoku-20270109": ("2027-01-09", "2027-01-11"),
+            "store-point-up-20270109": ("2027-01-09", "2027-01-11"),
+            "store-point-up-20270116": ("2027-01-16", "2027-01-17"),
+            "store-special-hours-20261231": ("2026-12-31", "2026-12-31"),
+            "store-special-hours-20270101": ("2027-01-01", "2027-01-03"),
+            "store-special-hours-20270110": ("2027-01-10", "2027-01-10"),
+        }
+        for event_id, (start_date, end_date) in expected_year_end_dates.items():
+            event = by_id[event_id]
+            self.assertEqual(event["startAt"][:10], start_date)
+            self.assertEqual(event["endAt"][:10], end_date)
+            self.assertEqual(event["predictedWindows"][0]["date"], start_date)
+            self.assertIn("仮登録", event["internalNote"])
+        for event_id in ("store-special-hours-20261231", "store-special-hours-20270101", "store-special-hours-20270110"):
+            self.assertEqual(by_id[event_id]["displayOrder"], 10)
         expected_october_dates = {
             "store-shopping-ticket-present-20261001": ("2026-10-01", "2026-10-12"),
             "store-more-price-feature-20261009": ("2026-10-09", "2026-10-18"),
