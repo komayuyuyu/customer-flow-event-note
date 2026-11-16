@@ -10783,6 +10783,45 @@
     ]
   },
   {
+    "id": "waff-amputee-world-cup-2026-group-c-bra-jpn",
+    "title": "アンプティサッカー WAFFアンプティサッカーワールドカップ2026 グループC BRA対JPN",
+    "startAt": "2026-11-17T08:30:00+09:00",
+    "endAt": "2026-11-17T09:30:00+09:00",
+    "broadcast": "WAFF公式YouTubeライブ配信（無料）",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "2連勝中のアンプティサッカー日本代表がグループ1位通過を懸けてブラジル代表と対戦するワールドカップ第3戦。",
+    "nationalReach": 1,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 1,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "日本アンプティサッカー協会公式で11月17日8時30分開始とWAFF公式YouTube無料ライブ配信を確認。終了時刻はアンプティサッカーの試合時間を踏まえた1時間の目安。",
+    "sources": [
+      {
+        "title": "日本アンプティサッカー協会 WAFFワールドカップ2026 日本代表試合日程・ライブ配信",
+        "url": "https://japan-amputee.jp/2026/11/09/%E3%80%90%E3%83%97%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%80%91waff-%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%82%AB%E3%83%83%E3%83%972026-%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8-%E8%A9%A6/"
+      },
+      {
+        "title": "日本アンプティサッカー協会 ドイツ戦結果・ブラジル戦案内",
+        "url": "https://japan-amputee.jp/2026/11/16/wc2026-match2-germany/"
+      }
+    ],
+    "impactScore": 18,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-11-17",
+        "start": "08:30",
+        "end": "09:30"
+      }
+    ]
+  },
+  {
     "id": "samurai-blue-kallang-2026-jpn-par",
     "title": "サッカー MIZUHO BLUE CHALLENGE THE KALLANG FOOTBALL SERIES SINGAPORE JPN対PAR",
     "startAt": "2026-11-17T22:10:00+09:00",
@@ -10790,8 +10829,7 @@
     "broadcast": "日本テレビ系全国ネット生中継、TVerライブ配信、U-NEXTライブ配信・見逃し配信",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "SAMURAI BLUEが南米予選上位のパラグアイ代表と対戦する大会最終戦。",
-    "trafficReason": "22時台開始のライブ視聴により、11月17日夜の早めの帰宅と18日午前の外出時刻に影響する可能性がある。",
+    "liveReason": "SAMURAI BLUEが南米予選上位のパラグアイ代表と対戦する大会最終戦で、森保一監督の代表ラストマッチ。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -10799,7 +10837,7 @@
     "significance": 3,
     "impactLevelOverride": "大",
     "officialConfirmed": true,
-    "internalNote": "JFA公式SNSのメンバー発表投稿、FIFA公式記事、主要スポーツ報道で継続的な話題化を確認。",
+    "internalNote": "JFA公式で11月17日22時10分開始、日本テレビ系全国ネット・TVerライブ配信・U-NEXT有料ライブ配信を確認。JFA会長発表と主要報道で森保一監督の代表ラストマッチと確認。終了時刻は2時間の目安。",
     "sources": [
       {
         "title": "JFA 大会放送予定",
