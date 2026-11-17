@@ -6458,7 +6458,7 @@
     "broadcast": "日本テレビ系全国ネット生中継、TVerライブ配信、U-NEXTライブ配信・見逃し配信",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "SAMURAI BLUEが南米予選上位のパラグアイ代表と対戦する大会最終戦で、森保一監督の代表ラストマッチ。",
+    "liveReason": "森保一監督の代表ラストマッチは日本がパラグアイに1対2で敗戦。福田師王が代表デビュー戦で初得点を記録した。",
     "nationalReach": 3,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -6466,11 +6466,12 @@
     "significance": 3,
     "impactLevelOverride": "大",
     "officialConfirmed": true,
-    "internalNote": "JFA公式で11月17日22時10分開始、日本テレビ系全国ネット・TVerライブ配信・U-NEXT有料ライブ配信を確認。JFA会長発表と主要報道で森保一監督の代表ラストマッチと確認。終了時刻は2時間の目安。",
+    "internalNote": "JFA公式で11月17日22時10分開始、日本テレビ系全国ネット・TVerライブ配信・U-NEXT有料ライブ配信を確認。FIFA公式試合レポートで日本1対2パラグアイ、福田師王の代表デビュー弾、森保一監督の代表ラストマッチ終了を確認。終了時刻は2時間の目安。",
     "sources": [
       {"title": "JFA 大会放送予定", "url": "https://jfa.jp/samuraiblue/20261117/tv.html"},
       {"title": "JFA SAMURAI BLUEメンバー・スケジュール", "url": "https://www.jfa.jp/national_team/mens_all_2026/news/00036974/index.html"},
-      {"title": "FIFA 日本代表11月メンバー発表", "url": "https://www.fifa.com/ja/news/articles/japan-squad-announcement-november-2026-ja"}
+      {"title": "FIFA 日本代表11月メンバー発表", "url": "https://www.fifa.com/ja/news/articles/japan-squad-announcement-november-2026-ja"},
+      {"title": "FIFA 日本対パラグアイ試合レポート", "url": "https://www.fifa.com/ja/news/articles/japan-paraguay-friendly-match-report-171126-ja"}
     ]
   },
   {
