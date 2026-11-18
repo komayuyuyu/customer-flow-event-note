@@ -6475,6 +6475,29 @@
     ]
   },
   {
+    "id": "fifa-u17-world-cup-2026-group-l-jpn-col",
+    "title": "サッカー FIFA U-17ワールドカップ カタール2026 グループL JPN対COL",
+    "startAt": "2026-11-21T21:30:00+09:00",
+    "endAt": "2026-11-21T23:30:00+09:00",
+    "broadcast": "DAZN無料ライブ配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "U-17日本代表がコロンビア代表と対戦するワールドカップ初戦。",
+    "nationalReach": 1,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 1,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "JFA公式で11月21日21時30分開始、DAZN公式で日本代表戦を含む全104試合の無料ライブ配信を確認。終了時刻は2時間の目安。",
+    "sources": [
+      {"title": "JFA FIFA U-17ワールドカップ カタール2026 日程・結果", "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/schedule_result/"},
+      {"title": "JFA FIFA U-17ワールドカップ カタール2026 TV放送・配信", "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/tv.html"},
+      {"title": "DAZN FIFA U-17ワールドカップ カタール2026 全試合無料ライブ配信", "url": "https://dazngroup.com/press-room/1116/"}
+    ]
+  },
+  {
     "id": "figure-gp-finland-2026-short",
     "title": "フィギュアスケート ISUグランプリシリーズ2026 フィンランド大会 男女ショート",
     "startAt": "2026-11-21T13:30:00+09:00",
