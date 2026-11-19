@@ -6993,5 +6993,27 @@
       {"title": "JRA ジャパンカップ当日の東京競馬場利用方法", "url": "https://www.jra.go.jp/news/202611/111301.html"},
       {"title": "JRA 東京競馬場指定席抽選申込状況", "url": "https://www.jra.go.jp/ticket/seat/status/2026tokyo.html"}
     ]
+  },
+  {
+    "id": "yoshiki-birthday-special-2026",
+    "title": "音楽 YOSHIKI BIRTHDAY SPECIAL 2026",
+    "startAt": "2026-11-20T14:00:00+09:00",
+    "endAt": "2026-11-20T23:00:00+09:00",
+    "broadcast": "YouTubeメンバーシップ・ニコニコチャンネルで生配信、一部YouTube無料公開・Instagram Live予定",
+    "category": "音楽配信",
+    "area": "全国・東京",
+    "liveReason": "YOSHIKIの誕生日に、東京10カ所以上を巡るロケやゲスト出演、ピアノ生演奏を約9時間生配信する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "YOSHIKI公式が11月18日に発表。11月20日14時開始、約9時間の生放送。一部YouTube無料公開とInstagram Liveを予定。終了時刻は公式の9時間規模から23時を設定。",
+    "sources": [
+      {"title": "YOSHIKI公式 YOSHIKI CHANNEL 2DAYSスペシャル生放送", "url": "https://jp.yoshiki.net/info/8887/"},
+      {"title": "YOSHIKI公式 11月19日の発表と11月20日の配信予定", "url": "https://jp.yoshiki.net/info/8897/"}
+    ]
   }
 ]
