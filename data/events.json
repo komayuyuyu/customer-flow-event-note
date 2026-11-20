@@ -10914,10 +10914,51 @@
     ]
   },
   {
+    "id": "music-2026-mama-awards-chapter-2",
+    "title": "音楽 2026 MAMA AWARDS CHAPTER 2",
+    "startAt": "2026-11-21T12:30:00+09:00",
+    "endAt": "2026-11-21T19:00:00+09:00",
+    "broadcast": "U-NEXT・Mnet・Mnet Smart+で生配信・生中継",
+    "category": "音楽配信・現地イベント",
+    "area": "全国・大阪",
+    "inPersonEvent": true,
+    "liveReason": "京セラドーム大阪で開催する世界最大級のK-POP授賞式。BIGBANG、IVE、LE SSERAFIM、NAYEON（TWICE）などが出演する。",
+    "trafficReason": "京セラドーム大阪周辺では、開演前と終演後の来場・帰宅動線に影響する可能性がある。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "U-NEXTが11月18日に配信情報を更新。12:30レッドカーペット、15:00授賞式開始。公式に終了時刻の記載がないため19:00を目安として設定。",
+    "sources": [
+      {
+        "title": "U-NEXT 2026 MAMA AWARDS 日本独占生配信",
+        "url": "https://www.unext.co.jp/ja/press-room/2026-mama-awards-live-2026-10-27"
+      },
+      {
+        "title": "Mnet Japan 2026 MAMA AWARDS",
+        "url": "https://mnetjp.com/mama/2026/"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-21",
+        "start": "12:30",
+        "end": "19:00"
+      }
+    ]
+  },
+  {
     "id": "figure-gp-finland-2026-short",
     "title": "フィギュアスケート ISUグランプリシリーズ2026 フィンランド大会 男女ショート",
     "startAt": "2026-11-21T13:30:00+09:00",
-    "endAt": "2026-11-21T15:30:00+09:00",
+    "endAt": "2026-11-21T15:00:00+09:00",
     "broadcast": "テレビ朝日系列（一部地域を除く）",
     "category": "スポーツ中継",
     "area": "全国",
@@ -10943,7 +10984,7 @@
         "label": "リアルタイム視聴",
         "date": "2026-11-21",
         "start": "13:30",
-        "end": "15:30"
+        "end": "15:00"
       }
     ]
   },
