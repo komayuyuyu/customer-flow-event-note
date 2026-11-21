@@ -10989,6 +10989,48 @@
     ]
   },
   {
+    "id": "hinatazaka46-hinakuri-2026-kobe",
+    "title": "音楽 日向坂46 ARENA TOUR「ひなくり2026」兵庫公演",
+    "startAt": "2026-11-21T17:30:00+09:00",
+    "endAt": "2026-11-23T20:30:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "音楽ライブ・現地イベント",
+    "area": "神戸・神戸ワールド記念ホール",
+    "inPersonEvent": true,
+    "showEachDay": true,
+    "liveReason": "日向坂46のアリーナツアー兵庫公演を神戸ワールド記念ホールで3日間開催する。",
+    "trafficReason": "各日16:00開場・17:30開演で、ポートアイランド周辺の来場・帰宅動線に影響する可能性がある。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "公式特設サイトで11月21日・22日・23日の各日16:00開場、17:30開演を確認。終了時刻の公式記載がないため、各日20:30を目安とした。",
+    "sources": [
+      {
+        "title": "日向坂46 ARENA TOUR ひなくり2026 公式特設サイト",
+        "url": "https://www.hinatazaka46.com/s/official/page/hinachri2026"
+      },
+      {
+        "title": "日向坂46 ひなくり2026 兵庫公演スケジュール",
+        "url": "https://www.hinatazaka46.com/s/official/media/detail/12342"
+      }
+    ],
+    "impactScore": 19,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-21",
+        "start": "17:30",
+        "end": "20:30"
+      }
+    ]
+  },
+  {
     "id": "kobe-port-weekend-fireworks-20261121",
     "title": "神戸港ウィークエンド花火",
     "startAt": "2026-11-21T18:00:00+09:00",
@@ -11079,7 +11121,7 @@
     "broadcast": "WOWOWライブ・J SPORTS 1で生中継、WOWOWオンデマンド・Lemino・J SPORTSオンデマンドで生配信、NHK総合・NHK ONEで24:10から録画放送・配信",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "男子日本代表がスコットランド代表と対戦する北半球シリーズ第3戦。",
+    "liveReason": "男子日本代表はスコットランド代表に5対67で敗れ、北半球シリーズ第3戦を終えた。",
     "trafficReason": "深夜までのライブ視聴後、11月22日午前から昼の外出時刻に影響する可能性がある。",
     "nationalReach": 3,
     "liveUrgency": 3,
@@ -11088,6 +11130,7 @@
     "significance": 3,
     "impactLevelOverride": "中",
     "officialConfirmed": true,
+    "internalNote": "日本ラグビーフットボール協会の11月22日付公式結果で日本5対67スコットランド、前半0対29を確認。",
     "sources": [
       {
         "title": "日本ラグビーフットボール協会 11月放送・配信予定",
@@ -11096,6 +11139,10 @@
       {
         "title": "J SPORTS 日本代表 放送・配信予定",
         "url": "https://www.jsports.co.jp/rugby/japan/schedule/"
+      },
+      {
+        "title": "日本ラグビーフットボール協会 日本対スコットランド試合結果",
+        "url": "https://www.rugby-japan.jp/news/54345"
       }
     ],
     "impactScore": 23,
@@ -11157,6 +11204,46 @@
         "date": "2026-11-22",
         "start": "11:35",
         "end": "14:55"
+      }
+    ]
+  },
+  {
+    "id": "softball-japan-usa-series-2026-game-3",
+    "title": "ソフトボール 日米対抗ソフトボール2026 第3戦 JPN対USA",
+    "startAt": "2026-11-22T13:00:00+09:00",
+    "endAt": "2026-11-22T16:00:00+09:00",
+    "broadcast": "日テレジータスで生中継、Huluでライブ配信・アーカイブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・沖縄",
+    "inPersonEvent": true,
+    "liveReason": "女子ソフトボール日本代表がアメリカ代表と対戦する3試合シリーズの最終戦。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "日本ソフトボール協会公式で11月22日13:00試合開始、日テレジータス13:00〜16:00生中継、Huluライブ・アーカイブ配信を確認。",
+    "sources": [
+      {
+        "title": "日本ソフトボール協会 日米対抗ソフトボール2026",
+        "url": "https://www.softball.or.jp/nichibei2026softball/"
+      },
+      {
+        "title": "日テレジータス 日米対抗ソフトボール2026",
+        "url": "https://www.gtasu.com/prg/nichibeisoftball.html"
+      }
+    ],
+    "impactScore": 20,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-22",
+        "start": "13:00",
+        "end": "16:00"
       }
     ]
   },
@@ -11269,6 +11356,45 @@
         "date": "2026-11-22",
         "start": "15:40",
         "end": "16:00"
+      }
+    ]
+  },
+  {
+    "id": "beach-soccer-afc-asian-cup-2026-group-tha-jpn",
+    "title": "ビーチサッカー AFCビーチサッカーアジアカップタイ2026 グループステージ THA対JPN",
+    "startAt": "2026-11-22T20:30:00+09:00",
+    "endAt": "2026-11-22T22:00:00+09:00",
+    "broadcast": "JFA公式YouTubeでライブ配信",
+    "category": "スポーツ中継",
+    "area": "全国",
+    "liveReason": "ビーチサッカー日本代表が開催国タイ代表と対戦するグループステージ第3戦。",
+    "nationalReach": 1,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 1,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "JFA公式で11月22日20:30開始、公式YouTubeライブ配信を確認。終了時刻は試合時間の目安。",
+    "sources": [
+      {
+        "title": "JFA AFCビーチサッカーアジアカップタイ2026 ライブ配信",
+        "url": "https://jfa.jp/national_team/beach_2026/beach_asiancup2026/tv.html"
+      },
+      {
+        "title": "JFA AFCビーチサッカーアジアカップタイ2026 大会情報",
+        "url": "https://www.jfa.jp/national_team/beach_2026/beach_asiancup2026/"
+      }
+    ],
+    "impactScore": 18,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-11-22",
+        "start": "20:30",
+        "end": "22:00"
       }
     ]
   },
