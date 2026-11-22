@@ -6482,7 +6482,7 @@
     "broadcast": "DAZN無料ライブ配信",
     "category": "スポーツ中継",
     "area": "全国",
-    "liveReason": "U-17日本代表がコロンビア代表と対戦するワールドカップ初戦。",
+    "liveReason": "U-17日本代表はワールドカップ初戦でコロンビア代表に1対2で敗れた。",
     "nationalReach": 1,
     "liveUrgency": 3,
     "accessibility": 3,
@@ -6490,11 +6490,12 @@
     "significance": 3,
     "impactLevelOverride": "小",
     "officialConfirmed": true,
-    "internalNote": "JFA公式で11月21日21時30分開始、DAZN公式で日本代表戦を含む全104試合の無料ライブ配信を確認。終了時刻は2時間の目安。",
+    "internalNote": "JFA公式で11月21日21時30分開始、DAZN公式で日本代表戦を含む全104試合の無料ライブ配信を確認。JFA公式結果で日本1対2コロンビア、齋藤翔の得点を確認。終了時刻は2時間の目安。",
     "sources": [
       {"title": "JFA FIFA U-17ワールドカップ カタール2026 日程・結果", "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/schedule_result/"},
       {"title": "JFA FIFA U-17ワールドカップ カタール2026 TV放送・配信", "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/tv.html"},
-      {"title": "DAZN FIFA U-17ワールドカップ カタール2026 全試合無料ライブ配信", "url": "https://dazngroup.com/press-room/1116/"}
+      {"title": "DAZN FIFA U-17ワールドカップ カタール2026 全試合無料ライブ配信", "url": "https://dazngroup.com/press-room/1116/"},
+      {"title": "JFA FIFA U-17ワールドカップ カタール2026 JPN対COL試合結果", "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/groupL/match_page/m23.html"}
     ]
   },
   {
@@ -7110,6 +7111,97 @@
     "sources": [
       {"title": "JFA AFCビーチサッカーアジアカップタイ2026 ライブ配信", "url": "https://jfa.jp/national_team/beach_2026/beach_asiancup2026/tv.html"},
       {"title": "JFA AFCビーチサッカーアジアカップタイ2026 大会情報", "url": "https://www.jfa.jp/national_team/beach_2026/beach_asiancup2026/"}
+    ]
+  },
+  {
+    "id": "midosuji-runway-2026",
+    "title": "御堂筋ランウェイ2026",
+    "startAt": "2026-11-23T14:00:00+09:00",
+    "endAt": "2026-11-23T16:00:00+09:00",
+    "broadcast": "現地イベント",
+    "category": "祭り・現地イベント",
+    "area": "大阪・御堂筋",
+    "inPersonEvent": true,
+    "liveReason": "御堂筋を会場に、10-FEET、マカロニえんぴつのライブなどを無料観覧で開催する。",
+    "trafficReason": "淀屋橋交差点から船場中央3交差点で11:30頃〜19:15頃に交通規制を行い、路線バスの一部運休や周辺混雑が見込まれる。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "御堂筋ランウェイ2026 公式サイト", "url": "https://www.midosuji-runway.jp/"},
+      {"title": "御堂筋ランウェイ2026 交通規制のお知らせ", "url": "https://www.midosuji-runway.jp/assets/img/restrictions-pamphlet.pdf"}
+    ]
+  },
+  {
+    "id": "world-skateboarding-tour-utsunomiya-street-2026-final",
+    "title": "スケートボード ワールドスケートボードストリート2026 宇都宮 決勝",
+    "startAt": "2026-11-23T12:20:00+09:00",
+    "endAt": "2026-11-23T15:40:00+09:00",
+    "broadcast": "テレビ朝日系列で13:45から地上波放送、ABEMAで13:45から無料生中継",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・栃木",
+    "inPersonEvent": true,
+    "liveReason": "ロサンゼルス2028オリンピック予選対象の国際大会決勝。日本勢は男女計6人が決勝へ進出した。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "大",
+    "officialConfirmed": true,
+    "internalNote": "公式日程で女子決勝12:20〜13:35、男子決勝13:50〜15:05、表彰式15:20〜15:40を確認。テレビ朝日系列とABEMAは13:45開始。",
+    "sources": [
+      {"title": "ワールドスケートボードツアー宇都宮2026 公式日程", "url": "https://wstjapan.jp/schedule/"},
+      {"title": "テレビ朝日 ワールドスケートボードストリート2026 宇都宮", "url": "https://www.tv-asahi.co.jp/wstjapan/"},
+      {"title": "ワールドスケートジャパン 派遣選手・放送情報", "url": "https://worldskatejapan.or.jp/topics/10742-skb_utsunomiya2026/"}
+    ]
+  },
+  {
+    "id": "all-japan-mens-hockey-championship-2026-final",
+    "title": "ホッケー 第100回全日本男子ホッケー選手権大会 決勝",
+    "startAt": "2026-11-23T14:00:00+09:00",
+    "endAt": "2026-11-23T15:30:00+09:00",
+    "broadcast": "NHK Eテレで生中継",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "第100回の記念大会で、アジアチャンピオンズトロフィー準優勝の日本代表選手らが所属チームで日本一を争う。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 3,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "sources": [
+      {"title": "日本ホッケー協会 第100回全日本男子ホッケー選手権大会決勝", "url": "https://data.hockey.or.jp/2026/pressrelease/JHA_PressRelease-Alljapan-Men_20261106.pdf"}
+    ]
+  },
+  {
+    "id": "yu-shirota-live-2026-que-sera-sera-tokyo",
+    "title": "音楽 YU SHIROTA LIVE 2026『¡Que será será!』東京公演",
+    "startAt": "2026-11-23T18:00:00+09:00",
+    "endAt": "2026-11-23T21:00:00+09:00",
+    "broadcast": "U-NEXTで独占ライブ配信・見逃し配信",
+    "category": "音楽配信・現地イベント",
+    "area": "全国・東京",
+    "inPersonEvent": true,
+    "liveReason": "城田優が14年ぶりのオリジナルアルバム発売を記念し、清水美依紗と吉田広大をゲストに迎えて開催する東京公演。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 2,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "公式で17:00開場、18:00開演を確認。公式終了時刻は未記載のため21:00を目安として設定。",
+    "sources": [
+      {"title": "YU SHIROTA LIVE 2026 公式サイト", "url": "https://shirota-live26.jp/"},
+      {"title": "U-NEXT YU SHIROTA LIVE 2026 独占ライブ配信", "url": "https://www.unext.co.jp/ja/press-room/yushirota-live-2026-10-24"}
     ]
   }
 ]
