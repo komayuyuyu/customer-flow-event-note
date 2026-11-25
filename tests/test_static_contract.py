@@ -520,10 +520,21 @@ class StaticContractTest(unittest.TestCase):
         self.assertEqual(by_title["MORE PRICE DOWN 打ち出し"]["endAt"][:10], "2026-07-12")
         self.assertEqual(by_id["store-orcival-feature-20260717"]["startAt"][:10], "2026-07-17")
         self.assertEqual(by_id["store-orcival-feature-20260717"]["endAt"][:10], "2026-07-26")
-        self.assertEqual(by_title["館 SUPER OUTLET SALE"]["startAt"][:10], "2026-07-17")
-        self.assertEqual(by_title["館 SUPER OUTLET SALE"]["endAt"][:10], "2026-08-16")
-        self.assertTrue(by_title["館 SUPER OUTLET SALE"]["showEachDay"])
-        self.assertNotIn("trafficReason", by_title["館 SUPER OUTLET SALE"])
+        self.assertEqual(by_id["store-super-outlet-sale-20260717"]["startAt"][:10], "2026-07-17")
+        self.assertEqual(by_id["store-super-outlet-sale-20260717"]["endAt"][:10], "2026-08-16")
+        self.assertTrue(by_id["store-super-outlet-sale-20260717"]["showEachDay"])
+        self.assertNotIn("trafficReason", by_id["store-super-outlet-sale-20260717"])
+        december_sale = by_id["store-super-outlet-sale-20261226"]
+        self.assertEqual(december_sale["title"], by_id["store-super-outlet-sale-20260717"]["title"])
+        self.assertEqual(december_sale["startAt"][:10], "2026-12-26")
+        self.assertEqual(december_sale["endAt"][:10], "2026-12-31")
+        w_toku = by_id["store-wtoku-5off-20261226"]
+        self.assertEqual(w_toku["startAt"][:10], "2026-12-26")
+        self.assertEqual(w_toku["endAt"][:10], "2026-12-31")
+        for day in (17, 18, 19, 28, 29, 30):
+            price_change = by_id[f"store-price-change-202612{day}"]
+            self.assertEqual(price_change["startAt"][:10], f"2026-12-{day}")
+            self.assertFalse(price_change["recordLink"])
         self.assertEqual(by_title["営業時間延長"]["startAt"][:10], "2026-07-19")
         self.assertEqual(by_title["棚卸"].get("recordLink"), False)
         self.assertEqual(by_title["eunoia 打ち出し"]["startAt"][:10], "2026-09-04")
@@ -573,12 +584,21 @@ class StaticContractTest(unittest.TestCase):
             "store-special-hours-20270101": ("2027-01-01", "2027-01-03"),
             "store-special-hours-20270110": ("2027-01-10", "2027-01-10"),
         }
+        confirmed_december_ids = {
+            "store-sample-feature-20261204",
+            "store-buyaround-cp-20261207",
+            "store-orcival-feature-20261218",
+            "store-noritoku-20261226",
+        }
         for event_id, (start_date, end_date) in expected_year_end_dates.items():
             event = by_id[event_id]
             self.assertEqual(event["startAt"][:10], start_date)
             self.assertEqual(event["endAt"][:10], end_date)
             self.assertEqual(event["predictedWindows"][0]["date"], start_date)
-            self.assertIn("仮登録", event["internalNote"])
+            if event_id in confirmed_december_ids:
+                self.assertIn({"title": "2026年12月勤務カレンダー"}, event["sources"])
+            else:
+                self.assertIn("仮登録", event["internalNote"])
         for event_id in ("store-special-hours-20261231", "store-special-hours-20270101", "store-special-hours-20270110"):
             self.assertEqual(by_id[event_id]["displayOrder"], 10)
         expected_october_dates = {

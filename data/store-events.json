@@ -637,9 +637,12 @@
     "sources": [
       {
         "title": "2026年末年始の店舗連絡画像（2026-11-16共有）"
+      },
+      {
+        "title": "2026年12月勤務カレンダー"
       }
     ],
-    "internalNote": "共有画像に基づく仮登録。シフト発行後に期間・内容を再確認する。"
+    "internalNote": "12月勤務カレンダーで12/4〜13の期間を確認。"
   },
   {
     "id": "store-buyaround-cp-20261207",
@@ -663,13 +666,16 @@
     "sources": [
       {
         "title": "2026年末年始の店舗連絡画像（2026-11-16共有）"
+      },
+      {
+        "title": "2026年12月勤務カレンダー"
       }
     ],
-    "internalNote": "共有画像に基づく仮登録。シフト発行後に期間・内容を再確認する。"
+    "internalNote": "12月勤務カレンダーで12/7〜20の期間を確認。"
   },
   {
     "id": "store-orcival-feature-20261218",
-    "title": "ORCIVAL 打ち出し",
+    "title": "ORCIVALフェア（アウターメイン）",
     "startAt": "2026-12-18T00:00:00+09:00",
     "endAt": "2026-12-27T23:59:00+09:00",
     "timeUnknown": true,
@@ -688,9 +694,12 @@
     "sources": [
       {
         "title": "2026年末年始の店舗連絡画像（2026-11-16共有）"
+      },
+      {
+        "title": "2026年12月勤務カレンダー"
       }
     ],
-    "internalNote": "共有画像に基づく仮登録。シフト発行後に期間・内容を再確認する。"
+    "internalNote": "12月勤務カレンダーで12/18〜27の期間と表記を確認。"
   },
   {
     "id": "store-noritoku-20261226",
@@ -713,9 +722,12 @@
     "sources": [
       {
         "title": "2026年末年始の店舗連絡画像（2026-11-16共有）"
+      },
+      {
+        "title": "2026年12月勤務カレンダー"
       }
     ],
-    "internalNote": "共有画像に基づく仮登録。シフト発行後に期間・内容を再確認する。"
+    "internalNote": "12月勤務カレンダーで12/26〜31を確認。1/1〜3は11/16共有の店舗連絡画像に基づく。"
   },
   {
     "id": "store-noritoku-20270109",
@@ -882,5 +894,199 @@
       }
     ],
     "internalNote": "共有画像に基づく仮登録。営業時間の対象範囲と時刻は館公式発表およびシフト発行後に再確認する。"
+  },
+  {
+    "id": "store-super-outlet-sale-20261226",
+    "title": "館 SUPER OUTLET SALE",
+    "startAt": "2026-12-26T00:00:00+09:00",
+    "endAt": "2026-12-31T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "大",
+    "confidence": "中",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-12-26",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年12月勤務カレンダー"
+      }
+    ],
+    "internalNote": "12月勤務カレンダーで確認できる期間。1月以降の開催日は未確認。"
+  },
+  {
+    "id": "store-wtoku-5off-20261226",
+    "title": "館 Wトク 請求時5%OFF",
+    "startAt": "2026-12-26T00:00:00+09:00",
+    "endAt": "2026-12-31T23:59:00+09:00",
+    "timeUnknown": true,
+    "showEachDay": true,
+    "impactLevel": "中",
+    "confidence": "中",
+    "category": "館イベント",
+    "area": "勤務先館内",
+    "predictedWindows": [
+      {
+        "label": "実施期間",
+        "date": "2026-12-26",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年12月勤務カレンダー"
+      }
+    ],
+    "internalNote": "終了日は2026-11-26の確認で12/31に確定。"
+  },
+  {
+    "id": "store-price-change-20261217",
+    "title": "売価変更作業",
+    "startAt": "2026-12-17T00:00:00+09:00",
+    "endAt": "2026-12-17T23:59:00+09:00",
+    "timeUnknown": true,
+    "impactLevel": "小",
+    "confidence": "中",
+    "category": "店内作業",
+    "area": "勤務先ショップ",
+    "recordLink": false,
+    "predictedWindows": [
+      {
+        "label": "実施日",
+        "date": "2026-12-17",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年12月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-price-change-20261218",
+    "title": "売価変更作業",
+    "startAt": "2026-12-18T00:00:00+09:00",
+    "endAt": "2026-12-18T23:59:00+09:00",
+    "timeUnknown": true,
+    "impactLevel": "小",
+    "confidence": "中",
+    "category": "店内作業",
+    "area": "勤務先ショップ",
+    "recordLink": false,
+    "predictedWindows": [
+      {
+        "label": "実施日",
+        "date": "2026-12-18",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年12月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-price-change-20261219",
+    "title": "売価変更作業",
+    "startAt": "2026-12-19T00:00:00+09:00",
+    "endAt": "2026-12-19T23:59:00+09:00",
+    "timeUnknown": true,
+    "impactLevel": "小",
+    "confidence": "中",
+    "category": "店内作業",
+    "area": "勤務先ショップ",
+    "recordLink": false,
+    "predictedWindows": [
+      {
+        "label": "実施日",
+        "date": "2026-12-19",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年12月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-price-change-20261228",
+    "title": "売価変更作業",
+    "startAt": "2026-12-28T00:00:00+09:00",
+    "endAt": "2026-12-28T23:59:00+09:00",
+    "timeUnknown": true,
+    "impactLevel": "小",
+    "confidence": "中",
+    "category": "店内作業",
+    "area": "勤務先ショップ",
+    "recordLink": false,
+    "predictedWindows": [
+      {
+        "label": "実施日",
+        "date": "2026-12-28",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年12月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-price-change-20261229",
+    "title": "売価変更作業",
+    "startAt": "2026-12-29T00:00:00+09:00",
+    "endAt": "2026-12-29T23:59:00+09:00",
+    "timeUnknown": true,
+    "impactLevel": "小",
+    "confidence": "中",
+    "category": "店内作業",
+    "area": "勤務先ショップ",
+    "recordLink": false,
+    "predictedWindows": [
+      {
+        "label": "実施日",
+        "date": "2026-12-29",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年12月勤務カレンダー"
+      }
+    ]
+  },
+  {
+    "id": "store-price-change-20261230",
+    "title": "売価変更作業",
+    "startAt": "2026-12-30T00:00:00+09:00",
+    "endAt": "2026-12-30T23:59:00+09:00",
+    "timeUnknown": true,
+    "impactLevel": "小",
+    "confidence": "中",
+    "category": "店内作業",
+    "area": "勤務先ショップ",
+    "recordLink": false,
+    "predictedWindows": [
+      {
+        "label": "実施日",
+        "date": "2026-12-30",
+        "timeUnknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "2026年12月勤務カレンダー"
+      }
+    ]
   }
 ]
