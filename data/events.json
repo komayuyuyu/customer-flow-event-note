@@ -11072,7 +11072,7 @@
   },
   {
     "id": "fifa-u17-world-cup-2026-group-l-jpn-col",
-    "title": "サッカー FIFA U-17ワールドカップ カタール2026 グループL JPN対COL",
+    "title": "サッカー FIFA U-17ワールドカップカタール2026 グループL JPN対COL",
     "startAt": "2026-11-21T21:30:00+09:00",
     "endAt": "2026-11-21T23:30:00+09:00",
     "broadcast": "DAZN無料ライブ配信",
@@ -11089,19 +11089,19 @@
     "internalNote": "JFA公式で11月21日21時30分開始、DAZN公式で日本代表戦を含む全104試合の無料ライブ配信を確認。JFA公式結果で日本1対2コロンビア、齋藤翔の得点を確認。終了時刻は2時間の目安。",
     "sources": [
       {
-        "title": "JFA FIFA U-17ワールドカップ カタール2026 日程・結果",
+        "title": "JFA FIFA U-17ワールドカップカタール2026 日程・結果",
         "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/schedule_result/"
       },
       {
-        "title": "JFA FIFA U-17ワールドカップ カタール2026 TV放送・配信",
+        "title": "JFA FIFA U-17ワールドカップカタール2026 TV放送・配信",
         "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/tv.html"
       },
       {
-        "title": "DAZN FIFA U-17ワールドカップ カタール2026 全試合無料ライブ配信",
+        "title": "DAZN FIFA U-17ワールドカップカタール2026 全試合無料ライブ配信",
         "url": "https://dazngroup.com/press-room/1116/"
       },
       {
-        "title": "JFA FIFA U-17ワールドカップ カタール2026 JPN対COL試合結果",
+        "title": "JFA FIFA U-17ワールドカップカタール2026 JPN対COL試合結果",
         "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/groupL/match_page/m23.html"
       }
     ],
@@ -11761,6 +11761,45 @@
         "date": "2026-11-27",
         "start": "16:05",
         "end": "20:45"
+      }
+    ]
+  },
+  {
+    "id": "fifa-u17-world-cup-2026-group-l-hon-jpn",
+    "title": "サッカー FIFA U-17ワールドカップカタール2026 グループL HON対JPN",
+    "startAt": "2026-11-27T22:00:00+09:00",
+    "endAt": "2026-11-27T23:50:00+09:00",
+    "broadcast": "DAZNでライブ配信",
+    "category": "スポーツ配信",
+    "area": "全国",
+    "liveReason": "U-17日本代表がホンジュラス代表と対戦するグループステージ第3戦。",
+    "nationalReach": 2,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 2,
+    "significance": 3,
+    "impactLevelOverride": "小",
+    "officialConfirmed": true,
+    "internalNote": "JFA公式で11月27日22:00開始とDAZNライブ配信を確認。終了時刻は試合時間の目安。",
+    "sources": [
+      {
+        "title": "JFA FIFA U-17ワールドカップカタール2026 HON対JPN",
+        "url": "https://www.jfa.jp/national_team/u17_2026/u17_worldcup2026/groupL/match_page/m71.html"
+      },
+      {
+        "title": "JFA FIFA U-17ワールドカップカタール2026 TV放送・配信",
+        "url": "https://jfa.jp/national_team/u17_2026/u17_worldcup2026/tv.html"
+      }
+    ],
+    "impactScore": 20,
+    "impactLevel": "小",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "リアルタイム視聴",
+        "date": "2026-11-27",
+        "start": "22:00",
+        "end": "23:50"
       }
     ]
   },
