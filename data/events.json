@@ -11772,7 +11772,7 @@
     "broadcast": "DAZNでライブ配信",
     "category": "スポーツ配信",
     "area": "全国",
-    "liveReason": "U-17日本代表がホンジュラス代表と対戦するグループステージ第3戦。",
+    "liveReason": "U-17日本代表がホンジュラス代表に7対0で勝利したグループステージ第3戦。",
     "nationalReach": 2,
     "liveUrgency": 3,
     "accessibility": 2,
@@ -11780,7 +11780,7 @@
     "significance": 3,
     "impactLevelOverride": "小",
     "officialConfirmed": true,
-    "internalNote": "JFA公式で11月27日22:00開始とDAZNライブ配信を確認。終了時刻は試合時間の目安。",
+    "internalNote": "JFA公式で11月27日22:00開始とDAZNライブ配信、FIFA公式でホンジュラス0対7日本の試合結果を確認。終了時刻は試合時間の目安。",
     "sources": [
       {
         "title": "JFA FIFA U-17ワールドカップカタール2026 HON対JPN",
@@ -11789,6 +11789,10 @@
       {
         "title": "JFA FIFA U-17ワールドカップカタール2026 TV放送・配信",
         "url": "https://jfa.jp/national_team/u17_2026/u17_worldcup2026/tv.html"
+      },
+      {
+        "title": "FIFA FIFA U-17ワールドカップカタール2026 第9日結果",
+        "url": "https://www.fifa.com/ja/tournaments/mens/u17worldcup/qatar-2026/articles/matchday-9-round-up-doha-ja"
       }
     ],
     "impactScore": 20,
@@ -11842,6 +11846,46 @@
     ]
   },
   {
+    "id": "yuzuru-hanyu-realive-saga-2026-day1",
+    "title": "アイスショー YUZURU HANYU “REALIVE” AN ICE STORY PROJECT 佐賀公演DAY1",
+    "startAt": "2026-11-28T16:00:00+09:00",
+    "endAt": "2026-11-28T19:00:00+09:00",
+    "broadcast": "CSテレ朝チャンネル2で独占生中継",
+    "category": "アイスショー中継・現地イベント",
+    "area": "全国・佐賀",
+    "inPersonEvent": true,
+    "liveReason": "羽生結弦が出演・制作総指揮を務める佐賀公演DAY1をSAGAアリーナから独占生中継する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "公式サイトとテレ朝チャンネル公式で11月28日16:00開演・独占生中継を確認。公式終了時刻は未記載のため19:00を目安とした。",
+    "sources": [
+      {
+        "title": "Yuzuru Hanyu REALIVE公式 佐賀公演DAY1生中継",
+        "url": "https://realive.icestory.jp/lv.html"
+      },
+      {
+        "title": "テレ朝チャンネル YUZURU HANYU REALIVE",
+        "url": "https://www.tv-asahi.co.jp/ch/recommend/realive/"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-28",
+        "start": "16:00",
+        "end": "19:00"
+      }
+    ]
+  },
+  {
     "id": "figure-gp-nhk-trophy-2026-free",
     "title": "フィギュアスケート ISUグランプリシリーズ2026 NHK杯 男女フリー",
     "startAt": "2026-11-28T16:30:00+09:00",
@@ -11881,6 +11925,50 @@
         "date": "2026-11-28",
         "start": "16:30",
         "end": "21:45"
+      }
+    ]
+  },
+  {
+    "id": "rugby-nations-championship-2026-final-weekend-jpn-wal",
+    "title": "ラグビー ネーションズチャンピオンシップ2026 順位決定戦 JPN対WAL",
+    "startAt": "2026-11-28T21:40:00+09:00",
+    "endAt": "2026-11-29T00:40:00+09:00",
+    "broadcast": "WOWOWライブ・J SPORTS 1で生中継、WOWOWオンデマンド・Lemino・J SPORTSオンデマンドでライブ配信",
+    "category": "スポーツ中継・現地イベント",
+    "area": "全国・ロンドン",
+    "inPersonEvent": true,
+    "liveReason": "ラグビー日本代表がネーションズチャンピオンシップ2026の5位決定戦でウェールズ代表と対戦する。",
+    "nationalReach": 3,
+    "liveUrgency": 3,
+    "accessibility": 2,
+    "buzz": 3,
+    "significance": 3,
+    "impactLevelOverride": "中",
+    "officialConfirmed": true,
+    "internalNote": "日本ラグビーフットボール協会の11月24日更新で日本時間22:10キックオフ、J SPORTSは21:40、WOWOW・Leminoは21:45からの生中継・生配信を確認。終了時刻はJ SPORTS放送枠に基づく。",
+    "sources": [
+      {
+        "title": "日本ラグビーフットボール協会 ネーションズチャンピオンシップ2026放送・配信予定",
+        "url": "https://www.rugby-japan.jp/news/54312"
+      },
+      {
+        "title": "日本ラグビーフットボール協会 JPN対WAL試合情報",
+        "url": "https://www.rugby-japan.jp/braveblossoms/match/20261128"
+      },
+      {
+        "title": "J SPORTS ラグビー日本代表 放送・配信予定",
+        "url": "https://www.jsports.co.jp/rugby/japan/schedule/"
+      }
+    ],
+    "impactScore": 23,
+    "impactLevel": "中",
+    "confidence": "高",
+    "predictedWindows": [
+      {
+        "label": "イベント開催中",
+        "date": "2026-11-28",
+        "start": "21:40",
+        "end": "00:40"
       }
     ]
   },
